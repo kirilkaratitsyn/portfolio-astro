@@ -121,7 +121,7 @@
         "company": "KBS Nordhorn",
         "dateRange": "2024 - дотепер",
         "location": "Нордгорн, Німеччина",
-        "summary": "Навчаюся в Kaufmannische Berufsbildende Schulen Nordhorn з 2024 року, паралельно посилюючи технічну й професійну базу разом із реальною Shopify-практикою.",
+        "summary": "Навчаюся в Kaufmännische Berufsbildende Schulen Nordhorn з 2024 року, паралельно посилюючи технічну й професійну базу разом із реальною Shopify-практикою.",
         "logo": "/source/logos/kbs-nordhorn.png",
         "logoAlt": "Логотип KBS Nordhorn",
         "isPlaceholderLogo": false
@@ -132,7 +132,7 @@
         "company": "Collab IT",
         "dateRange": "Травень 2025 - Листопад 2025",
         "location": "Віддалено",
-        "summary": "Працював Shopify Developer над клієнтською реалізацією та storefront-розробкою. Публічної інформації про компанію зараз небагато, тому опис у портфоліо свідомо залишається стриманим і фактичним.",
+        "summary": "Працював Shopify Developer над клієнтською реалізацією та storefront-розробкою.",
         "logo": "/source/logos/collab-it.png",
         "logoAlt": "Логотип Collab IT",
         "isPlaceholderLogo": false
@@ -143,7 +143,7 @@
         "company": "Great Dev",
         "dateRange": "Грудень 2024 - Квітень 2025",
         "location": "Віддалено",
-        "summary": "Працював над Shopify-розробкою в командному середовищі ще до того, як сайт компанії став недоступним. Запис залишено коротким, поки знову не з’явиться офіційне джерело логотипа.",
+        "summary": "Працював над Shopify-розробкою в командному середовищі.",
         "logo": "/source/logos/great-dev.png",
         "logoAlt": "Логотип Great Dev",
         "isPlaceholderLogo": false

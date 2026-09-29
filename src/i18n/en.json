@@ -121,7 +121,7 @@
         "company": "KBS Nordhorn",
         "dateRange": "2024 - Present",
         "location": "Nordhorn, Germany",
-        "summary": "Studying at Kaufmannische Berufsbildende Schulen Nordhorn since 2024, building a stronger technical and professional foundation alongside real Shopify project work.",
+        "summary": "Studying at Kaufmännische Berufsbildende Schulen Nordhorn since 2024, building a stronger technical and professional foundation alongside real Shopify project work.",
         "logo": "/source/logos/kbs-nordhorn.png",
         "logoAlt": "KBS Nordhorn logo",
         "isPlaceholderLogo": false
@@ -132,7 +132,7 @@
         "company": "Collab IT",
         "dateRange": "May 2025 - November 2025",
         "location": "Remote",
-        "summary": "Worked as a Shopify Developer on client delivery and storefront implementation. Public company details are currently limited, so the portfolio copy stays intentionally factual and conservative.",
+        "summary": "Worked as a Shopify Developer on client delivery and storefront implementation.",
         "logo": "/source/logos/collab-it.png",
         "logoAlt": "Collab IT logo",
         "isPlaceholderLogo": false
@@ -143,7 +143,7 @@
         "company": "Great Dev",
         "dateRange": "December 2024 - April 2025",
         "location": "Remote",
-        "summary": "Worked on Shopify development in a team setting before the company website became unavailable. The entry is kept concise until an official logo source is available again.",
+        "summary": "Worked on Shopify development in a team setting.",
         "logo": "/source/logos/great-dev.png",
         "logoAlt": "Great Dev logo",
         "isPlaceholderLogo": false
@@ -357,7 +357,7 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Thoughts on creating high-performing online experiences.",
-    "readMore": "Читати далі",
+    "readMore": "Read more",
     "backToList": "Back to all articles",
     "notFound": "Article not found.",
     "featuredTitle": "Featured insights",
