@@ -1,0 +1,70 @@
+---
+import { DEFAULT_LOCALE, LOCALES, OG_LOCALES, localizePath, type Locale } from '../i18n';
+
+export const SITE_NAME = 'Kiril Karatitsyn';
+const DEFAULT_IMAGE = '/android-chrome-512x512.png';
+
+export interface SeoProps {
+  title: string;
+  description: string;
+  /** Unlocalized path, e.g. "/projects/nimfa". */
+  path: string;
+  locale: Locale;
+  type?: 'website' | 'article';
+  image?: string;
+  robots?: string;
+  /** Set to false for pages that don't exist in every locale (e.g. 404). */
+  alternates?: boolean;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+type Props = SeoProps;
+
+const {
+  title,
+  description,
+  path,
+  locale,
+  type = 'website',
+  image = DEFAULT_IMAGE,
+  robots = 'index,follow',
+  alternates = true,
+  structuredData,
+} = Astro.props;
+
+const site = Astro.site!;
+// Localized paths never end with "/", except the English homepage which is the site root.
+const absolute = (value: string) => new URL(value, site).toString();
+const canonicalUrl = absolute(localizePath(locale, path));
+const imageUrl = absolute(image);
+const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const alternateLinks = alternates
+  ? LOCALES.map((alternate) => ({
+      hreflang: alternate,
+      href: absolute(localizePath(alternate, path)),
+    }))
+  : [];
+const defaultAlternate = alternateLinks.find((link) => link.hreflang === DEFAULT_LOCALE);
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={canonicalUrl} />
+{alternateLinks.map((link) => <link rel="alternate" hreflang={link.hreflang} href={link.href} />)}
+{defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />}
+
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content={OG_LOCALES[locale]} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+{structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}

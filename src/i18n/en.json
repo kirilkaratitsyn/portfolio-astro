@@ -1,0 +1,417 @@
+{
+  "hero": {
+    "eyebrow": "Shopify Developer",
+    "topRated": "Top Rated on Upwork",
+    "title": "I build Shopify stores that",
+    "titleAccent": "convert, scale, and stay easy to manage.",
+    "subtitle": "Custom themes, Online Store 2.0 migrations, integrations, CRO-focused storefront work, and long-term support for brands that need more than a generic setup.",
+    "description": "Cleaner UX, faster pages, stronger merchandising, and custom Shopify work that stays easy to run.",
+    "book_call": "Book a Call",
+    "send_message": "Send me a message",
+    "proofItems": [
+      "5-star Upwork reviews from recent Shopify clients.",
+      "Hands-on work across custom builds, migrations, CRO, and support retainers.",
+      "Focused on Shopify-first execution with clean UX and reliable releases."
+    ],
+    "or": "or",
+    "words": [
+      "Developer",
+      "Magician",
+      "Expert",
+      "Master",
+      "Specialist",
+      "Guru",
+      "Virtuoso",
+      "Maestro"
+    ]
+  },
+  "about": {
+    "eyebrow": "Why Shopify Teams Hire Me",
+    "title": "A Shopify partner for growth-minded brands",
+    "text": "I turn business goals into Shopify storefronts that are clean, maintainable, and built to keep improving after launch.",
+    "statYearLabel": "Years shipping Shopify work",
+    "statProjectsLabel": "Projects delivered",
+    "statHoursLabel": "Upwork hours worked",
+    "lets_work": "Let's Work Together"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Shopify Services",
+    "subtitle": "Focused Shopify support for launches, growth, and custom storefront work.",
+    "items": [
+      {
+        "id": "store-setup",
+        "title": "Shopify Store Setup From Scratch",
+        "description": "Launch a new store with a clean theme structure, flexible sections, and admin-friendly content—aligned to your brand before you scale."
+      },
+      {
+        "id": "platform-migration",
+        "title": "Platform Migration",
+        "description": "Move from WooCommerce, Magento, custom stacks, or legacy Shopify themes to Online Store 2.0 without losing SEO, redirects, or critical customer flows."
+      },
+      {
+        "id": "app-integration",
+        "title": "App Integration for Shopify",
+        "description": "Connect apps, subscriptions, payments, CRMs, and custom APIs so storefront, cart, and admin stay reliable and easy to operate."
+      },
+      {
+        "id": "performance-seo",
+        "title": "Performance & SEO Optimization",
+        "description": "Improve Core Web Vitals and perceived speed with leaner Liquid and assets, plus technical SEO foundations—structured data, metadata, and crawl-friendly templates."
+      },
+      {
+        "id": "cro-audit",
+        "title": "Conversion & UX Optimization Audit",
+        "description": "Review funnels, UX friction, and merchandising gaps—then ship prioritized fixes that lift conversion without a full rebuild."
+      },
+      {
+        "id": "support",
+        "title": "Ongoing Support and Maintenance",
+        "description": "Retainers for launches, bug fixes, theme updates, and iteration so your team can focus on growth while the storefront stays stable."
+      }
+    ]
+  },
+  "caseStudies": {
+    "eyebrow": "Case Studies",
+    "title": "Featured Work",
+    "subtitle": "A few deeper Shopify projects, from custom builds to migrations.",
+    "viewCase": "View Case Study",
+    "visitStore": "Visit Store",
+    "backToCases": "Back to all projects",
+    "notFound": "Case study not found.",
+    "mediaTitle": "Media",
+    "desktopLabel": "Desktop",
+    "mobileLabel": "Mobile",
+    "mobilePlaceholder": "Mobile version placeholder. A dedicated mobile preview will be added here later.",
+    "aboutBrandTitle": "About the brand",
+    "readMore": "Read more",
+    "challengeTitle": "Challenge",
+    "scopeTitle": "Scope",
+    "solutionTitle": "Solution",
+    "stackTitle": "Stack & capabilities",
+    "outcomeTitle": "Outcome",
+    "screenshotTitle": "Project highlights",
+    "moreProjectsTitle": "More Shopify projects",
+    "moreProjectsSubtitle": "A broader sample of Shopify work across migrations, CRO, support, custom sections, and storefront enhancements."
+  },
+  "experience": {
+    "eyebrow": "Timeline",
+    "title": "Experience",
+    "subtitle": "Work, study, and internship experience shaping my Shopify path.",
+    "placeholderLabel": "Placeholder logo",
+    "stats": {
+      "timeline": "Active timeline entries",
+      "since": "Learning and building since"
+    },
+    "items": [
+      {
+        "kind": "Internship",
+        "role": "Frontend Developer",
+        "company": "Funduino GmbH",
+        "dateRange": "February 2026 - Present",
+        "location": "Nordhorn, Germany",
+        "summary": "An ongoing internship as a Frontend Developer at an Arduino-focused learning platform and education brand, contributing to interface and storefront work inside a live company environment.",
+        "logo": "/source/logos/funduino.jpg",
+        "logoAlt": "Funduino GmbH logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Education",
+        "role": "Student",
+        "company": "KBS Nordhorn",
+        "dateRange": "2024 - Present",
+        "location": "Nordhorn, Germany",
+        "summary": "Studying at Kaufmannische Berufsbildende Schulen Nordhorn since 2024, building a stronger technical and professional foundation alongside real Shopify project work.",
+        "logo": "/source/logos/kbs-nordhorn.png",
+        "logoAlt": "KBS Nordhorn logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Work",
+        "role": "Shopify Developer",
+        "company": "Collab IT",
+        "dateRange": "May 2025 - November 2025",
+        "location": "Remote",
+        "summary": "Worked as a Shopify Developer on client delivery and storefront implementation. Public company details are currently limited, so the portfolio copy stays intentionally factual and conservative.",
+        "logo": "/source/logos/collab-it.png",
+        "logoAlt": "Collab IT logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Work",
+        "role": "Shopify Developer",
+        "company": "Great Dev",
+        "dateRange": "December 2024 - April 2025",
+        "location": "Remote",
+        "summary": "Worked on Shopify development in a team setting before the company website became unavailable. The entry is kept concise until an official logo source is available again.",
+        "logo": "/source/logos/great-dev.png",
+        "logoAlt": "Great Dev logo",
+        "isPlaceholderLogo": false
+      }
+    ]
+  },
+  "works": {
+    "eyebrow": "Project Catalog",
+    "title": "More Work",
+    "subtitle": "A broader mix of Shopify launches, custom builds, and storefront improvements.",
+    "allWorksTitle": "All Shopify projects",
+    "allWorksSubtitle": "A full catalog of Shopify work across custom builds, migrations, storefront improvements, merchandising logic, multilingual setups, and ongoing support.",
+    "loadMore": "See more",
+    "visitWebsite": "Visit Website",
+    "viewCase": "View Case Study",
+    "backHome": "Back to homepage",
+    "contactCard": {
+      "title": "Your Project Here",
+      "text": "Have a project in mind? Let's work together to create a stunning website that helps your business grow online.",
+      "button": "Contact Me"
+    }
+  },
+  "upworkReviews": {
+    "eyebrow": "Upwork",
+    "title": "Upwork Reviews",
+    "subtitle": "A tighter look at the Upwork work history behind the portfolio: migration support, performance improvements, checkout work, bug fixing, and final launch polish.",
+    "aiLabel": "AI Overview",
+    "workHistoryLabel": "Work history on Upwork",
+    "overviewTitle": "How Upwork describes me",
+    "overviewText": "An experienced Shopify Developer and Liquid Expert specializing in custom theme development and performance optimization. Successfully completed projects like PetalJet, enhancing SEO and loading speeds through technical refactoring, and implemented a 'Build Your Bundle' feature for MagicScent, effectively increasing average order values. Proficient in Shopify 2.0, advanced customization, bug fixing, and technically specific storefront work.",
+    "ratingLabel": "Rating",
+    "openProfile": "Open Upwork Profile",
+    "currentHighlightLabel": "Current highlight",
+    "currentHighlight": {
+      "title": "Performance optimization of Shopify site LINEARGENT.com",
+      "timeframe": "Nov 10, 2025 - Present",
+      "status": "In progress",
+      "feedback": "\"Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.\""
+    },
+    "metrics": {
+      "items": [
+        {
+          "label": "Completed jobs",
+          "count": 25
+        },
+        {
+          "label": "In progress",
+          "count": 11
+        },
+        {
+          "label": "5-star public reviews",
+          "count": 5
+        },
+        {
+          "label": "Shopify-focused wins",
+          "count": 5
+        }
+      ]
+    },
+    "insights": {
+      "title": "Insights from completed jobs",
+      "subtitle": "Signals pulled from completed Upwork projects. These are the qualities clients mentioned most often in review feedback.",
+      "items": [
+        {
+          "label": "Committed to Quality",
+          "count": 10
+        },
+        {
+          "label": "Clear Communicator",
+          "count": 8
+        },
+        {
+          "label": "Collaborative",
+          "count": 5
+        },
+        {
+          "label": "Detail Oriented",
+          "count": 4
+        },
+        {
+          "label": "Solution Oriented",
+          "count": 4
+        },
+        {
+          "label": "Reliable",
+          "count": 3
+        },
+        {
+          "label": "Accountable for Outcomes",
+          "count": 2
+        },
+        {
+          "label": "Professional",
+          "count": 2
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "title": "Shopify expert needed for some final adjustments and mobile ui",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Sep 20, 2025 - Oct 29, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.\""
+      },
+      {
+        "title": "Shopify Developer Needed to Fix Site Technical Errors",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Oct 22, 2025 - Oct 23, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.\""
+      },
+      {
+        "title": "Shopify Developer Needed - Clean Embedded Checkout (WHOP x Shopify)",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Jan 1, 2026 - Jan 3, 2026",
+        "contractType": "Fixed price",
+        "feedback": "\"It's been great to work with Kiril! This freelancer is clear and concise in communication, cutting through ambiguity and keeping goals and next steps on track.\""
+      },
+      {
+        "title": "Shopify Store Update from Prestige 4 to 10-11 and further improvement",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Nov 10, 2025 - Nov 21, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.\""
+      },
+      {
+        "title": "Shopify 2.0 Migration and Speed Optimization Expert (Ukrainian Developers)",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Nov 10, 2025 - Feb 6, 2026",
+        "contractType": "Fixed price",
+        "feedback": "\"Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.\""
+      },
+      {
+        "title": "Shopify Site & Landing Page Final Polish (One-Time Project)",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Dec 4, 2025 - Dec 15, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Kiril assisted with several Shopify setup and technical tasks. We paused the project while reassessing overall site direction.\""
+      },
+      {
+        "title": "Shopify Redesign + Technical Migration + SEO / Growth Marketing Setup - US/Europe Based Agency Only",
+        "rating": 4,
+        "ratingLabel": "Rating is 4.0 out of 5.",
+        "timeframe": "Dec 9, 2025 - Mar 8, 2026",
+        "contractType": "Fixed price",
+        "feedback": "\"Hi Kiril, I appreciate the work you've put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved. Best of luck with your other projects!\""
+      },
+      {
+        "title": "Shopify Developer - Smart Auto-Add Gift Logic (Spend EUR75, Get Product Free)",
+        "rating": 4,
+        "ratingLabel": "Rating is 4.0 out of 5.",
+        "timeframe": "Oct 29, 2025 - Nov 2, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Responds fast and does a good job\""
+      },
+      {
+        "title": "translation and error adjustments",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Oct 30, 2025 - Oct 31, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"amazing as the last time. fast, keeping the deadline, perfekt. thanks bro.\""
+      },
+      {
+        "title": "Looking for a Shopify Developer (Small One-Time Task)",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Oct 27, 2025 - Oct 28, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Kiril did a great job! He quickly understood the requirements, implemented everything exactly as shown in the loom video, and delivered fast, clean results. Excellent communication and professional work.\""
+      },
+      {
+        "title": "Performance optimization of Shopify site LINEARGENT.com",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Nov 10, 2025 - Present",
+        "contractType": "In progress",
+        "feedback": "\"Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.\""
+      },
+      {
+        "title": "Shopify Bug",
+        "rating": 5,
+        "ratingLabel": "Rating is 5.0 out of 5.",
+        "timeframe": "Nov 4, 2025 - Nov 5, 2025",
+        "contractType": "Fixed price",
+        "feedback": "\"Kiril is great to work with. Fast communication, good execution, clean work.\""
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "topRated": "Top Rated on Upwork",
+    "subtitle": "Let’s talk about your Shopify project",
+    "email": "karatitsynkiril@gmail.com",
+    "note": "Send your store link and a short task summary, and we can take it from there.",
+    "topRatedNote": "Work with a Top Rated Upwork freelancer who focuses on clean communication, reliable delivery, and Shopify work that stays solid after launch.",
+    "audit": "Free store audit and project discussion",
+    "book_call": "Book a Call",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "preferMessage": "Prefer to send a direct message?",
+    "sendMessage": "Send Message"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts on creating high-performing online experiences.",
+    "readMore": "Читати далі",
+    "backToList": "Back to all articles",
+    "notFound": "Article not found.",
+    "featuredTitle": "Featured insights",
+    "featuredSubtitle": "Fresh takeaways from recent projects and launches.",
+    "viewAll": "View all",
+    "estimatedRead": "{{time}} read"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "What Shopify work do you usually take on?",
+        "answer": "Most projects fall into one of four buckets: custom theme work, Online Store 2.0 migrations, feature development for the storefront, and ongoing support after launch."
+      },
+      {
+        "question": "Can you work inside an existing Shopify store?",
+        "answer": "Yes. I regularly work inside live Shopify stores to improve sections, product pages, cart behavior, filtering, integrations, speed, and launch readiness."
+      },
+      {
+        "question": "Do you handle migrations to Shopify Online Store 2.0?",
+        "answer": "Yes. I can help move a store from a legacy setup to OS 2.0 while protecting content structure, rebuilding custom logic, and reducing launch risk."
+      },
+      {
+        "question": "Can you help after launch too?",
+        "answer": "Yes. Many clients keep me involved after launch for fixes, experiments, SEO and speed improvements, new sections, and ongoing storefront development."
+      },
+      {
+        "question": "How do we start?",
+        "answer": "Send the store URL, the problem you want solved, and any deadlines or constraints. From there I can suggest the cleanest next step, whether that is an audit, a small sprint, or a larger implementation."
+      },
+      {
+        "question": "Do you work with designers or existing specs?",
+        "answer": "Yes. I can build from Figma, Loom videos, written specs, or an existing storefront reference, and I also help tighten the implementation plan when requirements are still rough."
+      }
+    ],
+    "book_call": "Book a Call"
+  },
+  "header": {
+    "services": "Services",
+    "cases": "Case Studies",
+    "experience": "Experience",
+    "upwork": "Upwork",
+    "contact": "Contact Me",
+    "bookCall": "Book a Call",
+    "about": "About Me",
+    "works": "Projects",
+    "blog": "Blog",
+    "resume": "Resume"
+  },
+  "footer": {
+    "blurb": "Shopify development for brands that need custom work, cleaner UX, and dependable support without unnecessary complexity.",
+    "follow": "Elsewhere",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,39 @@
+# Kiril Karatitsyn
+
+> Portfolio website for a Shopify developer focused on custom themes, Online Store 2.0 migrations, storefront UX, performance optimization, and long-term support.
+
+This site is a portfolio and content hub for Shopify development work.
+
+Important notes:
+- English lives at the root URLs; German and Ukrainian versions live under /de and /uk (for example /de/projects/nimfa).
+- The main high-value content is the homepage, project archive, case studies, and blog posts.
+- Contact is available directly from the homepage and dedicated contact section.
+
+## Primary Pages
+
+- [Home](https://www.karatitsyn.com/): Main overview of services, featured work, experience, and contact options.
+- [Projects](https://www.karatitsyn.com/projects): Full project archive and storefront work catalog.
+- [Blog](https://www.karatitsyn.com/blog): Articles about Shopify development, conversion, and launch best practices.
+
+## Featured Case Studies
+
+- [Bazar Bizar](https://www.karatitsyn.com/projects/bazar-bizar): Shopify case study for a premium ecommerce storefront.
+- [Elanora Skin](https://www.karatitsyn.com/projects/elanora-skin): Storefront work focused on UX and presentation.
+- [Petaljet](https://www.karatitsyn.com/projects/petaljet): Ongoing Shopify support and technical improvement work.
+- [Nimfa](https://www.karatitsyn.com/projects/nimfa): Figma to custom Shopify theme implementation.
+- [Indian Affairs](https://www.karatitsyn.com/projects/indian-affairs): Custom Shopify storefront project.
+- [Silk Tallow](https://www.karatitsyn.com/projects/silk-tallow): Shopify case study with brand-focused storefront execution.
+
+## Blog Posts
+
+- [5 quick wins to boost your Shopify conversion](https://www.karatitsyn.com/blog/shopify-conversion-boost): Practical conversion improvements for Shopify stores.
+- [Landing page launch checklist for busy founders](https://www.karatitsyn.com/blog/landing-page-launch-checklist): A short launch-readiness checklist for ecommerce pages.
+
+## Contact
+
+- [Contact section](https://www.karatitsyn.com/#contact): Email and booking CTA for project inquiries.
+
+## Optional
+
+- [robots.txt](https://www.karatitsyn.com/robots.txt): Crawl directives for search engines.
+- [sitemap-index.xml](https://www.karatitsyn.com/sitemap-index.xml): List of indexable public pages in all languages.

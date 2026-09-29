@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/kiril-karatitsyn-portrait.jpeg';
+import CalButton from '../components/CalButton.astro';
+import LucideIcon from '../components/LucideIcon.astro';
+import { getServiceIcon } from '../components/serviceIcons';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+
+const stats = [
+  { target: 3, suffix: '+', label: t.about.statYearLabel },
+  { target: 35, suffix: '+', label: t.about.statProjectsLabel },
+  { target: 250, suffix: '+', label: t.about.statHoursLabel },
+];
+---
+
+<section class="bg-[#0E0E0E]" id="about_me">
+  <div class="about__container pt-10 md:pt-20" data-aos="fade-up">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)] lg:items-stretch lg:gap-8 xl:gap-12">
+      <div class="content flex h-full max-w-xl flex-col lg:max-w-none">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-white/80">{t.about.eyebrow}</p>
+        <h2 class="mb-5 text-2xl font-bold uppercase primary-gradient primary-shadow md:text-[32px] lg:text-[34px]">
+          {t.about.title}
+        </h2>
+        <p class="max-w-xl text-base leading-relaxed text-white/75 md:text-lg lg:max-w-none">{t.about.text}</p>
+
+        <div class="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:gap-3 lg:max-w-none">
+          {
+            stats.map((stat) => (
+              <div class="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-3.5 text-center backdrop-blur-sm sm:px-3 md:px-4 md:py-4 md:text-left">
+                <div class="text-[26px] font-bold tabular-nums leading-none text-white sm:text-[30px] md:text-[34px]">
+                  <span data-count-to={stat.target}>{stat.target}</span>
+                  {stat.suffix}
+                </div>
+                <p class="mt-2 text-[10px] font-medium uppercase leading-snug tracking-[0.12em] text-white/55 sm:text-[11px] md:text-xs">
+                  {stat.label}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          {
+            t.services.items.map((item) => (
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white/80 backdrop-blur-sm md:px-4 md:py-2 md:text-sm">
+                <LucideIcon name={getServiceIcon(item.id)} class="h-3.5 w-3.5 shrink-0 text-white/90" strokeWidth={2} />
+                {item.title}
+              </span>
+            ))
+          }
+        </div>
+
+        <div class="mt-8 flex justify-start lg:mt-auto lg:pt-6">
+          <CalButton class="transition-all duration-500 whitespace-nowrap  font-medium  mt-10 bg-white text-black light-shadow px-12 py-3 text-lg rounded-full">
+            <span>{t.about.lets_work}</span>
+          </CalButton>
+        </div>
+      </div>
+
+      <div class="flex h-full w-full items-center justify-center lg:justify-end">
+        <div class="w-full max-w-[420px] overflow-hidden rounded-[22px] border border-white/10 bg-black/20 p-3 backdrop-blur-md">
+          <Image
+            class="h-[280px] w-full rounded-[18px] object-cover object-top shadow-white sm:h-[320px] lg:h-[440px]"
+            src={portrait}
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 460px) calc(100vw - 64px), 396px"
+            alt="Kiril Karatitsyn"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Count the stats up from 0 once they scroll into view. The final numbers are in the HTML for crawlers.
+  const counters = document.querySelectorAll<HTMLElement>('[data-count-to]');
+
+  counters.forEach((counter) => {
+    const target = Number(counter.dataset.countTo);
+    counter.textContent = '0';
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        const duration = 1500;
+        let start: number | null = null;
+        const tick = (timestamp: number) => {
+          if (start === null) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const eased = 1 - (1 - progress) ** 3;
+          counter.textContent = String(Math.round(eased * target));
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.12 }
+    );
+    observer.observe(counter.parentElement!.parentElement!);
+  });
+</script>

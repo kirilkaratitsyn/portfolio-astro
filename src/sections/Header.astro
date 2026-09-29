@@ -1,0 +1,114 @@
+---
+import CalButton from '../components/CalButton.astro';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const links = [
+  { name: t.header.services, to: '/#services' },
+  { name: t.header.cases, to: '/#case-studies' },
+  { name: t.header.works, to: '/projects' },
+  { name: t.header.experience, to: '/#experience' },
+  { name: t.header.contact, to: '/#contact' },
+].map((link) => ({ ...link, href: localizePath(locale, link.to) }));
+---
+
+<header class="sticky w-full top-0 left-0 z-50">
+  <div class="header flex flex-row items-center justify-between gap-4 px-5 py-3 backdrop-blur-md bg-black/30 border-b border-white/10">
+    <div class="primary-gradient name" data-menu-logo>
+      <a href={localizePath(locale, '/#hero')} data-menu-close>KARATITSYN</a>
+    </div>
+
+    <ul class="nav hidden text-center text-[14px] gap-[25px] md:flex md:flex-row md:text-[16px]">
+      {
+        links.map((link, index) => (
+          <li class="w-full md:w-auto text-center hover:text-[#C2BFBD] transition-all duration-100">
+            <a href={link.href}>{link.name}</a>
+            {index < links.length - 1 && <div class="h-[1px] bg-white opacity-20 my-4 md:hidden" />}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="hidden items-center gap-3 md:flex">
+      <CalButton class="transition-all duration-500 whitespace-nowrap font-medium mt-0 bg-white text-black light-shadow px-12 py-3 text-lg rounded-full">
+        {t.header.bookCall}
+      </CalButton>
+    </div>
+
+    <div class="flex items-center gap-3 md:hidden">
+      <CalButton
+        class="whitespace-nowrap font-medium mt-0 bg-white text-black light-shadow px-5 py-2 text-sm rounded-full opacity-100 transition-all duration-500"
+        data-menu-cta
+      >
+        {t.header.bookCall}
+      </CalButton>
+      <div
+        class="burger flex relative z-[60] items-center justify-end w-[30px] h-[18px] md:hidden"
+        role="button"
+        tabindex="0"
+        aria-label="Menu"
+        aria-expanded="false"
+        data-menu-toggle
+      >
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile navigation menu, positioned outside the header -->
+<ul class="nav md:hidden text-[14px] md:text-[16px] gap-[25px] text-center" data-menu>
+  {
+    links.map((link, index) => (
+      <li class="w-full md:w-auto text-center hover:text-[#C2BFBD] transition-all duration-100">
+        <a href={link.href} data-menu-close>
+          {link.name}
+        </a>
+        {index < links.length - 1 && <div class="h-[1px] bg-white opacity-20 my-4 md:hidden" />}
+      </li>
+    ))
+  }
+  <CalButton class="transition-all duration-500 whitespace-nowrap font-medium mt-4 bg-white text-black light-shadow px-12 py-3 text-lg rounded-full">
+    {t.header.bookCall}
+  </CalButton>
+</ul>
+
+<script>
+  const toggle = document.querySelector<HTMLElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  const logo = document.querySelector<HTMLElement>('[data-menu-logo]');
+  const cta = document.querySelector<HTMLElement>('[data-menu-cta]');
+
+  // Class sets copied from the React header so Tailwind keeps them in the build.
+  const MENU_OPEN = ['open', 'backdrop-blur-md', 'bg-black/80'];
+  const CTA_VISIBLE = ['opacity-100', 'transition-all', 'duration-500'];
+  const CTA_HIDDEN = ['opacity-0', 'pointer-events-none', 'transition-none'];
+
+  const setOpen = (open: boolean) => {
+    toggle?.classList.toggle('active', open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    logo?.classList.toggle('invisible', open);
+    MENU_OPEN.forEach((name) => menu?.classList.toggle(name, open));
+    CTA_VISIBLE.forEach((name) => cta?.classList.toggle(name, !open));
+    CTA_HIDDEN.forEach((name) => cta?.classList.toggle(name, open));
+    document.body.style.overflow = open ? 'hidden' : 'unset';
+  };
+
+  const toggleMenu = () => setOpen(!toggle?.classList.contains('active'));
+  toggle?.addEventListener('click', toggleMenu);
+  toggle?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
+  });
+  document.querySelectorAll('[data-menu-close]').forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+</script>

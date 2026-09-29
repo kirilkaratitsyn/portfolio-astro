@@ -1,0 +1,47 @@
+---
+import CalButton from '../components/CalButton.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+---
+
+<section id="hero">
+  <video class="back-video" autoplay loop muted playsinline>
+    <source src="/source/video/hero-background.webm" type="video/webm" />
+  </video>
+
+  <div
+    class="hero__container relative flex flex-col justify-center gap-8 bg-transparent py-[56px] md:min-h-[calc(100vh-76px)] md:py-[88px]"
+    data-aos="fade-up"
+  >
+    <div class="max-w-4xl">
+      <p class="mb-5 text-sm font-semibold uppercase tracking-[0.32em] text-white/80">{t.hero.eyebrow}</p>
+      <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm">
+        <img src="/source/ui/upwork-top-rated.svg" alt="" class="h-5 w-5 shrink-0" aria-hidden="true" />
+        <span>{t.hero.topRated}</span>
+      </div>
+      <h1 class="max-w-4xl text-[42px] font-bold leading-[1.05] text-white md:text-[50px]">
+        {t.hero.title}{' '}
+        <span class="primary-gradient primary-shadow">{t.hero.titleAccent}</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">{t.hero.description}</p>
+    </div>
+
+    <div class="flex flex-col items-start gap-5 text-sm md:flex-row md:items-center md:gap-6">
+      <CalButton class="transition-all duration-500 whitespace-nowrap font-medium bg-white text-black light-shadow px-12 py-3 text-lg rounded-full">
+        {t.hero.book_call}
+      </CalButton>
+      <a
+        href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry"
+        class="flex items-center justify-center rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+      >
+        {t.hero.send_message}
+        <img class="ml-2" width="16" src="/source/ui/arrow-up-right.png" alt="" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

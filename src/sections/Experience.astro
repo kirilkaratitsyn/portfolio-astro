@@ -1,0 +1,132 @@
+---
+import LucideIcon, { type LucideIconName } from '../components/LucideIcon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+
+function getKindIcon(kind: string): LucideIconName {
+  const normalized = kind.trim().toLowerCase();
+  if (['internship', 'стажування', 'praktikum'].includes(normalized)) return 'sparkles';
+  if (['education', 'освіта', 'ausbildung'].includes(normalized)) return 'graduation-cap';
+  return 'briefcase';
+}
+---
+
+<section id="experience">
+  <div class="experience__container pt-10 md:pt-20" data-experience>
+    <div>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-white/80">{t.experience.eyebrow}</p>
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold uppercase primary-gradient primary-shadow md:text-[37px]">{t.experience.title}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-white/75 md:text-xl">{t.experience.subtitle}</p>
+      </div>
+
+      <div class="relative mt-12">
+        <div class="absolute bottom-0 left-[23px] top-0 w-px bg-white/10 md:left-1/2 md:-translate-x-1/2"></div>
+        <div
+          class="absolute bottom-0 left-[23px] top-0 w-px bg-[linear-gradient(180deg,rgba(255,93,36,0.95)_0%,rgba(255,162,29,0.9)_55%,rgba(255,212,163,0.65)_100%)] md:left-1/2 md:-translate-x-1/2"
+          data-experience-progress
+        >
+        </div>
+
+        <div class="space-y-6 md:space-y-10">
+          {
+            t.experience.items.map((item, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <article
+                  data-experience-card
+                  class="group relative pl-14 md:grid md:grid-cols-[minmax(0,1fr)_72px_minmax(0,1fr)] md:items-start md:gap-8 md:pl-0"
+                >
+                  <div class="absolute left-0 top-6 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#111111] text-white/75 shadow-[0_0_0_8px_rgba(14,14,14,1)] md:left-1/2 md:top-8 md:z-10 md:-translate-x-1/2 md:shadow-[0_0_0_12px_rgba(14,14,14,1)]">
+                    <LucideIcon name={getKindIcon(item.kind)} class="h-4.5 w-4.5" strokeWidth={2} />
+                  </div>
+
+                  <div
+                    class={`rounded-[20px] border border-white/10 bg-transparent p-5 transition-all duration-300 hover:border-white/15 md:p-6 ${
+                      isLeft ? 'md:col-start-1 md:text-right' : 'md:col-start-3'
+                    }`}
+                  >
+                    <div class={`min-w-0 flex flex-col ${isLeft ? 'md:items-end' : ''}`}>
+                      <div class={`flex flex-wrap items-center gap-2.5 ${isLeft ? 'md:flex-row-reverse md:justify-start' : ''}`}>
+                        <div
+                          class={`flex h-11 shrink-0 items-center justify-center overflow-hidden rounded-lg border ${
+                            item.isPlaceholderLogo ? 'border-dashed border-white/15 bg-[#121212]' : 'border-white/10 bg-white/95'
+                          } px-3`}
+                        >
+                          <img
+                            src={item.logo}
+                            alt={item.logoAlt}
+                            class="max-h-full max-w-full object-contain opacity-90"
+                            loading={index < 2 ? 'eager' : 'lazy'}
+                          />
+                        </div>
+                        <span class="inline-flex items-center rounded-full border border-white/10 bg-transparent px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60">
+                          {item.kind}
+                        </span>
+                        {item.isPlaceholderLogo && (
+                          <span class="text-[10px] font-medium uppercase tracking-[0.16em] text-white/28">
+                            {t.experience.placeholderLabel}
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 class="mt-4 text-lg font-semibold text-white md:text-[22px]">
+                        {item.role}
+                        <span class="text-white/45"> @ </span>
+                        <span class="text-white/85">{item.company}</span>
+                      </h3>
+
+                      <div class={`mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-white/50 ${isLeft ? 'md:justify-end' : ''}`}>
+                        <span>{item.dateRange}</span>
+                      </div>
+
+                      <p class="mt-4 max-w-[42ch] text-sm leading-relaxed text-white/62">{item.summary}</p>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:block" />
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector<HTMLElement>('[data-experience]');
+  const progress = section?.querySelector<HTMLElement>('[data-experience-progress]');
+
+  if (section && progress) {
+    gsap.set(progress, { scaleY: 0, transformOrigin: 'top center' });
+    gsap.to(progress, {
+      scaleY: 1,
+      ease: 'none',
+      scrollTrigger: { trigger: section, start: 'top 70%', end: 'bottom 35%', scrub: true },
+    });
+    gsap.fromTo(
+      section.querySelectorAll('[data-experience-card]'),
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.14,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: section, start: 'top 75%' },
+      }
+    );
+  }
+</script>

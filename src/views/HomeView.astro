@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../sections/Hero.astro';
+import AboutMe from '../sections/AboutMe.astro';
+import Services from '../sections/Services.astro';
+import FeaturedCaseStudies from '../sections/FeaturedCaseStudies.astro';
+import Works from '../sections/Works.astro';
+import Experience from '../sections/Experience.astro';
+import Contact from '../sections/Contact.astro';
+import { DEFAULT_LOCALE, useTranslations, type Locale } from '../i18n';
+import { getCaseStudies, getWorks } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const caseStudies = await getCaseStudies(locale);
+const works = await getWorks(locale);
+
+const seo = {
+  title: locale === DEFAULT_LOCALE ? 'Kiril Karatitsyn | Shopify Developer' : `Kiril Karatitsyn | ${t.hero.eyebrow}`,
+  description:
+    locale === DEFAULT_LOCALE
+      ? 'Shopify developer focused on custom themes, Online Store 2.0 migrations, storefront UX, performance optimization, and long-term support for growing brands.'
+      : t.hero.subtitle,
+};
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Kiril Karatitsyn',
+  url: 'https://www.karatitsyn.com/',
+  image: 'https://www.karatitsyn.com/android-chrome-512x512.png',
+  jobTitle: 'Shopify Developer',
+  worksFor: { '@type': 'Organization', name: 'Independent' },
+  sameAs: [
+    'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
+    'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
+    'https://github.com/kirilwallstreetreserv',
+  ],
+  knowsAbout: ['Shopify', 'Shopify theme development', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
+};
+---
+
+<BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData}>
+  <Hero locale={locale} />
+  <AboutMe locale={locale} />
+  <Services locale={locale} />
+  <FeaturedCaseStudies locale={locale} caseStudies={caseStudies} />
+  <Works locale={locale} works={works} caseStudies={caseStudies} />
+  <Experience locale={locale} />
+  <Contact locale={locale} />
+</BaseLayout>

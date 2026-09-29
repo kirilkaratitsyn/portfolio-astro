@@ -1,0 +1,85 @@
+---
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import type { CaseStudy, WorkProject } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  work: WorkProject;
+  caseStudy?: CaseStudy;
+  viewCaseLabel: string;
+  visitWebsiteLabel: string;
+  /** Mouse-tilt hover effect (homepage only, as in the React version). */
+  tilt?: boolean;
+  /** Hidden until "See more" reveals it (projects page). */
+  hidden?: boolean;
+}
+
+const { locale, work, caseStudy, viewCaseLabel, visitWebsiteLabel, tilt = false, hidden = false } = Astro.props;
+const t = useTranslations(locale);
+const caseHref = work.caseStudySlug ? localizePath(locale, `/projects/${work.caseStudySlug}`) : undefined;
+---
+
+<div
+  class:list={[
+    'item flex h-full w-full max-w-[490px] flex-col items-center justify-start gap-[15px] rounded-lg border border-white/10 bg-white/5 px-5 py-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white/10',
+    { hidden },
+  ]}
+  style="transition: all 0.3s ease"
+  data-tilt-card={tilt ? '' : undefined}
+  data-more-item={hidden ? '' : undefined}
+>
+  <a
+    href={work.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="block h-[255px] w-[-webkit-fill-available] overflow-hidden rounded-lg"
+  >
+    <img
+      alt={work.title}
+      src={work.image}
+      loading="lazy"
+      class="h-full w-full rounded-lg object-cover object-top transition-transform duration-700"
+    />
+  </a>
+  <p class="w-full text-left text-[20px] font-semibold md:text-center">{work.title}</p>
+  {
+    caseHref && caseStudy && (
+      <div class="w-full rounded-2xl border border-dashed border-white/15 bg-black/20 p-4 text-left">
+        <p class="mb-2 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+          {t.caseStudies.aboutBrandTitle}
+        </p>
+        <p class="flex min-w-0 items-baseline gap-1.5 text-sm leading-relaxed text-white/70">
+          <span class="min-w-0 truncate">{caseStudy.brandSummary}</span>
+          <a
+            href={caseHref}
+            class="shrink-0 font-medium text-white underline decoration-white/20 underline-offset-4 transition hover:text-white/70"
+          >
+            {t.caseStudies.readMore}
+          </a>
+        </p>
+      </div>
+    )
+  }
+  <span class="min-h-[100px] opacity-80">{work.tech}</span>
+  <div class="mt-auto flex w-full flex-wrap justify-center gap-3 pt-6">
+    {
+      caseHref ? (
+        <a
+          href={caseHref}
+          class="rounded-full bg-white px-12 py-3 text-lg font-medium whitespace-nowrap text-black transition-all duration-500 light-shadow"
+        >
+          {viewCaseLabel}
+        </a>
+      ) : (
+        <a
+          href={work.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full bg-white px-12 py-3 text-lg font-medium whitespace-nowrap text-black transition-all duration-500 light-shadow"
+        >
+          {visitWebsiteLabel}
+        </a>
+      )
+    }
+  </div>
+</div>

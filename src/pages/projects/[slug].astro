@@ -1,0 +1,13 @@
+---
+import CaseStudyView from '../../views/CaseStudyView.astro';
+import { caseStudyPaths } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const paths = await caseStudyPaths(['en']);
+  return paths.map(({ params, props }) => ({ params: { slug: params.slug }, props }));
+}
+
+const { locale, caseStudy, caseStudies } = Astro.props;
+---
+
+<CaseStudyView locale={locale} caseStudy={caseStudy} caseStudies={caseStudies} />

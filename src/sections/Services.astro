@@ -1,0 +1,35 @@
+---
+import LucideIcon from '../components/LucideIcon.astro';
+import { getServiceIcon } from '../components/serviceIcons';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+---
+
+<section id="services" class="bg-[#0E0E0E]">
+  <div class="services__container pt-10 md:pt-20" data-aos="fade-up">
+    <div class="mb-12 max-w-3xl space-y-4">
+      <p class="text-sm font-semibold uppercase tracking-[0.28em] text-white/80">{t.services.eyebrow}</p>
+      <h2 class="text-3xl font-bold uppercase primary-gradient primary-shadow md:text-[37px]">{t.services.title}</h2>
+      <p class="text-lg leading-relaxed text-white/75 md:text-xl">{t.services.subtitle}</p>
+    </div>
+
+    <div class="grid gap-2 md:grid-cols-2 md:gap-3 xl:grid-cols-3">
+      {
+        t.services.items.map((item) => (
+          <article class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md transition duration-300 hover:border-white/20 hover:bg-white/10">
+            <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
+              <LucideIcon name={getServiceIcon(item.id)} class="h-6 w-6" strokeWidth={1.5} />
+            </span>
+            <h3 class="mb-3 text-xl font-semibold text-white">{item.title}</h3>
+            <p class="text-base leading-relaxed text-white/70">{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

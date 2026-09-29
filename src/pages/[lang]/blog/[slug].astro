@@ -1,0 +1,12 @@
+---
+import BlogPostView from '../../../views/BlogPostView.astro';
+import { PREFIXED_LOCALES, postPaths } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  return postPaths(PREFIXED_LOCALES);
+}
+
+const { locale, post } = Astro.props;
+---
+
+<BlogPostView locale={locale} post={post} />

@@ -1,0 +1,173 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../sections/Contact.astro';
+import CaseStudyMoreProjects from '../components/CaseStudyMoreProjects.astro';
+import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
+import type { CaseStudy } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  caseStudy: CaseStudy;
+  caseStudies: CaseStudy[];
+}
+
+const { locale, caseStudy, caseStudies } = Astro.props;
+const copy = useTranslations(locale).caseStudies;
+// Optional long-form Markdown below the frontmatter of the case file.
+const hasBody = Boolean(caseStudy.entry.body?.trim());
+const { Content } = await render(caseStudy.entry);
+
+const seo = {
+  title: locale === DEFAULT_LOCALE ? `${caseStudy.title} Case Study` : `${caseStudy.title} – ${copy.eyebrow}`,
+  description: caseStudy.summary,
+  type: 'article' as const,
+  image: caseStudy.image,
+};
+---
+
+<BaseLayout {...seo} path={`/projects/${caseStudy.slug}`} locale={locale}>
+  <article class="bg-[#0E0E0E]">
+    <div class="blog__container pt-20" data-aos="fade-up">
+      <div class="mb-10">
+        <a
+          href={localizePath(locale, '/projects')}
+          class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white/70 hover:text-white"
+        >
+          <span aria-hidden="true">←</span>
+          {copy.backToCases}
+        </a>
+      </div>
+
+      <header class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="space-y-6">
+          <div class="flex flex-wrap gap-2">
+            {
+              caseStudy.tags.map((tag) => (
+                <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/70">
+                  {tag}
+                </span>
+              ))
+            }
+          </div>
+          <h1 class="text-4xl font-bold leading-tight text-white md:text-[52px]">{caseStudy.title}</h1>
+          <p class="max-w-3xl text-lg leading-relaxed text-white/75 md:text-xl">{caseStudy.summary}</p>
+        </div>
+
+        <div class="rounded-[28px] border border-white/10 bg-white/5 p-6">
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">{copy.outcomeTitle}</p>
+          <ul class=" text-base leading-relaxed text-white/75">
+            {caseStudy.outcome.map((item) => <li>{item}</li>)}
+          </ul>
+          <a
+            href={caseStudy.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium uppercase tracking-wide text-black transition hover:bg-white/90"
+          >
+            {copy.visitStore}
+          </a>
+        </div>
+      </header>
+
+      <section class="my-12">
+        <h2 class="mb-6 text-2xl font-semibold text-white">{copy.mediaTitle}</h2>
+        <div class="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+          <div class="hidden overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-4 lg:block">
+            <div class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">{copy.desktopLabel}</div>
+            <img
+              src={caseStudy.image}
+              alt={caseStudy.title}
+              class="h-[575px] w-full rounded-[24px] object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="rounded-[32px] border border-dashed border-white/15 bg-white/5 p-4">
+            <div class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">{copy.mobileLabel}</div>
+            {
+              caseStudy.mobileImage ? (
+                <div class="flex h-[575px] items-center justify-center rounded-[24px]">
+                  <div class="h-full w-full overflow-hidden rounded-[24px]">
+                    <img
+                      src={caseStudy.mobileImage}
+                      alt={`${caseStudy.title} mobile preview`}
+                      class="h-full w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div class="flex h-[575px] items-center justify-center rounded-[24px] border border-white/10 bg-black/20 px-8 text-center text-sm leading-relaxed text-white/55">
+                  {copy.mobilePlaceholder}
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </section>
+
+      {
+        caseStudy.screenshotCaptions?.length ? (
+          <section class="mb-12">
+            <h2 class="mb-6 text-2xl font-semibold text-white">{copy.screenshotTitle}</h2>
+            <div class="grid gap-4 md:grid-cols-3">
+              {caseStudy.screenshotCaptions.map((caption) => (
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-relaxed text-white/70">{caption}</div>
+              ))}
+            </div>
+          </section>
+        ) : null
+      }
+
+      <section class="mb-12 rounded-[28px] border border-white/10 bg-white/5 p-6">
+        <h2 class="mb-4 text-2xl font-semibold text-white">{copy.aboutBrandTitle}</h2>
+        <p class="max-w-4xl text-base leading-relaxed text-white/75">{caseStudy.brandDescription}</p>
+      </section>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <section class="rounded-[28px] border border-white/10 bg-white/5 p-6">
+          <h2 class="mb-4 text-2xl font-semibold text-white">{copy.challengeTitle}</h2>
+          <p class="text-base leading-relaxed text-white/75">{caseStudy.challenge}</p>
+        </section>
+
+        <section class="rounded-[28px] border border-white/10 bg-white/5 p-6">
+          <h2 class="mb-4 text-2xl font-semibold text-white">{copy.stackTitle}</h2>
+          <div class="flex flex-wrap gap-3">
+            {
+              caseStudy.stack.map((item) => (
+                <span class="rounded-full border border-white/10 bg-white/10 px-3 py-2 text-sm text-white/75">{item}</span>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="rounded-[28px] border border-white/10 bg-white/5 p-6">
+          <h2 class="mb-4 text-2xl font-semibold text-white">{copy.scopeTitle}</h2>
+          <ul class="text-base leading-relaxed text-white/75">
+            {caseStudy.scope.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="rounded-[28px] border border-white/10 bg-white/5 p-6">
+          <h2 class="mb-4 text-2xl font-semibold text-white">{copy.solutionTitle}</h2>
+          <ul class="text-base leading-relaxed text-white/75">
+            {caseStudy.solution.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+      </div>
+
+      {
+        hasBody && (
+          <div class="mt-12 max-w-4xl space-y-6 text-white/80 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:text-white [&>p]:text-lg [&>p]:leading-relaxed [&>ul]:list-disc [&>ul]:pl-6">
+            <Content />
+          </div>
+        )
+      }
+    </div>
+  </article>
+
+  <CaseStudyMoreProjects locale={locale} items={caseStudies} currentSlug={caseStudy.slug} />
+
+  <Contact locale={locale} />
+</BaseLayout>

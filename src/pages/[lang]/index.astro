@@ -1,0 +1,11 @@
+---
+import HomeView from '../../views/HomeView.astro';
+import { prefixedLocalePaths } from '../../lib/paths';
+import type { Locale } from '../../i18n';
+
+export const getStaticPaths = prefixedLocalePaths;
+
+const locale = Astro.params.lang as Locale;
+---
+
+<HomeView locale={locale} />

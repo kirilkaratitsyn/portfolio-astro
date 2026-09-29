@@ -1,0 +1,92 @@
+---
+import 'aos/dist/aos.css';
+import '../styles/global.css';
+import SeoHead, { type SeoProps } from '../components/SeoHead.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import Header from '../sections/Header.astro';
+import Footer from '../sections/Footer.astro';
+
+type Props = SeoProps;
+
+const seo = Astro.props;
+const { locale, path } = seo;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b0c08" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SeoHead {...seo} />
+
+    <!-- Cal.com booking popup: any element with data-cal-link opens it. -->
+    <script is:inline>
+      (function (C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement('script')).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === 'string') {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ['initNamespace', namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+      })(window, 'https://app.cal.com/embed/embed.js', 'init');
+      Cal('init', 'free-consultation-call', { origin: 'https://cal.com' });
+      Cal.ns['free-consultation-call']('ui', {
+        theme: 'dark',
+        styles: { branding: { brandColor: '#000000' } },
+        hideEventTypeDetails: true,
+        layout: 'month_view',
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="preloader" class="preloader-overlay" aria-hidden="true">
+        <div class="route-loader__track">
+          <span class="route-loader__bar"></span>
+        </div>
+      </div>
+      <Header locale={locale} />
+      <main>
+        <LanguageSwitcher locale={locale} path={path} />
+        <slot />
+      </main>
+      <Footer locale={locale} />
+    </div>
+
+    <script>
+      import AOS from 'aos';
+
+      AOS.init();
+    </script>
+  </body>
+</html>

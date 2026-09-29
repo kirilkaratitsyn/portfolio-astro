@@ -1,0 +1,123 @@
+---
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import type { CaseStudy } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  caseStudies: CaseStudy[];
+}
+
+const { locale, caseStudies } = Astro.props;
+const t = useTranslations(locale);
+const copy = t.caseStudies;
+const caseHref = (slug: string) => localizePath(locale, `/projects/${slug}`);
+---
+
+<section id="case-studies" class="bg-[#0E0E0E]">
+  <div class="cases__container pt-10 md:pt-20" data-aos="fade-up">
+    <div class="mb-12 flex flex-col md:flex-row md:justify-between gap-6">
+      <div class="max-w-3xl space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-white/80">{copy.eyebrow}</p>
+        <h2 class="text-3xl font-bold uppercase primary-gradient primary-shadow md:text-[37px]">{copy.title}</h2>
+        <p class="text-lg leading-relaxed text-white/75 md:text-xl">{copy.subtitle}</p>
+      </div>
+      <a
+        href={localizePath(locale, '/projects')}
+        class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white hover:text-white/70"
+      >
+        {copy.moreProjectsTitle}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="grid gap-8">
+      {
+        caseStudies.slice(0, 3).map((item) => (
+          <article class="group grid overflow-hidden rounded-[28px] border border-white/10 bg-white/5 transition duration-300 hover:border-white/20 hover:bg-white/10 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+            <div class="border-b border-white/10 p-4 lg:border-b-0 lg:border-r lg:p-6">
+              <div class="flex h-full flex-col gap-4">
+                <div class="overflow-hidden rounded-[24px] border border-white/10 bg-black/20 p-3 lg:flex lg:h-full lg:w-full">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class="h-64 w-full rounded-[18px] object-cover object-top lg:h-full lg:min-h-[340px]"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="rounded-[22px] border border-dashed border-white/15 bg-black/20 p-4 text-sm text-white/70 hidden lg:block">
+                  <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                    {copy.aboutBrandTitle}
+                  </span>
+                  <p class="leading-relaxed">{item.brandSummary}</p>
+                  <a
+                    href={caseHref(item.slug)}
+                    class="mt-3 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-white hover:text-white/75"
+                  >
+                    {copy.readMore}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex h-full flex-col gap-5 p-6 lg:p-8">
+              <div class="flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/70">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-semibold text-white">{item.title}</h3>
+                <p class="text-base leading-relaxed text-white/70">{item.summary}</p>
+              </div>
+              <div class="rounded-[22px] border border-dashed border-white/15 bg-black/20 p-4 text-sm text-white/70 lg:hidden">
+                <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  {copy.aboutBrandTitle}
+                </span>
+                <p class="leading-relaxed">{item.brandSummary}</p>
+                <a
+                  href={caseHref(item.slug)}
+                  class="mt-3 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-white hover:text-white/75"
+                >
+                  {copy.readMore}
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div class="grid gap-3 text-sm text-white/70">
+                <div class="shiny-surface rounded-2xl border border-white/10 bg-black/20 p-4">
+                  <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                    {copy.challengeTitle}
+                  </span>
+                  <p>{item.challenge}</p>
+                </div>
+                <div class="shiny-surface rounded-2xl border border-white/10 bg-black/20 p-4">
+                  <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                    {copy.outcomeTitle}
+                  </span>
+                  <p>{item.outcome[0]}</p>
+                </div>
+              </div>
+              <div class="mt-auto flex flex-wrap gap-4 pt-2">
+                <a
+                  href={caseHref(item.slug)}
+                  class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium uppercase tracking-wide text-black transition hover:bg-white/90"
+                >
+                  {copy.viewCase}
+                </a>
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-white/10"
+                >
+                  {copy.visitStore}
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

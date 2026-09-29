@@ -1,0 +1,12 @@
+---
+import CaseStudyView from '../../../views/CaseStudyView.astro';
+import { PREFIXED_LOCALES, caseStudyPaths } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  return caseStudyPaths(PREFIXED_LOCALES);
+}
+
+const { locale, caseStudy, caseStudies } = Astro.props;
+---
+
+<CaseStudyView locale={locale} caseStudy={caseStudy} caseStudies={caseStudies} />

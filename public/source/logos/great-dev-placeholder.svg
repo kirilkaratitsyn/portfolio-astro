@@ -1,0 +1,9 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="120" rx="24" fill="#141414"/>
+  <rect x="1" y="1" width="318" height="118" rx="23" stroke="rgba(255,255,255,0.14)"/>
+  <circle cx="60" cy="60" r="26" fill="#D7FF64"/>
+  <path d="M53 60C53 56.134 56.134 53 60 53H71V60C71 66.0751 66.0751 71 60 71C56.134 71 53 67.866 53 64V60Z" fill="#141414"/>
+  <path d="M60 49C66.0751 49 71 53.9249 71 60H60V49Z" fill="#141414"/>
+  <text x="102" y="52" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Great Dev</text>
+  <text x="102" y="78" fill="rgba(255,255,255,0.58)" font-family="Arial, Helvetica, sans-serif" font-size="13">Temporary logo placeholder</text>
+</svg>

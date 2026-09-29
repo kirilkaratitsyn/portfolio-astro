@@ -1,0 +1,14 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="120" rx="24" fill="#141414"/>
+  <rect x="1" y="1" width="318" height="118" rx="23" stroke="rgba(255,255,255,0.14)"/>
+  <rect x="34" y="34" width="52" height="52" rx="16" fill="url(#paint0_linear_1_2)"/>
+  <path d="M49 60C49 53.9249 53.9249 49 60 49H71V56C71 62.0751 66.0751 67 60 67C53.9249 67 49 62.0751 49 56V60Z" fill="#141414"/>
+  <text x="102" y="52" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Collab IT</text>
+  <text x="102" y="78" fill="rgba(255,255,255,0.58)" font-family="Arial, Helvetica, sans-serif" font-size="13">Temporary logo placeholder</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="34" y1="34" x2="86" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EE7F9"/>
+      <stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+  </defs>
+</svg>

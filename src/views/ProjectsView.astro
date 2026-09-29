@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../sections/Contact.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
+import { getCaseStudies, getWorks } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const INITIAL_PROJECTS_COUNT = 9;
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const works = await getWorks(locale);
+const caseBySlug = new Map((await getCaseStudies(locale)).map((item) => [item.slug, item]));
+
+const seo = {
+  title: locale === DEFAULT_LOCALE ? 'Shopify Projects' : t.works.allWorksTitle,
+  description:
+    locale === DEFAULT_LOCALE
+      ? 'Selected Shopify projects across custom themes, migrations, storefront improvements, merchandising logic, and launch support.'
+      : t.works.allWorksSubtitle,
+};
+---
+
+<BaseLayout {...seo} path="/projects" locale={locale}>
+  <section class="bg-[#0E0E0E]" id="work">
+    <div class="work__container pt-20" data-aos="fade-up">
+      <div class="mb-10">
+        <a
+          href={localizePath(locale, '/')}
+          class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white/70 hover:text-white"
+        >
+          <span aria-hidden="true">←</span>
+          {t.works.backHome}
+        </a>
+      </div>
+
+      <div class="mb-10 max-w-3xl space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-white/80">{t.works.eyebrow}</p>
+        <h1 class="text-[37px] font-bold primary-gradient primary-shadow">{t.works.allWorksTitle}</h1>
+        <p class="text-lg leading-relaxed text-white/75 md:text-xl">{t.works.allWorksSubtitle}</p>
+      </div>
+
+      <div class="items grid grid-cols-1 gap-x-[40px] gap-y-[40px] justify-items-center lg:grid-cols-2 xl:grid-cols-3">
+        {
+          works.map((work, index) => (
+            <WorkCard
+              locale={locale}
+              work={work}
+              caseStudy={work.caseStudySlug ? caseBySlug.get(work.caseStudySlug) : undefined}
+              viewCaseLabel={t.works.viewCase}
+              visitWebsiteLabel={t.works.visitWebsite}
+              hidden={index >= INITIAL_PROJECTS_COUNT}
+            />
+          ))
+        }
+      </div>
+
+      {
+        works.length > INITIAL_PROJECTS_COUNT && (
+          <div class="mt-16 flex justify-center" data-more-wrapper>
+            <button
+              type="button"
+              class="whitespace-nowrap rounded-full bg-white px-12 py-3 text-lg font-medium text-black transition-all duration-500 light-shadow"
+              data-more-button
+            >
+              {t.works.loadMore}
+            </button>
+          </div>
+        )
+      }
+    </div>
+  </section>
+  <Contact locale={locale} />
+</BaseLayout>
+
+<script>
+  const PROJECTS_STEP = 6;
+  const button = document.querySelector<HTMLButtonElement>('[data-more-button]');
+
+  button?.addEventListener('click', () => {
+    const hiddenItems = [...document.querySelectorAll<HTMLElement>('[data-more-item].hidden')];
+    hiddenItems.slice(0, PROJECTS_STEP).forEach((item) => item.classList.remove('hidden'));
+    if (hiddenItems.length <= PROJECTS_STEP) {
+      document.querySelector('[data-more-wrapper]')?.remove();
+    }
+  });
+</script>

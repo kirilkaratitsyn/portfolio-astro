@@ -1,0 +1,417 @@
+{
+  "hero": {
+    "eyebrow": "Shopify Entwickler",
+    "topRated": "Top Rated auf Upwork",
+    "title": "Ich entwickle Shopify Stores, die",
+    "titleAccent": "konvertieren, skalieren und trotzdem leicht zu pflegen bleiben.",
+    "subtitle": "Custom Themes, Online-Store-2.0-Migrationen, Integrationen, CRO-orientierte Storefront-Arbeit und langfristiger Support für Marken, die mehr als ein Standard-Setup brauchen.",
+    "description": "Sauberer UX, schnellere Seiten, stärkeres Merchandising und individuelle Shopify-Arbeit, die leicht zu betreiben bleibt.",
+    "book_call": "Termin vereinbaren",
+    "send_message": "Nachricht senden",
+    "proofItems": [
+      "5-Sterne-Upwork-Bewertungen von aktuellen Shopify-Kunden.",
+      "Praxis in Custom Builds, Migrationen, CRO und laufendem Store-Support.",
+      "Shopify-first Umsetzung mit sauberem UX und stabilen Releases."
+    ],
+    "or": "oder",
+    "words": [
+      "Entwickler",
+      "Magier",
+      "Experte",
+      "Meister",
+      "Spezialist",
+      "Guru",
+      "Virtuose",
+      "Maestro"
+    ]
+  },
+  "about": {
+    "eyebrow": "Warum Shopify Teams mit mir arbeiten",
+    "title": "Ein Shopify Partner für wachsende Marken",
+    "text": "Ich übersetze Business-Ziele in Shopify-Storefronts, die sauber aufgebaut, wartbar und auch nach dem Launch weiterentwickelbar sind.",
+    "statYearLabel": "Jahre Shopify-Erfahrung",
+    "statProjectsLabel": "Projekte umgesetzt",
+    "statHoursLabel": "Upwork-Stunden",
+    "lets_work": "Lassen Sie uns zusammenarbeiten"
+  },
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Shopify Leistungen",
+    "subtitle": "Fokussierte Shopify-Unterstützung für Launches, Wachstum und individuelle Storefront-Arbeit.",
+    "items": [
+      {
+        "id": "store-setup",
+        "title": "Shopify Store Setup von Grund auf",
+        "description": "Neuen Store mit sauberem Theme-Aufbau, flexiblen Sections und admin-freundlichen Inhalten—passend zur Marke und bereit zum Skalieren."
+      },
+      {
+        "id": "platform-migration",
+        "title": "Plattform-Migration",
+        "description": "Umzug von WooCommerce, Magento, Custom-Stacks oder Legacy-Themes zu Online Store 2.0—ohne SEO, Redirects oder kritische Kundenflüsse zu verlieren."
+      },
+      {
+        "id": "app-integration",
+        "title": "App-Integration für Shopify",
+        "description": "Apps, Abos, Payments, CRMs und APIs anbinden, sodass Storefront, Warenkorb und Admin stabil und gut bedienbar bleiben."
+      },
+      {
+        "id": "performance-seo",
+        "title": "Performance- & SEO-Optimierung",
+        "description": "Core Web Vitals und gefühlte Geschwindigkeit verbessern mit schlankerem Liquid und Assets, plus technisches SEO—Structured Data, Metadaten, crawl-freundliche Templates."
+      },
+      {
+        "id": "cro-audit",
+        "title": "Conversion- & UX-Optimierungs-Audit",
+        "description": "Funnels, UX-Reibung und Merchandising-Lücken prüfen—dann priorisierte Fixes, die Conversion verbessern ohne Full-Rebuild."
+      },
+      {
+        "id": "support",
+        "title": "Laufender Support und Wartung",
+        "description": "Retainer für Launches, Bugfixes, Theme-Updates und Iteration—damit ihr wachsen könnt, während der Store zuverlässig bleibt."
+      }
+    ]
+  },
+  "caseStudies": {
+    "eyebrow": "Case Studies",
+    "title": "Ausgewählte Arbeiten",
+    "subtitle": "Einige tiefere Shopify-Projekte, von Custom Builds bis zu Migrationen.",
+    "viewCase": "Case Study ansehen",
+    "visitStore": "Store besuchen",
+    "backToCases": "Zurück zu allen Projekten",
+    "notFound": "Case Study nicht gefunden.",
+    "mediaTitle": "Media",
+    "desktopLabel": "Desktop",
+    "mobileLabel": "Mobile",
+    "mobilePlaceholder": "Temporärer Placeholder für die mobile Version. Eine eigene Mobile Preview wird später hier ergänzt.",
+    "aboutBrandTitle": "Über die Marke",
+    "readMore": "Mehr lesen",
+    "challengeTitle": "Ausgangslage",
+    "scopeTitle": "Leistungsumfang",
+    "solutionTitle": "Lösung",
+    "stackTitle": "Stack & Fähigkeiten",
+    "outcomeTitle": "Ergebnis",
+    "screenshotTitle": "Projekt-Highlights",
+    "moreProjectsTitle": "Weitere Shopify Projekte",
+    "moreProjectsSubtitle": "Ein breiterer Ausschnitt meiner Shopify Arbeit: Migrationen, CRO, Support, Custom Sections und Storefront-Verbesserungen."
+  },
+  "experience": {
+    "eyebrow": "Timeline",
+    "title": "Erfahrung",
+    "subtitle": "Arbeit, Lernen und Praktikum, die meinen Shopify-Weg prägen.",
+    "placeholderLabel": "Platzhalter-Logo",
+    "stats": {
+      "timeline": "Aktive Timeline-Eintrage",
+      "since": "Lernen und Bauen seit"
+    },
+    "items": [
+      {
+        "kind": "Praktikum",
+        "role": "Frontend Developer",
+        "company": "Funduino GmbH",
+        "dateRange": "Februar 2026 - Heute",
+        "location": "Nordhorn, Deutschland",
+        "summary": "Ein laufendes Praktikum als Frontend Developer bei einer Arduino-orientierten Lernplattform und Education-Marke, mit Fokus auf Interface- und Storefront-Arbeit im echten Unternehmensalltag.",
+        "logo": "/source/logos/funduino.jpg",
+        "logoAlt": "Funduino GmbH Logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Ausbildung",
+        "role": "Student",
+        "company": "KBS Nordhorn",
+        "dateRange": "2024 - Heute",
+        "location": "Nordhorn, Deutschland",
+        "summary": "Seit 2024 Schuler an den Kaufmannischen Berufsbildenden Schulen Nordhorn und parallel dazu technisches sowie berufliches Fundament durch echte Shopify-Projektarbeit vertieft.",
+        "logo": "/source/logos/kbs-nordhorn.png",
+        "logoAlt": "KBS Nordhorn Logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Arbeit",
+        "role": "Shopify Developer",
+        "company": "Collab IT",
+        "dateRange": "Mai 2025 - November 2025",
+        "location": "Remote",
+        "summary": "Arbeit als Shopify Developer an Kundenprojekten und Storefront-Umsetzung. Da die öffentliche Firmenpräsenz derzeit sehr begrenzt ist, bleibt der Portfolio-Text bewusst sachlich und zurückhaltend.",
+        "logo": "/source/logos/collab-it.png",
+        "logoAlt": "Collab IT Logo",
+        "isPlaceholderLogo": false
+      },
+      {
+        "kind": "Arbeit",
+        "role": "Shopify Developer",
+        "company": "Great Dev",
+        "dateRange": "Dezember 2024 - April 2025",
+        "location": "Remote",
+        "summary": "Shopify-Entwicklung im Team, bevor die Unternehmenswebsite nicht mehr erreichbar war. Der Eintrag bleibt bewusst knapp, bis wieder eine offizielle Logo-Quelle verfugbar ist.",
+        "logo": "/source/logos/great-dev.png",
+        "logoAlt": "Great Dev Logo",
+        "isPlaceholderLogo": false
+      }
+    ]
+  },
+  "works": {
+    "eyebrow": "Projektkatalog",
+    "title": "Weitere Arbeiten",
+    "subtitle": "Ein breiterer Mix aus Shopify-Launches, Custom Builds und Storefront-Verbesserungen.",
+    "allWorksTitle": "Alle Shopify Projekte",
+    "allWorksSubtitle": "Ein vollständiger Katalog meiner Shopify Arbeit: Custom Builds, Migrationen, Storefront-Verbesserungen, Merchandising-Logik, mehrsprachige Setups und laufender Support.",
+    "loadMore": "Mehr ansehen",
+    "visitWebsite": "Website besuchen",
+    "viewCase": "Case Study ansehen",
+    "backHome": "Zurück zur Startseite",
+    "contactCard": {
+      "title": "Ihr Projekt hier",
+      "text": "Haben Sie ein Projekt im Kopf? Lassen Sie uns zusammenarbeiten, um eine atemberaubende Website zu erstellen, die Ihrem Unternehmen hilft, online zu wachsen.",
+      "button": "Kontaktieren Sie mich"
+    }
+  },
+  "upworkReviews": {
+    "eyebrow": "Upwork",
+    "title": "Upwork Bewertungen",
+    "subtitle": "Ein stärkerer Ausschnitt aus der Upwork-Historie hinter dem Portfolio: Migrationen, Performance-Arbeit, Checkout-Aufgaben, Bug Fixing und finales Launch-Polishing.",
+    "aiLabel": "AI Overview",
+    "workHistoryLabel": "Work history on Upwork",
+    "overviewTitle": "Wie Upwork mich beschreibt",
+    "overviewText": "Ein erfahrener Shopify Developer und Liquid Expert mit Fokus auf Custom Theme Development und Performance-Optimierung. Zu den abgeschlossenen Projekten gehören zum Beispiel PetalJet, wo technisches Refactoring SEO und Ladegeschwindigkeit verbessert hat, sowie MagicScent, wo ich eine 'Build Your Bundle'-Funktion umgesetzt habe, die den durchschnittlichen Bestellwert erhöht hat. Ich arbeite sicher mit Shopify 2.0, tiefgehender Anpassung, Bug Fixing und technisch spezifischer Storefront-Arbeit.",
+    "ratingLabel": "Bewertung",
+    "openProfile": "Upwork-Profil öffnen",
+    "currentHighlightLabel": "Aktuelles Projekt",
+    "currentHighlight": {
+      "title": "Performance optimization of Shopify site LINEARGENT.com",
+      "timeframe": "10. Nov. 2025 - Heute",
+      "status": "Laufend",
+      "feedback": "\"Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.\""
+    },
+    "metrics": {
+      "items": [
+        {
+          "label": "Abgeschlossene Jobs",
+          "count": 25
+        },
+        {
+          "label": "Laufend",
+          "count": 11
+        },
+        {
+          "label": "Offentliche 5-Sterne-Bewertungen",
+          "count": 5
+        },
+        {
+          "label": "Starke Shopify-Falle",
+          "count": 5
+        }
+      ]
+    },
+    "insights": {
+      "title": "Einblicke aus abgeschlossenen Projekten",
+      "subtitle": "Signale aus abgeschlossenen Upwork-Projekten. Das sind die Eigenschaften, die Kunden im Feedback am häufigsten genannt haben.",
+      "items": [
+        {
+          "label": "Qualitätsorientiert",
+          "count": 10
+        },
+        {
+          "label": "Klare Kommunikation",
+          "count": 8
+        },
+        {
+          "label": "Kollaborativ",
+          "count": 5
+        },
+        {
+          "label": "Detailorientiert",
+          "count": 4
+        },
+        {
+          "label": "Lösungsorientiert",
+          "count": 4
+        },
+        {
+          "label": "Zuverlässig",
+          "count": 3
+        },
+        {
+          "label": "Verantwortlich für Ergebnisse",
+          "count": 2
+        },
+        {
+          "label": "Professionell",
+          "count": 2
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "title": "Shopify-Experte für einige finale Anpassungen und Mobile UI gesucht",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "20. Sep. 2025 - 29. Okt. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Kiril hat in meinem Shopify-Store einen super Job gemacht. Sehr kompetent, schnell und angenehm in der Kommunikation. Er hat genau verstanden, was ich wollte, und über meine Erwartungen hinaus geliefert. Klare Empfehlung.\""
+      },
+      {
+        "title": "Shopify Developer gesucht, um technische Fehler auf der Website zu beheben",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "22. Okt. 2025 - 23. Okt. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Perfekte Arbeit von Kiril - sehr empfehlenswert. Er hat kritische technische Probleme auf unserer Shopify-Website mit dem Rise-Theme hervorragend gelöst. 404-URL-Fehler, Sprachumschaltung und weitere technische Probleme hat er schnell behoben.\""
+      },
+      {
+        "title": "Shopify Developer gesucht - sauberer Embedded Checkout (WHOP x Shopify)",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "1. Jan. 2026 - 3. Jan. 2026",
+        "contractType": "Festpreis",
+        "feedback": "\"Die Zusammenarbeit mit Kiril war wirklich sehr gut! Er kommuniziert klar und präzise, nimmt Unklarheiten heraus und hält Ziele sowie nächste Schritte sauber auf Kurs.\""
+      },
+      {
+        "title": "Shopify-Store-Update von Prestige 4 auf 10-11 und weitere Verbesserungen",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "10. Nov. 2025 - 21. Nov. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Die Zusammenarbeit mit Kiril war sehr gut. Die Kommunikation war klar und pünktlich, und alle Aufgaben wurden zuverlässig erledigt. Ich bin mit dem Ergebnis vollständig zufrieden und würde jederzeit wieder mit ihm arbeiten.\""
+      },
+      {
+        "title": "Experte für Shopify-2.0-Migration und Speed-Optimierung (Ukrainian Developers)",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "10. Nov. 2025 - 6. Feb. 2026",
+        "contractType": "Festpreis",
+        "feedback": "\"Danke, Kiril war bei unserer Migration auf Shopify 2 sehr hilfreich und hat eine Reihe manuell programmierter Lösungen umgesetzt.\""
+      },
+      {
+        "title": "Finales Polishing für Shopify-Site und Landingpage (einmaliges Projekt)",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "4. Dez. 2025 - 15. Dez. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Kiril hat bei mehreren Shopify-Setup- und Technikaufgaben unterstützt. Wir haben das Projekt pausiert, während wir die Gesamtrichtung der Website neu bewertet haben.\""
+      },
+      {
+        "title": "Shopify Redesign + technische Migration + SEO / Growth-Marketing-Setup - nur Agentur aus US/Europa",
+        "rating": 4,
+        "ratingLabel": "Bewertung ist 4,0 von 5.",
+        "timeframe": "9. Dez. 2025 - 8. Mar. 2026",
+        "contractType": "Festpreis",
+        "feedback": "\"Hallo Kiril, ich schätze die Arbeit, die du hier hineingesteckt hast. Danke für deine Hilfe beim Shopify-Store-Relaunch und für deine Flexibilität, als sich der Projektumfang verändert hat. Viel Erfolg bei deinen weiteren Projekten!\""
+      },
+      {
+        "title": "Shopify Developer - smarte Auto-Add-Gift-Logik (EUR75 ausgeben, Produkt gratis erhalten)",
+        "rating": 4,
+        "ratingLabel": "Bewertung ist 4,0 von 5.",
+        "timeframe": "29. Okt. 2025 - 2. Nov. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Antwortet schnell und macht gute Arbeit.\""
+      },
+      {
+        "title": "Übersetzungs- und Fehleranpassungen",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "30. Okt. 2025 - 31. Okt. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Genauso großartig wie beim letzten Mal. Schnell, termintreu, perfekt. Danke, Bro.\""
+      },
+      {
+        "title": "Suche nach einem Shopify Developer (kleine einmalige Aufgabe)",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "27. Okt. 2025 - 28. Okt. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Kiril hat großartige Arbeit geleistet! Er hat die Anforderungen schnell verstanden, alles genau wie im Loom-Video umgesetzt und schnelle, saubere Ergebnisse geliefert. Ausgezeichnete Kommunikation und professionelle Arbeit.\""
+      },
+      {
+        "title": "Performance-Optimierung der Shopify-Website LINEARGENT.com",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "10. Nov. 2025 - Heute",
+        "contractType": "Laufend",
+        "feedback": "\"Kiril ist ein guter Profi, arbeitet effizient, löst Probleme und liefert präzise, saubere Arbeit pünktlich ab.\""
+      },
+      {
+        "title": "Shopify Bug",
+        "rating": 5,
+        "ratingLabel": "Bewertung ist 5,0 von 5.",
+        "timeframe": "4. Nov. 2025 - 5. Nov. 2025",
+        "contractType": "Festpreis",
+        "feedback": "\"Mit Kiril arbeitet es sich sehr gut. Schnelle Kommunikation, gute Umsetzung, saubere Arbeit.\""
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "topRated": "Top Rated auf Upwork",
+    "subtitle": "Lassen Sie uns über Ihr Shopify Projekt sprechen",
+    "email": "karatitsynkiril@gmail.com",
+    "note": "Schicken Sie Ihren Store-Link und eine kurze Aufgabenbeschreibung, dann klären wir den Rest gemeinsam.",
+    "topRatedNote": "Arbeiten Sie mit einem Top Rated Upwork-Freelancer, der für klare Kommunikation, verlässliche Umsetzung und Shopify-Arbeit steht, die auch nach dem Launch stabil bleibt.",
+    "audit": "Kostenloser Store Audit und Projekterstgespräch",
+    "book_call": "Termin vereinbaren",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "preferMessage": "Bevorzugen Sie eine direkte Nachricht?",
+    "sendMessage": "Nachricht senden"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Gedanken zur Schaffung hochperformanter Online-Erlebnisse.",
+    "readMore": "Weiterlesen",
+    "backToList": "Zurück zu allen Artikeln",
+    "notFound": "Artikel nicht gefunden.",
+    "featuredTitle": "Ausgewählte Einblicke",
+    "featuredSubtitle": "Frische Erkenntnisse aus aktuellen Projekten und Launches.",
+    "viewAll": "Alle anzeigen",
+    "estimatedRead": "{{time}} Lesezeit"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "Welche Shopify Arbeit übernehmen Sie normalerweise?",
+        "answer": "Die meisten Projekte fallen in vier Kategorien: Custom Theme Arbeit, Online-Store-2.0-Migrationen, Feature-Entwicklung im Storefront und laufender Support nach dem Launch."
+      },
+      {
+        "question": "Können Sie in einem bestehenden Shopify Store arbeiten?",
+        "answer": "Ja. Ich arbeite regelmäßig in Live Stores und verbessere Sections, Produktseiten, Cart-Verhalten, Filtering, Integrationen, Geschwindigkeit und Launch-Readiness."
+      },
+      {
+        "question": "Übernehmen Sie Migrationen auf Shopify Online Store 2.0?",
+        "answer": "Ja. Ich unterstütze bei der Umstellung von Legacy Setups auf OS 2.0, sichere Content-Struktur, baue individuelle Logik neu auf und reduziere Launch-Risiken."
+      },
+      {
+        "question": "Können Sie auch nach dem Launch unterstützen?",
+        "answer": "Ja. Viele Kunden behalten mich nach dem Launch für Fixes, Experimente, SEO- und Speed-Verbesserungen, neue Sections und laufende Storefront-Entwicklung an Bord."
+      },
+      {
+        "question": "Wie starten wir am besten?",
+        "answer": "Schicken Sie den Store-Link, die Aufgabe und eventuelle Deadlines oder Einschränkungen. Danach kann ich den sinnvollsten nächsten Schritt vorschlagen: Audit, kleiner Sprint oder größere Umsetzung."
+      },
+      {
+        "question": "Arbeiten Sie mit Designern oder bestehenden Spezifikationen?",
+        "answer": "Ja. Ich kann auf Basis von Figma, Loom-Videos, schriftlichen Spezifikationen oder einem bestehenden Storefront-Referenzbild umsetzen und helfe auch dabei, unscharfe Anforderungen sauberer zu strukturieren."
+      }
+    ],
+    "book_call": "Termin vereinbaren"
+  },
+  "header": {
+    "services": "Leistungen",
+    "cases": "Case Studies",
+    "experience": "Erfahrung",
+    "upwork": "Upwork",
+    "contact": "Kontakt",
+    "bookCall": "Termin",
+    "about": "Über mich",
+    "works": "Projekte",
+    "blog": "Blog",
+    "resume": "Lebenslauf"
+  },
+  "footer": {
+    "blurb": "Shopify Entwicklung für Marken, die individuelle Lösungen, saubereren UX und verlässlichen Support ohne unnötige Komplexität brauchen.",
+    "follow": "Auch hier",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

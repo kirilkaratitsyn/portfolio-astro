@@ -1,0 +1,11 @@
+---
+import ProjectsView from '../../../views/ProjectsView.astro';
+import { prefixedLocalePaths } from '../../../lib/paths';
+import type { Locale } from '../../../i18n';
+
+export const getStaticPaths = prefixedLocalePaths;
+
+const locale = Astro.params.lang as Locale;
+---
+
+<ProjectsView locale={locale} />
