@@ -3,7 +3,20 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/work", "destination": "/projects", "type": 301 },
-    { "source": "/work/:slug", "destination": "/projects/:slug", "type": 301 }
+    {
+      "source": "/work",
+      "destination": "/projects",
+      "type": 301
+    },
+    {
+      "source": "/work/:slug",
+      "destination": "/projects/:slug",
+      "type": 301
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "type": 301
+    }
   ]
 }

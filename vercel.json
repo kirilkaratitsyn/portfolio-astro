@@ -2,7 +2,20 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/work", "destination": "/projects", "permanent": true },
-    { "source": "/work/:slug", "destination": "/projects/:slug", "permanent": true }
+    {
+      "source": "/work",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/work/:slug",
+      "destination": "/projects/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
+    }
   ]
 }
