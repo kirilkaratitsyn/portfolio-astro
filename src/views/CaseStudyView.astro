@@ -22,7 +22,9 @@ const seo = {
   title: locale === DEFAULT_LOCALE ? `${caseStudy.title} Case Study` : `${caseStudy.title} – ${copy.eyebrow}`,
   description: caseStudy.summary,
   type: 'article' as const,
-  image: caseStudy.image,
+  // JPG crop of the desktop screenshot (public/og/projects), WebP isn't read by every social network.
+  image: `/og/projects/${caseStudy.slug}.jpg`,
+  imageSize: { width: 1200, height: 630 },
 };
 ---
 

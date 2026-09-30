@@ -30,22 +30,47 @@ const seo = {
       : t.hero.subtitle,
 };
 
+const SITE_URL = 'https://www.karatitsyn.com/';
+const PERSON_ID = `${SITE_URL}#person`;
+
+// Person + website + the services from the Services section. No rating or review data
+// until there are real published client reviews.
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Kiril Karatitsyn',
-  url: 'https://www.karatitsyn.com/',
-  image: 'https://www.karatitsyn.com/android-chrome-512x512.png',
-  jobTitle: 'Shopify Developer',
-  worksFor: { '@type': 'Organization', name: 'Independent' },
-  sameAs: [
-    'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
-    'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
-    'https://github.com/kirilkaratitsyn',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      name: 'Kiril Karatitsyn',
+      url: SITE_URL,
+      image: `${SITE_URL}og-image.jpg`,
+      jobTitle: 'Shopify Developer',
+      worksFor: { '@type': 'Organization', name: 'Independent' },
+      sameAs: [
+        'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
+        'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
+        'https://github.com/kirilkaratitsyn',
+      ],
+      knowsAbout: ['Shopify', 'Shopify theme development', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}#website`,
+      name: 'Kiril Karatitsyn',
+      url: SITE_URL,
+      inLanguage: ['en', 'de', 'uk'],
+      publisher: { '@id': PERSON_ID },
+    },
+    ...t.services.items.map((service) => ({
+      '@type': 'Service',
+      name: service.title,
+      description: service.description,
+      serviceType: 'Shopify development',
+      provider: { '@id': PERSON_ID },
+    })),
   ],
-  knowsAbout: ['Shopify', 'Shopify theme development', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
 };
----
+------
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData}>
   <Hero locale={locale} />
