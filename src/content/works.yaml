@@ -1,12 +1,3 @@
-- id: reviewcore
-  order: 1
-  title: ReviewCore
-  url: https://apps.shopify.com/reviews-core
-  image: /source/desktop/reviewcore-desktop.png
-  tech:
-    en: Built a headless Shopify reviews backend app. Merchants design the review UI in their own storefront while the app handles storage, moderation, organization, CSV imports, and lightweight review delivery without heavy scripts.
-    de: Entwicklung einer headless Shopify Reviews Backend App. Merchants gestalten die Review UI im eigenen Storefront, während die App Storage, Moderation, Organisation, CSV-Importe und leichte Review-Ausgabe ohne schwere Scripts übernimmt.
-    uk: Створив headless Shopify reviews backend app. Merchant сам дизайнить review UI у storefront, а app відповідає за storage, moderation, organization, CSV import і легку доставку reviews без важких scripts.
 - id: marinepatches
   order: 2
   title: MarinePatches
