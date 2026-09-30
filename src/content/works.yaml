@@ -103,15 +103,6 @@
     en: Built advanced Mystery Gift and Free Gift logic that works without page reloads. Integrated it seamlessly into the storefront design for a smooth experience, including rules, cart behavior, and edge case handling.
     de: Advanced Mystery-Gift- und Free-Gift-Logik ohne Page Reloads gebaut. Nahtlos ins Storefront-Design integriert — inklusive Regeln, Cart-Verhalten und Edge-Case-Handling.
     uk: "Реалізував складну логіку Mystery Gift і Free Gift без перезавантаження сторінки. Акуратно інтегрував у дизайн storefront: правила, поведінка кошика та обробка edge cases."
-- id: pair-stich
-  order: 13
-  title: Pair Stich
-  url: https://pairstitch.pl/
-  image: /source/desktop/pair-stich-desktop.webp
-  tech:
-    en: Implemented a custom color selector that dynamically changes based on clothing type and bypasses the 100 variant limit.
-    de: Implementierung eines benutzerdefinierten Farbwählers, der sich dynamisch basierend auf Kleidungstyp ändert und die 100-Varianten-Grenze umgeht.
-    uk: Реалізовано кастомний селектор кольорів, який динамічно змінюється за типом одягу та обходить ліміт у 100 варіантів.
 - id: haftx
   order: 14
   title: Haftx
