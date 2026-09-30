@@ -25,6 +25,9 @@
       "Maestro"
     ]
   },
+  "clients": {
+    "label": "Ausgewählte Shopify-Stores, an denen ich gearbeitet habe"
+  },
   "about": {
     "eyebrow": "Warum Shopify Teams mit mir arbeiten",
     "title": "Ein Shopify Partner für wachsende Marken",
@@ -147,6 +150,29 @@
         "logo": "/source/logos/great-dev.png",
         "logoAlt": "Great Dev Logo",
         "isPlaceholderLogo": false
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Ablauf",
+    "title": "So arbeiten wir zusammen",
+    "subtitle": "Ein einfacher, planbarer Ablauf von der ersten Nachricht bis zum Launch und darüber hinaus.",
+    "steps": [
+      {
+        "title": "Aufgabe beschreiben",
+        "text": "Schicken Sie mir den Link zu Ihrem Store und eine kurze Beschreibung oder buchen Sie einen Call. Stichpunkte, ein Loom-Video oder eine Figma-Datei reichen für den Start."
+      },
+      {
+        "title": "Klare Einschätzung erhalten",
+        "text": "Ich prüfe den Store und schicke Ihnen Umfang, Zeitplan und Preis, bevor die Arbeit beginnt."
+      },
+      {
+        "title": "Umsetzung im Vorschau-Theme",
+        "text": "Änderungen entstehen in einer unveröffentlichten Kopie Ihres Themes. Der Live-Store verkauft weiter, während Sie alles über einen Vorschau-Link prüfen."
+      },
+      {
+        "title": "Launch und Support",
+        "text": "Nach Ihrer Freigabe veröffentliche ich die Änderungen, prüfe die wichtigsten Customer Journeys und bleibe für Fixes und weitere Verbesserungen erreichbar."
       }
     ]
   },

@@ -1,0 +1,54 @@
+---
+import CalButton from '../components/CalButton.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+---
+
+<section id="faq" class="bg-[#0E0E0E]">
+  <div class="faq__container pt-10 md:pt-20" data-aos="fade-up">
+    <h2 class="mb-8 text-[37px] font-bold primary-gradient primary-shadow">{t.faq.title}</h2>
+    <div class="items md:grid grid-cols-2 gap-x-[50px]" data-faq-list>
+      {
+        t.faq.questions.map((faq) => (
+          <div class="item mb-[40px] px-[20px] py-[15px] backdrop-blur-md bg-white/5 border border-white/10 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/10">
+            <h3 class="text-[20px] mb-[24px] font-semibold">{faq.question}</h3>
+            <p class="opacity-80">{faq.answer}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex justify-center items-center">
+      <CalButton class="transition-all duration-500 whitespace-nowrap  font-medium  mt-10 bg-white text-black light-shadow px-12 py-3 text-lg rounded-full">
+        <span>{t.faq.book_call}</span>
+      </CalButton>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const list = document.querySelector<HTMLElement>('[data-faq-list]');
+  if (list) {
+    gsap.fromTo(
+      list.querySelectorAll('.item'),
+      { x: -30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.15,
+        duration: 0.7,
+        ease: 'back.out(1.2)',
+        scrollTrigger: { trigger: list, start: 'top 75%', toggleActions: 'play none none none' },
+      }
+    );
+  }
+</script>

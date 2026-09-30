@@ -1,0 +1,53 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+import type { WorkProject } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  works: WorkProject[];
+}
+
+// Brands from the project catalog (works.yaml ids), each linking to its live store.
+const CLIENT_IDS = [
+  'juniors-cheesecake',
+  'lerros',
+  'spring-mountain-vineyard',
+  'bazar-bizar',
+  'indian-affairs',
+  'petaljet',
+  'elanora-skin',
+  'silk-tallow',
+];
+
+const { locale, works } = Astro.props;
+const t = useTranslations(locale);
+const clients = CLIENT_IDS.map((id) => {
+  const work = works.find((item) => item.id === id);
+  if (!work) throw new Error(`ClientStrip: "${id}" is not in works.yaml`);
+  return work;
+});
+---
+
+<section class="border-b border-white/10 bg-[#0E0E0E]" aria-labelledby="clients-label">
+  <div class="mx-auto max-w-[1440px] px-5 py-8 md:py-10" data-aos="fade-up">
+    <p id="clients-label" class="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-white/50">
+      {t.clients.label}
+    </p>
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
+      {
+        clients.map((client) => (
+          <li>
+            <a
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-['e-UkraineHead'] text-lg font-semibold text-white/55 transition hover:text-white"
+            >
+              {client.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

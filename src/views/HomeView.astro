@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../sections/Hero.astro';
+import ClientStrip from '../sections/ClientStrip.astro';
 import AboutMe from '../sections/AboutMe.astro';
 import Services from '../sections/Services.astro';
 import FeaturedCaseStudies from '../sections/FeaturedCaseStudies.astro';
 import Works from '../sections/Works.astro';
 import Experience from '../sections/Experience.astro';
+import Process from '../sections/Process.astro';
+import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
 import { DEFAULT_LOCALE, useTranslations, type Locale } from '../i18n';
 import { getCaseStudies, getWorks } from '../lib/content';
@@ -46,10 +49,13 @@ const structuredData = {
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData}>
   <Hero locale={locale} />
+  <ClientStrip locale={locale} works={works} />
   <AboutMe locale={locale} />
   <Services locale={locale} />
   <FeaturedCaseStudies locale={locale} caseStudies={caseStudies} />
   <Works locale={locale} works={works} caseStudies={caseStudies} />
   <Experience locale={locale} />
+  <Process locale={locale} />
+  <FAQ locale={locale} />
   <Contact locale={locale} />
 </BaseLayout>

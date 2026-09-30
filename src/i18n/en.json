@@ -25,6 +25,9 @@
       "Maestro"
     ]
   },
+  "clients": {
+    "label": "Selected Shopify stores I've worked on"
+  },
   "about": {
     "eyebrow": "Why Shopify Teams Hire Me",
     "title": "A Shopify partner for growth-minded brands",
@@ -147,6 +150,29 @@
         "logo": "/source/logos/great-dev.png",
         "logoAlt": "Great Dev logo",
         "isPlaceholderLogo": false
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we work together",
+    "subtitle": "A simple, predictable process from the first message to launch and beyond.",
+    "steps": [
+      {
+        "title": "Tell me about the task",
+        "text": "Send your store link and a short description, or book a call. Rough notes, a Loom video or a Figma file are all fine to start."
+      },
+      {
+        "title": "Get a clear estimate",
+        "text": "I review the store and come back with scope, timeline and price before any work starts."
+      },
+      {
+        "title": "Build on a preview theme",
+        "text": "Changes are built on an unpublished copy of your theme, so the live store keeps selling while you review everything through a preview link."
+      },
+      {
+        "title": "Launch and support",
+        "text": "After your approval I publish, check the key customer journeys, and stay available for fixes and next improvements."
       }
     ]
   },
