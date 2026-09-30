@@ -14,6 +14,8 @@ const projects = defineCollection({
     image: z.string(),
     mobileImage: z.string().optional(),
     liveUrl: z.url(),
+    /** The store has closed: keep the case study, hide links to the store. */
+    archived: z.boolean().optional(),
     tags: z.array(z.string()),
     challenge: z.string(),
     scope: z.array(z.string()),
@@ -33,6 +35,7 @@ const works = defineCollection({
     url: z.url(),
     image: z.string(),
     caseStudySlug: z.string().optional(),
+    archived: z.boolean().optional(),
     tech: z.object({ en: z.string(), de: z.string(), uk: z.string() }),
   }),
 });

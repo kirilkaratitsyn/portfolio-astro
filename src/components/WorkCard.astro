@@ -17,6 +17,8 @@ interface Props {
 const { locale, work, caseStudy, viewCaseLabel, visitWebsiteLabel, tilt = false, hidden = false } = Astro.props;
 const t = useTranslations(locale);
 const caseHref = work.caseStudySlug ? localizePath(locale, `/projects/${work.caseStudySlug}`) : undefined;
+// Closed stores: the screenshot links to the case study instead of the dead store.
+const imageLink = work.archived && caseHref ? { href: caseHref } : { href: work.url, target: '_blank', rel: 'noopener noreferrer' };
 ---
 
 <div
@@ -29,9 +31,7 @@ const caseHref = work.caseStudySlug ? localizePath(locale, `/projects/${work.cas
   data-more-item={hidden ? '' : undefined}
 >
   <a
-    href={work.url}
-    target="_blank"
-    rel="noopener noreferrer"
+    {...imageLink}
     class="block h-[255px] w-[-webkit-fill-available] overflow-hidden rounded-lg"
   >
     <img

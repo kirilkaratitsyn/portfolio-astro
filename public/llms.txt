@@ -21,7 +21,7 @@ Important notes:
 - [Elanora Skin](https://www.karatitsyn.com/projects/elanora-skin): Storefront work focused on UX and presentation.
 - [Petaljet](https://www.karatitsyn.com/projects/petaljet): Ongoing Shopify support and technical improvement work.
 - [Nimfa](https://www.karatitsyn.com/projects/nimfa): Figma to custom Shopify theme implementation.
-- [Indian Affairs](https://www.karatitsyn.com/projects/indian-affairs): Custom Shopify storefront project.
+- [Indian Affairs](https://www.karatitsyn.com/projects/indian-affairs): Online Store 2.0 migration (archived case study; the store has since closed).
 - [Silk Tallow](https://www.karatitsyn.com/projects/silk-tallow): Shopify case study with brand-focused storefront execution.
 
 ## Blog Posts

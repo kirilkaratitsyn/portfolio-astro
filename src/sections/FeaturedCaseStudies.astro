@@ -105,14 +105,16 @@ const caseHref = (slug: string) => localizePath(locale, `/projects/${slug}`);
                 >
                   {copy.viewCase}
                 </a>
-                <a
-                  href={item.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-white/10"
-                >
-                  {copy.visitStore}
-                </a>
+                {!item.archived && (
+                  <a
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-white/10"
+                  >
+                    {copy.visitStore}
+                  </a>
+                )}
               </div>
             </div>
           </article>

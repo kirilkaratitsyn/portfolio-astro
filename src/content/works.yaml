@@ -89,6 +89,7 @@
   url: https://indianaffairs.de/
   image: /source/desktop/indian-affairs-desktop.webp
   caseStudySlug: indian-affairs
+  archived: true
   tech:
     en: Migrated the store from a legacy theme to Shopify Online Store 2.0 (Prestige). I transferred all content, rebuilt custom functionality, implemented client requirements from the spec, and aligned styling and UX across the site.
     de: Migration vom Legacy-Theme auf Shopify Online Store 2.0 (Prestige). Ich habe Inhalte übertragen, Custom-Funktionalität neu aufgebaut, Anforderungen aus der Spezifikation umgesetzt und Styling sowie UX über die gesamte Site hinweg vereinheitlicht.

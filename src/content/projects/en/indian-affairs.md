@@ -7,6 +7,7 @@ brandDescription: Indian Affairs offers clothing and accessories across kidswear
 image: /source/desktop/indian-affairs-desktop.webp
 mobileImage: /source/mobile/indian-affairs-mobile.webp
 liveUrl: https://indianaffairs.de/
+archived: true
 tags:
   - Migration
   - Online Store 2.0

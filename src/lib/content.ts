@@ -13,6 +13,7 @@ export type WorkProject = {
   image: string;
   tech: string;
   caseStudySlug?: string;
+  archived?: boolean;
 };
 
 export type BlogPost = CollectionEntry<'blog'>['data'] & {
@@ -40,6 +41,7 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
       image: data.image,
       tech: data.tech[locale],
       caseStudySlug: data.caseStudySlug,
+      archived: data.archived,
     }));
 }
 

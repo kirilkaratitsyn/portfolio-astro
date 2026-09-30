@@ -7,6 +7,7 @@ brandDescription: Indian Affairs пропонує одяг та аксесуар
 image: /source/desktop/indian-affairs-desktop.webp
 mobileImage: /source/mobile/indian-affairs-mobile.webp
 liveUrl: https://indianaffairs.de/
+archived: true
 tags:
   - Міграція
   - Online Store 2.0

@@ -61,14 +61,20 @@ const seo = {
           <ul class=" text-base leading-relaxed text-white/75">
             {caseStudy.outcome.map((item) => <li>{item}</li>)}
           </ul>
-          <a
-            href={caseStudy.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium uppercase tracking-wide text-black transition hover:bg-white/90"
-          >
-            {copy.visitStore}
-          </a>
+          {
+            caseStudy.archived ? (
+              <p class="mt-6 border-t border-white/10 pt-4 text-sm leading-relaxed text-white/55">{copy.archivedNote}</p>
+            ) : (
+              <a
+                href={caseStudy.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium uppercase tracking-wide text-black transition hover:bg-white/90"
+              >
+                {copy.visitStore}
+              </a>
+            )
+          }
         </div>
       </header>
 
