@@ -18,11 +18,11 @@ const max = Math.max(...t.upworkReviews.insights.items.map((item) => item.count)
 ---
 
 <section class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-32 md:px-10">
-  <h2 class="pb-8 font-head text-[40px] font-bold tracking-[-0.02em] md:pb-10 md:text-[56px]">{t.reviews.title}</h2>
+  <h2 data-split class="pb-8 font-head text-[40px] font-bold tracking-[-0.02em] md:pb-10 md:text-[56px]">{t.reviews.title}</h2>
 
   <div class="grid gap-12 md:grid-cols-[1fr_minmax(0,470px)] md:gap-16">
     <figure>
-      <blockquote lang="en" class="font-head text-[28px] font-medium leading-[1.15] tracking-[-0.02em] md:text-[44px] md:leading-[1.12]">
+      <blockquote data-quote lang="en" class="font-head text-[28px] font-medium leading-[1.15] tracking-[-0.02em] md:text-[44px] md:leading-[1.12]">
         “{highlight ? <>{lead}<em class="not-italic text-blue">Very skilled, fast, and easy to communicate with.</em>{rest.join('')}</> : featuredText}”
       </blockquote>
       <figcaption class="mt-6 text-[15px] text-mute">
@@ -37,7 +37,7 @@ const max = Math.max(...t.upworkReviews.insights.items.map((item) => item.count)
       <ul class="grid gap-[30px]">
         {
           t.upworkReviews.insights.items.map((item, index) => (
-            <li class="grid grid-cols-[minmax(0,150px)_1fr_28px] items-center gap-3.5 text-[15px] -my-[15px] py-[15px]">
+            <li data-bar-row class="grid grid-cols-[minmax(0,150px)_1fr_28px] items-center gap-3.5 text-[15px] -my-[15px] py-[15px]">
               <span>{item.label}</span>
               <span class="relative block h-4 rounded-[3px] bg-[#dfe2f0]" role="img" aria-label={`${item.count}`}>
                 <i class:list={['absolute inset-y-0 left-0 rounded-[3px]', index === 0 ? 'bg-blue' : 'bg-ink']} style={`width:${(item.count / max) * 100}%`} />
@@ -53,7 +53,7 @@ const max = Math.max(...t.upworkReviews.insights.items.map((item) => item.count)
   <div class="mt-14 grid gap-10 md:mt-[70px] md:grid-cols-2 md:gap-16">
     {
       small.map((review, index) => (
-        <figure>
+        <figure data-reveal>
           <blockquote lang="en" class="text-lg font-medium leading-[1.4] md:text-[22px]">“{clean(review.feedback)}”</blockquote>
           <figcaption class="mt-4 text-[15px] text-mute">
             <b class="font-semibold text-ink" aria-label="5 out of 5 stars">★★★★★ 5.0</b> &nbsp;{t.reviews.items[index + 1]}

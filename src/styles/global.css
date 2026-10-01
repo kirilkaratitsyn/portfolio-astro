@@ -13,14 +13,24 @@
 @font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Medium.woff2') format('woff2'); font-weight: 500; }
 @font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Bold.woff2') format('woff2'); font-weight: 700; }
 
+/* Until the web fonts arrive the text is set in Arial stretched to the same width, so nothing reflows when they do
+   (ratios measured: real font width / Arial width over a sample of the site's text). */
+@font-face { font-family: 'e-UkraineHead Fallback'; src: local('Arial'); font-weight: 500; size-adjust: 125.5%; }
+@font-face { font-family: 'e-UkraineHead Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 700; size-adjust: 117.3%; }
+@font-face { font-family: 'Onest Fallback'; src: local('Arial'); font-weight: 400; size-adjust: 105.9%; }
+@font-face { font-family: 'Onest Fallback'; src: local('Arial'); font-weight: 500; size-adjust: 106.9%; }
+@font-face { font-family: 'Onest Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 700; size-adjust: 101.3%; }
+
 html { scroll-behavior: smooth; }
+/* Live 3D canvases are a little larger than their pebbles; never let them make the page scroll sideways. */
+html, body { overflow-x: clip; }
 body {
   background: #EDEFF6;
   color: #0E1018;
-  font-family: 'Onest', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Onest', 'Onest Fallback', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'Onest', 'Helvetica Neue', Arial, sans-serif; text-wrap: balance; }
+h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', Arial, sans-serif; text-wrap: balance; }
 
 /* Keyboard focus from the brand book: 2px ink outline, 2px offset. */
 :focus-visible { outline: 2px solid #0E1018; outline-offset: 2px; }
@@ -30,7 +40,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'Onest', 'Helvetica Neue', Arial,
 .wm-wrap { container-type: inline-size; }
 .wm {
   display: block;
-  font-family: 'e-UkraineHead', 'Onest', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   font-size: 14.4cqi;
   line-height: 0.82;
@@ -50,6 +60,25 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'Onest', 'Helvetica Neue', Arial,
 .motion .hw-i { animation: rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.35s + var(--i) * 0.07s); }
 .motion .hero-cta { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }
 .motion .hero-ribbon { animation: wipe 1.7s cubic-bezier(0.65, 0, 0.2, 1) 0.5s both; }
+
+/* Scroll reveals: hidden start states exist only under `.motion` (set in <head>, removed again if the scripts never start). */
+.motion [data-reveal], .motion [data-stagger] > * { opacity: 0; }
+.motion [data-split] { visibility: hidden; }
+.motion .intro-lift { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.wm-ch { will-change: transform; }
+
+/* Larger screenshot that follows the cursor over a work row (scripts/motion.ts). */
+.peek {
+  position: fixed; left: 0; top: 0; z-index: 30; width: 340px; aspect-ratio: 1000 / 694;
+  overflow: hidden; border-radius: 14px; pointer-events: none; background: #fff;
+  box-shadow: 0 30px 60px rgba(14, 16, 24, 0.28); will-change: transform;
+}
+.peek img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
 
 /* Cursor while the pointer is over a stone you can grab (scripts/stage.ts). */
 html.is-grab, html.is-grab * { cursor: grab !important; }

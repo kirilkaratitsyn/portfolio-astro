@@ -16,7 +16,7 @@ const t = useTranslations(locale);
   <ul class="border-t border-line">
     {
       caseStudies.slice(0, 5).map((item) => (
-        <li class="border-b border-line">
+        <li class="border-b border-line" data-row>
           <ProjectRow href={localizePath(locale, `/projects/${item.slug}`)} title={item.title} image={item.image} mobileImage={item.mobileImage} />
         </li>
       ))

@@ -23,7 +23,7 @@ const languages = SWITCHER_LOCALES.map((item) => ({ ...item, href: localizePath(
 const pill = 'rounded-full bg-white/80 backdrop-blur';
 ---
 
-<header class="pointer-events-none fixed inset-x-0 top-0 z-50">
+<header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">
   <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-5 pt-5 md:px-10 md:pt-6">
     <a href={localizePath(locale, '/')} class={`pointer-events-auto flex items-center gap-2.5 py-2 pl-2.5 pr-4 font-head text-base font-bold ${pill}`}>
       <Image src={markBlack} alt="" width={64} height={72} class="h-[30px] w-auto" loading="eager" />

@@ -25,14 +25,14 @@ const seo = {
 
 <BaseLayout {...seo} path="/projects" locale={locale}>
   <section id="work" class="pt-32 md:pt-44">
-    <h1 class="mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.works.allWorksTitle}</h1>
+    <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.works.allWorksTitle}</h1>
     <ul class="border-t border-line">
       {
         works.map((work) => {
           const caseStudy = work.caseStudySlug ? caseBySlug.get(work.caseStudySlug) : undefined;
           const toCase = Boolean(caseStudy);
           return (
-            <li class="border-b border-line">
+            <li class="border-b border-line" data-row>
               <ProjectRow
                 href={toCase ? localizePath(locale, `/projects/${work.caseStudySlug}`) : work.url}
                 title={work.title}

@@ -11,8 +11,8 @@ export default {
         line: '#d3d7e6',
       },
       fontFamily: {
-        head: ['e-UkraineHead', 'Onest', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        sans: ['Onest', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        head: ['e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Onest', 'Onest Fallback', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
     },
   },

@@ -11,10 +11,10 @@ const t = useTranslations(Astro.props.locale);
 const words = t.hero.claim.split(' ');
 ---
 
-<section class="relative md:h-[860px]">
+<section data-hero class="relative md:h-[860px]">
   <div class="mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
     <!-- The surname is decoration; the h1 below carries the page's meaning. -->
-    <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm">Karatitsyn</span></div>
+    <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
 
     <div class="relative mt-8 md:mt-0">
       <h1 class="max-w-[560px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:absolute md:left-0 md:top-[142px] md:text-[46px]">

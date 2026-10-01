@@ -19,7 +19,7 @@ const { Content } = await render(post.entry);
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/blog')} class="text-sm font-medium text-mute hover:text-ink">← {t.blog.backToList}</a>
     <p class="mt-8 text-sm text-mute">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
-    <h1 class="mt-3 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
+    <h1 class="intro-lift mt-3 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
     <div class="mt-10 max-w-2xl space-y-6 text-lg leading-relaxed md:mt-14 md:text-xl md:leading-relaxed">
       <Content />
     </div>

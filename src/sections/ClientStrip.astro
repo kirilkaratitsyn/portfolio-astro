@@ -32,7 +32,7 @@ const clients = CLIENTS.map((client) => {
 
 <section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20">
   <h2 id="clients-label" class="mb-7 font-sans text-sm font-medium text-mute">{t.clients.label}</h2>
-  <ul class="flex flex-wrap items-center justify-between gap-x-10 gap-y-7">
+  <ul class="flex flex-wrap items-center justify-between gap-x-10 gap-y-7" data-stagger>
     {
       clients.map((client) => (
         <li>

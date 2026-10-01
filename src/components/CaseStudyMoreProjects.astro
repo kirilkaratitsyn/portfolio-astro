@@ -22,7 +22,7 @@ const others = items.filter((item) => item.slug !== currentSlug).slice(0, 3);
       </h2>
       <ul class="border-t border-line">
         {others.map((item) => (
-          <li class="border-b border-line">
+          <li class="border-b border-line" data-row>
             <ProjectRow href={localizePath(locale, `/projects/${item.slug}`)} title={item.title} image={item.image} mobileImage={item.mobileImage} />
           </li>
         ))}
