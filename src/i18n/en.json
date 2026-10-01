@@ -452,16 +452,16 @@
         "label": "Stores shipped"
       },
       {
-        "value": "25",
-        "label": "Jobs completed on Upwork"
+        "value": "48",
+        "label": "Jobs on Upwork"
       },
       {
-        "value": "4.8",
-        "label": "Average rating across 12 Upwork reviews"
+        "value": "601",
+        "label": "Hours worked on Upwork"
       },
       {
-        "value": "15",
-        "label": "Shopify Markets run from one client store"
+        "value": "95%",
+        "label": "Job Success Score, Top Rated on Upwork"
       }
     ]
   },

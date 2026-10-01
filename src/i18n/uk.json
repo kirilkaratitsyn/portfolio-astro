@@ -452,16 +452,16 @@
         "label": "Запущених магазинів"
       },
       {
-        "value": "25",
-        "label": "Завершених робіт на Upwork"
+        "value": "48",
+        "label": "Робіт на Upwork"
       },
       {
-        "value": "4,8",
-        "label": "Середня оцінка з 12 відгуків на Upwork"
+        "value": "601",
+        "label": "Годин роботи на Upwork"
       },
       {
-        "value": "15",
-        "label": "ринків Shopify в одному клієнтському магазині"
+        "value": "95%",
+        "label": "Job Success Score, Top Rated на Upwork"
       }
     ]
   },
