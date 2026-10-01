@@ -1,4 +1,5 @@
 ---
+import ProjectRow from './ProjectRow.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import type { CaseStudy } from '../lib/content';
 
@@ -15,41 +16,17 @@ const others = items.filter((item) => item.slug !== currentSlug).slice(0, 3);
 
 {
   others.length > 0 && (
-    <section class="border-t border-white/10 bg-[#0E0E0E] py-16" aria-labelledby="case-study-more-heading">
-      <div class="blog__container">
-        <div class="mb-10 max-w-3xl space-y-3">
-          <h2 id="case-study-more-heading" class="text-2xl font-bold text-white md:text-3xl">
-            {copy.moreProjectsTitle}
-          </h2>
-          <p class="text-base leading-relaxed text-white/70 md:text-lg">{copy.moreProjectsSubtitle}</p>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          {others.map((item) => (
-            <article class="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-white/20">
-              <a href={localizePath(locale, `/projects/${item.slug}`)} class="block overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  class="h-44 w-full object-cover object-top transition duration-300 group-hover:scale-[1.02] md:h-52"
-                  loading="lazy"
-                />
-              </a>
-              <div class="flex flex-1 flex-col gap-3 p-5">
-                <h3 class="text-lg font-semibold leading-snug text-white">{item.title}</h3>
-                <p class="line-clamp-2 flex-1 text-sm leading-relaxed text-white/65">{item.summary}</p>
-                <a
-                  href={localizePath(locale, `/projects/${item.slug}`)}
-                  class="inline-flex w-fit items-center gap-2 text-sm font-medium text-white underline decoration-white/25 underline-offset-4 transition hover:text-white/80"
-                >
-                  {copy.viewCase}
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+    <section class="mt-24 md:mt-32" aria-labelledby="case-study-more-heading">
+      <h2 id="case-study-more-heading" class="mx-auto max-w-[1440px] px-5 pb-6 font-head text-[36px] font-bold tracking-[-0.02em] md:px-10 md:pb-8 md:text-[56px]">
+        {copy.moreProjectsTitle}
+      </h2>
+      <ul class="border-t border-line">
+        {others.map((item) => (
+          <li class="border-b border-line">
+            <ProjectRow href={localizePath(locale, `/projects/${item.slug}`)} title={item.title} image={item.image} mobileImage={item.mobileImage} />
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

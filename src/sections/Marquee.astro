@@ -1,0 +1,21 @@
+---
+// Technologies from the case studies. The second copy is hidden from assistive tech and keeps the loop seamless.
+const tech = ['Shopify', 'Liquid', 'Online Store 2.0', 'JavaScript', 'Klaviyo API', 'Figma to theme'];
+---
+
+<div class="overflow-hidden bg-blue py-5 text-white md:py-[30px]" role="presentation">
+  <div class="marquee-track flex w-max whitespace-nowrap font-head text-[40px] font-bold leading-none tracking-[-0.02em] md:text-[72px]">
+    {
+      [false, true].map((hidden) => (
+        <p class="flex shrink-0" aria-hidden={hidden ? 'true' : undefined}>
+          {tech.map((item) => (
+            <span class="pr-6 md:pr-10">
+              {item}
+              <span class="pl-6 opacity-50 md:pl-10" aria-hidden="true">/</span>
+            </span>
+          ))}
+        </p>
+      ))
+    }
+  </div>
+</div>

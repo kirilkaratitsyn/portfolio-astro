@@ -1,0 +1,31 @@
+---
+import ProjectRow from '../components/ProjectRow.astro';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import type { CaseStudy } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  caseStudies: CaseStudy[];
+}
+
+const { locale, caseStudies } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="work" class="relative scroll-mt-24 pt-10 md:pt-20">
+  <ul class="border-t border-line">
+    {
+      caseStudies.slice(0, 5).map((item) => (
+        <li class="border-b border-line">
+          <ProjectRow href={localizePath(locale, `/projects/${item.slug}`)} title={item.title} image={item.image} mobileImage={item.mobileImage} />
+        </li>
+      ))
+    }
+    <li class="border-b border-line">
+      <a href={localizePath(locale, '/projects')} class="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-6 text-lg font-medium text-blue transition-colors hover:bg-blue hover:text-white md:px-10">
+        <span>{t.works.allProjects}</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ul>
+</section>

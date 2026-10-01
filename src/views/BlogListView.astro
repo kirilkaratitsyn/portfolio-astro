@@ -11,7 +11,6 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const posts = await getPosts(locale);
-const postHref = (slug: string) => localizePath(locale, `/blog/${slug}`);
 
 const seo = {
   title: locale === DEFAULT_LOCALE ? 'Shopify Blog' : `Shopify ${t.blog.title}`,
@@ -23,56 +22,21 @@ const seo = {
 ---
 
 <BaseLayout {...seo} path="/blog" locale={locale}>
-  <section class="bg-[#0E0E0E]" id="blog">
-    <div class="blog__container pt-20" data-aos="fade-up">
-      <div class="mb-12 max-w-3xl">
-        <h1 class="primary-gradient primary-shadow uppercase text-3xl md:text-[37px] font-bold mb-4">{t.blog.title}</h1>
-        <p class="text-lg md:text-xl text-white/80 leading-relaxed">{t.blog.subtitle}</p>
-      </div>
-      <div class="grid gap-10 md:grid-cols-2">
-        {
-          posts.map((post) => (
-            <article class="flex flex-col gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-white/40 hover:bg-white/10">
-              <a href={postHref(post.slug)} class="block overflow-hidden rounded-xl">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  class="h-56 w-full rounded-xl object-cover transition duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </a>
-              <div class="flex flex-wrap items-center gap-3 text-sm uppercase tracking-wide text-white/60">
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{interpolate(t.blog.estimatedRead, { time: post.readingTime })}</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                {post.tags?.map((tag) => (
-                  <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/70">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div class="space-y-3">
-                <a href={postHref(post.slug)} class="block">
-                  <h2 class="text-2xl font-semibold text-white transition hover:text-white/80">{post.title}</h2>
-                </a>
-                <p class="text-base text-white/70 leading-relaxed">{post.excerpt}</p>
-              </div>
-              <div>
-                <a
-                  href={postHref(post.slug)}
-                  class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white hover:text-white/70"
-                >
-                  {t.blog.readMore}
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
+  <section class="pt-32 md:pt-44">
+    <h1 class="mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.blog.title}</h1>
+    <ul class="border-t border-line">
+      {
+        posts.map((post) => (
+          <li class="border-b border-line">
+            <a href={localizePath(locale, `/blog/${post.slug}`)} class="group mx-auto grid max-w-[1440px] gap-3 px-5 py-7 transition-colors hover:bg-blue hover:text-white md:grid-cols-[1fr_minmax(0,520px)_120px] md:items-center md:gap-10 md:px-10">
+              <h2 class="font-head text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[34px]">{post.title}</h2>
+              <p class="text-base leading-relaxed text-mute group-hover:text-white/90">{post.excerpt}</p>
+              <p class="text-sm text-mute group-hover:text-white/90 md:text-right">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
   <Contact locale={locale} />
 </BaseLayout>

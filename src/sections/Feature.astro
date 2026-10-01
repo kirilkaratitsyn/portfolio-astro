@@ -1,0 +1,40 @@
+---
+import Pebble from '../components/Pebble.astro';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { thumb } from '../lib/thumbs';
+import type { CaseStudy } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  caseStudy: CaseStudy;
+}
+
+const { locale, caseStudy } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section class="mx-auto mt-20 grid max-w-[1440px] items-center gap-10 px-5 md:mt-28 md:grid-cols-[1fr_minmax(0,760px)] md:px-10">
+  <div>
+    <h2 class="font-head text-[48px] font-bold leading-[0.95] tracking-[-0.03em] md:text-[84px]">{caseStudy.title}</h2>
+    <p class="mt-5 max-w-[430px] text-lg leading-relaxed text-mute md:mt-[22px] md:text-xl">{caseStudy.summary}</p>
+    <a href={localizePath(locale, `/projects/${caseStudy.slug}`)} class="mt-7 inline-block text-lg font-semibold text-blue hover:underline">{t.caseStudies.viewCase} →</a>
+  </div>
+
+  <div class="relative aspect-[760/540] overflow-hidden rounded-[28px] bg-blue">
+    <div class="absolute left-[8%] top-[13%] w-[73%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(8,12,90,0.35)]">
+      <div class="flex h-[5%] min-h-[14px] items-center gap-1.5 bg-[#f1f2f6] px-3 py-1.5" aria-hidden="true">
+        <i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i>
+      </div>
+      <img src={thumb(caseStudy.image, '1000')} alt={caseStudy.title} width="1000" height="694" loading="lazy" decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
+    </div>
+    {
+      caseStudy.mobileImage && (
+        <div class="absolute right-[7%] top-[28%] w-[25%] overflow-hidden rounded-[22px] border-[6px] border-ink bg-white shadow-[0_24px_50px_rgba(8,12,90,0.4)] md:rounded-[28px] md:border-8">
+          <img src={thumb(caseStudy.mobileImage, 'm400')} alt="" width="400" height="671" loading="lazy" decoding="async" class="block aspect-[190/388] w-full object-cover object-top" />
+        </div>
+      )
+    }
+    <Pebble name="white" class="absolute -bottom-[6%] -left-[4%] w-[20%]" />
+    <Pebble name="black" class="absolute -right-[3%] -top-[5%] w-[14%]" />
+  </div>
+</section>

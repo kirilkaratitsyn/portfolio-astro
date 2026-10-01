@@ -15,50 +15,13 @@ const t = useTranslations(locale);
 const { Content } = await render(post.entry);
 ---
 
-<BaseLayout
-  title={post.title}
-  description={post.excerpt}
-  type="article"
-  image={post.image}
-  path={`/blog/${post.slug}`}
-  locale={locale}
->
-  <article class="bg-[#0E0E0E]">
-    <div class="blog__container pt-20" data-aos="fade-up">
-      <div class="mb-10">
-        <a
-          href={localizePath(locale, '/blog')}
-          class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-white/70 hover:text-white"
-        >
-          <span aria-hidden="true">←</span>
-          {t.blog.backToList}
-        </a>
-      </div>
-      <header class="space-y-6">
-        <div class="flex flex-wrap items-center gap-3 text-sm uppercase tracking-wide text-white/60">
-          <span>{post.date}</span>
-          <span>•</span>
-          <span>{interpolate(t.blog.estimatedRead, { time: post.readingTime })}</span>
-        </div>
-        <h1 class="text-3xl md:text-[42px] font-bold leading-tight text-white">{post.title}</h1>
-        {
-          post.tags?.length ? (
-            <div class="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/70">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          ) : null
-        }
-      </header>
-      <div class="my-10 overflow-hidden rounded-3xl border border-white/10">
-        <img src={post.image} alt={post.title} class="h-[420px] w-full object-cover" loading="lazy" />
-      </div>
-      <div class="space-y-6 text-white/80 [&>p]:text-lg [&>p]:leading-relaxed">
-        <Content />
-      </div>
+<BaseLayout title={post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale}>
+  <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
+    <a href={localizePath(locale, '/blog')} class="text-sm font-medium text-mute hover:text-ink">← {t.blog.backToList}</a>
+    <p class="mt-8 text-sm text-mute">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
+    <h1 class="mt-3 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
+    <div class="mt-10 max-w-2xl space-y-6 text-lg leading-relaxed md:mt-14 md:text-xl md:leading-relaxed">
+      <Content />
     </div>
   </article>
   <Contact locale={locale} />

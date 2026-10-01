@@ -8,17 +8,17 @@ interface Props {
 }
 
 // Brands from the project catalog (works.yaml ids), each linking to its live store.
-// Logos are the stores' own header logos, shown as white silhouettes; `height` (px on desktop)
+// Logos are the stores' own header logos, shown as black silhouettes; `height` (px on desktop)
 // balances their different proportions so they read at a similar size.
 const CLIENTS = [
-  { id: 'juniors-cheesecake', logo: 'juniors-cheesecake.svg', height: 30 },
-  { id: 'lerros', logo: 'lerros.svg', height: 46 },
-  { id: 'spring-mountain-vineyard', logo: 'spring-mountain-vineyard.svg', height: 34 },
-  { id: 'bazar-bizar', logo: 'bazar-bizar.svg', height: 24 },
-  { id: 'petaljet', logo: 'petaljet.webp', height: 30 },
-  { id: 'elanora-skin', logo: 'elanora-skin.webp', height: 26 },
-  { id: 'silk-tallow', logo: 'silk-tallow.webp', height: 36 },
-  { id: 'virea', logo: 'virea.webp', height: 26 },
+  { id: 'juniors-cheesecake', logo: 'juniors-cheesecake.svg', height: 28 },
+  { id: 'lerros', logo: 'lerros.svg', height: 42 },
+  { id: 'spring-mountain-vineyard', logo: 'spring-mountain-vineyard.svg', height: 32 },
+  { id: 'bazar-bizar', logo: 'bazar-bizar.svg', height: 22 },
+  { id: 'petaljet', logo: 'petaljet.webp', height: 28 },
+  { id: 'elanora-skin', logo: 'elanora-skin.webp', height: 24 },
+  { id: 'silk-tallow', logo: 'silk-tallow.webp', height: 34 },
+  { id: 'virea', logo: 'virea.webp', height: 24 },
 ];
 
 const { locale, works } = Astro.props;
@@ -30,33 +30,23 @@ const clients = CLIENTS.map((client) => {
 });
 ---
 
-<section class="border-b border-white/10 bg-[#0E0E0E]" aria-labelledby="clients-label">
-  <div class="mx-auto max-w-[1440px] px-5 py-8 md:py-10" data-aos="fade-up">
-    <p id="clients-label" class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-white/50">
-      {t.clients.label}
-    </p>
-    <ul class="flex flex-wrap items-center gap-x-10 gap-y-6 md:gap-x-14">
-      {
-        clients.map((client) => (
-          <li>
-            <a
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block opacity-60 transition hover:opacity-100"
-              style={`--logo-h: ${client.height}px`}
-            >
-              <img
-                src={`/source/logos/clients/${client.logo}`}
-                alt={client.title}
-                class="h-[calc(var(--logo-h)*0.8)] w-auto max-w-[180px] object-contain brightness-0 invert md:h-[var(--logo-h)]"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20">
+  <h2 id="clients-label" class="mb-7 font-sans text-sm font-medium text-mute">{t.clients.label}</h2>
+  <ul class="flex flex-wrap items-center justify-between gap-x-10 gap-y-7">
+    {
+      clients.map((client) => (
+        <li>
+          <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-70 transition hover:opacity-100" style={`--h: ${client.height}px`}>
+            <img
+              src={`/source/logos/clients/${client.logo}`}
+              alt={client.title}
+              class="h-[calc(var(--h)*0.8)] w-auto max-w-[170px] object-contain brightness-0 md:h-[var(--h)]"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </section>

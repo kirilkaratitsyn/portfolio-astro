@@ -1,0 +1,30 @@
+---
+// One row of a work list: name, optional description, thumbnails, arrow. The whole row is the link.
+import { thumb } from '../lib/thumbs';
+
+interface Props {
+  href: string;
+  title: string;
+  image: string;
+  mobileImage?: string;
+  description?: string;
+  external?: boolean;
+}
+
+const { href, title, image, mobileImage, description, external = false } = Astro.props;
+---
+
+<a
+  href={href}
+  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+  class="group mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-blue hover:text-white md:gap-8 md:px-10 md:py-5"
+>
+  <span class="min-w-0 font-head text-[30px] font-bold leading-none tracking-[-0.02em] md:w-[34%] md:shrink-0 md:text-[44px]">{title}</span>
+  {description && <span class="hidden min-w-0 flex-1 text-[15px] leading-snug text-mute line-clamp-2 group-hover:text-white/90 lg:block">{description}</span>}
+  <span class="flex shrink-0 items-center gap-2">
+    <img src={thumb(image, '480')} alt="" width="120" height="78" loading="lazy" decoding="async" class="h-[56px] w-[84px] rounded-md object-cover object-top md:h-[78px] md:w-[120px]" />
+    <img src={thumb(image, '480')} alt="" width="120" height="78" loading="lazy" decoding="async" class="hidden h-[78px] w-[120px] rounded-md object-cover md:block" style="object-position: 50% 60%" />
+    {mobileImage && <img src={thumb(mobileImage, 'm200')} alt="" width="46" height="78" loading="lazy" decoding="async" class="h-[56px] w-[32px] rounded-md object-cover object-top md:h-[78px] md:w-[46px]" />}
+    <span class="ml-2 text-[22px] text-blue group-hover:text-white md:ml-6" aria-hidden="true">{external ? '↗' : '→'}</span>
+  </span>
+</a>

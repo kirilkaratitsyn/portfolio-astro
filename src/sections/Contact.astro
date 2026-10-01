@@ -1,5 +1,6 @@
 ---
 import CalButton from '../components/CalButton.astro';
+import Pebble from '../components/Pebble.astro';
 import { useTranslations, type Locale } from '../i18n';
 
 interface Props {
@@ -9,31 +10,14 @@ interface Props {
 const t = useTranslations(Astro.props.locale);
 ---
 
-<section id="contact">
-  <div class="contact__container rounded-t-[50px] bg-white pt-20 text-black">
-    <div class="mx-auto max-w-3xl px-6 py-8 text-left md:px-10 md:py-10 md:text-center">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-black/45">{t.contact.title}</p>
-      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-black/70">
-        <img src="/source/ui/upwork-top-rated.svg" alt="" class="h-5 w-5 shrink-0" aria-hidden="true" />
-        <span>{t.contact.topRated}</span>
-      </div>
-      <h2 class="primary-gradient primary-shadow mx-auto max-w-2xl text-[28px] font-semibold leading-tight md:text-[42px]">
-        {t.contact.subtitle}
-      </h2>
-      <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-black/60 md:text-base">{t.contact.note}</p>
-
-      <a
-        href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry"
-        class="mt-6 inline-flex items-center text-base font-medium text-black underline decoration-black/20 underline-offset-4 transition hover:text-black/70 md:text-lg"
-      >
-        {t.contact.email}
-      </a>
-
-      <div class="mt-8 flex justify-start md:justify-center" data-aos="fade-up">
-        <CalButton class="transition-all duration-500 whitespace-nowrap  font-medium  mt-10 bg-black text-white black-shadow hover:bg-opacity-80 transition-all duration-300 px-12 py-3 text-lg rounded-full">
-          <span>{t.contact.book_call}</span>
-        </CalButton>
-      </div>
+<section id="contact" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 px-5 md:mt-32 md:px-10">
+  <div class="on-blue relative overflow-hidden rounded-[28px] bg-blue px-6 pb-12 pt-14 text-white md:px-16 md:pb-16 md:pt-20">
+    <p class="relative z-[2] max-w-[900px] font-head text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</p>
+    <div class="relative z-[2] mt-10 flex flex-col items-start gap-5 text-lg md:mt-14 md:flex-row md:items-center md:gap-8 md:text-xl">
+      <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
+      <a href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
+    <Pebble name="white" class="pointer-events-none absolute -bottom-12 -right-8 w-[150px] md:-bottom-[60px] md:-right-10 md:w-[330px]" />
+    <Pebble name="black" class="pointer-events-none absolute -top-8 right-24 w-[90px] md:-top-[70px] md:right-[250px] md:w-[200px]" />
   </div>
 </section>

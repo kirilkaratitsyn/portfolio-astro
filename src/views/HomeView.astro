@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../sections/Hero.astro';
+import WorkList from '../sections/WorkList.astro';
+import Numbers from '../sections/Numbers.astro';
 import ClientStrip from '../sections/ClientStrip.astro';
-import AboutMe from '../sections/AboutMe.astro';
+import Marquee from '../sections/Marquee.astro';
+import Feature from '../sections/Feature.astro';
 import Services from '../sections/Services.astro';
-import FeaturedCaseStudies from '../sections/FeaturedCaseStudies.astro';
-import Works from '../sections/Works.astro';
-import Experience from '../sections/Experience.astro';
 import Process from '../sections/Process.astro';
+import Reviews from '../sections/Reviews.astro';
 import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
 import { DEFAULT_LOCALE, useTranslations, type Locale } from '../i18n';
@@ -74,13 +75,14 @@ const structuredData = {
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData}>
   <Hero locale={locale} />
+  <WorkList locale={locale} caseStudies={caseStudies} />
+  <Numbers locale={locale} />
   <ClientStrip locale={locale} works={works} />
-  <AboutMe locale={locale} />
+  <Marquee />
+  <Feature locale={locale} caseStudy={caseStudies[0]} />
   <Services locale={locale} />
-  <FeaturedCaseStudies locale={locale} caseStudies={caseStudies} />
-  <Works locale={locale} works={works} caseStudies={caseStudies} />
-  <Experience locale={locale} />
   <Process locale={locale} />
+  <Reviews locale={locale} />
   <FAQ locale={locale} />
   <Contact locale={locale} />
 </BaseLayout>
