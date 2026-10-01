@@ -39,13 +39,13 @@ const cards = t.cards.map((card, i) => {
       href={PROFILE}
       target="_blank"
       rel="noopener noreferrer"
-      class="group flex w-fit items-center gap-5 rounded-full bg-white py-3 pl-7 pr-3 transition-colors duration-300 hover:bg-ink hover:text-white"
+      title={t.openProfile}
+      class="group flex w-fit items-center gap-4 rounded-full bg-white py-3 pl-4 pr-3 transition-colors duration-300 hover:bg-ink hover:text-white md:gap-5"
     >
-      <span class="font-head text-[48px] font-bold leading-none tracking-[-0.03em] md:text-[60px]">{t.rating}</span>
-      <span class="text-sm leading-snug">
-        <span class="block text-[15px] text-blue group-hover:text-white" aria-hidden="true">★★★★★</span>
-        <span class="block text-mute group-hover:text-white/80">{t.summary}</span>
-        <span class="block font-medium">{t.openProfile}</span>
+      <img src="/source/logos/upwork-top-rated.svg" alt="" width="56" height="56" class="size-12 shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110 md:size-14" />
+      <span class="leading-snug">
+        <span class="block font-head text-xl font-bold tracking-[-0.01em] md:text-2xl">{t.badge}</span>
+        <span class="block text-sm text-mute group-hover:text-white/80">{t.summary}</span>
       </span>
       <span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue text-xl text-white" aria-hidden="true">↗</span>
     </a>

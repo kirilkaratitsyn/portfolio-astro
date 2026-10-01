@@ -470,8 +470,7 @@
   "reviews": {
     "title": "What clients say",
     "lead": "A selection of public reviews from my Upwork profile, in the clients’ own words.",
-    "rating": "4.6",
-    "summary": "26 reviews · Top Rated on Upwork",
+    "summary": "26 reviews · 95% Job Success",
     "openProfile": "Open Upwork profile",
     "previous": "Previous reviews",
     "next": "Next reviews",
@@ -540,6 +539,7 @@
         "context": "Final adjustments and mobile UI",
         "date": "Sep–Oct 2025"
       }
-    ]
+    ],
+    "badge": "Top Rated on Upwork"
   }
 }
