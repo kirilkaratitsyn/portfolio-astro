@@ -175,20 +175,16 @@ function rows() {
         gsap.fromTo(img, { objectPosition: `50% ${down ? 0 : 100}%` }, { objectPosition: `50% ${down ? 100 : 0}%`, ease: 'none', scrollTrigger: { trigger: row, start: 'top bottom', end: 'bottom top', scrub: true } });
       });
     }
-    // The arrow nudges when the row is hovered.
-    const arrow = qs('[data-arrow]', link);
-    if (arrow && fine) {
-      link.addEventListener('pointerenter', () => gsap.to(arrow, { x: 10, duration: 0.5, ease: 'power3.out' }));
-      link.addEventListener('pointerleave', () => gsap.to(arrow, { x: 0, duration: 0.6, ease: 'power3.out' }));
-    }
   });
 }
 
-/** A larger screenshot follows the cursor over a work row. */
+/**
+ * Work row hover: the arrow nudges and a larger screenshot follows the cursor. One delegated listener decides which
+ * row is under the pointer, because rows that scroll away under a still pointer never get a `pointerleave`.
+ */
 function peek() {
   if (!fine) return;
-  const links = qsa<HTMLAnchorElement>('[data-row] a[data-peek]');
-  if (!links.length) return;
+  if (!qs('[data-row] a[data-peek]')) return;
   const box = document.createElement('div');
   box.className = 'peek';
   box.setAttribute('aria-hidden', 'true');
@@ -201,23 +197,62 @@ function peek() {
   const x = gsap.quickTo(box, 'x', { duration: 0.55, ease: 'power3' });
   const y = gsap.quickTo(box, 'y', { duration: 0.55, ease: 'power3' });
   const turn = gsap.quickTo(box, 'rotation', { duration: 0.7, ease: 'power3' });
-  let last = 0;
-  links.forEach((link) => {
-    link.addEventListener('pointerenter', (e) => {
-      img.src = link.dataset.peek ?? '';
-      last = e.clientX;
-      x(e.clientX);
-      y(e.clientY);
-      gsap.to(box, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out' });
-    });
-    link.addEventListener('pointermove', (e) => {
-      x(e.clientX);
-      y(e.clientY);
-      turn(gsap.utils.clamp(-10, 10, (e.clientX - last) * 0.5));
-      last = e.clientX;
-    });
-    link.addEventListener('pointerleave', () => gsap.to(box, { autoAlpha: 0, scale: 0.6, duration: 0.4, ease: 'power3.in' }));
-  });
+
+  let active: HTMLAnchorElement | null = null;
+  let px = -1;
+  let py = -1;
+  let settle = 0;
+  const rowAt = (target: Element | null) => target?.closest<HTMLAnchorElement>('[data-row] a[data-peek]') ?? null;
+  const arrowOf = (link: HTMLAnchorElement) => qs('[data-arrow]', link);
+
+  const leave = () => {
+    if (!active) return;
+    const arrow = arrowOf(active);
+    if (arrow) gsap.to(arrow, { x: 0, duration: 0.6, ease: 'power3.out', overwrite: true });
+    active = null;
+    gsap.to(box, { autoAlpha: 0, scale: 0.6, duration: 0.35, ease: 'power3.in', overwrite: true });
+  };
+  const enter = (link: HTMLAnchorElement) => {
+    leave();
+    active = link;
+    img.src = link.dataset.peek ?? '';
+    x(px);
+    y(py);
+    const arrow = arrowOf(link);
+    if (arrow) gsap.to(arrow, { x: 10, duration: 0.5, ease: 'power3.out', overwrite: true });
+    gsap.to(box, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: true });
+  };
+
+  document.addEventListener(
+    'pointermove',
+    (e) => {
+      const turnBy = (e.clientX - px) * 0.5;
+      px = e.clientX;
+      py = e.clientY;
+      const link = rowAt(e.target as Element);
+      if (!link) return leave();
+      if (link !== active) enter(link);
+      x(px);
+      y(py);
+      turn(gsap.utils.clamp(-10, 10, turnBy));
+    },
+    { passive: true },
+  );
+  // While the page scrolls the rows slide under a still pointer: hide, then look again once it stops.
+  window.addEventListener(
+    'scroll',
+    () => {
+      leave();
+      window.clearTimeout(settle);
+      settle = window.setTimeout(() => {
+        const link = px >= 0 ? rowAt(document.elementFromPoint(px, py)) : null;
+        if (link) enter(link);
+      }, 140);
+    },
+    { passive: true },
+  );
+  document.documentElement.addEventListener('pointerleave', leave);
+  window.addEventListener('blur', leave);
 }
 
 /* ---------------------------------------------------------------- numbers, marquee */
@@ -355,9 +390,12 @@ function magnets() {
       x((e.clientX - (r.left + r.width / 2)) * 0.28);
       y((e.clientY - (r.top + r.height / 2)) * 0.34);
     });
-    el.addEventListener('pointerleave', () => {
+    const reset = () => {
       x(0);
       y(0);
-    });
+    };
+    el.addEventListener('pointerleave', reset);
+    // A button that scrolls away from a still pointer never gets `pointerleave`.
+    window.addEventListener('scroll', reset, { passive: true });
   });
 }

@@ -55,7 +55,8 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 @keyframes wipe { from { clip-path: inset(-30px 100% -30px 0); } to { clip-path: inset(-30px 0 -30px 0); } }
 .hw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
 .hw-i { display: inline-block; }
-.motion .hero-wm { overflow: hidden; padding-top: 0.03em; }
+/* Clip only the bottom edge (letters rise from and sink into it); tilted or lifted letters may poke out at the top. */
+.motion .hero-wm { clip-path: inset(-80px 0 0 0); }
 .motion .hero-wm .wm { animation: rise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .motion .hw-i { animation: rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.35s + var(--i) * 0.07s); }
 .motion .hero-cta { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }

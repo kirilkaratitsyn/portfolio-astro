@@ -12,7 +12,7 @@ const { locale, caseStudies } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="work" class="relative scroll-mt-24 pt-10 md:pt-20">
+<section id="work" class="relative z-[5] scroll-mt-24 pt-10 md:pt-20">
   <ul class="border-t border-line">
     {
       caseStudies.slice(0, 5).map((item) => (

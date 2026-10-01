@@ -615,6 +615,16 @@ class Stage {
     const decay = Math.exp(-9 * dt);
     this.pointer.vx *= decay;
     this.pointer.vy *= decay;
+    // Content that scrolls under a still pointer never reports a pointer move: look again where the pointer is.
+    if (scroll !== 0 && this.pointer.inside && this.pointer.type !== 'touch' && !this.grabbed) {
+      let over = false;
+      for (const view of this.views) {
+        if (!view.visible || view.dead) continue;
+        view.hover(this.pointer);
+        if (view.pick(this.pointer.x, this.pointer.y)) over = true;
+      }
+      document.documentElement.classList.toggle('is-grab', over);
+    }
     let busy = false;
     for (const view of this.views) {
       if (!view.visible || view.dead) continue;
