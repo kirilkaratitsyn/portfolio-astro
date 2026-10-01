@@ -239,7 +239,8 @@ export function makeLogo(tone: LogoTone = 'ink', radius = 2.35) {
     const toPoints = (ring: [number, number][]) => ring.map(([x, y]) => new Vector2(x * k, y * k));
     const shape = new Shape(toPoints(outer!));
     for (const ring of holes) shape.holes.push(new Path(toPoints(ring)));
-    logoGeometry = solid(shape, 0.55, 0.06, 28);
+    // A thin plate, not a block: 0.2 deep with a small soft edge, so it reads as a light mark from the side too.
+    logoGeometry = solid(shape, 0.2, 0.045, 28);
   }
   const content = new Group();
   const material =
