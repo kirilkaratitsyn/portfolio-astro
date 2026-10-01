@@ -17,12 +17,15 @@ const words = t.hero.claim.split(' ');
     <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
 
     <div class="relative mt-8 md:mt-0">
-      <h1 class="max-w-[560px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:absolute md:left-0 md:top-[142px] md:text-[46px]">
-        {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
-      </h1>
-      <CalButton class="hero-cta mt-8 inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white md:absolute md:left-0 md:top-[402px] md:mt-0">
-        {t.header.bookCall}
-      </CalButton>
+      <div class="md:absolute md:left-0 md:top-[96px] md:max-w-[600px]">
+        <h1 class="max-w-[600px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:text-[46px]">
+          {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
+        </h1>
+        <p class="hero-sub mt-5 max-w-[460px] text-[17px] leading-snug text-mute">{t.hero.sub}</p>
+        <CalButton class="hero-cta mt-8 inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white">
+          {t.header.bookCall}
+        </CalButton>
+      </div>
       <img
         src="/source/3d/stones-1720.webp"
         srcset="/source/3d/stones-860.webp 860w, /source/3d/stones-1720.webp 1720w"

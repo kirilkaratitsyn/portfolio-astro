@@ -27,6 +27,7 @@ export function init() {
   marquee();
   feature();
   process();
+  about();
   reviews(lenis);
   contact();
   footer();
@@ -337,6 +338,17 @@ function process() {
     if (pebble) tl.from(pebble, { scale: 0.15, yPercent: 40, duration: 1.4, ease: 'elastic.out(1, 0.55)' }, 0);
     tl.from(text, { y: 34, opacity: 0, duration: 1, ease: EXPO, stagger: 0.12 }, 0.12);
   });
+}
+
+/** About: the photo is uncovered, drifts inside its frame while you scroll, and the cobalt panel behind it tilts. */
+function about() {
+  const photo = qs('[data-about-photo]');
+  if (!photo) return;
+  const img = qs('img', photo);
+  const panel = qs('[data-about-panel]');
+  gsap.fromTo(photo, { clipPath: 'inset(100% 0% 0% 0% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 28px)', duration: 1.5, ease: EXPO, clearProps: 'clipPath', scrollTrigger: { trigger: photo, start: 'top 85%', once: true } });
+  if (img) gsap.fromTo(img, { yPercent: -7, scale: 1.14 }, { yPercent: 7, scale: 1.14, ease: 'none', scrollTrigger: { trigger: photo, start: 'top bottom', end: 'bottom top', scrub: true } });
+  if (panel) gsap.fromTo(panel, { rotation: -1 }, { rotation: -6, ease: 'none', scrollTrigger: { trigger: photo, start: 'top bottom', end: 'bottom top', scrub: true } });
 }
 
 function reviews(lenis: Lenis | null) {

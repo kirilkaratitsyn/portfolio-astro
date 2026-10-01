@@ -24,9 +24,10 @@
       "Virtuoso",
       "Maestro"
     ],
-    "claim": "Shopify developer in Germany for themes, Markets and performance.",
+    "claim": "Fast, clear Shopify stores that are easy to run.",
     "seoTitle": "Kiril Karatitsyn | Shopify Developer in Germany",
-    "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects."
+    "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects.",
+    "sub": "Freelance Shopify developer in Germany: custom themes, Markets, migrations and performance."
   },
   "clients": {
     "label": "Selected Shopify stores I've worked on"
@@ -532,5 +533,27 @@
       }
     ],
     "badge": "Top Rated on Upwork"
+  },
+  "bio": {
+    "eyebrow": "About me",
+    "title": "Hi, I'm Kiril.",
+    "p1": "I'm a freelance Shopify developer in Germany. I build themes, set up Markets for new countries, move stores over to Shopify and speed up slow ones, for brands that want one person who owns the whole task.",
+    "p2": "You get the scope, timeline and price in writing first. I build on a preview theme, so your live store keeps selling while we work, and I stay on for fixes after launch.",
+    "facts": [
+      {
+        "label": "Based in",
+        "value": "Germany"
+      },
+      {
+        "label": "Languages",
+        "value": "English, German, Ukrainian"
+      },
+      {
+        "label": "On Upwork",
+        "value": "Top Rated, 95% Job Success"
+      }
+    ],
+    "upwork": "Upwork profile",
+    "photoAlt": "Kiril Karatitsyn at the sea at sunset"
   }
 }

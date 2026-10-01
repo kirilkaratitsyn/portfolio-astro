@@ -20,6 +20,8 @@ const cards = t.cards.map((card, i) => {
   const at = card.quote.indexOf(card.highlight);
   return {
     ...card,
+    // A long quote gets a wider card and smaller type so it fits the card's height (global.css .review-card--long).
+    long: card.quote.length > 300,
     tone: tones[i % tones.length]!,
     before: at < 0 ? card.quote : card.quote.slice(0, at),
     marked: at < 0 ? '' : card.highlight,
@@ -60,7 +62,7 @@ const cards = t.cards.map((card, i) => {
     >
       {
         cards.map((card) => (
-          <li class="review-card w-[84vw] shrink-0 snap-start sm:w-[440px] md:h-[clamp(400px,calc(100vh_-_400px),540px)] lg:w-[500px]" style={`--hl:${card.tone.mark}`}>
+          <li class:list={['review-card w-[84vw] shrink-0 snap-start sm:w-[440px] md:h-[clamp(400px,calc(100vh_-_400px),540px)]', card.long ? 'review-card--long lg:w-[720px]' : 'lg:w-[500px]']} style={`--hl:${card.tone.mark}`}>
             <figure class={`flex h-full flex-col justify-between rounded-[28px] p-7 md:p-10 ${card.tone.box}`}>
               <div>
                 <span class="block font-head text-[72px] font-bold leading-[0.6] opacity-40" aria-hidden="true">“</span>

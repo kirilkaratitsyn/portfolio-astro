@@ -24,9 +24,10 @@
       "Virtuose",
       "Maestro"
     ],
-    "claim": "Shopify-Entwickler in Deutschland für Themes, Markets und Performance.",
+    "claim": "Schnelle, klare Shopify-Shops, die leicht zu betreiben sind.",
     "seoTitle": "Kiril Karatitsyn | Shopify-Entwickler in Deutschland",
-    "seoDescription": "Shopify-Entwickler in Deutschland (DE/EN): individuelle Themes, Shopify-Markets-Setups und Performance-Arbeit für Marken, die in DACH verkaufen. Monatlicher Retainer oder Projekt."
+    "seoDescription": "Shopify-Entwickler in Deutschland (DE/EN): individuelle Themes, Shopify-Markets-Setups und Performance-Arbeit für Marken, die in DACH verkaufen. Monatlicher Retainer oder Projekt.",
+    "sub": "Freiberuflicher Shopify-Entwickler in Deutschland: Themes, Markets, Migrationen und Performance."
   },
   "clients": {
     "label": "Ausgewählte Shopify-Stores, an denen ich gearbeitet habe"
@@ -532,5 +533,27 @@
       }
     ],
     "badge": "Top Rated auf Upwork"
+  },
+  "bio": {
+    "eyebrow": "Über mich",
+    "title": "Hi, ich bin Kiril.",
+    "p1": "Ich bin freiberuflicher Shopify-Entwickler in Deutschland. Ich baue Themes, richte Markets für neue Länder ein, ziehe Shops zu Shopify um und mache langsame Shops schneller, für Marken, die eine Person wollen, die die ganze Aufgabe verantwortet.",
+    "p2": "Zuerst bekommen Sie Umfang, Zeitplan und Preis schriftlich. Ich baue in einem Vorschau-Theme, damit Ihr Live-Shop weiter verkauft, und bleibe nach dem Launch für Fixes da.",
+    "facts": [
+      {
+        "label": "Standort",
+        "value": "Deutschland"
+      },
+      {
+        "label": "Sprachen",
+        "value": "Englisch, Deutsch, Ukrainisch"
+      },
+      {
+        "label": "Auf Upwork",
+        "value": "Top Rated, 95% Job Success"
+      }
+    ],
+    "upwork": "Upwork-Profil",
+    "photoAlt": "Kiril Karatitsyn am Meer bei Sonnenuntergang"
   }
 }

@@ -8,6 +8,7 @@ import Marquee from '../sections/Marquee.astro';
 import Feature from '../sections/Feature.astro';
 import Services from '../sections/Services.astro';
 import Process from '../sections/Process.astro';
+import About from '../sections/About.astro';
 import Reviews from '../sections/Reviews.astro';
 import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
@@ -41,7 +42,7 @@ const structuredData = {
       '@id': PERSON_ID,
       name: 'Kiril Karatitsyn',
       url: SITE_URL,
-      image: `${SITE_URL}og-image.jpg`,
+      image: `${SITE_URL}source/profile/kiril-1000.webp`,
       jobTitle: 'Shopify Developer',
       address: { '@type': 'PostalAddress', addressCountry: 'DE' },
       knowsLanguage: ['de', 'en', 'uk'],
@@ -81,6 +82,7 @@ const structuredData = {
   <Feature locale={locale} caseStudy={caseStudies[0]} />
   <Services locale={locale} />
   <Process locale={locale} />
+  <About locale={locale} />
   <Reviews locale={locale} />
   <FAQ locale={locale} />
   <Contact locale={locale} />

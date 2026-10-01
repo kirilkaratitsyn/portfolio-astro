@@ -42,7 +42,7 @@ const phone = { sm: 'w-[24%]', md: 'w-[24%] lg:w-[17%]', lg: 'w-[24%] lg:w-[14%]
       mobileImage && (
         <span data-depth="20" class:list={['absolute bottom-8 right-[5%] z-[3] block', phone[size]]}>
           <span class="block origin-bottom overflow-hidden rounded-[20px] border-[5px] border-ink bg-white shadow-[0_24px_50px_rgba(0,0,0,0.35)] transition-transform duration-500 ease-out group-hover:scale-[1.06] md:rounded-[24px]">
-            <img src={thumb(mobileImage, 'm400')} alt="" width="400" height="671" loading="lazy" decoding="async" class="block aspect-[190/388] w-full object-cover object-top" />
+            <img src={thumb(mobileImage, 'm400')} alt="" width="400" height="671" loading="lazy" decoding="async" class="block aspect-[400/671] w-full object-cover object-top" />
           </span>
         </span>
       )

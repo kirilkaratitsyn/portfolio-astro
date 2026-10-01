@@ -1,0 +1,59 @@
+---
+// "About me": a short first-person bio, three plain facts and the portrait on a tilted cobalt panel with two pebbles.
+// The photo reveals and drifts on scroll (scripts/motion.ts, about()); without scripts it is just the picture.
+import CalButton from '../components/CalButton.astro';
+import Pebble from '../components/Pebble.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+const b = t.bio;
+const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
+---
+
+<section id="about" aria-labelledby="about-title" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 px-5 md:mt-40 md:px-10">
+  <div class="grid items-center gap-14 md:grid-cols-12 md:gap-8">
+    <div class="md:col-span-6">
+      <p data-reveal class="text-sm font-semibold uppercase tracking-[0.16em] text-blue">{b.eyebrow}</p>
+      <h2 id="about-title" data-split class="mt-4 font-head text-[44px] font-bold leading-[1] tracking-[-0.03em] md:text-[84px]">{b.title}</h2>
+      <p data-reveal class="mt-7 max-w-[580px] text-[18px] leading-relaxed md:text-[19px]">{b.p1}</p>
+      <p data-reveal class="mt-4 max-w-[580px] text-[18px] leading-relaxed text-mute md:text-[19px]">{b.p2}</p>
+      <dl data-reveal class="mt-9 grid max-w-[620px] gap-px overflow-hidden rounded-2xl bg-line sm:grid-cols-3">
+        {
+          b.facts.map((fact) => (
+            <div class="bg-bg px-5 py-4">
+              <dt class="text-[13px] text-mute">{fact.label}</dt>
+              <dd class="mt-1 font-head text-[17px] font-bold leading-snug">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <div data-reveal class="mt-9 flex flex-wrap items-center gap-3">
+        <CalButton class="rounded-full bg-ink px-6 py-[15px] font-medium text-white">{t.header.bookCall}</CalButton>
+        <a href={PROFILE} target="_blank" rel="noopener noreferrer" class="rounded-full border border-ink/20 px-6 py-[15px] font-medium transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white">{b.upwork} ↗</a>
+      </div>
+    </div>
+
+    <div class="relative md:col-span-5 md:col-start-8">
+      <div data-about-panel aria-hidden="true" class="absolute inset-0 translate-x-3 translate-y-3 -rotate-3 rounded-[32px] bg-blue md:translate-x-4 md:translate-y-4"></div>
+      <figure data-about-photo class="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#dfe2f0] shadow-[0_30px_60px_rgba(8,12,90,0.18)]">
+        <img
+          src="/source/profile/kiril-1000.webp"
+          srcset="/source/profile/kiril-640.webp 640w, /source/profile/kiril-1000.webp 1000w"
+          sizes="(min-width: 768px) 520px, 90vw"
+          width="1000"
+          height="1250"
+          alt={b.photoAlt}
+          loading="lazy"
+          decoding="async"
+          class="block h-full w-full object-cover"
+        />
+      </figure>
+      <Pebble name="white" class="absolute -bottom-6 -left-5 z-[2] w-[24%] md:-left-9 md:w-[22%]" />
+      <Pebble name="black" class="absolute -right-3 -top-6 z-[2] w-[15%] md:-right-5 md:w-[13%]" />
+    </div>
+  </div>
+</section>
