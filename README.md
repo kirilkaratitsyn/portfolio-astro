@@ -28,13 +28,21 @@ src/
     blog/<язык>/<slug>.md       # статьи
   content.config.ts             # схема полей: сборка упадёт, если поле забыто
   i18n/<язык>.json              # все остальные тексты сайта
+  scripts/main.ts               # точка входа клиентского JS: после загрузки страницы подгружает motion и stage
+  scripts/motion.ts             # GSAP + ScrollTrigger + SplitText + Lenis: анимации по скроллу и курсору
+  scripts/stage.ts              # three.js: живые камни в hero и шарики-иконки (одна WebGL-сцена на всё)
+  lib/stones.ts                 # форма камней (те же сиды, что у отрендеренных постеров)
   sections/                     # секции страниц (Hero, WorkList, Numbers, Marquee, Feature, Services, Process, Reviews, FAQ, Contact …)
   views/                        # шаблоны страниц, общие для всех языков
   pages/                        # роуты: английский в корне, [lang]/ для de и uk
 public/                         # картинки, шрифты, robots.txt, llms.txt
-  source/3d/                    # отрендеренные камни (см. scripts/3d/README.md)
+  source/3d/                    # постеры камней: первый кадр и запасной вариант (см. scripts/3d/README.md)
   source/thumbs/                # миниатюры скриншотов: node scripts/make-thumbs.mjs
 ```
+
+## Анимации и 3D
+
+Это надстройка: без скриптов, при `prefers-reduced-motion` и без WebGL страница полностью читаема, а вместо живых камней остаются картинки-постеры. Скрытые стартовые состояния (`[data-reveal]`, `[data-split]`) работают только при классе `motion` на `<html>`: его ставит inline-скрипт в `<head>` и снимает через 7 секунд, если скрипты так и не стартовали. Хуки анимаций задаются атрибутами `data-*` в секциях. Тяжёлые модули грузятся после `load`, поэтому первый экран и LCP не зависят от них. Запасные шрифты подогнаны по ширине (`size-adjust` в `global.css`), чтобы текст не прыгал при загрузке шрифтов.
 
 ## Как добавить кейс
 

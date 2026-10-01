@@ -56,7 +56,7 @@ function smoothScroll() {
     const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
     if (!target) return;
     event.preventDefault();
-    lenis.scrollTo(target, { offset: -70, duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    lenis.scrollTo(target, { offset: 0, duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
     history.pushState(null, '', url.hash);
   });
   return lenis;
