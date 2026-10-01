@@ -5,7 +5,7 @@
 // the scroll), CSS clips them, and nothing is drawn while nothing moves or while a view is off screen.
 // The poster images stay in the HTML as the first paint and as the fallback when WebGL is unavailable.
 import {
-  ACESFilmicToneMapping, Group, PerspectiveCamera, PMREMGenerator, Quaternion, Scene, Vector3, WebGLRenderer,
+  Group, NeutralToneMapping, PerspectiveCamera, PMREMGenerator, Quaternion, Scene, Vector3, WebGLRenderer,
   type Mesh, type Object3D, type Texture,
 } from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
@@ -557,8 +557,9 @@ class Stage {
     this.renderer = new WebGLRenderer({ canvas: this.gl, antialias: true, alpha: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(1);
     this.renderer.setClearColor(0x000000, 0);
-    this.renderer.toneMapping = ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.05;
+    // Neutral (Khronos PBR) tone mapping keeps the brand cobalt cobalt; ACES pushed it toward violet.
+    this.renderer.toneMapping = NeutralToneMapping;
+    this.renderer.toneMappingExposure = 1;
 
     this.io = new IntersectionObserver(
       (entries) => {

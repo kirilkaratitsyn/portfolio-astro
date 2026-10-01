@@ -13,7 +13,7 @@ const palettes = {
 const P = palettes[q.get('p') || 'cobalt'];
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true, alpha: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(1); renderer.setClearColor(0x000000, 0);
-renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = 1;
 const scene = new THREE.Scene();
 const pm = new THREE.PMREMGenerator(renderer);
 scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
