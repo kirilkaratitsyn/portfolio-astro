@@ -1,11 +1,15 @@
 ---
-// A rendered 3D pebble (public/source/3d). Decorative, so no alt text.
+// A 3D pebble. The rendered poster is the first paint and the fallback; scripts/stage.ts swaps in a live,
+// interactive WebGL object over it. Decorative, so no alt text. Position and size classes go on the wrapper.
 interface Props {
   name: 'cobalt' | 'white' | 'black' | 'cobalt2';
   class?: string;
 }
 
 const { name, class: className = '' } = Astro.props;
+const positioned = /(^|\s)(absolute|relative|fixed)(\s|$)/.test(className);
 ---
 
-<img src={`/source/3d/pebble-${name}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class={className} />
+<span data-pebble={name} class:list={['pebble block', !positioned && 'relative', className]}>
+  <img src={`/source/3d/pebble-${name}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
+</span>

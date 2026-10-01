@@ -34,7 +34,7 @@ function stone(size, color) {
   const m = new THREE.MeshPhysicalMaterial({ color, roughness: P.rough, metalness: 0.0, clearcoat: P.clear, clearcoatRoughness: 0.08, envMapIntensity: 1.1 });
   return new THREE.Mesh(g, m);
 }
-s = parseInt(q.get('seed')||'3'); const m = stone(2.5, q.get('c')||'#2433f0'); m.rotation.set(rnd()*3, rnd()*3, rnd()*3); scene.add(m);
+s = parseInt(q.get('seed')||'3'); const m = stone(parseFloat(q.get('r')||'2.5'), q.get('c')||'#2433f0'); m.rotation.set(rnd()*3, rnd()*3, rnd()*3); scene.add(m);
 renderer.render(scene, camera);
 window.__done = true;
 </script></body></html>

@@ -39,6 +39,22 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'Onest', 'Helvetica Neue', Arial,
   white-space: nowrap;
 }
 
+/* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes lift { from { transform: translateY(26px); } to { transform: none; } }
+@keyframes wipe { from { clip-path: inset(-30px 100% -30px 0); } to { clip-path: inset(-30px 0 -30px 0); } }
+.hw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+.hw-i { display: inline-block; }
+.motion .hero-wm { overflow: hidden; padding-top: 0.03em; }
+.motion .hero-wm .wm { animation: rise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.motion .hw-i { animation: rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.35s + var(--i) * 0.07s); }
+.motion .hero-cta { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }
+.motion .hero-ribbon { animation: wipe 1.7s cubic-bezier(0.65, 0, 0.2, 1) 0.5s both; }
+
+/* Cursor while the pointer is over a stone you can grab (scripts/stage.ts). */
+html.is-grab, html.is-grab * { cursor: grab !important; }
+html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }
+
 @keyframes marquee { to { transform: translateX(-50%); } }
 .marquee-track { animation: marquee 38s linear infinite; }
 @media (prefers-reduced-motion: reduce) {

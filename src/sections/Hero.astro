@@ -7,18 +7,20 @@ interface Props {
 }
 
 const t = useTranslations(Astro.props.locale);
+// Words ride up one by one on load (CSS only, see global.css); the heading text itself is unchanged.
+const words = t.hero.claim.split(' ');
 ---
 
 <section class="relative md:h-[860px]">
   <div class="mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
     <!-- The surname is decoration; the h1 below carries the page's meaning. -->
-    <div class="wm-wrap" aria-hidden="true"><span class="wm">Karatitsyn</span></div>
+    <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm">Karatitsyn</span></div>
 
     <div class="relative mt-8 md:mt-0">
       <h1 class="max-w-[560px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:absolute md:left-0 md:top-[142px] md:text-[46px]">
-        {t.hero.claim}
+        {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
       </h1>
-      <CalButton class="mt-8 inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white md:absolute md:left-0 md:top-[402px] md:mt-0">
+      <CalButton class="hero-cta mt-8 inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white md:absolute md:left-0 md:top-[402px] md:mt-0">
         {t.header.bookCall}
       </CalButton>
       <img
@@ -29,14 +31,18 @@ const t = useTranslations(Astro.props.locale);
         height="1188"
         alt=""
         fetchpriority="high"
+        data-hero-poster
         decoding="async"
         class="mt-4 w-full md:pointer-events-none md:absolute md:-right-5 md:-top-[18px] md:z-[3] md:mt-0 md:w-[860px]"
       />
     </div>
   </div>
 
+  <!-- Live 3D stones (scripts/stage.ts) are drawn here, over the poster image. -->
+  <div data-hero-stage class="pointer-events-none absolute inset-y-0 left-1/2 z-[3] w-full max-w-[1440px] -translate-x-1/2" aria-hidden="true"></div>
+
   <!-- Ribbon: one flat cobalt stroke that carries the eye from the hero into the work list. -->
-  <svg class="pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full md:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="hero-ribbon pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full md:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
     <path d="M-40 40 C 260 -10, 520 120, 760 150 S 1240 190, 1500 40" fill="none" stroke="#2433F0" stroke-width="18" stroke-linecap="round" vector-effect="non-scaling-stroke" />
   </svg>
 </section>

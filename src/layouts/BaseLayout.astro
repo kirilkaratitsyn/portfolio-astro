@@ -21,6 +21,16 @@ const { locale, path } = seo;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- Motion is an enhancement: the `motion` class (and the hidden start states behind it) exists only when the
+         visitor allows animation and scripts run; it falls away on its own if the scripts never start. -->
+    <script is:inline>
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion');
+        setTimeout(function () {
+          if (!window.__motion) document.documentElement.classList.remove('motion');
+        }, 7000);
+      }
+    </script>
     <!-- Fonts used in the first screen: the surname and the body text. -->
     <link rel="preload" href="/fonts/e-UkraineHead-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Onest-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -75,5 +85,8 @@ const { locale, path } = seo;
       <slot />
     </main>
     <Footer locale={locale} />
+    <script>
+      import '../scripts/main';
+    </script>
   </body>
 </html>
