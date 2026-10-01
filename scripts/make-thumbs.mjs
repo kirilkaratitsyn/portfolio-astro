@@ -7,6 +7,19 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
+// Only screenshots that the site actually references (works.yaml and the case study files).
+const content = new URL('../src/content/', import.meta.url).pathname;
+const files = [path.join(content, 'works.yaml')];
+for (const dir of fs.readdirSync(path.join(content, 'projects'))) {
+  for (const file of fs.readdirSync(path.join(content, 'projects', dir))) files.push(path.join(content, 'projects', dir, file));
+}
+const used = new Set();
+for (const file of files) {
+  for (const match of fs.readFileSync(file, 'utf8').matchAll(/(?:image|mobileImage): (\S+)/g)) {
+    used.add(match[1].split('/').pop().replace(/\.[^.]+$/, '').replace(/-(desktop|mobile)$/, ''));
+  }
+}
+
 const root = new URL('../public/source/', import.meta.url).pathname;
 const out = path.join(root, 'thumbs');
 fs.mkdirSync(out, { recursive: true });
@@ -21,6 +34,7 @@ for (const [dir, suffix, sizes] of jobs) {
   for (const file of fs.readdirSync(path.join(root, dir))) {
     if (!/\.(webp|png|jpe?g)$/i.test(file)) continue;
     const name = file.replace(/\.[^.]+$/, '').replace(suffix, '');
+    if (!used.has(name)) continue;
     for (const [label, width, quality] of sizes) {
       await sharp(path.join(root, dir, file)).resize({ width }).webp({ quality }).toFile(path.join(out, `${name}-${label}.webp`));
       count += 1;

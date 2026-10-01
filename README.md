@@ -28,10 +28,12 @@ src/
     blog/<язык>/<slug>.md       # статьи
   content.config.ts             # схема полей: сборка упадёт, если поле забыто
   i18n/<язык>.json              # все остальные тексты сайта
-  sections/                     # секции страниц (Hero, Services, Experience …)
+  sections/                     # секции страниц (Hero, WorkList, Numbers, Marquee, Feature, Services, Process, Reviews, FAQ, Contact …)
   views/                        # шаблоны страниц, общие для всех языков
   pages/                        # роуты: английский в корне, [lang]/ для de и uk
-public/                         # картинки, шрифты, видео, robots.txt, llms.txt
+public/                         # картинки, шрифты, robots.txt, llms.txt
+  source/3d/                    # отрендеренные камни (см. scripts/3d/README.md)
+  source/thumbs/                # миниатюры скриншотов: node scripts/make-thumbs.mjs
 ```
 
 ## Как добавить кейс
