@@ -29,6 +29,8 @@ interface Pointer {
   inside: boolean;
 }
 
+const yieldMain = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
+
 const tmpAxis = new Vector3();
 const tmpQuat = new Quaternion();
 /** Turn a mesh by an angular velocity (rad/s, world axes) for dt seconds. */
@@ -48,6 +50,9 @@ abstract class View {
   visible = false;
   dirty = true;
   live = false;
+  /** The copy to the page canvas came out empty too often: leave the poster alone. */
+  dead = false;
+  fails = 0;
   cssW = 0;
   cssH = 0;
   pw = 0;
@@ -482,7 +487,8 @@ class PebbleView extends View {
 class Stage {
   readonly gl: HTMLCanvasElement;
   readonly renderer: WebGLRenderer;
-  readonly env: Texture;
+  env!: Texture;
+  private probe = document.createElement('canvas');
   readonly views: View[] = [];
   private raf = 0;
   private last = 0;
@@ -504,15 +510,12 @@ class Stage {
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.toneMapping = ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
-    const pmrem = new PMREMGenerator(this.renderer);
-    this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-    pmrem.dispose();
 
     this.io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           const view = this.views.find((v) => v.host === entry.target);
-          if (!view) continue;
+          if (!view || view.dead) continue;
           view.visible = entry.isIntersecting;
           if (view.visible) view.dirty = true;
         }
@@ -540,6 +543,33 @@ class Stage {
     document.addEventListener('visibilitychange', () => document.hidden || this.wake());
   }
 
+  /** Image-based lighting, built in its own task. */
+  async prepare() {
+    await yieldMain();
+    const pmrem = new PMREMGenerator(this.renderer);
+    this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    pmrem.dispose();
+    await yieldMain();
+  }
+
+  /** True when the 2D canvas really received the picture (some browsers hand back an empty frame). */
+  private hasPixels(view: View) {
+    const probe = this.probe;
+    probe.width = probe.height = 16;
+    const ctx = probe.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return false;
+    ctx.drawImage(view.canvas, 0, 0, 16, 16);
+    const data = ctx.getImageData(0, 0, 16, 16).data;
+    for (let i = 3; i < data.length; i += 4) if ((data[i] ?? 0) > 8) return true;
+    return false;
+  }
+
+  private retire(view: View) {
+    view.dead = true;
+    view.visible = false;
+    view.canvas.remove();
+  }
+
   add(view: View, ...observe: Element[]) {
     this.views.push(view);
     this.io.observe(view.host);
@@ -565,7 +595,10 @@ class Stage {
     renderer.render(view.scene, view.camera);
     view.ctx.clearRect(0, 0, view.pw, view.ph);
     view.ctx.drawImage(gl, 0, gl.height - view.ph, view.pw, view.ph, 0, 0, view.pw, view.ph);
-    if (!view.live) view.showLive();
+    if (!view.live) {
+      if (this.hasPixels(view)) view.showLive();
+      else if (++view.fails >= 3) this.retire(view);
+    }
   }
 
   wake() {
@@ -584,13 +617,14 @@ class Stage {
     this.pointer.vy *= decay;
     let busy = false;
     for (const view of this.views) {
-      if (!view.visible) continue;
+      if (!view.visible || view.dead) continue;
       const moving = view.step(dt, scroll);
       if (moving || view.dirty) {
         this.render(view);
         view.dirty = false;
       }
-      busy ||= moving;
+      // A view whose first picture has not been confirmed yet gets another try on the next frame.
+      busy ||= moving || (!view.live && !view.dead);
     }
     this.raf = busy ? requestAnimationFrame(this.tick) : 0;
   };
@@ -687,14 +721,18 @@ export async function start() {
   if (!(heroHost && poster) && !pebbleHosts.length) return;
 
   const stage = new Stage();
+  await stage.prepare();
   let hero: HeroView | null = null;
   if (heroHost && poster) {
     hero = new HeroView(stage, heroHost, poster);
     stage.add(hero, poster);
     // Compile the material off the main thread before the first frame.
     await stage.renderer.compileAsync(hero.scene, hero.camera);
+    await yieldMain();
   }
+  let made = 0;
   for (const host of pebbleHosts) {
+    if (++made % 3 === 0) await yieldMain();
     const name = host.dataset.pebble as PebbleName;
     const img = host.querySelector('img');
     if (img) stage.add(new PebbleView(stage, host, name, img), img);
