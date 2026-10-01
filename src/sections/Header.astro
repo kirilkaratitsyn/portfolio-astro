@@ -14,7 +14,7 @@ const { locale, path } = Astro.props;
 const t = useTranslations(locale);
 
 const links = [
-  { name: t.header.works, to: '/#work' },
+  { name: t.header.works, to: '/projects' },
   { name: t.header.services, to: '/#services' },
   { name: t.faq.title, to: '/#faq' },
 ].map((link) => ({ ...link, href: localizePath(locale, link.to) }));

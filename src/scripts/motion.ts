@@ -163,7 +163,7 @@ function rows() {
   qsa('[data-row]').forEach((row) => {
     const link = qs('a', row);
     if (!link) return;
-    const title = link.firstElementChild;
+    const title = qs('[data-row-title]', link) ?? link.firstElementChild;
     const strip = qs('[data-strip]', link);
     const trigger = { trigger: row, start: 'top 94%', once: true } as const;
     if (title) gsap.from(title, { x: -48, opacity: 0, duration: 1.1, ease: EXPO, scrollTrigger: trigger });
@@ -210,7 +210,7 @@ function peek() {
     const arrow = arrowOf(active);
     if (arrow) gsap.to(arrow, { x: 0, duration: 0.6, ease: 'power3.out', overwrite: true });
     active = null;
-    gsap.to(box, { autoAlpha: 0, scale: 0.6, duration: 0.35, ease: 'power3.in', overwrite: true });
+    gsap.to(box, { autoAlpha: 0, scale: 0.6, duration: 0.35, ease: 'power3.in', overwrite: 'auto' });
   };
   const enter = (link: HTMLAnchorElement) => {
     leave();
@@ -220,7 +220,7 @@ function peek() {
     y(py);
     const arrow = arrowOf(link);
     if (arrow) gsap.to(arrow, { x: 10, duration: 0.5, ease: 'power3.out', overwrite: true });
-    gsap.to(box, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: true });
+    gsap.to(box, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out', overwrite: 'auto' });
   };
 
   document.addEventListener(

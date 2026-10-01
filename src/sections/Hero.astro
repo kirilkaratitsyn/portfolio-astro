@@ -12,7 +12,7 @@ const words = t.hero.claim.split(' ');
 ---
 
 <section data-hero class="relative md:h-[860px]">
-  <div class="mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
+  <div class="relative z-[2] mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
     <!-- The surname is decoration; the h1 below carries the page's meaning. -->
     <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
 
@@ -38,8 +38,8 @@ const words = t.hero.claim.split(' ');
     </div>
   </div>
 
-  <!-- Live 3D stones (scripts/stage.ts) are drawn here, over the poster image. -->
-  <div data-hero-stage class="pointer-events-none absolute inset-y-0 left-1/2 z-[3] w-full max-w-[1440px] -translate-x-1/2" aria-hidden="true"></div>
+  <!-- Live 3D stones (scripts/stage.ts): the whole width of the screen, behind the text so they never cover it, and a little below the hero so the white rows hide where they stop. -->
+  <div data-hero-stage class="pointer-events-none absolute inset-x-0 -bottom-10 top-0 z-[1] md:-bottom-20" aria-hidden="true"></div>
 
   <!-- Ribbon: one flat cobalt stroke that carries the eye from the hero into the work list. -->
   <svg class="hero-ribbon pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full md:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">

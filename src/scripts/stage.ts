@@ -74,7 +74,8 @@ abstract class View {
 
   resize() {
     this.measure();
-    const dpr = Math.min(window.devicePixelRatio || 1, this.dprCap);
+    // A full-width canvas on a big screen would be huge: keep the picture under about four megapixels.
+    const dpr = Math.min(window.devicePixelRatio || 1, this.dprCap, Math.sqrt(4.2e6 / Math.max(1, this.cssW * this.cssH)));
     this.pw = Math.max(1, Math.round(this.cssW * dpr));
     this.ph = Math.max(1, Math.round(this.cssH * dpr));
     this.canvas.width = this.pw;
@@ -618,10 +619,11 @@ class Stage {
     // Content that scrolls under a still pointer never reports a pointer move: look again where the pointer is.
     if (scroll !== 0 && this.pointer.inside && this.pointer.type !== 'touch' && !this.grabbed) {
       let over = false;
+      const blocked = this.overControl(this.pointer.x, this.pointer.y);
       for (const view of this.views) {
         if (!view.visible || view.dead) continue;
         view.hover(this.pointer);
-        if (view.pick(this.pointer.x, this.pointer.y)) over = true;
+        if (!blocked && view.pick(this.pointer.x, this.pointer.y)) over = true;
       }
       document.documentElement.classList.toggle('is-grab', over);
     }
@@ -665,14 +667,20 @@ class Stage {
     }
     let over = false;
     let awake = false;
+    const blocked = e.pointerType === 'touch' || this.overControl(p.x, p.y);
     for (const view of this.views) {
       if (!view.visible) continue;
       if (view.hover(p)) awake = true;
-      if (e.pointerType !== 'touch' && view.pick(p.x, p.y)) over = true;
+      if (!blocked && view.pick(p.x, p.y)) over = true;
     }
     document.documentElement.classList.toggle('is-grab', over);
     if (awake) this.wake();
   };
+
+  /** A stone behind a link or button must not swallow the click. */
+  private overControl(x: number, y: number) {
+    return Boolean(document.elementFromPoint(x, y)?.closest('a, button, summary, input, textarea, select, [data-cal-link]'));
+  }
 
   private onLeave = () => {
     this.pointer.inside = false;
@@ -691,7 +699,7 @@ class Stage {
       this.tap = { x: e.clientX, y: e.clientY, t: e.timeStamp };
       return;
     }
-    if (e.button !== 0) return;
+    if (e.button !== 0 || this.overControl(p.x, p.y)) return;
     for (const view of this.views) {
       if (!view.visible || !view.pick(p.x, p.y)) continue;
       this.grabbed = view;

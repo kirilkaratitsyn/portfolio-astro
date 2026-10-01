@@ -1,0 +1,27 @@
+---
+// A card of the project catalog: large screenshot, name, short description. Case studies stay on the site (→),
+// other projects open the store in a new tab (↗).
+import { thumb } from '../lib/thumbs';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  image: string;
+  external?: boolean;
+  /** Cards in the first screen load right away (they are what the page is measured on). */
+  priority?: boolean;
+}
+
+const { href, title, description, image, external = false, priority = false } = Astro.props;
+---
+
+<a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col">
+  <span class="relative block aspect-[3/2] overflow-hidden rounded-[22px] bg-white">
+    <img src={thumb(image, '1000')} alt="" width="1000" height="694" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" class="size-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]" />
+    <span class="absolute inset-0 bg-blue/0 transition-colors duration-500 group-hover:bg-blue/15"></span>
+    <span class="absolute right-4 top-4 flex size-11 items-center justify-center rounded-full bg-white text-[20px] text-blue transition-colors duration-300 group-hover:bg-blue group-hover:text-white" aria-hidden="true">{external ? '↗' : '→'}</span>
+  </span>
+  <span class="mt-5 block font-head text-[28px] font-bold leading-none tracking-[-0.02em] md:text-[32px]">{title}</span>
+  <span class="mt-3 block text-[15px] leading-relaxed text-mute line-clamp-3">{description}</span>
+</a>
