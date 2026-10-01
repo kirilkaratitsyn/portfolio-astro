@@ -18,7 +18,8 @@ export function init() {
 
   const lenis = smoothScroll();
   header();
-  hero();
+  const flies = flyLogo();
+  hero(flies);
   headings();
   reveals();
   rows();
@@ -98,24 +99,104 @@ function fitWordmark(word: HTMLElement, chars: Element[]) {
   if (width > 0) word.style.fontSize = `calc(14.4cqi * ${(row.clientWidth / width).toFixed(4)})`;
 }
 
-function hero() {
+function hero(wordFlies: boolean) {
   const section = qs('[data-hero]');
   if (!section) return;
-  const word = qs('[data-hero-wm]', section);
   const claim = qs('h1', section);
   const button = qs('.hero-cta', section);
   const ribbon = qs('.hero-ribbon', section);
 
   const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: section, start: 'top top', end: 'bottom 12%', scrub: 0.7 } });
+  // Without the flight (no header logo to land in) the letters sink into the floor of their row instead.
+  const word = wordFlies ? null : qs('[data-hero-wm]', section);
   if (word) {
     const split = SplitText.create(word, { type: 'chars', charsClass: 'wm-ch', aria: 'none' });
     fitWordmark(word, split.chars);
-    // The letters sink into the floor of their row one after another, each at its own speed and tilt.
     tl.to(split.chars, { yPercent: (i: number) => 24 + ((i * 37) % 7) * 9, rotate: (i: number) => (i % 2 ? 1 : -1) * (3 + (i % 3) * 3), stagger: { each: 0.02, from: 'random' } }, 0);
   }
   if (claim) tl.to(claim, { y: -70, autoAlpha: 0 }, 0);
   if (button) tl.to(button, { y: -46 }, 0);
   if (ribbon) tl.to(ribbon, { yPercent: 36, scaleY: 1.25, transformOrigin: '50% 0%' }, 0);
+}
+
+/**
+ * Home only: while you scroll the first screen, the big surname lifts off the page, shrinks and flies into the
+ * header logo, which grows to make room for it. A fixed copy of the word does the flying; the original is hidden
+ * the moment the copy takes over and the header's own text takes over again at the end, so there is no jump.
+ * Returns false (and leaves the header whole) when something needed is missing.
+ */
+function flyLogo(): boolean {
+  const root = document.documentElement;
+  const word = qs('[data-hero-wm]');
+  const wrap = word?.parentElement;
+  const name = qs('[data-brand-name]');
+  const text = qs('[data-brand-text]');
+  const bar = qs('[data-header]');
+  const show = () => {
+    if (name) Object.assign(name.style, { maxWidth: 'none', opacity: '1' });
+    return false;
+  };
+  if (!root.hasAttribute('data-fly-logo')) return false;
+  if (!word || !wrap || !name || !text || !bar) return show();
+
+  const fly = document.createElement('span');
+  fly.className = 'wm-fly';
+  fly.setAttribute('aria-hidden', 'true');
+  fly.textContent = word.textContent;
+  document.body.appendChild(fly);
+
+  // Where the copy starts (over the hero word), where it lands (the header text) and how much smaller it is there.
+  const geo = { x0: 0, y0: 0, tx: 0, ty: 0, scale: 1, full: 0, lineH: 0 };
+  const measure = () => {
+    const cs = getComputedStyle(word);
+    Object.assign(fly.style, { fontSize: cs.fontSize, lineHeight: cs.lineHeight, letterSpacing: cs.letterSpacing });
+    const from = wrap.getBoundingClientRect();
+    const barRect = bar.getBoundingClientRect();
+    const to = text.getBoundingClientRect();
+    const tcs = getComputedStyle(text);
+    geo.lineH = parseFloat(cs.lineHeight);
+    geo.x0 = from.left;
+    geo.y0 = from.top + window.scrollY;
+    geo.scale = parseFloat(tcs.fontSize) / parseFloat(cs.fontSize);
+    // The header may be hidden (shifted up) right now, so measure from its own top and left, not from the screen.
+    geo.tx = to.left - barRect.left + parseFloat(tcs.paddingLeft) - geo.x0;
+    geo.ty = to.top - barRect.top + to.height / 2 - geo.y0 - (geo.lineH * geo.scale) / 2;
+    geo.full = text.offsetWidth;
+  };
+
+  const travel = gsap.parseEase('power2.inOut');
+  const shrink = gsap.parseEase('power3.out');
+  const state = { p: 0 };
+  const render = () => {
+    const p = state.p;
+    const e = travel(p);
+    const scale = 1 + (geo.scale - 1) * shrink(p);
+    const lift = Math.sin(Math.PI * p) * -28; // a slight arc, so it flies rather than slides
+    gsap.set(fly, { x: geo.x0 + geo.tx * e, y: geo.y0 + geo.ty * e + lift, scale });
+    const started = p > 0.002;
+    word.style.visibility = started ? 'hidden' : '';
+    const land = Math.min(1, Math.max(0, (p - 0.9) / 0.1)); // the last tenth: the header's own text fades in under the copy
+    fly.style.opacity = started ? String(1 - land) : '0';
+    name.style.maxWidth = `${geo.full * Math.min(1, p / 0.9)}px`;
+    name.style.opacity = String(land);
+  };
+
+  gsap.to(state, {
+    p: 1,
+    ease: 'none',
+    onUpdate: render,
+    scrollTrigger: {
+      start: 0,
+      end: () => `+=${Math.round(Math.min(window.innerHeight * 0.5, 480))}`,
+      scrub: 0.5,
+      invalidateOnRefresh: true,
+      onRefresh: () => {
+        measure();
+        render();
+      },
+    },
+  });
+  return true;
 }
 
 /* ---------------------------------------------------------------- text */

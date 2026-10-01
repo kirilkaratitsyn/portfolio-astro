@@ -49,6 +49,14 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   white-space: nowrap;
 }
 
+/* Header name. Always visible, except on the home page while scripts are on: there the surname flies in from the hero
+   (motion.ts flyLogo drives max-width/opacity; the rules below are only the start state). */
+.brand-name { display: block; overflow: hidden; }
+.brand-text { display: inline-block; padding: 0 8px 0 10px; font-size: 15px; font-weight: 700; line-height: 0.82; letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap; }
+@media (max-width: 767px) { .brand-text { font-size: 12px; padding: 0 4px 0 8px; } }
+.motion[data-fly-logo] .brand-name { max-width: 0; opacity: 0; }
+.wm-fly { position: fixed; left: 0; top: 0; z-index: 60; display: block; margin: 0; padding: 0; pointer-events: none; opacity: 0; white-space: nowrap; text-transform: uppercase; font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; transform-origin: 0 0; will-change: transform; }
+
 /* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes lift { from { transform: translateY(26px); } to { transform: none; } }

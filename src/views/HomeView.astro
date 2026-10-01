@@ -73,16 +73,16 @@ const structuredData = {
 };
 ---
 
-<BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData}>
+<BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData} flyLogo>
   <Hero locale={locale} />
   <WorkList locale={locale} caseStudies={caseStudies} />
   <Numbers locale={locale} />
   <ClientStrip locale={locale} works={works} />
+  <About locale={locale} />
   <Marquee />
   <Feature locale={locale} caseStudy={caseStudies[0]} />
   <Services locale={locale} />
   <Process locale={locale} />
-  <About locale={locale} />
   <Reviews locale={locale} />
   <FAQ locale={locale} />
   <Contact locale={locale} />

@@ -4,14 +4,17 @@ import SeoHead, { type SeoProps } from '../components/SeoHead.astro';
 import Header from '../sections/Header.astro';
 import Footer from '../sections/Footer.astro';
 
-type Props = SeoProps;
+type Props = SeoProps & {
+  /** Home only: the big surname in the hero flies into the header logo on scroll (scripts/motion.ts, flyLogo). */
+  flyLogo?: boolean;
+};
 
-const seo = Astro.props;
+const { flyLogo = false, ...seo } = Astro.props;
 const { locale, path } = seo;
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} data-fly-logo={flyLogo ? '' : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

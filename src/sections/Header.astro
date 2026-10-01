@@ -24,12 +24,13 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
 ---
 
 <header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">
-  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-5 pt-5 md:px-10 md:pt-6">
-    <a href={localizePath(locale, '/')} class={`pointer-events-auto flex items-center gap-2.5 py-2 pl-2.5 pr-4 font-head text-base font-bold ${pill}`}>
+  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-5 pt-5 md:gap-3 md:px-10 md:pt-6">
+    <a href={localizePath(locale, '/')} class={`pointer-events-auto flex items-center py-2 pl-2.5 pr-2.5 font-head font-bold ${pill}`}>
       <span data-pebble="logo" data-grab class="pebble relative block size-[34px] shrink-0">
         <Image src={markBlack} alt="" width={64} height={72} class="size-full object-contain" loading="eager" />
       </span>
-      Karatitsyn
+      <!-- On the home page the surname arrives here from the hero while you scroll (see .brand-name in global.css). -->
+      <span class="brand-name" data-brand-name><span class="brand-text" data-brand-text>Karatitsyn</span></span>
     </a>
 
     <nav class={`pointer-events-auto hidden items-center gap-7 px-7 py-3 text-[15px] font-medium md:flex ${pill}`} aria-label="Main">
@@ -54,13 +55,13 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
       </span>
     </nav>
 
-    <div class="pointer-events-auto flex items-center gap-2">
-      <CalButton class="whitespace-nowrap rounded-full bg-blue px-4 py-3 text-sm font-medium text-white md:px-[22px] md:text-[15px]">
+    <div class="pointer-events-auto flex items-center gap-1.5 md:gap-2">
+      <CalButton class="whitespace-nowrap rounded-full bg-blue px-3.5 py-3 text-sm font-medium text-white md:px-[22px] md:text-[15px]">
         {t.header.bookCall}<span class="hidden md:inline" aria-hidden="true"> ↗</span>
       </CalButton>
       <button
         type="button"
-        class={`px-4 py-3 text-sm font-medium md:hidden ${pill}`}
+        class={`px-3.5 py-3 text-sm font-medium md:hidden ${pill}`}
         aria-expanded="false"
         aria-controls="menu"
         data-menu-toggle
