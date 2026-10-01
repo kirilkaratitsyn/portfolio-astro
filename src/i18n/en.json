@@ -477,67 +477,58 @@
     "originalNote": "",
     "cards": [
       {
-        "quote": "During the period we worked together, Kiril clearly developed his communication skills as well. His work was always at a good level and he actively tries to come up with solutions…",
-        "highlight": "His work was always at a good level and he actively tries to come up with solutions",
+        "quote": "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs",
+        "highlight": "helped redesign my entire website from the ground up",
         "rating": 5,
-        "context": "Menu bar and other sections",
-        "date": "Apr 2026"
+        "context": "Full website redesign"
       },
       {
-        "quote": "Kiril is overall a talented freelancer that brings a lot of great skills and qualities to the project. I hired him to take an existing figma design and map it onto a shopify store…",
+        "quote": "During the period we worked together, Kiril clearly developed his communication skills as well. His work was always at a good level and he actively tries to come up with solutions and workarounds for dificult issues.",
+        "highlight": "he actively tries to come up with solutions and workarounds",
+        "rating": 5,
+        "context": "Menu bar and other sections"
+      },
+      {
+        "quote": "Kiril is overall a talented freelancer that brings a lot of great skills and qualities to the project. I hired him to take an existing figma design and map it onto a shopify store. He did a good job overall.",
         "highlight": "a talented freelancer that brings a lot of great skills and qualities to the project",
         "rating": 4,
-        "context": "Store redesign from a Figma design",
-        "date": "Apr 2026"
+        "context": "Store redesign from a Figma design"
       },
       {
-        "quote": "Hi Kiril, I appreciate the work you’ve put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved.",
+        "quote": "Hi Kiril, I appreciate the work you’ve put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved. Best of luck with your other projects!",
         "highlight": "for your flexibility as the project scope evolved",
         "rating": 4,
-        "context": "Redesign, technical migration and SEO setup",
-        "date": "Mar 2026"
+        "context": "Redesign, technical migration and SEO setup"
       },
       {
         "quote": "Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.",
         "highlight": "a bunch of manually coded solutions",
         "rating": 5,
-        "context": "Migration to Online Store 2.0",
-        "date": "Feb 2026"
-      },
-      {
-        "quote": "It's been great to work with Kiril! This freelancer is clear and concise in communication, cutting through ambiguity and keeping goals and next steps on track.",
-        "highlight": "clear and concise in communication",
-        "rating": 5,
-        "context": "Clean embedded checkout",
-        "date": "Jan 2026"
-      },
-      {
-        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
-        "highlight": "all tasks were completed reliably",
-        "rating": 5,
-        "context": "Theme update from Prestige 4 to 10–11",
-        "date": "Nov 2025"
+        "context": "Migration to Online Store 2.0"
       },
       {
         "quote": "Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.",
         "highlight": "solves the problems delivering accurate job on time",
         "rating": 5,
-        "context": "Performance optimization, ongoing",
-        "date": "Nov 2025 – now"
+        "context": "Performance optimization, ongoing"
+      },
+      {
+        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
+        "highlight": "all tasks were completed reliably",
+        "rating": 5,
+        "context": "Theme update from Prestige 4 to 10–11"
       },
       {
         "quote": "Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.",
         "highlight": "quickly resolved 404 URL errors, language switching issues",
         "rating": 5,
-        "context": "Fixing technical errors on a Rise theme",
-        "date": "Oct 2025"
+        "context": "Fixing technical errors on a Rise theme"
       },
       {
         "quote": "Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.",
         "highlight": "Very skilled, fast, and easy to communicate with.",
         "rating": 5,
-        "context": "Final adjustments and mobile UI",
-        "date": "Sep–Oct 2025"
+        "context": "Final adjustments and mobile UI"
       }
     ],
     "badge": "Top Rated on Upwork"

@@ -16,7 +16,6 @@ const works = await getWorks(locale);
 const spans = [4, 2, 2, 2, 2, 2, 4, 3, 3] as const;
 const spanClass = { 2: 'lg:col-span-2', 3: 'lg:col-span-3', 4: 'lg:col-span-4' } as const;
 const sizeOf = { 2: 'sm', 3: 'md', 4: 'lg' } as const;
-const tones = ['blue', 'ink', 'mist', 'paper', 'blue', 'mist', 'ink', 'paper'] as const;
 const caseBySlug = new Map((await getCaseStudies(locale)).map((item) => [item.slug, item]));
 
 const seo = {
@@ -45,7 +44,7 @@ const seo = {
                 description={work.tech}
                 image={work.image}
                 mobileImage={caseStudy?.mobileImage}
-                tone={tones[index % tones.length]}
+                accent={work.accent}
                 size={sizeOf[span]}
                 external={!toCase}
                 priority={index < 3}

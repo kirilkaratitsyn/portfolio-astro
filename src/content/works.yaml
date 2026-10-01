@@ -8,6 +8,7 @@
     en: "A Shopify store for a professional skincare brand, built from an HTML prototype: wholesale pricing for approved estheticians, a members-only Pro Vault, Quick Order, and a first-order limit on the Discovery Kit that the server enforces."
     de: "Ein Shopify-Store für eine professionelle Hautpflegemarke, umgesetzt nach einem HTML-Prototyp: Großhandelspreise für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order und ein Limit für das Discovery Kit, das der Server durchsetzt."
     uk: "Shopify-магазин для професійного бренду догляду за шкірою за HTML-прототипом: оптові ціни для підтверджених косметологів, закритий Pro Vault для учасників, Quick Order і ліміт першого замовлення на Discovery Kit, який перевіряє сервер."
+  accent: "#7f4e31"
 - id: jula-bloom
   order: 2
   title: Jula Bloom
@@ -18,6 +19,7 @@
     en: "A move from WordPress and WooCommerce to Shopify for a Seattle silk-flower brand: a partial theme build finished and cleaned up, a full type system, a redirect map from the old site and a launch in September 2026."
     de: "Der Umzug von WordPress und WooCommerce zu Shopify für eine Seattler Marke für Seidenblumen: ein unvollständiger Theme-Aufbau fertiggestellt und bereinigt, ein vollständiges Typografie-System, eine Redirect-Map der alten Seite und ein Launch im September 2026."
     uk: "Перехід із WordPress і WooCommerce на Shopify для сіетлського бренду шовкових квітів: добудована та очищена частково готова тема, повна типографічна система, мапа редиректів зі старого сайту і запуск у вересні 2026 року."
+  accent: "#1d5c6b"
 - id: reserve-kava
   order: 3
   title: Reserve Kava
@@ -28,6 +30,7 @@
     en: "Product pages for an instant-kava brand, rebuilt from the client’s design handoff: a clean buy column, a bundle that adds both jars, multi-jar variants with subscriptions, and ready templates for new products."
     de: "Produktseiten für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut: eine klare Kaufspalte, ein Bundle mit beiden Dosen, Mehrfachvarianten mit Abos und fertige Templates für neue Produkte."
     uk: "Сторінки товарів для бренду розчинної kava, перебудовані за дизайн-handoff клієнта: чітка колонка покупки, бандл з обома банками, варіанти з кількома банками й підписками та готові шаблони для нових товарів."
+  accent: "#16cce0"
 - id: elanora-skin
   order: 4
   title: Elanora Skin
@@ -38,6 +41,8 @@
     en: "An ongoing Shopify partnership since the end of 2025: tested offers, a gift engine in the cart, checkout blocks, and storefront logic for fifteen markets in two languages."
     de: "Eine laufende Shopify-Partnerschaft seit Ende 2025: getestete Angebote, eine Geschenk-Engine im Warenkorb, Checkout-Blöcke und Storefront-Logik für fünfzehn Märkte in zwei Sprachen."
     uk: "Постійна Shopify-співпраця з кінця 2025 року: тестовані пропозиції, движок подарунків у кошику, блоки checkout і storefront-логіка для п’ятнадцяти ринків двома мовами."
+  accent: "#a1303c"
+  accentLocked: true
 - id: petaljet
   order: 5
   title: Petaljet
@@ -48,6 +53,7 @@
     en: An ongoing Shopify partnership that started with an SEO audit and performance work and grew into custom product builders for wholesale flower buyers.
     de: Eine laufende Shopify-Partnerschaft, die mit einem SEO-Audit und Performance-Arbeit begann und zu individuellen Produkt-Buildern für Blumen-Großkunden wuchs.
     uk: Постійна Shopify-співпраця, що почалася з SEO-аудиту та роботи над швидкістю і переросла в кастомні конструктори товарів для оптових покупців квітів.
+  accent: "#6d812e"
 - id: onlyphila
   order: 6
   title: OnlyPhila
@@ -57,6 +63,7 @@
     en: Built the menu page with category tabs and search, and a cart-first Delivery or Takeaway selector with a date and time slot picker written natively in Liquid, plus checkout rules that keep pickup and delivery orders from mixing.
     de: Menüseite mit Kategorie-Tabs und Suche sowie ein Warenkorb-Selektor für Lieferung oder Abholung mit nativem Liquid-Picker für Datum und Zeitfenster, dazu Checkout-Regeln, die Abhol- und Lieferbestellungen sauber trennen.
     uk: Зробив сторінку меню з вкладками категорій і пошуком та селектор доставки чи самовивозу в кошику з вибором дати й часового слота, написаним нативно на Liquid, а також правила checkout, які не дають змішувати самовивіз і доставку.
+  accent: "#72100b"
 - id: fixy
   order: 7
   title: Fixy
@@ -66,6 +73,8 @@
     en: "Ongoing theme work for a Ukrainian-language store selling constructor wall art and gifts for car lovers: a rebuilt site search panel, a For Her section in the main navigation, and fixes across the header, collections and homepage."
     de: "Laufende Theme-Arbeit für einen ukrainischsprachigen Store mit Konstruktor-Wandbildern und Geschenken für Autoliebhaber: ein neu aufgebautes Suchfeld, ein Bereich „Für Sie“ in der Hauptnavigation und Fixes in Header, Kollektionen und Startseite."
     uk: "Постійна робота з темою для україномовного магазину конструкторів-картин і подарунків для автолюбителів: перебудована панель пошуку, розділ «Для неї» в головній навігації та правки шапки, колекцій і головної."
+  accent: "#ffd000"
+  accentLocked: true
 - id: minbie
   order: 8
   title: Minbie
@@ -75,6 +84,8 @@
     en: "Launched a new Shopify theme for an Australian baby feeding brand: template mapping for every product and collection, a rebuilt Instructions page, a reviews page, a sippy cups collection with a colour switcher, and a new mega-menu and footer."
     de: "Neues Shopify-Theme für eine australische Marke für Baby-Fütterprodukte gestartet: Template-Zuordnung für jedes Produkt und jede Kollektion, neu aufgebaute Anleitungsseite, Bewertungsseite, Kollektion für Trinklernbecher mit Farbwähler sowie neues Mega-Menü und neuer Footer."
     uk: "Запустив нову Shopify-тему для австралійського бренду товарів для годування малюків: прив’язка шаблонів до кожного товару й колекції, перебудована сторінка інструкцій, сторінка відгуків, колекція поїльників з перемикачем кольору, нове мега-меню та футер."
+  accent: "#ef7a98"
+  accentLocked: true
 - id: m-oceans
   order: 9
   title: M-Oceans
@@ -84,6 +95,7 @@
     en: "Ongoing work for a marine equipment store: catalogue and SKU clean-up against brand price lists, product pages and cards for outboards and accessories, bundles, and advice on inventory and invoicing systems, plus homepage and product page redesign."
     de: "Laufende Arbeit für einen Shop für Marinezubehör: Katalog- und SKU-Bereinigung anhand der Markenpreislisten, Produktseiten und Karten für Außenborder und Zubehör, Bundles und Beratung zu Lager- und Rechnungssystemen sowie Redesign von Startseite und Produktseite."
     uk: "Постійна робота для магазину морського обладнання: впорядкування каталогу й SKU за прайсами брендів, сторінки та картки човнових моторів і аксесуарів, бандли, поради щодо систем обліку й виставлення рахунків та редизайн головної й сторінки товару."
+  accent: "#0b4b6b"
 - id: lineargent
   order: 10
   title: Lineargent
@@ -93,6 +105,8 @@
     en: Ongoing Shopify store support focused on SEO, CRO, performance and functional improvements, including a migration of Searchspring to Beacon 2.0 with tracking of search, category, autocomplete and recommendation events.
     de: Laufende Shopify-Store-Betreuung mit Fokus auf SEO, CRO, Performance und funktionale Verbesserungen, einschließlich der Migration von Searchspring auf Beacon 2.0 mit Tracking von Such-, Kategorie-, Autocomplete- und Empfehlungs-Events.
     uk: Постійна підтримка Shopify-магазину з фокусом на SEO, CRO, performance і покращення функціоналу, зокрема міграцію Searchspring на Beacon 2.0 з трекінгом подій пошуку, категорій, автодоповнення та рекомендацій.
+  accent: "#1b1d26"
+  accentLocked: true
 - id: crafts-cove-marine
   order: 11
   title: Crafts Cove Marine
@@ -102,6 +116,7 @@
     en: "Fixed site errors and mobile speed for a marine electric store: PageSpeed fixes, then a second performance phase with critical CSS, a rebuilt theme script and an audit of apps and tracking tags."
     de: "Seitenfehler und mobile Ladezeit eines Marine-Elektro-Shops behoben: PageSpeed-Fixes, danach eine zweite Performance-Phase mit Critical CSS, neu aufgebautem Theme-Skript und einem Audit von Apps und Tracking-Tags."
     uk: "Виправив помилки сайту та швидкість на мобільному для магазину морської електрики: правки PageSpeed, а потім друга фаза з critical CSS, перебудованим скриптом теми та аудитом застосунків і трекінг-тегів."
+  accent: "#298dc6"
 - id: marinepatches
   order: 12
   title: MarinePatches
@@ -111,6 +126,8 @@
     en: Built a Shopify theme on the new-generation theme architecture with wishlist functionality and cleaner, faster storefront flows. The setup is easier to manage, smoother for customers, and better suited for ongoing iteration.
     de: "Entwicklung einer Shopify-Theme-Umsetzung auf Basis der neuen Theme-Generation: Wishlist-Funktion, sauberere Storefront-Flows und schnellere Bedienung. Die Struktur ist einfacher zu pflegen, läuft flüssiger für Kunden und eignet sich besser für laufende Iterationen."
     uk: "Розробка Shopify-теми на основі нової генерації тем: wishlist, чистіші storefront-флоу та швидша робота магазину. Структура стала простішою в підтримці, плавнішою для покупців і зручнішою для подальших ітерацій."
+  accent: "#55633a"
+  accentLocked: true
 - id: white-canvas-earth
   order: 13
   title: White Canvas Earth
@@ -120,6 +137,7 @@
     en: Delivered a Shopify redesign with technical migration, SEO foundations, and growth marketing setup. The work connected the new storefront structure with cleaner launch readiness and better visibility foundations.
     de: Shopify Redesign mit technischer Migration, SEO-Grundlagen und Growth-Marketing-Setup. Die Arbeit verband eine neue Storefront-Struktur mit Launch-Readiness und einer stärkeren Basis für organische Sichtbarkeit.
     uk: Shopify redesign з технічною міграцією, SEO-фундаментом і growth marketing setup. Робота поєднала нову структуру storefront, готовність до запуску та кращу базу для видимості в пошуку.
+  accent: "#8a6443"
 - id: peter-bijoux
   order: 14
   title: Peter Bijoux
@@ -129,6 +147,8 @@
     en: Shopify store redesign using the Prestige theme, with structure and implementation work across templates, product presentation, and content setup so the jewelry catalog is easier to manage and browse.
     de: "Shopify Store Redesign auf Basis des Prestige Themes: Struktur und Umsetzung von Templates, Produktdarstellung und Content-Setup, damit der Schmuckkatalog leichter gepflegt und angenehmer durchsucht werden kann."
     uk: "Shopify Store Redesign на темі Prestige: структура й реалізація templates, product presentation і content setup, щоб jewelry-каталог було легше підтримувати та зручніше переглядати."
+  accent: "#c9a24d"
+  accentLocked: true
 - id: bazar-bizar
   order: 15
   title: Bazar Bizar
@@ -139,6 +159,7 @@
     en: Worked on a large, complex Shopify store with many templates and custom logic. Delivered deep customization across sections and layouts, implemented functional improvements, and supported larger changes while keeping the site stable.
     de: Arbeit an einem großen, komplexen Shopify-Store mit vielen Templates und Custom-Logik. Tiefgreifende Anpassungen an Sections und Layouts, funktionale Verbesserungen und Support größerer Changes — bei stabiler Basis.
     uk: Працював з великим складним Shopify-магазином із багатьма шаблонами та кастомною логікою. Робив глибоку кастомізацію секцій і лейаутів, впроваджував функціональні покращення та підтримував великі зміни, зберігаючи стабільність.
+  accent: "#947151"
 - id: nimfa
   order: 16
   title: Nimfa
@@ -149,6 +170,8 @@
     en: Built a custom Shopify theme from scratch with pixel-perfect implementation according to Figma design. Developed blog functionality, upsell sections, and full multilingual support (English, Ukrainian, Dutch) for the premium intimate care brand.
     de: Erstellung eines benutzerdefinierten Shopify-Themes von Grund auf mit pixelgenauer Implementierung gemäß Figma-Design. Entwicklung von Blog-Funktionalität, Upsell-Bereichen und vollständiger mehrsprachiger Unterstützung (Englisch, Ukrainisch, Niederländisch) für einen Premium-Sexshop.
     uk: Створив кастомну тему Shopify з нуля з піксель-перфектною реалізацією згідно з дизайном Figma. Розробив функціональність блогу, секції апселлів та повну багатомовну підтримку (англійська, українська, голландська) для преміум секс-шопу.
+  accent: "#b23a4e"
+  accentLocked: true
 - id: silk-tallow
   order: 17
   title: Silk Tallow
@@ -159,6 +182,7 @@
     en: Built advanced Mystery Gift and Free Gift logic that works without page reloads. Integrated it seamlessly into the storefront design for a smooth experience, including rules, cart behavior, and edge case handling.
     de: Advanced Mystery-Gift- und Free-Gift-Logik ohne Page Reloads gebaut. Nahtlos ins Storefront-Design integriert — inklusive Regeln, Cart-Verhalten und Edge-Case-Handling.
     uk: "Реалізував складну логіку Mystery Gift і Free Gift без перезавантаження сторінки. Акуратно інтегрував у дизайн storefront: правила, поведінка кошика та обробка edge cases."
+  accent: "#6b663b"
 - id: haftx
   order: 18
   title: Haftx
@@ -168,6 +192,7 @@
     en: Developed a custom color selector that adapts to clothing type and overcomes the 100 variant limitation.
     de: Entwicklung eines benutzerdefinierten Farbwählers, der sich an den Kleidungstyp anpasst und die 100-Varianten-Beschränkung überwindet.
     uk: Розроблено кастомний селектор кольорів, який адаптується до типу одягу та обходить обмеження у 100 варіантів.
+  accent: "#85521f"
 - id: junofires
   order: 19
   title: Junofires
@@ -177,6 +202,8 @@
     en: Optimized filters in a Shopify store, added automatic image display functionality when filtering by color, improving UX and navigation.
     de: Optimierung der Filter in einem Shopify-Shop, Hinzufügung automatischer Bildanzeigefunktionalität beim Filtern nach Farbe, Verbesserung von UX und Navigation.
     uk: Оптимізував фільтри в Shopify-магазині, додав функцію автоматичного відображення зображення при фільтрації за кольором, покращивши UX і навігацію.
+  accent: "#d4a091"
+  accentLocked: true
 - id: lerros
   order: 20
   title: Lerros
@@ -186,6 +213,7 @@
     en: Updated the theme in a Shopify store, correctly transferred content and metafields, preserved data structure, and configured product display for stable operation.
     de: Aktualisierung des Themes in einem Shopify-Shop, korrekte Übertragung von Inhalten und Metafeldern, Erhaltung der Datenstruktur und Konfiguration der Produktanzeige für stabilen Betrieb.
     uk: Оновив тему в Shopify-магазині, коректно переніс контент і метаполя, зберіг структуру даних і налаштував відображення товарів для стабільної роботи.
+  accent: "#e0c416"
 - id: kiki-green
   order: 21
   title: Kiki Green
@@ -195,6 +223,8 @@
     en: Developed a full-cycle e-commerce solution from scratch, including complete online store creation and integration with various plugins such as loyalty programs and product subscriptions.
     de: Entwicklung einer vollständigen E-Commerce-Lösung von Grund auf, einschließlich vollständiger Online-Shop-Erstellung und Integration mit verschiedenen Plugins wie Treueprogrammen und Produktabonnements.
     uk: Розробив повний цикл e-commerce рішення з нуля, включаючи створення повноцінного інтернет-магазину та інтеграцію з різними плагінами, такими як програми лояльності та підписка на продукти.
+  accent: "#2f6b3a"
+  accentLocked: true
 - id: juniors-cheesecake
   order: 22
   title: Junior's Cheesecake
@@ -204,6 +234,7 @@
     en: Created new custom sections based on Figma design, developed email templates and handling, and implemented serving page functionality.
     de: Erstellung neuer benutzerdefinierter Abschnitte basierend auf Figma-Design, Entwicklung von E-Mail-Vorlagen und -Handhabung sowie Implementierung der Serving-Seiten-Funktionalität.
     uk: Створив нові кастомні секції на основі дизайну Figma, розробив email шаблони та їх обробку, а також реалізував функціональність сторінки подачі.
+  accent: "#9e3119"
 - id: spring-mountain-vineyard
   order: 23
   title: Spring Mountain Vineyard
@@ -213,6 +244,7 @@
     en: Redesigned the collection page with improved filter design and product cards, implemented dynamic breadcrumb logic that updates without page refresh for better UX.
     de: Neugestaltung der Kollektionsseite mit verbessertem Filterdesign und Produktkarten, Implementierung dynamischer Breadcrumb-Logik, die sich ohne Seitenaktualisierung aktualisiert für bessere UX.
     uk: Редизайнив сторінку колекції з покращеним дизайном фільтрів та карток продуктів, реалізував динамічну логіку хлібних крихт, яка оновлюється без перезавантаження сторінки для кращого UX.
+  accent: "#0e1018"
 - id: lunesi
   order: 24
   title: Lunesi
@@ -222,6 +254,7 @@
     en: Developed a dynamic cart drawer upsell section that intelligently displays products based on cart contents, fully configurable through the theme editor. Enhanced header with customizable color schemes and a configurable announcement banner for flexible branding and promotions.
     de: Entwicklung eines dynamischen Warenkorb-Upsell-Bereichs, der Produkte intelligent basierend auf dem Warenkorbinhalt anzeigt, vollständig konfigurierbar über den Theme-Editor. Verbesserter Header mit anpassbaren Farbschemata und konfigurierbarem Ankündigungsbanner für flexibles Branding und Werbeaktionen.
     uk: Розробив динамічну секцію апселла в кошику, яка інтелектуально відображає продукти на основі вмісту кошика, повністю налаштовувану через редактор теми. Покращив хедер з налаштовуваними кольоровими схемами та конфігурованим банером оголошень для гнучкого брендингу та промо-акцій.
+  accent: "#926351"
 - id: melinava
   order: 25
   title: Melinava
@@ -231,6 +264,7 @@
     en: "Final pre-launch polish and QA before going live. I owned the full “ready for traffic” checklist: key customer journeys, cart and checkout sanity checks, responsive issues, speed, and visual bugs so the site was stable and conversion ready."
     de: "Finale Pre-Launch-Politur und QA vor dem Go-Live. Ich verantwortete die komplette “ready for traffic” Checkliste: zentrale Customer Journeys, Cart- und Checkout-Sanity-Checks, Responsive-Issues, Speed und visuelle Bugs — damit der Shop stabil und conversion-ready ist."
     uk: "Фінальна підготовка перед запуском: QA і полірування всіх деталей. Вів повний чекліст “готово до трафіку”: ключові сценарії користувача, перевірки кошика та checkout, адаптив, швидкість і візуальні баги — щоб сайт був стабільний і готовий до конверсій."
+  accent: "#5a97e0"
 - id: safetag-tracking
   order: 26
   title: SafeTag Tracking
@@ -240,6 +274,8 @@
     en: Custom Shopify theme development from Figma with full customization and multilingual setup. Built flexible sections for easy content management, delivered pixel accurate UI, and set the foundation for scaling pages and markets.
     de: Custom Shopify Theme Development aus Figma mit voller Customization und mehrsprachigem Setup. Flexible Sections für einfaches Content-Management, pixelgenaues UI und eine solide Basis zum Skalieren von Seiten und Markets.
     uk: Розробка кастомної Shopify-теми з Figma з повною кастомізацією та мультимовністю. Побудував гнучкі секції для зручного керування контентом, зробив pixel-accurate UI і заклав фундамент для масштабування сторінок та маркетів.
+  accent: "#cf3a2f"
+  accentLocked: true
 - id: virea
   order: 27
   title: Virea
@@ -249,6 +285,8 @@
     en: Implemented a refreshed design for the homepage, product pages, and core templates. I still support the store as their Shopify expert, handling new features, performance optimization, UX improvements, and ongoing technical iterations.
     de: Umsetzung eines Refresh-Designs für Homepage, Produktseiten und Core-Templates. Ich betreue den Store weiterhin als Shopify-Experte und kümmere mich um neue Features, Performance-Optimierung, UX-Verbesserungen und laufende technische Iterationen.
     uk: "Впровадив оновлений дизайн для головної, PDP та базових шаблонів. Я досі підтримую магазин як їхній Shopify-експерт: нові фічі, оптимізація швидкості, UX-покращення та постійні технічні ітерації."
+  accent: "#4a8f55"
+  accentLocked: true
 - id: bella-bloom-box
   order: 28
   title: Bella Bloom Box
@@ -258,6 +296,8 @@
     en: Built a full Shopify store based on a Lovable design. Translated the design into theme sections and templates, set up content structure, and made it easy for the client to manage without code.
     de: Kompletten Shopify-Store basierend auf einem Lovable-Design gebaut. Design in Theme-Sections und Templates übersetzt, Content-Struktur aufgesetzt und so umgesetzt, dass der Kunde ohne Code verwalten kann.
     uk: Зібрав повний Shopify-магазин на базі дизайну Lovable. Переклав дизайн у секції та шаблони теми, налаштував структуру контенту й зробив керування максимально простим для клієнта без коду.
+  accent: "#e7a1b8"
+  accentLocked: true
 - id: indian-affairs
   order: 29
   title: Indian Affairs
@@ -269,3 +309,4 @@
     en: Migrated the store from a legacy theme to Shopify Online Store 2.0 (Prestige). I transferred all content, rebuilt custom functionality, implemented client requirements from the spec, and aligned styling and UX across the site.
     de: Migration vom Legacy-Theme auf Shopify Online Store 2.0 (Prestige). Ich habe Inhalte übertragen, Custom-Funktionalität neu aufgebaut, Anforderungen aus der Spezifikation umgesetzt und Styling sowie UX über die gesamte Site hinweg vereinheitlicht.
     uk: Міграція з legacy-теми на Shopify Online Store 2.0 (Prestige). Переніс увесь контент, відбудував кастомну функціональність, реалізував вимоги зі спеки та вирівняв стилі й UX по всьому сайту.
+  accent: "#779cd8"

@@ -36,6 +36,9 @@ const works = defineCollection({
     image: z.string(),
     caseStudySlug: z.string().optional(),
     archived: z.boolean().optional(),
+    /** Brand color of the project (scripts/make-accents.mjs), used as the background of its card. */
+    accent: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+    accentLocked: z.boolean().optional(),
     tech: z.object({ en: z.string(), de: z.string(), uk: z.string() }),
   }),
 });

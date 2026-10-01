@@ -14,6 +14,7 @@ export type WorkProject = {
   tech: string;
   caseStudySlug?: string;
   archived?: boolean;
+  accent?: string;
 };
 
 export type BlogPost = CollectionEntry<'blog'>['data'] & {
@@ -42,6 +43,7 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
       tech: data.tech[locale],
       caseStudySlug: data.caseStudySlug,
       archived: data.archived,
+      accent: data.accent,
     }));
 }
 
