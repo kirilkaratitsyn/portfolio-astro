@@ -1,4 +1,5 @@
 ---
+import Phone from '../components/Phone.astro';
 import Pebble from '../components/Pebble.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import { thumb } from '../lib/thumbs';
@@ -29,8 +30,8 @@ const t = useTranslations(locale);
     </div>
     {
       caseStudy.mobileImage && (
-        <div data-feature-phone class="absolute right-[7%] top-[28%] w-[25%] overflow-hidden rounded-[22px] border-[6px] border-ink bg-white shadow-[0_24px_50px_rgba(8,12,90,0.4)] md:rounded-[28px] md:border-8">
-          <img src={thumb(caseStudy.mobileImage, 'm400')} alt="" width="400" height="671" loading="lazy" decoding="async" class="block aspect-[400/671] w-full object-cover object-top" />
+        <div data-feature-phone class="absolute right-[7%] top-[12%] w-[21%]">
+          <Phone image={caseStudy.mobileImage} domain={caseStudy.archived ? undefined : new URL(caseStudy.liveUrl).hostname.replace(/^www\./, '')} sizes="(min-width: 768px) 170px, 21vw" />
         </div>
       )
     }

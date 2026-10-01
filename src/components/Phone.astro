@@ -1,0 +1,63 @@
+---
+// An iPhone showing a store's mobile screenshot without cropping it. The screenshots are Safari's visible area
+// (393 x 659 pt at 3x), so the phone is rebuilt around them: a status bar painted in the page's top color (as Safari
+// does, colors from scripts/make-thumbs.mjs), the screenshot at full width, and Safari's address bar with the
+// store's domain. Sizes are in container units, so the phone looks the same at 80 px and at 300 px wide.
+// Layout classes (width, position, hover) go on the outer element through `class`.
+import tints from '../lib/phone-tints.json';
+import { thumb } from '../lib/thumbs';
+
+interface Props {
+  image: string;
+  /** Shown in the address bar; leave it out for stores that have closed. */
+  domain?: string;
+  class?: string;
+  /** Rendered width in CSS px, for picking the image size. */
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const { image, domain, class: className = '', sizes = '140px', loading = 'lazy' } = Astro.props;
+const name = image.split('/').pop()!.replace(/\.[^.]+$/, '').replace(/-mobile$/, '');
+const tint = (tints as Record<string, { tint: string; dark: boolean }>)[name] ?? { tint: '#ffffff', dark: false };
+---
+
+<span class:list={['phone block', className]}>
+  <span class="phone-body">
+    <span class="phone-screen">
+      <span class="phone-status" style={`background:${tint.tint};color:${tint.dark ? '#ffffff' : '#0b0c10'}`} aria-hidden="true">
+        <span class="phone-time">9:41</span>
+        <span class="phone-island"></span>
+        <svg class="phone-icons" viewBox="0 0 68 12" fill="currentColor">
+          <rect x="0" y="8" width="3" height="4" rx="0.8" /><rect x="4.6" y="6" width="3" height="6" rx="0.8" /><rect x="9.2" y="3.5" width="3" height="8.5" rx="0.8" /><rect x="13.8" y="1" width="3" height="11" rx="0.8" />
+          <path d="M30 2.2c2.6 0 5 1 6.8 2.7l-1.3 1.4A7.9 7.9 0 0 0 30 4.1a7.9 7.9 0 0 0-5.5 2.2l-1.3-1.4A9.8 9.8 0 0 1 30 2.2Zm0 3.7c1.6 0 3 .6 4.1 1.6l-1.3 1.4A4.2 4.2 0 0 0 30 7.8c-1.1 0-2 .4-2.8 1.1l-1.3-1.4c1.1-1 2.5-1.6 4.1-1.6Zm0 3.6c.6 0 1.1.2 1.5.6L30 11.7l-1.5-1.6c.4-.4.9-.6 1.5-.6Z" />
+          <rect x="43" y="1.2" width="21" height="9.6" rx="2.8" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" /><rect x="44.8" y="3" width="17.4" height="6" rx="1.6" /><path d="M65.2 4.4c.8.3 1.3 1 1.3 1.6s-.5 1.3-1.3 1.6Z" opacity="0.45" />
+        </svg>
+      </span>
+      <img
+        src={thumb(image, 'm400')}
+        srcset={`${thumb(image, 'm400')} 400w, ${thumb(image, 'm800')} 800w`}
+        sizes={sizes}
+        alt=""
+        width="400"
+        height="671"
+        loading={loading}
+        decoding="async"
+        class="block h-auto w-full"
+      />
+      <span class="phone-safari" aria-hidden="true">
+        <span class="phone-url">
+          {
+            domain && (
+              <>
+                <svg viewBox="0 0 10 12" fill="currentColor" class="phone-lock"><path d="M2.5 5V3.6a2.5 2.5 0 0 1 5 0V5h.6c.5 0 .9.4.9.9v4.7c0 .5-.4.9-.9.9H1.9a.9.9 0 0 1-.9-.9V5.9c0-.5.4-.9.9-.9h.6Zm1.2 0h2.6V3.6a1.3 1.3 0 0 0-2.6 0V5Z" /></svg>
+                {domain}
+              </>
+            )
+          }
+        </span>
+        <span class="phone-home"></span>
+      </span>
+    </span>
+  </span>
+</span>

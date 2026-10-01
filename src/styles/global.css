@@ -57,6 +57,27 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .motion[data-fly-logo] .brand-name { max-width: 0; opacity: 0; }
 .wm-fly { position: fixed; left: 0; top: 0; z-index: 60; display: block; margin: 0; padding: 0; pointer-events: none; opacity: 0; white-space: nowrap; text-transform: uppercase; font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; transform-origin: 0 0; will-change: transform; }
 
+/* iPhone mockup (components/Phone.astro). Everything is in cqi of the phone's own width, so it scales as one piece.
+   Screen = 100 - 2 x 3.4 = 93.2cqi wide; 1 pt of the real 393 pt screen = 0.2372cqi. */
+.phone { container-type: inline-size; }
+.phone-body {
+  position: relative; display: block; padding: 3.4cqi; border-radius: 16.4cqi; background: #16171c;
+  box-shadow: inset 0 0 0 0.35cqi rgba(255, 255, 255, 0.07), 0 0 0 0.45cqi #3c3e46, 0 22px 50px rgba(0, 0, 0, 0.32);
+}
+/* Side buttons: power on the right, volume on the left. */
+.phone-body::before, .phone-body::after { content: ''; position: absolute; width: 0.9cqi; border-radius: 0.5cqi; background: #3c3e46; }
+.phone-body::before { right: -1.25cqi; top: 27%; height: 13%; }
+.phone-body::after { left: -1.25cqi; top: 24%; height: 9%; }
+.phone-screen { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: 13cqi; background: #f7f7f9; }
+.phone-status { position: relative; display: flex; height: 14cqi; flex: none; align-items: center; justify-content: space-between; padding: 1.2cqi 7.5cqi 0 10.5cqi; }
+.phone-time { font: 600 4cqi/1 -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; }
+.phone-island { position: absolute; left: 50%; top: 2.6cqi; width: 29.5cqi; height: 8.6cqi; transform: translateX(-50%); border-radius: 99px; background: #050506; }
+.phone-icons { width: 16cqi; height: auto; }
+.phone-safari { display: flex; height: 23cqi; flex: none; flex-direction: column; align-items: center; justify-content: space-between; padding: 2.4cqi 3.6cqi 1.9cqi; background: #f7f7f9; border-top: 0.25cqi solid rgba(0, 0, 0, 0.06); }
+.phone-url { display: flex; width: 100%; height: 10.4cqi; align-items: center; justify-content: center; gap: 1.2cqi; border-radius: 3cqi; background: #e6e6eb; color: #1c1c1e; font: 500 3.6cqi/1 -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; white-space: nowrap; overflow: hidden; }
+.phone-lock { width: 2.4cqi; height: auto; opacity: 0.6; }
+.phone-home { display: block; width: 32cqi; height: 1.2cqi; border-radius: 99px; background: #111; }
+
 /* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes lift { from { transform: translateY(26px); } to { transform: none; } }

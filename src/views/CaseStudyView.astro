@@ -1,4 +1,5 @@
 ---
+import Phone from '../components/Phone.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
@@ -75,8 +76,8 @@ const sections = [
       </div>
       {
         caseStudy.mobileImage && (
-          <div class="absolute right-[6%] top-[26%] w-[24%] overflow-hidden rounded-[22px] border-[6px] border-ink bg-white shadow-[0_24px_50px_rgba(8,12,90,0.4)] md:right-[9%] md:top-[14%] md:w-[17%] md:rounded-[30px] md:border-8">
-            <img src={thumb(caseStudy.mobileImage, 'm400')} alt="" width="400" height="671" decoding="async" class="block aspect-[400/671] w-full object-cover object-top" />
+          <div class="absolute right-[6%] top-[9%] w-[22%] md:right-[9%] md:top-[11%] md:w-[16%]">
+            <Phone image={caseStudy.mobileImage} domain={caseStudy.archived ? undefined : new URL(caseStudy.liveUrl).hostname.replace(/^www\./, '')} sizes="(min-width: 768px) 16vw, 22vw" loading="eager" />
           </div>
         )
       }

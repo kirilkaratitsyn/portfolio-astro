@@ -44,6 +44,7 @@ const seo = {
                 description={work.tech}
                 image={work.image}
                 mobileImage={caseStudy?.mobileImage}
+                domain={work.archived ? undefined : new URL(work.url).hostname.replace(/^www\./, '')}
                 accent={work.accent}
                 size={sizeOf[span]}
                 external={!toCase}
