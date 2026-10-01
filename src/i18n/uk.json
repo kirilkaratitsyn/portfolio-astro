@@ -478,52 +478,67 @@
     "originalNote": "Відгуки в англійському оригіналі",
     "cards": [
       {
-        "quote": "Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.",
-        "highlight": "Very skilled, fast, and easy to communicate with.",
-        "context": "Фінальні правки та мобільний UI",
-        "date": "вер.–жов. 2025"
+        "quote": "During the period we worked together, Kiril clearly developed his communication skills as well. His work was always at a good level and he actively tries to come up with solutions…",
+        "highlight": "His work was always at a good level and he actively tries to come up with solutions",
+        "rating": 5,
+        "context": "Меню та інші секції",
+        "date": "квіт. 2026"
       },
       {
-        "quote": "Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.",
-        "highlight": "quickly resolved 404 URL errors, language switching issues",
-        "context": "Виправлення технічних помилок у темі Rise",
-        "date": "жов. 2025"
+        "quote": "Kiril is overall a talented freelancer that brings a lot of great skills and qualities to the project. I hired him to take an existing figma design and map it onto a shopify store…",
+        "highlight": "a talented freelancer that brings a lot of great skills and qualities to the project",
+        "rating": 4,
+        "context": "Редизайн магазину за макетом Figma",
+        "date": "квіт. 2026"
       },
       {
-        "quote": "Kiril did a great job! He quickly understood the requirements, implemented everything exactly as shown in the loom video, and delivered fast, clean results. Excellent communication and professional work.",
-        "highlight": "delivered fast, clean results",
-        "context": "Разова задача за Loom-брифом",
-        "date": "жов. 2025"
-      },
-      {
-        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
-        "highlight": "all tasks were completed reliably",
-        "context": "Оновлення теми з Prestige 4 до 10–11",
-        "date": "лист. 2025"
-      },
-      {
-        "quote": "It's been great to work with Kiril! This freelancer is clear and concise in communication, cutting through ambiguity and keeping goals and next steps on track.",
-        "highlight": "clear and concise in communication",
-        "context": "Чистий вбудований checkout",
-        "date": "січ. 2026"
+        "quote": "Hi Kiril, I appreciate the work you’ve put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved.",
+        "highlight": "for your flexibility as the project scope evolved",
+        "rating": 4,
+        "context": "Редизайн, технічна міграція та SEO-налаштування",
+        "date": "бер. 2026"
       },
       {
         "quote": "Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.",
         "highlight": "a bunch of manually coded solutions",
+        "rating": 5,
         "context": "Міграція на Online Store 2.0",
         "date": "лют. 2026"
       },
       {
+        "quote": "It's been great to work with Kiril! This freelancer is clear and concise in communication, cutting through ambiguity and keeping goals and next steps on track.",
+        "highlight": "clear and concise in communication",
+        "rating": 5,
+        "context": "Чистий вбудований checkout",
+        "date": "січ. 2026"
+      },
+      {
+        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
+        "highlight": "all tasks were completed reliably",
+        "rating": 5,
+        "context": "Оновлення теми з Prestige 4 до 10–11",
+        "date": "лист. 2025"
+      },
+      {
         "quote": "Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.",
         "highlight": "solves the problems delivering accurate job on time",
-        "context": "Оптимізація продуктивності",
+        "rating": 5,
+        "context": "Оптимізація продуктивності, триває",
         "date": "лист. 2025 – зараз"
       },
       {
-        "quote": "Kiril is great to work with. Fast communication, good execution, clean work.",
-        "highlight": "Fast communication, good execution, clean work.",
-        "context": "Виправлення бага",
-        "date": "лист. 2025"
+        "quote": "Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.",
+        "highlight": "quickly resolved 404 URL errors, language switching issues",
+        "rating": 5,
+        "context": "Виправлення технічних помилок у темі Rise",
+        "date": "жовт. 2025"
+      },
+      {
+        "quote": "Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.",
+        "highlight": "Very skilled, fast, and easy to communicate with.",
+        "rating": 5,
+        "context": "Фінальні правки та мобільний UI",
+        "date": "вер.–жовт. 2025"
       }
     ]
   }

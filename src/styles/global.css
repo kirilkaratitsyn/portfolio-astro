@@ -92,6 +92,12 @@ html.lenis, html.lenis body { height: auto; }
 .reviews-rail { scrollbar-width: none; }
 .reviews-rail::-webkit-scrollbar { display: none; }
 .reviews-rail.is-dragging { scroll-snap-type: none; scroll-behavior: auto; cursor: grabbing; user-select: none; -webkit-user-select: none; }
+/* Desktop: the section is pinned by scroll and the page scroll moves the cards (scripts/motion.ts), so no manual scrolling. */
+.reviews-rail.is-driven { overflow-x: hidden; scroll-snap-type: none; scroll-behavior: auto; cursor: default; }
+@media (min-width: 768px) and (max-height: 840px) {
+  .review-card figure { padding: 28px 32px; }
+  .review-card blockquote { font-size: 22px; }
+}
 .review-card mark { background: linear-gradient(transparent 58%, var(--hl) 58%); color: inherit; padding: 0 0.06em; margin: 0 -0.06em; }
 
 /* Cursor while the pointer is over a stone you can grab (scripts/stage.ts). */

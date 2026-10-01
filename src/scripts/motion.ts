@@ -27,7 +27,7 @@ export function init() {
   marquee();
   feature();
   process();
-  reviews();
+  reviews(lenis);
   contact();
   footer();
   magnets();
@@ -339,20 +339,23 @@ function process() {
   });
 }
 
-function reviews() {
+function reviews(lenis: Lenis | null) {
   const rail = qs<HTMLUListElement>('[data-rail]');
   if (!rail) return;
+  const section = rail.closest('section');
   const cards = qsa('.review-card', rail);
   const bar = qs('[data-rail-progress]');
   const prev = qs<HTMLButtonElement>('[data-rail-prev]');
   const next = qs<HTMLButtonElement>('[data-rail-next]');
+  const first = () => cards[0]?.offsetLeft ?? 0;
+  const maxLeft = () => rail.scrollWidth - rail.clientWidth;
+  const offsetOf = (card: HTMLElement) => card.offsetLeft - first();
 
   // The cards slide in from the right when the rail comes into view.
   gsap.from(cards, { x: 110, opacity: 0, duration: 1.15, ease: EXPO, stagger: 0.08, scrollTrigger: { trigger: rail, start: 'top 88%', once: true } });
 
-  const step = () => (cards[1] ? cards[1].offsetLeft - (cards[0]?.offsetLeft ?? 0) : rail.clientWidth);
   const sync = () => {
-    const max = rail.scrollWidth - rail.clientWidth;
+    const max = maxLeft();
     const share = max > 0 ? rail.scrollLeft / max : 0;
     if (bar) bar.style.transform = `scaleX(${(0.12 + share * 0.88).toFixed(3)})`;
     if (prev) prev.disabled = rail.scrollLeft < 4;
@@ -360,39 +363,60 @@ function reviews() {
   };
   rail.addEventListener('scroll', sync, { passive: true });
   window.addEventListener('resize', sync);
-  prev?.addEventListener('click', () => rail.scrollBy({ left: -step(), behavior: 'smooth' }));
-  next?.addEventListener('click', () => rail.scrollBy({ left: step(), behavior: 'smooth' }));
   sync();
 
-  // Drag with the mouse; on release it settles on the nearest card.
-  if (!fine) return;
-  let startX = 0;
-  let startLeft = 0;
-  let down = false;
-  let moved = 0;
-  rail.addEventListener('pointerdown', (e) => {
-    if (e.pointerType !== 'mouse' || e.button !== 0) return;
-    down = true;
-    moved = 0;
-    startX = e.clientX;
-    startLeft = rail.scrollLeft;
+  const mm = gsap.matchMedia();
+
+  // Desktop: the page stops on the reviews and vertical scrolling slides the cards sideways until the last one,
+  // then the page carries on.
+  mm.add('(min-width: 768px)', () => {
+    if (!section) return;
+    rail.classList.add('is-driven');
+    const progress = { value: 0 };
+    const tween = gsap.to(progress, {
+      value: () => maxLeft(),
+      ease: 'none',
+      onUpdate: () => {
+        rail.scrollLeft = progress.value;
+      },
+      scrollTrigger: { trigger: section, start: 'top 96px', end: () => `+=${maxLeft()}`, pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true },
+    });
+    const st = tween.scrollTrigger!;
+    // The arrows move along the page scroll to the neighbouring card.
+    const goTo = (left: number) => {
+      const share = maxLeft() > 0 ? Math.min(1, Math.max(0, left / maxLeft())) : 0;
+      const y = st.start + share * (st.end - st.start);
+      if (lenis) lenis.scrollTo(y, { duration: 1.1 });
+      else window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+    const onPrev = () => {
+      const target = [...cards].reverse().find((c) => offsetOf(c) < rail.scrollLeft - 60);
+      goTo(target ? offsetOf(target) : 0);
+    };
+    const onNext = () => {
+      const target = cards.find((c) => offsetOf(c) > rail.scrollLeft + 60);
+      goTo(target ? offsetOf(target) : maxLeft());
+    };
+    prev?.addEventListener('click', onPrev);
+    next?.addEventListener('click', onNext);
+    return () => {
+      rail.classList.remove('is-driven');
+      prev?.removeEventListener('click', onPrev);
+      next?.removeEventListener('click', onNext);
+    };
   });
-  window.addEventListener('pointermove', (e) => {
-    if (!down) return;
-    const dx = e.clientX - startX;
-    moved = Math.max(moved, Math.abs(dx));
-    if (moved > 4) rail.classList.add('is-dragging');
-    rail.scrollLeft = startLeft - dx;
-  });
-  window.addEventListener('pointerup', () => {
-    if (!down) return;
-    down = false;
-    if (!rail.classList.contains('is-dragging')) return;
-    const at = rail.scrollLeft;
-    const first = cards[0]?.offsetLeft ?? 0;
-    const target = cards.reduce((best, card) => (Math.abs(card.offsetLeft - first - at) < Math.abs(best - at) ? card.offsetLeft - first : best), 0);
-    rail.classList.remove('is-dragging');
-    rail.scrollTo({ left: target, behavior: 'smooth' });
+
+  // Phones and narrow windows: swipe the rail; the arrows step through it.
+  mm.add('(max-width: 767px)', () => {
+    const step = () => (cards[1] ? cards[1].offsetLeft - first() : rail.clientWidth);
+    const onPrev = () => rail.scrollBy({ left: -step(), behavior: 'smooth' });
+    const onNext = () => rail.scrollBy({ left: step(), behavior: 'smooth' });
+    prev?.addEventListener('click', onPrev);
+    next?.addEventListener('click', onNext);
+    return () => {
+      prev?.removeEventListener('click', onPrev);
+      next?.removeEventListener('click', onNext);
+    };
   });
 }
 
