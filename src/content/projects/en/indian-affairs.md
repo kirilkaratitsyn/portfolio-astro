@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 9
 title: Indian Affairs
 summary: A legacy store needed to move to Shopify Online Store 2.0 while preserving structure, rebuilding custom functionality, and cleaning up the experience across the site.
 brandSummary: Indian Affairs is a fashion brand for children and adults, known for timeless pieces, natural materials, and handcrafted details rooted in Indian textile traditions.

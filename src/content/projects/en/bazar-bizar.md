@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 6
 title: Bazar Bizar
 summary: A full custom Shopify theme rebuild based on a Figma redesign, while carrying over the live store's functionality into a cleaner, more modern storefront experience.
 brandSummary: Bazar Bizar is an interior and lifestyle brand rooted in Antwerp and Bali, known for handcrafted homeware, furniture, lighting, and decor shaped by travel, craftsmanship, and fair-trade values.

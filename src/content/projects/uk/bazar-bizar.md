@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 6
 title: Bazar Bizar
 summary: Повна кастомна Shopify-тема на основі Figma-редизайну з перенесенням усього функціоналу з live-магазину в чистіший і сучасніший storefront.
 brandSummary: Bazar Bizar — це interior і lifestyle бренд з корінням в Антверпені та на Балі, відомий handcrafted homeware, furniture, lighting і decor, сформованими подорожами, ремеслом і fair-trade цінностями.

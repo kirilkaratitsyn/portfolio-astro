@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 8
 title: Silk Tallow
 summary: The store needed advanced Mystery Gift and Free Gift logic that felt native to the storefront, updated instantly, and handled cart edge cases without page reloads.
 brandSummary: Silk Tallow is a natural skincare brand centered on tallow-based formulas, simple ingredients, and toxin-free routines inspired by nature.

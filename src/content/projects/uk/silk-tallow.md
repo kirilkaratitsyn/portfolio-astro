@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 8
 title: Silk Tallow
 summary: Магазину була потрібна складна Mystery Gift і Free Gift логіка, яка виглядає природно в storefront, оновлюється миттєво і коректно обробляє edge cases без перезавантаження сторінки.
 brandSummary: Silk Tallow — це бренд натурального догляду за шкірою, побудований навколо tallow-based формул, простих інгредієнтів і toxin-free рутини, натхненної природою.
