@@ -6,10 +6,11 @@
 // The poster images stay in the HTML as the first paint and as the fallback when WebGL is unavailable.
 import {
   ACESFilmicToneMapping, Group, PerspectiveCamera, PMREMGenerator, Quaternion, Scene, Vector3, WebGLRenderer,
-  type Mesh, type Texture,
+  type Mesh, type Object3D, type Texture,
 } from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
+import { isIcon, makeIcon, makeLogo } from '../lib/icons';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -32,9 +33,11 @@ interface Pointer {
 const yieldMain = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
 
 const tmpAxis = new Vector3();
+const tmpAxis2 = new Vector3();
+const tmpTo = new Vector3();
 const tmpQuat = new Quaternion();
-/** Turn a mesh by an angular velocity (rad/s, world axes) for dt seconds. */
-function spin(mesh: Mesh | Group, wx: number, wy: number, wz: number, dt: number) {
+/** Turn an object by an angular velocity (rad/s, world axes) for dt seconds. */
+function spin(mesh: Object3D, wx: number, wy: number, wz: number, dt: number) {
   const speed = Math.hypot(wx, wy, wz);
   if (speed < 1e-6) return;
   tmpAxis.set(wx / speed, wy / speed, wz / speed);
@@ -363,25 +366,41 @@ class HeroView extends View {
 
 /* ------------------------------------------------------------------ icon pebbles */
 
+/** What a `data-pebble` host shows: a pebble, one of the icons, or the logo. Icons and the logo have a resting pose. */
+function makeObject(name: string): { object: Object3D; rest: Quaternion | null } {
+  if (name === 'logo') {
+    const object = makeLogo();
+    return { object, rest: object.userData.rest as Quaternion };
+  }
+  if (isIcon(name)) {
+    const object = makeIcon(name);
+    return { object, rest: object.userData.rest as Quaternion };
+  }
+  return { object: makePebble(name as PebbleName), rest: null };
+}
+
 class PebbleView extends View {
   private group = new Group();
-  private mesh: Mesh;
-  private wx = 0;
-  private wy = 0;
+  private object: Object3D;
+  private rest: Quaternion | null;
+  private w = new Vector3();
   private tiltX = 0;
   private tiltY = 0;
   private lift = 0;
   private hovering = false;
   private pointer: Pointer | null = null;
   private grabbed = false;
+  private arcFrom = new Vector3(0, 0, 1);
   private k = 1;
 
-  constructor(stage: Stage, host: HTMLElement, readonly name: PebbleName, private img: HTMLImageElement) {
+  constructor(stage: Stage, host: HTMLElement, readonly name: string, private img: HTMLImageElement) {
     super(stage, host, 2);
     Object.assign(this.canvas.style, { left: '-20%', top: '-20%', width: '140%', height: '140%' });
     host.append(this.canvas);
-    this.mesh = makePebble(name);
-    this.group.add(this.mesh);
+    const made = makeObject(name);
+    this.object = made.object;
+    this.rest = made.rest;
+    this.group.add(this.object);
     this.scene.add(this.group);
     this.camera.position.set(0, PEBBLE_CAMERA.y, PEBBLE_CAMERA.distance);
     this.camera.lookAt(0, 0, 0);
@@ -396,11 +415,6 @@ class PebbleView extends View {
     this.live = false;
   }
 
-  /** Let the page animation (GSAP) turn or scale the pebble. */
-  get object() {
-    return this.group;
-  }
-
   protected measure() {
     const size = this.host.clientWidth * 1.4;
     this.cssW = this.cssH = size;
@@ -412,7 +426,7 @@ class PebbleView extends View {
 
   private center() {
     const r = this.host.getBoundingClientRect();
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2, r: r.width / 2 };
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2, r: Math.max(r.width, r.height) / 2 };
   }
 
   pick(x: number, y: number) {
@@ -431,47 +445,79 @@ class PebbleView extends View {
     this.pointer = null;
   }
 
+  /** The pointer on a virtual sphere around the object (an arcball): dragging inside the ring turns it about X and Y, dragging near the rim spins it about Z. */
+  private onSphere(p: Pointer, into: Vector3) {
+    const c = this.center();
+    const radius = c.r * 1.3;
+    const x = (p.x - c.x) / radius;
+    const y = -(p.y - c.y) / radius;
+    const d2 = x * x + y * y;
+    const z = d2 <= 0.5 ? Math.sqrt(1 - d2) : 0.5 / Math.sqrt(d2);
+    return into.set(x, y, z).normalize();
+  }
+
   grab(p: Pointer) {
     this.grabbed = true;
     this.pointer = p;
+    this.onSphere(p, this.arcFrom);
   }
   release() {
     this.grabbed = false;
+    const speed = this.w.length();
+    if (speed > 14) this.w.multiplyScalar(14 / speed);
   }
 
   poke() {
-    this.wx += (Math.random() - 0.5) * 9;
-    this.wy += 6 + Math.random() * 4;
+    this.w.x += (Math.random() - 0.5) * 9;
+    this.w.y += 6 + Math.random() * 4;
     this.lift = 1;
   }
 
   step(dt: number, scroll: number) {
-    const damp = Math.exp(-2.4 * dt);
-    this.wx = this.wx * damp - scroll * 0.01;
-    this.wy *= damp;
-
+    const w = this.w;
     const p = this.pointer;
-    if (this.grabbed && p) {
-      // Turn by the pointer's velocity while held.
-      this.wy = this.wy * 0.6 + p.vx * 0.014 * 0.4;
-      this.wx = this.wx * 0.6 + p.vy * 0.014 * 0.4;
-    } else if (this.hovering && p) {
-      this.wy += p.vx * 0.00012;
-      this.wx += p.vy * 0.00012;
-    }
-    spin(this.mesh, this.wx, this.wy, 0, dt);
+    const damp = Math.exp(-2.4 * dt);
 
-    // Lean toward the cursor and grow a little when it is over the pebble.
+    if (this.grabbed && p) {
+      // Turn by exactly as much as the pointer moved on the sphere; keep the speed for the throw.
+      const to = this.onSphere(p, tmpTo);
+      const axis = tmpAxis2.copy(this.arcFrom).cross(to);
+      const sine = axis.length();
+      if (sine > 1e-6) {
+        const angle = Math.atan2(sine, this.arcFrom.dot(to)) * 1.5;
+        axis.divideScalar(sine);
+        tmpQuat.setFromAxisAngle(axis, angle);
+        this.object.quaternion.premultiply(tmpQuat);
+        w.lerp(axis.multiplyScalar(angle / Math.max(dt, 1 / 120)), 0.5);
+      } else {
+        w.multiplyScalar(0.5);
+      }
+      this.arcFrom.copy(to);
+    } else {
+      w.multiplyScalar(damp);
+      w.x -= scroll * (this.rest ? 0.006 : 0.01);
+      if (w.length() > 12) w.setLength(12);
+      if (this.hovering && p) {
+        w.y += p.vx * 0.00012;
+        w.x += p.vy * 0.00012;
+      }
+      spin(this.object, w.x, w.y, w.z, dt);
+      // Icons and the logo drift back to their resting pose.
+      if (this.rest) this.object.quaternion.slerp(this.rest, 1 - Math.exp(-1.5 * dt));
+    }
+
+    // Lean toward the cursor and grow a little when it is over the object.
     const c = this.center();
-    const targetY = this.hovering && p ? clamp((p.x - c.x) / c.r, -1, 1) * 0.45 : 0;
-    const targetX = this.hovering && p ? clamp((p.y - c.y) / c.r, -1, 1) * 0.45 : 0;
+    const targetY = this.hovering && p ? clamp((p.x - c.x) / c.r, -1, 1) * 0.35 : 0;
+    const targetX = this.hovering && p ? clamp((p.y - c.y) / c.r, -1, 1) * 0.35 : 0;
     const ease = 1 - Math.exp(-9 * dt);
     this.tiltY += (targetY - this.tiltY) * ease;
     this.tiltX += (targetX - this.tiltX) * ease;
     this.lift += ((this.hovering || this.grabbed ? 1 : 0) - this.lift) * ease;
 
+    const away = this.rest ? this.object.quaternion.angleTo(this.rest) : 0;
     const settled =
-      Math.abs(this.wx) < 0.03 && Math.abs(this.wy) < 0.03 && Math.abs(this.tiltX - targetX) < 0.002 &&
+      w.length() < 0.03 && away < 0.004 && Math.abs(this.tiltX - targetX) < 0.002 &&
       Math.abs(this.tiltY - targetY) < 0.002 && Math.abs(this.lift - (this.hovering ? 1 : 0)) < 0.002;
     if (scroll !== 0) this.dirty = true;
     return !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
@@ -499,6 +545,7 @@ class Stage {
   private pointerTime = 0;
   private grabbed: View | null = null;
   private tap: { x: number; y: number; t: number } | null = null;
+  private downAt: { x: number; y: number } | null = null;
   private io: IntersectionObserver;
   private ro: ResizeObserver;
   private observed = new Map<Element, View>();
@@ -679,7 +726,9 @@ class Stage {
 
   /** A stone behind a link or button must not swallow the click. */
   private overControl(x: number, y: number) {
-    return Boolean(document.elementFromPoint(x, y)?.closest('a, button, summary, input, textarea, select, [data-cal-link]'));
+    const el = document.elementFromPoint(x, y);
+    if (!el || el.closest('[data-grab]')) return false;
+    return Boolean(el.closest('a, button, summary, input, textarea, select, [data-cal-link]'));
   }
 
   private onLeave = () => {
@@ -703,6 +752,7 @@ class Stage {
     for (const view of this.views) {
       if (!view.visible || !view.pick(p.x, p.y)) continue;
       this.grabbed = view;
+      this.downAt = { x: e.clientX, y: e.clientY };
       view.grab(p);
       document.documentElement.classList.add('is-grabbing');
       e.preventDefault();
@@ -713,6 +763,15 @@ class Stage {
 
   private onUp = (e: PointerEvent) => {
     if (this.grabbed) {
+      // A drag that started on a link (the logo) must not count as a click on it.
+      if (this.downAt && Math.hypot(e.clientX - this.downAt.x, e.clientY - this.downAt.y) > 4) {
+        const stop = (event: Event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        };
+        window.addEventListener('click', stop, { capture: true, once: true });
+        window.setTimeout(() => window.removeEventListener('click', stop, { capture: true }), 120);
+      }
       this.grabbed.release(this.pointer);
       this.grabbed = null;
       document.documentElement.classList.remove('is-grabbing');
@@ -722,7 +781,7 @@ class Stage {
     this.tap = null;
     if (tap && e.type === 'pointerup' && e.timeStamp - tap.t < 450 && Math.hypot(e.clientX - tap.x, e.clientY - tap.y) < 12) {
       for (const view of this.views) {
-        if (view.visible && view.pick(tap.x, tap.y)) {
+        if (view.visible && !this.overControl(tap.x, tap.y) && view.pick(tap.x, tap.y)) {
           view.poke(tap.x, tap.y);
           this.wake();
           break;
@@ -751,7 +810,7 @@ export async function start() {
   let made = 0;
   for (const host of pebbleHosts) {
     if (++made % 3 === 0) await yieldMain();
-    const name = host.dataset.pebble as PebbleName;
+    const name = host.dataset.pebble ?? 'cobalt';
     const img = host.querySelector('img');
     if (img) stage.add(new PebbleView(stage, host, name, img), img);
   }

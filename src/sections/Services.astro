@@ -1,5 +1,5 @@
 ---
-import Pebble from '../components/Pebble.astro';
+import Icon3D from '../components/Icon3D.astro';
 import { useTranslations, type Locale } from '../i18n';
 
 interface Props {
@@ -7,7 +7,8 @@ interface Props {
 }
 
 const t = useTranslations(Astro.props.locale);
-const pebbles = ['cobalt', 'white', 'black', 'cobalt2', 'white', 'black'] as const;
+// One 3D icon per service, in the order of the list.
+const icons = ['shop', 'migrate', 'plug', 'bolt', 'magnifier', 'gear'] as const;
 ---
 
 <section id="services" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 md:mt-32">
@@ -15,8 +16,8 @@ const pebbles = ['cobalt', 'white', 'black', 'cobalt2', 'white', 'black'] as con
   <ul class="grid border-t border-line md:grid-cols-2">
     {
       t.services.items.map((item, index) => (
-        <li data-reveal class="flex items-center gap-4 border-b border-line px-5 py-5 font-head text-[22px] font-medium leading-tight tracking-[-0.01em] md:gap-[22px] md:px-10 md:text-[32px] md:[&:nth-child(odd)]:border-r">
-          <Pebble name={pebbles[index]} class="w-10 shrink-0 md:w-[54px]" />
+        <li data-reveal class="flex items-center gap-4 border-b border-line px-5 py-4 font-head text-[22px] font-medium leading-tight tracking-[-0.01em] md:gap-[22px] md:px-10 md:text-[32px] md:[&:nth-child(odd)]:border-r">
+          <Icon3D name={icons[index] ?? 'shop'} class="w-14 shrink-0 md:w-[80px]" />
           {item.title}
         </li>
       ))
