@@ -31,6 +31,7 @@ export function init() {
   contact();
   footer();
   magnets();
+  cards();
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
@@ -300,8 +301,9 @@ function marquee() {
   gsap.ticker.add((_time, delta) => {
     if (!running) return;
     boost *= 0.94;
-    const speed = (0.9 + boost * 2.2) * (delta / 16.7);
-    position = wrapX(position + direction * speed * 0.03);
+    // Pixels per second, so the band keeps its pace whatever its size: a calm drift that scrolling speeds up.
+    const pxPerSecond = 60 + boost * 170;
+    position = wrapX(position + ((direction * pxPerSecond * (delta / 1000)) / Math.max(1, track.scrollWidth)) * 100);
     apply(position);
     skew(gsap.utils.clamp(-9, 9, direction * boost * -1.6));
   });
@@ -377,6 +379,47 @@ function footer() {
     });
   });
   wrap.addEventListener('pointerleave', () => lift.forEach((to) => to(0)));
+}
+
+/** Project cards: the panel tilts toward the cursor, the devices float at their own depth, a light follows the pointer. */
+function cards() {
+  if (!fine) return;
+  qsa('[data-card]').forEach((card) => {
+    const panel = qs('[data-tilt]', card);
+    if (!panel) return;
+    gsap.set(panel, { transformPerspective: 1100 });
+    const rx = gsap.quickTo(panel, 'rotationX', { duration: 0.7, ease: 'power3' });
+    const ry = gsap.quickTo(panel, 'rotationY', { duration: 0.7, ease: 'power3' });
+    const layers = qsa('[data-depth]', panel).map((el) => ({
+      depth: Number(el.dataset.depth ?? 0),
+      x: gsap.quickTo(el, 'x', { duration: 0.8, ease: 'power3' }),
+      y: gsap.quickTo(el, 'y', { duration: 0.8, ease: 'power3' }),
+    }));
+    const reset = () => {
+      rx(0);
+      ry(0);
+      layers.forEach((l) => {
+        l.x(0);
+        l.y(0);
+      });
+    };
+    card.addEventListener('pointermove', (e) => {
+      const r = panel.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5;
+      const ny = (e.clientY - r.top) / r.height - 0.5;
+      ry(nx * 10);
+      rx(-ny * 8);
+      layers.forEach((l) => {
+        l.x(-nx * l.depth);
+        l.y(-ny * l.depth);
+      });
+      panel.style.setProperty('--mx', `${(nx + 0.5) * 100}%`);
+      panel.style.setProperty('--my', `${(ny + 0.5) * 100}%`);
+    });
+    card.addEventListener('pointerleave', reset);
+    // A card that scrolls away from a still pointer never gets `pointerleave`.
+    window.addEventListener('scroll', reset, { passive: true });
+  });
 }
 
 /** Buttons that book a call lean toward the cursor. */

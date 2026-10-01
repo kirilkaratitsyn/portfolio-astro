@@ -9,9 +9,11 @@ export function makeRng(seed: number) {
   return () => (s = (s * 16807) % 2147483647) / 2147483647;
 }
 
-/** A noisy, slightly squashed icosphere with smooth shading and a clear coat. */
-export function makeStone(size: number, color: string, rnd: () => number): Mesh {
-  const base = new IcosahedronGeometry(size, 4);
+/** The shape of a stone: a noisy, slightly squashed icosphere with smooth shading. */
+function stoneGeometry(size: number, rnd: () => number, detail: number): BufferGeometry {
+  // `detail` is how finely the sphere is cut: big objects need a fine mesh for a smooth outline and smooth reflections,
+  // small ones do not (and every extra step costs start-up time).
+  const base = new IcosahedronGeometry(size, detail);
   base.deleteAttribute('normal');
   base.deleteAttribute('uv');
   const geometry: BufferGeometry = mergeVertices(base);
@@ -27,8 +29,15 @@ export function makeStone(size: number, color: string, rnd: () => number): Mesh 
     position.setXYZ(i, v.x, v.y * 0.86, v.z);
   }
   geometry.computeVertexNormals();
-  const material = new MeshPhysicalMaterial({ color, roughness: 0.18, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.1 });
-  return new Mesh(geometry, material);
+  return geometry;
+}
+
+const stoneMaterial = (color: string) =>
+  new MeshPhysicalMaterial({ color, roughness: 0.18, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.1 });
+
+/** A stone-like blob with a clear coat. */
+export function makeStone(size: number, color: string, rnd: () => number, detail = 8): Mesh {
+  return new Mesh(stoneGeometry(size, rnd, detail), stoneMaterial(color));
 }
 
 const HERO_COLORS = ['#2433f0', '#f4f5f9', '#0d0e12', '#2433f0', '#dfe2ee'];
@@ -44,7 +53,7 @@ export const HERO_CAMERA = { fov: 32, aspect: 1720 / 1188, position: [0, 0.2, 17
 export function makeHeroStones() {
   const rnd = makeRng(7);
   return HERO_SPOTS.map(([x, y, z, r], i) => {
-    const mesh = makeStone(r, HERO_COLORS[i % HERO_COLORS.length], rnd);
+    const mesh = makeStone(r, HERO_COLORS[i % HERO_COLORS.length], rnd, 9);
     mesh.position.set(x, y, z);
     mesh.rotation.set(rnd() * 3, rnd() * 3, rnd() * 3);
     return { mesh, home: new Vector3(x, y, z), radius: r };
@@ -63,10 +72,23 @@ export type PebbleName = keyof typeof PEBBLES;
 export const PEBBLE_SIZE = 2.25;
 export const PEBBLE_CAMERA = { fov: 32, distance: 9.5, y: 0.2 };
 
-export function makePebble(name: PebbleName) {
+const pebbleGeometries = new Map<string, BufferGeometry>();
+
+export function makePebble(name: PebbleName, detail = 8) {
   const { color, seed } = PEBBLES[name];
   const rnd = makeRng(seed);
-  const mesh = makeStone(PEBBLE_SIZE, color, rnd);
+  // Pebbles of the same kind and size share one geometry; the generator still advances the same way.
+  const key = `${name}:${detail}`;
+  let geometry = pebbleGeometries.get(key);
+  if (geometry) {
+    rnd();
+    rnd();
+    rnd();
+  } else {
+    geometry = stoneGeometry(PEBBLE_SIZE, rnd, detail);
+    pebbleGeometries.set(key, geometry);
+  }
+  const mesh = new Mesh(geometry, stoneMaterial(color));
   mesh.rotation.set(rnd() * 3, rnd() * 3, rnd() * 3);
   return mesh;
 }

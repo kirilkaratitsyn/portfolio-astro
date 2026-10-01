@@ -11,14 +11,14 @@ interface Props {
 // Logos are the stores' own header logos, shown as black silhouettes; `height` (px on desktop)
 // balances their different proportions so they read at a similar size.
 const CLIENTS = [
-  { id: 'orska-rituals', logo: 'orska-rituals.webp', height: 28 },
-  { id: 'jula-bloom', logo: 'jula-bloom.webp', height: 22 },
-  { id: 'minbie', logo: 'minbie.webp', height: 32 },
-  { id: 'onlyphila', logo: 'onlyphila.webp', height: 36 },
-  { id: 'crafts-cove-marine', logo: 'crafts-cove-marine.webp', height: 40 },
-  { id: 'elanora-skin', logo: 'elanora-skin.webp', height: 24 },
-  { id: 'petaljet', logo: 'petaljet.webp', height: 28 },
-  { id: 'virea', logo: 'virea.webp', height: 24 },
+  { id: 'orska-rituals', logo: 'orska-rituals.webp', height: 56 },
+  { id: 'jula-bloom', logo: 'jula-bloom.webp', height: 44 },
+  { id: 'minbie', logo: 'minbie.webp', height: 62 },
+  { id: 'onlyphila', logo: 'onlyphila.webp', height: 72 },
+  { id: 'crafts-cove-marine', logo: 'crafts-cove-marine.webp', height: 72 },
+  { id: 'elanora-skin', logo: 'elanora-skin.webp', height: 48 },
+  { id: 'petaljet', logo: 'petaljet.webp', height: 56 },
+  { id: 'virea', logo: 'virea.webp', height: 48 },
 ];
 
 const { locale, works } = Astro.props;
@@ -30,17 +30,17 @@ const clients = CLIENTS.map((client) => {
 });
 ---
 
-<section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20">
-  <h2 id="clients-label" class="mb-7 font-sans text-sm font-medium text-mute">{t.clients.label}</h2>
-  <ul class="flex flex-wrap items-center justify-between gap-x-10 gap-y-7" data-stagger>
+<section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-36">
+  <h2 id="clients-label" class="mb-12 font-sans text-base font-medium text-mute md:mb-16 md:text-lg">{t.clients.label}</h2>
+  <ul class="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-x-10 md:gap-y-20" data-stagger>
     {
       clients.map((client) => (
-        <li>
-          <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-70 transition hover:opacity-100" style={`--h: ${client.height}px`}>
+        <li class="flex h-[84px] items-center justify-center md:h-[110px]">
+          <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-80 transition duration-300 hover:scale-105 hover:opacity-100" style={`--h: ${client.height}px`}>
             <img
               src={`/source/logos/clients/${client.logo}`}
               alt={client.title}
-              class="h-[calc(var(--h)*0.8)] w-auto max-w-[170px] object-contain brightness-0 md:h-[var(--h)]"
+              class="h-[calc(var(--h)*0.62)] w-auto max-w-[150px] object-contain brightness-0 md:h-[var(--h)] md:max-w-[290px]"
               loading="lazy"
               decoding="async"
             />

@@ -367,16 +367,17 @@ class HeroView extends View {
 /* ------------------------------------------------------------------ icon pebbles */
 
 /** What a `data-pebble` host shows: a pebble, one of the icons, or the logo. Icons and the logo have a resting pose. */
-function makeObject(name: string): { object: Object3D; rest: Quaternion | null } {
-  if (name === 'logo') {
-    const object = makeLogo();
+function makeObject(name: string, hostWidth: number): { object: Object3D; rest: Quaternion | null } {
+  if (name.startsWith('logo')) {
+    const object = makeLogo(name === 'logo-white' ? 'white' : 'ink');
     return { object, rest: object.userData.rest as Quaternion };
   }
   if (isIcon(name)) {
     const object = makeIcon(name);
     return { object, rest: object.userData.rest as Quaternion };
   }
-  return { object: makePebble(name as PebbleName), rest: null };
+  // A pebble 270 px wide needs a fine mesh, one 54 px wide does not.
+  return { object: makePebble(name as PebbleName, Math.min(12, Math.max(5, Math.round(hostWidth / 16)))), rest: null };
 }
 
 class PebbleView extends View {
@@ -397,7 +398,7 @@ class PebbleView extends View {
     super(stage, host, 2);
     Object.assign(this.canvas.style, { left: '-20%', top: '-20%', width: '140%', height: '140%' });
     host.append(this.canvas);
-    const made = makeObject(name);
+    const made = makeObject(name, host.clientWidth);
     this.object = made.object;
     this.rest = made.rest;
     this.group.add(this.object);
@@ -807,13 +808,26 @@ export async function start() {
     await stage.renderer.compileAsync(hero.scene, hero.camera);
     await yieldMain();
   }
-  let made = 0;
-  for (const host of pebbleHosts) {
-    if (++made % 3 === 0) await yieldMain();
+  // Pebbles, icons and logos are built when they come near the screen, not all at once on load.
+  const build = (host: HTMLElement) => {
     const name = host.dataset.pebble ?? 'cobalt';
     const img = host.querySelector('img');
     if (img) stage.add(new PebbleView(stage, host, name, img), img);
-  }
+  };
+  const lazy = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        lazy.unobserve(entry.target);
+        window.setTimeout(() => {
+          build(entry.target as HTMLElement);
+          stage.wake();
+        }, 0);
+      }
+    },
+    { rootMargin: '500px 0px' },
+  );
+  for (const host of pebbleHosts) lazy.observe(host);
   stage.wake();
   // Turn the first picture on, then give the hero stones a nudge.
   requestAnimationFrame(() => {

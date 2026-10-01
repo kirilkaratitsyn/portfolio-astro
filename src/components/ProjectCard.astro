@@ -1,6 +1,7 @@
 ---
-// A card of the project catalog: large screenshot, name, short description. Case studies stay on the site (→),
-// other projects open the store in a new tab (↗).
+// A card of the project catalog: the store inside a device frame on a colored panel. The panel tilts toward the cursor,
+// the devices float at different depths and a soft light follows the pointer (scripts/motion.ts, data-tilt / data-depth).
+// Case studies stay on the site (→), other projects open the store in a new tab (↗).
 import { thumb } from '../lib/thumbs';
 
 interface Props {
@@ -8,20 +9,42 @@ interface Props {
   title: string;
   description: string;
   image: string;
+  mobileImage?: string;
   external?: boolean;
   /** Cards in the first screen load right away (they are what the page is measured on). */
   priority?: boolean;
+  tone?: 'blue' | 'ink' | 'mist' | 'paper';
+  /** How wide the card is in the desktop grid: the device frame and the phone scale with it. */
+  size?: 'sm' | 'md' | 'lg';
 }
 
-const { href, title, description, image, external = false, priority = false } = Astro.props;
+const { href, title, description, image, mobileImage, external = false, priority = false, tone = 'blue', size = 'sm' } = Astro.props;
+const tones = { blue: 'bg-blue', ink: 'bg-ink', mist: 'bg-[#dfe2f0]', paper: 'bg-white' };
+const chip = { blue: 'text-blue', ink: 'text-ink', mist: 'text-ink', paper: 'text-blue' };
+const frame = { sm: 'w-[80%]', md: 'w-[68%]', lg: 'w-[56%]' };
+const phone = { sm: 'w-[24%]', md: 'w-[17%]', lg: 'w-[14%]' };
+const dark = tone === 'blue' || tone === 'ink';
 ---
 
-<a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col">
-  <span class="relative block aspect-[3/2] overflow-hidden rounded-[22px] bg-white">
-    <img src={thumb(image, '1000')} alt="" width="1000" height="694" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" class="size-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]" />
-    <span class="absolute inset-0 bg-blue/0 transition-colors duration-500 group-hover:bg-blue/15"></span>
-    <span class="absolute right-4 top-4 flex size-11 items-center justify-center rounded-full bg-white text-[20px] text-blue transition-colors duration-300 group-hover:bg-blue group-hover:text-white" aria-hidden="true">{external ? '↗' : '→'}</span>
+<a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col" data-card>
+  <span data-tilt class:list={['relative grid h-[340px] place-items-center overflow-hidden rounded-[28px] md:h-[400px]', tones[tone]]}>
+    <!-- a soft light that follows the pointer -->
+    <span class="pointer-events-none absolute inset-0 z-[4] opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 35%), rgba(255, 255, 255, 0.3), transparent 62%)"></span>
+    <span data-depth="14" class:list={['relative block overflow-hidden rounded-xl bg-white', frame[size], dark ? 'shadow-[0_28px_60px_rgba(4,8,70,0.45)]' : 'shadow-[0_24px_50px_rgba(14,16,24,0.2)]']}>
+      <span class="flex h-[18px] items-center gap-1.5 bg-[#f1f2f6] px-3" aria-hidden="true">
+        <i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i>
+      </span>
+      <img src={thumb(image, '1000')} alt="" width="1000" height="694" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" class="block aspect-[560/346] w-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.07]" />
+    </span>
+    {
+      mobileImage && (
+        <span data-depth="30" class:list={['absolute bottom-[-9%] right-[6%] z-[3] block overflow-hidden rounded-[20px] border-[5px] border-ink bg-white md:rounded-[24px]', phone[size], 'shadow-[0_24px_50px_rgba(4,8,70,0.45)]']}>
+          <img src={thumb(mobileImage, 'm400')} alt="" width="400" height="671" loading="lazy" decoding="async" class="block aspect-[190/388] w-full object-cover object-top" />
+        </span>
+      )
+    }
+    <span class:list={['absolute right-4 top-4 z-[5] flex size-11 items-center justify-center rounded-full bg-white text-[20px] transition-all duration-300 group-hover:scale-110 group-hover:bg-ink group-hover:text-white', chip[tone]]} aria-hidden="true">{external ? '↗' : '→'}</span>
   </span>
-  <span class="mt-5 block font-head text-[28px] font-bold leading-none tracking-[-0.02em] md:text-[32px]">{title}</span>
-  <span class="mt-3 block text-[15px] leading-relaxed text-mute line-clamp-3">{description}</span>
+  <span class="mt-5 block font-head text-[30px] font-bold leading-none tracking-[-0.02em] transition-colors duration-300 group-hover:text-blue md:text-[34px]">{title}</span>
+  <span class="mt-3 block text-[15px] leading-relaxed text-mute line-clamp-2">{description}</span>
 </a>

@@ -1,6 +1,6 @@
 ---
 // One row of a work list: name, thumbnails, arrow. The whole row is the link and its background runs edge to edge
-// (white at rest so the ribbon behind the list is covered, cobalt on hover).
+// (the colour of the page at rest, so the ribbon behind the list is covered, cobalt on hover).
 import { thumb } from '../lib/thumbs';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 const { href, title, image, mobileImage } = Astro.props;
 ---
 
-<a href={href} data-peek={thumb(image, '1000')} class="group block bg-white transition-colors duration-300 hover:bg-blue hover:text-white">
+<a href={href} data-peek={thumb(image, '1000')} class="group block bg-bg transition-colors duration-300 hover:bg-blue hover:text-white">
   <span class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 md:gap-8 md:px-10 md:py-5">
     <span data-row-title class="min-w-0 font-head text-[30px] font-bold leading-none tracking-[-0.02em] md:text-[44px]">{title}</span>
     <span class="flex shrink-0 items-center gap-2" data-strip>

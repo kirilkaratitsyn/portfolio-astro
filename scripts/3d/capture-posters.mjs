@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright-core');
 const sharp = require('sharp');
 
-const names = ['shop', 'migrate', 'plug', 'bolt', 'magnifier', 'gear', 'chat', 'tag', 'layers', 'rocket'];
+const names = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy', 'chat', 'tag', 'layers', 'rocket'];
 const out = new URL('../../public/source/3d/', import.meta.url).pathname;
 const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', args: ['--headless=new', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--ignore-gpu-blocklist'] });
 const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 })).newPage();
@@ -17,6 +17,8 @@ await page.waitForFunction(() => Boolean(window.__stage), null, { timeout: 30000
 for (const name of names) {
   await page.addStyleTag({ content: `[data-pebble="${name}"]{width:360px!important}` });
   await page.evaluate((n) => document.querySelector(`[data-pebble="${n}"]`).scrollIntoView({ block: 'center' }), name);
+  // the objects are built when they come near the screen
+  await page.waitForFunction((n) => window.__stage.views.some((v) => v.name === n), name, { timeout: 15000 });
   await page.waitForTimeout(800);
   // put the object in its resting pose and draw it once
   await page.evaluate((n) => {

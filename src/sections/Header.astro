@@ -73,11 +73,11 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
   </div>
 </header>
 
-<div id="menu" class="fixed inset-0 z-40 hidden overflow-y-auto bg-bg px-5 pb-10 pt-28 md:hidden" data-menu>
+<div id="menu" class="menu fixed inset-0 z-40 overflow-y-auto bg-bg px-5 pb-10 pt-28 md:hidden" data-menu inert>
   <ul class="grid gap-1">
     {
-      links.map((link) => (
-        <li class="border-b border-line">
+      links.map((link, index) => (
+        <li class="menu-item border-b border-line" style={`--i:${index}`}>
           <a href={link.href} class="block py-4 font-head text-4xl font-bold" data-menu-close>
             {link.name}
           </a>
@@ -85,7 +85,7 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
       ))
     }
   </ul>
-  <p class="mt-8 flex items-center gap-4 text-lg">
+  <p class="menu-item mt-8 flex items-center gap-4 text-lg" style={`--i:${links.length}`}>
     {
       languages.map((item) => (
         <a href={item.href} hreflang={item.locale} lang={item.locale} aria-current={item.current ? 'true' : undefined} class={item.current ? 'font-bold' : 'text-mute'}>
@@ -94,6 +94,9 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
       ))
     }
   </p>
+  <CalButton class="menu-item mt-10 inline-flex rounded-full bg-blue px-7 py-4 text-lg font-semibold text-white" style={`--i:${links.length + 1}`}>
+    {t.header.bookCall}
+  </CalButton>
 </div>
 
 <script>
@@ -101,7 +104,8 @@ const pill = 'rounded-full bg-white/80 backdrop-blur';
   const menu = document.querySelector<HTMLElement>('[data-menu]');
 
   const setOpen = (open: boolean) => {
-    menu?.classList.toggle('hidden', !open);
+    menu?.classList.toggle('is-open', open);
+    menu?.toggleAttribute('inert', !open);
     toggle?.setAttribute('aria-expanded', String(open));
     if (toggle) toggle.textContent = (open ? toggle.dataset.labelClose : toggle.dataset.labelOpen) ?? '';
     document.body.style.overflow = open ? 'hidden' : '';

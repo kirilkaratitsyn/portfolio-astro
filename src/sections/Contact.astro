@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import markWhite from '../assets/brand/mark-white.png';
 import CalButton from '../components/CalButton.astro';
 import Pebble from '../components/Pebble.astro';
 import { useTranslations, type Locale } from '../i18n';
@@ -17,7 +19,11 @@ const t = useTranslations(Astro.props.locale);
       <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
       <a href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
-    <Pebble name="white" class="pointer-events-none absolute -bottom-9 -right-7 w-[104px] md:-bottom-[60px] md:-right-10 md:w-[330px]" />
-    <Pebble name="black" class="pointer-events-none absolute -top-8 right-24 w-[90px] md:-top-[70px] md:right-[250px] md:w-[200px]" />
+    <!-- The logo in white, as a live 3D object: drag it to turn it on any axis. -->
+    <span data-pebble="logo-white" data-grab class="pebble absolute right-3 top-3 z-[1] block size-[104px] md:right-[15%] md:top-5 md:size-[310px]">
+      <Image src={markWhite} alt="" width={310} height={351} class="size-full object-contain" loading="lazy" />
+    </span>
+    <Pebble name="white" class="pointer-events-none absolute -bottom-9 -right-7 w-[104px] md:-bottom-[70px] md:-right-10 md:w-[270px]" />
+    <Pebble name="black" class="pointer-events-none absolute -top-8 right-[120px] w-[84px] md:-right-5 md:-top-[60px] md:w-[170px]" />
   </div>
 </section>

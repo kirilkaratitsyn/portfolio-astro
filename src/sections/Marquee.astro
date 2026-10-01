@@ -3,15 +3,15 @@
 const tech = ['Shopify', 'Liquid', 'Online Store 2.0', 'JavaScript', 'Klaviyo API', 'Figma to theme'];
 ---
 
-<div data-marquee-wrap class="overflow-hidden bg-blue py-5 text-white md:py-[30px]" role="presentation">
-  <div data-marquee class="marquee-track flex w-max whitespace-nowrap font-head text-[40px] font-bold leading-none tracking-[-0.02em] md:text-[72px]">
+<div data-marquee-wrap class="overflow-hidden bg-blue py-2.5 text-white md:py-3" role="presentation">
+  <div data-marquee class="marquee-track flex w-max whitespace-nowrap font-head text-[15px] font-bold leading-none tracking-[-0.01em] md:text-[20px]">
     {
       [false, true].map((hidden) => (
         <p class="flex shrink-0" aria-hidden={hidden ? 'true' : undefined}>
           {tech.map((item) => (
-            <span class="pr-6 md:pr-10">
+            <span class="pr-5 md:pr-8">
               {item}
-              <span class="pl-6 opacity-50 md:pl-10" aria-hidden="true">/</span>
+              <span class="pl-5 opacity-50 md:pl-8" aria-hidden="true">/</span>
             </span>
           ))}
         </p>
