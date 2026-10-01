@@ -23,7 +23,8 @@
       "Guru",
       "Virtuose",
       "Maestro"
-    ]
+    ],
+    "claim": "Shopify-Entwickler für Marken, die ihrem Theme entwachsen sind."
   },
   "clients": {
     "label": "Ausgewählte Shopify-Stores, an denen ich gearbeitet habe"
@@ -161,19 +162,19 @@
     "steps": [
       {
         "title": "Aufgabe beschreiben",
-        "text": "Schicken Sie mir den Link zu Ihrem Store und eine kurze Beschreibung oder buchen Sie einen Call. Stichpunkte, ein Loom-Video oder eine Figma-Datei reichen für den Start."
+        "text": "Store-Link und eine kurze Beschreibung."
       },
       {
         "title": "Klare Einschätzung erhalten",
-        "text": "Ich prüfe den Store und schicke Ihnen Umfang, Zeitplan und Preis, bevor die Arbeit beginnt."
+        "text": "Umfang, Zeitplan und Preis, bevor die Arbeit beginnt."
       },
       {
         "title": "Umsetzung im Vorschau-Theme",
-        "text": "Änderungen entstehen in einer unveröffentlichten Kopie Ihres Themes. Der Live-Store verkauft weiter, während Sie alles über einen Vorschau-Link prüfen."
+        "text": "Der Live-Store verkauft weiter, während Sie prüfen."
       },
       {
         "title": "Launch und Support",
-        "text": "Nach Ihrer Freigabe veröffentliche ich die Änderungen, prüfe die wichtigsten Customer Journeys und bleibe für Fixes und weitere Verbesserungen erreichbar."
+        "text": "Ich veröffentliche nach Ihrer Freigabe und bleibe für Fixes da."
       }
     ]
   },
@@ -191,7 +192,8 @@
       "title": "Ihr Projekt hier",
       "text": "Haben Sie ein Projekt im Kopf? Lassen Sie uns zusammenarbeiten, um eine atemberaubende Website zu erstellen, die Ihrem Unternehmen hilft, online zu wachsen.",
       "button": "Kontaktieren Sie mich"
-    }
+    },
+    "allProjects": "Alle Projekte"
   },
   "upworkReviews": {
     "eyebrow": "Upwork",
@@ -432,7 +434,9 @@
     "about": "Über mich",
     "works": "Projekte",
     "blog": "Blog",
-    "resume": "Lebenslauf"
+    "resume": "Lebenslauf",
+    "menu": "Menü",
+    "close": "Schließen"
   },
   "footer": {
     "blurb": "Shopify Entwicklung für Marken, die individuelle Lösungen, saubereren UX und verlässlichen Support ohne unnötige Komplexität brauchen.",
@@ -440,5 +444,36 @@
     "telegram": "Telegram",
     "instagram": "Instagram",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "35+",
+        "label": "Ausgelieferte Stores"
+      },
+      {
+        "value": "25",
+        "label": "Abgeschlossene Jobs auf Upwork"
+      },
+      {
+        "value": "3",
+        "label": "Sprachen: EN · DE · UA"
+      },
+      {
+        "value": "95",
+        "label": "PageSpeed-Wert dieser Seite (mobil)"
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Was Kunden sagen",
+    "chartTitle": "Von Kunden am häufigsten genannt",
+    "chartSource": "Upwork-Feedback zu abgeschlossenen Jobs",
+    "originalNote": "Originalbewertung auf Englisch",
+    "items": [
+      "Upwork-Bewertung · Sep–Okt 2025",
+      "Upwork-Bewertung · Okt 2025",
+      "Upwork-Bewertung · Nov 2025 – heute"
+    ]
   }
 }

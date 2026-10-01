@@ -1,8 +1,6 @@
 ---
-import 'aos/dist/aos.css';
 import '../styles/global.css';
 import SeoHead, { type SeoProps } from '../components/SeoHead.astro';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Header from '../sections/Header.astro';
 import Footer from '../sections/Footer.astro';
 
@@ -17,13 +15,13 @@ const { locale, path } = seo;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1b0c08" />
+    <meta name="theme-color" content="#EDEFF6" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Fonts used in the first screen: headings and body text. -->
+    <!-- Fonts used in the first screen: the surname and the body text. -->
     <link rel="preload" href="/fonts/e-UkraineHead-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Onest-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <SeoHead {...seo} />
@@ -64,32 +62,18 @@ const { locale, path } = seo;
       })(window, 'https://app.cal.com/embed/embed.js', 'init');
       Cal('init', 'free-consultation-call', { origin: 'https://cal.com' });
       Cal.ns['free-consultation-call']('ui', {
-        theme: 'dark',
-        styles: { branding: { brandColor: '#000000' } },
+        theme: 'light',
+        styles: { branding: { brandColor: '#2433F0' } },
         hideEventTypeDetails: true,
         layout: 'month_view',
       });
     </script>
   </head>
   <body>
-    <div class="wrapper">
-      <div id="preloader" class="preloader-overlay" aria-hidden="true">
-        <div class="route-loader__track">
-          <span class="route-loader__bar"></span>
-        </div>
-      </div>
-      <Header locale={locale} />
-      <main>
-        <LanguageSwitcher locale={locale} path={path} />
-        <slot />
-      </main>
-      <Footer locale={locale} />
-    </div>
-
-    <script>
-      import AOS from 'aos';
-
-      AOS.init();
-    </script>
+    <Header locale={locale} path={path} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
   </body>
 </html>

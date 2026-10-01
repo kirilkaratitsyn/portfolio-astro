@@ -23,7 +23,8 @@
       "Guru",
       "Virtuoso",
       "Maestro"
-    ]
+    ],
+    "claim": "Shopify developer for brands that have outgrown their theme."
   },
   "clients": {
     "label": "Selected Shopify stores I've worked on"
@@ -161,19 +162,19 @@
     "steps": [
       {
         "title": "Tell me about the task",
-        "text": "Send your store link and a short description, or book a call. Rough notes, a Loom video or a Figma file are all fine to start."
+        "text": "Store link plus a short description."
       },
       {
         "title": "Get a clear estimate",
-        "text": "I review the store and come back with scope, timeline and price before any work starts."
+        "text": "Scope, timeline and price before any work starts."
       },
       {
         "title": "Build on a preview theme",
-        "text": "Changes are built on an unpublished copy of your theme, so the live store keeps selling while you review everything through a preview link."
+        "text": "Your live store keeps selling while you review."
       },
       {
         "title": "Launch and support",
-        "text": "After your approval I publish, check the key customer journeys, and stay available for fixes and next improvements."
+        "text": "I publish after your approval and stay on for fixes."
       }
     ]
   },
@@ -191,7 +192,8 @@
       "title": "Your Project Here",
       "text": "Have a project in mind? Let's work together to create a stunning website that helps your business grow online.",
       "button": "Contact Me"
-    }
+    },
+    "allProjects": "All projects"
   },
   "upworkReviews": {
     "eyebrow": "Upwork",
@@ -432,7 +434,9 @@
     "about": "About Me",
     "works": "Projects",
     "blog": "Blog",
-    "resume": "Resume"
+    "resume": "Resume",
+    "menu": "Menu",
+    "close": "Close"
   },
   "footer": {
     "blurb": "Shopify development for brands that need custom work, cleaner UX, and dependable support without unnecessary complexity.",
@@ -440,5 +444,36 @@
     "telegram": "Telegram",
     "instagram": "Instagram",
     "rights": "All rights reserved."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "35+",
+        "label": "Stores shipped"
+      },
+      {
+        "value": "25",
+        "label": "Jobs completed on Upwork"
+      },
+      {
+        "value": "3",
+        "label": "Languages: EN · DE · UA"
+      },
+      {
+        "value": "95",
+        "label": "Mobile PageSpeed score of this site"
+      }
+    ]
+  },
+  "reviews": {
+    "title": "What clients say",
+    "chartTitle": "Most mentioned by clients",
+    "chartSource": "Upwork feedback on completed jobs",
+    "originalNote": "",
+    "items": [
+      "Upwork review · Sep–Oct 2025",
+      "Upwork review · Oct 2025",
+      "Upwork review · Nov 2025 – now"
+    ]
   }
 }

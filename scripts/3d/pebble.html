@@ -1,0 +1,40 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<canvas id="c" width="520" height="520" style="display:block"></canvas>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+const q = new URLSearchParams(location.search);
+const palettes = {
+  cobalt: { colors: ['#2433f0', '#f4f5f9', '#0d0e12', '#2433f0', '#dfe2ee'], rough: 0.18, clear: 1 },
+  mono:   { colors: ['#e9e9e6', '#2a2b2a', '#f7f7f5', '#6b6c6a', '#161716'], rough: 0.32, clear: 0.6 },
+};
+const P = palettes[q.get('p') || 'cobalt'];
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setClearColor(0x000000, 0);
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+const scene = new THREE.Scene();
+const pm = new THREE.PMREMGenerator(renderer);
+scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100); camera.position.set(0, 0.2, 9.5); camera.lookAt(0, 0, 0);
+// small seeded RNG so the composition is repeatable
+let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+// stone-like blobs: noisy icospheres, smooth shaded, squashed a little
+function stone(size, color) {
+  let g = new THREE.IcosahedronGeometry(size, 4); g.deleteAttribute('normal'); g.deleteAttribute('uv'); g = mergeVertices(g);
+  const pos = g.attributes.position; const v = new THREE.Vector3();
+  const a = [rnd() * 6, rnd() * 6, rnd() * 6];
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i); const n = v.clone().normalize();
+    const d = 1 + 0.16 * Math.sin(n.x * 2.1 + a[0]) * Math.cos(n.y * 1.7 + a[1]) + 0.1 * Math.sin(n.z * 2.6 + a[2]);
+    v.multiplyScalar(d); pos.setXYZ(i, v.x, v.y * 0.86, v.z);
+  }
+  g.computeVertexNormals();
+  const m = new THREE.MeshPhysicalMaterial({ color, roughness: P.rough, metalness: 0.0, clearcoat: P.clear, clearcoatRoughness: 0.08, envMapIntensity: 1.1 });
+  return new THREE.Mesh(g, m);
+}
+s = parseInt(q.get('seed')||'3'); const m = stone(2.5, q.get('c')||'#2433f0'); m.rotation.set(rnd()*3, rnd()*3, rnd()*3); scene.add(m);
+renderer.render(scene, camera);
+window.__done = true;
+</script></body></html>
