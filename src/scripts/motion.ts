@@ -340,17 +340,60 @@ function process() {
 }
 
 function reviews() {
-  const quote = qs('[data-quote]');
-  if (quote) {
-    // The quote lights up word by word while you read down the page.
-    const split = SplitText.create(quote, { type: 'words', aria: 'none' });
-    // Dimmed only once the quote scrolls into view, so it is never low-contrast at rest.
-    gsap.fromTo(split.words, { opacity: 0.14 }, { opacity: 1, ease: 'none', stagger: 0.12, immediateRender: false, scrollTrigger: { trigger: quote, start: 'top 100%', end: 'bottom 52%', scrub: true } });
-  }
-  const bars = qsa('[data-bar-row] i');
-  if (bars.length) {
-    gsap.from(bars, { scaleX: 0, transformOrigin: '0 50%', duration: 1.6, ease: EXPO, stagger: 0.12, scrollTrigger: { trigger: bars[0]?.closest('ul') ?? bars[0], start: 'top 82%', once: true } });
-  }
+  const rail = qs<HTMLUListElement>('[data-rail]');
+  if (!rail) return;
+  const cards = qsa('.review-card', rail);
+  const bar = qs('[data-rail-progress]');
+  const prev = qs<HTMLButtonElement>('[data-rail-prev]');
+  const next = qs<HTMLButtonElement>('[data-rail-next]');
+
+  // The cards slide in from the right when the rail comes into view.
+  gsap.from(cards, { x: 110, opacity: 0, duration: 1.15, ease: EXPO, stagger: 0.08, scrollTrigger: { trigger: rail, start: 'top 88%', once: true } });
+
+  const step = () => (cards[1] ? cards[1].offsetLeft - (cards[0]?.offsetLeft ?? 0) : rail.clientWidth);
+  const sync = () => {
+    const max = rail.scrollWidth - rail.clientWidth;
+    const share = max > 0 ? rail.scrollLeft / max : 0;
+    if (bar) bar.style.transform = `scaleX(${(0.12 + share * 0.88).toFixed(3)})`;
+    if (prev) prev.disabled = rail.scrollLeft < 4;
+    if (next) next.disabled = rail.scrollLeft > max - 4;
+  };
+  rail.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  prev?.addEventListener('click', () => rail.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => rail.scrollBy({ left: step(), behavior: 'smooth' }));
+  sync();
+
+  // Drag with the mouse; on release it settles on the nearest card.
+  if (!fine) return;
+  let startX = 0;
+  let startLeft = 0;
+  let down = false;
+  let moved = 0;
+  rail.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    down = true;
+    moved = 0;
+    startX = e.clientX;
+    startLeft = rail.scrollLeft;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    moved = Math.max(moved, Math.abs(dx));
+    if (moved > 4) rail.classList.add('is-dragging');
+    rail.scrollLeft = startLeft - dx;
+  });
+  window.addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false;
+    if (!rail.classList.contains('is-dragging')) return;
+    const at = rail.scrollLeft;
+    const first = cards[0]?.offsetLeft ?? 0;
+    const target = cards.reduce((best, card) => (Math.abs(card.offsetLeft - first - at) < Math.abs(best - at) ? card.offsetLeft - first : best), 0);
+    rail.classList.remove('is-dragging');
+    rail.scrollTo({ left: target, behavior: 'smooth' });
+  });
 }
 
 function contact() {

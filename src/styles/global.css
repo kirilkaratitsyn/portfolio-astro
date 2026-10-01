@@ -88,6 +88,12 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: clip; }
 
+/* Reviews: a rail of cards you can drag, scroll or step through; the key phrase of each quote is marked. */
+.reviews-rail { scrollbar-width: none; }
+.reviews-rail::-webkit-scrollbar { display: none; }
+.reviews-rail.is-dragging { scroll-snap-type: none; scroll-behavior: auto; cursor: grabbing; user-select: none; -webkit-user-select: none; }
+.review-card mark { background: linear-gradient(transparent 58%, var(--hl) 58%); color: inherit; padding: 0 0.06em; margin: 0 -0.06em; }
+
 /* Cursor while the pointer is over a stone you can grab (scripts/stage.ts). */
 html.is-grab, html.is-grab * { cursor: grab !important; }
 html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }

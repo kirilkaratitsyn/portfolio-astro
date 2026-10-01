@@ -5,61 +5,93 @@ interface Props {
   locale: Locale;
 }
 
-const { locale } = Astro.props;
-const t = useTranslations(locale);
-// Quotes are shown exactly as the clients wrote them (English originals), in every language.
-const original = useTranslations('en').upworkReviews.reviews;
-const clean = (text: string) => text.replace(/^["“]|["”]$/g, '');
-const featuredText = clean(original[0].feedback);
-const [lead, ...rest] = featuredText.split('Very skilled, fast, and easy to communicate with.');
-const highlight = featuredText.includes('Very skilled, fast, and easy to communicate with.');
-const small = [original[1], original[10]];
-const max = Math.max(...t.upworkReviews.insights.items.map((item) => item.count));
+const t = useTranslations(Astro.props.locale).reviews;
+const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
+
+// The quotes are the clients' own words from Upwork, shown in the original English in every language.
+// Cards alternate cobalt, paper, ink and mist like the project cards; the key phrase of each is marked.
+const tones = [
+  { box: 'bg-blue text-white', mark: 'rgba(255,255,255,0.3)', meta: 'text-white/75' },
+  { box: 'bg-white text-ink', mark: 'rgba(36,51,240,0.16)', meta: 'text-mute' },
+  { box: 'bg-ink text-white', mark: 'rgba(36,51,240,0.75)', meta: 'text-white/70' },
+  { box: 'bg-[#dfe2f0] text-ink', mark: 'rgba(36,51,240,0.18)', meta: 'text-mute' },
+] as const;
+const cards = t.cards.map((card, i) => {
+  const at = card.quote.indexOf(card.highlight);
+  return {
+    ...card,
+    tone: tones[i % tones.length]!,
+    before: at < 0 ? card.quote : card.quote.slice(0, at),
+    marked: at < 0 ? '' : card.highlight,
+    after: at < 0 ? '' : card.quote.slice(at + card.highlight.length),
+  };
+});
 ---
 
-<section class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-32 md:px-10">
-  <h2 data-split class="pb-8 font-head text-[40px] font-bold tracking-[-0.02em] md:pb-10 md:text-[56px]">{t.reviews.title}</h2>
-
-  <div class="grid gap-12 md:grid-cols-[1fr_minmax(0,470px)] md:gap-16">
-    <figure>
-      <blockquote data-quote lang="en" class="font-head text-[28px] font-medium leading-[1.15] tracking-[-0.02em] md:text-[44px] md:leading-[1.12]">
-        “{highlight ? <>{lead}<em class="not-italic text-blue">Very skilled, fast, and easy to communicate with.</em>{rest.join('')}</> : featuredText}”
-      </blockquote>
-      <figcaption class="mt-6 text-[15px] text-mute">
-        <b class="font-semibold text-ink" aria-label="5 out of 5 stars">★★★★★ 5.0</b> &nbsp;{t.reviews.items[0]}
-        {t.reviews.originalNote && <span class="block pt-1">{t.reviews.originalNote}</span>}
-      </figcaption>
-    </figure>
-
+<section class="mt-24 md:mt-32" aria-labelledby="reviews-title">
+  <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 md:flex-row md:items-end md:justify-between md:px-10">
     <div>
-      <h3 class="font-head text-2xl font-bold">{t.reviews.chartTitle}</h3>
-      <p class="mb-6 mt-1 text-sm text-mute">{t.reviews.chartSource}</p>
-      <ul class="grid gap-[30px]">
-        {
-          t.upworkReviews.insights.items.map((item, index) => (
-            <li data-bar-row class="grid grid-cols-[minmax(0,150px)_1fr_28px] items-center gap-3.5 text-[15px] -my-[15px] py-[15px]">
-              <span>{item.label}</span>
-              <span class="relative block h-4 rounded-[3px] bg-[#dfe2f0]" role="img" aria-label={`${item.count}`}>
-                <i class:list={['absolute inset-y-0 left-0 rounded-[3px]', index === 0 ? 'bg-blue' : 'bg-ink']} style={`width:${(item.count / max) * 100}%`} />
-              </span>
-              <b class="text-right font-medium [font-variant-numeric:tabular-nums]">{item.count}</b>
-            </li>
-          ))
-        }
-      </ul>
+      <h2 id="reviews-title" data-split class="font-head text-[40px] font-bold tracking-[-0.02em] md:text-[56px]">{t.title}</h2>
+      <p data-reveal class="mt-4 max-w-[460px] text-base leading-relaxed text-mute md:text-lg">{t.lead}</p>
     </div>
+    <a
+      data-reveal
+      href={PROFILE}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex w-fit items-center gap-5 rounded-full bg-white py-3 pl-7 pr-3 transition-colors duration-300 hover:bg-ink hover:text-white"
+    >
+      <span class="font-head text-[48px] font-bold leading-none tracking-[-0.03em] md:text-[60px]">{t.rating}</span>
+      <span class="text-sm leading-snug">
+        <span class="block text-[15px] text-blue group-hover:text-white" aria-hidden="true">★★★★★</span>
+        <span class="block text-mute group-hover:text-white/80">{t.summary}</span>
+        <span class="block font-medium">{t.openProfile}</span>
+      </span>
+      <span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue text-xl text-white" aria-hidden="true">↗</span>
+    </a>
   </div>
 
-  <div class="mt-14 grid gap-10 md:mt-[70px] md:grid-cols-2 md:gap-16">
-    {
-      small.map((review, index) => (
-        <figure data-reveal>
-          <blockquote lang="en" class="text-lg font-medium leading-[1.4] md:text-[22px]">“{clean(review.feedback)}”</blockquote>
-          <figcaption class="mt-4 text-[15px] text-mute">
-            <b class="font-semibold text-ink" aria-label="5 out of 5 stars">★★★★★ 5.0</b> &nbsp;{t.reviews.items[index + 1]}
-          </figcaption>
-        </figure>
-      ))
-    }
+  <div class="relative mt-10 md:mt-14">
+    <ul
+      data-rail
+      tabindex="0"
+      aria-label={t.title}
+      class="reviews-rail flex cursor-grab snap-x snap-mandatory gap-5 scroll-pl-5 overflow-x-auto scroll-smooth pb-8 pl-5 pr-5 md:gap-6 md:scroll-pl-[max(2.5rem,calc((100vw-1440px)/2+2.5rem))] md:pl-[max(2.5rem,calc((100vw-1440px)/2+2.5rem))] md:pr-10"
+    >
+      {
+        cards.map((card) => (
+          <li class="review-card w-[84vw] shrink-0 snap-start sm:w-[440px] lg:w-[500px]" style={`--hl:${card.tone.mark}`}>
+            <figure class={`flex h-full flex-col justify-between rounded-[28px] p-7 md:p-10 ${card.tone.box}`}>
+              <div>
+                <span class="block font-head text-[72px] font-bold leading-[0.6] opacity-40" aria-hidden="true">“</span>
+                <blockquote lang="en" class="mt-5 font-head text-[22px] font-medium leading-[1.22] tracking-[-0.01em] md:text-[27px]">
+                  {card.before}
+                  {card.marked && <mark>{card.marked}</mark>}
+                  {card.after}
+                </blockquote>
+              </div>
+              <figcaption class={`mt-10 flex items-end justify-between gap-4 text-sm ${card.tone.meta}`}>
+                <span>
+                  <b class="block text-[15px] tracking-[0.12em]" aria-label="5 out of 5 stars">★★★★★</b>
+                  <span class="mt-2 block text-[15px] font-semibold text-inherit [color:inherit]">{card.context}</span>
+                  <span class="block">{card.date} · Upwork</span>
+                </span>
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mx-auto mt-2 flex max-w-[1440px] items-center gap-6 px-5 md:px-10">
+      <span class="relative h-[3px] flex-1 overflow-hidden rounded-full bg-line" aria-hidden="true">
+        <i data-rail-progress class="absolute inset-y-0 left-0 block w-full origin-left scale-x-[0.2] rounded-full bg-blue"></i>
+      </span>
+      <span class="hidden gap-3 md:flex">
+        <button type="button" data-rail-prev aria-label={t.previous} class="flex size-12 items-center justify-center rounded-full bg-white text-xl transition-colors hover:bg-blue hover:text-white disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-ink">←</button>
+        <button type="button" data-rail-next aria-label={t.next} class="flex size-12 items-center justify-center rounded-full bg-white text-xl transition-colors hover:bg-blue hover:text-white disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-ink">→</button>
+      </span>
+    </div>
+    {t.originalNote && <p class="mx-auto mt-4 max-w-[1440px] px-5 text-sm text-mute md:px-10">{t.originalNote}</p>}
   </div>
 </section>

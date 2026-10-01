@@ -24,7 +24,9 @@
       "Virtuoso",
       "Maestro"
     ],
-    "claim": "Shopify developer for brands that have outgrown their theme."
+    "claim": "Shopify developer in Germany for themes, Markets and performance.",
+    "seoTitle": "Kiril Karatitsyn | Shopify Developer in Germany",
+    "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects."
   },
   "clients": {
     "label": "Selected Shopify stores I've worked on"
@@ -467,13 +469,62 @@
   },
   "reviews": {
     "title": "What clients say",
-    "chartTitle": "Most mentioned by clients",
-    "chartSource": "Upwork feedback on completed jobs",
+    "lead": "A selection of public reviews from my Upwork profile, in the clients’ own words.",
+    "rating": "4.6",
+    "summary": "26 reviews · Top Rated on Upwork",
+    "openProfile": "Open Upwork profile",
+    "previous": "Previous reviews",
+    "next": "Next reviews",
     "originalNote": "",
-    "items": [
-      "Upwork review · Sep–Oct 2025",
-      "Upwork review · Oct 2025",
-      "Upwork review · Nov 2025 – now"
+    "cards": [
+      {
+        "quote": "Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.",
+        "highlight": "Very skilled, fast, and easy to communicate with.",
+        "context": "Final adjustments and mobile UI",
+        "date": "Sep–Oct 2025"
+      },
+      {
+        "quote": "Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.",
+        "highlight": "quickly resolved 404 URL errors, language switching issues",
+        "context": "Fixing technical errors on a Rise theme",
+        "date": "Oct 2025"
+      },
+      {
+        "quote": "Kiril did a great job! He quickly understood the requirements, implemented everything exactly as shown in the loom video, and delivered fast, clean results. Excellent communication and professional work.",
+        "highlight": "delivered fast, clean results",
+        "context": "One-time task from a Loom brief",
+        "date": "Oct 2025"
+      },
+      {
+        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
+        "highlight": "all tasks were completed reliably",
+        "context": "Theme update from Prestige 4 to 10–11",
+        "date": "Nov 2025"
+      },
+      {
+        "quote": "It's been great to work with Kiril! This freelancer is clear and concise in communication, cutting through ambiguity and keeping goals and next steps on track.",
+        "highlight": "clear and concise in communication",
+        "context": "Clean embedded checkout",
+        "date": "Jan 2026"
+      },
+      {
+        "quote": "Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.",
+        "highlight": "a bunch of manually coded solutions",
+        "context": "Migration to Online Store 2.0",
+        "date": "Feb 2026"
+      },
+      {
+        "quote": "Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.",
+        "highlight": "solves the problems delivering accurate job on time",
+        "context": "Performance optimization",
+        "date": "Nov 2025 – now"
+      },
+      {
+        "quote": "Kiril is great to work with. Fast communication, good execution, clean work.",
+        "highlight": "Fast communication, good execution, clean work.",
+        "context": "Bug fix",
+        "date": "Nov 2025"
+      }
     ]
   }
 }

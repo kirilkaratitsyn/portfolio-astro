@@ -24,11 +24,8 @@ const caseStudies = await getCaseStudies(locale);
 const works = await getWorks(locale);
 
 const seo = {
-  title: locale === DEFAULT_LOCALE ? 'Kiril Karatitsyn | Shopify Developer' : `Kiril Karatitsyn | ${t.hero.eyebrow}`,
-  description:
-    locale === DEFAULT_LOCALE
-      ? 'Shopify developer focused on custom themes, Online Store 2.0 migrations, storefront UX, performance optimization, and long-term support for growing brands.'
-      : t.hero.subtitle,
+  title: t.hero.seoTitle,
+  description: t.hero.seoDescription,
 };
 
 const SITE_URL = 'https://www.karatitsyn.com/';
@@ -46,13 +43,15 @@ const structuredData = {
       url: SITE_URL,
       image: `${SITE_URL}og-image.jpg`,
       jobTitle: 'Shopify Developer',
+      address: { '@type': 'PostalAddress', addressCountry: 'DE' },
+      knowsLanguage: ['de', 'en', 'uk'],
       worksFor: { '@type': 'Organization', name: 'Independent' },
       sameAs: [
         'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
         'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
         'https://github.com/kirilkaratitsyn',
       ],
-      knowsAbout: ['Shopify', 'Shopify theme development', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
+      knowsAbout: ['Shopify', 'Shopify theme development', 'Shopify Markets', 'B2B wholesale on Shopify', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
     },
     {
       '@type': 'WebSite',
