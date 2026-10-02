@@ -59,6 +59,7 @@
   title: OnlyPhila
   url: https://onlyphila.com/
   image: /source/desktop/onlyphila-desktop.webp
+  mobileImage: /source/mobile/onlyphila-mobile.webp
   tech:
     en: Built the menu page with category tabs and search, and a cart-first Delivery or Takeaway selector with a date and time slot picker written natively in Liquid, plus checkout rules that keep pickup and delivery orders from mixing.
     de: Menüseite mit Kategorie-Tabs und Suche sowie ein Warenkorb-Selektor für Lieferung oder Abholung mit nativem Liquid-Picker für Datum und Zeitfenster, dazu Checkout-Regeln, die Abhol- und Lieferbestellungen sauber trennen.
@@ -69,6 +70,7 @@
   title: Fixy
   url: https://www.fixy-brand.com/
   image: /source/desktop/fixy-desktop.webp
+  mobileImage: /source/mobile/fixy-mobile.webp
   tech:
     en: "Ongoing theme work for a Ukrainian-language store selling constructor wall art and gifts for car lovers: a rebuilt site search panel, a For Her section in the main navigation, and fixes across the header, collections and homepage."
     de: "Laufende Theme-Arbeit für einen ukrainischsprachigen Store mit Konstruktor-Wandbildern und Geschenken für Autoliebhaber: ein neu aufgebautes Suchfeld, ein Bereich „Für Sie“ in der Hauptnavigation und Fixes in Header, Kollektionen und Startseite."
@@ -80,6 +82,7 @@
   title: Minbie
   url: https://minbie.com.au/
   image: /source/desktop/minbie-desktop.webp
+  mobileImage: /source/mobile/minbie-mobile.webp
   tech:
     en: "Launched a new Shopify theme for an Australian baby feeding brand: template mapping for every product and collection, a rebuilt Instructions page, a reviews page, a sippy cups collection with a colour switcher, and a new mega-menu and footer."
     de: "Neues Shopify-Theme für eine australische Marke für Baby-Fütterprodukte gestartet: Template-Zuordnung für jedes Produkt und jede Kollektion, neu aufgebaute Anleitungsseite, Bewertungsseite, Kollektion für Trinklernbecher mit Farbwähler sowie neues Mega-Menü und neuer Footer."
@@ -90,7 +93,8 @@
   order: 9
   title: M-Oceans
   url: https://m-oceans.com/
-  image: /source/desktop/m-oceans-desktop.png
+  image: /source/desktop/m-oceans-desktop.webp
+  mobileImage: /source/mobile/m-oceans-mobile.webp
   tech:
     en: "Ongoing work for a marine equipment store: catalogue and SKU clean-up against brand price lists, product pages and cards for outboards and accessories, bundles, and advice on inventory and invoicing systems, plus homepage and product page redesign."
     de: "Laufende Arbeit für einen Shop für Marinezubehör: Katalog- und SKU-Bereinigung anhand der Markenpreislisten, Produktseiten und Karten für Außenborder und Zubehör, Bundles und Beratung zu Lager- und Rechnungssystemen sowie Redesign von Startseite und Produktseite."
@@ -112,6 +116,7 @@
   title: Crafts Cove Marine
   url: https://www.craftscove.ca/
   image: /source/desktop/crafts-cove-marine-desktop.webp
+  mobileImage: /source/mobile/crafts-cove-marine-mobile.webp
   tech:
     en: "Fixed site errors and mobile speed for a marine electric store: PageSpeed fixes, then a second performance phase with critical CSS, a rebuilt theme script and an audit of apps and tracking tags."
     de: "Seitenfehler und mobile Ladezeit eines Marine-Elektro-Shops behoben: PageSpeed-Fixes, danach eine zweite Performance-Phase mit Critical CSS, neu aufgebautem Theme-Skript und einem Audit von Apps und Tracking-Tags."
@@ -121,7 +126,8 @@
   order: 12
   title: MarinePatches
   url: https://marinepatches.com/
-  image: /source/desktop/marinepatches-desktop.png
+  image: /source/desktop/marinepatches-desktop.webp
+  mobileImage: /source/mobile/marinepatches-mobile.webp
   tech:
     en: Built a Shopify theme on the new-generation theme architecture with wishlist functionality and cleaner, faster storefront flows. The setup is easier to manage, smoother for customers, and better suited for ongoing iteration.
     de: "Entwicklung einer Shopify-Theme-Umsetzung auf Basis der neuen Theme-Generation: Wishlist-Funktion, sauberere Storefront-Flows und schnellere Bedienung. Die Struktur ist einfacher zu pflegen, läuft flüssiger für Kunden und eignet sich besser für laufende Iterationen."
@@ -132,17 +138,19 @@
   order: 13
   title: White Canvas Earth
   url: https://whitecanvasearth.com/
-  image: /source/desktop/white-canvas-earth-desktop.png
+  image: /source/desktop/white-canvas-earth-desktop.webp
+  mobileImage: /source/mobile/white-canvas-earth-mobile.webp
   tech:
     en: Delivered a Shopify redesign with technical migration, SEO foundations, and growth marketing setup. The work connected the new storefront structure with cleaner launch readiness and better visibility foundations.
     de: Shopify Redesign mit technischer Migration, SEO-Grundlagen und Growth-Marketing-Setup. Die Arbeit verband eine neue Storefront-Struktur mit Launch-Readiness und einer stärkeren Basis für organische Sichtbarkeit.
     uk: Shopify redesign з технічною міграцією, SEO-фундаментом і growth marketing setup. Робота поєднала нову структуру storefront, готовність до запуску та кращу базу для видимості в пошуку.
-  accent: "#8a6443"
+  accent: "#0f4894"
 - id: peter-bijoux
   order: 14
   title: Peter Bijoux
   url: https://peterbijoux.com/
-  image: /source/desktop/peter-bijoux-desktop.png
+  image: /source/desktop/peter-bijoux-desktop.webp
+  mobileImage: /source/mobile/peter-bijoux-mobile.webp
   tech:
     en: Shopify store redesign using the Prestige theme, with structure and implementation work across templates, product presentation, and content setup so the jewelry catalog is easier to manage and browse.
     de: "Shopify Store Redesign auf Basis des Prestige Themes: Struktur und Umsetzung von Templates, Produktdarstellung und Content-Setup, damit der Schmuckkatalog leichter gepflegt und angenehmer durchsucht werden kann."
@@ -188,6 +196,7 @@
   title: Haftx
   url: https://haftx.com/
   image: /source/desktop/haftx-desktop.webp
+  mobileImage: /source/mobile/haftx-mobile.webp
   tech:
     en: Developed a custom color selector that adapts to clothing type and overcomes the 100 variant limitation.
     de: Entwicklung eines benutzerdefinierten Farbwählers, der sich an den Kleidungstyp anpasst und die 100-Varianten-Beschränkung überwindet.
@@ -198,27 +207,30 @@
   title: Junofires
   url: https://junofires.nl/
   image: /source/desktop/junofires-desktop.webp
+  mobileImage: /source/mobile/junofires-mobile.webp
   tech:
     en: Optimized filters in a Shopify store, added automatic image display functionality when filtering by color, improving UX and navigation.
     de: Optimierung der Filter in einem Shopify-Shop, Hinzufügung automatischer Bildanzeigefunktionalität beim Filtern nach Farbe, Verbesserung von UX und Navigation.
     uk: Оптимізував фільтри в Shopify-магазині, додав функцію автоматичного відображення зображення при фільтрації за кольором, покращивши UX і навігацію.
-  accent: "#d4a091"
+  accent: "#6b553b"
   accentLocked: true
 - id: lerros
   order: 20
   title: Lerros
   url: https://www.lerros.com/
   image: /source/desktop/lerros-desktop.webp
+  mobileImage: /source/mobile/lerros-mobile.webp
   tech:
     en: Updated the theme in a Shopify store, correctly transferred content and metafields, preserved data structure, and configured product display for stable operation.
     de: Aktualisierung des Themes in einem Shopify-Shop, korrekte Übertragung von Inhalten und Metafeldern, Erhaltung der Datenstruktur und Konfiguration der Produktanzeige für stabilen Betrieb.
     uk: Оновив тему в Shopify-магазині, коректно переніс контент і метаполя, зберіг структуру даних і налаштував відображення товарів для стабільної роботи.
-  accent: "#e0c416"
+  accent: "#8b634b"
 - id: kiki-green
   order: 21
   title: Kiki Green
   url: https://kiki-green.com/
   image: /source/desktop/kiki-green-desktop.webp
+  mobileImage: /source/mobile/kiki-green-mobile.webp
   tech:
     en: Developed a full-cycle e-commerce solution from scratch, including complete online store creation and integration with various plugins such as loyalty programs and product subscriptions.
     de: Entwicklung einer vollständigen E-Commerce-Lösung von Grund auf, einschließlich vollständiger Online-Shop-Erstellung und Integration mit verschiedenen Plugins wie Treueprogrammen und Produktabonnements.
@@ -230,6 +242,7 @@
   title: Junior's Cheesecake
   url: https://juniorscheesecake.com/
   image: /source/desktop/juniors-cheesecake-desktop.webp
+  mobileImage: /source/mobile/juniors-cheesecake-mobile.webp
   tech:
     en: Created new custom sections based on Figma design, developed email templates and handling, and implemented serving page functionality.
     de: Erstellung neuer benutzerdefinierter Abschnitte basierend auf Figma-Design, Entwicklung von E-Mail-Vorlagen und -Handhabung sowie Implementierung der Serving-Seiten-Funktionalität.
@@ -240,6 +253,7 @@
   title: Spring Mountain Vineyard
   url: https://club.springmountainvineyard.com/
   image: /source/desktop/spring-mountain-vineyard-desktop.webp
+  mobileImage: /source/mobile/spring-mountain-vineyard-mobile.webp
   tech:
     en: Redesigned the collection page with improved filter design and product cards, implemented dynamic breadcrumb logic that updates without page refresh for better UX.
     de: Neugestaltung der Kollektionsseite mit verbessertem Filterdesign und Produktkarten, Implementierung dynamischer Breadcrumb-Logik, die sich ohne Seitenaktualisierung aktualisiert für bessere UX.
@@ -250,6 +264,7 @@
   title: Lunesi
   url: https://lunesi.co.uk/
   image: /source/desktop/lunesi-desktop.webp
+  mobileImage: /source/mobile/lunesi-mobile.webp
   tech:
     en: Developed a dynamic cart drawer upsell section that intelligently displays products based on cart contents, fully configurable through the theme editor. Enhanced header with customizable color schemes and a configurable announcement banner for flexible branding and promotions.
     de: Entwicklung eines dynamischen Warenkorb-Upsell-Bereichs, der Produkte intelligent basierend auf dem Warenkorbinhalt anzeigt, vollständig konfigurierbar über den Theme-Editor. Verbesserter Header mit anpassbaren Farbschemata und konfigurierbarem Ankündigungsbanner für flexibles Branding und Werbeaktionen.
@@ -260,6 +275,7 @@
   title: Melinava
   url: https://melinava.nl/
   image: /source/desktop/melinava-desktop.webp
+  mobileImage: /source/mobile/melinava-mobile.webp
   tech:
     en: "Final pre-launch polish and QA before going live. I owned the full “ready for traffic” checklist: key customer journeys, cart and checkout sanity checks, responsive issues, speed, and visual bugs so the site was stable and conversion ready."
     de: "Finale Pre-Launch-Politur und QA vor dem Go-Live. Ich verantwortete die komplette “ready for traffic” Checkliste: zentrale Customer Journeys, Cart- und Checkout-Sanity-Checks, Responsive-Issues, Speed und visuelle Bugs — damit der Shop stabil und conversion-ready ist."
@@ -270,6 +286,7 @@
   title: SafeTag Tracking
   url: https://safetagtracking.com/
   image: /source/desktop/safe-tag-tracking-desktop.webp
+  mobileImage: /source/mobile/safe-tag-tracking-mobile.webp
   tech:
     en: Custom Shopify theme development from Figma with full customization and multilingual setup. Built flexible sections for easy content management, delivered pixel accurate UI, and set the foundation for scaling pages and markets.
     de: Custom Shopify Theme Development aus Figma mit voller Customization und mehrsprachigem Setup. Flexible Sections für einfaches Content-Management, pixelgenaues UI und eine solide Basis zum Skalieren von Seiten und Markets.
@@ -281,6 +298,7 @@
   title: Virea
   url: https://virea.se/
   image: /source/desktop/virea-desktop.webp
+  mobileImage: /source/mobile/virea-mobile.webp
   tech:
     en: Implemented a refreshed design for the homepage, product pages, and core templates. I still support the store as their Shopify expert, handling new features, performance optimization, UX improvements, and ongoing technical iterations.
     de: Umsetzung eines Refresh-Designs für Homepage, Produktseiten und Core-Templates. Ich betreue den Store weiterhin als Shopify-Experte und kümmere mich um neue Features, Performance-Optimierung, UX-Verbesserungen und laufende technische Iterationen.

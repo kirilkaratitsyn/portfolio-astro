@@ -3,8 +3,20 @@
     "tint": "#3e2b1e",
     "dark": true
   },
+  "crafts-cove-marine": {
+    "tint": "#0f2633",
+    "dark": true
+  },
   "elanora-skin": {
-    "tint": "#121212",
+    "tint": "#111111",
+    "dark": true
+  },
+  "fixy": {
+    "tint": "#000000",
+    "dark": true
+  },
+  "haftx": {
+    "tint": "#5f3e1f",
     "dark": true
   },
   "indian-affairs": {
@@ -15,9 +27,45 @@
     "tint": "#e94155",
     "dark": true
   },
-  "nimfa": {
-    "tint": "#e5d7d4",
+  "juniors-cheesecake": {
+    "tint": "#ffffff",
     "dark": false
+  },
+  "junofires": {
+    "tint": "#5b4a40",
+    "dark": true
+  },
+  "kiki-green": {
+    "tint": "#e4b948",
+    "dark": false
+  },
+  "lerros": {
+    "tint": "#9b958f",
+    "dark": false
+  },
+  "lunesi": {
+    "tint": "#ffffff",
+    "dark": false
+  },
+  "m-oceans": {
+    "tint": "#da4f3e",
+    "dark": true
+  },
+  "marinepatches": {
+    "tint": "#000000",
+    "dark": true
+  },
+  "melinava": {
+    "tint": "#ffffff",
+    "dark": false
+  },
+  "minbie": {
+    "tint": "#fff8fc",
+    "dark": false
+  },
+  "nimfa": {
+    "tint": "#5e0302",
+    "dark": true
   },
   "onlyphila": {
     "tint": "#000000",
@@ -28,15 +76,35 @@
     "dark": false
   },
   "petaljet": {
-    "tint": "#96b4d1",
+    "tint": "#97b4d1",
     "dark": false
+  },
+  "peter-bijoux": {
+    "tint": "#000000",
+    "dark": true
   },
   "reserve-kava": {
     "tint": "#ffffff",
     "dark": false
   },
+  "safe-tag-tracking": {
+    "tint": "#ffffff",
+    "dark": false
+  },
   "silk-tallow": {
-    "tint": "#f9f6f2",
+    "tint": "#faf6f3",
+    "dark": false
+  },
+  "spring-mountain-vineyard": {
+    "tint": "#6a4f59",
+    "dark": true
+  },
+  "virea": {
+    "tint": "#2c7022",
+    "dark": true
+  },
+  "white-canvas-earth": {
+    "tint": "#ffffff",
     "dark": false
   }
 }
