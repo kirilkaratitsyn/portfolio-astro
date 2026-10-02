@@ -47,6 +47,10 @@
     "tint": "#9b958f",
     "dark": false
   },
+  "lineargent": {
+    "tint": "#d7d3ce",
+    "dark": false
+  },
   "lunesi": {
     "tint": "#ffffff",
     "dark": false
