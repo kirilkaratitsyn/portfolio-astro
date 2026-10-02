@@ -495,7 +495,8 @@
         "quote": "Kiril is overall a talented freelancer that brings a lot of great skills and qualities to the project. I hired him to take an existing figma design and map it onto a shopify store. He did a good job overall.",
         "highlight": "a talented freelancer that brings a lot of great skills and qualities to the project",
         "rating": 4,
-        "context": "Редизайн магазину за макетом Figma"
+        "context": "Редизайн магазину за макетом Figma",
+        "url": "https://marinepatches.com/"
       },
       {
         "quote": "Hi Kiril, I appreciate the work you’ve put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved. Best of luck with your other projects!",
@@ -508,7 +509,8 @@
         "quote": "Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.",
         "highlight": "a bunch of manually coded solutions",
         "rating": 5,
-        "context": "Міграція на Online Store 2.0"
+        "context": "Міграція на Online Store 2.0",
+        "url": "https://www.m-oceans.com/"
       },
       {
         "quote": "Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.",
@@ -516,25 +518,6 @@
         "rating": 5,
         "context": "Оптимізація продуктивності, триває",
         "url": "https://lineargent.com/"
-      },
-      {
-        "quote": "Great experience working with Kiril. Communication was clear and timely, and all tasks were completed reliably. I'm fully satisfied with the results and would gladly work together again.",
-        "highlight": "all tasks were completed reliably",
-        "rating": 5,
-        "context": "Оновлення теми з Prestige 4 до 10–11",
-        "url": "/projects/indian-affairs"
-      },
-      {
-        "quote": "Perfect Job by Kiril - Highly Recommended. Kiril did an outstanding job fixing critical technical issues on our Shopify Rise theme site. He quickly resolved 404 URL errors, language switching issues, and other technical problems.",
-        "highlight": "quickly resolved 404 URL errors, language switching issues",
-        "rating": 5,
-        "context": "Виправлення технічних помилок у темі Rise"
-      },
-      {
-        "quote": "Kiril Did a super job on my Shopify store. Very skilled, fast, and easy to communicate with. He understood exactly what I wanted and delivered beyond expectations. Highly recommended.",
-        "highlight": "Very skilled, fast, and easy to communicate with.",
-        "rating": 5,
-        "context": "Фінальні правки та мобільний UI"
       }
     ],
     "badge": "Top Rated на Upwork"
