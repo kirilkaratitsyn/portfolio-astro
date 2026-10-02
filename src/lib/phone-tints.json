@@ -3,6 +3,10 @@
     "tint": "#3e2b1e",
     "dark": true
   },
+  "bella-bloom-box": {
+    "tint": "#fee4e8",
+    "dark": false
+  },
   "crafts-cove-marine": {
     "tint": "#0f2633",
     "dark": true

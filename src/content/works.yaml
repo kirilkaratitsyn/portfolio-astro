@@ -307,9 +307,10 @@
   accentLocked: true
 - id: bella-bloom-box
   order: 28
-  title: Bella Bloom Box
-  url: https://bellabloombox.se/
+  title: BellaBox
+  url: https://bellabox.se/
   image: /source/desktop/bella-bloom-box-desktop.webp
+  mobileImage: /source/mobile/bella-bloom-box-mobile.webp
   tech:
     en: Built a full Shopify store based on a Lovable design. Translated the design into theme sections and templates, set up content structure, and made it easy for the client to manage without code.
     de: Kompletten Shopify-Store basierend auf einem Lovable-Design gebaut. Design in Theme-Sections und Templates übersetzt, Content-Struktur aufgesetzt und so umgesetzt, dass der Kunde ohne Code verwalten kann.
