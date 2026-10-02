@@ -11,6 +11,7 @@ export type WorkProject = {
   title: string;
   url: string;
   image: string;
+  mobileImage?: string;
   tech: string;
   caseStudySlug?: string;
   archived?: boolean;
@@ -40,6 +41,7 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
       title: data.title,
       url: data.url,
       image: data.image,
+      mobileImage: data.mobileImage,
       tech: data.tech[locale],
       caseStudySlug: data.caseStudySlug,
       archived: data.archived,

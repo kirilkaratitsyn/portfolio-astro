@@ -34,6 +34,8 @@ const works = defineCollection({
     title: z.string(),
     url: z.url(),
     image: z.string(),
+    /** Mobile screenshot (Safari viewport, 1179x1977); case studies may set it in their own frontmatter instead. */
+    mobileImage: z.string().optional(),
     caseStudySlug: z.string().optional(),
     archived: z.boolean().optional(),
     /** Brand color of the project (scripts/make-accents.mjs), used as the background of its card. */
