@@ -20,7 +20,8 @@ const links = [
 ].map((link) => ({ ...link, href: localizePath(locale, link.to) }));
 
 const languages = SWITCHER_LOCALES.map((item) => ({ ...item, href: localizePath(item.locale, path), current: item.locale === locale }));
-const pill = 'rounded-full bg-white/80 backdrop-blur';
+// Solid pills: a backdrop blur is recomputed on every scroll frame over the moving page and the 3D canvases.
+const pill = 'rounded-full bg-white/95';
 ---
 
 <header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">

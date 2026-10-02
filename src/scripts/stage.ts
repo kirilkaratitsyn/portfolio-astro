@@ -65,6 +65,8 @@ abstract class View {
     protected readonly stage: Stage,
     readonly host: HTMLElement,
     private readonly dprCap: number,
+    /** Upper limit of the canvas in device pixels: every frame of it is rendered and copied. */
+    private readonly budget = 4.2e6,
   ) {
     const ctx = this.canvas.getContext('2d');
     if (!ctx) throw new Error('2D canvas is unavailable');
@@ -77,8 +79,8 @@ abstract class View {
 
   resize() {
     this.measure();
-    // A full-width canvas on a big screen would be huge: keep the picture under about four megapixels.
-    const dpr = Math.min(window.devicePixelRatio || 1, this.dprCap, Math.sqrt(4.2e6 / Math.max(1, this.cssW * this.cssH)));
+    // A full-width canvas on a big screen would be huge: keep the picture within the budget.
+    const dpr = Math.min(window.devicePixelRatio || 1, this.dprCap, Math.sqrt(this.budget / Math.max(1, this.cssW * this.cssH)));
     this.pw = Math.max(1, Math.round(this.cssW * dpr));
     this.ph = Math.max(1, Math.round(this.cssH * dpr));
     this.canvas.width = this.pw;
@@ -138,7 +140,8 @@ class HeroView extends View {
   private grabbed: HeroStone | null = null;
 
   constructor(stage: Stage, host: HTMLElement, poster: HTMLImageElement) {
-    super(stage, host, 1.5);
+    // The hero redraws on every scroll frame (its stones drift at different depths), so it gets the smaller budget.
+    super(stage, host, 1.5, 2.4e6);
     this.poster = poster;
     Object.assign(this.canvas.style, { inset: '0', width: '100%', height: '100%' });
     host.append(this.canvas);
@@ -474,7 +477,7 @@ class PebbleView extends View {
     this.lift = 1;
   }
 
-  step(dt: number, scroll: number) {
+  step(dt: number) {
     const w = this.w;
     const p = this.pointer;
     const damp = Math.exp(-2.4 * dt);
@@ -496,7 +499,6 @@ class PebbleView extends View {
       this.arcFrom.copy(to);
     } else {
       w.multiplyScalar(damp);
-      w.x -= scroll * (this.rest ? 0.006 : 0.01);
       if (w.length() > 12) w.setLength(12);
       if (this.hovering && p) {
         w.y += p.vx * 0.00012;
@@ -520,7 +522,8 @@ class PebbleView extends View {
     const settled =
       w.length() < 0.03 && away < 0.004 && Math.abs(this.tiltX - targetX) < 0.002 &&
       Math.abs(this.tiltY - targetY) < 0.002 && Math.abs(this.lift - (this.hovering ? 1 : 0)) < 0.002;
-    if (scroll !== 0) this.dirty = true;
+    // Scrolling alone does not redraw a pebble: its canvas moves with the page, and redrawing a dozen of them on
+    // every scroll frame was what made scrolling heavy.
     return !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
   }
 
@@ -551,6 +554,8 @@ class Stage {
   private ro: ResizeObserver;
   private observed = new Map<Element, View>();
   private lost = false;
+  /** The copy from the WebGL canvas works in this browser (checked on the first view only: the check stalls the GPU). */
+  private copyOk = false;
 
   constructor() {
     this.gl = document.createElement('canvas');
@@ -646,8 +651,10 @@ class Stage {
     view.ctx.clearRect(0, 0, view.pw, view.ph);
     view.ctx.drawImage(gl, 0, gl.height - view.ph, view.pw, view.ph, 0, 0, view.pw, view.ph);
     if (!view.live) {
-      if (this.hasPixels(view)) view.showLive();
-      else if (++view.fails >= 3) this.retire(view);
+      if (this.copyOk || this.hasPixels(view)) {
+        this.copyOk = true;
+        view.showLive();
+      } else if (++view.fails >= 3) this.retire(view);
     }
   }
 
@@ -809,24 +816,27 @@ export async function start() {
     await stage.renderer.compileAsync(hero.scene, hero.camera);
     await yieldMain();
   }
-  // Pebbles, icons and logos are built when they come near the screen, not all at once on load.
-  const build = (host: HTMLElement) => {
+  // Pebbles, icons and logos are built well before they reach the screen, one at a time in idle moments, with their
+  // shaders compiled in the background, so nothing heavy happens while the page is being scrolled.
+  const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
+  const build = async (host: HTMLElement) => {
     const name = host.dataset.pebble ?? 'cobalt';
     const img = host.querySelector('img');
-    if (img) stage.add(new PebbleView(stage, host, name, img), img);
+    if (!img) return;
+    const view = new PebbleView(stage, host, name, img);
+    await stage.renderer.compileAsync(view.scene, view.camera).catch(() => {});
+    stage.add(view, img);
+    stage.wake();
   };
   const lazy = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
         lazy.unobserve(entry.target);
-        window.setTimeout(() => {
-          build(entry.target as HTMLElement);
-          stage.wake();
-        }, 0);
+        idle(() => void build(entry.target as HTMLElement), { timeout: 600 });
       }
     },
-    { rootMargin: '500px 0px' },
+    { rootMargin: '1400px 0px' },
   );
   for (const host of pebbleHosts) lazy.observe(host);
   stage.wake();
