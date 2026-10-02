@@ -1,25 +1,36 @@
 ---
-import { useTranslations, type Locale } from '../i18n';
+import { localizePath, useTranslations, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale).reviews;
+const { locale } = Astro.props;
+const all = useTranslations(locale);
+const t = all.reviews;
 const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
 
 // The quotes are the clients' own words from Upwork, shown in the original English in every language.
 // Cards alternate cobalt, paper, ink and mist like the project cards; the key phrase of each is marked.
 const tones = [
-  { box: 'bg-blue text-white', mark: 'rgba(255,255,255,0.3)', meta: 'text-white/75' },
-  { box: 'bg-white text-ink', mark: 'rgba(36,51,240,0.16)', meta: 'text-mute' },
-  { box: 'bg-ink text-white', mark: 'rgba(36,51,240,0.75)', meta: 'text-white/70' },
-  { box: 'bg-[#dfe2f0] text-ink', mark: 'rgba(36,51,240,0.18)', meta: 'text-mute' },
+  { box: 'bg-blue text-white', mark: 'rgba(255,255,255,0.3)', meta: 'text-white/75', link: 'bg-white text-blue hover:bg-ink hover:text-white' },
+  { box: 'bg-white text-ink', mark: 'rgba(36,51,240,0.16)', meta: 'text-mute', link: 'bg-ink text-white hover:bg-blue' },
+  { box: 'bg-ink text-white', mark: 'rgba(36,51,240,0.75)', meta: 'text-white/70', link: 'bg-white text-ink hover:bg-blue hover:text-white' },
+  { box: 'bg-[#dfe2f0] text-ink', mark: 'rgba(36,51,240,0.18)', meta: 'text-mute', link: 'bg-ink text-white hover:bg-blue' },
 ] as const;
+// Each card can link to the store the review is about (the client's live site), or to the case study when the
+// store has closed (a url starting with /).
+const linkOf = (url?: string) =>
+  !url
+    ? null
+    : url.startsWith('/')
+      ? { href: localizePath(locale, url), label: `${all.caseStudies.viewCase} →`, external: false }
+      : { href: url, label: `${new URL(url).hostname.replace(/^www\./, '')} ↗`, external: true };
 const cards = t.cards.map((card, i) => {
   const at = card.quote.indexOf(card.highlight);
   return {
     ...card,
+    link: linkOf((card as { url?: string }).url),
     // A long quote gets a wider card and smaller type so it fits the card's height (global.css .review-card--long).
     long: card.quote.length > 300,
     tone: tones[i % tones.length]!,
@@ -73,10 +84,21 @@ const cards = t.cards.map((card, i) => {
                 </blockquote>
               </div>
               <figcaption class={`mt-10 flex items-end justify-between gap-4 text-sm ${card.tone.meta}`}>
-                <span>
+                <span class="min-w-0">
                   <b class="block text-[15px] tracking-[0.12em]" aria-label={`${card.rating} / 5`}>{'★'.repeat(card.rating)}<span class="opacity-35">{'★'.repeat(5 - card.rating)}</span></b>
                   <span class="mt-2 block text-[15px] font-semibold text-inherit [color:inherit]">{card.context}</span>
                 </span>
+                {
+                  card.link && (
+                    <a
+                      href={card.link.href}
+                      {...(card.link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      class={`shrink-0 whitespace-nowrap rounded-full px-4 py-2.5 text-[14px] font-semibold transition-colors duration-300 ${card.tone.link}`}
+                    >
+                      {card.link.label}
+                    </a>
+                  )
+                }
               </figcaption>
             </figure>
           </li>
