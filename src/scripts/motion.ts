@@ -27,7 +27,7 @@ export function init() {
   stats();
   marquee();
   feature();
-  anatomy();
+  anatomy(lenis);
   about();
   reviews(lenis);
   contact();
@@ -413,7 +413,7 @@ function feature() {
  * and tilts into an isometric view, then each step in turn comes into focus together with its item in the list. No pin, so the
  * scroll positions of everything below stay as they are.
  */
-function anatomy() {
+function anatomy(lenis: Lenis | null) {
   const wrap = qs('[data-anatomy]');
   const stack = wrap ? qs('[data-anatomy-stack]', wrap) : null;
   if (!wrap || !stack) return;
@@ -443,7 +443,18 @@ function anatomy() {
     };
     const st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom', onUpdate: (self) => apply(self.progress), onRefresh: (self) => apply(self.progress) });
     apply(st.progress);
+    // A step in the list or a layer of the stack, clicked, scrolls to the middle of that step's stretch of the scroll.
+    const go = (i: number) => {
+      const p = 0.2 + ((i + 0.5) / layers.length) * 0.78;
+      const y = st.start + p * (st.end - st.start);
+      if (lenis) lenis.scrollTo(y, { duration: 1.1 });
+      else window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+    const clicks = new AbortController();
+    items.forEach((item, i) => qs('[data-anatomy-go]', item)?.addEventListener('click', () => go(i), { signal: clicks.signal }));
+    layers.forEach((layer, i) => layer.addEventListener('click', () => go(i), { signal: clicks.signal }));
     return () => {
+      clicks.abort();
       st.kill();
       stack.style.removeProperty('--gap');
       stack.style.removeProperty('--tilt');

@@ -179,6 +179,10 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
   .motion .anat-stack { --gap: 8px; }
   .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }
+  .motion .anat-layer { cursor: pointer; }
+  .motion .anat-layer:not(.is-on):not(.is-past):hover { --lift: 12px; filter: none; }
+  .anat-go { transition: color 0.2s ease; }
+  .anat-go:hover { color: #2433f0; }
   /* Steps already done slide up out of the way, faint, so the step in focus is seen whole. */
   .motion .anat-layer.is-past { opacity: 0.07; --lift: 30px; --rise: -78%; }
   .motion .anat-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }

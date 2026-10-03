@@ -1,8 +1,9 @@
 ---
 // How I work: the six steps of a project, from the kick-off call to analytics and launch, as layers of one stack. On
 // desktop the drawn layers sit in an isometric stack that opens up while the section scrolls past (a tall wrapper with
-// a sticky stage, driven by scripts/motion.ts anatomy(); no pin), and the list highlights the step in focus. Phones get
-// a plain list of cards. Without scripts the stack is shown open and every item is expanded.
+// a sticky stage, driven by scripts/motion.ts anatomy(); no pin), and the list highlights the step in focus; a step in
+// the list or a layer of the stack, clicked, scrolls to it. Phones get a plain list of cards. Without scripts the stack
+// is shown open and every item is expanded.
 import AnatomyLayer from '../components/AnatomyLayer.astro';
 import { useTranslations, type Locale } from '../i18n';
 
@@ -28,10 +29,10 @@ const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]! }));
             {
               layers.map((layer, i) => (
                 <li data-anatomy-item class="anat-item border-b border-line py-4">
-                  <p class="flex items-baseline gap-4 font-head text-[20px] font-bold tracking-[-0.01em]">
+                  <button type="button" data-anatomy-go class="anat-go flex w-full items-baseline gap-4 text-left font-head text-[20px] font-bold tracking-[-0.01em]">
                     <span class="anat-num w-7 text-[14px] text-mute [font-variant-numeric:tabular-nums]">0{i + 1}</span>
                     {layer.title}
-                  </p>
+                  </button>
                   <div class="anat-detail pl-11">
                     <div>
                       <p class="pt-2 text-[15px] leading-relaxed text-mute">{layer.text}</p>
