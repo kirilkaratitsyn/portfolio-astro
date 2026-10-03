@@ -196,7 +196,29 @@
       "text": "Haben Sie ein Projekt im Kopf? Lassen Sie uns zusammenarbeiten, um eine atemberaubende Website zu erstellen, die Ihrem Unternehmen hilft, online zu wachsen.",
       "button": "Kontaktieren Sie mich"
     },
-    "allProjects": "Alle Projekte"
+    "allProjects": "Alle Projekte",
+    "filters": {
+      "label": "Projekte filtern",
+      "theme": "Theme",
+      "allThemes": "Alle Themes",
+      "custom": "Eigenes Theme",
+      "work": "Leistung",
+      "allWork": "Alle Leistungen",
+      "country": "Land",
+      "allCountries": "Alle Länder",
+      "shown": "{n} von {total} Projekten",
+      "reset": "Filter zurücksetzen",
+      "empty": "Zu diesen Filtern gibt es noch keine Projekte.",
+      "kinds": {
+        "build": "Neuer Shop",
+        "migration": "Migration",
+        "redesign": "Redesign",
+        "features": "Individuelle Funktionen",
+        "speed": "Speed & SEO",
+        "support": "Laufende Betreuung",
+        "launch": "Launch & QA"
+      }
+    }
   },
   "upworkReviews": {
     "eyebrow": "Upwork",

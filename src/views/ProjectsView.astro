@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
-import { getCaseStudies, getWorks } from '../lib/content';
+import { WORK_KINDS, getCaseStudies, getWorks, themeSlug, themesOf } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -11,12 +11,23 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const f = t.works.filters;
 const works = await getWorks(locale);
 // Desktop grid of six columns: rows of 4+2, 2+2+2, 2+4 and 3+3 keep the page from looking like a spreadsheet.
+// The filters below (inline script) deal the same pattern out again to the cards that stay visible.
 const spans = [4, 2, 2, 2, 2, 2, 4, 3, 3] as const;
-const spanClass = { 2: 'lg:col-span-2', 3: 'lg:col-span-3', 4: 'lg:col-span-4' } as const;
 const sizeOf = { 2: 'sm', 3: 'md', 4: 'lg' } as const;
 const caseBySlug = new Map((await getCaseStudies(locale)).map((item) => [item.slug, item]));
+
+// Filter options, each with the number of projects behind it.
+const themes = themesOf(works);
+const kinds = WORK_KINDS.map((kind) => ({ kind, count: works.filter((w) => w.work.includes(kind)).length })).filter((k) => k.count > 0);
+const names = new Intl.DisplayNames([locale], { type: 'region' });
+const countryCounts = new Map<string, number>();
+for (const w of works) if (w.country) countryCounts.set(w.country, (countryCounts.get(w.country) ?? 0) + 1);
+const countries = [...countryCounts.entries()]
+  .map(([code, count]) => ({ code, name: names.of(code) ?? code, count }))
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, locale));
 
 const seo = {
   title: locale === DEFAULT_LOCALE ? 'Shopify Projects' : t.works.allWorksTitle,
@@ -29,15 +40,44 @@ const seo = {
 
 <BaseLayout {...seo} path="/projects" locale={locale}>
   <section class="pb-4 pt-32 md:pt-44">
-    <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.works.allWorksTitle}</h1>
-    <ul class="mx-auto grid max-w-[1440px] items-start gap-x-6 gap-y-14 px-5 md:grid-cols-2 md:px-10 lg:grid-cols-6">
+    <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-10 md:text-[96px]">{t.works.allWorksTitle}</h1>
+
+    <!-- Filters: theme first (the Stack section on the homepage links here with ?theme=), then work and country.
+         Shown by the script below; without it every project is listed. -->
+    <form data-project-filters hidden class="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2.5 px-5 pb-10 md:px-10 md:pb-12" aria-label={f.label}>
+      <label class="pf-field">
+        <span class="sr-only">{f.theme}</span>
+        <select name="theme" class="pf-select">
+          <option value="">{f.allThemes}</option>
+          {themes.map((theme) => <option value={theme.slug}>{theme.name === 'Custom' ? f.custom : theme.name} ({theme.count})</option>)}
+        </select>
+      </label>
+      <label class="pf-field">
+        <span class="sr-only">{f.work}</span>
+        <select name="work" class="pf-select">
+          <option value="">{f.allWork}</option>
+          {kinds.map((k) => <option value={k.kind}>{f.kinds[k.kind]} ({k.count})</option>)}
+        </select>
+      </label>
+      <label class="pf-field">
+        <span class="sr-only">{f.country}</span>
+        <select name="country" class="pf-select">
+          <option value="">{f.allCountries}</option>
+          {countries.map((c) => <option value={c.code}>{c.name} ({c.count})</option>)}
+        </select>
+      </label>
+      <p data-pf-count data-template={f.shown} class="ml-1 text-[14px] text-mute" aria-live="polite"></p>
+      <button type="button" data-pf-reset hidden class="text-[14px] font-semibold text-blue underline-offset-4 hover:underline">{f.reset}</button>
+    </form>
+
+    <ul data-project-grid class="mx-auto grid max-w-[1440px] items-start gap-x-6 gap-y-14 px-5 md:grid-cols-2 md:px-10 lg:grid-cols-6">
       {
         works.map((work, index) => {
           const caseStudy = work.caseStudySlug ? caseBySlug.get(work.caseStudySlug) : undefined;
           const toCase = Boolean(caseStudy);
           const span = spans[index % spans.length]!;
           return (
-            <li class={spanClass[span]} data-reveal={index >= 3 ? '' : undefined}>
+            <li class="pf-item" data-span={span} data-theme={themeSlug(work.theme)} data-work={work.work.join(' ')} data-country={work.country ?? ''} data-reveal={index >= 3 ? '' : undefined}>
               <ProjectCard
                 href={toCase ? localizePath(locale, `/projects/${work.caseStudySlug}`) : work.url}
                 title={work.title}
@@ -55,6 +95,65 @@ const seo = {
         })
       }
     </ul>
+    <p data-pf-empty hidden class="mx-auto max-w-[1440px] px-5 py-16 text-[18px] text-mute md:px-10">{f.empty}</p>
+
+    <!-- Inline, right after the list: a link with ?theme= opens on the filtered list without a flash of every card. -->
+    <script is:inline>
+      (() => {
+        const form = document.querySelector('[data-project-filters]');
+        const grid = document.querySelector('[data-project-grid]');
+        if (!form || !grid) return;
+        const items = [...grid.children];
+        const spans = [4, 2, 2, 2, 2, 2, 4, 3, 3];
+        const sizes = { 2: 'sm', 3: 'md', 4: 'lg' };
+        const keys = ['theme', 'work', 'country'];
+        const count = form.querySelector('[data-pf-count]');
+        const reset = form.querySelector('[data-pf-reset]');
+        const empty = document.querySelector('[data-pf-empty]');
+        const apply = (save) => {
+          const want = {};
+          for (const key of keys) want[key] = form.elements[key].value;
+          let shown = 0;
+          for (const li of items) {
+            const ok =
+              (!want.theme || li.dataset.theme === want.theme) &&
+              (!want.work || li.dataset.work.split(' ').includes(want.work)) &&
+              (!want.country || li.dataset.country === want.country);
+            li.hidden = !ok;
+            if (!ok) continue;
+            const span = spans[shown % spans.length];
+            li.dataset.span = String(span);
+            li.firstElementChild.dataset.size = sizes[span];
+            shown++;
+          }
+          const active = keys.filter((key) => want[key]);
+          for (const key of keys) form.elements[key].parentElement.classList.toggle('is-set', Boolean(want[key]));
+          count.textContent = count.dataset.template.replace('{n}', shown).replace('{total}', items.length);
+          reset.hidden = !active.length;
+          empty.hidden = shown > 0;
+          if (!save) return;
+          const query = new URLSearchParams();
+          for (const key of active) query.set(key, want[key]);
+          history.replaceState(history.state, '', location.pathname + (active.length ? `?${query}` : '') + location.hash);
+          // Scroll animations measure the page on resize: let them see the new length.
+          window.dispatchEvent(new Event('resize'));
+        };
+        const params = new URLSearchParams(location.search);
+        for (const key of keys) {
+          const value = params.get(key);
+          const select = form.elements[key];
+          if (value && [...select.options].some((o) => o.value === value)) select.value = value;
+        }
+        form.hidden = false;
+        apply(false);
+        form.addEventListener('change', () => apply(true));
+        form.addEventListener('submit', (e) => e.preventDefault());
+        reset.addEventListener('click', () => {
+          form.reset();
+          apply(true);
+        });
+      })();
+    </script>
   </section>
   <Contact locale={locale} />
 </BaseLayout>

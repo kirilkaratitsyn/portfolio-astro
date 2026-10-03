@@ -24,16 +24,15 @@ interface Props {
 }
 
 const { href, title, description, image, mobileImage, domain, external = false, priority = false, accent = '#2433f0', size = 'sm' } = Astro.props;
-// The widths only differ on the desktop grid; below it every card is one column wide.
-const frame = { sm: 'w-[80%]', md: 'w-[80%] lg:w-[68%]', lg: 'w-[80%] lg:w-[56%]' };
-const phone = { sm: 'w-[25%]', md: 'w-[25%] lg:w-[18%]', lg: 'w-[25%] lg:w-[15%]' };
+// The frame and phone widths follow data-size (styles/global.css .pc-frame, .pc-phone), so the filters on /projects
+// can resize a card when it moves to another place in the grid.
 ---
 
-<a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col" data-card>
+<a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col" data-card data-size={size}>
   <span data-tilt class="relative grid h-[340px] place-items-center overflow-hidden rounded-[28px] md:h-[400px]" style={`background:${accent}`}>
     <!-- a soft light that follows the pointer -->
     <span class="pointer-events-none absolute inset-0 z-[4] opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 35%), rgba(255, 255, 255, 0.3), transparent 62%)"></span>
-    <span data-depth="14" class:list={['relative block', frame[size]]}>
+    <span data-depth="14" class="pc-frame relative block">
       <span class="block origin-center overflow-hidden rounded-xl bg-white shadow-[0_26px_55px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out group-hover:scale-[1.05]">
         <span class="flex h-[18px] items-center gap-1.5 bg-[#f1f2f6] px-3" aria-hidden="true">
           <i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i>
@@ -43,7 +42,7 @@ const phone = { sm: 'w-[25%]', md: 'w-[25%] lg:w-[18%]', lg: 'w-[25%] lg:w-[15%]
     </span>
     {
       mobileImage && (
-        <span data-depth="20" class:list={['absolute bottom-7 right-[5%] z-[3] block', phone[size]]}>
+        <span data-depth="20" class="pc-phone absolute bottom-7 right-[5%] z-[3] block">
           <Phone image={mobileImage} domain={domain} sizes="(min-width: 1024px) 140px, 25vw" class="origin-bottom transition-transform duration-500 ease-out group-hover:scale-[1.06]" />
         </span>
       )

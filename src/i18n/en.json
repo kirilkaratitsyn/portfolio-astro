@@ -196,7 +196,29 @@
       "text": "Have a project in mind? Let's work together to create a stunning website that helps your business grow online.",
       "button": "Contact Me"
     },
-    "allProjects": "All projects"
+    "allProjects": "All projects",
+    "filters": {
+      "label": "Filter projects",
+      "theme": "Theme",
+      "allThemes": "All themes",
+      "custom": "Custom theme",
+      "work": "Work",
+      "allWork": "All work",
+      "country": "Country",
+      "allCountries": "All countries",
+      "shown": "{n} of {total} projects",
+      "reset": "Reset filters",
+      "empty": "No projects match these filters yet.",
+      "kinds": {
+        "build": "New store",
+        "migration": "Migration",
+        "redesign": "Redesign",
+        "features": "Custom features",
+        "speed": "Speed & SEO",
+        "support": "Ongoing support",
+        "launch": "Launch & QA"
+      }
+    }
   },
   "upworkReviews": {
     "eyebrow": "Upwork",

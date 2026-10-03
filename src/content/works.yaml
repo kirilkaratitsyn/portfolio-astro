@@ -2,6 +2,8 @@
   order: 1
   title: Orska Rituals
   url: https://orskarituals.com/
+  theme: Horizon
+  work: [build, features]
   country: US
   city: "Frisco"
   lat: 33.15
@@ -17,6 +19,8 @@
   order: 2
   title: Jula Bloom
   url: https://julabloom.com/
+  theme: Be Yours
+  work: [migration, build, launch]
   country: US
   city: "Seattle"
   lat: 47.61
@@ -32,6 +36,8 @@
   order: 3
   title: Reserve Kava
   url: https://reservekava.com/
+  theme: Dawn
+  work: [features]
   country: US
   city: "Miami"
   lat: 25.76
@@ -47,6 +53,8 @@
   order: 4
   title: Elanora Skin
   url: https://elanoraskin.com/
+  theme: Shrine
+  work: [features, support]
   country: US
   city: "Los Angeles"
   lat: 34.05
@@ -63,6 +71,8 @@
   order: 5
   title: Petaljet
   url: https://petaljet.com/
+  theme: Turbo
+  work: [speed, features, support]
   country: US
   city: "Chicago"
   lat: 41.88
@@ -78,6 +88,8 @@
   order: 6
   title: OnlyPhila
   url: https://onlyphila.com/
+  theme: Horizon
+  work: [features]
   country: AT
   city: "Vienna"
   lat: 48.21
@@ -93,6 +105,8 @@
   order: 7
   title: Fixy
   url: https://www.fixy-brand.com/
+  theme: Hongo
+  work: [features, support]
   country: UA
   city: "Rivne"
   lat: 50.62
@@ -109,6 +123,8 @@
   order: 8
   title: Minbie
   url: https://minbie.com.au/
+  theme: Blum
+  work: [build, launch]
   country: AU
   city: "Melbourne"
   lat: -37.86
@@ -125,6 +141,8 @@
   order: 9
   title: M-Oceans
   url: https://m-oceans.com/
+  theme: Woodstock
+  work: [migration, redesign, support]
   country: CA
   city: "Toronto"
   lat: 43.77
@@ -140,6 +158,8 @@
   order: 10
   title: Lineargent
   url: https://lineargent.com/
+  theme: Prestige
+  work: [speed, features, support]
   country: ES
   city: "Vic"
   lat: 41.93
@@ -156,6 +176,8 @@
   order: 11
   title: Crafts Cove Marine
   url: https://www.craftscove.ca/
+  theme: Fashionopolism
+  work: [speed]
   country: CA
   city: "Toronto"
   lat: 43.65
@@ -171,6 +193,8 @@
   order: 12
   title: MarinePatches
   url: https://marinepatches.com/
+  theme: Horizon
+  work: [build]
   country: US
   city: "Corpus Christi"
   lat: 27.8
@@ -187,6 +211,8 @@
   order: 13
   title: White Canvas Earth
   url: https://whitecanvasearth.com/
+  theme: Atelier
+  work: [redesign, migration, speed]
   country: IN
   city: "Indore"
   lat: 22.72
@@ -202,6 +228,8 @@
   order: 14
   title: Peter Bijoux
   url: https://peterbijoux.com/
+  theme: Prestige
+  work: [redesign]
   country: IT
   city: "Merano"
   lat: 46.67
@@ -218,6 +246,8 @@
   order: 15
   title: Bazar Bizar
   url: https://bazarbizar.be/
+  theme: Dawn
+  work: [features, support]
   country: BE
   city: "Antwerp"
   lat: 51.13
@@ -233,6 +263,8 @@
   order: 16
   title: Nimfa
   url: https://nimfa.nl/
+  theme: Custom
+  work: [build]
   country: NL
   city: "Kwadijk"
   lat: 52.53
@@ -249,6 +281,8 @@
   order: 17
   title: Silk Tallow
   url: https://silktallow.com/
+  theme: Cornerstone
+  work: [features]
   country: NL
   city: "Cuijk"
   lat: 51.73
@@ -264,6 +298,8 @@
   order: 18
   title: Haftx
   url: https://haftx.com/
+  theme: Symmetry
+  work: [features]
   country: PL
   city: "Poznań"
   lat: 52.41
@@ -279,6 +315,8 @@
   order: 19
   title: Junofires
   url: https://junofires.nl/
+  theme: Prestige
+  work: [features]
   country: NL
   city: "Hendrik-Ido-Ambacht"
   lat: 51.84
@@ -295,6 +333,8 @@
   order: 20
   title: Lerros
   url: https://www.lerros.com/
+  theme: Flawless
+  work: [migration]
   country: DE
   city: "Düsseldorf"
   lat: 51.23
@@ -310,6 +350,8 @@
   order: 21
   title: Kiki Green
   url: https://kiki-green.com/
+  theme: Custom
+  work: [build]
   country: US
   city: "Sheridan"
   lat: 44.8
@@ -326,6 +368,8 @@
   order: 22
   title: Junior's Cheesecake
   url: https://juniorscheesecake.com/
+  theme: Dawn
+  work: [features]
   country: US
   city: "New York"
   lat: 40.68
@@ -341,6 +385,8 @@
   order: 23
   title: Spring Mountain Vineyard
   url: https://club.springmountainvineyard.com/
+  theme: Dawn
+  work: [redesign, features]
   country: US
   city: "St. Helena"
   lat: 38.51
@@ -356,6 +402,8 @@
   order: 24
   title: Lunesi
   url: https://lunesi.co.uk/
+  theme: Be Yours
+  work: [features]
   country: GB
   city: "London"
   lat: 51.51
@@ -371,6 +419,8 @@
   order: 25
   title: Melinava
   url: https://melinava.nl/
+  theme: Local
+  work: [launch]
   country: MT
   city: "Santa Venera"
   lat: 35.89
@@ -386,6 +436,8 @@
   order: 26
   title: SafeTag Tracking
   url: https://safetagtracking.com/
+  theme: Dawn
+  work: [build]
   country: GB
   city: "London"
   lat: 51.5
@@ -402,6 +454,8 @@
   order: 27
   title: Virea
   url: https://virea.se/
+  theme: Minimog
+  work: [redesign, speed, support]
   country: SE
   city: "Trollhättan"
   lat: 58.28
@@ -418,6 +472,8 @@
   order: 28
   title: BellaBox
   url: https://bellabox.se/
+  theme: Dawn
+  work: [build]
   country: SE
   city: "Vänersborg"
   lat: 58.38
@@ -434,6 +490,8 @@
   order: 29
   title: Indian Affairs
   url: https://indianaffairs.de/
+  theme: Prestige
+  work: [migration]
   image: /source/desktop/indian-affairs-desktop.webp
   caseStudySlug: indian-affairs
   archived: true

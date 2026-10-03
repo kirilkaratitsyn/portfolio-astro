@@ -99,6 +99,35 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .globe-zoom button:hover:not([aria-disabled='true']) { background: #0e1018; color: #fff; }
 .globe-zoom button[aria-disabled='true'] { opacity: 0.35; cursor: default; }
 
+/* Project catalog (views/ProjectsView.astro): the place in the grid (data-span) and the card size (data-size) are set
+   by the filters, so a filtered list keeps the same rhythm of wide and narrow cards. */
+.pc-frame { width: 80%; }
+.pc-phone { width: 25%; }
+@media (min-width: 1024px) {
+  [data-size='md'] .pc-frame { width: 68%; }
+  [data-size='md'] .pc-phone { width: 18%; }
+  [data-size='lg'] .pc-frame { width: 56%; }
+  [data-size='lg'] .pc-phone { width: 15%; }
+  .pf-item[data-span='2'] { grid-column: span 2 / span 2; }
+  .pf-item[data-span='3'] { grid-column: span 3 / span 3; }
+  .pf-item[data-span='4'] { grid-column: span 4 / span 4; }
+}
+[data-project-filters][hidden] { display: none; }
+.pf-field { position: relative; display: block; color: #0e1018; }
+.pf-field::after {
+  content: ''; position: absolute; right: 19px; top: 50%; width: 7px; height: 7px; border: solid currentColor;
+  border-width: 0 2px 2px 0; transform: translateY(-70%) rotate(45deg); pointer-events: none;
+}
+.pf-select {
+  /* field-sizing: as wide as the chosen option (not the longest one) where browsers support it. */
+  appearance: none; field-sizing: content; max-width: 100%; border-radius: 999px; border: 1px solid #dfe2ee; background: #fff; color: inherit;
+  padding: 12px 44px 12px 20px; font-size: 15px; font-weight: 600; line-height: 1.2; cursor: pointer; transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.pf-select:hover { border-color: #0e1018; }
+.pf-field.is-set { color: #fff; }
+.pf-field.is-set .pf-select { background: #0e1018; border-color: #0e1018; }
+.pf-select option { color: #0e1018; background: #fff; }
+
 /* Store anatomy (sections/Anatomy.astro). Without the motion class the stack is open and every item expanded;
    with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy() sets --gap, --tilt and .is-on. */
 .anat-scene { position: absolute; inset: 0; perspective: 2400px; display: grid; place-items: center; }
@@ -149,6 +178,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .stack-grid:hover .stack-tile::before { opacity: 1; }
 .stack-icon { display: grid; place-items: center start; height: 32px; color: #0e1018; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease; }
 .stack-icon svg { width: 30px; height: 30px; }
+.stack-icon svg[data-wordmark] { width: auto; height: 24px; }
 .stack-tile:hover .stack-icon { color: #2433f0; transform: translateY(-4px) rotate(-6deg); }
 
 /* Code you can hand over (sections/Code.astro). Without the motion class every line and part is shown; with it, the

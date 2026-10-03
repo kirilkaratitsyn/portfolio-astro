@@ -33,6 +33,10 @@ const works = defineCollection({
     order: z.number().int().positive(),
     title: z.string(),
     url: z.url(),
+    /** The theme the live store runs on (schema_name of Shopify.theme on its homepage); "Custom" for own themes. */
+    theme: z.string(),
+    /** What the work was, for the filters on /projects (lib/content.ts WORK_KINDS). */
+    work: z.array(z.enum(['build', 'migration', 'redesign', 'features', 'speed', 'support', 'launch'])).min(1),
     /** Where the store is based (Shopify /meta.json), for the globe section. */
     country: z.string().length(2).optional(),
     city: z.string().optional(),

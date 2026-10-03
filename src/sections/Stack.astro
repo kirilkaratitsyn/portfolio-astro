@@ -1,21 +1,29 @@
 ---
 // Tools I build with: every tile names the project where the tool did the work, so nothing here is a logo for show.
-// Logos: Simple Icons (CC0, src/assets/stack); the Shopify platform features get small drawn glyphs. The cursor
-// lights up the grid lines and the tile under it (scripts/motion.ts stackGrid()).
-import { useTranslations, type Locale } from '../i18n';
+// Logos: Simple Icons (CC0, src/assets/stack), and the wordmarks of Klaviyo and Searchspring from their own sites.
+// The Shopify platform features (Markets, Functions, B2B, metafields) have no logo of their own and get small drawn
+// glyphs. The cursor lights up the grid lines and the tile under it (scripts/motion.ts stackGrid()). The themes row
+// is built from works.yaml and every theme links to the projects on it.
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { getWorks, themesOf } from '../lib/content';
 import shopify from '../assets/stack/shopify.svg?raw';
 import javascript from '../assets/stack/javascript.svg?raw';
 import figma from '../assets/stack/figma.svg?raw';
 import github from '../assets/stack/github.svg?raw';
 import lighthouse from '../assets/stack/lighthouse.svg?raw';
 import workers from '../assets/stack/cloudflareworkers.svg?raw';
+import klaviyo from '../assets/stack/klaviyo.svg?raw';
+import searchspring from '../assets/stack/searchspring.svg?raw';
 
 interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale).stack;
+const { locale } = Astro.props;
+const all = useTranslations(locale);
+const t = all.stack;
 const clean = (svg: string) => svg.replace(/<title>.*?<\/title>/, '').replace('<svg ', '<svg aria-hidden="true" fill="currentColor" ');
+const wordmark = (svg: string) => clean(svg).replace('<svg ', '<svg data-wordmark ');
 const glyph = (body: string) => `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
 const icons: Record<string, string> = {
   liquid: clean(shopify),
@@ -23,8 +31,8 @@ const icons: Record<string, string> = {
   functions: glyph('<path d="M14.5 4.5c-2.2-.6-3.6.4-4.1 2.6L8.3 17c-.5 2.2-1.9 3.1-4.1 2.5M6 10h8"/><path d="m15 12 5 6M20 12l-5 6"/>'),
   b2b: glyph('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M10 21v-4h4v4"/>'),
   metafields: glyph('<path d="M8 4c-2 0-3 1-3 3v2c0 1.5-.8 2.5-2 3 1.2.5 2 1.5 2 3v2c0 2 1 3 3 3M16 4c2 0 3 1 3 3v2c0 1.5.8 2.5 2 3-1.2.5-2 1.5-2 3v2c0 2-1 3-3 3"/>'),
-  klaviyo: '<span class="font-head text-[17px] font-bold tracking-[-0.02em]">klaviyo</span>',
-  searchspring: '<span class="font-head text-[15px] font-bold tracking-[-0.01em]">Searchspring</span>',
+  klaviyo: wordmark(klaviyo),
+  searchspring: wordmark(searchspring),
   workers: clean(workers),
   javascript: clean(javascript),
   figma: clean(figma),
@@ -33,7 +41,8 @@ const icons: Record<string, string> = {
 };
 const keys = ['liquid', 'markets', 'functions', 'b2b', 'metafields', 'klaviyo', 'searchspring', 'workers', 'javascript', 'figma', 'lighthouse', 'github'];
 const items = t.items.map((item, i) => ({ ...item, icon: icons[keys[i]!] ?? '' }));
-const themes = ['Dawn', 'Prestige', 'Horizon', 'Be Yours', 'Enterprise', 'Woodstock', 'Fashionopolism', 'Monti', 'Rise'];
+const themes = themesOf(await getWorks(locale));
+const projects = localizePath(locale, '/projects');
 ---
 
 <section id="stack" aria-labelledby="stack-title" class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-36 md:px-10">
@@ -59,6 +68,13 @@ const themes = ['Dawn', 'Prestige', 'Horizon', 'Be Yours', 'Enterprise', 'Woodst
 
   <div data-reveal class="mt-8 flex flex-wrap items-center gap-2">
     <span class="mr-2 text-[14px] font-semibold">{t.themesTitle}</span>
-    {themes.map((theme) => <span class="rounded-full border border-line px-3.5 py-1.5 text-[13px] font-medium">{theme}</span>)}
+    {
+      themes.map((theme) => (
+        <a href={`${projects}?theme=${theme.slug}`} class="rounded-full border border-line px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-white">
+          {theme.name === 'Custom' ? all.works.filters.custom : theme.name}
+          <span class="ml-1 opacity-50">{theme.count}</span>
+        </a>
+      ))
+    }
   </div>
 </section>
