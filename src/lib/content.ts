@@ -10,6 +10,10 @@ export type WorkProject = {
   id: string;
   title: string;
   url: string;
+  country?: string;
+  city?: string;
+  lat?: number;
+  lng?: number;
   image: string;
   mobileImage?: string;
   tech: string;
@@ -40,6 +44,10 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
       id,
       title: data.title,
       url: data.url,
+      country: data.country,
+      city: data.city,
+      lat: data.lat,
+      lng: data.lng,
       image: data.image,
       mobileImage: data.mobileImage,
       tech: data.tech[locale],

@@ -543,5 +543,14 @@
     ],
     "upwork": "Upwork-Profil",
     "photoAlt": "Kiril Karatitsyn am Meer bei Sonnenuntergang"
+  },
+  "globe": {
+    "eyebrow": "Weltweit",
+    "title": "Kunden in {n} Ländern",
+    "lead": "Von Seattle bis Melbourne: Shops, die ich gebaut und betreut habe, alle von meinem Schreibtisch in Deutschland aus.",
+    "listLabel": "Länder der Kunden-Shops",
+    "open": "Shop öffnen ↗",
+    "home": "Meine Basis: Deutschland",
+    "hint": "Ziehen zum Drehen · Pin anklicken, um den Shop zu öffnen"
   }
 }

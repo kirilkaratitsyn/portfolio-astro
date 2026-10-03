@@ -33,6 +33,11 @@ const works = defineCollection({
     order: z.number().int().positive(),
     title: z.string(),
     url: z.url(),
+    /** Where the store is based (Shopify /meta.json), for the globe section. */
+    country: z.string().length(2).optional(),
+    city: z.string().optional(),
+    lat: z.number().optional(),
+    lng: z.number().optional(),
     image: z.string(),
     /** Mobile screenshot (Safari viewport, 1179x1977); case studies may set it in their own frontmatter instead. */
     mobileImage: z.string().optional(),

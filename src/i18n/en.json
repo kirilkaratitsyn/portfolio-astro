@@ -543,5 +543,14 @@
     ],
     "upwork": "Upwork profile",
     "photoAlt": "Kiril Karatitsyn at the sea at sunset"
+  },
+  "globe": {
+    "eyebrow": "Worldwide",
+    "title": "Clients in {n} countries",
+    "lead": "From Seattle to Melbourne: stores I've built and looked after, all from my desk in Germany.",
+    "listLabel": "Countries of client stores",
+    "open": "Open store ↗",
+    "home": "My base: Germany",
+    "hint": "Drag to spin · click a pin to open the store"
   }
 }

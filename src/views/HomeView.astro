@@ -9,6 +9,7 @@ import Feature from '../sections/Feature.astro';
 import Services from '../sections/Services.astro';
 import Process from '../sections/Process.astro';
 import About from '../sections/About.astro';
+import Globe from '../sections/Globe.astro';
 import Reviews from '../sections/Reviews.astro';
 import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
@@ -78,6 +79,7 @@ const structuredData = {
   <WorkList locale={locale} caseStudies={caseStudies} />
   <Numbers locale={locale} />
   <ClientStrip locale={locale} works={works} />
+  <Globe locale={locale} works={works} />
   <About locale={locale} />
   <Marquee />
   <Feature locale={locale} caseStudy={caseStudies[0]} />

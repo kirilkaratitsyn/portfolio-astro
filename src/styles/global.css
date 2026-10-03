@@ -78,6 +78,19 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .phone-lock { width: 2.4cqi; height: auto; opacity: 0.6; }
 .phone-home { display: block; width: 32cqi; height: 1.2cqi; border-radius: 99px; background: #111; }
 
+/* Globe tooltip (scripts/stage.ts GlobeView): placed on the pin, it is a real link to the store. */
+.globe-tip {
+  position: absolute; left: 0; top: 0; z-index: 3; display: grid; gap: 2px; min-width: 150px; padding: 10px 14px 11px;
+  margin: -12px 0 0 0; border-radius: 14px; background: #0e1018; color: #fff; font-size: 13px; line-height: 1.3;
+  white-space: nowrap; pointer-events: none; opacity: 0; translate: -50% -100%; transition: opacity 0.2s ease;
+  box-shadow: 0 14px 30px rgba(8, 12, 40, 0.25);
+}
+.globe-tip.is-on { opacity: 1; pointer-events: auto; }
+.globe-tip b { font-family: 'e-UkraineHead', 'Onest', sans-serif; font-size: 15px; font-weight: 700; }
+.globe-tip span { color: rgba(255, 255, 255, 0.7); }
+.globe-tip em { margin-top: 4px; font-style: normal; font-weight: 600; color: #aab2ff; }
+.globe-tip:not([href]) em { display: none; }
+
 /* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes lift { from { transform: translateY(26px); } to { transform: none; } }

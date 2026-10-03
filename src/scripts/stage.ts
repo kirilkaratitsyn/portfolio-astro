@@ -11,6 +11,7 @@ import {
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
+import { GLOBE_CAMERA, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -533,6 +534,228 @@ class PebbleView extends View {
   }
 }
 
+/* ------------------------------------------------------------------ globe */
+
+interface GlobeLabels {
+  open: string;
+  home: string;
+}
+
+/**
+ * The worldwide globe: turns slowly by itself, follows a drag with a little inertia, shows the store under the
+ * cursor in a tooltip (a real link) and opens it on click. It draws on every frame while it is on screen.
+ */
+class GlobeView extends View {
+  readonly name = 'globe';
+  private globe: Globe;
+  // Facing the North Atlantic, tilted so the US and Europe (most of the stores) sit at the front.
+  private yaw = 0.62;
+  private pitch = 0.62;
+  private vyaw = 0;
+  private time = 0;
+  private hovered: { pin: Globe['pins'][number] | null; home: boolean } | null = null;
+  private pinned = false;
+  private grabbedAt: { x: number; y: number; yaw: number; pitch: number; t: number } | null = null;
+  private moved = 0;
+  private pointer: Pointer | null = null;
+  private tip: HTMLAnchorElement;
+  private screenR = 1;
+  private readonly world = new Vector3();
+  private readonly toCamera = new Vector3();
+
+  constructor(stage: Stage, host: HTMLElement, private img: HTMLImageElement, markers: GlobeMarker[], private labels: GlobeLabels) {
+    super(stage, host, 2, 1.3e6);
+    Object.assign(this.canvas.style, { inset: '0', width: '100%', height: '100%' });
+    host.append(this.canvas);
+    this.globe = makeGlobe(markers);
+    this.scene.add(this.globe.group, this.globe.halo);
+    this.camera.position.set(0, 0, GLOBE_CAMERA.distance);
+    this.camera.lookAt(0, 0, 0);
+    this.tip = document.createElement('a');
+    this.tip.className = 'globe-tip';
+    this.tip.target = '_blank';
+    this.tip.rel = 'noopener noreferrer';
+    // Mouse and touch only: the stores are listed as links on /projects, and the globe is hidden from assistive tech.
+    this.tip.tabIndex = -1;
+    host.append(this.tip);
+  }
+
+  showLive() {
+    this.img.style.opacity = '0';
+    this.live = true;
+  }
+  hideLive() {
+    this.img.style.opacity = '';
+    this.live = false;
+  }
+
+  protected measure() {
+    this.cssW = this.host.clientWidth;
+    this.cssH = this.host.clientHeight;
+    this.camera.fov = GLOBE_CAMERA.fov;
+    this.camera.aspect = this.cssW / Math.max(1, this.cssH);
+    this.camera.updateProjectionMatrix();
+    // Radius of the ball on screen, in CSS px.
+    this.screenR = (this.cssH / 2) * (GLOBE_RADIUS / (GLOBE_CAMERA.distance * Math.tan((GLOBE_CAMERA.fov / 2) * DEG)));
+    const dpr = this.pw / Math.max(1, this.cssW);
+    this.globe.setDotSize(Math.max(2, this.cssW / 150) * dpr);
+  }
+
+  override resize() {
+    super.resize();
+    const dpr = this.pw / Math.max(1, this.cssW);
+    this.globe.setDotSize(Math.max(2, this.cssW / 150) * dpr);
+  }
+
+  private local(x: number, y: number) {
+    const r = this.host.getBoundingClientRect();
+    return { x: x - r.left - r.width / 2, y: y - r.top - r.height / 2, w: r.width, h: r.height, left: r.left, top: r.top };
+  }
+
+  pick(x: number, y: number) {
+    const l = this.local(x, y);
+    return Math.hypot(l.x, l.y) < this.screenR * 1.02;
+  }
+
+  /** Screen position (CSS px, host space) of a point on the ball, and whether it faces the viewer. */
+  private project(at: Vector3) {
+    this.world.copy(at).applyMatrix4(this.globe.group.matrixWorld);
+    this.toCamera.copy(this.camera.position).sub(this.world).normalize();
+    const facing = this.world.clone().normalize().dot(this.toCamera);
+    this.world.project(this.camera);
+    return { x: ((this.world.x + 1) / 2) * this.cssW, y: ((1 - this.world.y) / 2) * this.cssH, facing };
+  }
+
+  private pinAt(x: number, y: number, reach: number) {
+    const l = this.local(x, y);
+    const px = l.x + this.cssW / 2;
+    const py = l.y + this.cssH / 2;
+    let best: { pin: Globe['pins'][number] | null; home: boolean; d: number } | null = null;
+    for (const pin of this.globe.pins) {
+      const s = this.project(pin.at);
+      if (s.facing < 0.18) continue;
+      const d = Math.hypot(s.x - px, s.y - py);
+      if (d < reach && (!best || d < best.d)) best = { pin, home: false, d };
+    }
+    const h = this.project(this.globe.home.at);
+    if (h.facing > 0.18) {
+      const d = Math.hypot(h.x - px, h.y - py);
+      if (d < reach && (!best || d < best.d)) best = { pin: null, home: true, d };
+    }
+    return best;
+  }
+
+  private showTip() {
+    const target = this.hovered;
+    if (!target) {
+      this.tip.classList.remove('is-on');
+      return;
+    }
+    if (target.home) {
+      this.tip.removeAttribute('href');
+      this.tip.innerHTML = `<b>${this.labels.home}</b>`;
+    } else if (target.pin) {
+      this.tip.href = target.pin.u;
+      this.tip.innerHTML = `<b>${escapeHtml(target.pin.t)}</b><span>${escapeHtml(target.pin.c)}, ${escapeHtml(target.pin.n)}</span><em>${this.labels.open}</em>`;
+    }
+    this.tip.classList.add('is-on');
+    this.placeTip();
+  }
+
+  private placeTip() {
+    const target = this.hovered;
+    if (!target) return;
+    const s = this.project(target.home ? this.globe.home.at : target.pin!.at);
+    if (s.facing < 0.05) {
+      this.hovered = null;
+      this.pinned = false;
+      this.tip.classList.remove('is-on');
+      return;
+    }
+    this.tip.style.transform = `translate(${s.x.toFixed(1)}px, ${s.y.toFixed(1)}px)`;
+  }
+
+  hover(p: Pointer) {
+    this.pointer = p;
+    if (this.grabbedAt || this.pinned) return true;
+    const found = p.type === 'touch' ? null : this.pinAt(p.x, p.y, 16);
+    const next = found ? { pin: found.pin, home: found.home } : null;
+    if (next?.pin !== this.hovered?.pin || next?.home !== this.hovered?.home) {
+      this.hovered = next;
+      this.showTip();
+    }
+    return true;
+  }
+  leave() {
+    this.pointer = null;
+    if (!this.pinned) {
+      this.hovered = null;
+      this.showTip();
+    }
+  }
+
+  grab(p: Pointer) {
+    this.grabbedAt = { x: p.x, y: p.y, yaw: this.yaw, pitch: this.pitch, t: performance.now() };
+    this.moved = 0;
+    this.vyaw = 0;
+    this.pinned = false;
+  }
+  drag(p: Pointer) {
+    const g = this.grabbedAt;
+    if (!g) return;
+    const dx = p.x - g.x;
+    const dy = p.y - g.y;
+    this.moved = Math.max(this.moved, Math.hypot(dx, dy));
+    const k = 1 / Math.max(80, this.screenR);
+    this.yaw = g.yaw + dx * k * 1.15;
+    this.pitch = clamp(g.pitch + dy * k * 0.9, -0.5, 1.0);
+    if (this.moved > 4 && this.hovered) {
+      this.hovered = null;
+      this.showTip();
+    }
+  }
+  release(p: Pointer) {
+    const g = this.grabbedAt;
+    this.grabbedAt = null;
+    if (!g) return;
+    if (this.moved < 5) {
+      const found = this.pinAt(p.x, p.y, 16);
+      if (found?.pin) window.open(found.pin.u, '_blank', 'noopener');
+      return;
+    }
+    // Keep the speed of the throw, in yaw only.
+    this.vyaw = clamp(p.vx / Math.max(80, this.screenR) * 1.15, -4, 4);
+  }
+
+  /** A tap on a phone shows the tooltip of the pin under the finger (the tooltip itself is the link). */
+  poke(x: number, y: number) {
+    const found = this.pinAt(x, y, 26);
+    this.hovered = found ? { pin: found.pin, home: found.home } : null;
+    this.pinned = Boolean(found);
+    this.showTip();
+  }
+
+  step(dt: number) {
+    this.time += dt;
+    if (!this.grabbedAt) {
+      this.vyaw *= Math.exp(-1.8 * dt);
+      // Turn slowly by itself, and hold still while a store is shown.
+      const auto = this.hovered ? 0 : 0.085;
+      this.yaw += (this.vyaw + auto) * dt;
+      this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-1.2 * dt));
+    }
+    this.globe.group.rotation.set(this.pitch, this.yaw, 0);
+    this.globe.group.updateMatrixWorld();
+    this.globe.update(this.time);
+    if (this.hovered) this.placeTip();
+    return true;
+  }
+
+  sync() {}
+}
+
+const escapeHtml = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
 /* ------------------------------------------------------------------ stage */
 
 class Stage {
@@ -804,7 +1027,8 @@ export async function start() {
   const heroHost = document.querySelector<HTMLElement>('[data-hero-stage]');
   const poster = document.querySelector<HTMLImageElement>('[data-hero-poster]');
   const pebbleHosts = [...document.querySelectorAll<HTMLElement>('[data-pebble]')];
-  if (!(heroHost && poster) && !pebbleHosts.length) return;
+  const globeHost = document.querySelector<HTMLElement>('[data-globe]');
+  if (!(heroHost && poster) && !pebbleHosts.length && !globeHost) return;
 
   const stage = new Stage();
   await stage.prepare();
@@ -839,6 +1063,32 @@ export async function start() {
     { rootMargin: '1400px 0px' },
   );
   for (const host of pebbleHosts) lazy.observe(host);
+
+  // The globe: built the same way, a little later than the pebbles since it is bigger.
+  if (globeHost) {
+    const img = globeHost.querySelector('img');
+    let markers: GlobeMarker[] = [];
+    try {
+      markers = JSON.parse(globeHost.dataset.markers ?? '[]') as GlobeMarker[];
+    } catch {
+      markers = [];
+    }
+    const labels = { open: globeHost.dataset.open ?? 'Open store ↗', home: globeHost.dataset.home ?? 'Germany' };
+    const globeIo = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting) || !img) return;
+        globeIo.disconnect();
+        idle(async () => {
+          const view = new GlobeView(stage, globeHost, img, markers, labels);
+          await stage.renderer.compileAsync(view.scene, view.camera).catch(() => {});
+          stage.add(view, img);
+          stage.wake();
+        }, { timeout: 600 });
+      },
+      { rootMargin: '1200px 0px' },
+    );
+    globeIo.observe(globeHost);
+  }
   stage.wake();
   // Turn the first picture on, then give the hero stones a nudge.
   requestAnimationFrame(() => {
