@@ -22,10 +22,11 @@ const INK = '#0e1018';
 
 /** A pin as the page hands it over (data-markers on the globe host). */
 export interface GlobeMarker {
-  /** store title, city, localized country name, store url, latitude, longitude */
+  /** store title, city, localized country name, country code, store url, latitude, longitude */
   t: string;
   c: string;
   n: string;
+  k: string;
   u: string;
   la: number;
   lo: number;
@@ -36,6 +37,8 @@ export interface GlobePin extends GlobeMarker {
   at: Vector3;
   dot: Mesh;
   ring: Mesh;
+  arc: Mesh;
+  comet: Mesh;
   phase: number;
 }
 
@@ -178,13 +181,13 @@ export function makeGlobe(markers: GlobeMarker[]) {
     ring.lookAt(at.clone().multiplyScalar(2));
     group.add(ring);
     const phase = (i * 0.618) % 1;
-    pins.push({ ...m, at, dot: pin, ring, phase });
-
     const arc = new Arc(home, at);
-    group.add(new Mesh(new TubeGeometry(arc, 64, GLOBE_RADIUS * 0.0032, 5, false), arcMaterial));
+    const tube = new Mesh(new TubeGeometry(arc, 64, GLOBE_RADIUS * 0.0032, 5, false), arcMaterial);
+    group.add(tube);
     const comet = new Mesh(cometGeometry, cometMaterial);
     group.add(comet);
     comets.push({ mesh: comet, arc, phase, speed: 0.22 + ((i * 0.37) % 1) * 0.12 });
+    pins.push({ ...m, at, dot: pin, ring, arc: tube, comet, phase });
   });
 
   const tmp = new Vector3();
@@ -222,6 +225,13 @@ export function makeGlobe(markers: GlobeMarker[]) {
       homePin.scale.setScalar(marks);
       sizeDots();
     },
+    /** Show the stores of one country only (its pins, rings, arcs and lights), or all of them with null. */
+    setCountry(code: string | null) {
+      for (const pin of pins) {
+        const on = !code || pin.k === code;
+        pin.dot.visible = pin.ring.visible = pin.arc.visible = pin.comet.visible = on;
+      }
+    },
     get hasFineLand() {
       return Boolean(fine);
     },
@@ -252,6 +262,7 @@ export function makeGlobe(markers: GlobeMarker[]) {
         (pin.ring.material as MeshBasicMaterial).opacity = 0.55 * (1 - k);
       }
       for (const c of comets) {
+        if (!c.mesh.visible) continue;
         const t = (time * c.speed + c.phase) % 1;
         c.arc.getPoint(t, tmp);
         c.mesh.position.copy(tmp);

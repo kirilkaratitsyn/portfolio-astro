@@ -14,11 +14,11 @@ const { locale, works } = Astro.props;
 const t = useTranslations(locale).globe;
 const names = new Intl.DisplayNames([locale], { type: 'region' });
 const placed = works.filter((w) => !w.archived && w.country && w.lat !== undefined && w.lng !== undefined);
-const markers = placed.map((w) => ({ t: w.title, c: w.city ?? '', n: names.of(w.country!) ?? w.country!, u: w.url, la: w.lat!, lo: w.lng! }));
+const markers = placed.map((w) => ({ t: w.title, c: w.city ?? '', n: names.of(w.country!) ?? w.country!, k: w.country!, u: w.url, la: w.lat!, lo: w.lng! }));
 const counts = new Map<string, number>();
 for (const w of placed) counts.set(w.country!, (counts.get(w.country!) ?? 0) + 1);
 const countries = [...counts.entries()]
-  .map(([code, count]) => ({ name: names.of(code) ?? code, count }))
+  .map(([code, count]) => ({ code, name: names.of(code) ?? code, count }))
   .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, locale));
 const [before, after] = t.title.split('{n}');
 ---
@@ -34,9 +34,11 @@ const [before, after] = t.title.split('{n}');
       <ul data-stagger class="mt-8 flex max-w-[560px] flex-wrap gap-2" aria-label={t.listLabel}>
         {
           countries.map((c) => (
-            <li class="rounded-full bg-white px-4 py-2 text-[14px] font-medium">
-              {c.name}
-              <span class="ml-1 text-mute">{c.count}</span>
+            <li>
+              <button type="button" data-globe-country={c.code} aria-pressed="false" class="globe-pill">
+                {c.name}
+                <span class="ml-1 opacity-55">{c.count}</span>
+              </button>
             </li>
           ))
         }
@@ -65,3 +67,19 @@ const [before, after] = t.title.split('{n}');
     </div>
   </div>
 </section>
+
+<script>
+  // A country pill shows only that country's stores on the globe (scripts/stage.ts GlobeView reads data-country and
+  // listens for globe:country, also when it is built later); pressing it again shows every store.
+  const host = document.querySelector<HTMLElement>('[data-globe]');
+  const pills = [...document.querySelectorAll<HTMLButtonElement>('[data-globe-country]')];
+  for (const pill of pills) {
+    pill.addEventListener('click', () => {
+      const code = pill.getAttribute('aria-pressed') === 'true' ? '' : (pill.dataset.globeCountry ?? '');
+      for (const other of pills) other.setAttribute('aria-pressed', String(other.dataset.globeCountry === code));
+      if (!host) return;
+      host.dataset.country = code;
+      host.dispatchEvent(new CustomEvent('globe:country', { detail: code }));
+    });
+  }
+</script>

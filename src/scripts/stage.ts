@@ -572,6 +572,9 @@ class GlobeView extends View {
   /** The place under the cursor or the pinch: it stays under them while the zoom changes. */
   private anchor: { x: number; y: number; at: Vector3 } | null = null;
   private fineLand = false;
+  // A country picked in the list next to the globe (sections/Globe.astro): only its stores, turned to the front.
+  private country: string | null = null;
+  private turnTo: { yaw: number; pitch: number; solo: Globe['pins'][number] | null } | null = null;
   private readonly ray = new Vector3();
   private readonly world = new Vector3();
   private readonly toCamera = new Vector3();
@@ -603,6 +606,8 @@ class GlobeView extends View {
     host.addEventListener('wheel', this.onWheel, { passive: false });
     for (const type of ['touchstart', 'touchmove', 'touchend', 'touchcancel']) host.addEventListener(type, this.onTouch as EventListener, { passive: false });
     for (const type of ['gesturestart', 'gesturechange', 'gestureend']) host.addEventListener(type, this.onGesture);
+    host.addEventListener('globe:country', (e) => this.setCountry((e as CustomEvent<string>).detail));
+    if (host.dataset.country) this.setCountry(host.dataset.country);
     // Scrolled away, the globe zooms back out, so on a phone a zoomed globe never keeps holding the page.
     new IntersectionObserver(([entry]) => {
       if (entry && !entry.isIntersecting && this.zoomTo !== 1) {
@@ -677,6 +682,32 @@ class GlobeView extends View {
     this.host.style.touchAction = zoomed ? 'none' : 'pan-y';
     this.zoomOut?.setAttribute('aria-disabled', String(!zoomed));
     this.zoomIn?.setAttribute('aria-disabled', String(this.zoomTo >= GLOBE_MAX_ZOOM));
+    this.stage.wake();
+  }
+
+  /** Show the stores of one country and turn it to the front (yaw = −lng, pitch = lat); empty shows them all again. */
+  private setCountry(code: string) {
+    this.country = code || null;
+    this.globe.setCountry(this.country);
+    this.hovered = null;
+    this.pinned = false;
+    this.showTip();
+    this.turnTo = null;
+    this.vyaw = 0;
+    const pins = this.globe.pins.filter((pin) => pin.k === this.country);
+    if (pins.length) {
+      const mean = new Vector3();
+      for (const pin of pins) mean.add(this.ray.copy(pin.at).normalize());
+      mean.normalize();
+      const lng = Math.atan2(mean.x, mean.z);
+      this.turnTo = {
+        yaw: this.yaw + wrapAngle(-lng - this.yaw),
+        pitch: clamp(Math.asin(mean.y), -1.0, 1.25),
+        // A country with one store gets its tooltip once it has turned to the front.
+        solo: pins.length === 1 ? pins[0]! : null,
+      };
+    }
+    this.dirty = true;
     this.stage.wake();
   }
 
@@ -797,6 +828,7 @@ class GlobeView extends View {
     const py = l.y + this.cssH / 2;
     let best: { pin: Globe['pins'][number] | null; home: boolean; d: number } | null = null;
     for (const pin of this.globe.pins) {
+      if (!pin.dot.visible) continue;
       const s = this.project(pin.at);
       if (s.facing < 0.18 || !this.inWindow(s)) continue;
       const d = Math.hypot(s.x - px, s.y - py);
@@ -861,6 +893,7 @@ class GlobeView extends View {
 
   grab(p: Pointer) {
     this.anchor = null;
+    this.turnTo = null;
     this.grabbedAt = { x: p.x, y: p.y, yaw: this.yaw, pitch: this.pitch, t: performance.now() };
     this.moved = 0;
     this.vyaw = 0;
@@ -915,10 +948,24 @@ class GlobeView extends View {
     if (!this.grabbedAt) {
       this.vyaw *= Math.exp(-1.8 * dt);
       // Turn slowly by itself, and hold still while a store is shown or the globe is zoomed in on a place.
-      const free = this.zoomTo === 1;
+      const free = this.zoomTo === 1 && !this.country;
       const auto = this.hovered || !free ? 0 : 0.085;
       this.yaw += (this.vyaw + auto) * dt;
       if (free) this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-1.2 * dt));
+      const turn = this.turnTo;
+      if (turn) {
+        const k = 1 - Math.exp(-3.2 * dt);
+        this.yaw += (turn.yaw - this.yaw) * k;
+        this.pitch += (turn.pitch - this.pitch) * k;
+        if (Math.abs(turn.yaw - this.yaw) + Math.abs(turn.pitch - this.pitch) < 0.004) {
+          this.turnTo = null;
+          if (turn.solo) {
+            this.hovered = { pin: turn.solo, home: false };
+            this.pinned = true;
+            this.showTip();
+          }
+        }
+      }
       this.holdAnchor();
       if (this.zoom === this.zoomTo) this.anchor = null;
     }
