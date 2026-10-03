@@ -1,8 +1,8 @@
 ---
 // Worldwide: where the client stores are, on a live 3D globe (scripts/stage.ts GlobeView, src/lib/globe.ts). The
 // country list is the content; the globe and its poster are decoration on top of it. Countries come from each
-// store's own Shopify /meta.json (works.yaml: country, city, lat, lng); closed stores are left out. Store icons (the
-// stores' favicons) and flags are small WebPs made by scripts/make-store-icons.mjs.
+// store's own Shopify /meta.json (works.yaml: country, city, lat, lng); closed stores are left out. The stores' own
+// logos (scripts/make-store-logos.mjs) stand in for their names in the tooltips; flags: scripts/make-flags.mjs.
 import fs from 'node:fs';
 import path from 'node:path';
 import { useTranslations, type Locale } from '../i18n';
@@ -18,8 +18,8 @@ const t = useTranslations(locale).globe;
 const names = new Intl.DisplayNames([locale], { type: 'region' });
 const placed = works.filter((w) => !w.archived && w.country && w.lat !== undefined && w.lng !== undefined);
 // Checked against public/ in the project (the build runs from its root), not next to this file once bundled.
-const icon = (id: string) => (fs.existsSync(path.join(process.cwd(), 'public/source/store-icons', `${id}.webp`)) ? `/source/store-icons/${id}.webp` : undefined);
-const markers = placed.map((w) => ({ t: w.title, c: w.city ?? '', n: names.of(w.country!) ?? w.country!, k: w.country!, u: w.url, la: w.lat!, lo: w.lng!, l: icon(w.id) }));
+const logo = (id: string) => (fs.existsSync(path.join(process.cwd(), 'public/source/store-logos', `${id}.webp`)) ? `/source/store-logos/${id}.webp` : undefined);
+const markers = placed.map((w) => ({ t: w.title, c: w.city ?? '', n: names.of(w.country!) ?? w.country!, k: w.country!, u: w.url, la: w.lat!, lo: w.lng!, l: logo(w.id) }));
 const counts = new Map<string, number>();
 for (const w of placed) counts.set(w.country!, (counts.get(w.country!) ?? 0) + 1);
 const countries = [...counts.entries()]

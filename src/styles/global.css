@@ -95,14 +95,10 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .globe-tip .globe-tip-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 6px; }
 .globe-tip .globe-tip-row em { margin: 0; }
 .globe-tip .globe-tip-row:hover b { color: #aab2ff; }
-.globe-tip .globe-tip-head { display: flex; align-items: center; gap: 10px; color: #fff; }
-.globe-tip .globe-tip-head > span { display: grid; gap: 2px; color: #fff; }
-.globe-tip .globe-tip-head > span > span { color: rgba(255, 255, 255, 0.7); }
-.globe-tip img, .globe-tip i { display: grid; width: 32px; height: 32px; flex: none; place-items: center; border-radius: 9px; background: #fff; object-fit: cover; }
-.globe-tip i { background: #2433f0; font: 700 15px/1 'e-UkraineHead', 'Onest', sans-serif; font-style: normal; color: #fff; }
-.globe-tip .globe-tip-row { justify-content: flex-start; align-items: center; gap: 10px; }
-.globe-tip .globe-tip-row img, .globe-tip .globe-tip-row i { width: 26px; height: 26px; border-radius: 7px; }
-.globe-tip .globe-tip-row em { margin-left: auto; }
+.globe-tip-logo { display: block; width: auto; height: 38px; max-width: 230px; margin-bottom: 6px; border-radius: 8px; object-fit: contain; object-position: left center; }
+.globe-tip .globe-tip-row { align-items: center; gap: 14px; }
+.globe-tip .globe-tip-row .globe-tip-logo { height: 32px; margin: 0; }
+.globe-tip .globe-tip-row:hover .globe-tip-logo { outline: 2px solid #aab2ff; outline-offset: 2px; }
 .globe-zoom { position: absolute; right: 3%; bottom: 3%; z-index: 4; display: flex; flex-direction: column; gap: 8px; }
 .globe-zoom[hidden] { display: none; }
 .globe-zoom button {
@@ -156,11 +152,11 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .anat-scene { position: absolute; inset: 0; perspective: 2400px; display: grid; place-items: center; }
 .anat-stack {
   --gap: 70px; --tilt: 1; --n: 5; position: relative; width: min(500px, 80%); aspect-ratio: 16 / 10; transform-style: preserve-3d;
-  transform: translateY(calc(var(--gap) * 1.6)) rotateX(calc(56deg * var(--tilt))) rotateZ(calc(-38deg * var(--tilt)));
+  transform: translateY(calc(var(--gap) * 1.1)) rotateX(calc(30deg * var(--tilt))) rotateZ(calc(-10deg * var(--tilt)));
 }
 .anat-layer {
   /* The first layer (the kick-off call) is the top of the stack. */
-  position: absolute; inset: 0; transform: translateZ(calc((var(--n) - 1 - var(--i)) * var(--gap) + var(--lift, 0px)));
+  position: absolute; inset: 0; transform: translateY(var(--rise, 0%)) translateZ(calc((var(--n) - 1 - var(--i)) * var(--gap) + var(--lift, 0px)));
   transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .anat-layer.is-on { --lift: 26px; }
@@ -183,7 +179,8 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
   .motion .anat-stack { --gap: 8px; }
   .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }
-  .motion .anat-layer.is-past { opacity: 0.14; --lift: 40px; }
+  /* Steps already done slide up out of the way, faint, so the step in focus is seen whole. */
+  .motion .anat-layer.is-past { opacity: 0.07; --lift: 30px; --rise: -78%; }
   .motion .anat-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
   .motion .anat-detail > * { overflow: hidden; }
   .motion .anat-item.is-on .anat-detail { grid-template-rows: 1fr; }

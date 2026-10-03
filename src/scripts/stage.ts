@@ -873,24 +873,21 @@ class GlobeView extends View {
     }
     const link = (url: string, body: string, cls = '') =>
       `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" tabindex="-1"${cls ? ` class="${cls}"` : ''}>${body}</a>`;
-    // The store's own icon, or its initial on cobalt when it has none.
-    const badge = (store: GlobeMarker) =>
-      store.l ? `<img src="${escapeHtml(store.l)}" alt="" width="32" height="32">` : `<i>${escapeHtml(store.t.slice(0, 1))}</i>`;
+    // The store's own logo (its name, as the store writes it), or the name when there is no logo.
+    const name = (store: GlobeMarker) =>
+      store.l ? `<img class="globe-tip-logo" src="${escapeHtml(store.l)}" alt="${escapeHtml(store.t)}">` : `<b>${escapeHtml(store.t)}</b>`;
     if (target.home) {
       this.tip.innerHTML = `<b>${this.labels.home}</b>`;
     } else if (target.pin) {
       const pin = target.pin;
       if (pin.stores.length === 1) {
-        this.tip.innerHTML = link(
-          pin.u,
-          `<span class="globe-tip-head">${badge(pin)}<span><b>${escapeHtml(pin.t)}</b><span>${escapeHtml(pin.c)}, ${escapeHtml(pin.n)}</span></span></span><em>${this.labels.open}</em>`,
-        );
+        this.tip.innerHTML = link(pin.u, `${name(pin)}<span>${escapeHtml(pin.c)}, ${escapeHtml(pin.n)}</span><em>${this.labels.open}</em>`);
       } else {
         // Several stores in one place: the place, then a link per store.
         const cities = [...new Set(pin.stores.map((s) => s.c))].join(' · ');
         this.tip.innerHTML =
           `<span>${escapeHtml(cities)}, ${escapeHtml(pin.n)}</span>` +
-          pin.stores.map((s) => link(s.u, `${badge(s)}<b>${escapeHtml(s.t)}</b><em>↗</em>`, 'globe-tip-row')).join('');
+          pin.stores.map((s) => link(s.u, `${name(s)}<em>↗</em>`, 'globe-tip-row')).join('');
       }
     }
     this.tip.classList.add('is-on');
