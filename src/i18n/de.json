@@ -736,6 +736,7 @@
     "undo": "Rückgängig",
     "redo": "Wiederholen",
     "moveUp": "Nach oben",
-    "moveDown": "Nach unten"
+    "moveDown": "Nach unten",
+    "demoNote": "Nur Demo: ohne Funktion"
   }
 }

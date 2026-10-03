@@ -32,9 +32,13 @@ export interface GlobeMarker {
   lo: number;
 }
 
+/** A pin: one store, or several that sit in the same place (one city, or two towns next to each other). */
 export interface GlobePin extends GlobeMarker {
+  stores: GlobeMarker[];
   /** Position on the ball in the globe's own space. */
   at: Vector3;
+  /** A pin for several stores is a little bigger. */
+  size: number;
   dot: Mesh;
   ring: Mesh;
   arc: Mesh;
@@ -169,12 +173,23 @@ export function makeGlobe(markers: GlobeMarker[]) {
   homePin.position.copy(home);
   group.add(homePin);
 
+  // Stores of one country closer than ~35 km share a pin, or their balls would sit inside each other.
+  const places: GlobeMarker[][] = [];
+  for (const m of markers) {
+    const near = places.find((p) => p[0]!.k === m.k && Math.hypot(p[0]!.la - m.la, (p[0]!.lo - m.lo) * Math.cos(m.la * DEG)) < 0.35);
+    if (near) near.push(m);
+    else places.push([m]);
+  }
+
   const pins: GlobePin[] = [];
   const comets: { mesh: Mesh; arc: Arc; phase: number; speed: number }[] = [];
-  markers.forEach((m, i) => {
+  places.forEach((stores, i) => {
+    const m: GlobeMarker = { ...stores[0]!, la: stores.reduce((a, s) => a + s.la, 0) / stores.length, lo: stores.reduce((a, s) => a + s.lo, 0) / stores.length };
+    const size = 1 + 0.25 * Math.min(2, stores.length - 1);
     const at = toVector(m.la, m.lo, GLOBE_RADIUS * 1.008);
     const pin = new Mesh(pinGeometry, pinMaterial);
     pin.position.copy(at);
+    pin.scale.setScalar(size);
     group.add(pin);
     const ring = new Mesh(ringGeometry, new MeshBasicMaterial({ color: COBALT, transparent: true, opacity: 0, side: DoubleSide, toneMapped: false, depthWrite: false }));
     ring.position.copy(at);
@@ -187,7 +202,7 @@ export function makeGlobe(markers: GlobeMarker[]) {
     const comet = new Mesh(cometGeometry, cometMaterial);
     group.add(comet);
     comets.push({ mesh: comet, arc, phase, speed: 0.22 + ((i * 0.37) % 1) * 0.12 });
-    pins.push({ ...m, at, dot: pin, ring, arc: tube, comet, phase });
+    pins.push({ ...m, stores, at, size, dot: pin, ring, arc: tube, comet, phase });
   });
 
   const tmp = new Vector3();
@@ -221,7 +236,7 @@ export function makeGlobe(markers: GlobeMarker[]) {
     setZoom(value: number) {
       zoom = value;
       marks = zoom ** -0.6;
-      for (const pin of pins) pin.dot.scale.setScalar(marks);
+      for (const pin of pins) pin.dot.scale.setScalar(marks * pin.size);
       homePin.scale.setScalar(marks);
       sizeDots();
     },
@@ -258,7 +273,7 @@ export function makeGlobe(markers: GlobeMarker[]) {
     update(time: number) {
       for (const pin of pins) {
         const k = (time * 0.45 + pin.phase) % 1;
-        pin.ring.scale.setScalar((1 + k * 1.6) * marks);
+        pin.ring.scale.setScalar((1 + k * 1.6) * marks * pin.size);
         (pin.ring.material as MeshBasicMaterial).opacity = 0.55 * (1 - k);
       }
       for (const c of comets) {

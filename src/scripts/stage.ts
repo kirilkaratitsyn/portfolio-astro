@@ -555,10 +555,12 @@ class GlobeView extends View {
   private time = 0;
   private hovered: { pin: Globe['pins'][number] | null; home: boolean } | null = null;
   private pinned = false;
+  /** The pointer is on the tooltip (on its way to a link in it): keep it open. */
+  private overTip = false;
   private grabbedAt: { x: number; y: number; yaw: number; pitch: number; t: number } | null = null;
   private moved = 0;
   private pointer: Pointer | null = null;
-  private tip: HTMLAnchorElement;
+  private tip: HTMLDivElement;
   /** Radius of the ball on screen at zoom 1, in CSS px. */
   private baseR = 1;
   // Zoom: pinch (trackpad or two fingers), ⌘/Ctrl + wheel, or the +/− buttons. Plain wheel keeps scrolling the page.
@@ -589,13 +591,13 @@ class GlobeView extends View {
     this.scene.add(this.globe.group, this.globe.halo);
     this.camera.position.set(0, 0, GLOBE_CAMERA.distance);
     this.camera.lookAt(0, 0, 0);
-    this.tip = document.createElement('a');
+    this.tip = document.createElement('div');
     this.tip.className = 'globe-tip';
-    this.tip.target = '_blank';
-    this.tip.rel = 'noopener noreferrer';
-    // Mouse and touch only: the stores are listed as links on /projects, and the globe is hidden from assistive tech.
-    this.tip.tabIndex = -1;
+    // Mouse and touch only (its links are out of the tab order): the stores are listed as links on /projects, and the
+    // globe is hidden from assistive tech.
     host.append(this.tip);
+    this.tip.addEventListener('pointerenter', () => (this.overTip = true));
+    this.tip.addEventListener('pointerleave', () => (this.overTip = false));
 
     const controls = host.parentElement?.querySelector<HTMLElement>('[data-globe-zoom]');
     this.zoomIn = controls?.querySelector<HTMLElement>('[data-zoom="in"]') ?? null;
@@ -848,12 +850,21 @@ class GlobeView extends View {
       this.tip.classList.remove('is-on');
       return;
     }
+    const link = (url: string, body: string, cls = '') =>
+      `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" tabindex="-1"${cls ? ` class="${cls}"` : ''}>${body}</a>`;
     if (target.home) {
-      this.tip.removeAttribute('href');
       this.tip.innerHTML = `<b>${this.labels.home}</b>`;
     } else if (target.pin) {
-      this.tip.href = target.pin.u;
-      this.tip.innerHTML = `<b>${escapeHtml(target.pin.t)}</b><span>${escapeHtml(target.pin.c)}, ${escapeHtml(target.pin.n)}</span><em>${this.labels.open}</em>`;
+      const pin = target.pin;
+      if (pin.stores.length === 1) {
+        this.tip.innerHTML = link(pin.u, `<b>${escapeHtml(pin.t)}</b><span>${escapeHtml(pin.c)}, ${escapeHtml(pin.n)}</span><em>${this.labels.open}</em>`);
+      } else {
+        // Several stores in one place: the place, then a link per store.
+        const cities = [...new Set(pin.stores.map((s) => s.c))].join(' · ');
+        this.tip.innerHTML =
+          `<span>${escapeHtml(cities)}, ${escapeHtml(pin.n)}</span>` +
+          pin.stores.map((s) => link(s.u, `<b>${escapeHtml(s.t)}</b><em>↗</em>`, 'globe-tip-row')).join('');
+      }
     }
     this.tip.classList.add('is-on');
     this.placeTip();
@@ -874,7 +885,7 @@ class GlobeView extends View {
 
   hover(p: Pointer) {
     this.pointer = p;
-    if (this.grabbedAt || this.pinned) return true;
+    if (this.grabbedAt || this.pinned || this.overTip) return true;
     const found = p.type === 'touch' ? null : this.pinAt(p.x, p.y, 16);
     const next = found ? { pin: found.pin, home: found.home } : null;
     if (next?.pin !== this.hovered?.pin || next?.home !== this.hovered?.home) {
@@ -923,7 +934,13 @@ class GlobeView extends View {
       // A tap shows the tooltip first (poke); only a mouse click opens the store right away.
       if (p.type === 'touch') return;
       const found = this.pinAt(p.x, p.y, 16);
-      if (found?.pin) window.open(found.pin.u, '_blank', 'noopener');
+      if (found?.pin && found.pin.stores.length === 1) window.open(found.pin.u, '_blank', 'noopener');
+      else if (found?.pin) {
+        // A pin for several stores keeps its list open, so a store in it can be picked.
+        this.hovered = { pin: found.pin, home: false };
+        this.pinned = true;
+        this.showTip();
+      }
       return;
     }
     // Keep the speed of the throw, in yaw only.

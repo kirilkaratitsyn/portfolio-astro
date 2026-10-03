@@ -736,6 +736,7 @@
     "undo": "Undo",
     "redo": "Redo",
     "moveUp": "Move up",
-    "moveDown": "Move down"
+    "moveDown": "Move down",
+    "demoNote": "Demo only: not wired up"
   }
 }

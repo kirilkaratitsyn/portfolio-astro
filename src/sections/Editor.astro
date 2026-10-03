@@ -200,28 +200,30 @@ const groups = [
   </div>
 
   <div data-editor class="ed mt-10" role="group" aria-label={t.label}>
-    <!-- Top bar, as in the Shopify theme editor. The left rail, theme switcher and "…" menu are drawn, not wired. -->
+    <!-- Top bar, as in the Shopify theme editor. The parts marked data-demo (left rail, theme switcher, "…" menu, Add
+         section, header and footer) are drawn, not wired: pointing at them shows a note that follows the cursor. -->
+    <span class="ed-note" data-demo-note aria-hidden="true">{t.demoNote}</span>
     <div class="ed-bar">
       <span class="ed-bar-side">
-        <span class="ed-icon max-md:!hidden" aria-hidden="true" set:html={icon.exit} />
+        <span class="ed-icon max-md:!hidden" data-demo aria-hidden="true" set:html={icon.exit} />
         <span class="ed-divider max-md:!hidden" aria-hidden="true"></span>
-        <span class="ed-icon is-on" aria-hidden="true" set:html={icon.sections} />
-        <span class="ed-icon max-sm:!hidden" aria-hidden="true" set:html={icon.gear} />
-        <span class="ed-icon max-sm:!hidden" aria-hidden="true" set:html={icon.apps} />
+        <span class="ed-icon is-on" data-demo aria-hidden="true" set:html={icon.sections} />
+        <span class="ed-icon max-sm:!hidden" data-demo aria-hidden="true" set:html={icon.gear} />
+        <span class="ed-icon max-sm:!hidden" data-demo aria-hidden="true" set:html={icon.apps} />
       </span>
       <span class="ed-bar-mid" aria-hidden="true">
-        <span class="flex items-center gap-2"><span class="text-[#616161]" set:html={icon.theme} />Horizon<span class="ed-badge-on">{t.active}</span></span>
-        <span class="hidden items-center gap-2 lg:flex"><span class="text-[#616161]" set:html={icon.home} />{t.template}</span>
+        <span class="flex items-center gap-2" data-demo><span class="text-[#616161]" set:html={icon.theme} />Horizon<span class="ed-badge-on">{t.active}</span></span>
+        <span class="hidden items-center gap-2 lg:flex" data-demo><span class="text-[#616161]" set:html={icon.home} />{t.template}</span>
       </span>
       <span class="ed-bar-side justify-end">
-        <span class="ed-icon is-on max-lg:!hidden" aria-hidden="true" set:html={icon.select} />
+        <span class="ed-icon is-on max-lg:!hidden" data-demo aria-hidden="true" set:html={icon.select} />
         <button type="button" class="ed-icon max-md:!hidden" data-device aria-pressed="false" aria-label={t.mobile} title={t.mobile} set:html={icon.mobile} />
         <button type="button" class="ed-icon" data-code-toggle aria-pressed="false" aria-label={t.editCode} title={t.editCode} set:html={icon.code} />
         <span class="ed-undo">
           <button type="button" data-undo disabled aria-label={t.undo} title={t.undo} set:html={icon.undo} />
           <button type="button" data-redo disabled aria-label={t.redo} title={t.redo} set:html={icon.redo} />
         </span>
-        <span class="ed-icon ed-more max-sm:!hidden" aria-hidden="true" set:html={icon.dots} />
+        <span class="ed-icon ed-more max-sm:!hidden" data-demo aria-hidden="true" set:html={icon.dots} />
         <button type="button" class="ed-save" data-save disabled data-label={t.save} data-done={t.saved}>{t.save}</button>
       </span>
     </div>
@@ -251,7 +253,7 @@ const groups = [
                         </button>
                       </li>
                     ) : (
-                      <li class="ed-node is-static" aria-hidden="true">
+                      <li class="ed-node is-static" data-demo aria-hidden="true">
                         <span class="ed-pick">
                           <span class="ed-chev" set:html={icon.chevron} />
                           <span class="ed-node-icon" set:html={row.icon} />
@@ -262,7 +264,7 @@ const groups = [
                   )}
                 </ul>
                 {group.add && (
-                  <span class="ed-add" aria-hidden="true">
+                  <span class="ed-add" data-demo aria-hidden="true">
                     <span set:html={icon.plus} />
                     {t.addSection}
                   </span>
@@ -368,7 +370,7 @@ const groups = [
             <span class="ed-tab"><span set:html={icon.section} />{t.names.announcement}</span>
             <p data-out="announcement.text">{s.announcement}</p>
           </div>
-          <div class="ed-header">
+          <div class="ed-header" data-demo>
             <span class="font-head text-[13px] font-bold tracking-[0.24em]">YOUR STORE</span>
             <span class="ed-nav"><i></i><i></i><i></i><i></i></span>
             <span class="flex items-center gap-2"><i class="block size-3.5 rounded-full border-2 border-ink"></i><i class="block size-3.5 rounded-[4px] border-2 border-ink"></i></span>
@@ -412,7 +414,7 @@ const groups = [
               </figure>
             </div>
           </div>
-          <div class="ed-footer"><span class="font-head text-[11px] font-bold tracking-[0.2em]">YOUR STORE</span><span class="ed-nav"><i></i><i></i><i></i></span></div>
+          <div class="ed-footer" data-demo><span class="font-head text-[11px] font-bold tracking-[0.2em]">YOUR STORE</span><span class="ed-nav"><i></i><i></i><i></i></span></div>
         </div>
         <!-- The toolbar the editor floats under the section picked: move it, or hide it. -->
         <div class="ed-float" data-float>
@@ -625,6 +627,34 @@ const groups = [
       for (const view of qa('[data-view]')) view.hidden = view.dataset.view !== (on ? 'code' : 'preview');
     });
     if (canvas) new ResizeObserver(() => placeFloat()).observe(canvas);
+
+    // The parts that are only drawn say so next to the cursor (or under the finger, for a moment).
+    const note = one('[data-demo-note]');
+    let noteTimer = 0;
+    const showNote = (x: number, y: number) => {
+      if (!note) return;
+      const r = root.getBoundingClientRect();
+      const left = x - r.left;
+      const flip = left > r.width - 240;
+      note.style.transform = `translate(${(left + (flip ? -14 : 16)).toFixed(0)}px, ${(y - r.top + 18).toFixed(0)}px)${flip ? ' translateX(-100%)' : ''}`;
+      note.classList.add('is-on');
+    };
+    const hideNote = () => note?.classList.remove('is-on');
+    root.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch') return;
+      if ((e.target as Element).closest('[data-demo]')) showNote(e.clientX, e.clientY);
+      else hideNote();
+    });
+    root.addEventListener('pointerleave', hideNote);
+    root.addEventListener('pointerdown', (e) => {
+      if (!(e.target as Element).closest('[data-demo]')) return;
+      showNote(e.clientX, e.clientY);
+      note?.classList.remove('is-poked');
+      void note?.offsetWidth;
+      note?.classList.add('is-poked');
+      window.clearTimeout(noteTimer);
+      if (e.pointerType === 'touch') noteTimer = window.setTimeout(hideNote, 1600);
+    });
 
     // A short demo the first time the editor is in view, stopped by the first real touch, key or click.
     let touched = false;
