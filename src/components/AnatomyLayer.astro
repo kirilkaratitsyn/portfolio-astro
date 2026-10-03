@@ -8,25 +8,31 @@ import figma from '../assets/stack/figma.svg?raw';
 import meet from '../assets/stack/googlemeet.svg?raw';
 import google from '../assets/stack/google.svg?raw';
 import analytics from '../assets/stack/googleanalytics.svg?raw';
+import type { useTranslations } from '../i18n';
+
+type Cards = ReturnType<typeof useTranslations>['anatomy']['cards'];
 
 interface Props {
   kind: 'call' | 'brief' | 'build' | 'qa' | 'seo' | 'analytics';
+  /** The words inside the drawings, in the page's language (i18n anatomy.cards). */
+  text: Cards;
 }
 
-const { kind } = Astro.props;
+const { kind, text } = Astro.props;
 const svg = (raw: string) => raw.replace(/<title>.*?<\/title>/, '').replace('<svg ', '<svg aria-hidden="true" fill="currentColor" width="100%" height="100%" ');
 const check = '<svg aria-hidden="true" viewBox="0 0 16 16" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg>';
 // Type and spacing in units of the card's width.
 const s = { xs: 'text-[1.5cqi]', sm: 'text-[1.75cqi]', md: 'text-[2cqi]', lg: 'text-[2.4cqi]', xl: 'text-[3cqi]' };
 const line = 'block h-[1.1cqi] rounded-full bg-[#dfe2ee]';
 const tick = 'grid size-[2.4cqi] shrink-0 place-items-center rounded-full bg-[#e3e6ff] p-[0.5cqi] text-blue';
+const { call, brief, build, qa, seo, analytics: ga } = text;
 const app = {
-  call: { logo: meet, color: 'text-[#00897b]', name: 'Kick-off call · Google Meet', side: '24:16' },
-  brief: { logo: figma, color: 'text-ink', name: 'Project brief · Figma', side: 'v3 · shared' },
-  build: { logo: shopify, color: 'text-[#5e8e3e]', name: 'Theme editor · Preview theme', side: 'Draft' },
-  qa: { logo: '', color: '', name: 'QA checklist · Release 1.0', side: '24 / 24 passed' },
-  seo: { logo: google, color: 'text-ink', name: 'Search Console · yourstore.com', side: 'Indexed' },
-  analytics: { logo: analytics, color: 'text-[#e37400]', name: 'GA4 · Last 30 days', side: 'Live' },
+  call: { logo: meet, color: 'text-[#00897b]', name: call.app, side: '24:16' },
+  brief: { logo: figma, color: 'text-ink', name: brief.app, side: brief.side },
+  build: { logo: shopify, color: 'text-[#5e8e3e]', name: build.app, side: build.side },
+  qa: { logo: '', color: '', name: qa.app, side: qa.side },
+  seo: { logo: google, color: 'text-ink', name: seo.app, side: seo.side },
+  analytics: { logo: analytics, color: 'text-[#e37400]', name: ga.app, side: ga.side },
 }[kind];
 ---
 
@@ -50,9 +56,9 @@ const app = {
             <div class="relative grid place-items-center overflow-hidden rounded-[1.6cqi] bg-[linear-gradient(135deg,#2433f0,#121a8c)]">
               <span class="grid size-[10cqi] place-items-center rounded-full bg-white/15 font-head text-[3.6cqi] font-bold text-white">KK</span>
               <span class={`absolute bottom-[1.2cqi] left-[1.4cqi] ${s.sm} font-semibold text-white/85`}>Kiril</span>
-              <span class={`absolute right-[1.2cqi] top-[1.2cqi] rounded-full bg-black/25 px-[1cqi] py-[0.3cqi] ${s.xs} text-white`}>Sharing screen</span>
+              <span class={`absolute right-[1.2cqi] top-[1.2cqi] rounded-full bg-black/25 px-[1cqi] py-[0.3cqi] ${s.xs} text-white`}>{call.sharing}</span>
               <div class="absolute bottom-[1.2cqi] right-[1.2cqi] grid h-[9cqi] w-[13cqi] place-items-center rounded-[1cqi] bg-[#e9ebf5] ring-2 ring-white/40">
-                <span class={`grid size-[5cqi] place-items-center rounded-full bg-ink font-head ${s.sm} font-bold text-white`}>You</span>
+                <span class={`grid size-[5cqi] place-items-center rounded-full bg-ink font-head ${s.sm} font-bold text-white`}>{call.you}</span>
               </div>
             </div>
             <div class="flex items-center justify-center gap-[1.2cqi]">
@@ -61,8 +67,8 @@ const app = {
             </div>
           </div>
           <div class="flex min-w-0 flex-col gap-[1.1cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.8cqi]">
-            <span class={`${s.md} font-bold`}>Agenda</span>
-            {['Store & goals', 'Pages & features', 'Apps & data', 'Deadline'].map((item) => (
+            <span class={`${s.md} font-bold`}>{call.agenda}</span>
+            {call.items.map((item) => (
               <span class={`flex items-center gap-[1cqi] ${s.sm} font-medium`}>
                 <span class={tick} set:html={check} />
                 {item}
@@ -70,9 +76,9 @@ const app = {
             ))}
             <span class={`flex items-center gap-[1cqi] ${s.sm} font-semibold text-blue`}>
               <span class="grid size-[2.4cqi] shrink-0 place-items-center rounded-full border-2 border-blue" />
-              Scope & estimate
+              {call.now}
             </span>
-            <span class={`mt-auto rounded-[1cqi] bg-[#f6f7fb] p-[1.2cqi] ${s.xs} leading-snug text-mute`}>“So the new store keeps every product URL…”</span>
+            <span class={`mt-auto rounded-[1cqi] bg-[#f6f7fb] p-[1.2cqi] ${s.xs} leading-snug text-mute`}>{call.quote}</span>
           </div>
         </div>
       )
@@ -81,11 +87,11 @@ const app = {
       kind === 'brief' && (
         <div class="grid h-full grid-cols-[1fr_1.15fr] gap-[1.8cqi]">
           <div class="flex min-w-0 flex-col gap-[1cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.8cqi]">
-            <span class={`${s.lg} font-bold`}>Project brief</span>
+            <span class={`${s.lg} font-bold`}>{brief.title}</span>
             {[
-              ['Goals', ['w-4/5', 'w-3/5']],
-              ['Pages · 8', ['w-full', 'w-2/3']],
-              ['Features', ['w-5/6', 'w-1/2']],
+              [brief.parts[0], ['w-4/5', 'w-3/5']],
+              [brief.parts[1], ['w-full', 'w-2/3']],
+              [brief.parts[2], ['w-5/6', 'w-1/2']],
             ].map(([title, widths]) => (
               <span class="flex flex-col gap-[0.6cqi]">
                 <span class={`flex items-center gap-[0.8cqi] ${s.sm} font-semibold`}>
@@ -95,10 +101,10 @@ const app = {
                 {(widths as string[]).map((w) => <i class={`${line} ${w}`} />)}
               </span>
             ))}
-            <span class={`mt-auto w-fit rounded-full bg-[#e3e6ff] px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-blue`}>Scope · timeline · price ✓</span>
+            <span class={`mt-auto w-fit rounded-full bg-[#e3e6ff] px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-blue`}>{brief.agreed}</span>
           </div>
           <div class="relative flex min-w-0 flex-col gap-[1cqi] rounded-[1.6cqi] bg-[#f1f2f7] p-[1.6cqi]">
-            <span class={`flex items-center justify-between ${s.xs} font-semibold text-mute`}><span>Desktop</span><span>Mobile</span></span>
+            <span class={`flex items-center justify-between ${s.xs} font-semibold text-mute`}><span>{brief.desktop}</span><span>{brief.mobile}</span></span>
             <div class="grid min-h-0 flex-1 grid-cols-[1fr_0.42fr] gap-[1.4cqi]">
               <div class="flex flex-col gap-[0.8cqi] rounded-[1cqi] bg-white p-[1cqi] outline outline-2 outline-[#a259ff]">
                 <i class="block h-[30%] rounded-[0.6cqi] bg-[linear-gradient(120deg,#2433f0,#8b93ff)]" />
@@ -113,7 +119,7 @@ const app = {
                 <i class="block flex-1 rounded-[0.5cqi] bg-[#e7a1b8]" />
               </div>
             </div>
-            <span class={`absolute bottom-[3cqi] left-[24%] flex items-center gap-[0.8cqi] rounded-full rounded-tl-none bg-[#a259ff] px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-white shadow`}>Client: love this hero</span>
+            <span class={`absolute bottom-[3cqi] left-[24%] flex items-center gap-[0.8cqi] rounded-full rounded-tl-none bg-[#a259ff] px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-white shadow`}>{brief.comment}</span>
           </div>
         </div>
       )
@@ -122,11 +128,11 @@ const app = {
       kind === 'build' && (
         <div class="grid h-full grid-cols-[0.62fr_1fr] gap-[1.8cqi]">
           <div class={`flex min-w-0 flex-col gap-[0.5cqi] rounded-[1.6cqi] bg-[#f1f2f7] p-[1.2cqi] ${s.sm} font-medium`}>
-            <span class={`px-[1cqi] pb-[0.5cqi] ${s.xs} font-semibold uppercase tracking-wide text-mute`}>Sections</span>
-            {['Announcement', 'Header', 'Hero banner', 'Featured collection', 'Reviews', 'Footer'].map((name, i) => (
+            <span class={`px-[1cqi] pb-[0.5cqi] ${s.xs} font-semibold uppercase tracking-wide text-mute`}>{build.sections}</span>
+            {build.names.map((name, i) => (
               <span class={`truncate rounded-[0.8cqi] px-[1cqi] py-[0.6cqi] ${i === 3 ? 'bg-blue font-semibold text-white' : ''}`}>{name}</span>
             ))}
-            <span class={`mt-auto px-[1cqi] ${s.sm} font-semibold text-blue`}>+ Add section</span>
+            <span class={`mt-auto px-[1cqi] ${s.sm} font-semibold text-blue`}>{build.add}</span>
           </div>
           <div class="relative flex min-w-0 flex-col gap-[1cqi] overflow-hidden rounded-[1.6cqi] border border-[#e6e8f1] p-[1.2cqi]">
             <span class="flex items-center justify-between">
@@ -146,9 +152,9 @@ const app = {
               ))}
             </span>
             <span class={`absolute right-[1.6cqi] top-[34%] flex flex-col gap-[0.6cqi] rounded-[1cqi] bg-white p-[1.2cqi] ${s.xs} shadow-[0_6px_18px_rgba(14,16,40,0.16)]`}>
-              <b class="font-semibold">Featured collection</b>
-              <span class="flex items-center justify-between gap-[1.6cqi] text-mute">Per row <b class="text-ink">4</b></span>
-              <span class="flex items-center justify-between gap-[1.6cqi] text-mute">Show price <i class="block h-[1.6cqi] w-[3cqi] rounded-full bg-blue" /></span>
+              <b class="font-semibold">{build.names[3]}</b>
+              <span class="flex items-center justify-between gap-[1.6cqi] text-mute">{build.perRow} <b class="text-ink">4</b></span>
+              <span class="flex items-center justify-between gap-[1.6cqi] text-mute">{build.price} <i class="block h-[1.6cqi] w-[3cqi] rounded-full bg-blue" /></span>
             </span>
           </div>
         </div>
@@ -175,18 +181,18 @@ const app = {
             </div>
             <div class={`mt-[1cqi] flex items-center gap-[1cqi] rounded-[1.2cqi] border border-[#e6e8f1] p-[1.2cqi] ${s.xs}`}>
               <span class="rounded-[0.6cqi] bg-[#fde8e8] px-[0.8cqi] py-[0.3cqi] font-semibold text-[#c92a2a]">#14</span>
-              <span class="min-w-0 flex-1 truncate text-mute line-through">Cart drawer overlaps on iPhone SE</span>
-              <span class="rounded-full bg-[#e6f6ea] px-[1cqi] py-[0.3cqi] font-semibold text-[#2f9e44]">Fixed</span>
+              <span class="min-w-0 flex-1 truncate text-mute line-through">{qa.bug}</span>
+              <span class="rounded-full bg-[#e6f6ea] px-[1cqi] py-[0.3cqi] font-semibold text-[#2f9e44]">{qa.fixed}</span>
             </div>
           </div>
           <div class="flex min-w-0 flex-col gap-[1cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.8cqi]">
-            {['Cart & checkout', 'iPhone · Safari', 'Android · Chrome', 'EN · DE translations', 'Forms & emails', 'Page speed', 'Apps & tracking'].map((test) => (
+            {qa.items.map((test) => (
               <span class={`flex items-center gap-[1cqi] ${s.sm} font-medium`}>
                 <span class={tick} set:html={check} />
                 {test}
               </span>
             ))}
-            <span class={`mt-auto w-fit rounded-full bg-ink px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-white`}>0 open bugs · ready</span>
+            <span class={`mt-auto w-fit rounded-full bg-ink px-[1.2cqi] py-[0.5cqi] ${s.xs} font-semibold text-white`}>{qa.ready}</span>
           </div>
         </div>
       )
@@ -206,7 +212,7 @@ const app = {
           </div>
           <div class="grid min-h-0 flex-1 grid-cols-[1.3fr_1fr] gap-[1.6cqi]">
             <div class={`flex min-w-0 flex-col gap-[0.7cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.4cqi] font-mono ${s.xs}`}>
-              <span class={`font-sans ${s.sm} font-bold`}>301 redirects</span>
+              <span class={`font-sans ${s.sm} font-bold`}>{seo.redirects}</span>
               {[
                 ['/product/rose', '/products/silk-rose'],
                 ['/shop/peony', '/products/peony-stem'],
@@ -220,7 +226,7 @@ const app = {
               ))}
             </div>
             <div class={`flex min-w-0 flex-col gap-[0.8cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.4cqi] ${s.xs} font-semibold`}>
-              {['Titles & meta', 'Sitemap', 'Product schema', 'hreflang', 'Core Web Vitals'].map((item) => (
+              {seo.checks.map((item) => (
                 <span class="flex items-center gap-[0.8cqi]">
                   <span class={`${tick} !size-[2cqi]`} set:html={check} />
                   {item}
@@ -235,7 +241,7 @@ const app = {
       kind === 'analytics' && (
         <div class="flex h-full flex-col gap-[1.6cqi]">
           <div class="grid grid-cols-3 gap-[1.4cqi]">
-            {['Sessions', 'Add to cart', 'Purchases'].map((name, i) => (
+            {ga.tiles.map((name, i) => (
               <span class="flex flex-col gap-[0.4cqi] rounded-[1.4cqi] bg-[#f1f2f7] p-[1.4cqi]">
                 <span class={`${s.xs} font-semibold text-mute`}>{name}</span>
                 <span class="flex items-end justify-between">
@@ -253,7 +259,7 @@ const app = {
                 <path d="M0 50 L17 46 L34 48 L51 38 L68 40 L85 28 L102 25 L120 12" fill="none" stroke="#2433f0" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
               </svg>
               <span class={`mt-[0.6cqi] flex justify-between ${s.xs} text-mute`}>
-                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => <span>{d}</span>)}
+                {ga.days.map((d) => <span>{d}</span>)}
               </span>
             </div>
             <div class={`flex min-w-0 flex-col gap-[0.9cqi] rounded-[1.6cqi] border border-[#e6e8f1] p-[1.4cqi] font-mono ${s.xs}`}>
@@ -264,7 +270,7 @@ const app = {
                 </span>
               ))}
               <span class={`mt-auto font-sans ${s.xs} font-semibold text-mute`}>GA4 · Meta · Klaviyo</span>
-              <span class={`w-fit rounded-full bg-blue px-[1.2cqi] py-[0.5cqi] font-sans ${s.xs} font-semibold text-white`}>Store published ✓</span>
+              <span class={`w-fit rounded-full bg-blue px-[1.2cqi] py-[0.5cqi] font-sans ${s.xs} font-semibold text-white`}>{ga.live}</span>
             </div>
           </div>
         </div>

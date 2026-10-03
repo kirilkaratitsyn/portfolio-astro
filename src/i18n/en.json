@@ -605,7 +605,100 @@
           "Support"
         ]
       }
-    ]
+    ],
+    "cards": {
+      "call": {
+        "app": "Kick-off call · Google Meet",
+        "sharing": "Sharing screen",
+        "you": "You",
+        "agenda": "Agenda",
+        "items": [
+          "Store & goals",
+          "Pages & features",
+          "Apps & data",
+          "Deadline"
+        ],
+        "now": "Scope & estimate",
+        "quote": "“So the new store keeps every product URL…”"
+      },
+      "brief": {
+        "app": "Project brief · Figma",
+        "side": "v3 · shared",
+        "title": "Project brief",
+        "parts": [
+          "Goals",
+          "Pages · 8",
+          "Features"
+        ],
+        "agreed": "Scope · timeline · price ✓",
+        "desktop": "Desktop",
+        "mobile": "Mobile",
+        "comment": "Client: love this hero"
+      },
+      "build": {
+        "app": "Theme editor · Preview theme",
+        "side": "Draft",
+        "sections": "Sections",
+        "names": [
+          "Announcement",
+          "Header",
+          "Hero banner",
+          "Featured collection",
+          "Reviews",
+          "Footer"
+        ],
+        "add": "+ Add section",
+        "perRow": "Per row",
+        "price": "Show price"
+      },
+      "qa": {
+        "app": "QA checklist · Release 1.0",
+        "side": "24 / 24 passed",
+        "bug": "Cart drawer overlaps on iPhone SE",
+        "fixed": "Fixed",
+        "items": [
+          "Cart & checkout",
+          "iPhone · Safari",
+          "Android · Chrome",
+          "EN · DE translations",
+          "Forms & emails",
+          "Page speed",
+          "Apps & tracking"
+        ],
+        "ready": "0 open bugs · ready"
+      },
+      "seo": {
+        "app": "Search Console · yourstore.com",
+        "side": "Indexed",
+        "redirects": "301 redirects",
+        "checks": [
+          "Titles & meta",
+          "Sitemap",
+          "Product schema",
+          "hreflang",
+          "Core Web Vitals"
+        ]
+      },
+      "analytics": {
+        "app": "GA4 · Last 30 days",
+        "side": "Live",
+        "tiles": [
+          "Sessions",
+          "Add to cart",
+          "Purchases"
+        ],
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "live": "Store published ✓"
+      }
+    }
   },
   "stack": {
     "title": "Tools I build with",

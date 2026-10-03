@@ -1,4 +1,6 @@
 ---
+import path from 'node:path';
+import sharp from 'sharp';
 import { useTranslations, type Locale } from '../i18n';
 import type { WorkProject } from '../lib/content';
 
@@ -23,11 +25,16 @@ const CLIENTS = [
 
 const { locale, works } = Astro.props;
 const t = useTranslations(locale);
-const clients = CLIENTS.map((client) => {
-  const work = works.find((item) => item.id === client.id);
-  if (!work) throw new Error(`ClientStrip: "${client.id}" is not in works.yaml`);
-  return { ...client, title: work.title, url: work.url };
-});
+// Each logo's own size goes on its <img>, so a logo that has not loaded yet (they are lazy) already takes its place:
+// no jump when it arrives, and its link is never a zero-width stop for the keyboard.
+const clients = await Promise.all(
+  CLIENTS.map(async (client) => {
+    const work = works.find((item) => item.id === client.id);
+    if (!work) throw new Error(`ClientStrip: "${client.id}" is not in works.yaml`);
+    const { width = 300, height = 100 } = await sharp(path.join(process.cwd(), 'public/source/logos/clients', client.logo)).metadata();
+    return { ...client, title: work.title, url: work.url, width, size: height };
+  }),
+);
 ---
 
 <section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-36">
@@ -40,6 +47,8 @@ const clients = CLIENTS.map((client) => {
             <img
               src={`/source/logos/clients/${client.logo}`}
               alt={client.title}
+              width={client.width}
+              height={client.size}
               class="h-[calc(var(--h)*0.62)] w-auto max-w-[150px] object-contain brightness-0 md:h-[var(--h)] md:max-w-[290px]"
               loading="lazy"
               decoding="async"

@@ -13,13 +13,13 @@ const t = useTranslations(Astro.props.locale);
 ---
 
 <section id="contact" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 px-5 md:mt-32 md:px-10">
-  <div data-contact class="on-blue relative overflow-hidden rounded-[28px] bg-blue px-6 pb-12 pt-14 text-white md:px-16 md:pb-16 md:pt-20">
+  <div data-contact class="on-blue relative overflow-hidden rounded-[28px] bg-blue px-6 pb-12 pt-[128px] text-white md:px-16 md:pb-16 md:pt-20">
     <h2 data-split class="relative z-[2] max-w-[900px] font-head text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</h2>
     <div class="relative z-[2] mt-10 flex flex-col items-start gap-5 text-lg md:mt-14 md:flex-row md:items-center md:gap-8 md:text-xl">
       <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
       <a href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
-    <!-- The logo in white, as a live 3D object: drag it to turn it on any axis. -->
+    <!-- The logo in white, as a live 3D object: drag it to turn it on any axis. On phones it sits above the heading. -->
     <span data-pebble="logo-white" data-grab class="pebble absolute right-3 top-3 z-[1] block size-[104px] md:right-[15%] md:top-5 md:size-[310px]">
       <Image src={markWhite} alt="" width={310} height={351} class="size-full object-contain" loading="lazy" />
     </span>

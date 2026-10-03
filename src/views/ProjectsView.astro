@@ -43,8 +43,9 @@ const seo = {
     <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-10 md:text-[96px]">{t.works.allWorksTitle}</h1>
 
     <!-- Filters: theme first (the Stack section on the homepage links here with ?theme=), then work and country.
-         Shown by the script below; without it every project is listed. -->
-    <form data-project-filters hidden class="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2.5 px-5 pb-10 md:px-10 md:pb-12" aria-label={f.label}>
+         Without scripts the form is hidden (noscript style) and every project is listed. -->
+    <noscript><style>[data-project-filters] { display: none !important; }</style></noscript>
+    <form data-project-filters class="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2.5 px-5 pb-10 md:px-10 md:pb-12" aria-label={f.label}>
       <label class="pf-field">
         <span class="sr-only">{f.theme}</span>
         <select name="theme" class="pf-select">
@@ -145,7 +146,6 @@ const seo = {
           const select = form.elements[key];
           if (value && [...select.options].some((o) => o.value === value)) select.value = value;
         }
-        form.hidden = false;
         apply(false);
         form.addEventListener('change', () => apply(true));
         form.addEventListener('submit', (e) => e.preventDefault());

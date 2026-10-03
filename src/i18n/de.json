@@ -605,7 +605,100 @@
           "Support"
         ]
       }
-    ]
+    ],
+    "cards": {
+      "call": {
+        "app": "Kick-off-Call · Google Meet",
+        "sharing": "Bildschirm geteilt",
+        "you": "Sie",
+        "agenda": "Agenda",
+        "items": [
+          "Shop & Ziele",
+          "Seiten & Funktionen",
+          "Apps & Daten",
+          "Termin"
+        ],
+        "now": "Umfang & Angebot",
+        "quote": "„Damit jede Produkt-URL erhalten bleibt …“"
+      },
+      "brief": {
+        "app": "Briefing · Figma",
+        "side": "v3 · geteilt",
+        "title": "Briefing",
+        "parts": [
+          "Ziele",
+          "Seiten · 8",
+          "Funktionen"
+        ],
+        "agreed": "Umfang · Zeitplan · Preis ✓",
+        "desktop": "Desktop",
+        "mobile": "Mobil",
+        "comment": "Kunde: Hero ist super"
+      },
+      "build": {
+        "app": "Theme-Editor · Vorschau-Theme",
+        "side": "Entwurf",
+        "sections": "Abschnitte",
+        "names": [
+          "Ankündigung",
+          "Header",
+          "Hero-Banner",
+          "Ausgewählte Kollektion",
+          "Bewertungen",
+          "Footer"
+        ],
+        "add": "+ Abschnitt hinzufügen",
+        "perRow": "Pro Reihe",
+        "price": "Preis zeigen"
+      },
+      "qa": {
+        "app": "QA-Checkliste · Release 1.0",
+        "side": "24 / 24 bestanden",
+        "bug": "Warenkorb überlappt auf dem iPhone SE",
+        "fixed": "Behoben",
+        "items": [
+          "Warenkorb & Checkout",
+          "iPhone · Safari",
+          "Android · Chrome",
+          "Übersetzungen EN · DE",
+          "Formulare & E-Mails",
+          "Ladezeit",
+          "Apps & Tracking"
+        ],
+        "ready": "0 offene Bugs · bereit"
+      },
+      "seo": {
+        "app": "Search Console · yourstore.com",
+        "side": "Indexiert",
+        "redirects": "301-Weiterleitungen",
+        "checks": [
+          "Titel & Meta",
+          "Sitemap",
+          "Produkt-Schema",
+          "hreflang",
+          "Core Web Vitals"
+        ]
+      },
+      "analytics": {
+        "app": "GA4 · Letzte 30 Tage",
+        "side": "Live",
+        "tiles": [
+          "Sitzungen",
+          "In den Warenkorb",
+          "Käufe"
+        ],
+        "days": [
+          "Mo",
+          "Di",
+          "Mi",
+          "Do",
+          "Fr",
+          "Sa",
+          "So"
+        ],
+        "live": "Shop veröffentlicht ✓"
+      }
+    }
   },
   "stack": {
     "title": "Werkzeuge, mit denen ich baue",

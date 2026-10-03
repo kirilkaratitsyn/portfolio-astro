@@ -7,9 +7,11 @@ import Footer from '../sections/Footer.astro';
 type Props = SeoProps & {
   /** Home only: the big surname in the hero flies into the header logo on scroll (scripts/motion.ts, flyLogo). */
   flyLogo?: boolean;
+  /** Where the language switcher leads, when the page has no versions in other languages (the 404 page: home). */
+  switchTo?: string;
 };
 
-const { flyLogo = false, ...seo } = Astro.props;
+const { flyLogo = false, switchTo, ...seo } = Astro.props;
 const { locale, path } = seo;
 ---
 
@@ -40,22 +42,29 @@ const { locale, path } = seo;
     <link rel="preload" href="/fonts/e-UkraineHead-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <SeoHead {...seo} />
 
-    <!-- Cal.com booking popup: any element with data-cal-link opens it. -->
+    <!-- Cal.com booking popup: any element with data-cal-link opens it. Its script (and its cookies) loads only once
+         someone heads for a booking button (pointer, focus or touch); a click that comes before it is ready is queued
+         and opens the popup as soon as it is. -->
     <script is:inline>
-      (function (C, A, L) {
+      (function (C, A, L, NS) {
+        let ready = false;
         let p = function (a, ar) {
           a.q.push(ar);
         };
         let d = C.document;
-        C.Cal =
-          C.Cal ||
-          function () {
+        function load() {
+          if (C.Cal) return;
+          C.Cal = function () {
             let cal = C.Cal;
             let ar = arguments;
             if (!cal.loaded) {
               cal.ns = {};
               cal.q = cal.q || [];
-              d.head.appendChild(d.createElement('script')).src = A;
+              const s = d.head.appendChild(d.createElement('script'));
+              s.onload = function () {
+                ready = true;
+              };
+              s.src = A;
               cal.loaded = true;
             }
             if (ar[0] === L) {
@@ -73,18 +82,29 @@ const { locale, path } = seo;
             }
             p(cal, ar);
           };
-      })(window, 'https://app.cal.com/embed/embed.js', 'init');
-      Cal('init', 'free-consultation-call', { origin: 'https://cal.com' });
-      Cal.ns['free-consultation-call']('ui', {
-        theme: 'light',
-        styles: { branding: { brandColor: '#2433F0' } },
-        hideEventTypeDetails: true,
-        layout: 'month_view',
-      });
+          C.Cal('init', NS, { origin: 'https://cal.com' });
+          C.Cal.ns[NS]('ui', {
+            theme: 'light',
+            styles: { branding: { brandColor: '#2433F0' } },
+            hideEventTypeDetails: true,
+            layout: 'month_view',
+          });
+        }
+        const button = (e) => e.target instanceof Element && e.target.closest('[data-cal-link]');
+        for (const type of ['pointerover', 'focusin', 'touchstart']) {
+          d.addEventListener(type, (e) => button(e) && load(), { passive: true });
+        }
+        d.addEventListener('click', (e) => {
+          const el = button(e);
+          if (!el || ready) return; // once the script is in, it opens the popup itself
+          load();
+          C.Cal.ns[NS]('modal', { calLink: el.getAttribute('data-cal-link'), config: JSON.parse(el.getAttribute('data-cal-config') || '{}') });
+        });
+      })(window, 'https://app.cal.com/embed/embed.js', 'init', 'free-consultation-call');
     </script>
   </head>
   <body>
-    <Header locale={locale} path={path} />
+    <Header locale={locale} path={switchTo ?? path} />
     <main>
       <slot />
     </main>

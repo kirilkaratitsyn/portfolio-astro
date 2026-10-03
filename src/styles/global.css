@@ -382,11 +382,11 @@ button.ed-icon:hover { background: #f1f1f1; }
 .ed-grid { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 12px; transition: grid-template-columns 0.4s; }
 .ed-grid li { display: grid; gap: 4px; min-width: 0; }
 .ed-img { position: relative; display: block; height: clamp(84px, 15cqi, 150px); border-radius: 10px; background: radial-gradient(circle at 50% 50%, var(--art) 0 28%, transparent 29%), #f3f4f9; background-size: auto; }
-.ed-badge { position: absolute; left: 8px; top: 8px; border-radius: 999px; background: #e5484d; padding: 2px 8px; font-size: 10px; font-weight: 600; color: #fff; }
+.ed-badge { position: absolute; left: 8px; top: 8px; border-radius: 999px; background: #c92a2a; padding: 2px 8px; font-size: 10px; font-weight: 600; color: #fff; }
 .ed-badge[hidden], .ed-price[hidden], .ed-stars[hidden] { display: none; }
 .ed-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 600; }
 .ed-price { font-size: 12px; }
-.ed-price s { margin-left: 4px; color: #9aa0b4; }
+.ed-price s { margin-left: 4px; color: #6b7080; }
 .ed-reviews { border-top: 1px solid #eef0f6; }
 .ed-reviews figure { display: grid; gap: 6px; max-width: 520px; }
 .ed-stars { color: #c9a24d; letter-spacing: 2px; font-size: 13px; }
