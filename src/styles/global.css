@@ -181,7 +181,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
    by index and every item expanded; with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy()
    sets --gap (how far the deck is spread), each card's --d (how many steps it is from the one in focus) and .is-on. */
 .anat-scene { position: absolute; inset: 0; display: grid; place-items: center; }
-.anat-stack { --gap: 70px; position: relative; width: min(520px, 82%); aspect-ratio: 16 / 10; margin-top: -110px; }
+.anat-stack { --gap: 70px; position: relative; width: min(600px, 88%); aspect-ratio: 16 / 10; margin-top: -120px; }
 .anat-layer {
   /* Cards still to come peek out below the one in focus, each a little smaller; the first card lies on top. */
   --d: var(--i);
@@ -190,7 +190,8 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   transition: filter 0.45s ease, opacity 0.45s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .anat-card {
-  height: 100%; padding: 16px; border-radius: 18px; background: #fff; overflow: hidden;
+  /* A size container: the drawing inside is measured in cqi, so it scales with the card. */
+  container-type: inline-size; display: flex; flex-direction: column; height: 100%; border-radius: 18px; background: #fff; overflow: hidden;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 30px 60px -20px rgba(14, 16, 40, 0.28);
   outline: 2px solid transparent; outline-offset: 4px; transition: outline-color 0.4s ease;
 }

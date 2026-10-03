@@ -70,7 +70,7 @@ const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]! }));
     {
       layers.map((layer, i) => (
         <li data-reveal class="min-w-0 rounded-[24px] bg-white p-4">
-          <div class="aspect-[4/3]">
+          <div class="aspect-[16/10]">
             <AnatomyLayer kind={layer.kind} />
           </div>
           <p class="mt-4 flex items-baseline gap-3 font-head text-[20px] font-bold">
