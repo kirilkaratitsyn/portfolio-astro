@@ -1,16 +1,19 @@
 // Land dots for the globe section (src/sections/Globe.astro, scripts/stage.ts GlobeView).
 // Samples a Fibonacci sphere and keeps the points that fall on land in Natural Earth's 1:110m land polygons
 // (public domain), then writes them to src/lib/globe-dots.json as a flat [lat, lng, lat, lng, ...] array.
-// For zooming in it also writes a finer grid (three times as dense, from the 1:50m polygons) to
-// public/source/3d/globe-land.bin: a little-endian uint32 with the size of that Fibonacci sphere, then one bit per
-// point of it (1 = land). The globe fetches it the first time it is zoomed.
+// For zooming in it also writes finer grids from the 1:50m polygons: three times as dense to
+// public/source/3d/globe-land.bin and six times as dense to globe-land-2.bin. Each is a little-endian uint32 with the
+// size of its Fibonacci sphere, then one bit per point of it (1 = land). The globe fetches them as it is zoomed in.
 // Run once (needs network): node scripts/make-globe-dots.mjs
 import fs from 'node:fs';
 
 const SOURCE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson';
 const DENSE_SOURCE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson';
 const COUNT = 15000;
-const DENSE_COUNT = COUNT * 9;
+const DENSE = [
+  { count: COUNT * 9, file: 'globe-land.bin' },
+  { count: COUNT * 36, file: 'globe-land-2.bin' },
+];
 
 async function loadLand(url) {
   const land = await (await fetch(url)).json();
@@ -59,14 +62,16 @@ fs.writeFileSync(new URL('../src/lib/globe-dots.json', import.meta.url), JSON.st
 console.log(`${out.length / 2} land dots written to src/lib/globe-dots.json`);
 
 const onLandFine = await loadLand(DENSE_SOURCE);
-const bits = new Uint8Array(4 + Math.ceil(DENSE_COUNT / 8));
-new DataView(bits.buffer).setUint32(0, DENSE_COUNT, true);
-let dense = 0;
-for (let i = 0; i < DENSE_COUNT; i++) {
-  const [lat, lng] = fibonacci(i, DENSE_COUNT);
-  if (lat < -58 || !onLandFine(lng, lat)) continue;
-  bits[4 + (i >> 3)] |= 1 << (i & 7);
-  dense++;
+for (const { count, file } of DENSE) {
+  const bits = new Uint8Array(4 + Math.ceil(count / 8));
+  new DataView(bits.buffer).setUint32(0, count, true);
+  let dense = 0;
+  for (let i = 0; i < count; i++) {
+    const [lat, lng] = fibonacci(i, count);
+    if (lat < -58 || !onLandFine(lng, lat)) continue;
+    bits[4 + (i >> 3)] |= 1 << (i & 7);
+    dense++;
+  }
+  fs.writeFileSync(new URL(`../public/source/3d/${file}`, import.meta.url), bits);
+  console.log(`${dense} land dots (of ${count}) written to public/source/3d/${file}`);
 }
-fs.writeFileSync(new URL('../public/source/3d/globe-land.bin', import.meta.url), bits);
-console.log(`${dense} land dots (of ${DENSE_COUNT}) written to public/source/3d/globe-land.bin`);

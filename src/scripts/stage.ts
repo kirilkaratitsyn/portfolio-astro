@@ -11,7 +11,7 @@ import {
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
-import { GLOBE_CAMERA, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
+import { GLOBE_CAMERA, GLOBE_LAND, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -573,7 +573,8 @@ class GlobeView extends View {
   private zoomOut: HTMLElement | null;
   /** The place under the cursor or the pinch: it stays under them while the zoom changes. */
   private anchor: { x: number; y: number; at: Vector3 } | null = null;
-  private fineLand = false;
+  /** Which of the finer land grids (GLOBE_LAND) have been asked for. */
+  private fineLand = GLOBE_LAND.map(() => false);
   // A country picked in the list next to the globe (sections/Globe.astro): only its stores, turned to the front.
   private country: string | null = null;
   private turnTo: { yaw: number; pitch: number; solo: Globe['pins'][number] | null } | null = null;
@@ -642,6 +643,7 @@ class GlobeView extends View {
     this.camera.aspect = this.cssW / Math.max(1, this.cssH);
     this.camera.updateProjectionMatrix();
     this.baseR = (this.cssH / 2) * (GLOBE_RADIUS / (GLOBE_CAMERA.distance * Math.tan((GLOBE_CAMERA.fov / 2) * DEG)));
+    this.globe.setZoom(this.zoom, this.screenR);
     this.dotSize();
   }
 
@@ -658,7 +660,7 @@ class GlobeView extends View {
   private applyZoom() {
     this.camera.zoom = this.zoom;
     this.camera.updateProjectionMatrix();
-    this.globe.setZoom(this.zoom);
+    this.globe.setZoom(this.zoom, this.screenR);
     this.dirty = true;
   }
 
@@ -668,18 +670,19 @@ class GlobeView extends View {
     this.zoomTo = clamp(zoom, 1, GLOBE_MAX_ZOOM);
     if (Math.abs(this.zoomTo - 1) < 0.02) this.zoomTo = 1;
     const zoomed = this.zoomTo > 1;
-    if (zoomed && !this.fineLand) {
-      // The finer grid of land dots, needed only from here on.
-      this.fineLand = true;
-      fetch('/source/3d/globe-land.bin')
+    // The finer grids of land dots, each fetched once the zoom heads toward it.
+    GLOBE_LAND.forEach((grid, level) => {
+      if (this.zoomTo <= grid.from || this.fineLand[level]) return;
+      this.fineLand[level] = true;
+      fetch(grid.url)
         .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(String(r.status)))))
         .then((buffer) => {
-          this.globe.addFineLand(buffer);
+          this.globe.addFineLand(buffer, level);
           this.dirty = true;
           this.stage.wake();
         })
-        .catch(() => (this.fineLand = false));
-    }
+        .catch(() => (this.fineLand[level] = false));
+    });
     // Zoomed in, one finger turns the globe instead of scrolling the page.
     this.host.style.touchAction = zoomed ? 'none' : 'pan-y';
     this.zoomOut?.setAttribute('aria-disabled', String(!zoomed));
