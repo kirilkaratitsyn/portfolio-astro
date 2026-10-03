@@ -147,19 +147,18 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .pf-field.is-set .pf-select { background: #0e1018; border-color: #0e1018; }
 .pf-select option { color: #0e1018; background: #fff; }
 
-/* How I work, as a stack of layers (sections/Anatomy.astro). Without the motion class the stack is open and every item expanded;
-   with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy() sets --gap, --tilt and .is-on. */
-.anat-scene { position: absolute; inset: 0; perspective: 2400px; display: grid; place-items: center; }
-.anat-stack {
-  --gap: 70px; --tilt: 1; --n: 5; position: relative; width: min(500px, 80%); aspect-ratio: 16 / 10; transform-style: preserve-3d;
-  transform: translateY(calc(var(--gap) * 1.1)) rotateX(calc(30deg * var(--tilt))) rotateZ(calc(-10deg * var(--tilt)));
-}
+/* How I work, a deck of cards flat to the screen (sections/Anatomy.astro). Without the motion class the deck is spread
+   by index and every item expanded; with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy()
+   sets --gap (how far the deck is spread), each card's --d (how many steps it is from the one in focus) and .is-on. */
+.anat-scene { position: absolute; inset: 0; display: grid; place-items: center; }
+.anat-stack { --gap: 70px; position: relative; width: min(520px, 82%); aspect-ratio: 16 / 10; margin-top: -110px; }
 .anat-layer {
-  /* The first layer (the kick-off call) is the top of the stack. */
-  position: absolute; inset: 0; transform: translateY(var(--rise, 0%)) translateZ(calc((var(--n) - 1 - var(--i)) * var(--gap) + var(--lift, 0px)));
-  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Cards still to come peek out below the one in focus, each a little smaller; the first card lies on top. */
+  --d: var(--i);
+  position: absolute; inset: 0; z-index: calc(20 - var(--d)); transform-origin: 50% 100%;
+  transform: translateY(calc(var(--d) * var(--gap) * 0.42 + var(--nudge, 0px))) scale(calc(1 - var(--d) * 0.045));
+  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.anat-layer.is-on { --lift: 26px; }
 .anat-card {
   height: 100%; padding: 16px; border-radius: 18px; background: #fff; overflow: hidden;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 30px 60px -20px rgba(14, 16, 40, 0.28);
@@ -180,11 +179,11 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .motion .anat-stack { --gap: 8px; }
   .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }
   .motion .anat-layer { cursor: pointer; }
-  .motion .anat-layer:not(.is-on):not(.is-past):hover { --lift: 12px; filter: none; }
+  .motion .anat-layer:not(.is-on):not(.is-past):hover { --nudge: -10px; filter: none; }
   .anat-go { transition: color 0.2s ease; }
   .anat-go:hover { color: #2433f0; }
-  /* Steps already done slide up out of the way, faint, so the step in focus is seen whole. */
-  .motion .anat-layer.is-past { opacity: 0.07; --lift: 30px; --rise: -78%; }
+  /* Cards of the steps already done lift off the deck and fade out. */
+  .motion .anat-layer.is-past { opacity: 0; pointer-events: none; transform: translateY(-22%) scale(1.03); }
   .motion .anat-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
   .motion .anat-detail > * { overflow: hidden; }
   .motion .anat-item.is-on .anat-detail { grid-template-rows: 1fr; }

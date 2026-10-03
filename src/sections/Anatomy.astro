@@ -1,6 +1,6 @@
 ---
-// How I work: the six steps of a project, from the kick-off call to analytics and launch, as layers of one stack. On
-// desktop the drawn layers sit in an isometric stack that opens up while the section scrolls past (a tall wrapper with
+// How I work: the six steps of a project, from the kick-off call to analytics and launch, as a deck of cards. On
+// desktop the drawn cards lie in a deck that spreads out while the section scrolls past (a tall wrapper with
 // a sticky stage, driven by scripts/motion.ts anatomy(); no pin), and the list highlights the step in focus; a step in
 // the list or a layer of the stack, clicked, scrolls to it. Phones get a plain list of cards. Without scripts the stack
 // is shown open and every item is expanded.
@@ -51,7 +51,7 @@ const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]! }));
 
         <div class="relative hidden h-full md:col-span-7 md:block" aria-hidden="true">
           <div class="anat-scene">
-            <div data-anatomy-stack class="anat-stack" style={`--n:${layers.length}`}>
+            <div data-anatomy-stack class="anat-stack">
               {
                 layers.map((layer, i) => (
                   <div data-layer class="anat-layer" style={`--i:${i}`}>

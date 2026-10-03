@@ -409,8 +409,8 @@ function feature() {
 }
 
 /**
- * How I work (the anatomy section): while the tall wrapper scrolls past its sticky stage, the stack of layers opens up
- * and tilts into an isometric view, then each step in turn comes into focus together with its item in the list. No pin, so the
+ * How I work (the anatomy section): while the tall wrapper scrolls past its sticky stage, the deck of cards spreads out,
+ * then each step in turn comes to the top together with its item in the list. No pin, so the
  * scroll positions of everything below stay as they are.
  */
 function anatomy(lenis: Lenis | null) {
@@ -428,8 +428,9 @@ function anatomy(lenis: Lenis | null) {
       active = i;
       layers.forEach((layer, k) => {
         layer.classList.toggle('is-on', k === i);
-        // Layers above the one in focus fade so it can be seen whole.
+        // Cards of the steps already done leave the deck; the rest line up behind the one in focus.
         layer.classList.toggle('is-past', k < i);
+        layer.style.setProperty('--d', String(Math.max(0, k - i)));
       });
       items.forEach((item, k) => item.classList.toggle('is-on', k === i));
     };
@@ -438,7 +439,6 @@ function anatomy(lenis: Lenis | null) {
       // Opened, the stack is about 370px tall whatever the number of layers.
       const gap = 370 / Math.max(1, layers.length - 1) - 8;
       stack.style.setProperty('--gap', `${(8 + o * gap).toFixed(1)}px`);
-      stack.style.setProperty('--tilt', (0.6 + o * 0.4).toFixed(3));
       focus(Math.min(layers.length - 1, Math.floor((Math.max(0, p - 0.2) / 0.78) * layers.length)));
     };
     const st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom', onUpdate: (self) => apply(self.progress), onRefresh: (self) => apply(self.progress) });
@@ -457,8 +457,10 @@ function anatomy(lenis: Lenis | null) {
       clicks.abort();
       st.kill();
       stack.style.removeProperty('--gap');
-      stack.style.removeProperty('--tilt');
-      layers.forEach((l) => l.classList.remove('is-on', 'is-past'));
+      layers.forEach((l) => {
+        l.classList.remove('is-on', 'is-past');
+        l.style.removeProperty('--d');
+      });
       items.forEach((l) => l.classList.remove('is-on'));
     };
   });
