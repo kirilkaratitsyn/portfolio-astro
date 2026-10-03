@@ -522,7 +522,6 @@
     "badge": "Top Rated auf Upwork"
   },
   "bio": {
-    "eyebrow": "Über mich",
     "title": "Hi, ich bin Kiril.",
     "p1": "Ich bin freiberuflicher Shopify-Entwickler in Deutschland. Ich baue Themes, richte Markets für neue Länder ein, ziehe Shops zu Shopify um und mache langsame Shops schneller, für Marken, die eine Person wollen, die die ganze Aufgabe verantwortet.",
     "p2": "Zuerst bekommen Sie Umfang, Zeitplan und Preis schriftlich. Ich baue in einem Vorschau-Theme, damit Ihr Live-Shop weiter verkauft, und bleibe nach dem Launch für Fixes da.",
@@ -544,7 +543,6 @@
     "photoAlt": "Kiril Karatitsyn am Meer bei Sonnenuntergang"
   },
   "globe": {
-    "eyebrow": "Weltweit",
     "title": "Kunden in {n} Ländern",
     "lead": "Von Seattle bis Melbourne: Shops, die ich gebaut und betreut habe, alle von meinem Schreibtisch in Deutschland aus.",
     "listLabel": "Länder der Kunden-Shops",
@@ -555,7 +553,6 @@
     "zoomOut": "Globus verkleinern"
   },
   "anatomy": {
-    "eyebrow": "So arbeite ich",
     "title": "Vom ersten Call zum ersten Verkauf",
     "lead": "Jedes Projekt durchläuft dieselben sechs Schritte. Sie wissen immer, was gerade passiert, und Ihr Live-Shop verkauft weiter, während ich baue.",
     "layers": [
@@ -611,7 +608,6 @@
     ]
   },
   "stack": {
-    "eyebrow": "Stack",
     "title": "Werkzeuge, mit denen ich baue",
     "lead": "Der Stack hinter den Shops oben und das Projekt, in dem jedes Werkzeug echte Arbeit geleistet hat.",
     "themesTitle": "Themes, mit denen ich Shops gebaut habe",
@@ -667,7 +663,6 @@
     ]
   },
   "editor": {
-    "eyebrow": "Übergabe",
     "title": "Ihr Team pflegt den Shop. Ohne Entwickler.",
     "lead": "Jede Section, die ich baue, hat Einstellungen wie diese. Probieren Sie es aus: So ändert Ihr Team den Shop nach dem Launch.",
     "hint": "Probieren Sie es: Überschrift tippen, Farbe wählen, Section ausblenden.",
@@ -738,5 +733,10 @@
     "moveUp": "Nach oben",
     "moveDown": "Nach unten",
     "demoNote": "Nur Demo: ohne Funktion"
+  },
+  "feature": {
+    "label": "Ausgewählte Case Studies",
+    "prev": "Vorheriges Projekt",
+    "next": "Nächstes Projekt"
   }
 }

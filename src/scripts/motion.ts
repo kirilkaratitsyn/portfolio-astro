@@ -398,13 +398,14 @@ function feature() {
   const section = qs('[data-feature]');
   const panel = qs('[data-feature-panel]', section ?? document);
   if (!section || !panel) return;
-  const desk = qs('[data-feature-desk]', panel);
-  const phone = qs('[data-feature-phone]', panel);
+  // Every slide's screens ride the same scroll motion (sections/Feature.astro shows one slide at a time).
+  const desks = qsa('[data-feature-desk]', panel);
+  const phones = qsa('[data-feature-phone]', panel);
   const pebbles = qsa('.pebble', panel);
   const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: panel, start: 'top 95%', end: 'bottom 35%', scrub: 0.8 } });
   tl.fromTo(panel, { scale: 0.86, borderRadius: 96 }, { scale: 1, borderRadius: 28 }, 0);
-  if (desk) tl.fromTo(desk, { yPercent: 22, rotateX: 16, transformPerspective: 1400, transformOrigin: '50% 100%' }, { yPercent: -3, rotateX: 0 }, 0);
-  if (phone) tl.fromTo(phone, { yPercent: 55, rotate: 9 }, { yPercent: -4, rotate: 0 }, 0);
+  if (desks.length) tl.fromTo(desks, { yPercent: 22, rotateX: 16, transformPerspective: 1400, transformOrigin: '50% 100%' }, { yPercent: -3, rotateX: 0 }, 0);
+  if (phones.length) tl.fromTo(phones, { yPercent: 55, rotate: 9 }, { yPercent: -4, rotate: 0 }, 0);
   pebbles.forEach((p, i) => tl.fromTo(p, { yPercent: i ? -60 : 70 }, { yPercent: i ? 30 : -35 }, 0));
 }
 

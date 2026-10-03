@@ -1,41 +1,156 @@
 ---
+// Featured case studies: the five lead projects in one slot, each laid out as before (the story on the left, the store
+// on a panel in the project's own colour on the right). It moves on by itself every 6 s, shown by the bar under the
+// active name, and holds while the pointer or focus is on it, while it is off screen, and for reduced motion. Arrows
+// and the bars switch by hand. Without scripts the first project is shown. Scroll motion: scripts/motion.ts feature().
 import Phone from '../components/Phone.astro';
 import Pebble from '../components/Pebble.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import { thumb } from '../lib/thumbs';
-import type { CaseStudy } from '../lib/content';
+import type { CaseStudy, WorkProject } from '../lib/content';
 
 interface Props {
   locale: Locale;
-  caseStudy: CaseStudy;
+  caseStudies: CaseStudy[];
+  works: WorkProject[];
 }
 
-const { locale, caseStudy } = Astro.props;
+const { locale, caseStudies, works } = Astro.props;
 const t = useTranslations(locale);
+const accentOf = new Map(works.filter((w) => w.caseStudySlug).map((w) => [w.caseStudySlug!, w.accent ?? '#2433f0']));
+const slides = caseStudies
+  .filter((c) => !c.archived)
+  .slice(0, 5)
+  .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#2433f0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
 ---
 
-<section data-feature class="mx-auto mt-20 grid max-w-[1440px] items-center gap-10 px-5 md:mt-28 md:grid-cols-[1fr_minmax(0,760px)] md:px-10">
-  <div>
-    <h2 data-split class="font-head text-[48px] font-bold leading-[0.95] tracking-[-0.03em] md:text-[84px]">{caseStudy.title}</h2>
-    <p data-reveal class="mt-5 max-w-[430px] text-lg leading-relaxed text-mute md:mt-[22px] md:text-xl">{caseStudy.summary}</p>
-    <a data-reveal href={localizePath(locale, `/projects/${caseStudy.slug}`)} class="mt-7 inline-block text-lg font-semibold text-blue hover:underline">{t.caseStudies.viewCase} →</a>
-  </div>
-
-  <div data-feature-panel class="relative aspect-[760/540] overflow-hidden rounded-[28px] bg-blue">
-    <div data-feature-desk class="absolute left-[8%] top-[13%] w-[73%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(8,12,90,0.35)]">
-      <div class="flex h-[5%] min-h-[14px] items-center gap-1.5 bg-[#f1f2f6] px-3 py-1.5" aria-hidden="true">
-        <i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i>
+<section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" aria-roledescription="carousel" aria-label={t.feature.label}>
+  <div class="feat-grid">
+    <div class="feat-copy min-w-0">
+      <div class="feat-texts">
+        {
+          slides.map((cs, i) => (
+            <div class:list={['feat-text', i === 0 && 'is-on']} data-feature-text={i} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${slides.length}`} inert={i === 0 ? undefined : true}>
+              <h2 data-split={i === 0 ? '' : undefined} class="font-head text-[48px] font-bold leading-[0.95] tracking-[-0.03em] md:text-[84px]">{cs.title}</h2>
+              <p class="mt-5 max-w-[430px] text-lg leading-relaxed text-mute md:mt-[22px] md:text-xl">{cs.summary}</p>
+              <a href={localizePath(locale, `/projects/${cs.slug}`)} class="mt-7 inline-block text-lg font-semibold text-blue hover:underline">{t.caseStudies.viewCase} →</a>
+            </div>
+          ))
+        }
       </div>
-      <img src={thumb(caseStudy.image, '1000')} alt={caseStudy.title} width="1000" height="694" loading="lazy" decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
+
     </div>
-    {
-      caseStudy.mobileImage && (
-        <div data-feature-phone class="absolute right-[7%] top-[12%] w-[21%]">
-          <Phone image={caseStudy.mobileImage} domain={caseStudy.archived ? undefined : new URL(caseStudy.liveUrl).hostname.replace(/^www\./, '')} sizes="(min-width: 768px) 170px, 21vw" />
-        </div>
-      )
-    }
-    <Pebble name="white" class="absolute -bottom-[6%] -left-[4%] w-[20%]" />
-    <Pebble name="black" class="absolute -right-[3%] -top-[5%] w-[14%]" />
+
+    <div data-feature-panel class="feat-panel relative aspect-[760/540] overflow-hidden rounded-[28px]" style={`background:${slides[0]?.accent}`}>
+      {
+        slides.map((cs, i) => (
+          <div class:list={['feat-shot', i === 0 && 'is-on']} data-feature-shot={i} data-accent={cs.accent} aria-hidden={i === 0 ? undefined : 'true'}>
+            <div data-feature-desk class="absolute left-[8%] top-[13%] w-[73%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(8,12,90,0.35)]">
+              <div class="flex h-[5%] min-h-[14px] items-center gap-1.5 bg-[#f1f2f6] px-3 py-1.5" aria-hidden="true">
+                <i class="block size-2 rounded-full bg-[#cfd2de]" />
+                <i class="block size-2 rounded-full bg-[#cfd2de]" />
+                <i class="block size-2 rounded-full bg-[#cfd2de]" />
+              </div>
+              <img src={thumb(cs.image, '1000')} alt={cs.title} width="1000" height="694" loading="lazy" decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
+            </div>
+            {cs.mobileImage && (
+              <div data-feature-phone class="absolute right-[7%] top-[12%] w-[21%]">
+                <Phone image={cs.mobileImage} domain={cs.domain} sizes="(min-width: 768px) 170px, 21vw" />
+              </div>
+            )}
+          </div>
+        ))
+      }
+      <Pebble name="white" class="absolute -bottom-[6%] -left-[4%] z-[2] w-[20%]" />
+      <Pebble name="black" class="absolute -right-[3%] -top-[5%] z-[2] w-[14%]" />
+    </div>
+
+    <!-- Controls: under the story on desktop, under the screens on phones; shown once the script runs. -->
+    <div data-feature-controls hidden class="feat-controls">
+      <button type="button" data-feature-step="-1" class="feat-arrow" aria-label={t.feature.prev}>←</button>
+      <ol class="flex items-center gap-2">
+        {
+          slides.map((cs, i) => (
+            <li>
+              <button type="button" data-feature-dot={i} class="feat-dot" aria-label={cs.title} aria-current={i === 0 ? 'true' : undefined}>
+                <span class="feat-bar"><i /></span>
+              </button>
+            </li>
+          ))
+        }
+      </ol>
+      <button type="button" data-feature-step="1" class="feat-arrow" aria-label={t.feature.next}>→</button>
+    </div>
   </div>
 </section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-feature]');
+  const texts = [...(root?.querySelectorAll<HTMLElement>('[data-feature-text]') ?? [])];
+  const shots = [...(root?.querySelectorAll<HTMLElement>('[data-feature-shot]') ?? [])];
+  const dots = [...(root?.querySelectorAll<HTMLButtonElement>('[data-feature-dot]') ?? [])];
+  const panel = root?.querySelector<HTMLElement>('[data-feature-panel]');
+  const controls = root?.querySelector<HTMLElement>('[data-feature-controls]');
+  if (root && texts.length > 1 && panel && controls) {
+    let active = 0;
+    controls.hidden = false;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) root.classList.add('is-still');
+
+    const go = (next: number) => {
+      active = (next + texts.length) % texts.length;
+      texts.forEach((el, i) => {
+        el.classList.toggle('is-on', i === active);
+        el.inert = i !== active;
+      });
+      shots.forEach((el, i) => {
+        el.classList.toggle('is-on', i === active);
+        if (i === active) el.removeAttribute('aria-hidden');
+        else el.setAttribute('aria-hidden', 'true');
+      });
+      dots.forEach((dot, i) => {
+        if (i === active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+        // Restart the fill of the active bar.
+        dot.classList.remove('is-filling');
+        if (i === active) {
+          void dot.offsetWidth;
+          dot.classList.add('is-filling');
+        }
+      });
+      panel.style.background = shots[active]?.dataset.accent ?? '';
+    };
+
+    // The active bar fills in 6 s; when it is full, the next project comes on.
+    for (const dot of dots) {
+      dot.addEventListener('click', () => go(Number(dot.dataset.featureDot)));
+      dot.addEventListener('animationend', () => {
+        if (dot.classList.contains('is-filling')) go(active + 1);
+      });
+    }
+    for (const b of root.querySelectorAll<HTMLButtonElement>('[data-feature-step]')) b.addEventListener('click', () => go(active + Number(b.dataset.featureStep)));
+
+    // Hold while someone is looking at it closely, while it is off screen, and while the tab is hidden.
+    let hover = false;
+    let focus = false;
+    let seen = false;
+    const hold = () => root.classList.toggle('is-paused', hover || focus || !seen || document.hidden);
+    root.addEventListener('pointerenter', (e) => {
+      if (e.pointerType === 'mouse') (hover = true), hold();
+    });
+    root.addEventListener('pointerleave', () => ((hover = false), hold()));
+    root.addEventListener('focusin', () => ((focus = true), hold()));
+    root.addEventListener('focusout', (e) => {
+      if (!root.contains(e.relatedTarget as Node | null)) (focus = false), hold();
+    });
+    document.addEventListener('visibilitychange', hold);
+    new IntersectionObserver(
+      ([entry]) => {
+        seen = Boolean(entry?.isIntersecting);
+        hold();
+      },
+      { threshold: 0.35 },
+    ).observe(root);
+    hold();
+    go(0);
+  }
+</script>

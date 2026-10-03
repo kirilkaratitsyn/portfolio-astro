@@ -21,8 +21,7 @@ const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]! }));
     <div class="anat-sticky">
       <div class="mx-auto grid h-full max-w-[1440px] items-center gap-12 px-5 md:grid-cols-12 md:gap-8 md:px-10">
         <div class="md:col-span-5">
-          <p data-reveal class="text-sm font-semibold uppercase tracking-[0.16em] text-blue">{t.eyebrow}</p>
-          <h2 id="anatomy-title" data-split class="mt-4 font-head text-[40px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{t.title}</h2>
+          <h2 id="anatomy-title" data-split class="font-head text-[40px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{t.title}</h2>
           <p data-reveal class="mt-5 max-w-[500px] text-[17px] leading-relaxed text-mute">{t.lead}</p>
 
           <ol class="mt-8 hidden border-t border-line md:block">

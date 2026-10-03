@@ -522,7 +522,6 @@
     "badge": "Top Rated on Upwork"
   },
   "bio": {
-    "eyebrow": "About me",
     "title": "Hi, I'm Kiril.",
     "p1": "I'm a freelance Shopify developer in Germany. I build themes, set up Markets for new countries, move stores over to Shopify and speed up slow ones, for brands that want one person who owns the whole task.",
     "p2": "You get the scope, timeline and price in writing first. I build on a preview theme, so your live store keeps selling while we work, and I stay on for fixes after launch.",
@@ -544,7 +543,6 @@
     "photoAlt": "Kiril Karatitsyn at the sea at sunset"
   },
   "globe": {
-    "eyebrow": "Worldwide",
     "title": "Clients in {n} countries",
     "lead": "From Seattle to Melbourne: stores I've built and looked after, all from my desk in Germany.",
     "listLabel": "Countries of client stores",
@@ -555,7 +553,6 @@
     "zoomOut": "Zoom out of the globe"
   },
   "anatomy": {
-    "eyebrow": "How I work",
     "title": "From first call to first sale",
     "lead": "Every project goes through the same six steps. You always know what's happening, and your live store keeps selling while I build.",
     "layers": [
@@ -611,7 +608,6 @@
     ]
   },
   "stack": {
-    "eyebrow": "Stack",
     "title": "Tools I build with",
     "lead": "The stack behind the stores above, and the project where each tool did real work.",
     "themesTitle": "Themes I've shipped on",
@@ -667,7 +663,6 @@
     ]
   },
   "editor": {
-    "eyebrow": "Handover",
     "title": "Your team edits it. No developer needed.",
     "lead": "Every section I build comes with settings like these. Try them: this is how your team changes the store after launch.",
     "hint": "Try it: type a heading, pick a colour, hide a section.",
@@ -738,5 +733,10 @@
     "moveUp": "Move up",
     "moveDown": "Move down",
     "demoNote": "Demo only: not wired up"
+  },
+  "feature": {
+    "label": "Featured case studies",
+    "prev": "Previous project",
+    "next": "Next project"
   }
 }

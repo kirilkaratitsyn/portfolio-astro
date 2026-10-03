@@ -147,6 +147,36 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .pf-field.is-set .pf-select { background: #0e1018; border-color: #0e1018; }
 .pf-select option { color: #0e1018; background: #fff; }
 
+/* Featured case studies (sections/Feature.astro): the slides share one grid cell (texts) or the panel (screens), and
+   the one .is-on shows. The active bar fills in 6 s; its animationend moves the slider on. */
+.feat-grid { display: grid; gap: 28px; }
+@media (min-width: 768px) {
+  /* Two rows beside the panel: the story ends at the middle line, the controls start under it. */
+  .feat-grid { grid-template-columns: 1fr minmax(0, 760px); grid-template-rows: auto auto; column-gap: 40px; row-gap: 0; }
+  .feat-copy { grid-area: 1 / 1 / 2 / 2; align-self: end; }
+  .feat-controls { grid-area: 2 / 1 / 3 / 2; align-self: start; margin-top: 40px; }
+  .feat-panel { grid-area: 1 / 2 / 3 / 3; align-self: center; }
+}
+.feat-texts { display: grid; }
+.feat-text { grid-area: 1 / 1; transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.feat-text:not(.is-on) { opacity: 0; transform: translateY(16px); visibility: hidden; transition: opacity 0.35s ease, transform 0.6s ease, visibility 0s 0.4s; }
+.feat-panel { transition: background-color 0.8s ease; }
+.feat-shot { position: absolute; inset: 0; transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.feat-shot:not(.is-on) { opacity: 0; transform: translateY(5%) scale(0.97); visibility: hidden; transition: opacity 0.4s ease, transform 0.8s ease, visibility 0s 0.5s; }
+.feat-controls { display: flex; align-items: center; gap: 12px; margin-top: 40px; }
+.feat-controls[hidden] { display: none; }
+.feat-arrow { display: grid; width: 44px; height: 44px; flex: none; place-items: center; border-radius: 999px; background: #fff; font-size: 18px; transition: background-color 0.2s, color 0.2s; }
+.feat-arrow:hover { background: #0e1018; color: #fff; }
+.feat-dot { display: grid; height: 44px; place-items: center; padding: 0 3px; }
+.feat-bar { position: relative; display: block; width: 28px; height: 4px; overflow: hidden; border-radius: 99px; background: #d3d7e6; transition: width 0.4s ease; }
+.feat-dot:hover .feat-bar { background: #b8bdd3; }
+.feat-dot[aria-current='true'] .feat-bar { width: 64px; }
+.feat-bar i { position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; background: #2433f0; }
+.feat-dot.is-filling .feat-bar i { animation: feat-fill 6s linear forwards; }
+.is-paused .feat-dot.is-filling .feat-bar i { animation-play-state: paused; }
+.is-still .feat-dot[aria-current='true'] .feat-bar i { animation: none; transform: none; }
+@keyframes feat-fill { to { transform: scaleX(1); } }
+
 /* How I work, a deck of cards flat to the screen (sections/Anatomy.astro). Without the motion class the deck is spread
    by index and every item expanded; with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy()
    sets --gap (how far the deck is spread), each card's --d (how many steps it is from the one in focus) and .is-on. */
