@@ -656,5 +656,22 @@
         "text": "Jedes Theme in Git, ausgeliefert über die Shopify-GitHub-Integration und Vorschau-Themes."
       }
     ]
+  },
+  "code": {
+    "eyebrow": "Handwerk",
+    "title": "Code, den man übergeben kann",
+    "lead": "Eine Section, geschrieben wie ich sie schreibe: Daten aus Metafeldern, Einstellungen, die Ihr Team ändern kann, übersetzbare Texte, nichts fest verdrahtet.",
+    "editorLabel": "Liquid-Code einer Bundle-Section",
+    "save": "15 % sparen ab 2 Dosen",
+    "addToCart": "In den Warenkorb",
+    "editorPanel": "Theme-Editor",
+    "steps": [
+      "Die Daten kommen aus einem Metafeld, nicht aus dem Template",
+      "Die Überschrift ist eine Einstellung, die das Team pflegt",
+      "Alle Varianten, ausverkaufte deaktiviert",
+      "Die Ersparnis erscheint nur, wenn das Produkt ein Bundle hat",
+      "Standard-Produktformular, übersetzbare Texte",
+      "Schema: Einstellungen und ein Preset für den Theme-Editor"
+    ]
   }
 }

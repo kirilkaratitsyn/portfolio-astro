@@ -1,0 +1,137 @@
+---
+// Code you can hand over: a Shopify section written the way I write them, shown in an editor that types itself step
+// by step while the section scrolls past (scripts/motion.ts code()), next to the component it renders and, at the
+// end, the theme editor panel its schema creates. The section is my own example, not client code.
+// Without scripts every line and every part of the component is shown.
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale).code;
+
+// [step, line]. Steps: 0 data, 1 heading, 2 variants, 3 savings, 4 button, 5 schema.
+const source: [number, string][] = [
+  [0, `{%- liquid`],
+  [0, `  assign item = section.settings.product | default: product`],
+  [0, `  assign bundle = item.metafields.custom.bundle.value`],
+  [0, `-%}`],
+  [0, ``],
+  [1, `<section class="bundle">`],
+  [1, `  <h2>{{ section.settings.heading | escape }}</h2>`],
+  [2, `  {%- form 'product', item, class: 'bundle__form' -%}`],
+  [2, `    {%- for variant in item.variants -%}`],
+  [2, `      <label class="bundle__option">`],
+  [2, `        <input type="radio" name="id" value="{{ variant.id }}"`],
+  [2, `          {% if forloop.first %}checked{% endif %}`],
+  [2, `          {% unless variant.available %}disabled{% endunless %}>`],
+  [2, `        {{ variant.title }} · {{ variant.price | money }}`],
+  [2, `      </label>`],
+  [2, `    {%- endfor -%}`],
+  [3, `    {%- if bundle -%}`],
+  [3, `      <p class="bundle__save">`],
+  [3, `        {{ 'products.bundle.save' | t: percent: bundle.discount.value }}`],
+  [3, `      </p>`],
+  [3, `    {%- endif -%}`],
+  [4, `    <button type="submit" name="add">`],
+  [4, `      {{ 'products.product.add_to_cart' | t }}`],
+  [4, `    </button>`],
+  [4, `  {%- endform -%}`],
+  [4, `</section>`],
+  [5, ``],
+  [5, `{% schema %}`],
+  [5, `{`],
+  [5, `  "name": "Bundle picker",`],
+  [5, `  "settings": [`],
+  [5, `    { "type": "text", "id": "heading", "label": "Heading",`],
+  [5, `      "default": "Build your bundle" },`],
+  [5, `    { "type": "product", "id": "product", "label": "Product" }`],
+  [5, `  ],`],
+  [5, `  "presets": [{ "name": "Bundle picker" }]`],
+  [5, `}`],
+  [5, `{% endschema %}`],
+];
+
+// A small highlighter for Liquid, HTML and the JSON schema.
+const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const token = /(\{%-?|-?%\}|\{\{-?|-?\}\})|("[^"]*"|'[^']*')|(<\/?[a-zA-Z][\w-]*|\/?>)|\b(assign|for|endfor|if|endif|unless|endunless|form|endform|liquid|schema|endschema|in|checked|disabled)\b|(\|\s*[a-z_]+)|([a-z_-]+)(?==)/g;
+const kinds = ['d', 's', 't', 'k', 'f', 'a'];
+function highlight(line: string) {
+  let out = '';
+  let last = 0;
+  for (const m of line.matchAll(token)) {
+    out += escape(line.slice(last, m.index));
+    const group = m.slice(1).findIndex((g) => g !== undefined);
+    out += `<span class="c-${kinds[group]}">${escape(m[0])}</span>`;
+    last = m.index! + m[0].length;
+  }
+  return out + escape(line.slice(last)) || ' ';
+}
+const lines = source.map(([step, text], i) => ({ step, n: i + 1, html: highlight(text) }));
+---
+
+<section id="code" aria-labelledby="code-title" class="mt-24 md:mt-36">
+  <div data-code class="code-wrap relative">
+    <div class="code-sticky">
+      <div class="mx-auto grid h-full max-w-[1440px] content-center gap-8 px-5 md:grid-cols-12 md:gap-10 md:px-10">
+        <div class="min-w-0 md:col-span-12">
+          <p data-reveal class="text-sm font-semibold uppercase tracking-[0.16em] text-blue">{t.eyebrow}</p>
+          <div class="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <h2 id="code-title" data-split class="font-head text-[40px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{t.title}</h2>
+            <p data-reveal class="max-w-[460px] text-[16px] leading-relaxed text-mute">{t.lead}</p>
+          </div>
+        </div>
+
+        <!-- The editor: decorative copy of the code (the same code is readable, just not announced line by line). -->
+        <div class="min-w-0 md:col-span-7">
+        <div class="code-editor" aria-label={t.editorLabel} role="img">
+          <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+            <i class="block size-2.5 rounded-full bg-white/25"></i><i class="block size-2.5 rounded-full bg-white/25"></i><i class="block size-2.5 rounded-full bg-white/25"></i>
+            <span class="ml-3 rounded-md bg-white/10 px-2.5 py-1 font-mono text-[12px] text-white/80">sections/bundle-picker.liquid</span>
+          </div>
+          <div class="code-view">
+            <pre data-code-lines class="code-lines" aria-hidden="true">{lines.map((line) => <span class="code-line" data-step={line.step}><i>{line.n}</i><span set:html={line.html} /></span>)}</pre>
+          </div>
+        </div>
+          <ol class="code-steps mt-4">
+            {t.steps.map((step, i) => <li data-caption={i}><span>0{i + 1}</span>{step}</li>)}
+          </ol>
+        </div>
+
+        <!-- What the code renders, and the theme editor panel its schema creates. -->
+        <div class="relative min-w-0 md:col-span-5 md:pb-16" aria-hidden="true">
+          <div class="code-ui">
+            <p class="mb-4 w-fit rounded-md bg-[#f3f4f9] px-2.5 py-1 font-mono text-[11.5px] text-mute" data-ui-step="0">custom.bundle → discount: 15</p>
+            <p class="code-part font-head text-[22px] font-bold tracking-[-0.01em]" data-ui-step="1">Build your bundle</p>
+            <div class="mt-4 grid gap-2" data-ui-step="2">
+              {
+                [
+                  ['1 jar', '€29'],
+                  ['2 jars', '€54'],
+                  ['3 jars', '€78'],
+                ].map(([title, price], i) => (
+                  <span class:list={['code-option', i === 1 && 'is-picked']}>
+                    <i />
+                    {title} · {price}
+                  </span>
+                ))
+              }
+              <span class="code-option is-off"><i />4 jars · €99</span>
+            </div>
+            <p class="code-part mt-4 w-fit rounded-full bg-[#e3e6ff] px-3 py-1.5 text-[13px] font-semibold text-blue" data-ui-step="3">{t.save}</p>
+            <span class="code-part mt-4 block rounded-full bg-ink py-3 text-center text-[14px] font-semibold text-white" data-ui-step="4">{t.addToCart}</span>
+          </div>
+          <div class="code-part code-panel" data-ui-step="5">
+            <p class="text-[12px] font-semibold uppercase tracking-[0.12em] text-mute">{t.editorPanel}</p>
+            <p class="mt-2 font-head text-[15px] font-bold">Bundle picker</p>
+            <span class="mt-3 block text-[12px] text-mute">Heading</span>
+            <span class="mt-1 block rounded-lg border border-line bg-white px-3 py-2 text-[13px]">Build your bundle</span>
+            <span class="mt-3 block text-[12px] text-mute">Product</span>
+            <span class="mt-1 flex items-center gap-2 rounded-lg border border-line bg-white px-3 py-2 text-[13px]"><i class="block size-5 rounded bg-[linear-gradient(135deg,#2433f0,#8b93ff)]"></i>Calm Blend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

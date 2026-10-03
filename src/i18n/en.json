@@ -656,5 +656,22 @@
         "text": "Every theme in Git, shipped through the Shopify GitHub integration and preview themes."
       }
     ]
+  },
+  "code": {
+    "eyebrow": "Craft",
+    "title": "Code you can hand over",
+    "lead": "A section written the way I write them: data from metafields, settings your team can change, labels that translate, nothing hard-coded.",
+    "editorLabel": "Liquid code of a bundle picker section",
+    "save": "Save 15% on 2+ jars",
+    "addToCart": "Add to cart",
+    "editorPanel": "Theme editor",
+    "steps": [
+      "Data comes from a metafield, not from the template",
+      "The heading is a setting the team edits",
+      "Every variant listed, sold-out ones disabled",
+      "Savings appear only when the product has a bundle",
+      "Standard product form, translatable labels",
+      "Schema: settings and a preset for the theme editor"
+    ]
   }
 }

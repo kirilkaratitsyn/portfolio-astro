@@ -29,6 +29,7 @@ export function init() {
   feature();
   process();
   anatomy();
+  code();
   about();
   reviews(lenis);
   contact();
@@ -462,6 +463,54 @@ function anatomy() {
       stack.style.removeProperty('--tilt');
       layers.forEach((l) => l.classList.remove('is-on', 'is-past'));
       items.forEach((l) => l.classList.remove('is-on'));
+    };
+  });
+}
+
+/**
+ * Code you can hand over: the editor types its lines as the tall wrapper scrolls past the sticky stage, keeps the
+ * line being typed in view, and the component on the right gains each part when its code is written. No pin.
+ */
+function code() {
+  const wrap = qs('[data-code]');
+  const pre = wrap ? qs('[data-code-lines]', wrap) : null;
+  if (!wrap || !pre) return;
+  const lines = qsa('.code-line', pre);
+  const parts = qsa('[data-ui-step]', wrap);
+  const captions = qsa('[data-caption]', wrap);
+  const view = pre.parentElement as HTMLElement;
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 768px)', () => {
+    let typed = -1;
+    const apply = (p: number) => {
+      const count = Math.round(Math.min(1, Math.max(0, (p - 0.03) / 0.87)) * lines.length);
+      if (count === typed) return;
+      typed = count;
+      const step = count ? Number(lines[count - 1]!.dataset.step) : -1;
+      lines.forEach((line, i) => {
+        line.classList.toggle('is-typed', i < count);
+        line.classList.toggle('is-current', i < count && Number(line.dataset.step) === step);
+      });
+      parts.forEach((part) => {
+        const s = Number(part.dataset.uiStep);
+        part.classList.toggle('is-shown', s <= step);
+        part.classList.toggle('is-current', s === step);
+      });
+      captions.forEach((c) => c.classList.toggle('is-on', Number(c.dataset.caption) === step));
+      // Keep the last typed line in view.
+      const last = lines[Math.max(0, count - 1)]!;
+      const room = view.clientHeight;
+      const shift = Math.max(0, Math.min(pre.scrollHeight - room + 34, last.offsetTop + last.offsetHeight - room + 60));
+      pre.style.transform = `translateY(${-shift}px)`;
+    };
+    const st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom', onUpdate: (self) => apply(self.progress), onRefresh: (self) => apply(self.progress) });
+    apply(st.progress);
+    return () => {
+      st.kill();
+      pre.style.transform = '';
+      lines.forEach((l) => l.classList.remove('is-typed', 'is-current'));
+      parts.forEach((l) => l.classList.remove('is-shown', 'is-current'));
+      captions.forEach((l) => l.classList.remove('is-on'));
     };
   });
 }
