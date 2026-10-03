@@ -1295,10 +1295,11 @@ class Stage {
   };
 }
 
-export async function start() {
-  const heroHost = document.querySelector<HTMLElement>('[data-hero-stage]');
+/** globeOnly (touch screens): only the globe goes live; the hero stones and the icons keep their posters. */
+export async function start({ globeOnly = false }: { globeOnly?: boolean } = {}) {
+  const heroHost = globeOnly ? null : document.querySelector<HTMLElement>('[data-hero-stage]');
   const poster = document.querySelector<HTMLImageElement>('[data-hero-poster]');
-  const pebbleHosts = [...document.querySelectorAll<HTMLElement>('[data-pebble]')];
+  const pebbleHosts = globeOnly ? [] : [...document.querySelectorAll<HTMLElement>('[data-pebble]')];
   const globeHost = document.querySelector<HTMLElement>('[data-globe]');
   if (!(heroHost && poster) && !pebbleHosts.length && !globeHost) return;
 

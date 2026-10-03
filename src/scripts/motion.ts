@@ -11,30 +11,35 @@ const qsa = <T extends HTMLElement = HTMLElement>(selector: string, root: Parent
 const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const EXPO = 'expo.out';
 
-export function init() {
+/** Give the browser a turn (input, paint) before the next piece of work. */
+const yieldMain = () =>
+  new Promise<void>((resolve) => {
+    const s = (window as unknown as { scheduler?: { yield?: () => Promise<void> } }).scheduler;
+    if (s?.yield) void s.yield().then(resolve);
+    else setTimeout(resolve, 0);
+  });
+
+export async function init() {
   (window as unknown as { __motion?: boolean }).__motion = true;
   gsap.registerPlugin(ScrollTrigger, SplitText);
   ScrollTrigger.config({ ignoreMobileResize: true });
 
+  // The first screen right away; every other section in its own small task, so a phone never has the main thread
+  // held for long while the page starts (each section only sets up what it needs once it is scrolled to).
   const lenis = smoothScroll();
   header();
   const flies = flyLogo();
   hero(flies);
-  headings();
-  reveals();
-  rows();
-  peek();
-  stats();
-  marquee();
-  feature();
-  anatomy(lenis);
-  about();
-  reviews(lenis);
-  contact();
-  footer();
-  magnets();
-  cards();
-  stackGrid();
+  const sections = [
+    headings, reveals, rows, peek, stats, marquee, feature, () => anatomy(lenis), about, () => reviews(lenis), contact, footer, magnets, cards, stackGrid,
+  ];
+  for (const setUp of sections) {
+    await yieldMain();
+    setUp();
+  }
+  // Triggers made in separate tasks: put them in page order (the reviews pin moves everything below it), then measure.
+  ScrollTrigger.sort();
+  ScrollTrigger.refresh();
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
@@ -202,8 +207,9 @@ function flyLogo(): boolean {
 
 /* ---------------------------------------------------------------- text */
 
+/** Headings split into lines only as they come near (a third of a screen ahead): splitting is layout work. */
 function headings() {
-  qsa('[data-split]').forEach((el) => {
+  const split = (el: HTMLElement) =>
     SplitText.create(el, {
       type: 'lines',
       mask: 'lines',
@@ -216,7 +222,17 @@ function headings() {
         return gsap.from(self.lines, { yPercent: 115, duration: 1.15, ease: EXPO, stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
       },
     });
-  });
+  const near = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        near.unobserve(entry.target);
+        split(entry.target as HTMLElement);
+      }
+    },
+    { rootMargin: '0px 0px 35% 0px' },
+  );
+  qsa('[data-split]').forEach((el) => near.observe(el));
 }
 
 function reveals() {

@@ -8,6 +8,8 @@ export default defineConfig({
   build: {
     // /projects/nimfa -> projects/nimfa.html, served without the extension (vercel.json cleanUrls)
     format: 'file',
+    // The stylesheet goes into each page: no request that holds back the first paint (it is ~12 KB gzipped).
+    inlineStylesheets: 'always',
   },
   integrations: [
     sitemap({

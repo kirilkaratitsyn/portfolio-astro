@@ -23,14 +23,28 @@ function boot() {
   const weak = (nav.deviceMemory !== undefined && nav.deviceMemory < 4) || (nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency < 4);
   if (weak || !webgl()) return; // the posters stay
   const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 300));
-  idle(
-    () => {
-      import('./stage')
-        .then((m) => m.start())
-        .catch(() => {});
-    },
-    { timeout: 1800 },
-  );
+  const stage = (globeOnly: boolean) =>
+    import('./stage')
+      .then((m) => m.start({ globeOnly }))
+      .catch(() => {});
+
+  // Touch screens: the stones and icons cannot be grabbed there, so their posters stay and three.js loads only when
+  // the globe (pinch, tap) comes near. With a mouse, every 3D object goes live once the page is idle.
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const globe = document.querySelector('[data-globe]');
+    if (!globe) return;
+    const near = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        near.disconnect();
+        idle(() => void stage(true), { timeout: 1200 });
+      },
+      { rootMargin: '1500px 0px' },
+    );
+    near.observe(globe);
+    return;
+  }
+  idle(() => void stage(false), { timeout: 1800 });
 }
 
 if (document.readyState === 'complete') boot();
