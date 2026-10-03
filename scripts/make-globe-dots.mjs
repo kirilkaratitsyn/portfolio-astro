@@ -1,18 +1,31 @@
 // Land dots for the globe section (src/sections/Globe.astro, scripts/stage.ts GlobeView).
 // Samples a Fibonacci sphere and keeps the points that fall on land in Natural Earth's 1:110m land polygons
 // (public domain), then writes them to src/lib/globe-dots.json as a flat [lat, lng, lat, lng, ...] array.
+// For zooming in it also writes a finer grid (three times as dense, from the 1:50m polygons) to
+// public/source/3d/globe-land.bin: a little-endian uint32 with the size of that Fibonacci sphere, then one bit per
+// point of it (1 = land). The globe fetches it the first time it is zoomed.
 // Run once (needs network): node scripts/make-globe-dots.mjs
 import fs from 'node:fs';
 
 const SOURCE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson';
+const DENSE_SOURCE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson';
 const COUNT = 15000;
+const DENSE_COUNT = COUNT * 9;
 
-const land = await (await fetch(SOURCE)).json();
-const rings = [];
-for (const feature of land.features) {
-  const g = feature.geometry;
-  const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
-  for (const poly of polys) rings.push({ outer: poly[0], holes: poly.slice(1) });
+async function loadLand(url) {
+  const land = await (await fetch(url)).json();
+  const rings = [];
+  for (const feature of land.features) {
+    const g = feature.geometry;
+    const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+    for (const poly of polys) {
+      const xs = poly[0].map((p) => p[0]);
+      const ys = poly[0].map((p) => p[1]);
+      rings.push({ outer: poly[0], holes: poly.slice(1), box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] });
+    }
+  }
+  return (lng, lat) =>
+    rings.some((r) => lng >= r.box[0] && lng <= r.box[2] && lat >= r.box[1] && lat <= r.box[3] && inside(r.outer, lng, lat) && !r.holes.some((h) => inside(h, lng, lat)));
 }
 const inside = (ring, x, y) => {
   let hit = false;
@@ -23,18 +36,37 @@ const inside = (ring, x, y) => {
   }
   return hit;
 };
-const onLand = (lng, lat) => rings.some((r) => inside(r.outer, lng, lat) && !r.holes.some((h) => inside(h, lng, lat)));
 
-const out = [];
+/** Point i of a Fibonacci sphere of n points, as [lat, lng] in degrees (the same formula as src/lib/globe.ts). */
 const golden = Math.PI * (3 - Math.sqrt(5));
-for (let i = 0; i < COUNT; i++) {
-  const y = 1 - (i / (COUNT - 1)) * 2;
+function fibonacci(i, n) {
+  const y = 1 - (i / (n - 1)) * 2;
   const r = Math.sqrt(1 - y * y);
   const theta = golden * i;
   const lat = (Math.asin(y) * 180) / Math.PI;
   const lng = ((((Math.atan2(Math.sin(theta) * r, Math.cos(theta) * r) * 180) / Math.PI) + 540) % 360) - 180;
+  return [lat, lng];
+}
+
+const onLand = await loadLand(SOURCE);
+const out = [];
+for (let i = 0; i < COUNT; i++) {
+  const [lat, lng] = fibonacci(i, COUNT);
   if (lat < -58) continue; // no Antarctica
   if (onLand(lng, lat)) out.push(Math.round(lat * 10) / 10, Math.round(lng * 10) / 10);
 }
 fs.writeFileSync(new URL('../src/lib/globe-dots.json', import.meta.url), JSON.stringify(out));
 console.log(`${out.length / 2} land dots written to src/lib/globe-dots.json`);
+
+const onLandFine = await loadLand(DENSE_SOURCE);
+const bits = new Uint8Array(4 + Math.ceil(DENSE_COUNT / 8));
+new DataView(bits.buffer).setUint32(0, DENSE_COUNT, true);
+let dense = 0;
+for (let i = 0; i < DENSE_COUNT; i++) {
+  const [lat, lng] = fibonacci(i, DENSE_COUNT);
+  if (lat < -58 || !onLandFine(lng, lat)) continue;
+  bits[4 + (i >> 3)] |= 1 << (i & 7);
+  dense++;
+}
+fs.writeFileSync(new URL('../public/source/3d/globe-land.bin', import.meta.url), bits);
+console.log(`${dense} land dots (of ${DENSE_COUNT}) written to public/source/3d/globe-land.bin`);

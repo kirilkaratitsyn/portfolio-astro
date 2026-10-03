@@ -551,7 +551,9 @@
     "listLabel": "Länder der Kunden-Shops",
     "open": "Shop öffnen ↗",
     "home": "Meine Basis: Deutschland",
-    "hint": "Ziehen zum Drehen · Pin anklicken, um den Shop zu öffnen"
+    "hint": "Ziehen zum Drehen · mit zwei Fingern oder +/− zoomen · Pin anklicken, um den Shop zu öffnen",
+    "zoomIn": "Globus vergrößern",
+    "zoomOut": "Globus verkleinern"
   },
   "anatomy": {
     "eyebrow": "Unter der Haube",

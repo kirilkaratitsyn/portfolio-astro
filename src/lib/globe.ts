@@ -1,7 +1,8 @@
 // The globe of the worldwide section (src/sections/Globe.astro): a glossy white ball in the material of the stones,
 // land as ink dots, a cobalt pin for every client store, and an arc from home (Bad Bentheim, Germany) to each pin
 // with a light travelling along it. Built in code; the land dots come from src/lib/globe-dots.json
-// (scripts/make-globe-dots.mjs), so no map data is loaded at runtime.
+// (scripts/make-globe-dots.mjs), so no map data is loaded at runtime. Zoomed in, a three times finer grid of land
+// dots (public/source/3d/globe-land.bin, fetched on the first zoom) takes over from them.
 import {
   BackSide, BufferAttribute, BufferGeometry, Color, DoubleSide, Group, Mesh, MeshBasicMaterial, MeshPhysicalMaterial,
   Points, RingGeometry, ShaderMaterial, SphereGeometry, TubeGeometry, Vector3, Curve,
@@ -11,6 +12,8 @@ import dots from './globe-dots.json';
 const DEG = Math.PI / 180;
 export const GLOBE_RADIUS = 2;
 export const GLOBE_CAMERA = { fov: 30, distance: 9.4 };
+/** How far the globe zooms in (camera zoom), close enough to tell the Benelux stores apart. */
+export const GLOBE_MAX_ZOOM = 4;
 /** Where the arcs start: Bad Bentheim, Germany. */
 export const HOME = { lat: 52.3, lng: 7.16 };
 
@@ -31,6 +34,7 @@ export interface GlobeMarker {
 export interface GlobePin extends GlobeMarker {
   /** Position on the ball in the globe's own space. */
   at: Vector3;
+  dot: Mesh;
   ring: Mesh;
   phase: number;
 }
@@ -75,11 +79,12 @@ const dotShader = {
     }`,
   fragment: /* glsl */ `
     uniform vec3 uColor;
+    uniform float uAlpha;
     varying float vFacing;
     void main() {
       float d = length(gl_PointCoord - 0.5);
       if (d > 0.5) discard;
-      float a = smoothstep(0.5, 0.36, d) * smoothstep(0.02, 0.4, vFacing) * 0.78;
+      float a = smoothstep(0.5, 0.36, d) * smoothstep(0.02, 0.4, vFacing) * 0.78 * uAlpha;
       gl_FragColor = vec4(uColor, a);
     }`,
 };
@@ -131,16 +136,22 @@ export function makeGlobe(markers: GlobeMarker[]) {
     toVector(land[i]!, land[i + 1]!, GLOBE_RADIUS * 1.003, v);
     positions.set([v.x, v.y, v.z], (i / 2) * 3);
   }
-  const dotGeometry = new BufferGeometry();
-  dotGeometry.setAttribute('position', new BufferAttribute(positions, 3));
-  const dotMaterial = new ShaderMaterial({
-    vertexShader: dotShader.vertex,
-    fragmentShader: dotShader.fragment,
-    uniforms: { uSize: { value: 4 }, uColor: { value: srgb(INK) } },
-    transparent: true,
-    depthWrite: false,
-  });
-  group.add(new Points(dotGeometry, dotMaterial));
+  const dotLayer = (positions: Float32Array) => {
+    const geometry = new BufferGeometry();
+    geometry.setAttribute('position', new BufferAttribute(positions, 3));
+    const material = new ShaderMaterial({
+      vertexShader: dotShader.vertex,
+      fragmentShader: dotShader.fragment,
+      uniforms: { uSize: { value: 4 }, uAlpha: { value: 1 }, uColor: { value: srgb(INK) } },
+      transparent: true,
+      depthWrite: false,
+    });
+    const points = new Points(geometry, material);
+    group.add(points);
+    return { points, uniforms: material.uniforms as { uSize: { value: number }; uAlpha: { value: number } } };
+  };
+  const coarse = dotLayer(positions);
+  let fine: ReturnType<typeof dotLayer> | null = null;
 
   // Pins, arcs from home, and a light flying along each arc.
   const pinGeometry = new SphereGeometry(GLOBE_RADIUS * 0.022, 20, 14);
@@ -167,7 +178,7 @@ export function makeGlobe(markers: GlobeMarker[]) {
     ring.lookAt(at.clone().multiplyScalar(2));
     group.add(ring);
     const phase = (i * 0.618) % 1;
-    pins.push({ ...m, at, ring, phase });
+    pins.push({ ...m, at, dot: pin, ring, phase });
 
     const arc = new Arc(home, at);
     group.add(new Mesh(new TubeGeometry(arc, 64, GLOBE_RADIUS * 0.0032, 5, false), arcMaterial));
@@ -177,27 +188,74 @@ export function makeGlobe(markers: GlobeMarker[]) {
   });
 
   const tmp = new Vector3();
+  // Zoomed in, pins and lights grow less than the ball, so a cluster of stores (the Benelux) comes apart.
+  let marks = 1;
+  let zoom = 1;
+  let dotPx = 4;
+  /** Coarse dots grow with the zoom until the fine grid (three times as dense) fades in and takes over. */
+  const sizeDots = () => {
+    const k = (GLOBE_CAMERA.distance - GLOBE_RADIUS) / 10;
+    const mix = fine ? Math.min(1, Math.max(0, (zoom - 1.4) / 1.0)) : 0;
+    coarse.uniforms.uSize.value = dotPx * zoom ** 0.75 * k;
+    coarse.uniforms.uAlpha.value = 1 - mix;
+    coarse.points.visible = mix < 1;
+    if (fine) {
+      fine.uniforms.uSize.value = dotPx * (zoom / 3) * 1.15 * k;
+      fine.uniforms.uAlpha.value = mix;
+      fine.points.visible = mix > 0;
+    }
+  };
   return {
     group,
     halo,
     pins,
     home: { at: home },
-    /** Dot size in device pixels at the front of the ball. */
+    /** Dot size in device pixels at the front of the ball, at zoom 1. */
     setDotSize(px: number) {
-      dotMaterial.uniforms.uSize!.value = px * ((GLOBE_CAMERA.distance - GLOBE_RADIUS) / 10);
+      dotPx = px;
+      sizeDots();
+    },
+    setZoom(value: number) {
+      zoom = value;
+      marks = zoom ** -0.6;
+      for (const pin of pins) pin.dot.scale.setScalar(marks);
+      homePin.scale.setScalar(marks);
+      sizeDots();
+    },
+    get hasFineLand() {
+      return Boolean(fine);
+    },
+    /** The fine grid: a uint32 with the size of its Fibonacci sphere, then one bit per point (1 = land). */
+    addFineLand(buffer: ArrayBuffer) {
+      if (fine || buffer.byteLength < 4) return;
+      const n = new DataView(buffer).getUint32(0, true);
+      const bits = new Uint8Array(buffer, 4);
+      const golden = Math.PI * (3 - Math.sqrt(5));
+      const r = GLOBE_RADIUS * 1.003;
+      const list: number[] = [];
+      for (let i = 0; i < n; i++) {
+        if (!((bits[i >> 3] ?? 0) & (1 << (i & 7)))) continue;
+        // The same point as scripts/make-globe-dots.mjs fibonacci(), placed like toVector().
+        const y = 1 - (i / (n - 1)) * 2;
+        const ring = Math.sqrt(1 - y * y);
+        const theta = golden * i;
+        list.push(r * ring * Math.sin(theta), r * y, r * ring * Math.cos(theta));
+      }
+      fine = dotLayer(new Float32Array(list));
+      sizeDots();
     },
     /** Pulse the pin rings and move the lights along the arcs. */
     update(time: number) {
       for (const pin of pins) {
         const k = (time * 0.45 + pin.phase) % 1;
-        pin.ring.scale.setScalar(1 + k * 1.6);
+        pin.ring.scale.setScalar((1 + k * 1.6) * marks);
         (pin.ring.material as MeshBasicMaterial).opacity = 0.55 * (1 - k);
       }
       for (const c of comets) {
         const t = (time * c.speed + c.phase) % 1;
         c.arc.getPoint(t, tmp);
         c.mesh.position.copy(tmp);
-        c.mesh.scale.setScalar(Math.sin(Math.PI * t) * 1.1 + 0.05);
+        c.mesh.scale.setScalar((Math.sin(Math.PI * t) * 1.1 + 0.05) * marks);
       }
     },
   };

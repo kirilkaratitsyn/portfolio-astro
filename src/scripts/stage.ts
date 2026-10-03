@@ -11,7 +11,7 @@ import {
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
-import { GLOBE_CAMERA, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
+import { GLOBE_CAMERA, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -559,13 +559,28 @@ class GlobeView extends View {
   private moved = 0;
   private pointer: Pointer | null = null;
   private tip: HTMLAnchorElement;
-  private screenR = 1;
+  /** Radius of the ball on screen at zoom 1, in CSS px. */
+  private baseR = 1;
+  // Zoom: pinch (trackpad or two fingers), ⌘/Ctrl + wheel, or the +/− buttons. Plain wheel keeps scrolling the page.
+  private zoom = 1;
+  private zoomTo = 1;
+  private pinch: { d: number; zoom: number } | null = null;
+  private gestureFrom = 0;
+  private finger = { x: 0, y: 0, t: 0, vx: 0 };
+  private zoomIn: HTMLElement | null;
+  private zoomOut: HTMLElement | null;
+  /** The place under the cursor or the pinch: it stays under them while the zoom changes. */
+  private anchor: { x: number; y: number; at: Vector3 } | null = null;
+  private fineLand = false;
+  private readonly ray = new Vector3();
   private readonly world = new Vector3();
   private readonly toCamera = new Vector3();
 
   constructor(stage: Stage, host: HTMLElement, private img: HTMLImageElement, markers: GlobeMarker[], private labels: GlobeLabels) {
     super(stage, host, 2, 1.3e6);
-    Object.assign(this.canvas.style, { inset: '0', width: '100%', height: '100%' });
+    // The round mask lets a zoomed-in ball fade out in a circle instead of being cut by the square.
+    const mask = 'radial-gradient(closest-side, #000 88%, transparent)';
+    Object.assign(this.canvas.style, { inset: '0', width: '100%', height: '100%', maskImage: mask, webkitMaskImage: mask });
     host.append(this.canvas);
     this.globe = makeGlobe(markers);
     this.scene.add(this.globe.group, this.globe.halo);
@@ -578,15 +593,39 @@ class GlobeView extends View {
     // Mouse and touch only: the stores are listed as links on /projects, and the globe is hidden from assistive tech.
     this.tip.tabIndex = -1;
     host.append(this.tip);
+
+    const controls = host.parentElement?.querySelector<HTMLElement>('[data-globe-zoom]');
+    this.zoomIn = controls?.querySelector<HTMLElement>('[data-zoom="in"]') ?? null;
+    this.zoomOut = controls?.querySelector<HTMLElement>('[data-zoom="out"]') ?? null;
+    this.zoomIn?.addEventListener('click', () => this.setZoom(this.zoomTo * 1.6));
+    this.zoomOut?.addEventListener('click', () => this.setZoom(this.zoomTo / 1.6));
+    host.style.touchAction = 'pan-y';
+    host.addEventListener('wheel', this.onWheel, { passive: false });
+    for (const type of ['touchstart', 'touchmove', 'touchend', 'touchcancel']) host.addEventListener(type, this.onTouch as EventListener, { passive: false });
+    for (const type of ['gesturestart', 'gesturechange', 'gestureend']) host.addEventListener(type, this.onGesture);
+    // Scrolled away, the globe zooms back out, so on a phone a zoomed globe never keeps holding the page.
+    new IntersectionObserver(([entry]) => {
+      if (entry && !entry.isIntersecting && this.zoomTo !== 1) {
+        this.setZoom(1);
+        this.zoom = 1;
+        this.applyZoom();
+      }
+    }).observe(host);
   }
 
   showLive() {
     this.img.style.opacity = '0';
     this.live = true;
+    this.zoomIn?.parentElement?.removeAttribute('hidden');
   }
   hideLive() {
     this.img.style.opacity = '';
     this.live = false;
+    this.zoomIn?.parentElement?.setAttribute('hidden', '');
+  }
+
+  private get screenR() {
+    return this.baseR * this.zoom;
   }
 
   protected measure() {
@@ -595,17 +634,101 @@ class GlobeView extends View {
     this.camera.fov = GLOBE_CAMERA.fov;
     this.camera.aspect = this.cssW / Math.max(1, this.cssH);
     this.camera.updateProjectionMatrix();
-    // Radius of the ball on screen, in CSS px.
-    this.screenR = (this.cssH / 2) * (GLOBE_RADIUS / (GLOBE_CAMERA.distance * Math.tan((GLOBE_CAMERA.fov / 2) * DEG)));
-    const dpr = this.pw / Math.max(1, this.cssW);
-    this.globe.setDotSize(Math.max(2, this.cssW / 150) * dpr);
+    this.baseR = (this.cssH / 2) * (GLOBE_RADIUS / (GLOBE_CAMERA.distance * Math.tan((GLOBE_CAMERA.fov / 2) * DEG)));
+    this.dotSize();
   }
 
   override resize() {
     super.resize();
+    this.dotSize();
+  }
+
+  private dotSize() {
     const dpr = this.pw / Math.max(1, this.cssW);
     this.globe.setDotSize(Math.max(2, this.cssW / 150) * dpr);
   }
+
+  private applyZoom() {
+    this.camera.zoom = this.zoom;
+    this.camera.updateProjectionMatrix();
+    this.globe.setZoom(this.zoom);
+    this.dirty = true;
+  }
+
+  /** Zoom toward a page point (cursor, middle of a pinch) or, without one, toward the middle of the globe. */
+  private setZoom(zoom: number, x?: number, y?: number) {
+    this.aim(x, y);
+    this.zoomTo = clamp(zoom, 1, GLOBE_MAX_ZOOM);
+    if (Math.abs(this.zoomTo - 1) < 0.02) this.zoomTo = 1;
+    const zoomed = this.zoomTo > 1;
+    if (zoomed && !this.fineLand) {
+      // The finer grid of land dots, needed only from here on.
+      this.fineLand = true;
+      fetch('/source/3d/globe-land.bin')
+        .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(String(r.status)))))
+        .then((buffer) => {
+          this.globe.addFineLand(buffer);
+          this.dirty = true;
+          this.stage.wake();
+        })
+        .catch(() => (this.fineLand = false));
+    }
+    // Zoomed in, one finger turns the globe instead of scrolling the page.
+    this.host.style.touchAction = zoomed ? 'none' : 'pan-y';
+    this.zoomOut?.setAttribute('aria-disabled', String(!zoomed));
+    this.zoomIn?.setAttribute('aria-disabled', String(this.zoomTo >= GLOBE_MAX_ZOOM));
+    this.stage.wake();
+  }
+
+  private onWheel = (e: WheelEvent) => {
+    if (!e.ctrlKey && !e.metaKey) return;
+    e.preventDefault();
+    // Lenis leaves ctrl wheels (trackpad pinch) alone by itself; this keeps it from scrolling on ⌘ + wheel.
+    (e as WheelEvent & { lenisStopPropagation?: boolean }).lenisStopPropagation = true;
+    if (this.gestureFrom) return;
+    const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+    this.setZoom(this.zoomTo * Math.exp(-clamp(dy, -60, 60) * 0.008), e.clientX, e.clientY);
+  };
+
+  /** Safari reports a trackpad pinch as gesture events (on iOS next to the touches, which win). */
+  private onGesture = (e: Event) => {
+    e.preventDefault();
+    const g = e as Event & { scale?: number; clientX?: number; clientY?: number };
+    if (e.type === 'gestureend') this.gestureFrom = 0;
+    else if (e.type === 'gesturestart') this.gestureFrom = this.zoomTo;
+    else if (!this.pinch && this.gestureFrom) this.setZoom(this.gestureFrom * (g.scale ?? 1), g.clientX, g.clientY);
+  };
+
+  private onTouch = (e: TouchEvent) => {
+    const list = e.touches;
+    const a = list[0];
+    const b = list[1];
+    if (a && b) {
+      e.preventDefault();
+      this.grabbedAt = null;
+      const d = Math.max(1, Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY));
+      if (this.pinch) this.setZoom(this.pinch.zoom * (d / this.pinch.d), (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2);
+      else this.pinch = { d, zoom: this.zoomTo };
+      return;
+    }
+    this.pinch = null;
+    const f = this.finger;
+    const p = (x: number, y: number): Pointer => ({ x, y, vx: f.vx, vy: 0, type: 'touch', inside: true });
+    if (a && this.zoomTo > 1) {
+      if (!this.grabbedAt) {
+        Object.assign(f, { x: a.clientX, y: a.clientY, t: e.timeStamp, vx: 0 });
+        this.grab(p(a.clientX, a.clientY));
+      } else if (e.type === 'touchmove') {
+        e.preventDefault();
+        const dt = Math.max(1, e.timeStamp - f.t) / 1000;
+        f.vx = f.vx * 0.5 + ((a.clientX - f.x) / dt) * 0.5;
+        Object.assign(f, { x: a.clientX, y: a.clientY, t: e.timeStamp });
+        this.drag(p(a.clientX, a.clientY));
+      }
+      return;
+    }
+    if (!a && this.grabbedAt) this.release(p(f.x, f.y));
+  };
 
   private local(x: number, y: number) {
     const r = this.host.getBoundingClientRect();
@@ -614,7 +737,49 @@ class GlobeView extends View {
 
   pick(x: number, y: number) {
     const l = this.local(x, y);
-    return Math.hypot(l.x, l.y) < this.screenR * 1.02;
+    return Math.hypot(l.x, l.y) < Math.min(this.screenR * 1.02, Math.min(l.w, l.h) / 2);
+  }
+
+  /** Where the line of sight through a page point meets the ball: a unit vector in world space, or null off the ball. */
+  private surface(x: number, y: number, into: Vector3) {
+    const l = this.local(x, y);
+    const eye = this.camera.position;
+    into.set(l.x / (l.w / 2), -l.y / (l.h / 2), 0.5).unproject(this.camera).sub(eye).normalize();
+    const b = eye.dot(into);
+    const disc = b * b - (eye.lengthSq() - GLOBE_RADIUS * GLOBE_RADIUS);
+    if (disc < 0) return null;
+    return into.multiplyScalar(-b - Math.sqrt(disc)).add(eye).normalize();
+  }
+
+  /** Remember the place of the ball under a page point, in the globe's own space. */
+  private aim(x?: number, y?: number) {
+    const w = x === undefined || y === undefined ? null : this.surface(x, y, this.ray);
+    this.anchor = w ? { x: x!, y: y!, at: w.clone().applyQuaternion(this.globe.group.quaternion.clone().invert()) } : null;
+  }
+
+  /**
+   * Turn the globe so the anchored place is under its page point again at the current zoom. The globe turns as
+   * Rx(pitch) · Ry(yaw): yaw alone sets the x of the place, then pitch turns its (y, z) onto the target.
+   */
+  private holdAnchor() {
+    const a = this.anchor;
+    const w = a && this.surface(a.x, a.y, this.ray);
+    if (!a || !w) return;
+    const p = a.at;
+    const rho = Math.hypot(p.x, p.z);
+    if (rho < 1e-4 || Math.abs(w.x) > rho) return;
+    const base = Math.atan2(p.z, p.x);
+    const spread = Math.acos(w.x / rho);
+    const d1 = wrapAngle(base + spread - this.yaw);
+    const d2 = wrapAngle(base - spread - this.yaw);
+    this.yaw += Math.abs(d1) < Math.abs(d2) ? d1 : d2;
+    const qz = -p.x * Math.sin(this.yaw) + p.z * Math.cos(this.yaw);
+    this.pitch = clamp(wrapAngle(Math.atan2(w.z, w.y) - Math.atan2(qz, p.y)), -1.0, 1.25);
+  }
+
+  /** Inside the round window the ball is drawn in (the canvas mask), in host px. */
+  private inWindow(s: { x: number; y: number }) {
+    return Math.hypot(s.x - this.cssW / 2, s.y - this.cssH / 2) < Math.min(this.cssW, this.cssH) * 0.44;
   }
 
   /** Screen position (CSS px, host space) of a point on the ball, and whether it faces the viewer. */
@@ -633,12 +798,12 @@ class GlobeView extends View {
     let best: { pin: Globe['pins'][number] | null; home: boolean; d: number } | null = null;
     for (const pin of this.globe.pins) {
       const s = this.project(pin.at);
-      if (s.facing < 0.18) continue;
+      if (s.facing < 0.18 || !this.inWindow(s)) continue;
       const d = Math.hypot(s.x - px, s.y - py);
       if (d < reach && (!best || d < best.d)) best = { pin, home: false, d };
     }
     const h = this.project(this.globe.home.at);
-    if (h.facing > 0.18) {
+    if (h.facing > 0.18 && this.inWindow(h)) {
       const d = Math.hypot(h.x - px, h.y - py);
       if (d < reach && (!best || d < best.d)) best = { pin: null, home: true, d };
     }
@@ -666,7 +831,7 @@ class GlobeView extends View {
     const target = this.hovered;
     if (!target) return;
     const s = this.project(target.home ? this.globe.home.at : target.pin!.at);
-    if (s.facing < 0.05) {
+    if (s.facing < 0.05 || !this.inWindow(s)) {
       this.hovered = null;
       this.pinned = false;
       this.tip.classList.remove('is-on');
@@ -695,6 +860,7 @@ class GlobeView extends View {
   }
 
   grab(p: Pointer) {
+    this.anchor = null;
     this.grabbedAt = { x: p.x, y: p.y, yaw: this.yaw, pitch: this.pitch, t: performance.now() };
     this.moved = 0;
     this.vyaw = 0;
@@ -708,7 +874,9 @@ class GlobeView extends View {
     this.moved = Math.max(this.moved, Math.hypot(dx, dy));
     const k = 1 / Math.max(80, this.screenR);
     this.yaw = g.yaw + dx * k * 1.15;
-    this.pitch = clamp(g.pitch + dy * k * 0.9, -0.5, 1.0);
+    // Zoomed in, the globe tilts further, far enough to bring Australia to the middle.
+    const zoomed = this.zoomTo > 1;
+    this.pitch = clamp(g.pitch + dy * k * 0.9, zoomed ? -1.0 : -0.5, zoomed ? 1.25 : 1.0);
     if (this.moved > 4 && this.hovered) {
       this.hovered = null;
       this.showTip();
@@ -719,6 +887,8 @@ class GlobeView extends View {
     this.grabbedAt = null;
     if (!g) return;
     if (this.moved < 5) {
+      // A tap shows the tooltip first (poke); only a mouse click opens the store right away.
+      if (p.type === 'touch') return;
       const found = this.pinAt(p.x, p.y, 16);
       if (found?.pin) window.open(found.pin.u, '_blank', 'noopener');
       return;
@@ -737,12 +907,20 @@ class GlobeView extends View {
 
   step(dt: number) {
     this.time += dt;
+    if (this.zoom !== this.zoomTo) {
+      this.zoom += (this.zoomTo - this.zoom) * (1 - Math.exp(-14 * dt));
+      if (Math.abs(this.zoomTo - this.zoom) < 0.002) this.zoom = this.zoomTo;
+      this.applyZoom();
+    }
     if (!this.grabbedAt) {
       this.vyaw *= Math.exp(-1.8 * dt);
-      // Turn slowly by itself, and hold still while a store is shown.
-      const auto = this.hovered ? 0 : 0.085;
+      // Turn slowly by itself, and hold still while a store is shown or the globe is zoomed in on a place.
+      const free = this.zoomTo === 1;
+      const auto = this.hovered || !free ? 0 : 0.085;
       this.yaw += (this.vyaw + auto) * dt;
-      this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-1.2 * dt));
+      if (free) this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-1.2 * dt));
+      this.holdAnchor();
+      if (this.zoom === this.zoomTo) this.anchor = null;
     }
     this.globe.group.rotation.set(this.pitch, this.yaw, 0);
     this.globe.group.updateMatrixWorld();
@@ -754,6 +932,7 @@ class GlobeView extends View {
   sync() {}
 }
 
+const wrapAngle = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
 const escapeHtml = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 /* ------------------------------------------------------------------ stage */

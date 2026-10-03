@@ -551,7 +551,9 @@
     "listLabel": "Countries of client stores",
     "open": "Open store ↗",
     "home": "My base: Germany",
-    "hint": "Drag to spin · click a pin to open the store"
+    "hint": "Drag to spin · pinch or +/− to zoom · click a pin to open the store",
+    "zoomIn": "Zoom in on the globe",
+    "zoomOut": "Zoom out of the globe"
   },
   "anatomy": {
     "eyebrow": "Under the hood",
