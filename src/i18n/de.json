@@ -673,14 +673,9 @@
     "hint": "Probieren Sie es: Überschrift tippen, Farbe wählen, Section ausblenden.",
     "label": "Eine funktionierende Kopie des Shopify Theme-Editors",
     "themeEditor": "Theme-Editor",
-    "live": "Live",
-    "preview": "Vorschau",
-    "code": "Code",
-    "desktop": "Desktop-Ansicht",
-    "mobile": "Mobile Ansicht",
+    "mobile": "Mobile Vorschau",
     "save": "Speichern",
     "saved": "Gespeichert",
-    "sections": "Sections",
     "hide": "Ausblenden",
     "names": {
       "announcement": "Ankündigungsleiste",
@@ -724,6 +719,23 @@
       "quote": "In zwei Tagen da und in echt noch schöner.",
       "author": "Anna, Berlin",
       "demoHeading": "Herbst-Sale"
-    }
+    },
+    "active": "Aktiv",
+    "template": "Startseite",
+    "groups": {
+      "header": "Header",
+      "template": "Vorlage",
+      "footer": "Footer"
+    },
+    "static": {
+      "header": "Header",
+      "footer": "Footer"
+    },
+    "addSection": "Abschnitt hinzufügen",
+    "editCode": "Code bearbeiten",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "moveUp": "Nach oben",
+    "moveDown": "Nach unten"
   }
 }

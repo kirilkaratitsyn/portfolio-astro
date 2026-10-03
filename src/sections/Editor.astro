@@ -1,9 +1,10 @@
 ---
-// Your team edits it: a small, working copy of the Shopify theme editor. Pick a section, change its settings and the
-// store next to it follows, the way a client's team edits a store I hand over. The Code tab shows the Liquid section
-// and schema behind those settings, with the line of the setting just changed lit up. The first time the editor comes
-// into view, and only until someone touches it, it plays a short demo (a heading typed, a colour scheme picked);
-// reduced motion skips it. Without scripts the store is shown in its default state.
+// Your team edits it: a working copy of the Shopify theme editor, laid out like the real one (top bar, sections grouped
+// as Header / Template / Footer, a settings card, the section picked outlined in the preview with its toolbar). Pick a
+// section, change its settings, hide it or move it, undo and redo, and the store follows, the way a client's team edits
+// a store I hand over. "Edit code" shows the Liquid section and schema behind the settings, with the lines of the
+// setting just changed lit up. The first time the editor comes into view, and only until someone touches it, it plays
+// a short demo; reduced motion skips it. Without scripts the store is shown in its default state.
 import shopify from '../assets/stack/shopify.svg?raw';
 import { useTranslations, type Locale } from '../i18n';
 
@@ -142,8 +143,48 @@ function highlight(line: string) {
   return out + escape(line.slice(last)) || ' ';
 }
 const files: Record<Id, string> = { announcement: 'announcement-bar', hero: 'hero-banner', products: 'featured-products', reviews: 'testimonials' };
-const eye = '<svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1.8 10S4.8 4.5 10 4.5 18.2 10 18.2 10 15.2 15.5 10 15.5 1.8 10 1.8 10Z"/><circle cx="10" cy="10" r="2.6"/><path class="ed-eye-off" d="m3 3 14 14"/></svg>';
+
+// Icons drawn for this copy of the editor (20×20, in the spirit of Shopify's, not taken from it).
+const svg = (body: string, size = 20) =>
+  `<svg aria-hidden="true" viewBox="0 0 20 20" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
+const icon = {
+  exit: svg('<path d="M8.5 4H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5"/><path d="M16 10H8.5m0 0 3-3m-3 3 3 3"/>'),
+  sections: svg('<rect x="3.5" y="4" width="13" height="4.6" rx="1.2"/><rect x="3.5" y="11.4" width="13" height="4.6" rx="1.2" stroke-dasharray="2 1.6"/>'),
+  gear: svg('<circle cx="10" cy="10" r="2.4"/><path d="M10 2.8v1.9M10 15.3v1.9M2.8 10h1.9M15.3 10h1.9M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M4.9 15.1l1.4-1.4M13.7 6.3l1.4-1.4"/>'),
+  apps: svg('<rect x="3.5" y="3.5" width="5" height="5" rx="1.2"/><rect x="3.5" y="11.5" width="5" height="5" rx="1.2"/><rect x="11.5" y="11.5" width="5" height="5" rx="1.2"/><path d="M14 3.5v5M11.5 6h5"/>'),
+  theme: svg('<rect x="3.5" y="3.5" width="13" height="13" rx="3"/><path d="M10 3.5v13M10 10h6.5"/>', 18),
+  home: svg('<path d="M4 9.2 10 4.5l6 4.7V16H4z"/><path d="M8.4 16v-3.6h3.2V16"/>', 18),
+  select: svg('<rect x="3.5" y="3.5" width="10.5" height="10.5" rx="1.6" stroke-dasharray="2.2 2"/><path d="m11 11 5.5 2.1-2.3.9-.9 2.3z" fill="currentColor" stroke="none"/>'),
+  mobile: svg('<rect x="6" y="2.5" width="8" height="15" rx="2"/><path d="M9 14.5h2"/>'),
+  code: svg('<path d="m7 6-4 4 4 4M13 6l4 4-4 4"/>'),
+  undo: svg('<path d="M7.5 6 4.5 9l3 3"/><path d="M4.5 9H12a3.5 3.5 0 0 1 0 7h-1.5"/>'),
+  redo: svg('<path d="m12.5 6 3 3-3 3"/><path d="M15.5 9H8a3.5 3.5 0 0 0 0 7h1.5"/>'),
+  dots: svg('<circle cx="5" cy="10" r=".9" fill="currentColor"/><circle cx="10" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/>'),
+  chevron: svg('<path d="m6.5 8 3.5 3.5L13.5 8"/>', 16),
+  grip: svg('<circle cx="8" cy="6" r=".8" fill="currentColor"/><circle cx="12" cy="6" r=".8" fill="currentColor"/><circle cx="8" cy="10" r=".8" fill="currentColor"/><circle cx="12" cy="10" r=".8" fill="currentColor"/><circle cx="8" cy="14" r=".8" fill="currentColor"/><circle cx="12" cy="14" r=".8" fill="currentColor"/>', 16),
+  section: svg('<rect x="3.5" y="4" width="13" height="12" rx="1.6"/><path d="M3.5 8.2h13M3.5 11.8h13" stroke-dasharray="1.6 1.6"/>', 16),
+  header: svg('<rect x="3.5" y="4" width="13" height="12" rx="1.6"/><path d="M3.5 8h13"/>', 16),
+  footer: svg('<rect x="3.5" y="4" width="13" height="12" rx="1.6"/><path d="M3.5 12h13"/>', 16),
+  text: svg('<path d="M4 5.5h12M4 10h12M4 14.5h7.5"/>', 16),
+  eye: svg('<path d="M2.2 10S5 4.8 10 4.8 17.8 10 17.8 10 15 15.2 10 15.2 2.2 10 2.2 10Z"/><circle cx="10" cy="10" r="2.4"/>', 16),
+  eyeOff: svg('<path d="M2.2 10S5 4.8 10 4.8 17.8 10 17.8 10 15 15.2 10 15.2 2.2 10 2.2 10Z"/><circle cx="10" cy="10" r="2.4"/><path d="m3.5 3.5 13 13"/>', 16),
+  plus: svg('<circle cx="10" cy="10" r="6.6"/><path d="M10 7v6M7 10h6"/>', 16),
+  close: svg('<path d="m5.5 5.5 9 9m0-9-9 9"/>', 16),
+  source: svg('<ellipse cx="10" cy="5.5" rx="5.2" ry="2"/><path d="M4.8 5.5v9c0 1.1 2.3 2 5.2 2s5.2-.9 5.2-2v-9M4.8 10c0 1.1 2.3 2 5.2 2s5.2-.9 5.2-2"/>', 16),
+  spark: svg('<path d="M8 3.5 9.2 7 12.5 8.2 9.2 9.4 8 13 6.8 9.4 3.5 8.2 6.8 7z"/><path d="m14 12 .6 1.6 1.6.6-1.6.6L14 16.4l-.6-1.6-1.6-.6 1.6-.6z"/>', 16),
+  link: svg('<path d="M8.6 11.4a3 3 0 0 0 4.2 0l2.2-2.2a3 3 0 0 0-4.2-4.2l-.9.9M11.4 8.6a3 3 0 0 0-4.2 0L5 10.8A3 3 0 0 0 9.2 15l.9-.9"/>', 16),
+  up: svg('<path d="M10 15.5v-11m0 0-4 4m4-4 4 4"/>', 18),
+  down: svg('<path d="M10 4.5v11m0 0-4-4m4 4 4-4"/>', 18),
+  hide: svg('<path d="M2.2 10S5 4.8 10 4.8 17.8 10 17.8 10 15 15.2 10 15.2 2.2 10 2.2 10Z"/><circle cx="10" cy="10" r="2.4"/><path d="m3.5 3.5 13 13"/>', 18),
+};
 const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', '<svg aria-hidden="true" fill="currentColor" width="18" height="18" ');
+// Colour schemes as the editor shows them: "Aa" on the scheme's background with its two button colours.
+const schemeLook = { light: ['#ffffff', '#0e1018', '#0e1018'], cobalt: ['#2433f0', '#ffffff', '#ffffff'], sand: ['#efe4d3', '#3b2a1a', '#3b2a1a'], ink: ['#0e1018', '#ffffff', '#2433f0'] } as const;
+const groups = [
+  { title: t.groups.header, rows: [{ id: 'announcement' as Id, icon: icon.section }, { name: t.static.header, icon: icon.header }] },
+  { title: t.groups.template, rows: [{ id: 'hero' as Id, icon: icon.section }, { id: 'products' as Id, icon: icon.section }, { id: 'reviews' as Id, icon: icon.section }], add: true },
+  { title: t.groups.footer, rows: [{ name: t.static.footer, icon: icon.footer }] },
+];
 ---
 
 <section id="editor" aria-labelledby="editor-title" class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-36 md:px-10">
@@ -159,116 +200,172 @@ const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', 
   </div>
 
   <div data-editor class="ed mt-10" role="group" aria-label={t.label}>
-    <!-- Top bar: the editor's own controls. -->
+    <!-- Top bar, as in the Shopify theme editor. The left rail, theme switcher and "…" menu are drawn, not wired. -->
     <div class="ed-bar">
-      <span class="flex min-w-0 items-center gap-2.5">
-        <span class="text-[#5e8e3e]" set:html={shopifyLogo} />
-        <b class="truncate text-[14px]">{t.themeEditor}</b>
-        <span class="hidden rounded-full bg-[#e3f1df] px-2 py-0.5 text-[11px] font-semibold text-[#2f6b21] sm:inline">{t.live}</span>
+      <span class="ed-bar-side">
+        <span class="ed-icon max-md:!hidden" aria-hidden="true" set:html={icon.exit} />
+        <span class="ed-divider max-md:!hidden" aria-hidden="true"></span>
+        <span class="ed-icon is-on" aria-hidden="true" set:html={icon.sections} />
+        <span class="ed-icon max-sm:!hidden" aria-hidden="true" set:html={icon.gear} />
+        <span class="ed-icon max-sm:!hidden" aria-hidden="true" set:html={icon.apps} />
       </span>
-      <span class="ed-switch">
-        <button type="button" data-tab="preview" aria-pressed="true">{t.preview}</button>
-        <button type="button" data-tab="code" aria-pressed="false">{t.code}</button>
+      <span class="ed-bar-mid" aria-hidden="true">
+        <span class="flex items-center gap-2"><span class="text-[#616161]" set:html={icon.theme} />Horizon<span class="ed-badge-on">{t.active}</span></span>
+        <span class="hidden items-center gap-2 lg:flex"><span class="text-[#616161]" set:html={icon.home} />{t.template}</span>
       </span>
-      <span class="ed-switch max-md:!hidden">
-        <button type="button" data-device="desktop" aria-pressed="true" aria-label={t.desktop}>
-          <svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3.5" width="16" height="10.5" rx="1.5" /><path d="M7 17h6M10 14v3" /></svg>
-        </button>
-        <button type="button" data-device="mobile" aria-pressed="false" aria-label={t.mobile}>
-          <svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.5" y="2" width="9" height="16" rx="2" /><path d="M9 15.5h2" /></svg>
-        </button>
+      <span class="ed-bar-side justify-end">
+        <span class="ed-icon is-on max-lg:!hidden" aria-hidden="true" set:html={icon.select} />
+        <button type="button" class="ed-icon max-md:!hidden" data-device aria-pressed="false" aria-label={t.mobile} title={t.mobile} set:html={icon.mobile} />
+        <button type="button" class="ed-icon" data-code-toggle aria-pressed="false" aria-label={t.editCode} title={t.editCode} set:html={icon.code} />
+        <span class="ed-undo">
+          <button type="button" data-undo disabled aria-label={t.undo} title={t.undo} set:html={icon.undo} />
+          <button type="button" data-redo disabled aria-label={t.redo} title={t.redo} set:html={icon.redo} />
+        </span>
+        <span class="ed-icon ed-more max-sm:!hidden" aria-hidden="true" set:html={icon.dots} />
+        <button type="button" class="ed-save" data-save disabled data-label={t.save} data-done={t.saved}>{t.save}</button>
       </span>
-      <button type="button" data-save class="ed-save" data-label={t.save} data-done={t.saved}>{t.save}</button>
     </div>
 
     <div class="ed-body">
-      <!-- Sidebar: the sections of the page and the settings of the one picked. -->
       <div class="ed-side">
-        <p class="ed-caption">{t.sections}</p>
-        <ul class="ed-list">
+        <!-- The page's sections, grouped as the editor groups them. -->
+        <div class="ed-card">
+          <p class="ed-card-title">{t.template}</p>
           {
-            ids.map((id) => (
-              <li class="ed-row">
-                <button type="button" class="ed-pick" data-pick={id} aria-pressed={id === 'hero' ? 'true' : 'false'}>
-                  <span class="ed-grip" aria-hidden="true" />
-                  {t.names[id]}
-                </button>
-                <button type="button" class="ed-eye" data-eye={id} aria-pressed="false" aria-label={`${t.hide}: ${t.names[id]}`} set:html={eye} />
-              </li>
+            groups.map((group) => (
+              <div class="ed-group">
+                <p class="ed-group-title">{group.title}</p>
+                <ul class="ed-tree" data-tree={group.add ? 'template' : undefined}>
+                  {group.rows.map((row) =>
+                    'id' in row && row.id ? (
+                      <li class="ed-node" data-node={row.id}>
+                        <button type="button" class="ed-pick" data-pick={row.id} aria-pressed={row.id === 'hero' ? 'true' : 'false'}>
+                          <span class="ed-chev" set:html={icon.chevron} />
+                          <span class="ed-grip" set:html={icon.grip} />
+                          <span class="ed-node-icon" set:html={row.icon} />
+                          <span class="truncate">{t.names[row.id]}</span>
+                        </button>
+                        <button type="button" class="ed-eye" data-eye={row.id} aria-pressed="false" aria-label={`${t.hide}: ${t.names[row.id]}`}>
+                          <span class="ed-eye-on" set:html={icon.eye} />
+                          <span class="ed-eye-off" set:html={icon.eyeOff} />
+                        </button>
+                      </li>
+                    ) : (
+                      <li class="ed-node is-static" aria-hidden="true">
+                        <span class="ed-pick">
+                          <span class="ed-chev" set:html={icon.chevron} />
+                          <span class="ed-node-icon" set:html={row.icon} />
+                          <span class="truncate">{'name' in row ? row.name : ''}</span>
+                        </span>
+                      </li>
+                    ),
+                  )}
+                </ul>
+                {group.add && (
+                  <span class="ed-add" aria-hidden="true">
+                    <span set:html={icon.plus} />
+                    {t.addSection}
+                  </span>
+                )}
+              </div>
             ))
           }
-        </ul>
+        </div>
 
-        <div class="ed-settings">
-          <fieldset data-panel="announcement" hidden>
-            <legend>{t.names.announcement}</legend>
-            <label class="ed-field">
-              <span>{t.settings.text}</span>
-              <input type="text" class="ed-input" data-bind="announcement.text" value={s.announcement} maxlength="60" />
-            </label>
-          </fieldset>
-
-          <fieldset data-panel="hero">
-            <legend>{t.names.hero}</legend>
-            <label class="ed-field">
-              <span>{t.settings.heading}</span>
-              <input type="text" class="ed-input" data-bind="hero.heading" data-demo-heading={s.demoHeading} value={s.heading} maxlength="40" />
-            </label>
-            <label class="ed-field">
-              <span>{t.settings.button}</span>
-              <input type="text" class="ed-input" data-bind="hero.button" value={s.button} maxlength="24" />
-            </label>
-            <fieldset class="ed-field">
-              <legend>{t.settings.scheme}</legend>
-              <span class="ed-swatches">
-                {
-                  schemes.map((scheme, i) => (
-                    <label class="ed-swatch" data-swatch={scheme}>
-                      <input type="radio" name="hero-scheme" value={scheme} data-bind="hero.scheme" checked={scheme === 'cobalt'} />
-                      <span class="sr-only">{t.schemes[i]}</span>
+        <!-- Settings of the section picked. -->
+        <div class="ed-card ed-settings">
+          {
+            ids.map((id) => (
+              <fieldset data-panel={id} hidden={id !== 'hero'}>
+                <legend class="ed-panel-head">
+                  <span class="text-[#616161]" set:html={icon.section} />
+                  <span class="flex-1 truncate">{t.names[id]}</span>
+                </legend>
+                <div class="ed-fields">
+                  {id === 'announcement' && (
+                    <label class="ed-field">
+                      <span class="ed-label">{t.settings.text}<span set:html={icon.source} /></span>
+                      <input type="text" class="ed-input" data-bind="announcement.text" value={s.announcement} maxlength="60" />
                     </label>
-                  ))
-                }
-              </span>
-            </fieldset>
-            <fieldset class="ed-field">
-              <legend>{t.settings.align}</legend>
-              <span class="ed-segment">
-                <label><input type="radio" name="hero-align" value="left" data-bind="hero.align" checked /><span>{t.settings.left}</span></label>
-                <label><input type="radio" name="hero-align" value="center" data-bind="hero.align" /><span>{t.settings.center}</span></label>
-              </span>
-            </fieldset>
-          </fieldset>
-
-          <fieldset data-panel="products" hidden>
-            <legend>{t.names.products}</legend>
-            <label class="ed-field">
-              <span>{t.settings.heading}</span>
-              <input type="text" class="ed-input" data-bind="products.heading" value={s.products} maxlength="40" />
-            </label>
-            <label class="ed-field">
-              <span class="flex justify-between">{t.settings.columns}<output data-columns>4</output></span>
-              <input type="range" class="ed-range" min="2" max="4" step="1" value="4" data-bind="products.columns" />
-            </label>
-            <label class="ed-toggle"><input type="checkbox" data-bind="products.prices" checked /><span>{t.settings.prices}</span></label>
-            <label class="ed-toggle"><input type="checkbox" data-bind="products.sale" checked /><span>{t.settings.sale}</span></label>
-          </fieldset>
-
-          <fieldset data-panel="reviews" hidden>
-            <legend>{t.names.reviews}</legend>
-            <label class="ed-field">
-              <span>{t.settings.heading}</span>
-              <input type="text" class="ed-input" data-bind="reviews.heading" value={s.reviews} maxlength="40" />
-            </label>
-            <label class="ed-toggle"><input type="checkbox" data-bind="reviews.rating" checked /><span>{t.settings.rating}</span></label>
-          </fieldset>
+                  )}
+                  {id === 'hero' && (
+                    <>
+                      <label class="ed-field">
+                        <span class="ed-label">{t.settings.heading}<span set:html={icon.source} /></span>
+                        <span class="ed-rich">
+                          <span class="ed-rich-bar" aria-hidden="true">
+                            <span set:html={icon.spark} />
+                            <b>B</b>
+                            <i>I</i>
+                            <span set:html={icon.link} />
+                          </span>
+                          <input type="text" class="ed-input" data-bind="hero.heading" data-demo-heading={s.demoHeading} value={s.heading} maxlength="40" />
+                        </span>
+                      </label>
+                      <label class="ed-field">
+                        <span class="ed-label">{t.settings.button}<span set:html={icon.source} /></span>
+                        <input type="text" class="ed-input" data-bind="hero.button" value={s.button} maxlength="24" />
+                      </label>
+                      <fieldset class="ed-inline">
+                        <legend class="ed-label">{t.settings.scheme}</legend>
+                        <span class="ed-schemes">
+                          {schemes.map((scheme, i) => (
+                            <label class="ed-scheme" style={`--bg:${schemeLook[scheme][0]};--fg:${schemeLook[scheme][1]};--btn:${schemeLook[scheme][2]}`}>
+                              <input type="radio" name="hero-scheme" value={scheme} data-bind="hero.scheme" checked={scheme === 'cobalt'} />
+                              <span aria-hidden="true">Aa</span>
+                              <i aria-hidden="true" />
+                              <span class="sr-only">{t.schemes[i]}</span>
+                            </label>
+                          ))}
+                        </span>
+                      </fieldset>
+                      <fieldset class="ed-inline">
+                        <legend class="ed-label">{t.settings.align}</legend>
+                        <span class="ed-segment">
+                          <label><input type="radio" name="hero-align" value="left" data-bind="hero.align" checked /><span>{t.settings.left}</span></label>
+                          <label><input type="radio" name="hero-align" value="center" data-bind="hero.align" /><span>{t.settings.center}</span></label>
+                        </span>
+                      </fieldset>
+                    </>
+                  )}
+                  {id === 'products' && (
+                    <>
+                      <label class="ed-field">
+                        <span class="ed-label">{t.settings.heading}<span set:html={icon.source} /></span>
+                        <input type="text" class="ed-input" data-bind="products.heading" value={s.products} maxlength="40" />
+                      </label>
+                      <label class="ed-inline">
+                        <span class="ed-label">{t.settings.columns}</span>
+                        <span class="ed-range-row">
+                          <input type="range" class="ed-range" min="2" max="4" step="1" value="4" data-bind="products.columns" />
+                          <output class="ed-number" data-columns>4</output>
+                        </span>
+                      </label>
+                      <label class="ed-check"><input type="checkbox" data-bind="products.prices" checked /><span>{t.settings.prices}</span></label>
+                      <label class="ed-check"><input type="checkbox" data-bind="products.sale" checked /><span>{t.settings.sale}</span></label>
+                    </>
+                  )}
+                  {id === 'reviews' && (
+                    <>
+                      <label class="ed-field">
+                        <span class="ed-label">{t.settings.heading}<span set:html={icon.source} /></span>
+                        <input type="text" class="ed-input" data-bind="reviews.heading" value={s.reviews} maxlength="40" />
+                      </label>
+                      <label class="ed-check"><input type="checkbox" data-bind="reviews.rating" checked /><span>{t.settings.rating}</span></label>
+                    </>
+                  )}
+                </div>
+              </fieldset>
+            ))
+          }
         </div>
       </div>
 
       <!-- The store the settings change (a mirror of the inputs, so hidden from assistive tech), and the code. -->
       <div class="ed-canvas" data-view="preview" data-device="desktop">
         <div class="ed-store" aria-hidden="true">
-          <div class="ed-sec ed-announce" data-sec="announcement" data-name={t.names.announcement}>
+          <div class="ed-sec ed-announce" data-sec="announcement">
+            <span class="ed-tab"><span set:html={icon.section} />{t.names.announcement}</span>
             <p data-out="announcement.text">{s.announcement}</p>
           </div>
           <div class="ed-header">
@@ -276,47 +373,62 @@ const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', 
             <span class="ed-nav"><i></i><i></i><i></i><i></i></span>
             <span class="flex items-center gap-2"><i class="block size-3.5 rounded-full border-2 border-ink"></i><i class="block size-3.5 rounded-[4px] border-2 border-ink"></i></span>
           </div>
-          <div class="ed-sec ed-hero is-selected" data-sec="hero" data-name={t.names.hero} data-scheme="cobalt" data-align="left">
-            <div class="ed-hero-copy">
-              <p class="ed-hero-title" data-out="hero.heading">{s.heading}</p>
-              <p class="ed-hero-text">{s.text}</p>
-              <span class="ed-btn" data-out="hero.button">{s.button}</span>
+          <div class="ed-template" data-store-template>
+            <div class="ed-sec ed-hero is-selected" data-sec="hero" data-scheme="cobalt" data-align="left">
+              <span class="ed-tab"><span set:html={icon.section} />{t.names.hero}</span>
+              <div class="ed-hero-copy">
+                <p class="ed-hero-title" data-out="hero.heading">{s.heading}</p>
+                <p class="ed-hero-text">{s.text}</p>
+                <span class="ed-btn" data-out="hero.button">{s.button}</span>
+              </div>
+              <div class="ed-hero-art"><i></i><i></i><i></i></div>
             </div>
-            <div class="ed-hero-art"><i></i><i></i><i></i></div>
+            <div class="ed-sec ed-products" data-sec="products" style="--cols:4">
+              <span class="ed-tab"><span set:html={icon.section} />{t.names.products}</span>
+              <p class="ed-h2" data-out="products.heading">{s.products}</p>
+              <ul class="ed-grid">
+                {
+                  products.map((p) => (
+                    <li>
+                      <span class="ed-img" style={`--art:${p.art}`}>
+                        {p.was && <span class="ed-badge" data-out="products.sale">{s.sale}</span>}
+                      </span>
+                      <span class="ed-name">{p.name}</span>
+                      <span class="ed-price" data-out="products.prices">
+                        {p.now} {p.was && <s>{p.was}</s>}
+                      </span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="ed-sec ed-reviews" data-sec="reviews">
+              <span class="ed-tab"><span set:html={icon.section} />{t.names.reviews}</span>
+              <p class="ed-h2" data-out="reviews.heading">{s.reviews}</p>
+              <figure>
+                <span class="ed-stars" data-out="reviews.rating">★★★★★</span>
+                <blockquote>“{s.quote}”</blockquote>
+                <figcaption>{s.author}</figcaption>
+              </figure>
+            </div>
           </div>
-          <div class="ed-sec ed-products" data-sec="products" data-name={t.names.products} style="--cols:4">
-            <p class="ed-h2" data-out="products.heading">{s.products}</p>
-            <ul class="ed-grid">
-              {
-                products.map((p) => (
-                  <li>
-                    <span class="ed-img" style={`--art:${p.art}`}>
-                      {p.was && <span class="ed-badge" data-out="products.sale">{s.sale}</span>}
-                    </span>
-                    <span class="ed-name">{p.name}</span>
-                    <span class="ed-price" data-out="products.prices">
-                      {p.now} {p.was && <s>{p.was}</s>}
-                    </span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="ed-sec ed-reviews" data-sec="reviews" data-name={t.names.reviews}>
-            <p class="ed-h2" data-out="reviews.heading">{s.reviews}</p>
-            <figure>
-              <span class="ed-stars" data-out="reviews.rating">★★★★★</span>
-              <blockquote>“{s.quote}”</blockquote>
-              <figcaption>{s.author}</figcaption>
-            </figure>
-          </div>
+          <div class="ed-footer"><span class="font-head text-[11px] font-bold tracking-[0.2em]">YOUR STORE</span><span class="ed-nav"><i></i><i></i><i></i></span></div>
+        </div>
+        <!-- The toolbar the editor floats under the section picked: move it, or hide it. -->
+        <div class="ed-float" data-float>
+          <button type="button" data-move="-1" aria-label={t.moveUp} title={t.moveUp} set:html={icon.up} />
+          <button type="button" data-move="1" aria-label={t.moveDown} title={t.moveDown} set:html={icon.down} />
+          <button type="button" data-float-hide aria-label={t.hide} title={t.hide} set:html={icon.hide} />
         </div>
       </div>
       <div class="ed-code" data-view="code" hidden>
         {
           ids.map((id) => (
             <div data-code={id} hidden={id !== 'hero'}>
-              <p class="ed-file">sections/{files[id]}.liquid</p>
+              <p class="ed-file">
+                <span class="text-[#5e8e3e]" set:html={shopifyLogo} />
+                sections/{files[id]}.liquid
+              </p>
               <pre class="ed-lines">{source[id].map(([key, line], i) => <span class="ed-line" data-line={key || undefined}><i>{i + 1}</i><span set:html={highlight(line)} /></span>)}</pre>
             </div>
           ))
@@ -327,111 +439,233 @@ const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', 
 </section>
 
 <script>
+  type Value = string | boolean | string[];
   const root = document.querySelector<HTMLElement>('[data-editor]');
   if (root) {
-    const qa = <T extends Element = HTMLElement>(sel: string) => [...root.querySelectorAll<T>(sel)] as T[];
-    const sec = (id: string) => root.querySelector<HTMLElement>(`[data-sec="${id}"]`);
+    const qa = <T extends Element = HTMLElement>(sel: string, from: ParentNode = root) => [...from.querySelectorAll<T>(sel)] as T[];
+    const one = <T extends Element = HTMLElement>(sel: string) => root.querySelector<T>(sel);
+    const sec = (id: string) => one(`[data-sec="${id}"]`);
+    const template = one('[data-store-template]');
+    const tree = one('[data-tree="template"]');
+    const canvas = one('.ed-canvas');
+    const float = one('[data-float]');
+    const save = one<HTMLButtonElement>('[data-save]');
+    const undoBtn = one<HTMLButtonElement>('[data-undo]');
+    const redoBtn = one<HTMLButtonElement>('[data-redo]');
+    let picked = 'hero';
+
+    // The editor's state, one value per setting; the store and the controls are drawn from it.
+    const model: Record<string, Value> = {};
+    for (const input of qa<HTMLInputElement>('[data-bind]')) {
+      const key = input.dataset.bind!;
+      if (input.type === 'checkbox') model[key] = input.checked;
+      else if (input.type === 'radio') {
+        if (input.checked) model[key] = input.value;
+      } else model[key] = input.value;
+    }
+    model.order = qa('[data-sec]', template ?? root).map((s) => s.dataset.sec!);
+
+    const placeFloat = () => {
+      const target = sec(picked);
+      if (!float || !canvas || !target || target.hidden || !canvas.contains(target)) {
+        float?.classList.remove('is-on');
+        return;
+      }
+      const c = canvas.getBoundingClientRect();
+      const r = target.getBoundingClientRect();
+      float.style.transform = `translate(${(r.left + r.width / 2 - c.left).toFixed(0)}px, ${(r.bottom - c.top - 22).toFixed(0)}px) translateX(-50%)`;
+      float.classList.add('is-on');
+      const order = model.order as string[];
+      const i = order.indexOf(picked);
+      for (const b of qa<HTMLButtonElement>('[data-move]', float)) {
+        const to = i + Number(b.dataset.move);
+        b.disabled = i < 0 || to < 0 || to >= order.length;
+      }
+    };
+
+    /** Draw one setting into the store and its controls. */
+    const render = (key: string) => {
+      const value = model[key];
+      if (key === 'order' && template && tree) {
+        for (const id of value as string[]) {
+          const s = sec(id);
+          const node = tree.querySelector(`[data-node="${id}"]`);
+          if (s) template.append(s);
+          if (node) tree.append(node);
+        }
+      } else if (key.startsWith('hidden.')) {
+        const id = key.slice(7);
+        const s = sec(id);
+        if (s) s.hidden = Boolean(value);
+        one(`[data-node="${id}"]`)?.classList.toggle('is-hidden', Boolean(value));
+        one(`[data-eye="${id}"]`)?.setAttribute('aria-pressed', String(Boolean(value)));
+      } else {
+        const [id, setting] = key.split('.') as [string, string];
+        const target = sec(id);
+        for (const input of qa<HTMLInputElement>(`[data-bind="${key}"]`)) {
+          if (input.type === 'checkbox') input.checked = Boolean(value);
+          else if (input.type === 'radio') input.checked = input.value === value;
+          else if (input.value !== value) input.value = String(value);
+        }
+        if (setting === 'scheme' || setting === 'align') {
+          if (target) target.dataset[setting] = String(value);
+        } else if (setting === 'columns') {
+          target?.style.setProperty('--cols', String(value));
+          const out = one('[data-columns]');
+          if (out) out.textContent = String(value);
+        } else if (typeof value === 'boolean') {
+          for (const out of qa(`[data-out="${key}"]`)) out.hidden = !value;
+        } else {
+          for (const out of qa(`[data-out="${key}"]`)) out.textContent = String(value) || ' ';
+        }
+        for (const line of qa('.ed-line.is-hot')) line.classList.remove('is-hot');
+        for (const line of qa(`[data-code="${id}"] [data-line="${key}"]`)) line.classList.add('is-hot');
+      }
+      requestAnimationFrame(placeFloat);
+    };
+
+    // Undo and redo, and a Save that lights up once something has changed, as in the editor.
+    const done: { key: string; from: Value; to: Value }[] = [];
+    const undone: typeof done = [];
+    let dirty = false;
+    const sync = () => {
+      if (undoBtn) undoBtn.disabled = !done.length;
+      if (redoBtn) redoBtn.disabled = !undone.length;
+      if (save && !save.classList.contains('is-done')) save.disabled = !dirty;
+    };
+    const commit = (key: string, to: Value, from: Value = model[key] ?? '') => {
+      if (JSON.stringify(from) === JSON.stringify(to)) return;
+      model[key] = to;
+      render(key);
+      done.push({ key, from, to });
+      undone.length = 0;
+      dirty = true;
+      sync();
+    };
+    const step = (from: typeof done, to: typeof done, back: boolean) => {
+      const change = from.pop();
+      if (!change) return;
+      model[change.key] = back ? change.from : change.to;
+      render(change.key);
+      to.push(change);
+      dirty = true;
+      sync();
+    };
+    undoBtn?.addEventListener('click', () => step(done, undone, true));
+    redoBtn?.addEventListener('click', () => step(undone, done, false));
+    save?.addEventListener('click', () => {
+      save.textContent = `${save.dataset.done} ✓`;
+      save.classList.add('is-done');
+      dirty = false;
+      window.setTimeout(() => {
+        save.textContent = save.dataset.label ?? '';
+        save.classList.remove('is-done');
+        sync();
+      }, 1600);
+    });
+
     const pick = (id: string) => {
+      picked = id;
       for (const b of qa('[data-pick]')) b.setAttribute('aria-pressed', String(b.dataset.pick === id));
       for (const p of qa('[data-panel]')) p.hidden = p.dataset.panel !== id;
       for (const s of qa('[data-sec]')) s.classList.toggle('is-selected', s.dataset.sec === id);
       for (const c of qa('[data-code]')) c.hidden = c.dataset.code !== id;
+      requestAnimationFrame(placeFloat);
     };
-
-    /** Mirror one input into the store, and light up its lines in the code. */
-    const apply = (input: HTMLInputElement) => {
-      const key = input.dataset.bind!;
-      const [id, setting] = key.split('.') as [string, string];
-      const target = sec(id);
-      if (input.type === 'text') for (const out of qa(`[data-out="${key}"]`)) out.textContent = input.value || ' ';
-      else if (input.type === 'checkbox') for (const out of qa(`[data-out="${key}"]`)) out.hidden = !input.checked;
-      else if (input.type === 'radio' && input.checked && target) target.dataset[setting] = input.value;
-      else if (input.type === 'range' && target) {
-        target.style.setProperty('--cols', input.value);
-        const out = root.querySelector('[data-columns]');
-        if (out) out.textContent = input.value;
-      }
-      for (const line of qa('.ed-line.is-hot')) line.classList.remove('is-hot');
-      for (const line of qa(`[data-code="${id}"] [data-line="${key}"]`)) line.classList.add('is-hot');
-    };
-
     for (const b of qa('[data-pick]')) b.addEventListener('click', () => pick(b.dataset.pick!));
     for (const s of qa('[data-sec]')) s.addEventListener('click', () => pick(s.dataset.sec!));
+
+    // Text fields draw as you type and count as one change when you leave them.
     for (const input of qa<HTMLInputElement>('[data-bind]')) {
-      input.addEventListener('input', () => apply(input));
-      input.addEventListener('change', () => apply(input));
+      const key = input.dataset.bind!;
+      if (input.type === 'text') {
+        let start = String(model[key]);
+        input.addEventListener('focus', () => (start = String(model[key])));
+        input.addEventListener('input', () => {
+          model[key] = input.value;
+          render(key);
+        });
+        input.addEventListener('change', () => commit(key, input.value, start));
+      } else if (input.type === 'range') {
+        let start = String(model[key]);
+        input.addEventListener('pointerdown', () => (start = String(model[key])));
+        input.addEventListener('input', () => {
+          model[key] = input.value;
+          render(key);
+        });
+        input.addEventListener('change', () => commit(key, input.value, start));
+      } else {
+        input.addEventListener('change', () => commit(key, input.type === 'checkbox' ? input.checked : input.value));
+      }
     }
-    for (const b of qa('[data-eye]')) {
+    const toggleHidden = (id: string) => commit(`hidden.${id}`, !model[`hidden.${id}`], Boolean(model[`hidden.${id}`]));
+    for (const b of qa('[data-eye]')) b.addEventListener('click', () => toggleHidden(b.dataset.eye!));
+    one('[data-float-hide]')?.addEventListener('click', () => toggleHidden(picked));
+    for (const b of qa('[data-move]')) {
       b.addEventListener('click', () => {
-        const hidden = b.getAttribute('aria-pressed') !== 'true';
-        b.setAttribute('aria-pressed', String(hidden));
-        const target = sec(b.dataset.eye!);
-        if (target) target.hidden = hidden;
+        const order = [...(model.order as string[])];
+        const i = order.indexOf(picked);
+        const to = i + Number(b.dataset.move);
+        if (i < 0 || to < 0 || to >= order.length) return;
+        [order[i], order[to]] = [order[to]!, order[i]!];
+        commit('order', order);
       });
     }
-    for (const b of qa('[data-tab]')) {
-      b.addEventListener('click', () => {
-        for (const other of qa('[data-tab]')) other.setAttribute('aria-pressed', String(other === b));
-        for (const view of qa('[data-view]')) view.hidden = view.dataset.view !== b.dataset.tab;
-      });
-    }
-    const canvas = root.querySelector<HTMLElement>('.ed-canvas');
-    for (const b of qa('button[data-device]')) {
-      b.addEventListener('click', () => {
-        for (const other of qa('button[data-device]')) other.setAttribute('aria-pressed', String(other === b));
-        if (canvas) canvas.dataset.device = b.dataset.device;
-      });
-    }
-    const save = root.querySelector<HTMLButtonElement>('[data-save]');
-    let saved = 0;
-    save?.addEventListener('click', () => {
-      save.textContent = `${save.dataset.done} ✓`;
-      save.classList.add('is-done');
-      window.clearTimeout(saved);
-      saved = window.setTimeout(() => {
-        save.textContent = save.dataset.label ?? '';
-        save.classList.remove('is-done');
-      }, 1600);
+    one('[data-device]')?.addEventListener('click', (e) => {
+      const b = e.currentTarget as HTMLElement;
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      if (canvas) canvas.dataset.device = on ? 'mobile' : 'desktop';
+      window.setTimeout(placeFloat, 520);
     });
+    one('[data-code-toggle]')?.addEventListener('click', (e) => {
+      const b = e.currentTarget as HTMLElement;
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      for (const view of qa('[data-view]')) view.hidden = view.dataset.view !== (on ? 'code' : 'preview');
+    });
+    if (canvas) new ResizeObserver(() => placeFloat()).observe(canvas);
 
     // A short demo the first time the editor is in view, stopped by the first real touch, key or click.
     let touched = false;
-    const stop = (e: Event) => {
-      if (e.isTrusted) touched = true;
-    };
-    for (const type of ['pointerdown', 'keydown', 'wheel']) root.addEventListener(type, stop, { passive: true });
+    for (const type of ['pointerdown', 'keydown', 'wheel']) {
+      root.addEventListener(type, (e) => {
+        if (e.isTrusted) touched = true;
+      }, { passive: true });
+    }
     const wait = (ms: number) => new Promise((r) => window.setTimeout(r, ms));
     const demo = async () => {
-      const heading = root.querySelector<HTMLInputElement>('[data-bind="hero.heading"]');
-      const sand = root.querySelector<HTMLInputElement>('[data-bind="hero.scheme"][value="sand"]');
-      const columns = root.querySelector<HTMLInputElement>('[data-bind="products.columns"]');
-      if (!heading || !sand || !columns) return;
+      const heading = one<HTMLInputElement>('[data-bind="hero.heading"]');
+      if (!heading) return;
+      const start = String(model['hero.heading']);
       const next = heading.dataset.demoHeading ?? '';
       heading.classList.add('is-demo');
       await wait(700);
-      while (heading.value && !touched) {
-        heading.value = heading.value.slice(0, -1);
-        apply(heading);
+      let text = start;
+      while (text && !touched) {
+        text = text.slice(0, -1);
+        model['hero.heading'] = text;
+        render('hero.heading');
         await wait(45);
       }
       for (const ch of next) {
         if (touched) break;
-        heading.value += ch;
-        apply(heading);
+        text += ch;
+        model['hero.heading'] = text;
+        render('hero.heading');
         await wait(85);
       }
       heading.classList.remove('is-demo');
-      await wait(600);
+      if (!touched) commit('hero.heading', text, start);
+      await wait(700);
       if (touched) return;
-      sand.checked = true;
-      apply(sand);
+      commit('hero.scheme', 'sand');
       await wait(1100);
       if (touched) return;
       pick('products');
       await wait(700);
       if (touched) return;
-      columns.value = '3';
-      apply(columns);
+      commit('products.columns', '3');
     };
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced && 'IntersectionObserver' in window) {
@@ -445,5 +679,6 @@ const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', 
       );
       io.observe(root);
     }
+    requestAnimationFrame(placeFloat);
   }
 </script>

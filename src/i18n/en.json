@@ -673,14 +673,9 @@
     "hint": "Try it: type a heading, pick a colour, hide a section.",
     "label": "A working copy of the Shopify theme editor",
     "themeEditor": "Theme editor",
-    "live": "Live",
-    "preview": "Preview",
-    "code": "Code",
-    "desktop": "Desktop view",
-    "mobile": "Mobile view",
+    "mobile": "Mobile preview",
     "save": "Save",
     "saved": "Saved",
-    "sections": "Sections",
     "hide": "Hide",
     "names": {
       "announcement": "Announcement bar",
@@ -724,6 +719,23 @@
       "quote": "Arrived in two days and looks even better in person.",
       "author": "Anna, Berlin",
       "demoHeading": "Autumn sale"
-    }
+    },
+    "active": "Active",
+    "template": "Home page",
+    "groups": {
+      "header": "Header",
+      "template": "Template",
+      "footer": "Footer"
+    },
+    "static": {
+      "header": "Header",
+      "footer": "Footer"
+    },
+    "addSection": "Add section",
+    "editCode": "Edit code",
+    "undo": "Undo",
+    "redo": "Redo",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
   }
 }
