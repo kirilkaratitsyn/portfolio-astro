@@ -110,6 +110,8 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 
 /* Project catalog (views/ProjectsView.astro): the place in the grid (data-span) and the card size (data-size) are set
    by the filters, so a filtered list keeps the same rhythm of wide and narrow cards. */
+/* Cards below the first screen are laid out only as they come near (they hold their place meanwhile). */
+.pf-item:nth-child(n + 4) { content-visibility: auto; contain-intrinsic-size: auto 520px; }
 .pc-frame { width: 80%; }
 .pc-phone { width: 25%; }
 @media (min-width: 1024px) {

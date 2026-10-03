@@ -1,5 +1,6 @@
 // Generates small WebP thumbnails of the store screenshots for the work lists:
 //   public/source/thumbs/<name>-480.webp  (desktop 2880x2000 -> 480 wide, rows)
+//   public/source/thumbs/<name>-640.webp  (desktop -> 640 wide, cards on phones)
 //   public/source/thumbs/<name>-1000.webp (desktop -> 1000 wide, feature and case pages)
 //   public/source/thumbs/<name>-m200.webp / -m400.webp / -m800.webp (mobile 1179x1977 -> 200 / 400 / 800 wide)
 //   src/lib/phone-tints.json: the color of the top of each mobile screenshot, which tints the status bar of the
@@ -27,7 +28,7 @@ const out = path.join(root, 'thumbs');
 fs.mkdirSync(out, { recursive: true });
 
 const jobs = [
-  ['desktop', '-desktop', [['480', 480, 74], ['1000', 1000, 78]]],
+  ['desktop', '-desktop', [['480', 480, 74], ['640', 640, 76], ['1000', 1000, 78]]],
   ['mobile', '-mobile', [['m200', 200, 74], ['m400', 400, 78], ['m800', 800, 76]]],
 ];
 

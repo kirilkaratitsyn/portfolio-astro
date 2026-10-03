@@ -89,7 +89,8 @@ const seo = {
                 accent={work.accent}
                 size={sizeOf[span]}
                 external={!toCase}
-                priority={index < 3}
+                priority={index < 2}
+                lead={index === 0}
               />
             </li>
           );

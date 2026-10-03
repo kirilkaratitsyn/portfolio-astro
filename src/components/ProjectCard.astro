@@ -4,7 +4,7 @@
 // grows as a whole (the screenshot inside it stays put). Motion lives in scripts/motion.ts (data-tilt / data-depth).
 // Case studies stay on the site (→), other projects open the store in a new tab (↗).
 import Phone from './Phone.astro';
-import { thumb } from '../lib/thumbs';
+import { shotSrcset, thumb } from '../lib/thumbs';
 
 interface Props {
   href: string;
@@ -17,15 +17,24 @@ interface Props {
   external?: boolean;
   /** Cards in the first screen load right away (they are what the page is measured on). */
   priority?: boolean;
+  /** The first card: its screenshot is the largest paint, so it alone gets high fetch priority (on a phone the
+   *  others would only take bandwidth from it). */
+  lead?: boolean;
   /** The project's accent color (works.yaml, scripts/make-accents.mjs). */
   accent?: string;
   /** How wide the card is in the desktop grid: the device frame and the phone scale with it. */
   size?: 'sm' | 'md' | 'lg';
 }
 
-const { href, title, description, image, mobileImage, domain, external = false, priority = false, accent = '#2433f0', size = 'sm' } = Astro.props;
+const { href, title, description, image, mobileImage, domain, external = false, priority = false, lead = false, accent = '#2433f0', size = 'sm' } = Astro.props;
 // The frame and phone widths follow data-size (styles/global.css .pc-frame, .pc-phone), so the filters on /projects
 // can resize a card when it moves to another place in the grid.
+// How wide the screenshot shows: 80% of the card, the card one, two or six-column wide (lg: 2, 3 or 4 of 6 columns).
+const shotSizes = {
+  sm: '(min-width: 1024px) 26vw, (min-width: 768px) 38vw, 80vw',
+  md: '(min-width: 1024px) 32vw, (min-width: 768px) 38vw, 80vw',
+  lg: '(min-width: 1024px) 34vw, (min-width: 768px) 38vw, 80vw',
+};
 ---
 
 <a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="group flex h-full flex-col" data-card data-size={size}>
@@ -37,7 +46,7 @@ const { href, title, description, image, mobileImage, domain, external = false, 
         <span class="flex h-[18px] items-center gap-1.5 bg-[#f1f2f6] px-3" aria-hidden="true">
           <i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i><i class="block size-[7px] rounded-full bg-[#cfd2de]"></i>
         </span>
-        <img src={thumb(image, '1000')} alt="" width="1000" height="694" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
+        <img src={thumb(image, '1000')} srcset={shotSrcset(image)} sizes={shotSizes[size]} alt="" width="1000" height="694" loading={priority ? 'eager' : 'lazy'} fetchpriority={lead ? 'high' : undefined} decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
       </span>
     </span>
     {

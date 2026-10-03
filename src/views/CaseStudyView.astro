@@ -6,7 +6,7 @@ import Contact from '../sections/Contact.astro';
 import Pebble from '../components/Pebble.astro';
 import CaseStudyMoreProjects from '../components/CaseStudyMoreProjects.astro';
 import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
-import { thumb } from '../lib/thumbs';
+import { shotSrcset, thumb } from '../lib/thumbs';
 import type { CaseStudy } from '../lib/content';
 
 interface Props {
@@ -72,7 +72,7 @@ const sections = [
         <div class="flex h-[22px] items-center gap-1.5 bg-[#f1f2f6] px-3" aria-hidden="true">
           <i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i>
         </div>
-        <img src={thumb(caseStudy.image, '1000')} alt={caseStudy.title} width="1000" height="694" decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
+        <img src={thumb(caseStudy.image, '1000')} srcset={shotSrcset(caseStudy.image)} sizes="(min-width: 768px) 60vw, 80vw" alt={caseStudy.title} width="1000" height="694" decoding="async" class="block aspect-[560/346] w-full object-cover object-top" />
       </div>
       {
         caseStudy.mobileImage && (
