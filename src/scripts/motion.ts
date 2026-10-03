@@ -28,6 +28,7 @@ export function init() {
   marquee();
   feature();
   process();
+  anatomy();
   about();
   reviews(lenis);
   contact();
@@ -418,6 +419,49 @@ function process() {
     const tl = gsap.timeline({ scrollTrigger: { trigger: step, start: 'top 88%', once: true } });
     if (pebble) tl.from(pebble, { scale: 0.15, yPercent: 40, duration: 1.4, ease: 'elastic.out(1, 0.55)' }, 0);
     tl.from(text, { y: 34, opacity: 0, duration: 1, ease: EXPO, stagger: 0.12 }, 0.12);
+  });
+}
+
+/**
+ * Store anatomy: while the tall wrapper scrolls past its sticky stage, the stack of layers opens up and tilts into
+ * an isometric view, then each layer in turn comes into focus together with its item in the list. No pin, so the
+ * scroll positions of everything below stay as they are.
+ */
+function anatomy() {
+  const wrap = qs('[data-anatomy]');
+  const stack = wrap ? qs('[data-anatomy-stack]', wrap) : null;
+  if (!wrap || !stack) return;
+  const layers = qsa('[data-layer]', wrap);
+  const items = qsa('[data-anatomy-item]', wrap);
+  const open = gsap.parseEase('power2.inOut');
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 768px)', () => {
+    let active = -1;
+    const focus = (i: number) => {
+      if (i === active) return;
+      active = i;
+      layers.forEach((layer, k) => {
+        layer.classList.toggle('is-on', k === i);
+        // Layers above the one in focus fade so it can be seen whole.
+        layer.classList.toggle('is-past', k < i);
+      });
+      items.forEach((item, k) => item.classList.toggle('is-on', k === i));
+    };
+    const apply = (p: number) => {
+      const o = open(Math.min(1, p / 0.24));
+      stack.style.setProperty('--gap', `${(8 + o * 84).toFixed(1)}px`);
+      stack.style.setProperty('--tilt', (0.6 + o * 0.4).toFixed(3));
+      focus(Math.min(layers.length - 1, Math.floor((Math.max(0, p - 0.2) / 0.78) * layers.length)));
+    };
+    const st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom', onUpdate: (self) => apply(self.progress), onRefresh: (self) => apply(self.progress) });
+    apply(st.progress);
+    return () => {
+      st.kill();
+      stack.style.removeProperty('--gap');
+      stack.style.removeProperty('--tilt');
+      layers.forEach((l) => l.classList.remove('is-on', 'is-past'));
+      items.forEach((l) => l.classList.remove('is-on'));
+    };
   });
 }
 

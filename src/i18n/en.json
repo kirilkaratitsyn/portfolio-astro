@@ -552,5 +552,53 @@
     "open": "Open store ↗",
     "home": "My base: Germany",
     "hint": "Drag to spin · click a pin to open the store"
+  },
+  "anatomy": {
+    "eyebrow": "Under the hood",
+    "title": "Anatomy of a store I build",
+    "lead": "Every Shopify store has the same five layers. Here is what I build in each of them, set up so your team can run it afterwards.",
+    "layers": [
+      {
+        "title": "Header & navigation",
+        "text": "Mega menus, search and a country and language switcher, built as theme sections your team edits without code.",
+        "tags": [
+          "Liquid sections",
+          "Shopify Markets"
+        ]
+      },
+      {
+        "title": "Pages from the design",
+        "text": "A Figma file or prototype turned into sections and blocks, matched to the design, with every text and image editable in the theme editor.",
+        "tags": [
+          "Online Store 2.0",
+          "Figma to theme"
+        ]
+      },
+      {
+        "title": "Product logic",
+        "text": "Variant pickers, bundles, subscriptions and wholesale prices, driven by metafields and metaobjects instead of hard-coded templates.",
+        "tags": [
+          "Metafields",
+          "Metaobjects"
+        ]
+      },
+      {
+        "title": "Cart & order value",
+        "text": "Cart drawers with free-shipping progress, upsells and gifts that add themselves once the cart reaches the threshold.",
+        "tags": [
+          "Cart drawer",
+          "Gift logic"
+        ]
+      },
+      {
+        "title": "Markets & data",
+        "text": "Prices and languages per country, and the events Klaviyo, search and analytics need, wired in and checked.",
+        "tags": [
+          "Markets",
+          "Klaviyo",
+          "Tracking"
+        ]
+      }
+    ]
   }
 }

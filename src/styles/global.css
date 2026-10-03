@@ -91,6 +91,45 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .globe-tip em { margin-top: 4px; font-style: normal; font-weight: 600; color: #aab2ff; }
 .globe-tip:not([href]) em { display: none; }
 
+/* Store anatomy (sections/Anatomy.astro). Without the motion class the stack is open and every item expanded;
+   with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy() sets --gap, --tilt and .is-on. */
+.anat-scene { position: absolute; inset: 0; perspective: 2400px; display: grid; place-items: center; }
+.anat-stack {
+  --gap: 70px; --tilt: 1; --n: 5; position: relative; width: min(500px, 80%); aspect-ratio: 16 / 10; transform-style: preserve-3d;
+  transform: translateY(calc(var(--gap) * 1.6)) rotateX(calc(56deg * var(--tilt))) rotateZ(calc(-38deg * var(--tilt)));
+}
+.anat-layer {
+  /* The first layer (the header) is the top of the stack. */
+  position: absolute; inset: 0; transform: translateZ(calc((var(--n) - 1 - var(--i)) * var(--gap) + var(--lift, 0px)));
+  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.anat-layer.is-on { --lift: 26px; }
+.anat-card {
+  height: 100%; padding: 16px; border-radius: 18px; background: #fff; overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 30px 60px -20px rgba(14, 16, 40, 0.28);
+  outline: 2px solid transparent; outline-offset: 4px; transition: outline-color 0.4s ease;
+}
+.anat-badge {
+  position: absolute; left: -14px; top: -14px; z-index: 2; display: grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 999px; background: #0e1018; color: #fff; font: 700 12px/1 'e-UkraineHead', 'Onest', sans-serif;
+  transition: background-color 0.4s ease;
+}
+.anat-layer.is-on .anat-card { outline-color: #2433f0; }
+.anat-layer.is-on .anat-badge { background: #2433f0; }
+.anat-item .anat-num { transition: color 0.3s ease; }
+.anat-item.is-on .anat-num { color: #2433f0; }
+@media (min-width: 768px) {
+  .motion .anat { height: 360vh; }
+  .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
+  .motion .anat-stack { --gap: 8px; }
+  .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }
+  .motion .anat-layer.is-past { opacity: 0.14; --lift: 40px; }
+  .motion .anat-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
+  .motion .anat-detail > * { overflow: hidden; }
+  .motion .anat-item.is-on .anat-detail { grid-template-rows: 1fr; }
+}
+@media (max-width: 767px) { .anat-sticky { height: auto; } }
+
 /* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes lift { from { transform: translateY(26px); } to { transform: none; } }
