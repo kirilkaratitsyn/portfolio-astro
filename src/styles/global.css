@@ -137,7 +137,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .pf-field.is-set .pf-select { background: #0e1018; border-color: #0e1018; }
 .pf-select option { color: #0e1018; background: #fff; }
 
-/* Store anatomy (sections/Anatomy.astro). Without the motion class the stack is open and every item expanded;
+/* How I work, as a stack of layers (sections/Anatomy.astro). Without the motion class the stack is open and every item expanded;
    with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy() sets --gap, --tilt and .is-on. */
 .anat-scene { position: absolute; inset: 0; perspective: 2400px; display: grid; place-items: center; }
 .anat-stack {
@@ -145,7 +145,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   transform: translateY(calc(var(--gap) * 1.6)) rotateX(calc(56deg * var(--tilt))) rotateZ(calc(-38deg * var(--tilt)));
 }
 .anat-layer {
-  /* The first layer (the header) is the top of the stack. */
+  /* The first layer (the kick-off call) is the top of the stack. */
   position: absolute; inset: 0; transform: translateZ(calc((var(--n) - 1 - var(--i)) * var(--gap) + var(--lift, 0px)));
   transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -165,7 +165,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .anat-item .anat-num { transition: color 0.3s ease; }
 .anat-item.is-on .anat-num { color: #2433f0; }
 @media (min-width: 768px) {
-  .motion .anat { height: 360vh; }
+  .motion .anat { height: 420vh; }
   .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
   .motion .anat-stack { --gap: 8px; }
   .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }

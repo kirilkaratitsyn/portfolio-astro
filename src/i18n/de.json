@@ -158,29 +158,6 @@
       }
     ]
   },
-  "process": {
-    "eyebrow": "Ablauf",
-    "title": "So arbeiten wir zusammen",
-    "subtitle": "Ein einfacher, planbarer Ablauf von der ersten Nachricht bis zum Launch und darüber hinaus.",
-    "steps": [
-      {
-        "title": "Aufgabe beschreiben",
-        "text": "Store-Link und eine kurze Beschreibung."
-      },
-      {
-        "title": "Klare Einschätzung erhalten",
-        "text": "Umfang, Zeitplan und Preis, bevor die Arbeit beginnt."
-      },
-      {
-        "title": "Umsetzung im Vorschau-Theme",
-        "text": "Der Live-Store verkauft weiter, während Sie prüfen."
-      },
-      {
-        "title": "Launch und Support",
-        "text": "Ich veröffentliche nach Ihrer Freigabe und bleibe für Fixes da."
-      }
-    ]
-  },
   "works": {
     "eyebrow": "Projektkatalog",
     "title": "Weitere Arbeiten",
@@ -578,49 +555,57 @@
     "zoomOut": "Globus verkleinern"
   },
   "anatomy": {
-    "eyebrow": "Unter der Haube",
-    "title": "Anatomie eines Shops, den ich baue",
-    "lead": "Jeder Shopify-Shop hat dieselben fünf Ebenen. Das baue ich in jeder davon, so eingerichtet, dass Ihr Team danach selbst damit arbeitet.",
+    "eyebrow": "So arbeite ich",
+    "title": "Vom ersten Call zum ersten Verkauf",
+    "lead": "Jedes Projekt durchläuft dieselben sechs Schritte. Sie wissen immer, was gerade passiert, und Ihr Live-Shop verkauft weiter, während ich baue.",
     "layers": [
       {
-        "title": "Header & Navigation",
-        "text": "Mega-Menüs, Suche und ein Länder- und Sprachumschalter, als Theme-Sections gebaut, die Ihr Team ohne Code pflegt.",
+        "title": "Kick-off-Call",
+        "text": "Wir treffen uns per Google Meet und gehen Shop, Ziele und Termin durch. Umfang, Zeitplan und Preis bekommen Sie, bevor die Arbeit beginnt.",
+        "tags": [
+          "Google Meet",
+          "Festes Angebot"
+        ]
+      },
+      {
+        "title": "Briefing & Design",
+        "text": "Alles kommt in ein schriftliches Briefing: Seiten, Funktionen, Apps und Inhalte. Dann ein Figma-Design oder Ihr eigenes Design, Ihr Prototyp oder Ihre Lovable-Datei, abgeglichen mit dem Briefing.",
+        "tags": [
+          "Briefing",
+          "Figma"
+        ]
+      },
+      {
+        "title": "Umsetzung in Shopify-Sections",
+        "text": "Ich baue auf einem Vorschau-Theme, Ihr Live-Shop verkauft also weiter. Jede Section hat Einstellungen, die Ihr Team später ohne Code ändert.",
         "tags": [
           "Liquid-Sections",
-          "Shopify Markets"
+          "Vorschau-Theme"
         ]
       },
       {
-        "title": "Seiten aus dem Design",
-        "text": "Eine Figma-Datei oder ein Prototyp als Sections und Blocks umgesetzt, nah am Design, jeder Text und jedes Bild im Theme-Editor änderbar.",
+        "title": "QA-Tests",
+        "text": "Jede Seite auf echten Smartphones und Browsern, Warenkorb und Checkout, Ladezeit und Übersetzungen, geprüft am Briefing, bevor Sie es sehen.",
         "tags": [
-          "Online Store 2.0",
-          "Figma zu Theme"
+          "Mobil & Safari",
+          "Checkout"
         ]
       },
       {
-        "title": "Produktlogik",
-        "text": "Variantenauswahl, Bundles, Abos und Großhandelspreise, gesteuert über Metafelder und Metaobjekte statt fest verdrahteter Templates.",
+        "title": "SEO-Setup",
+        "text": "Titel, Meta-Daten, strukturierte Daten, Weiterleitungen von den alten URLs und eine saubere Sitemap, damit der neue Shop den Traffic des alten behält.",
         "tags": [
-          "Metafelder",
-          "Metaobjekte"
+          "Weiterleitungen",
+          "Strukturierte Daten"
         ]
       },
       {
-        "title": "Warenkorb & Bestellwert",
-        "text": "Warenkorb-Drawer mit Fortschritt bis zum Gratisversand, Upsells und Geschenke, die sich selbst hinzufügen, sobald der Warenkorb die Schwelle erreicht.",
+        "title": "Analytics & Launch",
+        "text": "GA4-, Meta- und Klaviyo-Events eingebunden und getestet. Ich veröffentliche nach Ihrer Freigabe und bleibe für Fixes und nächste Schritte da.",
         "tags": [
-          "Warenkorb-Drawer",
-          "Geschenk-Logik"
-        ]
-      },
-      {
-        "title": "Markets & Daten",
-        "text": "Preise und Sprachen pro Land und die Events, die Klaviyo, Suche und Analytics brauchen, eingebunden und geprüft.",
-        "tags": [
-          "Markets",
+          "GA4",
           "Klaviyo",
-          "Tracking"
+          "Support"
         ]
       }
     ]

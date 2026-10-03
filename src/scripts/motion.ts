@@ -27,7 +27,6 @@ export function init() {
   stats();
   marquee();
   feature();
-  process();
   anatomy();
   code();
   about();
@@ -394,7 +393,7 @@ function marquee() {
   });
 }
 
-/* ---------------------------------------------------------------- feature, process, reviews, contact */
+/* ---------------------------------------------------------------- feature, how I work, reviews, contact */
 
 function feature() {
   const section = qs('[data-feature]');
@@ -410,23 +409,9 @@ function feature() {
   pebbles.forEach((p, i) => tl.fromTo(p, { yPercent: i ? -60 : 70 }, { yPercent: i ? 30 : -35 }, 0));
 }
 
-function process() {
-  const list = qs('[data-process]');
-  if (!list) return;
-  const line = qs('[data-process-line]', list);
-  if (line) gsap.fromTo(line, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', ease: 'none', scrollTrigger: { trigger: list, start: 'top 72%', end: 'bottom 62%', scrub: 0.6 } });
-  qsa('[data-step]', list).forEach((step) => {
-    const pebble = qs('.pebble', step);
-    const text = qsa('h3, p', step);
-    const tl = gsap.timeline({ scrollTrigger: { trigger: step, start: 'top 88%', once: true } });
-    if (pebble) tl.from(pebble, { scale: 0.15, yPercent: 40, duration: 1.4, ease: 'elastic.out(1, 0.55)' }, 0);
-    tl.from(text, { y: 34, opacity: 0, duration: 1, ease: EXPO, stagger: 0.12 }, 0.12);
-  });
-}
-
 /**
- * Store anatomy: while the tall wrapper scrolls past its sticky stage, the stack of layers opens up and tilts into
- * an isometric view, then each layer in turn comes into focus together with its item in the list. No pin, so the
+ * How I work (the anatomy section): while the tall wrapper scrolls past its sticky stage, the stack of layers opens up
+ * and tilts into an isometric view, then each step in turn comes into focus together with its item in the list. No pin, so the
  * scroll positions of everything below stay as they are.
  */
 function anatomy() {
@@ -451,7 +436,9 @@ function anatomy() {
     };
     const apply = (p: number) => {
       const o = open(Math.min(1, p / 0.24));
-      stack.style.setProperty('--gap', `${(8 + o * 84).toFixed(1)}px`);
+      // Opened, the stack is about 370px tall whatever the number of layers.
+      const gap = 370 / Math.max(1, layers.length - 1) - 8;
+      stack.style.setProperty('--gap', `${(8 + o * gap).toFixed(1)}px`);
       stack.style.setProperty('--tilt', (0.6 + o * 0.4).toFixed(3));
       focus(Math.min(layers.length - 1, Math.floor((Math.max(0, p - 0.2) / 0.78) * layers.length)));
     };

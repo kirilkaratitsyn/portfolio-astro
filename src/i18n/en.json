@@ -158,29 +158,6 @@
       }
     ]
   },
-  "process": {
-    "eyebrow": "Process",
-    "title": "How we work together",
-    "subtitle": "A simple, predictable process from the first message to launch and beyond.",
-    "steps": [
-      {
-        "title": "Tell me about the task",
-        "text": "Store link plus a short description."
-      },
-      {
-        "title": "Get a clear estimate",
-        "text": "Scope, timeline and price before any work starts."
-      },
-      {
-        "title": "Build on a preview theme",
-        "text": "Your live store keeps selling while you review."
-      },
-      {
-        "title": "Launch and support",
-        "text": "I publish after your approval and stay on for fixes."
-      }
-    ]
-  },
   "works": {
     "eyebrow": "Project Catalog",
     "title": "More Work",
@@ -578,49 +555,57 @@
     "zoomOut": "Zoom out of the globe"
   },
   "anatomy": {
-    "eyebrow": "Under the hood",
-    "title": "Anatomy of a store I build",
-    "lead": "Every Shopify store has the same five layers. Here is what I build in each of them, set up so your team can run it afterwards.",
+    "eyebrow": "How I work",
+    "title": "From first call to first sale",
+    "lead": "Every project goes through the same six steps. You always know what's happening, and your live store keeps selling while I build.",
     "layers": [
       {
-        "title": "Header & navigation",
-        "text": "Mega menus, search and a country and language switcher, built as theme sections your team edits without code.",
+        "title": "Kick-off call",
+        "text": "We meet on Google Meet and go through your store, goals and deadline. You get a clear scope, timeline and price before any work starts.",
+        "tags": [
+          "Google Meet",
+          "Fixed estimate"
+        ]
+      },
+      {
+        "title": "Brief & design",
+        "text": "Everything goes into a written brief: pages, features, apps and content. Then a Figma design, or your own design, prototype or Lovable file, checked against the brief.",
+        "tags": [
+          "Brief",
+          "Figma"
+        ]
+      },
+      {
+        "title": "Build in Shopify sections",
+        "text": "I build on a preview theme, so the live store keeps selling. Every section comes with settings your team can change later without code.",
         "tags": [
           "Liquid sections",
-          "Shopify Markets"
+          "Preview theme"
         ]
       },
       {
-        "title": "Pages from the design",
-        "text": "A Figma file or prototype turned into sections and blocks, matched to the design, with every text and image editable in the theme editor.",
+        "title": "QA testing",
+        "text": "Every page on real phones and browsers, cart and checkout, speed and translations, checked against the brief before you see it.",
         "tags": [
-          "Online Store 2.0",
-          "Figma to theme"
+          "Mobile & Safari",
+          "Checkout"
         ]
       },
       {
-        "title": "Product logic",
-        "text": "Variant pickers, bundles, subscriptions and wholesale prices, driven by metafields and metaobjects instead of hard-coded templates.",
+        "title": "SEO setup",
+        "text": "Titles, meta, structured data, redirects from the old URLs and a clean sitemap, so the new store keeps the traffic of the old one.",
         "tags": [
-          "Metafields",
-          "Metaobjects"
+          "Redirects",
+          "Structured data"
         ]
       },
       {
-        "title": "Cart & order value",
-        "text": "Cart drawers with free-shipping progress, upsells and gifts that add themselves once the cart reaches the threshold.",
+        "title": "Analytics & launch",
+        "text": "GA4, Meta and Klaviyo events wired in and tested. I publish after your approval and stay on for fixes and next steps.",
         "tags": [
-          "Cart drawer",
-          "Gift logic"
-        ]
-      },
-      {
-        "title": "Markets & data",
-        "text": "Prices and languages per country, and the events Klaviyo, search and analytics need, wired in and checked.",
-        "tags": [
-          "Markets",
+          "GA4",
           "Klaviyo",
-          "Tracking"
+          "Support"
         ]
       }
     ]
