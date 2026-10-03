@@ -557,6 +557,9 @@ class GlobeView extends View {
   private pinned = false;
   /** The pointer is on the tooltip (on its way to a link in it): keep it open. */
   private overTip = false;
+  // The globe turns by itself only after 10 s without a touch, drag, zoom or country pick, and eases into it.
+  private touchedAt = -Infinity;
+  private spin = 0.085;
   private grabbedAt: { x: number; y: number; yaw: number; pitch: number; t: number } | null = null;
   private moved = 0;
   private pointer: Pointer | null = null;
@@ -603,8 +606,14 @@ class GlobeView extends View {
     const controls = host.parentElement?.querySelector<HTMLElement>('[data-globe-zoom]');
     this.zoomIn = controls?.querySelector<HTMLElement>('[data-zoom="in"]') ?? null;
     this.zoomOut = controls?.querySelector<HTMLElement>('[data-zoom="out"]') ?? null;
-    this.zoomIn?.addEventListener('click', () => this.setZoom(this.zoomTo * 1.6));
-    this.zoomOut?.addEventListener('click', () => this.setZoom(this.zoomTo / 1.6));
+    this.zoomIn?.addEventListener('click', () => {
+      this.hold();
+      this.setZoom(this.zoomTo * 1.6);
+    });
+    this.zoomOut?.addEventListener('click', () => {
+      this.hold();
+      this.setZoom(this.zoomTo / 1.6);
+    });
     host.style.touchAction = 'pan-y';
     host.addEventListener('wheel', this.onWheel, { passive: false });
     for (const type of ['touchstart', 'touchmove', 'touchend', 'touchcancel']) host.addEventListener(type, this.onTouch as EventListener, { passive: false });
@@ -619,6 +628,11 @@ class GlobeView extends View {
         this.applyZoom();
       }
     }).observe(host);
+  }
+
+  /** Someone is using the globe: hold the spin for the next 10 s. */
+  private hold() {
+    this.touchedAt = performance.now();
   }
 
   showLive() {
@@ -692,6 +706,7 @@ class GlobeView extends View {
 
   /** Show the stores of one country and turn it to the front (yaw = −lng, pitch = lat); empty shows them all again. */
   private setCountry(code: string) {
+    this.hold();
     this.country = code || null;
     this.globe.setCountry(this.country);
     this.hovered = null;
@@ -719,6 +734,7 @@ class GlobeView extends View {
   private onWheel = (e: WheelEvent) => {
     if (!e.ctrlKey && !e.metaKey) return;
     e.preventDefault();
+    this.hold();
     // Lenis leaves ctrl wheels (trackpad pinch) alone by itself; this keeps it from scrolling on ⌘ + wheel.
     (e as WheelEvent & { lenisStopPropagation?: boolean }).lenisStopPropagation = true;
     if (this.gestureFrom) return;
@@ -729,6 +745,7 @@ class GlobeView extends View {
   /** Safari reports a trackpad pinch as gesture events (on iOS next to the touches, which win). */
   private onGesture = (e: Event) => {
     e.preventDefault();
+    this.hold();
     const g = e as Event & { scale?: number; clientX?: number; clientY?: number };
     if (e.type === 'gestureend') this.gestureFrom = 0;
     else if (e.type === 'gesturestart') this.gestureFrom = this.zoomTo;
@@ -736,6 +753,7 @@ class GlobeView extends View {
   };
 
   private onTouch = (e: TouchEvent) => {
+    this.hold();
     const list = e.touches;
     const a = list[0];
     const b = list[1];
@@ -855,18 +873,24 @@ class GlobeView extends View {
     }
     const link = (url: string, body: string, cls = '') =>
       `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" tabindex="-1"${cls ? ` class="${cls}"` : ''}>${body}</a>`;
+    // The store's own icon, or its initial on cobalt when it has none.
+    const badge = (store: GlobeMarker) =>
+      store.l ? `<img src="${escapeHtml(store.l)}" alt="" width="32" height="32">` : `<i>${escapeHtml(store.t.slice(0, 1))}</i>`;
     if (target.home) {
       this.tip.innerHTML = `<b>${this.labels.home}</b>`;
     } else if (target.pin) {
       const pin = target.pin;
       if (pin.stores.length === 1) {
-        this.tip.innerHTML = link(pin.u, `<b>${escapeHtml(pin.t)}</b><span>${escapeHtml(pin.c)}, ${escapeHtml(pin.n)}</span><em>${this.labels.open}</em>`);
+        this.tip.innerHTML = link(
+          pin.u,
+          `<span class="globe-tip-head">${badge(pin)}<span><b>${escapeHtml(pin.t)}</b><span>${escapeHtml(pin.c)}, ${escapeHtml(pin.n)}</span></span></span><em>${this.labels.open}</em>`,
+        );
       } else {
         // Several stores in one place: the place, then a link per store.
         const cities = [...new Set(pin.stores.map((s) => s.c))].join(' · ');
         this.tip.innerHTML =
           `<span>${escapeHtml(cities)}, ${escapeHtml(pin.n)}</span>` +
-          pin.stores.map((s) => link(s.u, `<b>${escapeHtml(s.t)}</b><em>↗</em>`, 'globe-tip-row')).join('');
+          pin.stores.map((s) => link(s.u, `${badge(s)}<b>${escapeHtml(s.t)}</b><em>↗</em>`, 'globe-tip-row')).join('');
       }
     }
     this.tip.classList.add('is-on');
@@ -906,6 +930,7 @@ class GlobeView extends View {
   }
 
   grab(p: Pointer) {
+    this.hold();
     this.anchor = null;
     this.turnTo = null;
     this.grabbedAt = { x: p.x, y: p.y, yaw: this.yaw, pitch: this.pitch, t: performance.now() };
@@ -916,6 +941,7 @@ class GlobeView extends View {
   drag(p: Pointer) {
     const g = this.grabbedAt;
     if (!g) return;
+    this.hold();
     const dx = p.x - g.x;
     const dy = p.y - g.y;
     this.moved = Math.max(this.moved, Math.hypot(dx, dy));
@@ -932,6 +958,7 @@ class GlobeView extends View {
   release(p: Pointer) {
     const g = this.grabbedAt;
     this.grabbedAt = null;
+    this.hold();
     if (!g) return;
     if (this.moved < 5) {
       // A tap shows the tooltip first (poke); only a mouse click opens the store right away.
@@ -952,6 +979,7 @@ class GlobeView extends View {
 
   /** A tap on a phone shows the tooltip of the pin under the finger (the tooltip itself is the link). */
   poke(x: number, y: number) {
+    this.hold();
     const found = this.pinAt(x, y, 26);
     this.hovered = found ? { pin: found.pin, home: found.home } : null;
     this.pinned = Boolean(found);
@@ -967,11 +995,12 @@ class GlobeView extends View {
     }
     if (!this.grabbedAt) {
       this.vyaw *= Math.exp(-1.8 * dt);
-      // Turn slowly by itself, and hold still while a store is shown or the globe is zoomed in on a place.
-      const free = this.zoomTo === 1 && !this.country;
-      const auto = this.hovered || !free ? 0 : 0.085;
-      this.yaw += (this.vyaw + auto) * dt;
-      if (free) this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-1.2 * dt));
+      // Turn slowly by itself, but hold still while a store is shown, the globe is zoomed in or showing one country,
+      // and for 10 s after any touch; then ease back into the spin.
+      const free = this.zoomTo === 1 && !this.country && performance.now() - this.touchedAt > 10000;
+      this.spin += ((free && !this.hovered ? 0.085 : 0) - this.spin) * (1 - Math.exp(-(free ? 0.8 : 6) * dt));
+      this.yaw += (this.vyaw + this.spin) * dt;
+      if (free) this.pitch += (0.62 - this.pitch) * (1 - Math.exp(-0.8 * dt));
       const turn = this.turnTo;
       if (turn) {
         const k = 1 - Math.exp(-3.2 * dt);

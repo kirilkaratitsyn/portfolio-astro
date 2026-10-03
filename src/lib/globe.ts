@@ -27,7 +27,7 @@ const INK = '#0e1018';
 
 /** A pin as the page hands it over (data-markers on the globe host). */
 export interface GlobeMarker {
-  /** store title, city, localized country name, country code, store url, latitude, longitude */
+  /** store title, city, localized country name, country code, store url, latitude, longitude, store icon */
   t: string;
   c: string;
   n: string;
@@ -35,6 +35,7 @@ export interface GlobeMarker {
   u: string;
   la: number;
   lo: number;
+  l?: string;
 }
 
 /** A pin: one store, or several that sit in the same place (one city, or two towns next to each other). */

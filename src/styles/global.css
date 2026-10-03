@@ -95,6 +95,14 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .globe-tip .globe-tip-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 6px; }
 .globe-tip .globe-tip-row em { margin: 0; }
 .globe-tip .globe-tip-row:hover b { color: #aab2ff; }
+.globe-tip .globe-tip-head { display: flex; align-items: center; gap: 10px; color: #fff; }
+.globe-tip .globe-tip-head > span { display: grid; gap: 2px; color: #fff; }
+.globe-tip .globe-tip-head > span > span { color: rgba(255, 255, 255, 0.7); }
+.globe-tip img, .globe-tip i { display: grid; width: 32px; height: 32px; flex: none; place-items: center; border-radius: 9px; background: #fff; object-fit: cover; }
+.globe-tip i { background: #2433f0; font: 700 15px/1 'e-UkraineHead', 'Onest', sans-serif; font-style: normal; color: #fff; }
+.globe-tip .globe-tip-row { justify-content: flex-start; align-items: center; gap: 10px; }
+.globe-tip .globe-tip-row img, .globe-tip .globe-tip-row i { width: 26px; height: 26px; border-radius: 7px; }
+.globe-tip .globe-tip-row em { margin-left: auto; }
 .globe-zoom { position: absolute; right: 3%; bottom: 3%; z-index: 4; display: flex; flex-direction: column; gap: 8px; }
 .globe-zoom[hidden] { display: none; }
 .globe-zoom button {
@@ -119,11 +127,12 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 }
 /* Country pills next to the globe (sections/Globe.astro): pressed, the pill turns ink and shows a cross to clear it. */
 .globe-pill {
-  display: inline-flex; align-items: center; border-radius: 999px; background: #fff; padding: 8px 16px; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #fff; padding: 6px 16px 6px 6px; font-size: 14px;
   font-weight: 500; transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 .globe-pill:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(8, 12, 40, 0.08); }
 .globe-pill[aria-pressed='true'] { background: #0e1018; color: #fff; }
+.globe-flag { width: 22px; height: 22px; flex: none; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(14, 16, 40, 0.08); }
 .globe-pill[aria-pressed='true']::after { content: '×'; margin-left: 8px; font-size: 16px; line-height: 1; opacity: 0.7; }
 
 [data-project-filters][hidden] { display: none; }
