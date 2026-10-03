@@ -14,7 +14,7 @@ const t = useTranslations(locale);
 const f = t.works.filters;
 const works = await getWorks(locale);
 // Desktop grid of six columns: rows of 4+2, 2+2+2, 2+4 and 3+3 keep the page from looking like a spreadsheet.
-// The filters below (inline script) deal the same pattern out again to the cards that stay visible.
+// With a filter on (inline script below) the cards left are all one size, three to a row, so they compare easily.
 const spans = [4, 2, 2, 2, 2, 2, 4, 3, 3] as const;
 const sizeOf = { 2: 'sm', 3: 'md', 4: 'lg' } as const;
 const caseBySlug = new Map((await getCaseStudies(locale)).map((item) => [item.slug, item]));
@@ -113,6 +113,7 @@ const seo = {
         const apply = (save) => {
           const want = {};
           for (const key of keys) want[key] = form.elements[key].value;
+          const filtered = keys.some((key) => want[key]);
           let shown = 0;
           for (const li of items) {
             const ok =
@@ -121,7 +122,7 @@ const seo = {
               (!want.country || li.dataset.country === want.country);
             li.hidden = !ok;
             if (!ok) continue;
-            const span = spans[shown % spans.length];
+            const span = filtered ? 2 : spans[shown % spans.length];
             li.dataset.span = String(span);
             li.firstElementChild.dataset.size = sizes[span];
             shown++;
