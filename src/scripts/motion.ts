@@ -35,6 +35,7 @@ export function init() {
   footer();
   magnets();
   cards();
+  stackGrid();
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
@@ -649,6 +650,36 @@ function footer() {
     });
   });
   wrap.addEventListener('pointerleave', () => lift.forEach((to) => to(0)));
+}
+
+/** Stack wall: the grid lines and the tile under the cursor light up around it. */
+function stackGrid() {
+  const grid = qs('[data-stack-grid]');
+  if (!grid || !fine) return;
+  const tiles = qsa('.stack-tile', grid);
+  let frame = 0;
+  let x = 0;
+  let y = 0;
+  const paint = () => {
+    frame = 0;
+    const g = grid.getBoundingClientRect();
+    grid.style.setProperty('--gx', `${x - g.left}px`);
+    grid.style.setProperty('--gy', `${y - g.top}px`);
+    for (const tile of tiles) {
+      const r = tile.getBoundingClientRect();
+      tile.style.setProperty('--mx', `${x - r.left}px`);
+      tile.style.setProperty('--my', `${y - r.top}px`);
+    }
+  };
+  grid.addEventListener('pointermove', (e) => {
+    x = e.clientX;
+    y = e.clientY;
+    if (!frame) frame = requestAnimationFrame(paint);
+  });
+  grid.addEventListener('pointerleave', () => {
+    grid.style.removeProperty('--gx');
+    grid.style.removeProperty('--gy');
+  });
 }
 
 /** Project cards: the panel tilts toward the cursor, the devices float at their own depth, a light follows the pointer. */

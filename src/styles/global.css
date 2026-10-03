@@ -130,6 +130,19 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 }
 @media (max-width: 767px) { .anat-sticky { height: auto; } }
 
+/* Stack wall (sections/Stack.astro): the grid's 1px gaps are its lines; the cursor lights them (--gx/--gy on the
+   grid) and the tile under it (--mx/--my per tile), set by scripts/motion.ts stackGrid(). */
+.stack-grid { background: radial-gradient(520px circle at var(--gx, -999px) var(--gy, -999px), rgba(36, 51, 240, 0.7), #d9dce8 45%); }
+.stack-tile { position: relative; padding: 26px 26px 28px; background: #edeff6; overflow: hidden; }
+.stack-tile::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.3s ease;
+  background: radial-gradient(320px circle at var(--mx, -999px) var(--my, -999px), rgba(36, 51, 240, 0.09), transparent 65%);
+}
+.stack-grid:hover .stack-tile::before { opacity: 1; }
+.stack-icon { display: grid; place-items: center start; height: 32px; color: #0e1018; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease; }
+.stack-icon svg { width: 30px; height: 30px; }
+.stack-tile:hover .stack-icon { color: #2433f0; transform: translateY(-4px) rotate(-6deg); }
+
 /* First screen: CSS only, runs once, and never hides content without the `motion` class (set in <head>). */
 @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
 @keyframes lift { from { transform: translateY(26px); } to { transform: none; } }

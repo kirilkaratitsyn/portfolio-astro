@@ -600,5 +600,61 @@
         ]
       }
     ]
+  },
+  "stack": {
+    "eyebrow": "Stack",
+    "title": "Werkzeuge, mit denen ich baue",
+    "lead": "Der Stack hinter den Shops oben und das Projekt, in dem jedes Werkzeug echte Arbeit geleistet hat.",
+    "themesTitle": "Themes, mit denen ich Shops gebaut habe",
+    "items": [
+      {
+        "name": "Liquid & Online Store 2.0",
+        "text": "Sections, Blocks und Schema, die Ihr Team im Theme-Editor pflegt. Jeder Shop auf dieser Seite."
+      },
+      {
+        "name": "Shopify Markets",
+        "text": "Preise, Sprachen und Storefront-Logik für 15 Märkte in zwei Sprachen (Elanora)."
+      },
+      {
+        "name": "Shopify Functions",
+        "text": "Warenkorb-Validierung, die ein Limit für die erste Bestellung auf dem Server durchsetzt (Orska Rituals)."
+      },
+      {
+        "name": "B2B auf Shopify",
+        "text": "Großhandelspreise für freigegebene Fachkunden, die Company wird bei der Freigabe angelegt (Orska Rituals)."
+      },
+      {
+        "name": "Metafelder & Metaobjekte",
+        "text": "Produktseiten, die Daten pro Produkt lesen statt fest eingetragener Texte (Orska Rituals)."
+      },
+      {
+        "name": "Klaviyo",
+        "text": "Back-in-Stock-Flow über die Klaviyo API (Elanora), Anmeldeformulare und Pop-ups (Jula Bloom)."
+      },
+      {
+        "name": "Searchspring Beacon",
+        "text": "Migration auf Beacon 2.0 mit Tracking für Suche, Kategorien und Empfehlungen (Lineargent)."
+      },
+      {
+        "name": "Cloudflare Workers",
+        "text": "Ein kleiner Worker, der die Shopify-Company anlegt, sobald ein Fachkunde freigegeben ist (Orska Rituals)."
+      },
+      {
+        "name": "JavaScript",
+        "text": "Produkt-Konfiguratoren, Geschenk-Logik und Farbauswahl ohne zusätzliche Apps (PetalJet, Elanora, HaftX)."
+      },
+      {
+        "name": "Figma & Prototypen",
+        "text": "Figma-Dateien, HTML-Prototypen und Lovable-Designs als Themes umgesetzt (Nimfa, Orska, BellaBox)."
+      },
+      {
+        "name": "Lighthouse & PageSpeed",
+        "text": "Critical CSS, leichtere Skripte und schnellere mobile Seiten (Crafts Cove Marine, PetalJet)."
+      },
+      {
+        "name": "GitHub",
+        "text": "Jedes Theme in Git, ausgeliefert über die Shopify-GitHub-Integration und Vorschau-Themes."
+      }
+    ]
   }
 }

@@ -600,5 +600,61 @@
         ]
       }
     ]
+  },
+  "stack": {
+    "eyebrow": "Stack",
+    "title": "Tools I build with",
+    "lead": "The stack behind the stores above, and the project where each tool did real work.",
+    "themesTitle": "Themes I've shipped on",
+    "items": [
+      {
+        "name": "Liquid & Online Store 2.0",
+        "text": "Sections, blocks and schema your team edits in the theme editor. Every store on this page."
+      },
+      {
+        "name": "Shopify Markets",
+        "text": "Prices, languages and storefront logic for 15 markets in two languages (Elanora)."
+      },
+      {
+        "name": "Shopify Functions",
+        "text": "Cart validation that enforces a first-order limit on the server (Orska Rituals)."
+      },
+      {
+        "name": "B2B on Shopify",
+        "text": "Wholesale prices for approved professionals, with the company created on approval (Orska Rituals)."
+      },
+      {
+        "name": "Metafields & metaobjects",
+        "text": "Product pages that read per-product data instead of hard-coded text (Orska Rituals)."
+      },
+      {
+        "name": "Klaviyo",
+        "text": "Back-in-stock flow through the Klaviyo API (Elanora), signup forms and pop-ups (Jula Bloom)."
+      },
+      {
+        "name": "Searchspring Beacon",
+        "text": "Migration to Beacon 2.0 with search, category and recommendation tracking (Lineargent)."
+      },
+      {
+        "name": "Cloudflare Workers",
+        "text": "A small worker that creates the Shopify company when a professional is approved (Orska Rituals)."
+      },
+      {
+        "name": "JavaScript",
+        "text": "Product builders, gift logic and colour pickers without extra apps (PetalJet, Elanora, HaftX)."
+      },
+      {
+        "name": "Figma & prototypes",
+        "text": "Figma files, HTML prototypes and Lovable designs turned into themes (Nimfa, Orska, BellaBox)."
+      },
+      {
+        "name": "Lighthouse & PageSpeed",
+        "text": "Critical CSS, lighter scripts and faster mobile pages (Crafts Cove Marine, PetalJet)."
+      },
+      {
+        "name": "GitHub",
+        "text": "Every theme in Git, shipped through the Shopify GitHub integration and preview themes."
+      }
+    ]
   }
 }
