@@ -1,0 +1,449 @@
+---
+// Your team edits it: a small, working copy of the Shopify theme editor. Pick a section, change its settings and the
+// store next to it follows, the way a client's team edits a store I hand over. The Code tab shows the Liquid section
+// and schema behind those settings, with the line of the setting just changed lit up. The first time the editor comes
+// into view, and only until someone touches it, it plays a short demo (a heading typed, a colour scheme picked);
+// reduced motion skips it. Without scripts the store is shown in its default state.
+import shopify from '../assets/stack/shopify.svg?raw';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale).editor;
+const s = t.store;
+const ids = ['announcement', 'hero', 'products', 'reviews'] as const;
+type Id = (typeof ids)[number];
+const price = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+const products = s.items.map((name, i) => ({ name, now: price.format([49, 29, 39, 25][i]!), was: i % 2 ? '' : price.format([65, 0, 52, 0][i]!), art: ['#d9c7b0', '#2433f0', '#e7a1b8', '#0e1018'][i]! }));
+const schemes = ['light', 'cobalt', 'sand', 'ink'] as const;
+
+// The Liquid behind each section, as [setting the line belongs to, line].
+const source: Record<Id, [string, string][]> = {
+  announcement: [
+    ['', `{%- if section.settings.text != blank -%}`],
+    ['', `  <div class="announcement">`],
+    ['announcement.text', `    {{ section.settings.text | escape }}`],
+    ['', `  </div>`],
+    ['', `{%- endif -%}`],
+    ['', ``],
+    ['', `{% schema %}`],
+    ['', `{`],
+    ['', `  "name": "Announcement bar",`],
+    ['', `  "settings": [`],
+    ['announcement.text', `    { "type": "text", "id": "text", "label": "Text",`],
+    ['announcement.text', `      "default": "Free shipping on orders over €50" }`],
+    ['', `  ],`],
+    ['', `  "presets": [{ "name": "Announcement bar" }]`],
+    ['', `}`],
+    ['', `{% endschema %}`],
+  ],
+  hero: [
+    ['hero.align', `<section class="hero hero--{{ section.settings.alignment }}`],
+    ['hero.scheme', `  color-{{ section.settings.color_scheme }}">`],
+    ['hero.heading', `  <h2>{{ section.settings.heading | escape }}</h2>`],
+    ['', `  {{ section.settings.text }}`],
+    ['', `  <a class="button" href="{{ section.settings.button_link }}">`],
+    ['hero.button', `    {{ section.settings.button_label | escape }}`],
+    ['', `  </a>`],
+    ['', `</section>`],
+    ['', ``],
+    ['', `{% schema %}`],
+    ['', `{`],
+    ['', `  "name": "Hero banner",`],
+    ['', `  "settings": [`],
+    ['hero.heading', `    { "type": "text", "id": "heading", "label": "Heading" },`],
+    ['', `    { "type": "richtext", "id": "text", "label": "Text" },`],
+    ['hero.button', `    { "type": "text", "id": "button_label", "label": "Button label" },`],
+    ['', `    { "type": "url", "id": "button_link", "label": "Button link" },`],
+    ['hero.scheme', `    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" },`],
+    ['hero.align', `    { "type": "select", "id": "alignment", "label": "Alignment",`],
+    ['hero.align', `      "options": [`],
+    ['hero.align', `        { "value": "left", "label": "Left" },`],
+    ['hero.align', `        { "value": "center", "label": "Center" }`],
+    ['hero.align', `      ], "default": "left" }`],
+    ['', `  ],`],
+    ['', `  "presets": [{ "name": "Hero banner" }]`],
+    ['', `}`],
+    ['', `{% endschema %}`],
+  ],
+  products: [
+    ['products.heading', `<h2>{{ section.settings.heading | escape }}</h2>`],
+    ['products.columns', `<ul class="grid" style="--columns: {{ section.settings.columns }}">`],
+    ['', `  {%- for product in section.settings.collection.products limit: 8 -%}`],
+    ['', `    <li>`],
+    ['', `      {%- render 'product-card', product: product,`],
+    ['products.prices', `        show_price: section.settings.show_price,`],
+    ['products.sale', `        show_badge: section.settings.show_badge -%}`],
+    ['', `    </li>`],
+    ['', `  {%- endfor -%}`],
+    ['', `</ul>`],
+    ['', ``],
+    ['', `{% schema %}`],
+    ['', `{`],
+    ['', `  "name": "Featured products",`],
+    ['', `  "settings": [`],
+    ['products.heading', `    { "type": "text", "id": "heading", "label": "Heading" },`],
+    ['', `    { "type": "collection", "id": "collection", "label": "Collection" },`],
+    ['products.columns', `    { "type": "range", "id": "columns", "label": "Products per row",`],
+    ['products.columns', `      "min": 2, "max": 4, "step": 1, "default": 4 },`],
+    ['products.prices', `    { "type": "checkbox", "id": "show_price", "label": "Show prices", "default": true },`],
+    ['products.sale', `    { "type": "checkbox", "id": "show_badge", "label": "Show sale badge", "default": true }`],
+    ['', `  ],`],
+    ['', `  "presets": [{ "name": "Featured products" }]`],
+    ['', `}`],
+    ['', `{% endschema %}`],
+  ],
+  reviews: [
+    ['reviews.heading', `<h2>{{ section.settings.heading | escape }}</h2>`],
+    ['', `{%- for block in section.blocks -%}`],
+    ['', `  <figure {{ block.shopify_attributes }}>`],
+    ['reviews.rating', `    {%- if section.settings.show_rating -%}`],
+    ['reviews.rating', `      {%- render 'stars', rating: block.settings.rating -%}`],
+    ['reviews.rating', `    {%- endif -%}`],
+    ['', `    <blockquote>{{ block.settings.quote }}</blockquote>`],
+    ['', `    <figcaption>{{ block.settings.author | escape }}</figcaption>`],
+    ['', `  </figure>`],
+    ['', `{%- endfor -%}`],
+    ['', ``],
+    ['', `{% schema %}`],
+    ['', `{`],
+    ['', `  "name": "Testimonials",`],
+    ['', `  "settings": [`],
+    ['reviews.heading', `    { "type": "text", "id": "heading", "label": "Heading" },`],
+    ['reviews.rating', `    { "type": "checkbox", "id": "show_rating", "label": "Show rating", "default": true }`],
+    ['', `  ],`],
+    ['', `  "blocks": [{ "type": "review", "name": "Review", "settings": [`],
+    ['', `    { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },`],
+    ['', `    { "type": "richtext", "id": "quote", "label": "Quote" },`],
+    ['', `    { "type": "text", "id": "author", "label": "Author" }`],
+    ['', `  ] }],`],
+    ['', `  "presets": [{ "name": "Testimonials", "blocks": [{ "type": "review" }] }]`],
+    ['', `}`],
+    ['', `{% endschema %}`],
+  ],
+};
+
+// A small highlighter for Liquid, HTML and the JSON schema.
+const escape = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const token = /(\{%-?|-?%\}|\{\{-?|-?\}\})|("[^"]*"|'[^']*')|(<\/?[a-zA-Z][\w-]*|\/?>)|\b(if|endif|for|endfor|in|render|limit|blank|schema|endschema)\b|(\|\s*[a-z_]+)|([a-z_-]+)(?==)/g;
+const kinds = ['d', 's', 't', 'k', 'f', 'a'];
+function highlight(line: string) {
+  let out = '';
+  let last = 0;
+  for (const m of line.matchAll(token)) {
+    out += escape(line.slice(last, m.index));
+    const group = m.slice(1).findIndex((g) => g !== undefined);
+    out += `<span class="c-${kinds[group]}">${escape(m[0])}</span>`;
+    last = m.index! + m[0].length;
+  }
+  return out + escape(line.slice(last)) || ' ';
+}
+const files: Record<Id, string> = { announcement: 'announcement-bar', hero: 'hero-banner', products: 'featured-products', reviews: 'testimonials' };
+const eye = '<svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1.8 10S4.8 4.5 10 4.5 18.2 10 18.2 10 15.2 15.5 10 15.5 1.8 10 1.8 10Z"/><circle cx="10" cy="10" r="2.6"/><path class="ed-eye-off" d="m3 3 14 14"/></svg>';
+const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', '<svg aria-hidden="true" fill="currentColor" width="18" height="18" ');
+---
+
+<section id="editor" aria-labelledby="editor-title" class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-36 md:px-10">
+  <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p data-reveal class="text-sm font-semibold uppercase tracking-[0.16em] text-blue">{t.eyebrow}</p>
+      <h2 id="editor-title" data-split class="mt-4 max-w-[820px] font-head text-[40px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{t.title}</h2>
+    </div>
+    <div data-reveal class="max-w-[440px]">
+      <p class="text-[17px] leading-relaxed text-mute">{t.lead}</p>
+      <p class="mt-3 flex items-center gap-2 text-[14px] font-semibold text-blue"><span aria-hidden="true">↓</span>{t.hint}</p>
+    </div>
+  </div>
+
+  <div data-editor class="ed mt-10" role="group" aria-label={t.label}>
+    <!-- Top bar: the editor's own controls. -->
+    <div class="ed-bar">
+      <span class="flex min-w-0 items-center gap-2.5">
+        <span class="text-[#5e8e3e]" set:html={shopifyLogo} />
+        <b class="truncate text-[14px]">{t.themeEditor}</b>
+        <span class="hidden rounded-full bg-[#e3f1df] px-2 py-0.5 text-[11px] font-semibold text-[#2f6b21] sm:inline">{t.live}</span>
+      </span>
+      <span class="ed-switch">
+        <button type="button" data-tab="preview" aria-pressed="true">{t.preview}</button>
+        <button type="button" data-tab="code" aria-pressed="false">{t.code}</button>
+      </span>
+      <span class="ed-switch max-md:!hidden">
+        <button type="button" data-device="desktop" aria-pressed="true" aria-label={t.desktop}>
+          <svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3.5" width="16" height="10.5" rx="1.5" /><path d="M7 17h6M10 14v3" /></svg>
+        </button>
+        <button type="button" data-device="mobile" aria-pressed="false" aria-label={t.mobile}>
+          <svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.5" y="2" width="9" height="16" rx="2" /><path d="M9 15.5h2" /></svg>
+        </button>
+      </span>
+      <button type="button" data-save class="ed-save" data-label={t.save} data-done={t.saved}>{t.save}</button>
+    </div>
+
+    <div class="ed-body">
+      <!-- Sidebar: the sections of the page and the settings of the one picked. -->
+      <div class="ed-side">
+        <p class="ed-caption">{t.sections}</p>
+        <ul class="ed-list">
+          {
+            ids.map((id) => (
+              <li class="ed-row">
+                <button type="button" class="ed-pick" data-pick={id} aria-pressed={id === 'hero' ? 'true' : 'false'}>
+                  <span class="ed-grip" aria-hidden="true" />
+                  {t.names[id]}
+                </button>
+                <button type="button" class="ed-eye" data-eye={id} aria-pressed="false" aria-label={`${t.hide}: ${t.names[id]}`} set:html={eye} />
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="ed-settings">
+          <fieldset data-panel="announcement" hidden>
+            <legend>{t.names.announcement}</legend>
+            <label class="ed-field">
+              <span>{t.settings.text}</span>
+              <input type="text" class="ed-input" data-bind="announcement.text" value={s.announcement} maxlength="60" />
+            </label>
+          </fieldset>
+
+          <fieldset data-panel="hero">
+            <legend>{t.names.hero}</legend>
+            <label class="ed-field">
+              <span>{t.settings.heading}</span>
+              <input type="text" class="ed-input" data-bind="hero.heading" data-demo-heading={s.demoHeading} value={s.heading} maxlength="40" />
+            </label>
+            <label class="ed-field">
+              <span>{t.settings.button}</span>
+              <input type="text" class="ed-input" data-bind="hero.button" value={s.button} maxlength="24" />
+            </label>
+            <fieldset class="ed-field">
+              <legend>{t.settings.scheme}</legend>
+              <span class="ed-swatches">
+                {
+                  schemes.map((scheme, i) => (
+                    <label class="ed-swatch" data-swatch={scheme}>
+                      <input type="radio" name="hero-scheme" value={scheme} data-bind="hero.scheme" checked={scheme === 'cobalt'} />
+                      <span class="sr-only">{t.schemes[i]}</span>
+                    </label>
+                  ))
+                }
+              </span>
+            </fieldset>
+            <fieldset class="ed-field">
+              <legend>{t.settings.align}</legend>
+              <span class="ed-segment">
+                <label><input type="radio" name="hero-align" value="left" data-bind="hero.align" checked /><span>{t.settings.left}</span></label>
+                <label><input type="radio" name="hero-align" value="center" data-bind="hero.align" /><span>{t.settings.center}</span></label>
+              </span>
+            </fieldset>
+          </fieldset>
+
+          <fieldset data-panel="products" hidden>
+            <legend>{t.names.products}</legend>
+            <label class="ed-field">
+              <span>{t.settings.heading}</span>
+              <input type="text" class="ed-input" data-bind="products.heading" value={s.products} maxlength="40" />
+            </label>
+            <label class="ed-field">
+              <span class="flex justify-between">{t.settings.columns}<output data-columns>4</output></span>
+              <input type="range" class="ed-range" min="2" max="4" step="1" value="4" data-bind="products.columns" />
+            </label>
+            <label class="ed-toggle"><input type="checkbox" data-bind="products.prices" checked /><span>{t.settings.prices}</span></label>
+            <label class="ed-toggle"><input type="checkbox" data-bind="products.sale" checked /><span>{t.settings.sale}</span></label>
+          </fieldset>
+
+          <fieldset data-panel="reviews" hidden>
+            <legend>{t.names.reviews}</legend>
+            <label class="ed-field">
+              <span>{t.settings.heading}</span>
+              <input type="text" class="ed-input" data-bind="reviews.heading" value={s.reviews} maxlength="40" />
+            </label>
+            <label class="ed-toggle"><input type="checkbox" data-bind="reviews.rating" checked /><span>{t.settings.rating}</span></label>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- The store the settings change (a mirror of the inputs, so hidden from assistive tech), and the code. -->
+      <div class="ed-canvas" data-view="preview" data-device="desktop">
+        <div class="ed-store" aria-hidden="true">
+          <div class="ed-sec ed-announce" data-sec="announcement" data-name={t.names.announcement}>
+            <p data-out="announcement.text">{s.announcement}</p>
+          </div>
+          <div class="ed-header">
+            <span class="font-head text-[13px] font-bold tracking-[0.24em]">YOUR STORE</span>
+            <span class="ed-nav"><i></i><i></i><i></i><i></i></span>
+            <span class="flex items-center gap-2"><i class="block size-3.5 rounded-full border-2 border-ink"></i><i class="block size-3.5 rounded-[4px] border-2 border-ink"></i></span>
+          </div>
+          <div class="ed-sec ed-hero is-selected" data-sec="hero" data-name={t.names.hero} data-scheme="cobalt" data-align="left">
+            <div class="ed-hero-copy">
+              <p class="ed-hero-title" data-out="hero.heading">{s.heading}</p>
+              <p class="ed-hero-text">{s.text}</p>
+              <span class="ed-btn" data-out="hero.button">{s.button}</span>
+            </div>
+            <div class="ed-hero-art"><i></i><i></i><i></i></div>
+          </div>
+          <div class="ed-sec ed-products" data-sec="products" data-name={t.names.products} style="--cols:4">
+            <p class="ed-h2" data-out="products.heading">{s.products}</p>
+            <ul class="ed-grid">
+              {
+                products.map((p) => (
+                  <li>
+                    <span class="ed-img" style={`--art:${p.art}`}>
+                      {p.was && <span class="ed-badge" data-out="products.sale">{s.sale}</span>}
+                    </span>
+                    <span class="ed-name">{p.name}</span>
+                    <span class="ed-price" data-out="products.prices">
+                      {p.now} {p.was && <s>{p.was}</s>}
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="ed-sec ed-reviews" data-sec="reviews" data-name={t.names.reviews}>
+            <p class="ed-h2" data-out="reviews.heading">{s.reviews}</p>
+            <figure>
+              <span class="ed-stars" data-out="reviews.rating">★★★★★</span>
+              <blockquote>“{s.quote}”</blockquote>
+              <figcaption>{s.author}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="ed-code" data-view="code" hidden>
+        {
+          ids.map((id) => (
+            <div data-code={id} hidden={id !== 'hero'}>
+              <p class="ed-file">sections/{files[id]}.liquid</p>
+              <pre class="ed-lines">{source[id].map(([key, line], i) => <span class="ed-line" data-line={key || undefined}><i>{i + 1}</i><span set:html={highlight(line)} /></span>)}</pre>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-editor]');
+  if (root) {
+    const qa = <T extends Element = HTMLElement>(sel: string) => [...root.querySelectorAll<T>(sel)] as T[];
+    const sec = (id: string) => root.querySelector<HTMLElement>(`[data-sec="${id}"]`);
+    const pick = (id: string) => {
+      for (const b of qa('[data-pick]')) b.setAttribute('aria-pressed', String(b.dataset.pick === id));
+      for (const p of qa('[data-panel]')) p.hidden = p.dataset.panel !== id;
+      for (const s of qa('[data-sec]')) s.classList.toggle('is-selected', s.dataset.sec === id);
+      for (const c of qa('[data-code]')) c.hidden = c.dataset.code !== id;
+    };
+
+    /** Mirror one input into the store, and light up its lines in the code. */
+    const apply = (input: HTMLInputElement) => {
+      const key = input.dataset.bind!;
+      const [id, setting] = key.split('.') as [string, string];
+      const target = sec(id);
+      if (input.type === 'text') for (const out of qa(`[data-out="${key}"]`)) out.textContent = input.value || ' ';
+      else if (input.type === 'checkbox') for (const out of qa(`[data-out="${key}"]`)) out.hidden = !input.checked;
+      else if (input.type === 'radio' && input.checked && target) target.dataset[setting] = input.value;
+      else if (input.type === 'range' && target) {
+        target.style.setProperty('--cols', input.value);
+        const out = root.querySelector('[data-columns]');
+        if (out) out.textContent = input.value;
+      }
+      for (const line of qa('.ed-line.is-hot')) line.classList.remove('is-hot');
+      for (const line of qa(`[data-code="${id}"] [data-line="${key}"]`)) line.classList.add('is-hot');
+    };
+
+    for (const b of qa('[data-pick]')) b.addEventListener('click', () => pick(b.dataset.pick!));
+    for (const s of qa('[data-sec]')) s.addEventListener('click', () => pick(s.dataset.sec!));
+    for (const input of qa<HTMLInputElement>('[data-bind]')) {
+      input.addEventListener('input', () => apply(input));
+      input.addEventListener('change', () => apply(input));
+    }
+    for (const b of qa('[data-eye]')) {
+      b.addEventListener('click', () => {
+        const hidden = b.getAttribute('aria-pressed') !== 'true';
+        b.setAttribute('aria-pressed', String(hidden));
+        const target = sec(b.dataset.eye!);
+        if (target) target.hidden = hidden;
+      });
+    }
+    for (const b of qa('[data-tab]')) {
+      b.addEventListener('click', () => {
+        for (const other of qa('[data-tab]')) other.setAttribute('aria-pressed', String(other === b));
+        for (const view of qa('[data-view]')) view.hidden = view.dataset.view !== b.dataset.tab;
+      });
+    }
+    const canvas = root.querySelector<HTMLElement>('.ed-canvas');
+    for (const b of qa('button[data-device]')) {
+      b.addEventListener('click', () => {
+        for (const other of qa('button[data-device]')) other.setAttribute('aria-pressed', String(other === b));
+        if (canvas) canvas.dataset.device = b.dataset.device;
+      });
+    }
+    const save = root.querySelector<HTMLButtonElement>('[data-save]');
+    let saved = 0;
+    save?.addEventListener('click', () => {
+      save.textContent = `${save.dataset.done} ✓`;
+      save.classList.add('is-done');
+      window.clearTimeout(saved);
+      saved = window.setTimeout(() => {
+        save.textContent = save.dataset.label ?? '';
+        save.classList.remove('is-done');
+      }, 1600);
+    });
+
+    // A short demo the first time the editor is in view, stopped by the first real touch, key or click.
+    let touched = false;
+    const stop = (e: Event) => {
+      if (e.isTrusted) touched = true;
+    };
+    for (const type of ['pointerdown', 'keydown', 'wheel']) root.addEventListener(type, stop, { passive: true });
+    const wait = (ms: number) => new Promise((r) => window.setTimeout(r, ms));
+    const demo = async () => {
+      const heading = root.querySelector<HTMLInputElement>('[data-bind="hero.heading"]');
+      const sand = root.querySelector<HTMLInputElement>('[data-bind="hero.scheme"][value="sand"]');
+      const columns = root.querySelector<HTMLInputElement>('[data-bind="products.columns"]');
+      if (!heading || !sand || !columns) return;
+      const next = heading.dataset.demoHeading ?? '';
+      heading.classList.add('is-demo');
+      await wait(700);
+      while (heading.value && !touched) {
+        heading.value = heading.value.slice(0, -1);
+        apply(heading);
+        await wait(45);
+      }
+      for (const ch of next) {
+        if (touched) break;
+        heading.value += ch;
+        apply(heading);
+        await wait(85);
+      }
+      heading.classList.remove('is-demo');
+      await wait(600);
+      if (touched) return;
+      sand.checked = true;
+      apply(sand);
+      await wait(1100);
+      if (touched) return;
+      pick('products');
+      await wait(700);
+      if (touched) return;
+      columns.value = '3';
+      apply(columns);
+    };
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          io.disconnect();
+          if (!touched) void demo();
+        },
+        { threshold: 0.45 },
+      );
+      io.observe(root);
+    }
+  }
+</script>

@@ -666,21 +666,64 @@
       }
     ]
   },
-  "code": {
-    "eyebrow": "Handwerk",
-    "title": "Code, den man übergeben kann",
-    "lead": "Eine Section, geschrieben wie ich sie schreibe: Daten aus Metafeldern, Einstellungen, die Ihr Team ändern kann, übersetzbare Texte, nichts fest verdrahtet.",
-    "editorLabel": "Liquid-Code einer Bundle-Section",
-    "save": "15 % sparen ab 2 Dosen",
-    "addToCart": "In den Warenkorb",
-    "editorPanel": "Theme-Editor",
-    "steps": [
-      "Die Daten kommen aus einem Metafeld, nicht aus dem Template",
-      "Die Überschrift ist eine Einstellung, die das Team pflegt",
-      "Alle Varianten, ausverkaufte deaktiviert",
-      "Die Ersparnis erscheint nur, wenn das Produkt ein Bundle hat",
-      "Standard-Produktformular, übersetzbare Texte",
-      "Schema: Einstellungen und ein Preset für den Theme-Editor"
-    ]
+  "editor": {
+    "eyebrow": "Übergabe",
+    "title": "Ihr Team pflegt den Shop. Ohne Entwickler.",
+    "lead": "Jede Section, die ich baue, hat Einstellungen wie diese. Probieren Sie es aus: So ändert Ihr Team den Shop nach dem Launch.",
+    "hint": "Probieren Sie es: Überschrift tippen, Farbe wählen, Section ausblenden.",
+    "label": "Eine funktionierende Kopie des Shopify Theme-Editors",
+    "themeEditor": "Theme-Editor",
+    "live": "Live",
+    "preview": "Vorschau",
+    "code": "Code",
+    "desktop": "Desktop-Ansicht",
+    "mobile": "Mobile Ansicht",
+    "save": "Speichern",
+    "saved": "Gespeichert",
+    "sections": "Sections",
+    "hide": "Ausblenden",
+    "names": {
+      "announcement": "Ankündigungsleiste",
+      "hero": "Hero-Banner",
+      "products": "Ausgewählte Produkte",
+      "reviews": "Kundenstimmen"
+    },
+    "settings": {
+      "text": "Text",
+      "heading": "Überschrift",
+      "button": "Button-Text",
+      "scheme": "Farbschema",
+      "align": "Ausrichtung",
+      "left": "Links",
+      "center": "Zentriert",
+      "columns": "Produkte pro Reihe",
+      "prices": "Preise anzeigen",
+      "sale": "Sale-Badge anzeigen",
+      "rating": "Bewertung anzeigen"
+    },
+    "schemes": [
+      "Hell",
+      "Kobalt",
+      "Sand",
+      "Tinte"
+    ],
+    "store": {
+      "announcement": "Kostenloser Versand ab 50 €",
+      "heading": "Sommer-Drop",
+      "text": "Leichtes Leinen und weiche Baumwolle, gemacht für lange.",
+      "button": "Jetzt shoppen",
+      "products": "Bestseller",
+      "items": [
+        "Leinenhemd",
+        "Canvas-Tasche",
+        "Wollschal",
+        "Baumwollcap"
+      ],
+      "sale": "Sale",
+      "reviews": "Das sagen Kunden",
+      "quote": "In zwei Tagen da und in echt noch schöner.",
+      "author": "Anna, Berlin",
+      "demoHeading": "Herbst-Sale"
+    }
   }
 }

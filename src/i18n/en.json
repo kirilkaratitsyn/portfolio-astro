@@ -666,21 +666,64 @@
       }
     ]
   },
-  "code": {
-    "eyebrow": "Craft",
-    "title": "Code you can hand over",
-    "lead": "A section written the way I write them: data from metafields, settings your team can change, labels that translate, nothing hard-coded.",
-    "editorLabel": "Liquid code of a bundle picker section",
-    "save": "Save 15% on 2+ jars",
-    "addToCart": "Add to cart",
-    "editorPanel": "Theme editor",
-    "steps": [
-      "Data comes from a metafield, not from the template",
-      "The heading is a setting the team edits",
-      "Every variant listed, sold-out ones disabled",
-      "Savings appear only when the product has a bundle",
-      "Standard product form, translatable labels",
-      "Schema: settings and a preset for the theme editor"
-    ]
+  "editor": {
+    "eyebrow": "Handover",
+    "title": "Your team edits it. No developer needed.",
+    "lead": "Every section I build comes with settings like these. Try them: this is how your team changes the store after launch.",
+    "hint": "Try it: type a heading, pick a colour, hide a section.",
+    "label": "A working copy of the Shopify theme editor",
+    "themeEditor": "Theme editor",
+    "live": "Live",
+    "preview": "Preview",
+    "code": "Code",
+    "desktop": "Desktop view",
+    "mobile": "Mobile view",
+    "save": "Save",
+    "saved": "Saved",
+    "sections": "Sections",
+    "hide": "Hide",
+    "names": {
+      "announcement": "Announcement bar",
+      "hero": "Hero banner",
+      "products": "Featured products",
+      "reviews": "Testimonials"
+    },
+    "settings": {
+      "text": "Text",
+      "heading": "Heading",
+      "button": "Button label",
+      "scheme": "Color scheme",
+      "align": "Alignment",
+      "left": "Left",
+      "center": "Center",
+      "columns": "Products per row",
+      "prices": "Show prices",
+      "sale": "Show sale badge",
+      "rating": "Show rating"
+    },
+    "schemes": [
+      "Light",
+      "Cobalt",
+      "Sand",
+      "Ink"
+    ],
+    "store": {
+      "announcement": "Free shipping on orders over €50",
+      "heading": "Summer drop",
+      "text": "Light linen and soft cotton, made to last.",
+      "button": "Shop now",
+      "products": "Bestsellers",
+      "items": [
+        "Linen shirt",
+        "Canvas tote",
+        "Wool scarf",
+        "Cotton cap"
+      ],
+      "sale": "Sale",
+      "reviews": "What customers say",
+      "quote": "Arrived in two days and looks even better in person.",
+      "author": "Anna, Berlin",
+      "demoHeading": "Autumn sale"
+    }
   }
 }
