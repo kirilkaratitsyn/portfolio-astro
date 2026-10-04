@@ -434,53 +434,51 @@ function feature() {
  */
 function anatomy(lenis: Lenis | null) {
   const wrap = qs('[data-anatomy]');
-  const stack = wrap ? qs('[data-anatomy-stack]', wrap) : null;
-  if (!wrap || !stack) return;
+  if (!wrap) return;
   const layers = qsa('[data-layer]', wrap);
-  const items = qsa('[data-anatomy-item]', wrap);
-  const open = gsap.parseEase('power2.inOut');
+  const steps = qsa('[data-anatomy-step]', wrap);
+  const segs = qsa('[data-anatomy-go]', wrap);
+  const n = steps.length;
+  if (!n) return;
   const mm = gsap.matchMedia();
   mm.add('(min-width: 768px)', () => {
     let active = -1;
+    // One step at a time: its words, its card and its rail segment are on; the ones before it are done.
     const focus = (i: number) => {
       if (i === active) return;
       active = i;
-      layers.forEach((layer, k) => {
-        layer.classList.toggle('is-on', k === i);
-        // Cards of the steps already done leave the deck; the rest line up behind the one in focus.
-        layer.classList.toggle('is-past', k < i);
-        layer.style.setProperty('--d', String(Math.max(0, k - i)));
-      });
-      items.forEach((item, k) => item.classList.toggle('is-on', k === i));
+      for (const list of [layers, steps, segs]) {
+        list.forEach((el, k) => {
+          el.classList.toggle('is-on', k === i);
+          el.classList.toggle('is-past', k < i);
+        });
+      }
+      steps.forEach((el, k) => (el.inert = k !== i));
     };
+    // The scroll through the section is cut into equal stretches, one per step.
     const apply = (p: number) => {
-      const o = open(Math.min(1, p / 0.24));
-      // Opened, the stack is about 370px tall whatever the number of layers.
-      const gap = 370 / Math.max(1, layers.length - 1) - 8;
-      stack.style.setProperty('--gap', `${(8 + o * gap).toFixed(1)}px`);
-      focus(Math.min(layers.length - 1, Math.floor((Math.max(0, p - 0.2) / 0.78) * layers.length)));
+      const at = Math.min(n - 0.0001, Math.max(0, p) * n);
+      const i = Math.floor(at);
+      focus(i);
+      segs[i]?.style.setProperty('--fill', (at - i).toFixed(3));
     };
     const st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom', onUpdate: (self) => apply(self.progress), onRefresh: (self) => apply(self.progress) });
     apply(st.progress);
-    // A step in the list or a layer of the stack, clicked, scrolls to the middle of that step's stretch of the scroll.
+    // A rail segment or the card, clicked, scrolls a little way into that step's stretch.
     const go = (i: number) => {
-      const p = 0.2 + ((i + 0.5) / layers.length) * 0.78;
-      const y = st.start + p * (st.end - st.start);
+      const y = st.start + ((i + 0.3) / n) * (st.end - st.start);
       if (lenis) lenis.scrollTo(y, { duration: 1.1 });
       else window.scrollTo({ top: y, behavior: 'smooth' });
     };
     const clicks = new AbortController();
-    items.forEach((item, i) => qs('[data-anatomy-go]', item)?.addEventListener('click', () => go(i), { signal: clicks.signal }));
-    layers.forEach((layer, i) => layer.addEventListener('click', () => go(i), { signal: clicks.signal }));
+    segs.forEach((seg, i) => seg.addEventListener('click', () => go(i), { signal: clicks.signal }));
+    layers.forEach((layer, i) => layer.addEventListener('click', () => go(Math.min(n - 1, i + 1)), { signal: clicks.signal }));
     return () => {
       clicks.abort();
       st.kill();
-      stack.style.removeProperty('--gap');
-      layers.forEach((l) => {
-        l.classList.remove('is-on', 'is-past');
-        l.style.removeProperty('--d');
-      });
-      items.forEach((l) => l.classList.remove('is-on'));
+      for (const list of [layers, steps, segs]) list.forEach((el) => el.classList.remove('is-on', 'is-past'));
+      steps.forEach((el) => (el.inert = false));
+      segs.forEach((el) => el.style.removeProperty('--fill'));
     };
   });
 }

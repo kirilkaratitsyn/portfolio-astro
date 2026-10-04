@@ -244,49 +244,87 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .svc.is-live .svc-panel, .svc .svc-shot, .svc-row { transition: none !important; }
 }
 
-/* How I work, a deck of cards flat to the screen (sections/Anatomy.astro). Without the motion class the deck is spread
-   by index and every item expanded; with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy()
-   sets --gap (how far the deck is spread), each card's --d (how many steps it is from the one in focus) and .is-on. */
-.anat-scene { position: absolute; inset: 0; display: grid; place-items: center; }
-.anat-stack { --gap: 70px; position: relative; width: min(600px, 88%); aspect-ratio: 16 / 10; margin-top: -120px; }
-.anat-layer {
-  /* Cards still to come peek out below the one in focus, each a little smaller; the first card lies on top. */
-  --d: var(--i);
-  position: absolute; inset: 0; z-index: calc(20 - var(--d)); transform-origin: 50% 100%;
-  transform: translateY(calc(var(--d) * var(--gap) * 0.42 + var(--nudge, 0px))) scale(calc(1 - var(--d) * 0.045));
-  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* How I work (sections/Anatomy.astro). By default (phones, no motion, no scripts) the section is a heading and a list
+   of cards. On desktop with motion the wrapper gets tall and the stage sticks; scripts/motion.ts anatomy() puts .is-on
+   on the step in focus (its words on the left, its card on the right, its rail segment), .is-past on the ones done,
+   and --fill (0..1) on the rail segment in focus. One card at a time: the old one leaves before the new one settles. */
+.anat-grid { display: grid; gap: 20px; }
+.anat-title { font-size: 40px; line-height: 1; letter-spacing: -0.03em; }
+.anat-lead { max-width: 520px; font-size: 17px; line-height: 1.6; }
+.anat-story, .anat-right { display: none; }
+.anat-list { list-style: none; }
 .anat-card {
   /* A size container: the drawing inside is measured in cqi, so it scales with the card. */
   container-type: inline-size; display: flex; flex-direction: column; height: 100%; border-radius: 18px; background: #fff; overflow: hidden;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 30px 60px -20px rgba(14, 16, 40, 0.28);
-  outline: 2px solid transparent; outline-offset: 4px; transition: outline-color 0.4s ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 40px 80px -30px rgba(14, 16, 40, 0.35);
 }
-.anat-badge {
-  position: absolute; left: -14px; top: -14px; z-index: 2; display: grid; place-items: center; width: 34px; height: 34px;
-  border-radius: 999px; background: #0e1018; color: #fff; font: 700 12px/1 'e-UkraineHead', 'Onest', sans-serif;
-  transition: background-color 0.4s ease;
-}
-.anat-layer.is-on .anat-card { outline-color: #2433f0; }
-.anat-layer.is-on .anat-badge { background: #2433f0; }
-.anat-item .anat-num { transition: color 0.3s ease; }
-.anat-item.is-on .anat-num { color: #2433f0; }
 @media (min-width: 768px) {
-  .motion .anat { height: 420vh; }
-  .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
-  .motion .anat-stack { --gap: 8px; }
-  .motion .anat-layer:not(.is-on) { filter: grayscale(0.9) brightness(1.03) contrast(0.86); }
-  .motion .anat-layer { cursor: pointer; }
-  .motion .anat-layer:not(.is-on):not(.is-past):hover { --nudge: -10px; filter: none; }
-  .anat-go { transition: color 0.2s ease; }
-  .anat-go:hover { color: #2433f0; }
-  /* Cards of the steps already done lift off the deck and fade out. */
-  .motion .anat-layer.is-past { opacity: 0; pointer-events: none; transform: translateY(-22%) scale(1.03); }
-  .motion .anat-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
-  .motion .anat-detail > * { overflow: hidden; }
-  .motion .anat-item.is-on .anat-detail { grid-template-rows: 1fr; }
+  .anat-title { font-size: 56px; }
+  .anat-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 }
-@media (max-width: 767px) { .anat-sticky { height: auto; } }
+@media (min-width: 1100px) {
+  .anat-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .motion .anat { height: 440vh; }
+  .motion .anat-sticky { position: sticky; top: 0; height: 100vh; }
+  .motion .anat-grid { height: 100%; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 56px; }
+  .motion .anat-title { font-size: clamp(40px, 3.9vw, 60px); }
+  .motion .anat-lead { margin-top: 18px; font-size: 18px; }
+  .motion .anat-story, .motion .anat-right { display: block; }
+  /* The list stays for screen readers; the story above is drawn for the eye. */
+  .motion .anat-list { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; padding: 0; }
+
+  /* Rail: one segment per step, filling as the page scrolls through it. */
+  .anat-rail { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin-top: 36px; list-style: none; }
+  .anat-seg { display: grid; width: 100%; gap: 9px; padding: 6px 0; text-align: left; cursor: pointer; }
+  .anat-seg-bar { position: relative; display: block; height: 4px; overflow: hidden; border-radius: 99px; background: #d3d7e6; }
+  .anat-seg-bar i { position: absolute; inset: 0; transform-origin: left; transform: scaleX(var(--fill, 0)); background: #2433f0; }
+  .anat-seg.is-past .anat-seg-bar i { --fill: 1; background: #0e1018; }
+  .anat-seg-num { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: #8a8fa3; transition: color 0.3s ease; }
+  .anat-seg.is-past .anat-seg-num { color: #0e1018; }
+  .anat-seg.is-on .anat-seg-num { color: #2433f0; }
+  .anat-seg:hover .anat-seg-num { color: #0e1018; }
+
+  /* The step in focus, large; the steps share one cell, so the block keeps the height of the longest. */
+  .anat-steps { display: grid; margin-top: 30px; }
+  .anat-step { grid-area: 1 / 1; transition: opacity 0.45s ease 0.1s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, visibility 0s; }
+  .anat-step:not(.is-on) { opacity: 0; transform: translateY(18px); visibility: hidden; transition: opacity 0.25s ease, transform 0.4s ease, visibility 0s 0.3s; }
+  .anat-step.is-past:not(.is-on) { transform: translateY(-18px); }
+  .anat-count { font-size: 15px; font-weight: 600; color: #8a8fa3; font-variant-numeric: tabular-nums; }
+  .anat-count b { color: #2433f0; }
+  .anat-step-title { margin-top: 10px; font-size: clamp(30px, 2.9vw, 44px); line-height: 1.05; letter-spacing: -0.025em; }
+  .anat-step-text { max-width: 520px; margin-top: 16px; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.55; color: #3d4152; }
+  .anat-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .anat-tags span { padding: 7px 14px; border-radius: 999px; background: #fff; font-size: 14px; font-weight: 600; }
+
+  /* Card: the one in focus on a deck of blank sheets. */
+  .anat-stack { position: relative; width: 100%; max-width: 800px; margin-left: auto; aspect-ratio: 16 / 10.4; }
+  .anat-stack::before, .anat-stack::after { content: ''; position: absolute; inset: 0; border-radius: 18px; background: #fff; transform-origin: 50% 100%; }
+  .anat-stack::before { opacity: 0.75; transform: translateY(16px) scale(0.955); box-shadow: 0 20px 40px -24px rgba(14, 16, 40, 0.3); }
+  .anat-stack::after { opacity: 0.45; transform: translateY(32px) scale(0.91); z-index: -1; }
+  .anat-layer {
+    position: absolute; inset: 0; z-index: 1; cursor: pointer;
+    transition: opacity 0.45s ease 0.15s, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, visibility 0s;
+  }
+  .anat-layer:not(.is-on) { opacity: 0; visibility: hidden; transform: translateY(6%) scale(0.96); transition: opacity 0.25s ease, transform 0.45s ease, visibility 0s 0.45s; }
+  .anat-layer.is-past:not(.is-on) { transform: translateY(-5%) scale(1.02); }
+  .anat-badge {
+    position: absolute; left: -18px; top: -18px; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px;
+    border-radius: 999px; background: #2433f0; color: #fff; font: 700 14px/1 'e-UkraineHead', 'Onest', sans-serif;
+    box-shadow: 0 8px 20px -6px rgba(36, 51, 240, 0.6);
+  }
+}
+/* Short desktop screens: a smaller heading and no lead, so the step and its card fit the sticky stage. */
+@media (min-width: 768px) and (max-height: 760px) {
+  .motion .anat-title { font-size: clamp(36px, 3.3vw, 48px); }
+  .motion .anat-lead { display: none; }
+  .anat-rail { margin-top: 26px; }
+  .anat-steps { margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anat-step, .anat-layer { transition: none !important; }
+}
 
 /* Stack wall (sections/Stack.astro): the grid's 1px gaps are its lines; the cursor lights them (--gx/--gy on the
    grid) and the tile under it (--mx/--my per tile), set by scripts/motion.ts stackGrid(). */

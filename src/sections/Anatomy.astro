@@ -1,9 +1,8 @@
 ---
-// How I work: the six steps of a project, from the kick-off call to analytics and launch, as a deck of cards. On
-// desktop the drawn cards lie in a deck that spreads out while the section scrolls past (a tall wrapper with
-// a sticky stage, driven by scripts/motion.ts anatomy(); no pin), and the list highlights the step in focus; a step in
-// the list or a layer of the stack, clicked, scrolls to it. Phones get a plain list of cards. Without scripts the stack
-// is shown open and every item is expanded.
+// How I work: the six steps of a project, from the kick-off call to analytics and launch. On desktop, with motion, the
+// section is a tall wrapper with a sticky stage (scripts/motion.ts anatomy(); no pin): one step at a time, its card
+// large on the right and its words large on the left, a rail of six segments filling as the page scrolls; a segment or
+// the card, clicked, scrolls to that step. Phones, and desktops without motion or scripts, get the plain list of cards.
 import AnatomyLayer from '../components/AnatomyLayer.astro';
 import { useTranslations, type Locale } from '../i18n';
 
@@ -13,74 +12,86 @@ interface Props {
 
 const t = useTranslations(Astro.props.locale).anatomy;
 const kinds = ['call', 'brief', 'build', 'qa', 'seo', 'analytics'] as const;
-const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]! }));
+const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]!, num: String(i + 1).padStart(2, '0') }));
+const total = String(layers.length).padStart(2, '0');
 ---
 
 <section id="anatomy" aria-labelledby="anatomy-title" class="mt-24 md:mt-36">
   <div data-anatomy class="anat relative">
     <div class="anat-sticky">
-      <div class="mx-auto grid h-full max-w-[1440px] items-center gap-12 px-5 md:grid-cols-12 md:gap-8 md:px-10">
-        <div class="md:col-span-5">
-          <h2 id="anatomy-title" data-split class="font-head text-[40px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{t.title}</h2>
-          <p data-reveal class="mt-5 max-w-[500px] text-[17px] leading-relaxed text-mute">{t.lead}</p>
+      <div class="anat-grid mx-auto max-w-[1440px] px-5 md:px-10">
+        <div class="anat-left min-w-0">
+          <h2 id="anatomy-title" data-split class="anat-title font-head font-bold">{t.title}</h2>
+          <p data-reveal class="anat-lead text-mute">{t.lead}</p>
 
-          <ol class="mt-8 hidden border-t border-line md:block">
-            {
-              layers.map((layer, i) => (
-                <li data-anatomy-item class="anat-item border-b border-line py-4">
-                  <button type="button" data-anatomy-go class="anat-go flex w-full items-baseline gap-4 text-left font-head text-[20px] font-bold tracking-[-0.01em]">
-                    <span class="anat-num w-7 text-[14px] text-mute [font-variant-numeric:tabular-nums]">0{i + 1}</span>
-                    {layer.title}
-                  </button>
-                  <div class="anat-detail pl-11">
-                    <div>
-                      <p class="pt-2 text-[15px] leading-relaxed text-mute">{layer.text}</p>
-                      <p class="flex flex-wrap gap-1.5 pt-3">
-                        {layer.tags.map((tag) => (
-                          <span class="rounded-full bg-white px-3 py-1 text-[12px] font-semibold">{tag}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
-
-        <div class="relative hidden h-full md:col-span-7 md:block" aria-hidden="true">
-          <div class="anat-scene">
-            <div data-anatomy-stack class="anat-stack">
+          <!-- The step in focus (desktop with motion). The words are also in the list below for everyone else. -->
+          <div class="anat-story" aria-hidden="true">
+            <ol class="anat-rail">
               {
                 layers.map((layer, i) => (
-                  <div data-layer class="anat-layer" style={`--i:${i}`}>
-                    <span class="anat-badge">0{i + 1}</span>
-                    <AnatomyLayer kind={layer.kind} text={t.cards} />
+                  <li>
+                    <button type="button" data-anatomy-go={i} class="anat-seg" tabindex="-1" title={layer.title}>
+                      <span class="anat-seg-bar">
+                        <i />
+                      </span>
+                      <span class="anat-seg-num">{layer.num}</span>
+                    </button>
+                  </li>
+                ))
+              }
+            </ol>
+            <div class="anat-steps">
+              {
+                layers.map((layer) => (
+                  <div data-anatomy-step class="anat-step">
+                    <p class="anat-count">
+                      <b>{layer.num}</b> / {total}
+                    </p>
+                    <p class="anat-step-title font-head font-bold">{layer.title}</p>
+                    <p class="anat-step-text">{layer.text}</p>
+                    <p class="anat-tags">
+                      {layer.tags.map((tag) => (
+                        <span>{tag}</span>
+                      ))}
+                    </p>
                   </div>
                 ))
               }
             </div>
           </div>
         </div>
+
+        <div class="anat-right" aria-hidden="true">
+          <div data-anatomy-stack class="anat-stack">
+            {
+              layers.map((layer, i) => (
+                <div data-layer={i} class="anat-layer">
+                  <span class="anat-badge">{layer.num}</span>
+                  <AnatomyLayer kind={layer.kind} text={t.cards} />
+                </div>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <ol class="mx-auto mt-10 grid max-w-[1440px] gap-4 px-5 md:hidden">
+  <ol class="anat-list mx-auto mt-10 grid max-w-[1440px] gap-4 px-5 md:px-10">
     {
-      layers.map((layer, i) => (
-        <li data-reveal class="min-w-0 rounded-[24px] bg-white p-4">
+      layers.map((layer) => (
+        <li data-reveal class="min-w-0 rounded-[24px] bg-white p-4 md:p-5">
           <div class="aspect-[16/10]">
             <AnatomyLayer kind={layer.kind} text={t.cards} />
           </div>
-          <p class="mt-4 flex items-baseline gap-3 font-head text-[20px] font-bold">
-            <span class="text-[14px] text-blue">0{i + 1}</span>
+          <h3 class="mt-5 flex items-baseline gap-3 font-head text-[24px] font-bold leading-tight">
+            <span class="text-[15px] text-blue">{layer.num}</span>
             {layer.title}
-          </p>
-          <p class="mt-2 text-[15px] leading-relaxed text-mute">{layer.text}</p>
+          </h3>
+          <p class="mt-2 text-[17px] leading-relaxed text-[#3d4152]">{layer.text}</p>
           <p class="flex flex-wrap gap-1.5 pt-3">
             {layer.tags.map((tag) => (
-              <span class="rounded-full bg-bg px-3 py-1 text-[12px] font-semibold">{tag}</span>
+              <span class="rounded-full bg-bg px-3 py-1 text-[13px] font-semibold">{tag}</span>
             ))}
           </p>
         </li>
