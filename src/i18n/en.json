@@ -640,7 +640,7 @@
     "cards": {
       "call": {
         "app": "Kick-off call · Google Meet",
-        "sharing": "Sharing screen",
+        "sharing": "Kiril is presenting",
         "you": "You",
         "agenda": "Agenda",
         "items": [
@@ -650,7 +650,9 @@
           "Deadline"
         ],
         "now": "Scope & estimate",
-        "quote": "“So the new store keeps every product URL…”"
+        "quote": "Kiril: so the new store keeps every product URL…",
+        "notes": "Notes",
+        "time": "10:00 · Kick-off"
       },
       "brief": {
         "app": "Project brief · Figma",
@@ -662,25 +664,39 @@
           "Features"
         ],
         "agreed": "Scope · timeline · price ✓",
-        "desktop": "Desktop",
-        "mobile": "Mobile",
-        "comment": "Client: love this hero"
+        "desktop": "Home · Desktop",
+        "mobile": "Home · Mobile",
+        "comment": "Client: love this hero",
+        "lines": [
+          "New store live before the season",
+          "Home, collections, product, cart, about…",
+          "Size guide, bundles, reviews"
+        ],
+        "pages": [
+          "Brief",
+          "Home",
+          "Product",
+          "Cart drawer"
+        ],
+        "share": "Share"
       },
       "build": {
-        "app": "Theme editor · Preview theme",
+        "app": "Themes · Online Store",
         "side": "Draft",
-        "sections": "Sections",
         "names": [
-          "Announcement",
-          "Header",
           "Hero banner",
           "Featured collection",
           "Reviews",
-          "Footer"
+          "Size guide"
         ],
-        "add": "+ Add section",
-        "perRow": "Per row",
-        "price": "Show price"
+        "live": "Live",
+        "liveName": "Current theme",
+        "liveNote": "Keeps selling while I build",
+        "draftName": "New theme",
+        "draftNote": "Preview only",
+        "built": "sections built",
+        "preview": "Preview",
+        "publish": "Publish"
       },
       "qa": {
         "app": "QA checklist · Release 1.0",
@@ -708,7 +724,13 @@
           "Product schema",
           "hreflang",
           "Core Web Vitals"
-        ]
+        ],
+        "query": "linen shirt",
+        "title": "Linen Shirt – Breathable Summer Shirt | Your Store",
+        "desc": "Light linen that keeps you cool. Free shipping on orders over €50.",
+        "rating": "4.9 (128 reviews)",
+        "stock": "In stock",
+        "good": "Good"
       },
       "analytics": {
         "app": "GA4 · Last 30 days",
@@ -727,7 +749,10 @@
           "Sat",
           "Sun"
         ],
-        "live": "Store published ✓"
+        "live": "Store published ✓",
+        "realtime": "Users in last 30 minutes",
+        "events": "Events",
+        "launch": "Launch"
       }
     }
   },

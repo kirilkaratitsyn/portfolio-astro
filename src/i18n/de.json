@@ -640,7 +640,7 @@
     "cards": {
       "call": {
         "app": "Kick-off-Call · Google Meet",
-        "sharing": "Bildschirm geteilt",
+        "sharing": "Kiril präsentiert",
         "you": "Sie",
         "agenda": "Agenda",
         "items": [
@@ -650,7 +650,9 @@
           "Termin"
         ],
         "now": "Umfang & Angebot",
-        "quote": "„Damit jede Produkt-URL erhalten bleibt …“"
+        "quote": "Kiril: damit jede Produkt-URL erhalten bleibt …",
+        "notes": "Notizen",
+        "time": "10:00 · Kick-off"
       },
       "brief": {
         "app": "Briefing · Figma",
@@ -662,25 +664,39 @@
           "Funktionen"
         ],
         "agreed": "Umfang · Zeitplan · Preis ✓",
-        "desktop": "Desktop",
-        "mobile": "Mobil",
-        "comment": "Kunde: Hero ist super"
+        "desktop": "Startseite · Desktop",
+        "mobile": "Startseite · Mobil",
+        "comment": "Kunde: Hero ist super",
+        "lines": [
+          "Neuer Shop live vor der Saison",
+          "Startseite, Kollektionen, Produkt, Warenkorb …",
+          "Größentabelle, Bundles, Bewertungen"
+        ],
+        "pages": [
+          "Briefing",
+          "Startseite",
+          "Produkt",
+          "Warenkorb"
+        ],
+        "share": "Teilen"
       },
       "build": {
-        "app": "Theme-Editor · Vorschau-Theme",
+        "app": "Themes · Onlineshop",
         "side": "Entwurf",
-        "sections": "Abschnitte",
         "names": [
-          "Ankündigung",
-          "Header",
           "Hero-Banner",
           "Ausgewählte Kollektion",
           "Bewertungen",
-          "Footer"
+          "Größentabelle"
         ],
-        "add": "+ Abschnitt hinzufügen",
-        "perRow": "Pro Reihe",
-        "price": "Preis zeigen"
+        "live": "Live",
+        "liveName": "Aktuelles Theme",
+        "liveNote": "Verkauft weiter, während ich baue",
+        "draftName": "Neues Theme",
+        "draftNote": "Nur Vorschau",
+        "built": "Abschnitte fertig",
+        "preview": "Vorschau",
+        "publish": "Veröffentlichen"
       },
       "qa": {
         "app": "QA-Checkliste · Release 1.0",
@@ -708,7 +724,13 @@
           "Produkt-Schema",
           "hreflang",
           "Core Web Vitals"
-        ]
+        ],
+        "query": "leinenhemd",
+        "title": "Leinenhemd – luftig für den Sommer | Your Store",
+        "desc": "Leichtes Leinen, das kühl hält. Kostenloser Versand ab 50 €.",
+        "rating": "4,9 (128 Bewertungen)",
+        "stock": "Auf Lager",
+        "good": "Gut"
       },
       "analytics": {
         "app": "GA4 · Letzte 30 Tage",
@@ -727,7 +749,10 @@
           "Sa",
           "So"
         ],
-        "live": "Shop veröffentlicht ✓"
+        "live": "Shop veröffentlicht ✓",
+        "realtime": "Nutzer in den letzten 30 Minuten",
+        "events": "Ereignisse",
+        "launch": "Launch"
       }
     }
   },

@@ -10,7 +10,8 @@ interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale).anatomy;
+const { locale } = Astro.props;
+const t = useTranslations(locale).anatomy;
 const kinds = ['call', 'brief', 'build', 'qa', 'seo', 'analytics'] as const;
 const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]!, num: String(i + 1).padStart(2, '0') }));
 const total = String(layers.length).padStart(2, '0');
@@ -67,7 +68,7 @@ const total = String(layers.length).padStart(2, '0');
               layers.map((layer, i) => (
                 <div data-layer={i} class="anat-layer">
                   <span class="anat-badge">{layer.num}</span>
-                  <AnatomyLayer kind={layer.kind} text={t.cards} />
+                  <AnatomyLayer kind={layer.kind} locale={locale} text={t.cards} />
                 </div>
               ))
             }
@@ -82,7 +83,7 @@ const total = String(layers.length).padStart(2, '0');
       layers.map((layer) => (
         <li data-reveal class="min-w-0 rounded-[24px] bg-white p-4 md:p-5">
           <div class="aspect-[16/10]">
-            <AnatomyLayer kind={layer.kind} text={t.cards} />
+            <AnatomyLayer kind={layer.kind} locale={locale} text={t.cards} />
           </div>
           <h3 class="mt-5 flex items-baseline gap-3 font-head text-[24px] font-bold leading-tight">
             <span class="text-[15px] text-blue">{layer.num}</span>

@@ -1,0 +1,56 @@
+---
+// The made-up demo store (the same one as in the Editor section: words from i18n editor.store) drawn small, for the
+// How I work cards: the Figma frames, the theme thumbnails, the devices in QA. A size container, so it scales with
+// whatever frame it is put in. Decorative.
+import type { useTranslations } from '../i18n';
+
+type Store = ReturnType<typeof useTranslations>['editor']['store'];
+
+interface Props {
+  store: Store;
+  prices: string[];
+  mobile?: boolean;
+  class?: string;
+}
+
+const { store, prices, mobile = false, class: className = '' } = Astro.props;
+const art = ['#d9c7b0', '#2433f0', '#e7a1b8', '#0e1018'];
+const items = store.items.slice(0, mobile ? 2 : 4);
+---
+
+<div class:list={['mini', mobile && 'mini-m', className]} aria-hidden="true">
+  <div class="mini-in">
+    <span class="mini-bar">{store.announcement}</span>
+    <span class="mini-head">
+      <b>yourstore</b>
+      {!mobile && (
+        <span class="mini-nav">
+          <i />
+          <i />
+          <i />
+        </span>
+      )}
+      <span class="mini-icons">
+        <i />
+        <i />
+      </span>
+    </span>
+    <span class="mini-hero">
+      <span class="mini-h">{store.heading}</span>
+      <span class="mini-p">{store.text}</span>
+      <span class="mini-btn">{store.button}</span>
+    </span>
+    <span class="mini-title">{store.products}</span>
+    <span class="mini-grid">
+      {
+        items.map((name, i) => (
+          <span class="mini-item">
+            <span class="mini-img" style={`--art:${art[i]}`} />
+            <span class="mini-name">{name}</span>
+            <span class="mini-price">{prices[i]}</span>
+          </span>
+        ))
+      }
+    </span>
+  </div>
+</div>
