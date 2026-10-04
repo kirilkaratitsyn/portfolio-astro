@@ -31,20 +31,20 @@ export async function init() {
   const flies = flyLogo();
   hero(flies);
   const sections = [
-    headings, reveals, rows, peek, stats, marquee, feature, () => anatomy(lenis), about, () => reviews(lenis), contact, footer, magnets, cards, stackGrid,
+    headings, reveals, rows, peek, stats, marquee, feature, () => anatomy(lenis), about, reviews, contact, footer, magnets, cards, stackGrid,
   ];
   for (const setUp of sections) {
     await yieldMain();
     setUp();
   }
-  // Triggers made in separate tasks: put them in page order (the reviews pin moves everything below it), then measure.
+  // Triggers made in separate tasks: put them in page order, then measure.
   ScrollTrigger.sort();
   ScrollTrigger.refresh();
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
   // Anything that later changes the length of the page (an FAQ answer opened, a Services row on a phone, the editor's
-  // demo, a pin taken out) moves every trigger below it: measure again once the page has settled at its new length.
+  // demo) moves every trigger below it: measure again once the page has settled at its new length.
   let length = document.documentElement.scrollHeight;
   let settle = 0;
   new ResizeObserver(() => {
@@ -504,17 +504,16 @@ function about() {
   if (panel) gsap.fromTo(panel, { rotation: -1 }, { rotation: -6, ease: 'none', scrollTrigger: { trigger: photo, start: 'top bottom', end: 'bottom top', scrub: true } });
 }
 
-function reviews(lenis: Lenis | null) {
+function reviews() {
   const rail = qs<HTMLUListElement>('[data-rail]');
   if (!rail) return;
-  const section = rail.closest('section');
   const cards = qsa('.review-card', rail);
   const bar = qs('[data-rail-progress]');
   const prev = qs<HTMLButtonElement>('[data-rail-prev]');
   const next = qs<HTMLButtonElement>('[data-rail-next]');
   const first = () => cards[0]?.offsetLeft ?? 0;
   const maxLeft = () => rail.scrollWidth - rail.clientWidth;
-  const offsetOf = (card: HTMLElement) => card.offsetLeft - first();
+  const offsetOf = (card: HTMLElement) => Math.min(maxLeft(), card.offsetLeft - first());
 
   // The cards slide in from the right when the rail comes into view.
   gsap.from(cards, { x: 110, opacity: 0, duration: 1.15, ease: EXPO, stagger: 0.08, scrollTrigger: { trigger: rail, start: 'top 88%', once: true } });
@@ -530,132 +529,57 @@ function reviews(lenis: Lenis | null) {
   window.addEventListener('resize', sync);
   sync();
 
-  const mm = gsap.matchMedia();
-
-  // Desktop: the page stops on the reviews and vertical scrolling slides the cards sideways until the last one,
-  // then the page carries on.
-  mm.add('(min-width: 768px)', () => {
-    if (!section) return;
-    rail.classList.add('is-driven');
-
-    // The pin works only on the way down. Once the visitor has scrolled past the reviews and the page has come to
-    // rest, the pin is taken out and the scroll position is corrected by the same amount, so nothing on screen moves;
-    // scrolling back up then passes through the reviews like any other section. When the visitor is above the
-    // section again (nothing below it on screen, so the pin's space can come back unseen), the cards glide back to
-    // the first one and a fresh pin is set up.
-    let st: ScrollTrigger | null = null;
-    let rewind: gsap.core.Tween | null = null;
-    const build = () => {
-      const progress = { value: 0 };
-      st = gsap.to(progress, {
-        value: () => maxLeft(),
-        ease: 'none',
-        onUpdate: () => {
-          rail.scrollLeft = progress.value;
-        },
-        scrollTrigger: { trigger: section, start: 'top 96px', end: () => `+=${maxLeft()}`, pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true },
-      }).scrollTrigger!;
-    };
-    build();
-
-    const jump = (y: number) => {
-      if (lenis) lenis.scrollTo(y, { immediate: true, force: true });
-      else window.scrollTo({ top: y, behavior: 'instant' });
-    };
-    const unpin = () => {
-      if (!st || window.scrollY <= st.end + 1) return;
-      const y = window.scrollY - (st.end - st.start);
-      st.animation?.kill();
-      st.kill(true);
-      st = null;
-      rail.scrollLeft = maxLeft();
-      jump(y);
-      ScrollTrigger.refresh();
-      sync();
-    };
-    const repin = () => {
-      if (st || rewind) return;
-      const box = section.getBoundingClientRect();
-      if (box.top < 140 || box.bottom < window.innerHeight - 1) return;
-      rewind = gsap.to(rail, {
-        scrollLeft: 0,
-        duration: 0.7,
-        ease: 'power3.inOut',
-        onComplete: () => {
-          rewind = null;
-          build();
-          ScrollTrigger.refresh();
-        },
-      });
-    };
-    // "At rest": no scroll event for a quarter of a second (and Lenis has stopped gliding).
-    let rest = 0;
-    const onScroll = () => {
-      repin();
-      window.clearTimeout(rest);
-      if (st && window.scrollY > st.end + 1) rest = window.setTimeout(function settle() {
-        if (lenis?.isScrolling) rest = window.setTimeout(settle, 120);
-        else unpin();
-      }, 250);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    // Opened (or reloaded) below the reviews: no pin on the way up from the start.
-    requestAnimationFrame(() => {
-      if (st && window.scrollY > st.end + 1) unpin();
-    });
-
-    // The arrows move along the page scroll to the neighbouring card (or slide the rail itself when it is not pinned).
-    const goTo = (left: number) => {
-      if (!st) {
-        rail.scrollTo({ left, behavior: 'smooth' });
-        return;
-      }
-      const share = maxLeft() > 0 ? Math.min(1, Math.max(0, left / maxLeft())) : 0;
-      const y = st.start + share * (st.end - st.start);
-      if (lenis) lenis.scrollTo(y, { duration: 1.1 });
-      else window.scrollTo({ top: y, behavior: 'smooth' });
-    };
-    const onPrev = () => {
-      const target = [...cards].reverse().find((c) => offsetOf(c) < rail.scrollLeft - 60);
-      goTo(target ? offsetOf(target) : 0);
-    };
-    const onNext = () => {
-      const target = cards.find((c) => offsetOf(c) > rail.scrollLeft + 60);
-      goTo(target ? offsetOf(target) : maxLeft());
-    };
-    prev?.addEventListener('click', onPrev);
-    next?.addEventListener('click', onNext);
-    return () => {
-      rail.classList.remove('is-driven');
-      window.clearTimeout(rest);
-      window.removeEventListener('scroll', onScroll);
-      rewind?.kill();
-      st?.animation?.kill();
-      st?.kill(true);
-      prev?.removeEventListener('click', onPrev);
-      next?.removeEventListener('click', onNext);
-    };
+  // The arrows step to the neighbouring card; swipes, trackpads and the keyboard scroll the rail natively.
+  prev?.addEventListener('click', () => {
+    const target = [...cards].reverse().find((c) => offsetOf(c) < rail.scrollLeft - 60);
+    rail.scrollTo({ left: target ? offsetOf(target) : 0, behavior: 'smooth' });
+  });
+  next?.addEventListener('click', () => {
+    const target = cards.find((c) => offsetOf(c) > rail.scrollLeft + 60);
+    rail.scrollTo({ left: target ? offsetOf(target) : maxLeft(), behavior: 'smooth' });
   });
 
-  // Phones and narrow windows: swipe the rail; the arrows step through it.
-  mm.add('(max-width: 767px)', () => {
-    const step = () => (cards[1] ? cards[1].offsetLeft - first() : rail.clientWidth);
-    const onPrev = () => rail.scrollBy({ left: -step(), behavior: 'smooth' });
-    const onNext = () => rail.scrollBy({ left: step(), behavior: 'smooth' });
-    prev?.addEventListener('click', onPrev);
-    next?.addEventListener('click', onNext);
-    return () => {
-      prev?.removeEventListener('click', onPrev);
-      next?.removeEventListener('click', onNext);
-    };
+  // A mouse drags the rail sideways and lets go on the nearest card; the click that ends a drag opens nothing.
+  let drag: { x: number; left: number; moved: boolean } | null = null;
+  let dropped = 0;
+  rail.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse' && e.button === 0) drag = { x: e.clientX, left: rail.scrollLeft, moved: false };
   });
+  window.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (!drag.moved) {
+      if (Math.abs(dx) < 6) return;
+      drag.moved = true;
+      rail.classList.add('is-dragging');
+      window.getSelection()?.removeAllRanges();
+    }
+    rail.scrollLeft = drag.left - dx;
+  });
+  window.addEventListener('pointerup', () => {
+    if (!drag) return;
+    const moved = drag.moved;
+    drag = null;
+    if (!moved) return;
+    dropped = performance.now();
+    rail.classList.remove('is-dragging');
+    const near = cards.reduce((a, c) => (Math.abs(offsetOf(c) - rail.scrollLeft) < Math.abs(offsetOf(a) - rail.scrollLeft) ? c : a), cards[0]!);
+    if (near) rail.scrollTo({ left: offsetOf(near), behavior: 'smooth' });
+  });
+  rail.addEventListener(
+    'click',
+    (e) => {
+      if (performance.now() - dropped < 80) e.preventDefault(), e.stopPropagation();
+    },
+    { capture: true },
+  );
 }
 
 function contact() {
   const panel = qs('[data-contact]');
   if (!panel) return;
   // Tied straight to the scroll (Lenis already smooths it): a lagging scrub would replay the growth after every
-  // refresh, e.g. when the reviews pin above is taken out at the bottom of the page.
+  // refresh, e.g. when an FAQ answer above is opened.
   gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: true } });
   // The pebbles fall into the block and bounce.
   gsap.from(qsa('.pebble', panel), { yPercent: -260, duration: 1.9, ease: 'bounce.out', stagger: 0.2, scrollTrigger: { trigger: panel, start: 'top 55%', once: true } });

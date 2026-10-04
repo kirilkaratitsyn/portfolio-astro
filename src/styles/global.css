@@ -613,12 +613,11 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: clip; }
 
-/* Reviews: a rail of cards you can drag, scroll or step through; the key phrase of each quote is marked. */
+/* Reviews: a rail of cards you can drag, scroll or step through (phones snap to a card; on desktop the arrows and a
+   drag end on a card, scripts/motion.ts reviews(), and a trackpad scrolls freely); the key phrase of each quote is marked. */
 .reviews-rail { scrollbar-width: none; }
 .reviews-rail::-webkit-scrollbar { display: none; }
 .reviews-rail.is-dragging { scroll-snap-type: none; scroll-behavior: auto; cursor: grabbing; user-select: none; -webkit-user-select: none; }
-/* Desktop: the section is pinned by scroll and the page scroll moves the cards (scripts/motion.ts), so no manual scrolling. */
-.reviews-rail.is-driven { overflow: hidden; scroll-snap-type: none; scroll-behavior: auto; cursor: default; }
 @media (min-width: 768px) and (max-height: 840px) {
   .review-card figure { padding: 28px 32px; }
   .review-card blockquote { font-size: 22px; }
