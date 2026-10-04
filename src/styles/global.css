@@ -168,12 +168,13 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .feat-controls { display: flex; align-items: center; gap: 12px; margin-top: 40px; }
 .feat-controls[hidden] { display: none; }
 .feat-arrow { display: grid; width: 44px; height: 44px; flex: none; place-items: center; border-radius: 999px; background: #fff; font-size: 18px; transition: background-color 0.2s, color 0.2s; }
-.feat-arrow:hover { background: #0e1018; color: #fff; }
+.feat-arrow:hover { background: var(--feat-accent, #0e1018); color: #fff; }
 .feat-dot { display: grid; height: 44px; place-items: center; padding: 0 3px; }
 .feat-bar { position: relative; display: block; width: 28px; height: 4px; overflow: hidden; border-radius: 99px; background: #d3d7e6; transition: width 0.4s ease; }
 .feat-dot:hover .feat-bar { background: #b8bdd3; }
 .feat-dot[aria-current='true'] .feat-bar { width: 64px; }
-.feat-bar i { position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; background: #2433f0; }
+/* The active bar fills in the colour of the project on show. */
+.feat-bar i { position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; background: var(--feat-accent, #2433f0); transition: background-color 0.6s ease; }
 .feat-dot.is-filling .feat-bar i { animation: feat-fill 6s linear forwards; }
 .is-paused .feat-dot.is-filling .feat-bar i { animation-play-state: paused; }
 .is-still .feat-dot[aria-current='true'] .feat-bar i { animation: none; transform: none; }

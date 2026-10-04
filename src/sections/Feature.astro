@@ -24,7 +24,7 @@ const slides = caseStudies
   .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#2433f0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
 ---
 
-<section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" aria-roledescription="carousel" aria-label={t.feature.label}>
+<section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" style={`--feat-accent:${slides[0]?.accent}`} aria-roledescription="carousel" aria-label={t.feature.label}>
   <div class="feat-grid">
     <div class="feat-copy min-w-0">
       <div class="feat-texts">
@@ -117,7 +117,10 @@ const slides = caseStudies
           dot.classList.add('is-filling');
         }
       });
-      panel.style.background = shots[active]?.dataset.accent ?? '';
+      // The panel and the controls take the project's own colour.
+      const accent = shots[active]?.dataset.accent ?? '';
+      panel.style.background = accent;
+      root.style.setProperty('--feat-accent', accent);
     };
 
     // The active bar fills in 6 s; when it is full, the next project comes on.
