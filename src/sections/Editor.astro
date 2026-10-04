@@ -655,8 +655,11 @@ const groups = [
       if (e.pointerType === 'touch') noteTimer = window.setTimeout(hideNote, 1600);
     });
 
-    // A short demo the first time the editor is in view, stopped by the first real touch, key or click.
+    // A short demo the first time the editor is in view, stopped by the first real touch, key or click, and when the
+    // editor leaves the screen (its later steps change the height of the editor, which must not happen out of sight).
     let touched = false;
+    let away = false;
+    const stop = () => touched || away;
     for (const type of ['pointerdown', 'keydown', 'wheel']) {
       root.addEventListener(type, (e) => {
         if (e.isTrusted) touched = true;
@@ -671,37 +674,49 @@ const groups = [
       heading.classList.add('is-demo');
       await wait(700);
       let text = start;
-      while (text && !touched) {
+      while (text && !stop()) {
         text = text.slice(0, -1);
         model['hero.heading'] = text;
         render('hero.heading');
         await wait(45);
       }
       for (const ch of next) {
-        if (touched) break;
+        if (stop()) break;
         text += ch;
         model['hero.heading'] = text;
         render('hero.heading');
         await wait(85);
       }
+      // Scrolled away mid-word: the heading still ends as a whole word.
+      if (away && !touched && text !== next) {
+        text = next;
+        model['hero.heading'] = text;
+        render('hero.heading');
+      }
       heading.classList.remove('is-demo');
       if (!touched) commit('hero.heading', text, start);
       await wait(700);
-      if (touched) return;
+      if (stop()) return;
       commit('hero.scheme', 'sand');
       await wait(1100);
-      if (touched) return;
+      if (stop()) return;
       pick('products');
       await wait(700);
-      if (touched) return;
+      if (stop()) return;
       commit('products.columns', '3');
     };
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced && 'IntersectionObserver' in window) {
+      let started = false;
       const io = new IntersectionObserver(
         (entries) => {
-          if (!entries.some((e) => e.isIntersecting)) return;
-          io.disconnect();
+          const seen = entries.some((e) => e.isIntersecting);
+          if (started) {
+            if (!seen) (away = true), io.disconnect();
+            return;
+          }
+          if (!seen) return;
+          started = true;
           if (!touched) void demo();
         },
         { threshold: 0.45 },

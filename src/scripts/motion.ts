@@ -43,8 +43,18 @@ export async function init() {
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
-  // A section that changed the length of the page (an opened Services row on a phone): measure again.
-  window.addEventListener('page:layout', () => ScrollTrigger.refresh());
+  // Anything that later changes the length of the page (an FAQ answer opened, a Services row on a phone, the editor's
+  // demo, a pin taken out) moves every trigger below it: measure again once the page has settled at its new length.
+  let length = document.documentElement.scrollHeight;
+  let settle = 0;
+  new ResizeObserver(() => {
+    if (document.documentElement.scrollHeight === length) return;
+    window.clearTimeout(settle);
+    settle = window.setTimeout(() => {
+      ScrollTrigger.refresh();
+      length = document.documentElement.scrollHeight;
+    }, 200);
+  }).observe(document.body);
   if (lenis) window.addEventListener('resize', () => lenis.resize());
 }
 
@@ -644,7 +654,9 @@ function reviews(lenis: Lenis | null) {
 function contact() {
   const panel = qs('[data-contact]');
   if (!panel) return;
-  gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: 0.7 } });
+  // Tied straight to the scroll (Lenis already smooths it): a lagging scrub would replay the growth after every
+  // refresh, e.g. when the reviews pin above is taken out at the bottom of the page.
+  gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: true } });
   // The pebbles fall into the block and bounce.
   gsap.from(qsa('.pebble', panel), { yPercent: -260, duration: 1.9, ease: 'bounce.out', stagger: 0.2, scrollTrigger: { trigger: panel, start: 'top 55%', once: true } });
 }

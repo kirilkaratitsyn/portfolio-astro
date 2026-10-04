@@ -290,8 +290,6 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .anat-lead { max-width: 520px; font-size: 17px; line-height: 1.6; }
 .anat-story, .anat-right { display: none; }
 .anat-list { list-style: none; }
-/* The drawn cards are heavy: a card is laid out only when it comes near the screen. */
-.anat-list > li { content-visibility: auto; contain-intrinsic-size: auto 640px; }
 .anat-card {
   /* A size container: the drawing inside is measured in cqi, so it scales with the card. */
   container-type: inline-size; display: flex; flex-direction: column; height: 100%; border-radius: 18px; background: #fff; overflow: hidden;
