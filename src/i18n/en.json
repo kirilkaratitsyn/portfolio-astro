@@ -45,36 +45,67 @@
     "eyebrow": "Services",
     "title": "Shopify Services",
     "subtitle": "Focused Shopify support for launches, growth, and custom storefront work.",
+    "related": "Related projects",
     "items": [
       {
         "id": "store-setup",
         "title": "Shopify Store Setup From Scratch",
-        "description": "Launch a new store with a clean theme structure, flexible sections, and admin-friendly content—aligned to your brand before you scale."
+        "description": "Launch a new store with a clean theme structure, flexible sections, and admin-friendly content—aligned to your brand before you scale.",
+        "tags": [
+          "Theme setup",
+          "Custom sections",
+          "Launch QA"
+        ]
       },
       {
         "id": "platform-migration",
         "title": "Platform Migration",
-        "description": "Move from WooCommerce, Magento, custom stacks, or legacy Shopify themes to Online Store 2.0 without losing SEO, redirects, or critical customer flows."
+        "description": "Move from WooCommerce, Magento, custom stacks, or legacy Shopify themes to Online Store 2.0 without losing SEO, redirects, or critical customer flows.",
+        "tags": [
+          "Products & customers",
+          "301 redirects",
+          "SEO kept"
+        ]
       },
       {
         "id": "app-integration",
         "title": "App Integration for Shopify",
-        "description": "Connect apps, subscriptions, payments, CRMs, and custom APIs so storefront, cart, and admin stay reliable and easy to operate."
+        "description": "Connect apps, subscriptions, payments, CRMs, and custom APIs so storefront, cart, and admin stay reliable and easy to operate.",
+        "tags": [
+          "Subscriptions & payments",
+          "Klaviyo & CRM",
+          "Custom APIs"
+        ]
       },
       {
         "id": "performance-seo",
         "title": "Performance & SEO Optimization",
-        "description": "Improve Core Web Vitals and perceived speed with leaner Liquid and assets, plus technical SEO foundations—structured data, metadata, and crawl-friendly templates."
+        "description": "Improve Core Web Vitals and perceived speed with leaner Liquid and assets, plus technical SEO foundations—structured data, metadata, and crawl-friendly templates.",
+        "tags": [
+          "Core Web Vitals",
+          "Structured data",
+          "Lean Liquid"
+        ]
       },
       {
         "id": "cro-audit",
         "title": "Conversion & UX Optimization Audit",
-        "description": "Review funnels, UX friction, and merchandising gaps—then ship prioritized fixes that lift conversion without a full rebuild."
+        "description": "Review funnels, UX friction, and merchandising gaps—then ship prioritized fixes that lift conversion without a full rebuild.",
+        "tags": [
+          "Funnel review",
+          "UX fixes",
+          "Merchandising"
+        ]
       },
       {
         "id": "support",
         "title": "Ongoing Support and Maintenance",
-        "description": "Retainers for launches, bug fixes, theme updates, and iteration so your team can focus on growth while the storefront stays stable."
+        "description": "Retainers for launches, bug fixes, theme updates, and iteration so your team can focus on growth while the storefront stays stable.",
+        "tags": [
+          "Bug fixes",
+          "Theme updates",
+          "New features"
+        ]
       }
     ]
   },

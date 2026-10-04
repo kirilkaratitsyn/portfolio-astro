@@ -1,26 +1,153 @@
 ---
+// Services as rows that open one at a time: the open row says what the service is and what it covers, and shows real
+// projects of that kind with a link to /projects filtered to them (the count is the one the filter shows). On a
+// desktop the row under the pointer (or focus) opens and one is always open; every open panel has the same height, so
+// the page never changes length (Anatomy below is pinned to measured positions). On phones a tap opens or closes a row
+// and the scroll triggers are measured again. Without scripts every row is open.
 import Icon3D from '../components/Icon3D.astro';
-import { useTranslations, type Locale } from '../i18n';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { thumb } from '../lib/thumbs';
+import type { WorkKind, WorkProject } from '../lib/content';
 
 interface Props {
   locale: Locale;
+  works: WorkProject[];
 }
 
-const t = useTranslations(Astro.props.locale);
-// One 3D icon per service, in the order of the list.
+const { locale, works } = Astro.props;
+const t = useTranslations(locale);
+// One 3D icon and one kind of project per service, in the order of the list.
 const icons = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy'] as const;
+const kinds: WorkKind[] = ['build', 'migration', 'features', 'speed', 'redesign', 'support'];
+
+// Screens: projects of the kind, ones not shown in an earlier row first, so the rows do not repeat each other.
+const shown = new Set<string>();
+const rows = t.services.items.map((item, index) => {
+  const kind = kinds[index] ?? 'build';
+  const related = works.filter((w) => w.work.includes(kind));
+  const live = related.filter((w) => !w.archived);
+  const shots = [...live.filter((w) => !shown.has(w.id)), ...live.filter((w) => shown.has(w.id))].slice(0, 3);
+  for (const w of shots) shown.add(w.id);
+  return {
+    ...item,
+    icon: icons[index] ?? 'shop',
+    count: related.length,
+    shots,
+    href: `${localizePath(locale, '/projects')}?work=${kind}`,
+  };
+});
 ---
 
-<section id="services" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 md:mt-32">
+<section id="services" data-services class="svc mx-auto mt-24 max-w-[1440px] scroll-mt-24 md:mt-32">
   <h2 data-split class="px-5 pb-6 font-head text-[40px] font-bold tracking-[-0.02em] md:px-10 md:pb-8 md:text-[56px]">{t.header.services}</h2>
-  <ul class="grid border-t border-line md:grid-cols-2">
+  <ul class="border-t border-line">
     {
-      t.services.items.map((item, index) => (
-        <li data-reveal class="flex items-center gap-4 border-b border-line px-5 py-4 font-head text-[22px] font-medium leading-tight tracking-[-0.01em] md:gap-[22px] md:px-10 md:text-[32px] md:[&:nth-child(odd)]:border-r">
-          <Icon3D name={icons[index] ?? 'shop'} class="w-14 shrink-0 md:w-[80px]" />
-          {item.title}
+      rows.map((row, i) => (
+        <li data-reveal data-svc class:list={['svc-row border-b border-line', i === 0 && 'is-open']}>
+          <h3>
+            <button type="button" data-svc-head id={`svc-${row.id}`} aria-controls={`svc-${row.id}-panel`} aria-expanded="true" class="svc-head">
+              <span class="svc-num">{String(i + 1).padStart(2, '0')}</span>
+              <Icon3D name={row.icon} class="svc-icon" />
+              <span class="svc-title">{row.title}</span>
+              <span class="svc-plus" aria-hidden="true" />
+            </button>
+          </h3>
+          <div class="svc-panel" id={`svc-${row.id}-panel`} role="region" aria-labelledby={`svc-${row.id}`}>
+            <div class="svc-clip">
+              <div class="svc-body">
+                <div class="svc-copy">
+                  <p class="svc-text">{row.description}</p>
+                  <ul class="svc-tags">
+                    {row.tags.map((tag) => (
+                      <li>{tag}</li>
+                    ))}
+                  </ul>
+                  {row.count > 0 && (
+                    <a href={row.href} class="svc-more">
+                      {t.services.related}
+                      <span class="svc-count">{row.count}</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
+                </div>
+                {row.shots.length > 0 && (
+                  <a href={row.href} class="svc-shots" tabindex="-1" aria-hidden="true">
+                    {row.shots.map((w, k) => (
+                      <span class="svc-shot" style={`--k:${k}`}>
+                        <span class="svc-bar">
+                          <i />
+                          <i />
+                          <i />
+                        </span>
+                        <img src={thumb(w.image, '640')} alt="" width="640" height="444" loading="lazy" decoding="async" />
+                      </span>
+                    ))}
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         </li>
       ))
     }
   </ul>
 </section>
+<!-- Accordion mode before the section is painted, so the page keeps its length once the scripts run. -->
+<script is:inline>
+  document.querySelector('[data-services]').classList.add('is-ready');
+</script>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-services]');
+  const rows = [...(root?.querySelectorAll<HTMLElement>('[data-svc]') ?? [])];
+  if (root && rows.length) {
+    // Desktop: hover and focus open a row, and one is always open. Touch and narrow screens: a tap toggles.
+    const desk = window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)');
+    const heads = rows.map((row) => row.querySelector<HTMLButtonElement>('[data-svc-head]')!);
+    const panels = rows.map((row) => row.querySelector<HTMLElement>('.svc-panel')!);
+    let open = 0;
+
+    // Phones: the page gets longer or shorter, so the scroll triggers below are measured again once it settles.
+    let settle = 0;
+    const measure = () => {
+      clearTimeout(settle);
+      settle = window.setTimeout(() => window.dispatchEvent(new Event('page:layout')), 650);
+    };
+
+    const show = (next: number, quiet = false) => {
+      open = next;
+      rows.forEach((row, i) => {
+        const on = i === next;
+        row.classList.toggle('is-open', on);
+        heads[i]!.setAttribute('aria-expanded', String(on));
+        panels[i]!.inert = !on;
+      });
+      if (!quiet && !desk.matches) measure();
+    };
+
+    let intent = 0;
+    rows.forEach((row, i) => {
+      row.addEventListener('pointerenter', (e) => {
+        if (e.pointerType !== 'mouse' || !desk.matches || i === open) return;
+        clearTimeout(intent);
+        intent = window.setTimeout(() => show(i), 110);
+      });
+      row.addEventListener('pointerleave', () => clearTimeout(intent));
+      heads[i]!.addEventListener('focus', () => {
+        if (desk.matches && i !== open) show(i);
+      });
+      heads[i]!.addEventListener('click', () => {
+        if (i !== open) show(i);
+        else if (!desk.matches) show(-1);
+      });
+    });
+
+    // Back to exactly one open row when the screen becomes a desktop one.
+    desk.addEventListener('change', () => {
+      if (desk.matches && open < 0) show(0);
+    });
+    show(0, true);
+    root.classList.add('is-ready');
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('is-live')));
+  }
+</script>

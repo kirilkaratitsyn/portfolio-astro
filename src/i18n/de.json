@@ -45,36 +45,67 @@
     "eyebrow": "Leistungen",
     "title": "Shopify Leistungen",
     "subtitle": "Fokussierte Shopify-Unterstützung für Launches, Wachstum und individuelle Storefront-Arbeit.",
+    "related": "Passende Projekte",
     "items": [
       {
         "id": "store-setup",
         "title": "Shopify Store Setup von Grund auf",
-        "description": "Neuen Store mit sauberem Theme-Aufbau, flexiblen Sections und admin-freundlichen Inhalten—passend zur Marke und bereit zum Skalieren."
+        "description": "Neuen Store mit sauberem Theme-Aufbau, flexiblen Sections und admin-freundlichen Inhalten—passend zur Marke und bereit zum Skalieren.",
+        "tags": [
+          "Theme-Setup",
+          "Eigene Sections",
+          "Launch-QA"
+        ]
       },
       {
         "id": "platform-migration",
         "title": "Plattform-Migration",
-        "description": "Umzug von WooCommerce, Magento, Custom-Stacks oder Legacy-Themes zu Online Store 2.0—ohne SEO, Redirects oder kritische Kundenflüsse zu verlieren."
+        "description": "Umzug von WooCommerce, Magento, Custom-Stacks oder Legacy-Themes zu Online Store 2.0—ohne SEO, Redirects oder kritische Kundenflüsse zu verlieren.",
+        "tags": [
+          "Produkte & Kunden",
+          "301-Weiterleitungen",
+          "SEO bleibt"
+        ]
       },
       {
         "id": "app-integration",
         "title": "App-Integration für Shopify",
-        "description": "Apps, Abos, Payments, CRMs und APIs anbinden, sodass Storefront, Warenkorb und Admin stabil und gut bedienbar bleiben."
+        "description": "Apps, Abos, Payments, CRMs und APIs anbinden, sodass Storefront, Warenkorb und Admin stabil und gut bedienbar bleiben.",
+        "tags": [
+          "Abos & Zahlungen",
+          "Klaviyo & CRM",
+          "Eigene APIs"
+        ]
       },
       {
         "id": "performance-seo",
         "title": "Performance- & SEO-Optimierung",
-        "description": "Core Web Vitals und gefühlte Geschwindigkeit verbessern mit schlankerem Liquid und Assets, plus technisches SEO—Structured Data, Metadaten, crawl-freundliche Templates."
+        "description": "Core Web Vitals und gefühlte Geschwindigkeit verbessern mit schlankerem Liquid und Assets, plus technisches SEO—Structured Data, Metadaten, crawl-freundliche Templates.",
+        "tags": [
+          "Core Web Vitals",
+          "Strukturierte Daten",
+          "Schlankes Liquid"
+        ]
       },
       {
         "id": "cro-audit",
         "title": "Conversion- & UX-Optimierungs-Audit",
-        "description": "Funnels, UX-Reibung und Merchandising-Lücken prüfen—dann priorisierte Fixes, die Conversion verbessern ohne Full-Rebuild."
+        "description": "Funnels, UX-Reibung und Merchandising-Lücken prüfen—dann priorisierte Fixes, die Conversion verbessern ohne Full-Rebuild.",
+        "tags": [
+          "Funnel-Analyse",
+          "UX-Fixes",
+          "Merchandising"
+        ]
       },
       {
         "id": "support",
         "title": "Laufender Support und Wartung",
-        "description": "Retainer für Launches, Bugfixes, Theme-Updates und Iteration—damit ihr wachsen könnt, während der Store zuverlässig bleibt."
+        "description": "Retainer für Launches, Bugfixes, Theme-Updates und Iteration—damit ihr wachsen könnt, während der Store zuverlässig bleibt.",
+        "tags": [
+          "Bugfixes",
+          "Theme-Updates",
+          "Neue Funktionen"
+        ]
       }
     ]
   },

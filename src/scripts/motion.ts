@@ -43,6 +43,8 @@ export async function init() {
 
   // Fonts and lazy images move things: measure again.
   document.fonts.ready.then(() => ScrollTrigger.refresh());
+  // A section that changed the length of the page (an opened Services row on a phone): measure again.
+  window.addEventListener('page:layout', () => ScrollTrigger.refresh());
   if (lenis) window.addEventListener('resize', () => lenis.resize());
 }
 

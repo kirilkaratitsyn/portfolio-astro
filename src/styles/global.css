@@ -180,6 +180,70 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .is-still .feat-dot[aria-current='true'] .feat-bar i { animation: none; transform: none; }
 @keyframes feat-fill { to { transform: scaleX(1); } }
 
+/* Services, rows that open one at a time (sections/Services.astro). Without scripts every row is open; .is-ready (set
+   before the section paints) closes all but .is-open, .is-live turns the transitions on. On a desktop every open
+   panel has the same height, so opening one row and closing another keeps the page the same length. */
+.svc-head { display: grid; width: 100%; grid-template-columns: 26px 48px minmax(0, 1fr) 32px; align-items: center; gap: 12px; padding: 14px 20px; text-align: left; cursor: pointer; }
+.svc-num { font-family: 'Onest', 'Onest Fallback', sans-serif; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: #5a5f73; transition: color 0.3s ease; }
+.svc-icon { width: 48px; }
+.svc-title { font-size: 21px; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
+.svc-plus { position: relative; width: 32px; height: 32px; justify-self: end; border: 1px solid #d3d7e6; border-radius: 999px; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+.svc-plus::before, .svc-plus::after { content: ''; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; border-radius: 2px; background: currentColor; transition: transform 0.4s ease; }
+.svc-plus::after { transform: rotate(90deg); }
+.svc-row { transition: background-color 0.4s ease; }
+.svc-panel { display: grid; grid-template-rows: 1fr; }
+.svc-clip { min-height: 0; overflow: hidden; }
+.svc-body { display: grid; gap: 18px; padding: 2px 20px 26px; }
+.svc-text { max-width: 540px; font-size: 16px; line-height: 1.55; color: #5a5f73; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.svc-tags li { padding: 6px 12px; border: 1px solid #d3d7e6; border-radius: 999px; font-size: 14px; font-weight: 500; line-height: 1.2; }
+.svc-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-size: 17px; font-weight: 600; color: #2433f0; }
+.svc-more:hover { text-decoration: underline; text-underline-offset: 4px; }
+.svc-count { display: inline-grid; min-width: 26px; height: 22px; place-items: center; padding: 0 7px; border-radius: 999px; background: #2433f0; font-size: 13px; color: #fff; }
+.svc-shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.svc-shot { display: block; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 10px 24px rgba(14, 16, 24, 0.12); }
+.svc-bar { display: flex; gap: 3px; padding: 4px 6px; background: #f1f2f6; }
+.svc-bar i { width: 4px; height: 4px; border-radius: 99px; background: #cfd2de; }
+.svc-shot img { display: block; width: 100%; height: auto; aspect-ratio: 640 / 444; object-fit: cover; object-position: top; }
+.svc.is-ready .svc-row.is-open { background: #fff; }
+.svc.is-ready .svc-row.is-open .svc-num { color: #2433f0; }
+.svc.is-ready .svc-row.is-open .svc-plus { border-color: #0e1018; background: #0e1018; color: #fff; }
+.svc.is-ready .svc-row.is-open .svc-plus::after { transform: rotate(0deg); }
+.svc.is-ready .svc-row:not(.is-open) .svc-panel { grid-template-rows: 0fr; }
+.svc.is-ready .svc-row:not(.is-open) .svc-head:hover .svc-plus { border-color: #0e1018; }
+.svc.is-live .svc-panel { transition: grid-template-rows 0.6s cubic-bezier(0.65, 0, 0.35, 1); }
+/* The screens come in one after another as their row opens. */
+.svc.is-ready .svc-shot { transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), translate 0.5s ease; transition-delay: calc(0.12s + var(--k) * 0.07s); }
+.svc.is-ready .svc-row:not(.is-open) .svc-shot { opacity: 0; transform: translateY(18px); transition-delay: 0s; }
+@media (min-width: 768px) {
+  .svc-head { grid-template-columns: 56px 72px minmax(0, 1fr) 44px; gap: 22px; padding: 16px 40px; }
+  .svc-num { font-size: 15px; }
+  .svc-icon { width: 72px; }
+  .svc-title { font-size: 32px; }
+  .svc-plus { width: 44px; height: 44px; }
+  .svc-plus::before, .svc-plus::after { width: 14px; margin-left: -7px; }
+  /* One height for every open panel (the copy column is sized to fit the longest service in every language). */
+  .svc-body { height: 300px; align-content: start; padding: 0 40px 36px 212px; }
+  .svc-text { font-size: 18px; }
+  .svc-shots { display: none; }
+}
+@media (min-width: 1024px) {
+  .svc-body { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 40px; }
+  /* The screens of the open row in a fan, the first in front. */
+  .svc-shots { position: relative; display: block; height: 100%; }
+  .svc-shot { position: absolute; top: 0; --w: min(52%, 300px); left: calc(var(--k) * (100% - var(--w)) / 2); z-index: calc(3 - var(--k)); width: var(--w); transform-origin: 100% 50%; scale: calc(1 - var(--k) * 0.08); border-radius: 12px; box-shadow: 0 18px 40px rgba(14, 16, 24, 0.16); }
+  .svc-bar { gap: 5px; padding: 7px 10px; }
+  .svc-bar i { width: 7px; height: 7px; }
+  .svc.is-ready .svc-row:not(.is-open) .svc-shot { transform: translateX(-28px); }
+  .svc-shots:hover .svc-shot { translate: calc(var(--k) * 12px) 0; }
+}
+@media (min-width: 1280px) {
+  .svc-body { height: 280px; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svc.is-live .svc-panel, .svc .svc-shot, .svc-row { transition: none !important; }
+}
+
 /* How I work, a deck of cards flat to the screen (sections/Anatomy.astro). Without the motion class the deck is spread
    by index and every item expanded; with it, the wrapper gets tall, the stage sticks and scripts/motion.ts anatomy()
    sets --gap (how far the deck is spread), each card's --d (how many steps it is from the one in focus) and .is-on. */
