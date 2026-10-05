@@ -588,8 +588,11 @@ button.ed-icon:hover { background: #f1f1f1; }
 .motion .hero-ribbon { animation: wipe 1.7s cubic-bezier(0.65, 0, 0.2, 1) 0.5s both; }
 
 /* Scroll reveals: hidden start states exist only under `.motion` (set in <head>, removed again if the scripts never start). */
-.motion [data-reveal], .motion [data-stagger] > * { opacity: 0; }
-.motion [data-split] { visibility: hidden; }
+/* Start states of the scroll reveals (scripts/motion.ts reveals(), headings()): desktop only, phones show everything. */
+@media (hover: hover) and (pointer: fine) {
+  .motion [data-reveal], .motion [data-stagger] > * { opacity: 0; }
+  .motion [data-split] { visibility: hidden; }
+}
 .motion .intro-lift { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .wm-ch { will-change: transform; }
 

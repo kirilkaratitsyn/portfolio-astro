@@ -119,7 +119,8 @@ function fitWordmark(word: HTMLElement, chars: Element[]) {
 
 function hero(wordFlies: boolean) {
   const section = qs('[data-hero]');
-  if (!section) return;
+  // Phones: no effects tied to the scroll (they lag behind a phone's own scrolling); the intro in CSS still plays.
+  if (!section || !fine) return;
   const claim = qs('h1', section);
   const button = qs('.hero-cta', section);
   const ribbon = qs('.hero-ribbon', section);
@@ -156,6 +157,17 @@ function flyLogo(): boolean {
   };
   if (!root.hasAttribute('data-fly-logo')) return false;
   if (!word || !wrap || !name || !text || !bar) return show();
+
+  // Phones scroll on their own thread, so a word moved by script from the scroll lags and doubles the logo. There the
+  // header's name simply slides open once the hero's word is off screen, and closes when it is back.
+  if (!fine) {
+    name.style.transition = 'max-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease';
+    new IntersectionObserver(([entry]) => {
+      const gone = !entry?.isIntersecting;
+      Object.assign(name.style, { maxWidth: gone ? `${text.offsetWidth}px` : '0px', opacity: gone ? '1' : '0' });
+    }).observe(word);
+    return false;
+  }
 
   const fly = document.createElement('span');
   fly.className = 'wm-fly';
@@ -221,6 +233,8 @@ function flyLogo(): boolean {
 
 /** Headings split into lines only as they come near (a third of a screen ahead): splitting is layout work. */
 function headings() {
+  // Phones: headings are shown as they are (the CSS that hides them until they are split is desktop only).
+  if (!fine) return;
   const split = (el: HTMLElement) =>
     SplitText.create(el, {
       type: 'lines',
@@ -248,6 +262,8 @@ function headings() {
 }
 
 function reveals() {
+  // Phones: nothing waits for the scroll to appear (fast flicks left blank screens); see global.css for the start states.
+  if (!fine) return;
   const items = qsa('[data-reveal]');
   if (items.length) {
     gsap.set(items, { opacity: 0, y: 36 });
@@ -272,6 +288,7 @@ function reveals() {
 /* ---------------------------------------------------------------- work rows */
 
 function rows() {
+  if (!fine) return;
   qsa('[data-row]').forEach((row) => {
     const link = qs('a', row);
     if (!link) return;
@@ -388,7 +405,8 @@ function stats() {
 function marquee() {
   const wrap = qs('[data-marquee-wrap]');
   const track = qs('[data-marquee]');
-  if (!wrap || !track) return;
+  // Phones keep the plain CSS drift, which runs off the main thread.
+  if (!wrap || !track || !fine) return;
   track.style.animation = 'none';
   const wrapX = gsap.utils.wrap(-50, 0);
   let position = 0;
@@ -425,7 +443,7 @@ function marquee() {
 function feature() {
   const section = qs('[data-feature]');
   const panel = qs('[data-feature-panel]', section ?? document);
-  if (!section || !panel) return;
+  if (!section || !panel || !fine) return;
   // Every slide's screens ride the same scroll motion (sections/Feature.astro shows one slide at a time).
   const desks = qsa('[data-feature-desk]', panel);
   const phones = qsa('[data-feature-phone]', panel);
@@ -496,7 +514,7 @@ function anatomy(lenis: Lenis | null) {
 /** About: the photo is uncovered, drifts inside its frame while you scroll, and the cobalt panel behind it tilts. */
 function about() {
   const photo = qs('[data-about-photo]');
-  if (!photo) return;
+  if (!photo || !fine) return;
   const img = qs('img', photo);
   const panel = qs('[data-about-panel]');
   gsap.fromTo(photo, { clipPath: 'inset(100% 0% 0% 0% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 28px)', duration: 1.5, ease: EXPO, clearProps: 'clipPath', scrollTrigger: { trigger: photo, start: 'top 85%', once: true } });
@@ -515,8 +533,8 @@ function reviews() {
   const maxLeft = () => rail.scrollWidth - rail.clientWidth;
   const offsetOf = (card: HTMLElement) => Math.min(maxLeft(), card.offsetLeft - first());
 
-  // The cards slide in from the right when the rail comes into view.
-  gsap.from(cards, { x: 110, opacity: 0, duration: 1.15, ease: EXPO, stagger: 0.08, scrollTrigger: { trigger: rail, start: 'top 88%', once: true } });
+  // The cards slide in from the right when the rail comes into view (desktop).
+  if (fine) gsap.from(cards, { x: 110, opacity: 0, duration: 1.15, ease: EXPO, stagger: 0.08, scrollTrigger: { trigger: rail, start: 'top 88%', once: true } });
 
   const sync = () => {
     const max = maxLeft();
@@ -579,8 +597,8 @@ function contact() {
   const panel = qs('[data-contact]');
   if (!panel) return;
   // Tied straight to the scroll (Lenis already smooths it): a lagging scrub would replay the growth after every
-  // refresh, e.g. when an FAQ answer above is opened.
-  gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: true } });
+  // refresh, e.g. when an FAQ answer above is opened. Desktop only, like every effect tied to the scroll.
+  if (fine) gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: true } });
   // The pebbles fall into the block and bounce.
   gsap.from(qsa('.pebble', panel), { yPercent: -260, duration: 1.9, ease: 'bounce.out', stagger: 0.2, scrollTrigger: { trigger: panel, start: 'top 55%', once: true } });
 }
