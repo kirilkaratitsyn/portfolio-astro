@@ -11,13 +11,15 @@ const t = useTranslations(Astro.props.locale);
 const words = t.hero.claim.split(' ');
 ---
 
-<section data-hero class="relative md:h-[860px]">
+<section data-hero class="relative lg:h-[860px]">
   <div class="relative z-[2] mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
     <!-- The surname is decoration; the h1 below carries the page's meaning. -->
     <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
 
-    <div class="relative mt-8 md:mt-0">
-      <div class="md:absolute md:left-0 md:top-[96px] md:max-w-[600px]">
+    <!-- Phones and portrait tablets: the words, then the stones under them. From 1024px: the stones to the right, sized to
+         end where the words begin, and the words always above them (tablets show this picture, not the live stones). -->
+    <div class="relative mt-8 lg:mt-0">
+      <div class="relative z-[4] lg:absolute lg:left-0 lg:top-[96px] lg:max-w-[600px]">
         <h1 class="max-w-[600px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:text-[46px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
@@ -29,23 +31,23 @@ const words = t.hero.claim.split(' ');
       <img
         src="/source/3d/stones-1720.webp"
         srcset="/source/3d/stones-860.webp 860w, /source/3d/stones-1720.webp 1720w"
-        sizes="(min-width: 768px) 860px, 100vw"
+        sizes="(min-width: 1024px) 860px, (min-width: 768px) 720px, 100vw"
         width="1720"
         height="1188"
         alt=""
         fetchpriority="high"
         data-hero-poster
         decoding="async"
-        class="mt-4 w-full md:pointer-events-none md:absolute md:-right-5 md:-top-[18px] md:z-[3] md:mt-0 md:w-[860px]"
+        class="mt-4 w-full md:mx-auto md:mt-10 md:max-w-[720px] lg:pointer-events-none lg:absolute lg:-right-5 lg:-top-[18px] lg:z-[3] lg:mt-0 lg:w-[min(860px,calc(100%+20px-540px))] lg:max-w-none"
       />
     </div>
   </div>
 
   <!-- Live 3D stones (scripts/stage.ts): the whole width of the screen, behind the text so they never cover it, and a little below the hero so the white rows hide where they stop. -->
-  <div data-hero-stage class="pointer-events-none absolute inset-x-0 -bottom-10 top-0 z-[1] md:-bottom-20" aria-hidden="true"></div>
+  <div data-hero-stage class="pointer-events-none absolute inset-x-0 -bottom-10 top-0 z-[1] lg:-bottom-20" aria-hidden="true"></div>
 
   <!-- Ribbon: one flat cobalt stroke that carries the eye from the hero into the work list. -->
-  <svg class="hero-ribbon pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full md:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="hero-ribbon pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full lg:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
     <path d="M-40 40 C 260 -10, 520 120, 760 150 S 1240 190, 1500 40" fill="none" stroke="#2433F0" stroke-width="18" stroke-linecap="round" vector-effect="non-scaling-stroke" />
   </svg>
 </section>
