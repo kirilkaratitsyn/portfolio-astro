@@ -53,13 +53,13 @@ const projects = localizePath(locale, '/projects');
     <p data-reveal class="max-w-[440px] text-[17px] leading-relaxed text-mute">{t.lead}</p>
   </div>
 
-  <ul data-stack-grid data-stagger class="stack-grid mt-10 grid gap-px overflow-hidden rounded-[28px] sm:grid-cols-2 lg:grid-cols-4">
+  <ul data-stack-grid data-stagger class="stack-grid mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-[22px] md:rounded-[28px] lg:grid-cols-4">
     {
       items.map((item) => (
         <li class="stack-tile">
           <span class="stack-icon" set:html={item.icon} />
-          <p class="mt-9 font-head text-[19px] font-bold leading-tight tracking-[-0.01em]">{item.name}</p>
-          <p class="mt-2 text-[14px] leading-relaxed text-mute">{item.text}</p>
+          <p class="mt-5 font-head text-[16px] font-bold leading-tight tracking-[-0.01em] md:mt-9 md:text-[19px]">{item.name}</p>
+          <p class="mt-1.5 text-[13px] leading-snug text-mute md:mt-2 md:text-[14px] md:leading-relaxed">{item.text}</p>
         </li>
       ))
     }

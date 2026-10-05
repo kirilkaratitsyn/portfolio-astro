@@ -580,6 +580,7 @@
     "open": "Shop öffnen ↗",
     "home": "Meine Basis: Deutschland",
     "hint": "Ziehen zum Drehen · mit zwei Fingern oder +/− zoomen · Pin anklicken, um den Shop zu öffnen",
+    "hintTouch": "Ziehen zum Drehen · mit zwei Fingern oder +/− zoomen · Pin antippen, um den Shop zu öffnen",
     "zoomIn": "Globus vergrößern",
     "zoomOut": "Globus verkleinern"
   },

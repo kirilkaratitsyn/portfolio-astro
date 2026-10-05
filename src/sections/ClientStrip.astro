@@ -37,19 +37,19 @@ const clients = await Promise.all(
 );
 ---
 
-<section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-36">
-  <h2 id="clients-label" class="mb-12 font-sans text-base font-medium text-mute md:mb-16 md:text-lg">{t.clients.label}</h2>
-  <ul class="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-x-10 md:gap-y-20" data-stagger>
+<section aria-labelledby="clients-label" class="mx-auto max-w-[1440px] px-5 py-16 md:px-10 md:py-36">
+  <h2 id="clients-label" class="mb-8 font-sans text-base font-medium text-mute md:mb-16 md:text-lg">{t.clients.label}</h2>
+  <ul class="grid grid-cols-3 gap-x-5 gap-y-7 md:grid-cols-4 md:gap-x-10 md:gap-y-20" data-stagger>
     {
       clients.map((client) => (
-        <li class="flex h-[84px] items-center justify-center md:h-[110px]">
+        <li class="flex h-[56px] items-center justify-center md:h-[110px]">
           <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-80 transition duration-300 hover:scale-105 hover:opacity-100" style={`--h: ${client.height}px`}>
             <img
               src={`/source/logos/clients/${client.logo}`}
               alt={client.title}
               width={client.width}
               height={client.size}
-              class="h-[calc(var(--h)*0.62)] w-auto max-w-[150px] object-contain brightness-0 md:h-[var(--h)] md:max-w-[290px]"
+              class="h-[calc(var(--h)*0.46)] w-auto max-w-[96px] object-contain brightness-0 md:h-[var(--h)] md:max-w-[290px]"
               loading="lazy"
               decoding="async"
             />

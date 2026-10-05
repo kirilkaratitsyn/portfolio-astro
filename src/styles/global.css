@@ -123,6 +123,17 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .pf-item[data-span='3'] { grid-column: span 3 / span 3; }
   .pf-item[data-span='4'] { grid-column: span 4 / span 4; }
 }
+/* Hints worded for the pointer in hand. */
+.only-touch { display: none; }
+@media (hover: none), (pointer: coarse) { .only-touch { display: block; } .only-fine { display: none; } }
+
+/* Country pills next to the globe (sections/Globe.astro): pressed, the pill turns ink and shows a cross to clear it.
+   Phones: one row you swipe, edge to edge. */
+@media (max-width: 767px) {
+  .globe-pills { margin-inline: -20px; padding: 2px 20px 8px; overflow-x: auto; scroll-padding-inline: 20px; scrollbar-width: none; }
+  .globe-pills::-webkit-scrollbar { display: none; }
+  .globe-pills > li { flex: none; }
+}
 /* Country pills next to the globe (sections/Globe.astro): pressed, the pill turns ink and shows a cross to clear it. */
 .globe-pill {
   display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #fff; padding: 6px 16px 6px 6px; font-size: 14px;
@@ -287,9 +298,14 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
    and --fill (0..1) on the rail segment in focus. One card at a time: the old one leaves before the new one settles. */
 .anat-grid { display: grid; gap: 20px; }
 .anat-title { font-size: 40px; line-height: 1; letter-spacing: -0.03em; }
-.anat-lead { max-width: 520px; font-size: 17px; line-height: 1.6; }
+.anat-lead { max-width: 520px; margin-top: 16px; font-size: 17px; line-height: 1.6; }
 .anat-story, .anat-right { display: none; }
 .anat-list { list-style: none; }
+@media (max-width: 767px) {
+  .anat-list { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; scrollbar-width: none; }
+  .anat-list::-webkit-scrollbar { display: none; }
+  .anat-list > li { flex: 0 0 86%; scroll-snap-align: start; }
+}
 .anat-card {
   /* A size container: the drawing inside is measured in cqi, so it scales with the card. */
   container-type: inline-size; display: flex; flex-direction: column; height: 100%; border-radius: 18px; background: #fff; overflow: hidden;
@@ -318,7 +334,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .anat-seg-bar { position: relative; display: block; height: 4px; overflow: hidden; border-radius: 99px; background: #d3d7e6; }
   .anat-seg-bar i { position: absolute; inset: 0; transform-origin: left; transform: scaleX(var(--fill, 0)); background: #2433f0; }
   .anat-seg.is-past .anat-seg-bar i { --fill: 1; background: #0e1018; }
-  .anat-seg-num { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: #8a8fa3; transition: color 0.3s ease; }
+  .anat-seg-num { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: #5a5f73; transition: color 0.3s ease; }
   .anat-seg.is-past .anat-seg-num { color: #0e1018; }
   .anat-seg.is-on .anat-seg-num { color: #2433f0; }
   .anat-seg:hover .anat-seg-num { color: #0e1018; }
@@ -328,7 +344,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .anat-step { grid-area: 1 / 1; transition: opacity 0.45s ease 0.1s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, visibility 0s; }
   .anat-step:not(.is-on) { opacity: 0; transform: translateY(18px); visibility: hidden; transition: opacity 0.25s ease, transform 0.4s ease, visibility 0s 0.3s; }
   .anat-step.is-past:not(.is-on) { transform: translateY(-18px); }
-  .anat-count { font-size: 15px; font-weight: 600; color: #8a8fa3; font-variant-numeric: tabular-nums; }
+  .anat-count { font-size: 15px; font-weight: 600; color: #5a5f73; font-variant-numeric: tabular-nums; }
   .anat-count b { color: #2433f0; }
   .anat-step-title { margin-top: 10px; font-size: clamp(30px, 2.9vw, 44px); line-height: 1.05; letter-spacing: -0.025em; }
   .anat-step-text { max-width: 520px; margin-top: 16px; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.55; color: #3d4152; }
@@ -375,6 +391,12 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .stack-icon { display: grid; place-items: center start; height: 32px; color: #0e1018; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease; }
 .stack-icon svg { width: 30px; height: 30px; }
 .stack-icon svg[data-wordmark] { width: auto; height: 24px; }
+@media (max-width: 767px) {
+  .stack-tile { padding: 18px 16px 20px; }
+  .stack-icon { height: 26px; }
+  .stack-icon svg { width: 24px; height: 24px; }
+  .stack-icon svg[data-wordmark] { height: 18px; max-width: 100%; }
+}
 .stack-tile:hover .stack-icon { color: #2433f0; transform: translateY(-4px) rotate(-6deg); }
 
 /* Theme editor (sections/Editor.astro): a working copy of the Shopify theme editor, drawn after the real one (Polaris
