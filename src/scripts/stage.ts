@@ -103,6 +103,8 @@ abstract class View {
     return false;
   }
   leave() {}
+  /** A finger can take hold of it with a sideways drag (an upward or downward one scrolls the page). */
+  readonly touchGrab: boolean = false;
   grab(_p: Pointer) {}
   drag(_p: Pointer) {}
   release(_p: Pointer) {}
@@ -132,6 +134,7 @@ interface HeroStone {
 }
 
 class HeroView extends View {
+  readonly touchGrab = true;
   private stones: HeroStone[];
   private poster: HTMLImageElement;
   private k = 1;
@@ -265,7 +268,8 @@ class HeroView extends View {
   step(dt: number, scroll: number) {
     const stones = this.stones;
     const pointer = this.pointer;
-    const local = pointer && pointer.type !== 'touch' ? this.local(pointer) : null;
+    // A finger only counts while it holds a stone (it does not hover).
+    const local = pointer && (pointer.type !== 'touch' || this.grabbed) ? this.local(pointer) : null;
     let moving = false;
     const steps = 2;
     const h = dt / steps;
@@ -385,6 +389,7 @@ function makeObject(name: string, hostWidth: number): { object: Object3D; rest: 
 }
 
 class PebbleView extends View {
+  readonly touchGrab = true;
   private group = new Group();
   private object: Object3D;
   private rest: Quaternion | null;
@@ -1044,6 +1049,8 @@ class Stage {
   private pointerTime = 0;
   private grabbed: View | null = null;
   private tap: { x: number; y: number; t: number } | null = null;
+  /** Where a finger went down, and the object under it that a sideways drag would take hold of. */
+  private touchDown: { x: number; y: number; view: View | null } | null = null;
   private downAt: { x: number; y: number } | null = null;
   private io: IntersectionObserver;
   private ro: ResizeObserver;
@@ -1201,6 +1208,23 @@ class Stage {
 
   private onMove = (e: PointerEvent) => {
     const p = this.pointer;
+    // Touch: a drag that goes sideways first takes hold of the object it started on (touch-action: pan-y there, so
+    // the browser leaves sideways moves to us); one that goes up or down is a scroll, and the browser cancels it.
+    const down = this.touchDown;
+    if (down && e.pointerType === 'touch' && !this.grabbed) {
+      const dx = e.clientX - down.x;
+      const dy = e.clientY - down.y;
+      if (down.view && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
+        this.touchDown = null;
+        this.tap = null;
+        Object.assign(p, { x: down.x, y: down.y, vx: 0, vy: 0, type: 'touch', inside: true });
+        this.grabbed = down.view;
+        this.downAt = { x: down.x, y: down.y };
+        down.view.grab(p);
+      } else if (Math.abs(dy) > 10) {
+        this.touchDown = null;
+      }
+    }
     const dt = Math.max(1, e.timeStamp - this.pointerTime) / 1000;
     this.pointerTime = e.timeStamp;
     if (p.inside) {
@@ -1250,6 +1274,8 @@ class Stage {
     p.inside = true;
     if (e.pointerType === 'touch') {
       this.tap = { x: e.clientX, y: e.clientY, t: e.timeStamp };
+      const view = this.overControl(p.x, p.y) ? undefined : this.views.find((v) => v.touchGrab && v.visible && !v.dead && v.pick(p.x, p.y));
+      this.touchDown = { x: e.clientX, y: e.clientY, view: view ?? null };
       return;
     }
     if (e.button !== 0 || this.overControl(p.x, p.y)) return;
@@ -1266,6 +1292,7 @@ class Stage {
   };
 
   private onUp = (e: PointerEvent) => {
+    this.touchDown = null;
     if (this.grabbed) {
       // A drag that started on a link (the logo) must not count as a click on it.
       if (this.downAt && Math.hypot(e.clientX - this.downAt.x, e.clientY - this.downAt.y) > 4) {
@@ -1295,7 +1322,7 @@ class Stage {
   };
 }
 
-/** globeOnly (touch screens): only the globe goes live; the hero stones and the icons keep their posters. */
+/** globeOnly: only the globe goes live; the hero stones and the icons keep their posters. */
 export async function start({ globeOnly = false }: { globeOnly?: boolean } = {}) {
   const heroHost = globeOnly ? null : document.querySelector<HTMLElement>('[data-hero-stage]');
   const poster = document.querySelector<HTMLImageElement>('[data-hero-poster]');

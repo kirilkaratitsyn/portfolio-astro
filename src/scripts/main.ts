@@ -28,20 +28,37 @@ function boot() {
       .then((m) => m.start({ globeOnly }))
       .catch(() => {});
 
-  // Touch screens: the stones and icons cannot be grabbed there, so their posters stay and three.js loads only when
-  // the globe (pinch, tap) comes near. With a mouse, every 3D object goes live once the page is idle.
+  // Touch screens: every 3D object goes live after the first touch, scroll or key (a page that is only loaded stays
+  // light), or when the globe comes near; until then the posters show the same picture. With a mouse, once idle.
   if (!matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let started = false;
+    const events = ['touchstart', 'pointerdown', 'scroll', 'keydown'] as const;
+    // Parsing three.js is one long task: start it once the finger has rested for half a second, not mid-flick.
+    let quiet = 0;
+    const load = () => {
+      window.removeEventListener('scroll', rest);
+      window.removeEventListener('touchmove', rest);
+      idle(() => void stage(false), { timeout: 1500 });
+    };
+    const rest = () => {
+      window.clearTimeout(quiet);
+      quiet = window.setTimeout(load, 500);
+    };
+    const go = () => {
+      if (started) return;
+      started = true;
+      for (const type of events) window.removeEventListener(type, go);
+      near?.disconnect();
+      window.addEventListener('scroll', rest, { passive: true });
+      window.addEventListener('touchmove', rest, { passive: true });
+      rest();
+    };
+    for (const type of events) window.addEventListener(type, go, { passive: true });
     const globe = document.querySelector('[data-globe]');
-    if (!globe) return;
-    const near = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        near.disconnect();
-        idle(() => void stage(true), { timeout: 1200 });
-      },
-      { rootMargin: '1500px 0px' },
-    );
-    near.observe(globe);
+    const near = globe
+      ? new IntersectionObserver((entries) => entries.some((e) => e.isIntersecting) && go(), { rootMargin: '1500px 0px' })
+      : null;
+    if (globe) near?.observe(globe);
     return;
   }
   idle(() => void stage(false), { timeout: 1800 });
