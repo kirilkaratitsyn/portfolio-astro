@@ -24,7 +24,6 @@ Important notes:
 - [Elanora Skin](https://www.karatitsyn.com/projects/elanora-skin): Ongoing Shopify partnership: tested offers, a cart gift engine, checkout blocks and multi-market logic.
 - [Petaljet](https://www.karatitsyn.com/projects/petaljet): SEO audit, performance work and a custom box builder for wholesale flower buyers.
 - [Nimfa](https://www.karatitsyn.com/projects/nimfa): Figma to custom Shopify theme implementation.
-- [Indian Affairs](https://www.karatitsyn.com/projects/indian-affairs): Online Store 2.0 migration (archived case study; the store has since closed).
 - [Silk Tallow](https://www.karatitsyn.com/projects/silk-tallow): Shopify case study with brand-focused storefront execution.
 
 ## Blog Posts

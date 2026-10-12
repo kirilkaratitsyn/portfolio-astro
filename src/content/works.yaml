@@ -525,17 +525,3 @@
     uk: Зібрав повний Shopify-магазин на базі дизайну Lovable. Переклав дизайн у секції та шаблони теми, налаштував структуру контенту й зробив керування максимально простим для клієнта без коду.
   accent: "#e7a1b8"
   accentLocked: true
-- id: indian-affairs
-  order: 31
-  title: Indian Affairs
-  url: https://indianaffairs.de/
-  theme: Prestige
-  work: [migration]
-  image: /source/desktop/indian-affairs-desktop.webp
-  caseStudySlug: indian-affairs
-  archived: true
-  tech:
-    en: Migrated the store from a legacy theme to Shopify Online Store 2.0 (Prestige). I transferred all content, rebuilt custom functionality, implemented client requirements from the spec, and aligned styling and UX across the site.
-    de: Migration vom Legacy-Theme auf Shopify Online Store 2.0 (Prestige). Ich habe Inhalte übertragen, Custom-Funktionalität neu aufgebaut, Anforderungen aus der Spezifikation umgesetzt und Styling sowie UX über die gesamte Site hinweg vereinheitlicht.
-    uk: Міграція з legacy-теми на Shopify Online Store 2.0 (Prestige). Переніс увесь контент, відбудував кастомну функціональність, реалізував вимоги зі спеки та вирівняв стилі й UX по всьому сайту.
-  accent: "#779cd8"

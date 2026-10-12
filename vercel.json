@@ -14,6 +14,21 @@
       "permanent": true
     },
     {
+      "source": "/projects/indian-affairs",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/de/projects/indian-affairs",
+      "destination": "/de/projects",
+      "permanent": true
+    },
+    {
+      "source": "/uk/projects/indian-affairs",
+      "destination": "/uk/projects",
+      "permanent": true
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
       "permanent": true
