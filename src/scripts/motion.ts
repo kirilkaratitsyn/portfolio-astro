@@ -180,8 +180,8 @@ function flyLogo(): boolean {
     const p = state.p;
     const e = travel(p);
     const scale = 1 + (geo.scale - 1) * shrink(p);
-    const lift = Math.sin(Math.PI * p) * -28; // a slight arc, so it flies rather than slides
-    gsap.set(fly, { x: geo.x0 + geo.tx * e, y: geo.y0 + geo.ty * e + lift, scale });
+    // Straight into place: never above the spot it lands on (an arc made it overshoot and drop back in).
+    gsap.set(fly, { x: geo.x0 + geo.tx * e, y: geo.y0 + geo.ty * e, scale });
     const started = p > 0.002;
     word.style.visibility = started ? 'hidden' : '';
     const land = Math.min(1, Math.max(0, (p - 0.9) / 0.1)); // the last tenth: the header's own text fades in under the copy
