@@ -27,7 +27,6 @@ export async function init() {
   // The first screen right away; every other section in its own small task, so a phone never has the main thread
   // held for long while the page starts (each section only sets up what it needs once it is scrolled to).
   const lenis = smoothScroll();
-  header();
   const flies = flyLogo();
   hero(flies);
   const sections = [
@@ -84,26 +83,6 @@ function smoothScroll() {
 }
 
 /* ---------------------------------------------------------------- header */
-
-function header() {
-  const bar = qs('[data-header]');
-  if (!bar) return;
-  let hidden = false;
-  const set = (value: boolean) => {
-    if (value === hidden) return;
-    hidden = value;
-    gsap.to(bar, { yPercent: value ? -140 : 0, duration: 0.6, ease: 'power3.out', overwrite: true });
-  };
-  ScrollTrigger.create({
-    start: 0,
-    end: 'max',
-    onUpdate: (self) => {
-      const menuOpen = qs('[data-menu-toggle]')?.getAttribute('aria-expanded') === 'true';
-      set(!menuOpen && self.direction === 1 && self.scroll() > 520);
-      if (self.direction === -1) set(false);
-    },
-  });
-}
 
 /* ---------------------------------------------------------------- hero */
 
