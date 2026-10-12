@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 9
 title: Petaljet
 summary: Eine laufende Shopify-Partnerschaft, die mit einem SEO-Audit und Performance-Arbeit begann und zu individuellen Produkt-Buildern für Blumen-Großkunden wuchs.
 brandSummary: Petaljet ist ein Großhandelsanbieter für Blumen für Floristen und professionelle Designer und liefert farm-direct Blüten in den gesamten USA für Hochzeiten, Events und laufende Floral-Programme.

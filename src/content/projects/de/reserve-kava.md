@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 10
 title: Reserve Kava
 summary: "Produktseiten für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut: eine klare Kaufspalte, ein Bundle mit beiden Dosen, Mehrfachvarianten mit Abos und fertige Templates für neue Produkte."
 brandSummary: "Reserve Kava verkauft 100 % edlen Instant-Kava aus Vanuatu: eine Dose, die man mit Wasser anrührt, ohne Kneten, Abseihen oder Aufbrühen, positioniert als Abendritual zur Entspannung."

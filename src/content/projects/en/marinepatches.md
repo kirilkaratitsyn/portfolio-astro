@@ -1,5 +1,5 @@
 ---
-order: 12
+order: 13
 title: "MarinePatches"
 summary: "A store redesign for MarinePatches.com, a shop for military and law enforcement patches: a finished Figma design and a written list of features turned into a working Shopify store, page by page."
 brandSummary: "MarinePatches.com sells military and law enforcement patches, stickers, coins, T-shirts and koozies from Corpus Christi, Texas."

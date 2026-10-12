@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 9
 title: Petaljet
 summary: An ongoing Shopify partnership that started with an SEO audit and performance work and grew into custom product builders for wholesale flower buyers.
 brandSummary: Petaljet is a wholesale flower supplier for florists and professional designers, shipping farm-direct blooms across the U.S. for weddings, events, and everyday floral programs.
