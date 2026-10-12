@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 12
 title: "MarinePatches"
 summary: "Redesign für MarinePatches.com, einen Shop für Militär- und Polizei-Patches: ein fertiges Figma-Design und eine schriftliche Funktionsliste, Seite für Seite in einen funktionierenden Shopify-Shop umgesetzt."
 brandSummary: "MarinePatches.com verkauft Patches für Militär und Polizei sowie Sticker, Münzen, T-Shirts und Koozies aus Corpus Christi, Texas."

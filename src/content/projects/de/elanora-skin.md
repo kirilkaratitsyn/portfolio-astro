@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 2
 title: Elanora Skin
 summary: "Eine laufende Shopify-Partnerschaft seit Ende 2025: getestete Angebote, eine Geschenk-Engine im Warenkorb, Checkout-Blöcke und Storefront-Logik für fünfzehn Märkte in zwei Sprachen."
 brandSummary: élanora ist eine Skincare-Marke aus Breda, inspiriert von koreanischen Hautpflegetraditionen und westlicher Schlichtheit, die reine Inhaltsstoffe mit modernen Formeln für täglichen Self-Care verbindet.

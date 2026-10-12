@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 4
 title: "Peter Bijoux"
 summary: "Redesign eines Modeschmuck-Shops in Meran, vom Expanse-Theme auf Prestige: zuerst die Seitenstruktur abgestimmt, dann neue Startseite, Kollektions- und Produktseiten, alles für das Smartphone optimiert."
 brandSummary: "Peter Bijoux ist ein Modeschmuck-Geschäft in Meran, Südtirol, mit Schmuck, Silber, Uhren und Armbändern verschiedener Marken."

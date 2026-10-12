@@ -1,5 +1,5 @@
 ---
-order: 14
+order: 6
 title: "Pedchem"
 summary: "Заміна теми й чистка магазину Pedchem, інтернет-магазину засобів від шкідників компанії Phoenix Environmental Design: з Flex на тему Enterprise без платних застосунків, таблиці характеристик із метаполів для 323 товарів і редиректи за даними Search Console."
 brandSummary: "Pedchem — інтернет-магазин компанії Phoenix Environmental Design Inc. з Вест-Річленда, штат Вашингтон: пестициди, гербіциди та інші засоби від шкідників."

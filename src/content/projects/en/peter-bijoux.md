@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 4
 title: "Peter Bijoux"
 summary: "A redesign of a fashion jewellery store in Merano, moved from the Expanse theme to Prestige: the page structure agreed first, then a new home page, collection and product pages, all tuned for phones."
 brandSummary: "Peter Bijoux is a fashion jewellery store in Merano, South Tyrol, selling jewellery, silver, watches and bracelets from a range of brands."

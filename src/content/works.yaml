@@ -16,7 +16,7 @@
     uk: "Shopify-магазин для професійного бренду догляду за шкірою за HTML-прототипом: оптові ціни для підтверджених косметологів, закритий Pro Vault для учасників, Quick Order і ліміт першого замовлення на Discovery Kit, який перевіряє сервер."
   accent: "#7f4e31"
 - id: jula-bloom
-  order: 2
+  order: 3
   title: Jula Bloom
   url: https://julabloom.com/
   theme: Be Yours
@@ -33,7 +33,7 @@
     uk: "Перехід із WordPress і WooCommerce на Shopify для сіетлського бренду шовкових квітів: добудована та очищена частково готова тема, повна типографічна система, мапа редиректів зі старого сайту і запуск у вересні 2026 року."
   accent: "#1d5c6b"
 - id: reserve-kava
-  order: 3
+  order: 10
   title: Reserve Kava
   url: https://reservekava.com/
   theme: Dawn
@@ -50,7 +50,7 @@
     uk: "Сторінки товарів для бренду розчинної kava, перебудовані за дизайн-handoff клієнта: чітка колонка покупки, бандл з обома банками, варіанти з кількома банками й підписками та готові шаблони для нових товарів."
   accent: "#16cce0"
 - id: elanora-skin
-  order: 4
+  order: 2
   title: Elanora Skin
   url: https://elanoraskin.com/
   theme: Shrine
@@ -68,7 +68,7 @@
   accent: "#a1303c"
   accentLocked: true
 - id: petaljet
-  order: 5
+  order: 9
   title: Petaljet
   url: https://petaljet.com/
   theme: Turbo
@@ -85,7 +85,7 @@
     uk: Постійна Shopify-співпраця, що почалася з SEO-аудиту та роботи над швидкістю і переросла в кастомні конструктори товарів для оптових покупців квітів.
   accent: "#6d812e"
 - id: onlyphila
-  order: 6
+  order: 16
   title: OnlyPhila
   url: https://onlyphila.com/
   theme: Horizon
@@ -102,7 +102,7 @@
     uk: Зробив сторінку меню з вкладками категорій і пошуком та селектор доставки чи самовивозу в кошику з вибором дати й часового слота, написаним нативно на Liquid, а також правила checkout, які не дають змішувати самовивіз і доставку.
   accent: "#72100b"
 - id: fixy
-  order: 7
+  order: 26
   title: Fixy
   url: https://www.fixy-brand.com/
   theme: Hongo
@@ -120,7 +120,7 @@
   accent: "#ffd000"
   accentLocked: true
 - id: minbie
-  order: 8
+  order: 5
   title: Minbie
   url: https://minbie.com.au/
   theme: Blum
@@ -139,7 +139,7 @@
   accent: "#ef7a98"
   accentLocked: true
 - id: m-oceans
-  order: 9
+  order: 18
   title: M-Oceans
   url: https://m-oceans.com/
   theme: Woodstock
@@ -156,7 +156,7 @@
     uk: "Постійна робота для магазину морського обладнання: впорядкування каталогу й SKU за прайсами брендів, сторінки та картки човнових моторів і аксесуарів, бандли, поради щодо систем обліку й виставлення рахунків та редизайн головної й сторінки товару."
   accent: "#0b4b6b"
 - id: lineargent
-  order: 10
+  order: 7
   title: Lineargent
   url: https://lineargent.com/
   theme: Prestige
@@ -174,7 +174,7 @@
   accent: "#1b1d26"
   accentLocked: true
 - id: crafts-cove-marine
-  order: 11
+  order: 22
   title: Crafts Cove Marine
   url: https://www.craftscove.ca/
   theme: Fashionopolism
@@ -191,7 +191,7 @@
     uk: "Виправив помилки сайту та швидкість на мобільному для магазину морської електрики: правки PageSpeed, а потім друга фаза з critical CSS, перебудованим скриптом теми та аудитом застосунків і трекінг-тегів."
   accent: "#298dc6"
 - id: marinepatches
-  order: 12
+  order: 19
   title: MarinePatches
   url: https://marinepatches.com/
   theme: Horizon
@@ -210,7 +210,7 @@
   accent: "#55633a"
   accentLocked: true
 - id: white-canvas-earth
-  order: 13
+  order: 17
   title: White Canvas Earth
   url: https://whitecanvasearth.com/
   theme: Atelier
@@ -227,7 +227,7 @@
     uk: Shopify redesign з технічною міграцією, SEO-фундаментом і growth marketing setup. Робота поєднала нову структуру storefront, готовність до запуску та кращу базу для видимості в пошуку.
   accent: "#0f4894"
 - id: peter-bijoux
-  order: 14
+  order: 4
   title: Peter Bijoux
   url: https://peterbijoux.com/
   theme: Prestige
@@ -246,7 +246,7 @@
   accent: "#c9a24d"
   accentLocked: true
 - id: lumppings
-  order: 15
+  order: 13
   title: Lumppings
   url: https://lumppings.com/
   theme: Horizon
@@ -264,7 +264,7 @@
     uk: "Редизайн сайту відеопродюсера на Shopify з нуля: спершу карта сайту, потім Home, Work, Shop, FAQ і сторінка безкоштовних завантажень, де щотижневі роздачі зникають через 48 годин."
   accent: "#e09916"
 - id: pedchem
-  order: 16
+  order: 6
   title: Pedchem
   url: https://www.pedchem.com/
   theme: Enterprise
@@ -282,7 +282,7 @@
     uk: "Заміна теми й чистка магазину засобів від шкідників: Enterprise без платних застосунків, таблиці характеристик із метаполів для 323 товарів, редиректи за даними Search Console і превʼю з 96 балами проти 57 у лабораторному тесті."
   accent: "#137246"
 - id: bazar-bizar
-  order: 17
+  order: 8
   title: Bazar Bizar
   url: https://bazarbizar.be/
   theme: Dawn
@@ -299,7 +299,7 @@
     uk: Працював з великим складним Shopify-магазином із багатьма шаблонами та кастомною логікою. Робив глибоку кастомізацію секцій і лейаутів, впроваджував функціональні покращення та підтримував великі зміни, зберігаючи стабільність.
   accent: "#947151"
 - id: nimfa
-  order: 18
+  order: 23
   title: Nimfa
   url: https://nimfa.nl/
   theme: Custom
@@ -317,7 +317,7 @@
   accent: "#b23a4e"
   accentLocked: true
 - id: silk-tallow
-  order: 19
+  order: 14
   title: Silk Tallow
   url: https://silktallow.com/
   theme: Cornerstone
@@ -334,7 +334,7 @@
     uk: "Реалізував складну логіку Mystery Gift і Free Gift без перезавантаження сторінки. Акуратно інтегрував у дизайн storefront: правила, поведінка кошика та обробка edge cases."
   accent: "#6b663b"
 - id: haftx
-  order: 20
+  order: 21
   title: Haftx
   url: https://haftx.com/
   theme: Symmetry
@@ -351,7 +351,7 @@
     uk: Розроблено кастомний селектор кольорів, який адаптується до типу одягу та обходить обмеження у 100 варіантів.
   accent: "#85521f"
 - id: junofires
-  order: 21
+  order: 30
   title: Junofires
   url: https://junofires.nl/
   theme: Prestige
@@ -369,7 +369,7 @@
   accent: "#6b553b"
   accentLocked: true
 - id: lerros
-  order: 22
+  order: 11
   title: Lerros
   url: https://www.lerros.com/
   theme: Flawless
@@ -386,7 +386,7 @@
     uk: Оновив тему в Shopify-магазині, коректно переніс контент і метаполя, зберіг структуру даних і налаштував відображення товарів для стабільної роботи.
   accent: "#8b634b"
 - id: kiki-green
-  order: 23
+  order: 24
   title: Kiki Green
   url: https://kiki-green.com/
   theme: Custom
@@ -404,7 +404,7 @@
   accent: "#2f6b3a"
   accentLocked: true
 - id: juniors-cheesecake
-  order: 24
+  order: 12
   title: Junior's Cheesecake
   url: https://juniorscheesecake.com/
   theme: Dawn
@@ -421,7 +421,7 @@
     uk: Створив нові кастомні секції на основі дизайну Figma, розробив email шаблони та їх обробку, а також реалізував функціональність сторінки подачі.
   accent: "#9e3119"
 - id: spring-mountain-vineyard
-  order: 25
+  order: 15
   title: Spring Mountain Vineyard
   url: https://club.springmountainvineyard.com/
   theme: Dawn
@@ -438,7 +438,7 @@
     uk: Редизайнив сторінку колекції з покращеним дизайном фільтрів та карток продуктів, реалізував динамічну логіку хлібних крихт, яка оновлюється без перезавантаження сторінки для кращого UX.
   accent: "#0e1018"
 - id: lunesi
-  order: 26
+  order: 20
   title: Lunesi
   url: https://lunesi.co.uk/
   theme: Be Yours
@@ -455,7 +455,7 @@
     uk: Розробив динамічну секцію апселла в кошику, яка інтелектуально відображає продукти на основі вмісту кошика, повністю налаштовувану через редактор теми. Покращив хедер з налаштовуваними кольоровими схемами та конфігурованим банером оголошень для гнучкого брендингу та промо-акцій.
   accent: "#926351"
 - id: melinava
-  order: 27
+  order: 25
   title: Melinava
   url: https://melinava.nl/
   theme: Local
@@ -472,7 +472,7 @@
     uk: "Фінальна підготовка перед запуском: QA і полірування всіх деталей. Вів повний чекліст “готово до трафіку”: ключові сценарії користувача, перевірки кошика та checkout, адаптив, швидкість і візуальні баги — щоб сайт був стабільний і готовий до конверсій."
   accent: "#5a97e0"
 - id: safetag-tracking
-  order: 28
+  order: 27
   title: SafeTag Tracking
   url: https://safetagtracking.com/
   theme: Dawn
@@ -490,7 +490,7 @@
   accent: "#cf3a2f"
   accentLocked: true
 - id: virea
-  order: 29
+  order: 28
   title: Virea
   url: https://virea.se/
   theme: Minimog
@@ -508,7 +508,7 @@
   accent: "#4a8f55"
   accentLocked: true
 - id: bella-bloom-box
-  order: 30
+  order: 29
   title: BellaBox
   url: https://bellabox.se/
   theme: Dawn

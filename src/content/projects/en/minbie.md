@@ -1,5 +1,5 @@
 ---
-order: 12
+order: 5
 title: "Minbie"
 summary: "A new Shopify store for Minbie, an Australian baby feeding brand: the Blum theme with its Monti preset, built from Figma wireframes, launched in July 2026 and looked after since."
 brandSummary: "Minbie is an Australian baby feeding brand from Melbourne, known for its baby bottles, with breast pumps, sterilisers and bottle warmers alongside."

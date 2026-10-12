@@ -1,5 +1,5 @@
 ---
-order: 14
+order: 6
 title: "Pedchem"
 summary: "Theme-Wechsel und Aufräumen für Pedchem, den Shop für Schädlingsbekämpfung von Phoenix Environmental Design: von Flex auf das Enterprise-Theme ohne kostenpflichtige Apps, Datentabellen aus Metafeldern für 323 Produkte und Weiterleitungen auf Basis der Search Console."
 brandSummary: "Pedchem ist der Onlineshop von Phoenix Environmental Design Inc. in West Richland, Washington, mit Pestiziden, Herbiziden und weiteren Produkten zur Schädlingsbekämpfung."
