@@ -102,7 +102,7 @@
     uk: Зробив сторінку меню з вкладками категорій і пошуком та селектор доставки чи самовивозу в кошику з вибором дати й часового слота, написаним нативно на Liquid, а також правила checkout, які не дають змішувати самовивіз і доставку.
   accent: "#72100b"
 - id: fixy
-  order: 26
+  order: 27
   title: Fixy
   url: https://www.fixy-brand.com/
   theme: Hongo
@@ -174,7 +174,7 @@
   accent: "#1b1d26"
   accentLocked: true
 - id: crafts-cove-marine
-  order: 22
+  order: 23
   title: Crafts Cove Marine
   url: https://www.craftscove.ca/
   theme: Fashionopolism
@@ -299,7 +299,7 @@
     uk: Працював з великим складним Shopify-магазином із багатьма шаблонами та кастомною логікою. Робив глибоку кастомізацію секцій і лейаутів, впроваджував функціональні покращення та підтримував великі зміни, зберігаючи стабільність.
   accent: "#947151"
 - id: nimfa
-  order: 23
+  order: 24
   title: Nimfa
   url: https://nimfa.nl/
   theme: Custom
@@ -334,7 +334,7 @@
     uk: "Реалізував складну логіку Mystery Gift і Free Gift без перезавантаження сторінки. Акуратно інтегрував у дизайн storefront: правила, поведінка кошика та обробка edge cases."
   accent: "#6b663b"
 - id: haftx
-  order: 21
+  order: 22
   title: Haftx
   url: https://haftx.com/
   theme: Symmetry
@@ -351,7 +351,7 @@
     uk: Розроблено кастомний селектор кольорів, який адаптується до типу одягу та обходить обмеження у 100 варіантів.
   accent: "#85521f"
 - id: junofires
-  order: 30
+  order: 21
   title: Junofires
   url: https://junofires.nl/
   theme: Prestige
@@ -386,7 +386,7 @@
     uk: Оновив тему в Shopify-магазині, коректно переніс контент і метаполя, зберіг структуру даних і налаштував відображення товарів для стабільної роботи.
   accent: "#8b634b"
 - id: kiki-green
-  order: 24
+  order: 25
   title: Kiki Green
   url: https://kiki-green.com/
   theme: Custom
@@ -455,7 +455,7 @@
     uk: Розробив динамічну секцію апселла в кошику, яка інтелектуально відображає продукти на основі вмісту кошика, повністю налаштовувану через редактор теми. Покращив хедер з налаштовуваними кольоровими схемами та конфігурованим банером оголошень для гнучкого брендингу та промо-акцій.
   accent: "#926351"
 - id: melinava
-  order: 25
+  order: 26
   title: Melinava
   url: https://melinava.nl/
   theme: Local
@@ -472,7 +472,7 @@
     uk: "Фінальна підготовка перед запуском: QA і полірування всіх деталей. Вів повний чекліст “готово до трафіку”: ключові сценарії користувача, перевірки кошика та checkout, адаптив, швидкість і візуальні баги — щоб сайт був стабільний і готовий до конверсій."
   accent: "#5a97e0"
 - id: safetag-tracking
-  order: 27
+  order: 28
   title: SafeTag Tracking
   url: https://safetagtracking.com/
   theme: Dawn
@@ -490,7 +490,7 @@
   accent: "#cf3a2f"
   accentLocked: true
 - id: virea
-  order: 28
+  order: 29
   title: Virea
   url: https://virea.se/
   theme: Minimog
@@ -508,7 +508,7 @@
   accent: "#4a8f55"
   accentLocked: true
 - id: bella-bloom-box
-  order: 29
+  order: 30
   title: BellaBox
   url: https://bellabox.se/
   theme: Dawn
