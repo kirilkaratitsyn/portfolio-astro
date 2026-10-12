@@ -1,5 +1,6 @@
 ---
-// Featured case studies: the five lead projects in one slot, each laid out as before (the story on the left, the store
+// Featured case studies: the next five after the ones in the rows under the hero (sections/WorkList.astro), so the page
+// shows ten different cases. One slot, each laid out as before (the story on the left, the store
 // on a panel in the project's own colour on the right). It moves on by itself every 6 s, shown by the bar under the
 // active name, and holds while the pointer or focus is on it, while it is off screen, and for reduced motion. Arrows
 // and the bars switch by hand. Without scripts the first project is shown. Scroll motion: scripts/motion.ts feature().
@@ -20,7 +21,7 @@ const t = useTranslations(locale);
 const accentOf = new Map(works.filter((w) => w.caseStudySlug).map((w) => [w.caseStudySlug!, w.accent ?? '#2433f0']));
 const slides = caseStudies
   .filter((c) => !c.archived)
-  .slice(0, 5)
+  .slice(5, 10)
   .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#2433f0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
 ---
 
