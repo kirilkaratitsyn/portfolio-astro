@@ -23,6 +23,8 @@ const projects = defineCollection({
     outcome: z.array(z.string()).min(1),
     stack: z.array(z.string()),
     screenshotCaptions: z.array(z.string()).optional(),
+    /** The client's Upwork review, word for word and unnamed (shown in English on every locale). */
+    review: z.object({ quote: z.string(), rating: z.number().min(1).max(5) }).optional(),
   }),
 });
 

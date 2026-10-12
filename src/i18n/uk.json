@@ -131,7 +131,10 @@
     "outcomeTitle": "Результат",
     "screenshotTitle": "Ключові акценти",
     "moreProjectsTitle": "Більше Shopify-проєктів",
-    "moreProjectsSubtitle": "Ширший зріз Shopify-робіт: міграції, CRO, підтримка, кастомні секції та покращення storefront."
+    "moreProjectsSubtitle": "Ширший зріз Shopify-робіт: міграції, CRO, підтримка, кастомні секції та покращення storefront.",
+    "reviewTitle": "Відгук клієнта",
+    "reviewRating": "{n} з 5",
+    "reviewSource": "відгук на Upwork"
   },
   "experience": {
     "eyebrow": "Таймлайн",

@@ -131,6 +131,7 @@
   lng: 145.02
   image: /source/desktop/minbie-desktop.webp
   mobileImage: /source/mobile/minbie-mobile.webp
+  caseStudySlug: minbie
   tech:
     en: "Launched a new Shopify theme for an Australian baby feeding brand: template mapping for every product and collection, a rebuilt Instructions page, a reviews page, a sippy cups collection with a colour switcher, and a new mega-menu and footer."
     de: "Neues Shopify-Theme für eine australische Marke für Baby-Fütterprodukte gestartet: Template-Zuordnung für jedes Produkt und jede Kollektion, neu aufgebaute Anleitungsseite, Bewertungsseite, Kollektion für Trinklernbecher mit Farbwähler sowie neues Mega-Menü und neuer Footer."
@@ -201,6 +202,7 @@
   lng: -97.4
   image: /source/desktop/marinepatches-desktop.webp
   mobileImage: /source/mobile/marinepatches-mobile.webp
+  caseStudySlug: marinepatches
   tech:
     en: Built a Shopify theme on the new-generation theme architecture with wishlist functionality and cleaner, faster storefront flows. The setup is easier to manage, smoother for customers, and better suited for ongoing iteration.
     de: "Entwicklung einer Shopify-Theme-Umsetzung auf Basis der neuen Theme-Generation: Wishlist-Funktion, sauberere Storefront-Flows und schnellere Bedienung. Die Struktur ist einfacher zu pflegen, läuft flüssiger für Kunden und eignet sich besser für laufende Iterationen."
@@ -236,6 +238,7 @@
   lng: 11.16
   image: /source/desktop/peter-bijoux-desktop.webp
   mobileImage: /source/mobile/peter-bijoux-mobile.webp
+  caseStudySlug: peter-bijoux
   tech:
     en: Shopify store redesign using the Prestige theme, with structure and implementation work across templates, product presentation, and content setup so the jewelry catalog is easier to manage and browse.
     de: "Shopify Store Redesign auf Basis des Prestige Themes: Struktur und Umsetzung von Templates, Produktdarstellung und Content-Setup, damit der Schmuckkatalog leichter gepflegt und angenehmer durchsucht werden kann."

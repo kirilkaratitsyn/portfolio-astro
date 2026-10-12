@@ -42,9 +42,10 @@ const sections = [
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/projects')} class="text-sm font-medium text-mute hover:text-ink">← {copy.backToCases}</a>
 
-    <header class="mt-8 grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
-      <div>
-        <h1 class="intro-lift font-head text-[48px] font-bold leading-[0.95] tracking-[-0.03em] md:text-[104px]">{caseStudy.title}</h1>
+    <header class="mt-8 grid grid-cols-1 gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
+      <div class="min-w-0">
+        <!-- Scales with the screen on phones, so a one-word name like MarinePatches still fits the line. -->
+        <h1 class="intro-lift font-head text-[clamp(32px,11vw,48px)] font-bold leading-[0.95] tracking-[-0.03em] md:text-[104px]">{caseStudy.title}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-mute md:mt-8 md:text-xl">{caseStudy.summary}</p>
         <ul class="mt-6 flex flex-wrap gap-2 text-sm">
           {caseStudy.tags.map((tag) => <li class="rounded-full border border-line px-3 py-1 text-mute">{tag}</li>)}
@@ -94,6 +95,20 @@ const sections = [
     }
 
     <div class="mt-16 border-b border-line md:mt-24">
+      {
+        caseStudy.review && (
+          <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
+            <h2 class="font-head text-2xl font-bold">{copy.reviewTitle}</h2>
+            <figure class="max-w-3xl">
+              <blockquote lang="en" class="font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[28px]">“{caseStudy.review.quote}”</blockquote>
+              <figcaption class="mt-4 flex items-center gap-2 text-[15px] text-mute">
+                <span class="text-blue" aria-hidden="true">{'★'.repeat(Math.round(caseStudy.review.rating))}</span>
+                <span>{copy.reviewRating.replace('{n}', caseStudy.review.rating.toFixed(1))} · {copy.reviewSource}</span>
+              </figcaption>
+            </figure>
+          </div>
+        )
+      }
       <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
         <h2 class="font-head text-2xl font-bold">{copy.aboutBrandTitle}</h2>
         <p class="max-w-3xl text-lg leading-relaxed">{caseStudy.brandDescription}</p>

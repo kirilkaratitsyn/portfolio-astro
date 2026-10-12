@@ -131,7 +131,10 @@
     "outcomeTitle": "Outcome",
     "screenshotTitle": "Project highlights",
     "moreProjectsTitle": "More Shopify projects",
-    "moreProjectsSubtitle": "A broader sample of Shopify work across migrations, CRO, support, custom sections, and storefront enhancements."
+    "moreProjectsSubtitle": "A broader sample of Shopify work across migrations, CRO, support, custom sections, and storefront enhancements.",
+    "reviewTitle": "Client review",
+    "reviewRating": "{n} out of 5",
+    "reviewSource": "review on Upwork"
   },
   "experience": {
     "eyebrow": "Timeline",
