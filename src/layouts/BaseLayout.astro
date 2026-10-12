@@ -3,15 +3,18 @@ import '../styles/global.css';
 import SeoHead, { type SeoProps } from '../components/SeoHead.astro';
 import Header from '../sections/Header.astro';
 import Footer from '../sections/Footer.astro';
+import type { Locale } from '../i18n';
 
 type Props = SeoProps & {
   /** Home only: the big surname in the hero flies into the header logo on scroll (scripts/motion.ts, flyLogo). */
   flyLogo?: boolean;
   /** Where the language switcher leads, when the page has no versions in other languages (the 404 page: home). */
   switchTo?: string;
+  /** Where the language switcher leads per language, when the versions have different paths (the legal pages). */
+  switchLinks?: Partial<Record<Locale, string>>;
 };
 
-const { flyLogo = false, switchTo, ...seo } = Astro.props;
+const { flyLogo = false, switchTo, switchLinks, ...seo } = Astro.props;
 const { locale, path } = seo;
 ---
 
@@ -43,9 +46,9 @@ const { locale, path } = seo;
     <link rel="preload" href="/fonts/e-UkraineHead-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <SeoHead {...seo} />
 
-    <!-- Cal.com booking popup: any element with data-cal-link opens it. Its script (and its cookies) loads only once
-         someone heads for a booking button (pointer, focus or touch); a click that comes before it is ready is queued
-         and opens the popup as soon as it is. -->
+    <!-- Cal.com booking popup: any element with data-cal-link opens it. Its script loads only when a booking button is
+         clicked (nothing reaches Cal.com before that, see the privacy policy); that first click is queued and opens the
+         popup as soon as the script is in. -->
     <script is:inline>
       (function (C, A, L, NS) {
         let ready = false;
@@ -92,9 +95,6 @@ const { locale, path } = seo;
           });
         }
         const button = (e) => e.target instanceof Element && e.target.closest('[data-cal-link]');
-        for (const type of ['pointerover', 'focusin', 'touchstart']) {
-          d.addEventListener(type, (e) => button(e) && load(), { passive: true });
-        }
         d.addEventListener('click', (e) => {
           const el = button(e);
           if (!el || ready) return; // once the script is in, it opens the popup itself
@@ -105,7 +105,7 @@ const { locale, path } = seo;
     </script>
   </head>
   <body>
-    <Header locale={locale} path={switchTo ?? path} />
+    <Header locale={locale} path={switchTo ?? path} links={switchLinks} />
     <main>
       <slot />
     </main>

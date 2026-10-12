@@ -8,9 +8,11 @@ interface Props {
   locale: Locale;
   /** Unlocalized path of the current page, used to link to the same page in other languages. */
   path: string;
+  /** Links for the language switcher where a page's versions have different paths (the legal pages). */
+  links?: Partial<Record<Locale, string>>;
 }
 
-const { locale, path } = Astro.props;
+const { locale, path, links: switchLinks } = Astro.props;
 const t = useTranslations(locale);
 
 const links = [
@@ -19,7 +21,7 @@ const links = [
   { name: t.faq.title, to: '/#faq' },
 ].map((link) => ({ ...link, href: localizePath(locale, link.to) }));
 
-const languages = SWITCHER_LOCALES.map((item) => ({ ...item, href: localizePath(item.locale, path), current: item.locale === locale }));
+const languages = SWITCHER_LOCALES.map((item) => ({ ...item, href: switchLinks?.[item.locale] ?? localizePath(item.locale, path), current: item.locale === locale }));
 // Solid pills: a backdrop blur is recomputed on every scroll frame over the moving page and the 3D canvases.
 const pill = 'rounded-full bg-white/95';
 ---

@@ -13,7 +13,8 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      // Not the 404 page, nor the legal pages (kept out of search: they carry a home address).
+      filter: (page) => !page.includes('/404') && !/\/(legal-notice|privacy|impressum|datenschutz)$/.test(page),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', de: 'de', uk: 'uk' },

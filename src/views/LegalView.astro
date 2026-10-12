@@ -1,0 +1,26 @@
+---
+// A legal page (Impressum and Datenschutzerklärung in German, their English versions for the English and Ukrainian
+// site): the text comes from src/legal/*.md through the slot. Kept out of search results and the sitemap, as it
+// carries a home address. There is one version per language pair, so the language switcher leads to the other one
+// (Ukrainian to the Ukrainian home page).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Unlocalized path: "/impressum" for /de/impressum, "/legal-notice" for /legal-notice. */
+  path: string;
+  title: string;
+  description: string;
+  switchLinks: Partial<Record<Locale, string>>;
+}
+
+const { locale, path, title, description, switchLinks } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} path={path} locale={locale} robots="noindex,follow" alternates={false} switchLinks={switchLinks}>
+  <article class="mx-auto max-w-[860px] px-5 pb-24 pt-36 md:px-10 md:pb-32 md:pt-44">
+    <h1 class="font-head text-[44px] font-bold leading-[1] tracking-[-0.03em] md:text-[64px]">{title}</h1>
+    <div class="legal mt-10 md:mt-14"><slot /></div>
+  </article>
+</BaseLayout>

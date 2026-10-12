@@ -479,7 +479,9 @@
     "follow": "Elsewhere",
     "telegram": "Telegram",
     "instagram": "Instagram",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legal": "Legal notice",
+    "privacy": "Privacy"
   },
   "stats": {
     "items": [

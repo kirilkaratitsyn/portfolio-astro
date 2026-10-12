@@ -1,0 +1,8 @@
+---
+import LegalView from '../views/LegalView.astro';
+import { Content } from '../legal/legal-notice.en.md';
+---
+
+<LegalView locale="en" path="/legal-notice" title="Legal notice" description="Legal notice of karatitsyn.com, the site of Kiril Karatitsyn, freelance Shopify developer in Germany." switchLinks={{ de: '/de/impressum', uk: '/uk' }}>
+  <Content />
+</LegalView>

@@ -130,6 +130,13 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   :root .pebble img, :root [data-hero-poster] { -webkit-user-drag: none; }
 }
 
+/* Legal pages (views/LegalView.astro): the Markdown of src/legal/. Lines of an address stay on their own lines. */
+.legal h2 { margin-top: 44px; font: 700 24px/1.15 'e-UkraineHead', 'Onest', sans-serif; letter-spacing: -0.015em; }
+.legal h2:first-child { margin-top: 0; }
+.legal p { margin-top: 14px; font-size: 17px; line-height: 1.65; white-space: pre-line; color: #3d4152; }
+.legal a { color: #2433f0; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+@media (min-width: 768px) { .legal h2 { font-size: 28px; } .legal p { font-size: 18px; } }
+
 /* Hints worded for the pointer in hand. */
 .only-touch { display: none; }
 @media (hover: none), (pointer: coarse) { .only-touch { display: block; } .only-fine { display: none; } }

@@ -5,7 +5,19 @@ interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale);
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+// German pages link the German Impressum and Datenschutzerklärung; English and Ukrainian pages the English versions.
+const legal =
+  locale === 'de'
+    ? [
+        { name: t.footer.legal, href: '/de/impressum' },
+        { name: t.footer.privacy, href: '/de/datenschutz' },
+      ]
+    : [
+        { name: t.footer.legal, href: '/legal-notice' },
+        { name: t.footer.privacy, href: '/privacy' },
+      ];
 ---
 
 <!-- Clipped below: the wordmark letters rise from under the edge and must not make the page longer while they do. -->
@@ -13,7 +25,12 @@ const t = useTranslations(Astro.props.locale);
   <div class="mx-auto max-w-[1440px] px-5 md:px-10">
     <div class="flex flex-col gap-3 pb-6 pt-14 text-[15px] text-mute md:flex-row md:justify-between md:pb-4 md:pt-16">
       <span>© {new Date().getFullYear()} Kiril Karatitsyn. {t.footer.rights}</span>
-      <span class="flex gap-5">
+      <span class="flex flex-wrap gap-x-5 gap-y-2">
+        <span class="flex gap-2">
+          <a href={legal[0]!.href} class="hover:text-ink">{legal[0]!.name}</a>
+          <span aria-hidden="true">·</span>
+          <a href={legal[1]!.href} class="hover:text-ink">{legal[1]!.name}</a>
+        </span>
         <a href="https://github.com/kirilkaratitsyn" target="_blank" rel="noopener noreferrer" class="hover:text-ink">{t.contact.github}</a>
         <a href="https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/" target="_blank" rel="noopener noreferrer" class="hover:text-ink">{t.contact.linkedin}</a>
       </span>

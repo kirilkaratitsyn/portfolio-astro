@@ -1,0 +1,8 @@
+---
+import LegalView from '../views/LegalView.astro';
+import { Content } from '../legal/privacy.en.md';
+---
+
+<LegalView locale="en" path="/privacy" title="Privacy policy" description="Privacy policy of karatitsyn.com: hosting, email, booking a call via Cal.com, and your rights." switchLinks={{ de: '/de/datenschutz', uk: '/uk' }}>
+  <Content />
+</LegalView>
