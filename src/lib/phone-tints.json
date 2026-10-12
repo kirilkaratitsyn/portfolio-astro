@@ -51,6 +51,10 @@
     "tint": "#d7d3ce",
     "dark": false
   },
+  "lumppings": {
+    "tint": "#ffffff",
+    "dark": false
+  },
   "lunesi": {
     "tint": "#ffffff",
     "dark": false
@@ -81,6 +85,10 @@
   },
   "orska-rituals": {
     "tint": "#f5efe6",
+    "dark": false
+  },
+  "pedchem": {
+    "tint": "#ffffff",
     "dark": false
   },
   "petaljet": {

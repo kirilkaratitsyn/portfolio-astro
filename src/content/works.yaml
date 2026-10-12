@@ -245,8 +245,44 @@
     uk: "Shopify Store Redesign на темі Prestige: структура й реалізація templates, product presentation і content setup, щоб jewelry-каталог було легше підтримувати та зручніше переглядати."
   accent: "#c9a24d"
   accentLocked: true
-- id: bazar-bizar
+- id: lumppings
   order: 15
+  title: Lumppings
+  url: https://lumppings.com/
+  theme: Horizon
+  work: [redesign, features]
+  country: CA
+  city: "Burnaby"
+  lat: 49.25
+  lng: -122.98
+  image: /source/desktop/lumppings-desktop.webp
+  mobileImage: /source/mobile/lumppings-mobile.webp
+  caseStudySlug: lumppings
+  tech:
+    en: "Redesigned a video producer's Shopify site from the ground up: a site map first, then Home, Work, Shop, FAQ and a Free Downloads page whose weekly drops expire after 48 hours."
+    de: "Shopify-Website eines Videoproduzenten von Grund auf neu gestaltet: zuerst die Sitemap, dann Home, Work, Shop, FAQ und eine Seite für Gratis-Downloads, deren wöchentliche Drops nach 48 Stunden ablaufen."
+    uk: "Редизайн сайту відеопродюсера на Shopify з нуля: спершу карта сайту, потім Home, Work, Shop, FAQ і сторінка безкоштовних завантажень, де щотижневі роздачі зникають через 48 годин."
+  accent: "#e09916"
+- id: pedchem
+  order: 16
+  title: Pedchem
+  url: https://www.pedchem.com/
+  theme: Enterprise
+  work: [redesign, speed, features]
+  country: US
+  city: "West Richland"
+  lat: 46.3
+  lng: -119.36
+  image: /source/desktop/pedchem-desktop.webp
+  mobileImage: /source/mobile/pedchem-mobile.webp
+  caseStudySlug: pedchem
+  tech:
+    en: "Replaced the theme of a pest control store and cleaned it up: Enterprise with no paid apps, spec charts from metafields on 323 products, redirects from Search Console data, and a preview that scored 96 against 57 in a lab test."
+    de: "Theme eines Shops für Schädlingsbekämpfung ersetzt und aufgeräumt: Enterprise ohne kostenpflichtige Apps, Datentabellen aus Metafeldern für 323 Produkte, Weiterleitungen aus Search-Console-Daten und eine Vorschau, die im Labortest 96 statt 57 Punkte erreichte."
+    uk: "Заміна теми й чистка магазину засобів від шкідників: Enterprise без платних застосунків, таблиці характеристик із метаполів для 323 товарів, редиректи за даними Search Console і превʼю з 96 балами проти 57 у лабораторному тесті."
+  accent: "#137246"
+- id: bazar-bizar
+  order: 17
   title: Bazar Bizar
   url: https://bazarbizar.be/
   theme: Dawn
@@ -263,7 +299,7 @@
     uk: Працював з великим складним Shopify-магазином із багатьма шаблонами та кастомною логікою. Робив глибоку кастомізацію секцій і лейаутів, впроваджував функціональні покращення та підтримував великі зміни, зберігаючи стабільність.
   accent: "#947151"
 - id: nimfa
-  order: 16
+  order: 18
   title: Nimfa
   url: https://nimfa.nl/
   theme: Custom
@@ -281,7 +317,7 @@
   accent: "#b23a4e"
   accentLocked: true
 - id: silk-tallow
-  order: 17
+  order: 19
   title: Silk Tallow
   url: https://silktallow.com/
   theme: Cornerstone
@@ -298,7 +334,7 @@
     uk: "Реалізував складну логіку Mystery Gift і Free Gift без перезавантаження сторінки. Акуратно інтегрував у дизайн storefront: правила, поведінка кошика та обробка edge cases."
   accent: "#6b663b"
 - id: haftx
-  order: 18
+  order: 20
   title: Haftx
   url: https://haftx.com/
   theme: Symmetry
@@ -315,7 +351,7 @@
     uk: Розроблено кастомний селектор кольорів, який адаптується до типу одягу та обходить обмеження у 100 варіантів.
   accent: "#85521f"
 - id: junofires
-  order: 19
+  order: 21
   title: Junofires
   url: https://junofires.nl/
   theme: Prestige
@@ -333,7 +369,7 @@
   accent: "#6b553b"
   accentLocked: true
 - id: lerros
-  order: 20
+  order: 22
   title: Lerros
   url: https://www.lerros.com/
   theme: Flawless
@@ -350,7 +386,7 @@
     uk: Оновив тему в Shopify-магазині, коректно переніс контент і метаполя, зберіг структуру даних і налаштував відображення товарів для стабільної роботи.
   accent: "#8b634b"
 - id: kiki-green
-  order: 21
+  order: 23
   title: Kiki Green
   url: https://kiki-green.com/
   theme: Custom
@@ -368,7 +404,7 @@
   accent: "#2f6b3a"
   accentLocked: true
 - id: juniors-cheesecake
-  order: 22
+  order: 24
   title: Junior's Cheesecake
   url: https://juniorscheesecake.com/
   theme: Dawn
@@ -385,7 +421,7 @@
     uk: Створив нові кастомні секції на основі дизайну Figma, розробив email шаблони та їх обробку, а також реалізував функціональність сторінки подачі.
   accent: "#9e3119"
 - id: spring-mountain-vineyard
-  order: 23
+  order: 25
   title: Spring Mountain Vineyard
   url: https://club.springmountainvineyard.com/
   theme: Dawn
@@ -402,7 +438,7 @@
     uk: Редизайнив сторінку колекції з покращеним дизайном фільтрів та карток продуктів, реалізував динамічну логіку хлібних крихт, яка оновлюється без перезавантаження сторінки для кращого UX.
   accent: "#0e1018"
 - id: lunesi
-  order: 24
+  order: 26
   title: Lunesi
   url: https://lunesi.co.uk/
   theme: Be Yours
@@ -419,7 +455,7 @@
     uk: Розробив динамічну секцію апселла в кошику, яка інтелектуально відображає продукти на основі вмісту кошика, повністю налаштовувану через редактор теми. Покращив хедер з налаштовуваними кольоровими схемами та конфігурованим банером оголошень для гнучкого брендингу та промо-акцій.
   accent: "#926351"
 - id: melinava
-  order: 25
+  order: 27
   title: Melinava
   url: https://melinava.nl/
   theme: Local
@@ -436,7 +472,7 @@
     uk: "Фінальна підготовка перед запуском: QA і полірування всіх деталей. Вів повний чекліст “готово до трафіку”: ключові сценарії користувача, перевірки кошика та checkout, адаптив, швидкість і візуальні баги — щоб сайт був стабільний і готовий до конверсій."
   accent: "#5a97e0"
 - id: safetag-tracking
-  order: 26
+  order: 28
   title: SafeTag Tracking
   url: https://safetagtracking.com/
   theme: Dawn
@@ -454,7 +490,7 @@
   accent: "#cf3a2f"
   accentLocked: true
 - id: virea
-  order: 27
+  order: 29
   title: Virea
   url: https://virea.se/
   theme: Minimog
@@ -472,7 +508,7 @@
   accent: "#4a8f55"
   accentLocked: true
 - id: bella-bloom-box
-  order: 28
+  order: 30
   title: BellaBox
   url: https://bellabox.se/
   theme: Dawn
@@ -490,7 +526,7 @@
   accent: "#e7a1b8"
   accentLocked: true
 - id: indian-affairs
-  order: 29
+  order: 31
   title: Indian Affairs
   url: https://indianaffairs.de/
   theme: Prestige
