@@ -111,7 +111,8 @@ const { locale, path } = seo;
     </main>
     <Footer locale={locale} />
     <!-- Where a visitor came from (utm_* in the address of a profile or ad link) goes with a booking to Cal.com and into
-         the subject of an email. Read from this page's address only; nothing is stored. -->
+         the subject of an email, and on to the next page through the site's own links. Read from the address only;
+         nothing is stored. -->
     <script is:inline>
       (function () {
         const query = new URLSearchParams(location.search);
@@ -121,6 +122,13 @@ const { locale, path } = seo;
           if (value) utm[key] = value.slice(0, 100);
         });
         if (!utm.utm_source) return;
+        // Links to other pages of the site carry the same utm_* in their address, so a visitor who books from a case
+        // page after landing on /projects still shows the source.
+        const carry = new URLSearchParams(utm).toString();
+        document.querySelectorAll('a[href^="/"]:not([href^="//"])').forEach((a) => {
+          const [path, hash] = a.getAttribute('href').split('#');
+          a.setAttribute('href', `${path}${path.includes('?') ? '&' : '?'}${carry}${hash === undefined ? '' : `#${hash}`}`);
+        });
         document.querySelectorAll('[data-cal-link]').forEach((el) => {
           el.setAttribute('data-cal-config', JSON.stringify(Object.assign(JSON.parse(el.getAttribute('data-cal-config') || '{}'), utm)));
         });
