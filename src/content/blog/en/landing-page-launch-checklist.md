@@ -4,7 +4,7 @@ title: Landing page launch checklist for busy founders
 date: April 4, 2024
 readingTime: 3 min
 excerpt: Before you launch, run through this lightweight checklist to make sure your offer is clear, fast and ready to convert.
-image: https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/landing-page-launch-checklist.jpg
 tags:
   - Checklist
   - Launch

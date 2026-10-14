@@ -4,7 +4,7 @@ title: 5 quick wins to boost your Shopify conversion
 date: May 15, 2024
 readingTime: 4 min
 excerpt: Simple UX tweaks and speed optimizations that immediately make visitors trust your store and hit the buy button more often.
-image: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/shopify-conversion-boost.jpg
 tags:
   - Shopify
   - Conversion

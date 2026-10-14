@@ -4,7 +4,7 @@ title: 5 schnelle Gewinne, um Ihre Shopify-Konversion zu steigern
 date: 15. Mai 2024
 readingTime: 4 Min
 excerpt: Einfache UX-Anpassungen und Geschwindigkeitsoptimierungen, die Besucher sofort dazu bringen, Ihrem Shop zu vertrauen und häufiger auf die Kauf-Schaltfläche zu klicken.
-image: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/shopify-conversion-boost.jpg
 tags:
   - Shopify
   - Konversion

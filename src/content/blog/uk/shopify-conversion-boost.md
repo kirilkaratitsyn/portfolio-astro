@@ -4,7 +4,7 @@ title: 5 швидких кроків, щоб підняти конверсію S
 date: 15 травня 2024
 readingTime: 4 хв
 excerpt: Кілька легких змін у швидкості та UX, які змушують покупців довіряти магазину і частіше натискати “Купити”.
-image: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/shopify-conversion-boost.jpg
 tags:
   - Shopify
   - Конверсія

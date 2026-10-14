@@ -4,7 +4,7 @@ title: Чекліст запуску лендингу для зайнятих з
 date: 4 квітня 2024
 readingTime: 3 хв
 excerpt: Перед запуском пройдіться по швидкому чеклісту, щоб переконатися, що сторінка швидка, зрозуміла і готова до конверсій.
-image: https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/landing-page-launch-checklist.jpg
 tags:
   - Чекліст
   - Запуск

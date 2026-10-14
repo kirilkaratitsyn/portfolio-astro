@@ -4,7 +4,7 @@ title: Landingpage-Launch-Checkliste für beschäftigte Gründer
 date: 4. April 2024
 readingTime: 3 Min
 excerpt: Bevor Sie starten, gehen Sie diese leichte Checkliste durch, um sicherzustellen, dass Ihr Angebot klar, schnell und bereit zur Konversion ist.
-image: https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80
+image: /source/blog/landing-page-launch-checklist.jpg
 tags:
   - Checkliste
   - Launch
