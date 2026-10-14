@@ -1,6 +1,7 @@
 ---
 order: 10
 title: Reserve Kava
+seoTitle: "Reserve Kava: Shopify Product Pages with Bundles"
 summary: "Product pages for an instant-kava brand, rebuilt from the client’s design handoff: a clean buy column, a bundle that adds both jars, multi-jar variants with subscriptions, and ready templates for new products."
 brandSummary: "Reserve Kava sells 100% noble instant kava from Vanuatu: a jar you mix with water, with no kneading, straining or brewing, positioned as an evening ritual for relaxation."
 brandDescription: The brand sells two instant kava jars, Borogu and Kelai. Its site leans on a monospaced, minimal look and plain-spoken copy, with the product itself, not decoration, as the focus.

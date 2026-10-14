@@ -1,6 +1,7 @@
 ---
 order: 1
 title: Orska Rituals
+seoTitle: "Orska Rituals: Shopify-B2B-Shop für Profi-Hautpflege"
 summary: "Ein Shopify-Store für eine professionelle Hautpflegemarke, umgesetzt nach einem HTML-Prototyp: Großhandelspreise für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order und ein Limit für das Discovery Kit, das der Server durchsetzt."
 brandSummary: Orska Rituals ist eine professionelle Hautpflegemarke für Kosmetikstudios und Spas mit anpassbaren Protokollen und Behandlungsprodukten, einer Retail-Linie und einem Partnerprogramm für den Großhandel.
 brandDescription: Orska Rituals verbindet intelligente Hautkorrektur mit anpassbaren Protokollen für professionelle Kosmetikerinnen und Kosmetiker. Die Marke bedient Behandlungsräume sowie Hotels und Resorts, verkauft über ein Partnerprogramm an Profis und lässt allen anderen den Retail-Zugang offen.

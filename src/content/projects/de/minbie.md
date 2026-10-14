@@ -1,6 +1,7 @@
 ---
 order: 5
 title: "Minbie"
+seoTitle: "Minbie: Neuer Shopify-Shop nach Figma-Wireframes"
 summary: "Ein neuer Shopify-Shop für Minbie, eine australische Marke für Baby-Fütterprodukte: das Blum-Theme mit dem Preset Monti, gebaut nach Figma-Wireframes, im Juli 2026 gestartet und seitdem betreut."
 brandSummary: "Minbie ist eine australische Marke für Baby-Fütterprodukte aus Melbourne, bekannt für Babyflaschen, dazu Milchpumpen, Sterilisatoren und Flaschenwärmer."
 brandDescription: "Minbie entwickelt in Australien Babyflaschen, die das richtige Ansaugen und Trinken des Babys unterstützen, und verkauft sie online zusammen mit Milchpumpen, Sterilisatoren, Flaschenwärmern und Trinklernbechern."

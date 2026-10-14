@@ -1,6 +1,7 @@
 ---
 order: 10
 title: Reserve Kava
+seoTitle: "Reserve Kava: Shopify-Produktseiten mit Bundles"
 summary: "Produktseiten für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut: eine klare Kaufspalte, ein Bundle mit beiden Dosen, Mehrfachvarianten mit Abos und fertige Templates für neue Produkte."
 brandSummary: "Reserve Kava verkauft 100 % edlen Instant-Kava aus Vanuatu: eine Dose, die man mit Wasser anrührt, ohne Kneten, Abseihen oder Aufbrühen, positioniert als Abendritual zur Entspannung."
 brandDescription: Die Marke verkauft zwei Instant-Kava-Dosen, Borogu und Kelai. Die Website setzt auf einen minimalistischen Look mit Monospace-Schrift und direkte Texte, im Mittelpunkt steht das Produkt, nicht die Dekoration.

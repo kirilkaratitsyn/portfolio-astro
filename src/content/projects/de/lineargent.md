@@ -1,6 +1,7 @@
 ---
 order: 7
 title: "Lineargent"
+seoTitle: "Lineargent: Shopify-Betreuung für eine Schmuckmarke"
 summary: "Laufende Shopify-Arbeit für Lineargent, eine Marke für Silberschmuck mit Design aus Barcelona: ein Theme-Audit und Fixes in kleinen Meilensteinen, „In den Warenkorb“ bei ähnlichen Produkten, Breadcrumbs für verschachtelte Kollektionen und die Searchspring-Integration für Suche und Merchandising mit Tracking über Beacon 2.0."
 brandSummary: "Lineargent ist eine Marke für Silberschmuck aus Vic bei Barcelona: Schmuck, in Barcelona entworfen und seit 1992 verkauft."
 brandDescription: "Die Kollektionen von Lineargent umfassen Ohrringe, Ringe, Halsketten und Armbänder aus Silber, von Eheringen bis zu Stücken mit Zirkonia, mit kostenlosem Versand in 24–48 Stunden ab 50 €."

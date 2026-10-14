@@ -1,6 +1,7 @@
 ---
 order: 6
 title: "Pedchem"
+seoTitle: "Pedchem: Schnelleres Shopify-Theme ohne Bezahl-Apps"
 summary: "Theme-Wechsel und Aufräumen für Pedchem, den Shop für Schädlingsbekämpfung von Phoenix Environmental Design: von Flex auf das Enterprise-Theme ohne kostenpflichtige Apps, Datentabellen aus Metafeldern für 323 Produkte und Weiterleitungen auf Basis der Search Console."
 brandSummary: "Pedchem ist der Onlineshop von Phoenix Environmental Design Inc. in West Richland, Washington, mit Pestiziden, Herbiziden und weiteren Produkten zur Schädlingsbekämpfung."
 brandDescription: "Pedchem führt die Produkte zur Schädlingsbekämpfung, die Profis verwenden, von Granulat-Herbiziden über Aerosol-Pestizide bis zu Lebendfallen, von bewährten Marken, für Rasenpflege, Schädlingsbekämpfung und Behördenaufträge."

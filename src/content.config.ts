@@ -8,6 +8,8 @@ const projects = defineCollection({
   schema: z.object({
     order: z.number().int().positive(),
     title: z.string(),
+    /** Search title: the store and what was done, e.g. "Jula Bloom: WooCommerce to Shopify Migration" (the site name is added). */
+    seoTitle: z.string().optional(),
     summary: z.string(),
     brandSummary: z.string(),
     brandDescription: z.string(),

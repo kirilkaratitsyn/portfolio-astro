@@ -21,13 +21,44 @@ const copy = useTranslations(locale).caseStudies;
 const hasBody = Boolean(caseStudy.entry.body?.trim());
 const { Content } = await render(caseStudy.entry);
 
+const t = useTranslations(locale);
+const site = Astro.site!;
+const pageUrl = new URL(localizePath(locale, `/projects/${caseStudy.slug}`), site).toString();
+// The case as a piece of work by Kiril (the same Person as on the home page), and where it sits on the site.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CreativeWork',
+      '@id': `${pageUrl}#work`,
+      name: caseStudy.seoTitle ?? caseStudy.title,
+      description: caseStudy.summary,
+      url: pageUrl,
+      image: new URL(`/og/projects/${caseStudy.slug}.jpg`, site).toString(),
+      inLanguage: locale,
+      keywords: caseStudy.tags.join(', '),
+      creator: { '@id': new URL('/#person', site).toString() },
+      about: { '@type': 'Organization', name: caseStudy.title, ...(caseStudy.archived ? {} : { url: caseStudy.liveUrl }) },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Kiril Karatitsyn', item: new URL(localizePath(locale, '/'), site).toString() },
+        { '@type': 'ListItem', position: 2, name: t.header.works, item: new URL(localizePath(locale, '/projects'), site).toString() },
+        { '@type': 'ListItem', position: 3, name: caseStudy.title, item: pageUrl },
+      ],
+    },
+  ],
+};
+
 const seo = {
-  title: locale === DEFAULT_LOCALE ? `${caseStudy.title} Case Study` : `${caseStudy.title} – ${copy.eyebrow}`,
+  title: caseStudy.seoTitle ?? (locale === DEFAULT_LOCALE ? `${caseStudy.title} Case Study` : `${caseStudy.title} – ${copy.eyebrow}`),
   description: caseStudy.summary,
   type: 'article' as const,
   // JPG crop of the desktop screenshot (public/og/projects), WebP isn't read by every social network.
   image: `/og/projects/${caseStudy.slug}.jpg`,
   imageSize: { width: 1200, height: 630 },
+  structuredData,
 };
 
 const sections = [

@@ -1,6 +1,7 @@
 ---
 order: 11
 title: "Lumppings"
+seoTitle: "Lumppings: Shopify Redesign with Free Downloads"
 summary: "A redesign from the ground up for Lumppings, a video producer and editor who sells editing assets: a site map first, then a new Shopify site with a Free Downloads page whose drops expire after 48 hours."
 brandSummary: "Lumppings is a producer, writer and editor based in Vancouver, Canada, who tells stories for brands and creators and sells editing assets such as paper and dust texture packs."
 brandDescription: "Lumppings makes videos for brands and creators and sells assets for other editors: paper and dust texture packs, with a free drop of sound effects or textures that anyone can download for a limited time."

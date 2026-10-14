@@ -1,6 +1,7 @@
 ---
 order: 12
 title: Silk Tallow
+seoTitle: "Silk Tallow: Gratisartikel im Shopify-Warenkorb"
 summary: Der Store brauchte anspruchsvolle Mystery-Gift- und Free-Gift-Logik, die sich nativ anfühlt, sofort reagiert und Cart-Edge-Cases ohne Page Reloads abfängt.
 brandSummary: Silk Tallow ist eine natürliche Skincare-Marke rund um tallow-basierte Formeln, einfache Inhaltsstoffe und toxinfreie Routinen mit Naturbezug.
 brandDescription: Silk Tallow baut seine Positionierung um natürliche Einfachheit und Hautpflege ohne künstliche Inhaltsstoffe auf. Die Marke verbindet ihre Produkte mit Pflege, Schutz und einer Rückkehr zu ruhigeren, saubereren Routinen, in denen tallow-basierte Formeln den Kern einer minimalistischen, naturgeleiteten Skincare-Philosophie bilden.

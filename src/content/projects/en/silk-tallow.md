@@ -1,6 +1,7 @@
 ---
 order: 12
 title: Silk Tallow
+seoTitle: "Silk Tallow: Free Gift Logic in the Shopify Cart"
 summary: The store needed advanced Mystery Gift and Free Gift logic that felt native to the storefront, updated instantly, and handled cart edge cases without page reloads.
 brandSummary: Silk Tallow is a natural skincare brand centered on tallow-based formulas, simple ingredients, and toxin-free routines inspired by nature.
 brandDescription: Silk Tallow is positioned around natural simplicity and skincare without artificial ingredients. The brand ties its products to nourishment, protection, and a return to slower, cleaner routines, using tallow-based formulas as the core of a more minimal and nature-led skincare philosophy.

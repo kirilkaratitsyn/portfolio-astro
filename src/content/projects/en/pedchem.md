@@ -1,6 +1,7 @@
 ---
 order: 6
 title: "Pedchem"
+seoTitle: "Pedchem: Faster Shopify Theme Without Paid Apps"
 summary: "A theme replacement and clean-up for Pedchem, the pest control shop of Phoenix Environmental Design: from Flex to the Enterprise theme with no paid apps, spec charts from metafields on 323 products, and redirects based on Search Console."
 brandSummary: "Pedchem is the online shop of Phoenix Environmental Design Inc. in West Richland, Washington, selling pesticides, herbicides and other pest control products."
 brandDescription: "Pedchem stocks the pest control products the pros use, from granular herbicides to aerosol pesticides and catch-and-release traps, from trusted brands, across lawn care, pest control and government sales."

@@ -1,6 +1,7 @@
 ---
 order: 9
 title: Petaljet
+seoTitle: "Petaljet: Shopify Product Builder for Wholesale"
 summary: An ongoing Shopify partnership that started with an SEO audit and performance work and grew into custom product builders for wholesale flower buyers.
 brandSummary: Petaljet is a wholesale flower supplier for florists and professional designers, shipping farm-direct blooms across the U.S. for weddings, events, and everyday floral programs.
 brandDescription: Petaljet is built for B2B flower buying, serving florists, event designers, and other professional buyers with farm-direct wholesale flowers. The brand emphasizes dependable supply, broad category depth, and a workflow that supports recurring orders, large events, and everyday floral operations with less friction.

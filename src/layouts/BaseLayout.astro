@@ -110,6 +110,27 @@ const { locale, path } = seo;
       <slot />
     </main>
     <Footer locale={locale} />
+    <!-- Where a visitor came from (utm_* in the address of a profile or ad link) goes with a booking to Cal.com and into
+         the subject of an email. Read from this page's address only; nothing is stored. -->
+    <script is:inline>
+      (function () {
+        const query = new URLSearchParams(location.search);
+        const utm = {};
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((key) => {
+          const value = query.get(key);
+          if (value) utm[key] = value.slice(0, 100);
+        });
+        if (!utm.utm_source) return;
+        document.querySelectorAll('[data-cal-link]').forEach((el) => {
+          el.setAttribute('data-cal-config', JSON.stringify(Object.assign(JSON.parse(el.getAttribute('data-cal-config') || '{}'), utm)));
+        });
+        document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+          const [address, params = ''] = a.getAttribute('href').split('?');
+          const subject = `${new URLSearchParams(params).get('subject') || ''} (via ${utm.utm_source})`.trim();
+          a.setAttribute('href', `${address}?subject=${encodeURIComponent(subject)}`);
+        });
+      })();
+    </script>
     <script>
       import '../scripts/main';
     </script>

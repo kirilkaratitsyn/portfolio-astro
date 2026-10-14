@@ -1,6 +1,7 @@
 ---
 order: 3
 title: Jula Bloom
+seoTitle: "Jula Bloom: Umzug von WooCommerce zu Shopify"
 summary: "Der Umzug von WordPress und WooCommerce zu Shopify für eine Seattler Marke für Seidenblumen: ein unvollständiger Theme-Aufbau fertiggestellt und bereinigt, ein vollständiges Typografie-System, eine Redirect-Map der alten Seite und ein Launch im September 2026."
 brandSummary: Jula Bloom ist eine Marke aus Seattle für hochwertige Seidenblumen, die nie verblühen, mit Sträußen, Vasen, Geschenkgutscheinen und einer Mini-Linie sowie individuellen Sträußen und Services für Unternehmen.
 brandDescription: Jula Bloom verkauft hochwertige Seidenblumen-Sträuße und Vasen online, nimmt Anfragen für individuelle Sträuße an und arbeitet mit Unternehmen an Geschenken und Events. Feine Typografie und eine zurückhaltende Farbwelt tragen einen großen Teil des Erlebnisses, deshalb mussten Abstände und Schrift exakt stimmen.

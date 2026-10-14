@@ -1,6 +1,7 @@
 ---
 order: 1
 title: Orska Rituals
+seoTitle: "Orska Rituals: Shopify B2B Store for Pro Skincare"
 summary: "A Shopify store for a professional skincare brand, built from an HTML prototype: wholesale pricing for approved estheticians, a members-only Pro Vault, Quick Order, and a first-order limit on the Discovery Kit that the server enforces."
 brandSummary: Orska Rituals is a professional skincare brand for estheticians and spas, with customizable protocols and treatment products, a retail line and a wholesale partner program.
 brandDescription: Orska Rituals pairs intelligent skin correction with customizable protocols for professional estheticians. The brand serves treatment rooms as well as hotels and resorts, sells to professionals through a partner program and keeps retail access open for everyone else.

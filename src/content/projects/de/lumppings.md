@@ -1,6 +1,7 @@
 ---
 order: 11
 title: "Lumppings"
+seoTitle: "Lumppings: Shopify-Redesign mit Gratis-Downloads"
 summary: "Ein Redesign von Grund auf für Lumppings, einen Videoproduzenten und Cutter, der Assets für den Schnitt verkauft: zuerst die Sitemap, dann eine neue Shopify-Website mit einer Seite für Gratis-Downloads, deren Drops nach 48 Stunden ablaufen."
 brandSummary: "Lumppings ist Produzent, Autor und Cutter aus Vancouver, Kanada, erzählt Geschichten für Marken und Creator und verkauft Assets für den Schnitt wie Papier- und Staub-Texturpakete."
 brandDescription: "Lumppings dreht Videos für Marken und Creator und verkauft Assets für andere Cutter: Papier- und Staub-Texturpakete, dazu einen Gratis-Drop mit Soundeffekten oder Texturen, den jeder für begrenzte Zeit herunterladen kann."

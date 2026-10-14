@@ -1,6 +1,7 @@
 ---
 order: 9
 title: Petaljet
+seoTitle: "Petaljet: Shopify-Produktkonfigurator für Großkunden"
 summary: Eine laufende Shopify-Partnerschaft, die mit einem SEO-Audit und Performance-Arbeit begann und zu individuellen Produkt-Buildern für Blumen-Großkunden wuchs.
 brandSummary: Petaljet ist ein Großhandelsanbieter für Blumen für Floristen und professionelle Designer und liefert farm-direct Blüten in den gesamten USA für Hochzeiten, Events und laufende Floral-Programme.
 brandDescription: Petaljet ist auf den B2B-Einkauf von Blumen ausgerichtet und bedient Floristen, Event-Designer und andere professionelle Käufer. Die Marke betont verlässliche Versorgung, Sortimentstiefe und einen Workflow, der wiederkehrende Bestellungen, große Events und tägliche Floral-Operations mit weniger Reibung unterstützt.

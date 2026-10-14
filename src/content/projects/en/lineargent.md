@@ -1,6 +1,7 @@
 ---
 order: 7
 title: "Lineargent"
+seoTitle: "Lineargent: Shopify Support for a Jewellery Brand"
 summary: "Ongoing Shopify work for Lineargent, a silver jewellery brand designed in Barcelona: a theme audit and fixes in small milestones, Add to cart on related products, breadcrumbs for nested collections, and the Searchspring search and merchandising integration with Beacon 2.0 tracking."
 brandSummary: "Lineargent is a silver jewellery brand from Vic, near Barcelona: jewellery designed in Barcelona and sold since 1992."
 brandDescription: "Lineargent's collections cover earrings, rings, necklaces and bracelets in silver, from wedding bands to pieces set with zirconia, with free 24–48 hour shipping on orders over €50."

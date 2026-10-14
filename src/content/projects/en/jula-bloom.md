@@ -1,6 +1,7 @@
 ---
 order: 3
 title: Jula Bloom
+seoTitle: "Jula Bloom: WooCommerce to Shopify Migration"
 summary: "A move from WordPress and WooCommerce to Shopify for a Seattle silk-flower brand: a partial theme build finished and cleaned up, a full type system, a redirect map from the old site and a launch in September 2026."
 brandSummary: Jula Bloom is a Seattle brand of premium silk flowers that never fade, selling bouquets, vases, gift cards and a Mini line, with custom bouquets and services for businesses.
 brandDescription: Jula Bloom sells premium silk-flower bouquets and vases online, takes custom bouquet requests and works with businesses on gifting and events. Refined typography and a restrained palette carry much of the experience, so spacing and type had to be exact.

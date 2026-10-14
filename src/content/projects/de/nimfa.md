@@ -1,6 +1,7 @@
 ---
 order: 14
 title: Nimfa
+seoTitle: "Nimfa: Mehrsprachiges individuelles Shopify-Theme"
 summary: Ein Premium-Sexshop brauchte einen Custom Shopify Store aus Figma, mehrsprachig, mit skalierbaren Sections und einer Premium-Präsentation ab dem ersten Launch.
 brandSummary: Nimfa ist eine Premium-Marke für Intimate Wellness und ein Sexshop, aufgebaut rund um diskrete, stilvolle und schamfreie Self-Care für Frauen.
 brandDescription: Nimfa positioniert Intimität als etwas Natürliches, Elegantes und Urteilsfreies. Die Marke präsentiert Produkte für Pleasure und Intimate Wellness in einem weicheren Premium-Kontext, mit Fokus auf Selbstakzeptanz, Privatsphäre und einem Einkaufserlebnis, das näher an modernem Self-Care liegt als an einem klassischen Adult Store.
