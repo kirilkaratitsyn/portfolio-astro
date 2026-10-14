@@ -3,7 +3,7 @@
 Kiril Karatitsyn
 Am Kuckuck 6
 48455 Bad Bentheim, Germany
-Email: karatitsynkiril@gmail.com
+Email: kiril@karatitsyn.com
 
 ## 2. Hosting
 
@@ -33,10 +33,24 @@ This website sets no cookies of its own and uses no analytics or tracking tools.
 
 The website links to other services, such as Upwork, LinkedIn, GitHub and my clients' shops. No data goes there until you click a link; from then on, that provider's privacy policy applies.
 
-## 8. Your rights
+## 8. Emails to Shopify stores
 
-You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on Art. 6(1)(f) GDPR (Art. 21). To use them, write to karatitsynkiril@gmail.com.
+I offer Shopify development to online stores. To do this, a partner emails Shopify stores in the USA, the United Kingdom and Australia on my behalf.
+
+For this I process the store's name, the business email address the store has published itself and the page where it appears, as well as the date of the email and your reply if you answer. The source of this data is the store's public website.
+
+The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in offering my services to businesses (direct marketing, Recital 47 GDPR).
+
+I keep the data until you object. After that I keep only your email address with a "do not contact" note, so that you get no further emails.
+
+The contact list is kept in Notion (Notion Labs, Inc., USA) and the emails are sent through Microsoft 365. Both process the data on my behalf. Where data goes to the USA, the transfer relies on the EU-U.S. Data Privacy Framework, under which Notion Labs, Inc. and Microsoft Corporation are certified (Art. 45 GDPR).
+
+You can object to this processing at any time (Art. 21(2) GDPR), for example with a short reply to the email or by writing to kiril@karatitsyn.com. I will then not contact you again. Your other rights are in the next section.
+
+## 9. Your rights
+
+You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on Art. 6(1)(f) GDPR (Art. 21). To use them, write to kiril@karatitsyn.com.
 
 You may also lodge a complaint with a data protection supervisory authority, for example the one responsible for me: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, Germany, https://www.lfd.niedersachsen.de
 
-Last updated: 12 October 2026
+Last updated: 14 October 2026

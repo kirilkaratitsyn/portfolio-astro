@@ -29,6 +29,16 @@
       "permanent": true
     },
     {
+      "source": "/impressum",
+      "destination": "/legal-notice",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/de/datenschutz",
+      "permanent": true
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
       "permanent": true

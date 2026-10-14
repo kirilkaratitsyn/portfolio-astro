@@ -7,7 +7,7 @@ Germany
 
 ## Contact
 
-Email: karatitsynkiril@gmail.com
+Email: kiril@karatitsyn.com
 Phone: +49 175 8772778
 
 ## Responsible for content according to § 18 (2) MStV
