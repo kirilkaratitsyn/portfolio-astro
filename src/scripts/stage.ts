@@ -592,6 +592,8 @@ class GlobeView extends View {
   private pinch: { d: number; zoom: number } | null = null;
   private gestureFrom = 0;
   private finger = { x: 0, y: 0, t: 0, vx: 0 };
+  /** One finger, not zoomed in: undecided until it moves; sideways spins the globe, up or down scrolls the page. */
+  private swipe: { x: number; y: number; mode: 'wait' | 'spin' | 'scroll' } | null = null;
   private zoomIn: HTMLElement | null;
   private zoomOut: HTMLElement | null;
   /** The place under the cursor or the pinch: it stays under them while the zoom changes. */
@@ -779,6 +781,7 @@ class GlobeView extends View {
     const b = list[1];
     if (a && b) {
       e.preventDefault();
+      this.swipe = null;
       this.grabbedAt = null;
       const d = Math.max(1, Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY));
       if (this.pinch) this.setZoom(this.pinch.zoom * (d / this.pinch.d), (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2);
@@ -801,7 +804,37 @@ class GlobeView extends View {
       }
       return;
     }
-    if (!a && this.grabbedAt) this.release(p(f.x, f.y));
+    // Not zoomed in: a drag that goes sideways first spins the globe (the host has touch-action: pan-y, so sideways
+    // moves are ours); one that goes up or down is left to the page and scrolls it.
+    if (a) {
+      if (e.type === 'touchstart') {
+        this.swipe = { x: a.clientX, y: a.clientY, mode: 'wait' };
+        return;
+      }
+      const s = this.swipe;
+      if (e.type !== 'touchmove' || !s) return;
+      if (s.mode === 'wait') {
+        const dx = a.clientX - s.x;
+        const dy = a.clientY - s.y;
+        if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+          s.mode = 'spin';
+          Object.assign(f, { x: s.x, y: s.y, t: e.timeStamp, vx: 0 });
+          this.grab(p(s.x, s.y));
+        } else if (Math.abs(dy) > 8) {
+          s.mode = 'scroll';
+        }
+      }
+      if (s.mode === 'spin') {
+        e.preventDefault();
+        const dt = Math.max(1, e.timeStamp - f.t) / 1000;
+        f.vx = f.vx * 0.5 + ((a.clientX - f.x) / dt) * 0.5;
+        Object.assign(f, { x: a.clientX, y: a.clientY, t: e.timeStamp });
+        this.drag(p(a.clientX, a.clientY));
+      }
+      return;
+    }
+    this.swipe = null;
+    if (this.grabbedAt) this.release(p(f.x, f.y));
   };
 
   private local(x: number, y: number) {

@@ -80,6 +80,8 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 
 /* Globe tooltip (scripts/stage.ts GlobeView): placed on the pin; a store is a real link, a pin for several stores lists
    a link per store. */
+/* The globe takes sideways drags (it spins); up and down still scroll the page (scripts/stage.ts GlobeView). */
+.globe { touch-action: pan-y; }
 .globe-tip {
   position: absolute; left: 0; top: 0; z-index: 3; display: grid; gap: 2px; min-width: 150px; padding: 10px 14px 11px;
   margin: -12px 0 0 0; border-radius: 14px; background: #0e1018; color: #fff; font-size: 13px; line-height: 1.3;
