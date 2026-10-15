@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SeoHead, { type SeoProps } from '../components/SeoHead.astro';
 import Header from '../sections/Header.astro';
 import Footer from '../sections/Footer.astro';
+import EasterEgg from '../components/EasterEgg.astro';
 import type { Locale } from '../i18n';
 
 type Props = SeoProps & {
@@ -110,6 +111,7 @@ const { locale, path } = seo;
       <slot />
     </main>
     <Footer locale={locale} />
+    <EasterEgg locale={locale} />
     <!-- Where a visitor came from (utm_* in the address of a profile or ad link) goes with a booking to Cal.com and into
          the subject of an email, and on to the next page through the site's own links. Read from the address only;
          nothing is stored. -->

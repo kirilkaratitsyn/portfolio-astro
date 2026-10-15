@@ -934,5 +934,29 @@
     "faq": "Questions",
     "article": "Read more",
     "more": "About this service"
+  },
+  "egg": {
+    "title": "Block by block",
+    "hint": "Tap, click or press Space to drop a block. What hangs over falls off.",
+    "floors": "Floors",
+    "perfect": "Perfect!",
+    "over": "Your store has {n} floors.",
+    "again": "Play again",
+    "cta": "Build the real store →",
+    "close": "Close",
+    "layers": [
+      "Theme",
+      "Header",
+      "Navigation",
+      "Collection",
+      "Product page",
+      "Reviews",
+      "Cart",
+      "Checkout",
+      "Payments",
+      "Shipping",
+      "Markets",
+      "Launch 🚀"
+    ]
   }
 }

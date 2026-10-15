@@ -934,5 +934,29 @@
     "faq": "Häufige Fragen",
     "article": "Mehr dazu",
     "more": "Mehr zur Leistung"
+  },
+  "egg": {
+    "title": "Block für Block",
+    "hint": "Tippen, klicken oder Leertaste: Block fallen lassen. Was übersteht, fällt ab.",
+    "floors": "Etagen",
+    "perfect": "Perfekt!",
+    "over": "Ihr Shop hat {n} Etagen.",
+    "again": "Nochmal",
+    "cta": "Echten Shop bauen →",
+    "close": "Schließen",
+    "layers": [
+      "Theme",
+      "Header",
+      "Navigation",
+      "Kollektion",
+      "Produktseite",
+      "Bewertungen",
+      "Warenkorb",
+      "Checkout",
+      "Zahlung",
+      "Versand",
+      "Markets",
+      "Launch 🚀"
+    ]
   }
 }

@@ -1,0 +1,138 @@
+---
+// The easter egg: "Block für Block", a small stacking game (scripts/stack-game.ts). It opens with the Konami code
+// (↑ ↑ ↓ ↓ ← → ← → B A) or five quick clicks or taps on the big surname in the footer; the console drops a hint.
+// The game code loads only when it opens. Nothing is stored and nothing is sent.
+import { localizePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale).egg;
+---
+
+<dialog data-egg class="egg" aria-labelledby="egg-title" data-text={JSON.stringify({ layers: t.layers, floors: t.floors, perfect: t.perfect })} data-over={t.over}>
+  <div class="egg-box">
+    <div class="egg-head">
+      <h2 id="egg-title" class="font-head text-[22px] font-bold leading-tight">{t.title}</h2>
+      <button type="button" data-egg-close class="egg-close" aria-label={t.close}>×</button>
+    </div>
+    <p class="egg-hint">{t.hint}</p>
+    <canvas data-egg-canvas tabindex="0" class="egg-canvas" aria-label={t.hint}></canvas>
+    <div data-egg-over class="egg-over" hidden>
+      <p data-egg-score class="font-head text-[22px] font-bold" aria-live="polite"></p>
+      <div class="egg-actions">
+        <button type="button" data-egg-again class="egg-btn egg-btn-dark">{t.again}</button>
+        <a href={localizePath(locale, '/#contact')} data-egg-cta class="egg-btn">{t.cta}</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .egg {
+    width: min(440px, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    background: #edeff6;
+    color: #0e1018;
+    box-shadow: 0 30px 80px rgba(8, 12, 40, 0.35);
+  }
+  .egg::backdrop { background: rgba(14, 16, 24, 0.55); }
+  .egg-box { display: grid; gap: 10px; padding: 18px 18px 20px; }
+  .egg-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .egg-close { width: 36px; height: 36px; border-radius: 999px; background: #fff; font-size: 22px; line-height: 1; }
+  .egg-hint { font-size: 14px; color: #5a5f73; }
+  .egg-canvas:focus-visible { outline: 2px solid #2433f0; outline-offset: 2px; }
+  .egg-canvas { display: block; width: 100%; height: min(520px, 62dvh); border-radius: 16px; background: linear-gradient(#fff, #e7eaf4); touch-action: manipulation; cursor: pointer; user-select: none; -webkit-user-select: none; }
+  .egg-over { display: grid; gap: 12px; text-align: center; }
+  .egg-over[hidden] { display: none; }
+  .egg-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .egg-btn { display: inline-flex; border-radius: 999px; background: #2433f0; padding: 12px 20px; font-size: 15px; font-weight: 600; color: #fff; }
+  .egg-btn-dark { background: #0e1018; }
+</style>
+
+<script>
+  import type { StackText } from '../scripts/stack-game';
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-egg]');
+  if (dialog) {
+    const canvas = dialog.querySelector<HTMLCanvasElement>('[data-egg-canvas]')!;
+    const overBox = dialog.querySelector<HTMLElement>('[data-egg-over]')!;
+    const score = dialog.querySelector<HTMLElement>('[data-egg-score]')!;
+    const text = JSON.parse(dialog.dataset.text!) as StackText;
+    let game: Awaited<ReturnType<typeof import('../scripts/stack-game').startStack>> | null = null;
+
+    const open = async () => {
+      if (dialog.open) return;
+      dialog.showModal();
+      // The game field gets the focus (not the close button), so the first Space drops a block.
+      canvas.focus();
+      overBox.hidden = true;
+      const { startStack } = await import('../scripts/stack-game');
+      game?.stop();
+      game = startStack(canvas, text, (floors) => {
+        score.textContent = (dialog.dataset.over ?? '{n}').replace('{n}', String(floors));
+        overBox.hidden = false;
+      });
+    };
+    const close = () => dialog.close();
+    dialog.addEventListener('close', () => {
+      game?.stop();
+      game = null;
+    });
+
+    canvas.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      game?.drop();
+    });
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        if ((e.target as Element).closest('button, a')) return;
+        e.preventDefault();
+        game?.drop();
+      }
+    });
+    dialog.querySelector('[data-egg-close]')!.addEventListener('click', close);
+    dialog.querySelector('[data-egg-cta]')!.addEventListener('click', close);
+    dialog.querySelector('[data-egg-again]')!.addEventListener('click', () => {
+      overBox.hidden = true;
+      game?.restart();
+      canvas.focus();
+    });
+    // A click on the dark area around the box closes it.
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) close();
+    });
+    window.addEventListener('resize', () => game?.resize());
+
+    // The Konami code.
+    const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let at = 0;
+    window.addEventListener('keydown', (e) => {
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      at = key === code[at] ? at + 1 : key === code[0] ? 1 : 0;
+      if (at === code.length) {
+        at = 0;
+        void open();
+      }
+    });
+
+    // Five quick clicks or taps on the big surname in the footer.
+    const word = document.querySelector('[data-footer-wm]')?.parentElement;
+    let taps: number[] = [];
+    word?.addEventListener('click', () => {
+      const now = performance.now();
+      taps = [...taps.filter((t) => now - t < 2000), now];
+      if (taps.length >= 5) {
+        taps = [];
+        void open();
+      }
+    });
+
+    console.log('%ckaratitsyn.com', 'font: 700 18px sans-serif; color: #2433f0', '\nPsst… ↑ ↑ ↓ ↓ ← → ← → B A');
+  }
+</script>
