@@ -22,3 +22,11 @@ The icons of the Services and Process sections and the 3D logo (header and foote
 Every icon also has a poster image, `public/source/3d/icon-<name>.webp` (first paint and fallback). They are captured from the live objects at rest, so they match exactly: build the site, serve it on port 4321, then `node scripts/3d/capture-posters.mjs`. Re-run it after changing an icon.
 
 Dragging uses an arcball, so a drag inside the object turns it about X and Y and a drag near its edge spins it about Z. Icons and the logo drift back to their resting pose; pebbles stay where you leave them.
+
+## Hero cube
+
+The puzzle cube in the hero is built in code too, `src/lib/cube.ts`: 27 rounded blocks in the site's colours, a few with a pattern drawn on a canvas (perforated, ribbed), no model or image files. It turns slowly, twists one layer every two or three seconds and, after a few twists, runs them backwards until it is whole again. It is a `data-pebble="cube"` host, so the stage gives it the same drag, tilt and poster swap as the icons, plus its own longer lens and key light (`userData.distance`, `userData.lights`).
+
+The cube replaced the stones in the hero; their code (`HeroView` in `src/scripts/stage.ts`, `makeHeroStones` in `src/lib/stones.ts`) and posters (`stones-*.webp`) are still in the repo but no page uses them.
+
+Its poster, `public/source/3d/cube-560.webp` and `cube-1120.webp`, is captured from the live cube at rest (paused, every block home): build the site, serve it on port 4321, then `node scripts/3d/capture-cube.mjs`. Re-run it after changing the cube; the script also warns when the resting cube reaches past its host.

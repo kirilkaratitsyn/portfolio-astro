@@ -1,4 +1,4 @@
-// Live 3D for the homepage stones and the icon pebbles.
+// Live 3D for the homepage: the hero cube, the stones, the icon pebbles and the globe.
 //
 // One WebGL renderer draws every object and copies its picture into a small 2D canvas that lives inside the
 // object's own section. The canvases scroll with the page like any other element (no overlay that lags behind
@@ -12,6 +12,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
 import { GLOBE_CAMERA, GLOBE_LAND, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
+import { makeCube } from '../lib/cube';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -374,8 +375,12 @@ class HeroView extends View {
 
 /* ------------------------------------------------------------------ icon pebbles */
 
-/** What a `data-pebble` host shows: a pebble, one of the icons, or the logo. Icons and the logo have a resting pose. */
+/** What a `data-pebble` host shows: a pebble, one of the icons, the logo or the hero cube. All but the pebbles have a resting pose. */
 function makeObject(name: string, hostWidth: number): { object: Object3D; rest: Quaternion | null } {
+  if (name === 'cube') {
+    const object = makeCube();
+    return { object, rest: object.userData.rest as Quaternion };
+  }
   if (name.startsWith('logo')) {
     const object = makeLogo(name === 'logo-white' ? 'white' : 'ink');
     return { object, rest: object.userData.rest as Quaternion };
@@ -402,9 +407,13 @@ class PebbleView extends View {
   private grabbed = false;
   private arcFrom = new Vector3(0, 0, 1);
   private k = 1;
+  /** Camera distance: an object may ask for a longer lens (the hero cube, so its near corner does not bulge). */
+  private distance: number;
 
   constructor(stage: Stage, host: HTMLElement, readonly name: string, private img: HTMLImageElement) {
-    super(stage, host, 2);
+    // The hero cube moves by itself and is drawn on every frame while it is on screen, so it gets the old hero stones'
+    // smaller budget (still 2x at its 540px desktop size, so it stays as sharp as its poster on a retina screen).
+    super(stage, host, 2, name === 'cube' ? 2.4e6 : undefined);
     Object.assign(this.canvas.style, { left: '-20%', top: '-20%', width: '140%', height: '140%' });
     host.append(this.canvas);
     const made = makeObject(name, host.clientWidth);
@@ -412,7 +421,10 @@ class PebbleView extends View {
     this.rest = made.rest;
     this.group.add(this.object);
     this.scene.add(this.group);
-    this.camera.position.set(0, PEBBLE_CAMERA.y, PEBBLE_CAMERA.distance);
+    // Lights an object brings along (the hero cube's key light) stay put in the scene while the object turns.
+    for (const light of (this.object.userData.lights as Object3D[] | undefined) ?? []) this.scene.add(light);
+    this.distance = (this.object.userData.distance as number | undefined) ?? PEBBLE_CAMERA.distance;
+    this.camera.position.set(0, (PEBBLE_CAMERA.y * this.distance) / PEBBLE_CAMERA.distance, this.distance);
     this.camera.lookAt(0, 0, 0);
   }
 
@@ -430,7 +442,7 @@ class PebbleView extends View {
     this.cssW = this.cssH = size;
     this.k = this.host.clientWidth / PEBBLE_UNITS;
     this.camera.aspect = 1;
-    this.camera.fov = (2 * Math.atan(size / this.k / 2 / PEBBLE_CAMERA.distance)) / DEG;
+    this.camera.fov = (2 * Math.atan(size / this.k / 2 / this.distance)) / DEG;
     this.camera.updateProjectionMatrix();
   }
 
@@ -487,6 +499,9 @@ class PebbleView extends View {
     const w = this.w;
     const p = this.pointer;
     const damp = Math.exp(-2.4 * dt);
+    // Objects that move by themselves (the hero cube's turns and twists) keep the view drawing while it is on screen.
+    const tick = this.object.userData.tick as ((dt: number) => boolean) | undefined;
+    const busy = tick ? tick(dt) : false;
 
     if (this.grabbed && p) {
       // Turn by exactly as much as the pointer moved on the sphere; keep the speed for the throw.
@@ -530,7 +545,7 @@ class PebbleView extends View {
       Math.abs(this.tiltY - targetY) < 0.002 && Math.abs(this.lift - (this.hovering ? 1 : 0)) < 0.002;
     // Scrolling alone does not redraw a pebble: its canvas moves with the page, and redrawing a dozen of them on
     // every scroll frame was what made scrolling heavy.
-    return !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
+    return busy || !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
   }
 
   sync() {
