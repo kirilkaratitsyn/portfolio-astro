@@ -1,6 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import fs from 'node:fs';
 import sitemap from '@astrojs/sitemap';
+
+// The blog list stays out of the sitemap while there are no articles (views/BlogListView.astro marks it noindex).
+const hasPosts = fs.existsSync('./src/content/blog/en') && fs.readdirSync('./src/content/blog/en').some((f) => f.endsWith('.md'));
 
 export default defineConfig({
   site: 'https://www.karatitsyn.com',
@@ -14,7 +18,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Not the 404 page, nor the legal pages (kept out of search: they carry a home address).
-      filter: (page) => !page.includes('/404') && !/\/(legal-notice|privacy|impressum|datenschutz)$/.test(page),
+      filter: (page) =>
+        !page.includes('/404') && !/\/(legal-notice|privacy|impressum|datenschutz)$/.test(page) && (hasPosts || !/\/blog$/.test(page)),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', de: 'de', uk: 'uk' },

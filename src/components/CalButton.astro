@@ -1,16 +1,17 @@
 ---
 // Opens the Cal.com booking popup (see the embed snippet in BaseLayout).
 import type { HTMLAttributes } from 'astro/types';
+import { BOOKING_LINK } from '../lib/cal';
 
-type Props = HTMLAttributes<'button'> & { class: string };
+type Props = HTMLAttributes<'button'> & { class: string; link?: string };
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, link = BOOKING_LINK, ...rest } = Astro.props;
 ---
 
 <button
   type="button"
   class={className}
-  data-cal-link="kiril-karatitsyn/free-consultation-call"
+  data-cal-link={link}
   data-cal-namespace="free-consultation-call"
   data-cal-config='{"layout":"month_view","theme":"light"}'
   {...rest}

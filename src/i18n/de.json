@@ -417,7 +417,12 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "preferMessage": "Bevorzugen Sie eine direkte Nachricht?",
-    "sendMessage": "Nachricht senden"
+    "sendMessage": "Nachricht senden",
+    "shopCheck": {
+      "title": "Kostenloser Shop-Check",
+      "text": "Ich sehe mir Ihren Shopify-Shop an und schicke Ihnen innerhalb von zwei Werktagen eine kurze Liste: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch.",
+      "button": "Shop-Check anfragen"
+    }
   },
   "blog": {
     "title": "Blog",
@@ -428,7 +433,8 @@
     "featuredTitle": "Ausgewählte Einblicke",
     "featuredSubtitle": "Frische Erkenntnisse aus aktuellen Projekten und Launches.",
     "viewAll": "Alle anzeigen",
-    "estimatedRead": "{{time}} Lesezeit"
+    "estimatedRead": "{{time}} Lesezeit",
+    "empty": "Die ersten Artikel sind in Arbeit. Bis dahin zeigen die Case Studies, wie ich arbeite."
   },
   "faq": {
     "title": "FAQ",

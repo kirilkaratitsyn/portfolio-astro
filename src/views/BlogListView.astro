@@ -18,12 +18,15 @@ const seo = {
     locale === DEFAULT_LOCALE
       ? 'Articles about Shopify development, conversion optimization, launch checklists, and practical storefront improvements.'
       : t.blog.subtitle,
+  // While there are no articles the page stays out of search (and out of the sitemap and the menus).
+  robots: posts.length ? undefined : 'noindex,follow',
 };
 ---
 
 <BaseLayout {...seo} path="/blog" locale={locale}>
   <section class="pt-32 md:pt-44">
     <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.blog.title}</h1>
+    {!posts.length && <p class="mx-auto max-w-[1440px] px-5 pb-10 text-lg text-mute md:px-10">{t.blog.empty}</p>}
     <ul class="border-t border-line">
       {
         posts.map((post) => (

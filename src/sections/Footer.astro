@@ -1,5 +1,6 @@
 ---
-import { useTranslations, type Locale } from '../i18n';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { getPosts } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -7,6 +8,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const hasPosts = (await getPosts(locale)).length > 0;
 // German pages link the German Impressum and Datenschutzerklärung; English and Ukrainian pages the English versions.
 const legal =
   locale === 'de'
@@ -32,6 +34,7 @@ const legal =
           <span aria-hidden="true">·</span>
           <a href={legal[1]!.href} class="hover:text-ink">{legal[1]!.name}</a>
         </span>
+        {hasPosts && <a href={localizePath(locale, '/blog')} class="hover:text-ink">{t.header.blog}</a>}
         <a href="https://github.com/kirilkaratitsyn" target="_blank" rel="noopener noreferrer" class="hover:text-ink">{t.contact.github}</a>
         <a href="https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/" target="_blank" rel="noopener noreferrer" class="hover:text-ink">{t.contact.linkedin}</a>
       </span>

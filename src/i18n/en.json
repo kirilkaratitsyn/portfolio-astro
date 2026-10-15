@@ -417,7 +417,12 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "preferMessage": "Prefer to send a direct message?",
-    "sendMessage": "Send Message"
+    "sendMessage": "Send Message",
+    "shopCheck": {
+      "title": "Free store check",
+      "text": "I'll look at your Shopify store and send you a short list within two working days: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call.",
+      "button": "Request a store check"
+    }
   },
   "blog": {
     "title": "Blog",
@@ -428,7 +433,8 @@
     "featuredTitle": "Featured insights",
     "featuredSubtitle": "Fresh takeaways from recent projects and launches.",
     "viewAll": "View all",
-    "estimatedRead": "{{time}} read"
+    "estimatedRead": "{{time}} read",
+    "empty": "The first articles are on their way. Until then, the case studies show how I work."
   },
   "faq": {
     "title": "FAQ",

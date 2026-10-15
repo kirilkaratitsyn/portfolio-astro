@@ -15,9 +15,9 @@ Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse an e
 
 Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage auf einen Auftrag zielt, sonst Art. 6 Abs. 1 lit. f DSGVO. Ich lösche die Daten, wenn sie nicht mehr gebraucht werden, außer gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 
-## 4. Terminbuchung über Cal.com
+## 4. Terminbuchung und Shop-Check über Cal.com
 
-Für ein Erstgespräch können Sie über Cal.com einen Termin buchen (Cal.com, Inc., USA). Erst wenn Sie auf einen Buchungsbutton klicken, lädt die Website das Buchungsfenster von Cal.com; dabei werden Ihre IP-Adresse und Geräteinformationen an Cal.com übertragen. Bei der Buchung verarbeitet Cal.com die Angaben, die Sie eintragen (Name, E-Mail-Adresse, Notizen, gewählter Termin).
+Für ein Erstgespräch können Sie über Cal.com einen Termin buchen (Cal.com, Inc., USA). Erst wenn Sie auf einen Buchungsbutton klicken, lädt die Website das Buchungsfenster von Cal.com; dabei werden Ihre IP-Adresse und Geräteinformationen an Cal.com übertragen. Bei der Buchung verarbeitet Cal.com die Angaben, die Sie eintragen (Name, E-Mail-Adresse, Notizen, gewählter Termin). Wenn Sie den kostenlosen Shop-Check anfragen, nutzen Sie dafür ein Formular von Cal.com; dabei verarbeitet Cal.com Ihre E-Mail-Adresse, die Adresse Ihres Shops, Ihre Nachricht und Ihre Angabe, wie Sie mich gefunden haben. Ich nutze diese Angaben, um Ihren Shop anzusehen und Ihnen per E-Mail zu antworten.
 
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags). Cal.com ist unter dem EU-US Data Privacy Framework zertifiziert; darauf stützt sich die Übermittlung in die USA (Art. 45 DSGVO). Im Buchungsfenster setzt Cal.com Cookies für die Sitzung und den Schutz vor Missbrauch (Cloudflare) und legt Einträge im lokalen Speicher ab, etwa für das Zeitformat und eine vorgemerkte Buchung. Diese Cookies und Einträge gehören zu Cal.com, nicht zu dieser Website. Details: https://cal.com/privacy
 

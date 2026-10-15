@@ -15,9 +15,9 @@ The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in a secure, workin
 
 If you email me, I process what you send (name, email address, message) to answer your enquiry. The legal basis is Art. 6(1)(b) GDPR where your enquiry aims at a contract, otherwise Art. 6(1)(f) GDPR. I delete the data once it is no longer needed, unless statutory retention periods apply.
 
-## 4. Booking a call via Cal.com
+## 4. Booking a call and the store check via Cal.com
 
-You can book an introductory call through Cal.com (Cal.com, Inc., USA). The website loads the Cal.com booking window only when you click a booking button; at that point your IP address and device information are sent to Cal.com. When you book, Cal.com processes what you enter (name, email address, notes, chosen time).
+You can book an introductory call through Cal.com (Cal.com, Inc., USA). The website loads the Cal.com booking window only when you click a booking button; at that point your IP address and device information are sent to Cal.com. When you book, Cal.com processes what you enter (name, email address, notes, chosen time). If you request the free store check, you do so through a Cal.com form; Cal.com then processes your email address, your store address, your message and how you found me. I use these details to look at your store and reply to you by email.
 
 The legal basis is Art. 6(1)(b) GDPR (steps prior to a contract). Cal.com is certified under the EU-U.S. Data Privacy Framework, which is the basis for the transfer to the USA (Art. 45 GDPR). In the booking window Cal.com sets cookies for the session and for abuse protection (Cloudflare) and keeps entries in local storage, for example for the time format and a held booking. These cookies and entries belong to Cal.com, not to this website. Details: https://cal.com/privacy
 

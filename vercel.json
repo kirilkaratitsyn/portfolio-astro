@@ -39,6 +39,36 @@
       "permanent": true
     },
     {
+      "source": "/blog/landing-page-launch-checklist",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/de/blog/landing-page-launch-checklist",
+      "destination": "/de/blog",
+      "permanent": true
+    },
+    {
+      "source": "/uk/blog/landing-page-launch-checklist",
+      "destination": "/uk/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/shopify-conversion-boost",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/de/blog/shopify-conversion-boost",
+      "destination": "/de/blog",
+      "permanent": true
+    },
+    {
+      "source": "/uk/blog/shopify-conversion-boost",
+      "destination": "/uk/blog",
+      "permanent": true
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
       "permanent": true
