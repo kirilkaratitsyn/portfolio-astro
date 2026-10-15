@@ -1,9 +1,10 @@
 // The contact form (sections/Contact.astro) posts here: a store check request or a project enquiry. The message goes
 // to Kiril by email through Resend, with the visitor's address as Reply-To; nothing is stored on the site.
-// Settings in Vercel: RESEND_API_KEY (required), CONTACT_TO and CONTACT_FROM (optional; the defaults work as soon as
-// the Resend account belongs to kiril@karatitsyn.com, before the domain is verified there).
+// Settings in Vercel: RESEND_API_KEY (required), CONTACT_TO and CONTACT_FROM (optional). The sender is on
+// updates.karatitsyn.com, the domain verified in Resend (DNS records on that subdomain only; the mail of the main
+// domain is untouched).
 const TO = process.env.CONTACT_TO || 'kiril@karatitsyn.com';
-const FROM = process.env.CONTACT_FROM || 'karatitsyn.com <onboarding@resend.dev>';
+const FROM = process.env.CONTACT_FROM || 'karatitsyn.com <website@updates.karatitsyn.com>';
 const LIMITS = { topic: 20, name: 120, email: 200, shop: 300, message: 4000, source: 60, page: 300, utm: 300, lang: 5 };
 
 /** What a visitor sees when the form was sent without scripts (a plain HTML post). */
