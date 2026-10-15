@@ -30,3 +30,9 @@ The puzzle cube in the hero is built in code too, `src/lib/cube.ts`: 27 rounded 
 The cube replaced the stones in the hero; their code (`HeroView` in `src/scripts/stage.ts`, `makeHeroStones` in `src/lib/stones.ts`) and posters (`stones-*.webp`) are still in the repo but no page uses them.
 
 Its poster, `public/source/3d/cube-560.webp` and `cube-1120.webp`, is captured from the live cube at rest (paused, every block home): build the site, serve it on port 4321, then `node scripts/3d/capture-cube.mjs`. Re-run it after changing the cube; the script also warns when the resting cube reaches past its host.
+
+## Blocks
+
+The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is perforated white, `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: plain white instead of the holes and three wide ribs instead of seven. Icons and blocks drift back to their resting pose after a drag.
+
+Their posters, `public/source/3d/block-<name>.webp` and `block-<name>-small.webp` (360 x 360), are captured from the live blocks at rest: build the site, serve it on port 4321, then `node scripts/3d/capture-blocks.mjs`.

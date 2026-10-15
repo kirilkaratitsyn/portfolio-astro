@@ -12,7 +12,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
 import { GLOBE_CAMERA, GLOBE_LAND, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
-import { makeCube } from '../lib/cube';
+import { makeBlock, makeCube, parseBlock } from '../lib/cube';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -387,6 +387,12 @@ function makeObject(name: string, hostWidth: number): { object: Object3D; rest: 
   }
   if (isIcon(name)) {
     const object = makeIcon(name);
+    return { object, rest: object.userData.rest as Quaternion };
+  }
+  // The decorative pebbles became single blocks of the hero cube, so the whole site is built from the same blocks.
+  const block = parseBlock(name);
+  if (block) {
+    const object = makeBlock(block.name, block.small);
     return { object, rest: object.userData.rest as Quaternion };
   }
   // A pebble 270 px wide needs a fine mesh, one 54 px wide does not.

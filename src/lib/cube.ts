@@ -64,8 +64,7 @@ function holes(ctx: CanvasRenderingContext2D, size: number, ground: string, dot:
 }
 
 /** Soft ribs: a gradient per rib, so the grooves stay smooth when the texture is scaled down. */
-function ribs(ctx: CanvasRenderingContext2D, size: number, light: string, dark: string) {
-  const n = 7;
+function ribs(ctx: CanvasRenderingContext2D, size: number, light: string, dark: string, n = 7) {
   const from = INNER * size;
   const cell = (size - 2 * from) / n;
   ctx.fillStyle = light;
@@ -87,6 +86,47 @@ const glossy = (hex: string, extra: MeshPhysicalMaterialParameters = {}) =>
   new MeshPhysicalMaterial({ color: hex, roughness: 0.2, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1.1, ...extra });
 
 type Tone = 'cobalt' | 'light' | 'ink';
+type FinishName = 'cobalt' | 'white' | 'pale' | 'ink' | 'perforated' | 'ribbed' | 'ribbedWide';
+
+/** The block finishes, made once and shared by the cube and the single blocks around the site. */
+let materials: Record<FinishName, MeshPhysicalMaterial> | null = null;
+function material(name: FinishName) {
+  // The ribbed finish, at hero size or with three wide ribs for blocks too small for seven.
+  const ribbed = (n: number) =>
+    glossy(COBALT, {
+      map: colour(pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#c3c8f2', n))),
+      bumpMap: pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#1a1f5a', n)),
+      bumpScale: 2.2, roughness: 0.34, clearcoat: 0.35, clearcoatRoughness: 0.25,
+    });
+  materials ??= {
+    cobalt: glossy(COBALT),
+    white: glossy(WHITE),
+    pale: glossy(PALE, { roughness: 0.42, clearcoatRoughness: 0.3 }),
+    ink: glossy(INK, { envMapIntensity: 1.25 }),
+    perforated: glossy('#ffffff', { map: colour(pattern((ctx, s) => holes(ctx, s, WHITE, '#2a2e3d'))), roughness: 0.3 }),
+    // Ribbed cobalt: the ribs shade the colour and the bump map; satin rather than glossy, so the ribs show.
+    ribbed: ribbed(7),
+    ribbedWide: ribbed(3),
+  };
+  return materials[name];
+}
+
+let geometry: RoundedBoxGeometry | null = null;
+/** One rounded block, 1 unit wide, shared by every block. */
+const blockGeometry = () => (geometry ??= new RoundedBoxGeometry(1, 1, 1, 4, RADIUS));
+
+/** A longer lens than the pebbles' (9.5): a product shot, not a wide angle with a bulging near corner. */
+const DISTANCE = 20;
+/**
+ * A key light from the upper left, fixed in the scene (the stage adds it there): the top faces come out brightest, the
+ * left ones a little darker and the right ones darkest, so a block reads as a solid at a glance. One per scene.
+ */
+function keyLight() {
+  const key = new DirectionalLight('#ffffff', 2.6);
+  key.position.set(-2.5, 9, 2.5);
+  return key;
+}
+
 interface Finish {
   material: MeshPhysicalMaterial;
   count: number;
@@ -97,23 +137,12 @@ interface Finish {
 /** The finishes and how many of the 27 blocks get each: mostly cobalt and white, ink and patterns as accents. */
 function finishes(): Finish[] {
   return [
-    { material: glossy(COBALT), count: 9, tone: 'cobalt', plain: true },
-    { material: glossy(WHITE), count: 6, tone: 'light', plain: true },
-    { material: glossy(PALE, { roughness: 0.42, clearcoatRoughness: 0.3 }), count: 3, tone: 'light', plain: true },
-    { material: glossy(INK, { envMapIntensity: 1.25 }), count: 5, tone: 'ink', plain: true },
-    {
-      material: glossy('#ffffff', { map: colour(pattern((ctx, s) => holes(ctx, s, WHITE, '#2a2e3d'))), roughness: 0.3 }),
-      count: 2, tone: 'light', plain: false,
-    },
-    {
-      // Ribbed cobalt: the ribs shade the colour and the bump map; satin rather than glossy, so the ribs show.
-      material: glossy(COBALT, {
-        map: colour(pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#c3c8f2'))),
-        bumpMap: pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#1a1f5a')),
-        bumpScale: 2.2, roughness: 0.34, clearcoat: 0.35, clearcoatRoughness: 0.25,
-      }),
-      count: 2, tone: 'cobalt', plain: false,
-    },
+    { material: material('cobalt'), count: 9, tone: 'cobalt', plain: true },
+    { material: material('white'), count: 6, tone: 'light', plain: true },
+    { material: material('pale'), count: 3, tone: 'light', plain: true },
+    { material: material('ink'), count: 5, tone: 'ink', plain: true },
+    { material: material('perforated'), count: 2, tone: 'light', plain: false },
+    { material: material('ribbed'), count: 2, tone: 'cobalt', plain: false },
   ];
 }
 
@@ -175,10 +204,9 @@ export function makeCube() {
   // `body` turns slowly by itself; the drag and tilt of the stage act on `root`.
   const body = new Group();
   root.add(body);
-  const geometry = new RoundedBoxGeometry(1, 1, 1, 4, RADIUS);
   const dealt = deal(finishes().flatMap((f) => Array.from({ length: f.count }, () => f)));
   const blocks = CELLS.map((cell, i) => {
-    const block = new Mesh(geometry, dealt[i]!.material);
+    const block = new Mesh(blockGeometry(), dealt[i]!.material);
     block.position.copy(cell).multiplyScalar(STEP);
     block.userData.home = cell.clone();
     block.userData.cell = cell.clone();
@@ -189,13 +217,8 @@ export function makeCube() {
   root.rotation.set(0.5, -0.74, 0.05);
   root.scale.setScalar(1);
   root.userData.rest = root.quaternion.clone();
-  // A longer lens than the pebbles' (9.5): a product shot, not a wide angle with a bulging near corner.
-  root.userData.distance = 20;
-  // A key light from the upper left, fixed in the scene (the stage adds it there): the top faces come out brightest, the
-  // left ones a little darker and the right ones darkest, so the cube reads as a solid at a glance.
-  const key = new DirectionalLight('#ffffff', 2.6);
-  key.position.set(-2.5, 9, 2.5);
-  root.userData.lights = [key];
+  root.userData.distance = DISTANCE;
+  root.userData.lights = [keyLight()];
 
   const pivot = new Group();
   body.add(pivot);
@@ -304,4 +327,42 @@ export function makeCube() {
     return true;
   };
   return root;
+}
+
+/* ------------------------------------------------------------------ single blocks */
+
+/**
+ * The decorative blocks around the site, by the `data-pebble` names they replaced. `small` is the finish for a block a
+ * few dozen pixels wide (the stat cards), where seven ribs or 25 holes would only be noise.
+ */
+export const BLOCKS = {
+  white: { finish: 'perforated', small: 'white', rest: [0.5, -0.62, 0.08] },
+  black: { finish: 'ink', small: 'ink', rest: [0.44, 0.68, -0.06] },
+  cobalt: { finish: 'ribbed', small: 'ribbedWide', rest: [0.52, -0.78, 0.04] },
+  cobalt2: { finish: 'cobalt', small: 'cobalt', rest: [0.4, 0.58, 0.1] },
+} as const satisfies Record<string, { finish: FinishName; small: FinishName; rest: readonly [number, number, number] }>;
+export type BlockName = keyof typeof BLOCKS;
+
+/** `white`, `black`, `cobalt`, `cobalt2`, each also as `<name>-small`. */
+export function parseBlock(name: string): { name: BlockName; small: boolean } | null {
+  const small = name.endsWith('-small');
+  const base = small ? name.slice(0, -6) : name;
+  return base in BLOCKS ? { name: base as BlockName, small } : null;
+}
+
+/**
+ * One block of the cube, alone: the same shape, finish, lens and light, at a resting angle that shows three faces, and
+ * scaled to fill about as much of its host as the pebbles did. Drag, tilt and poke come from the stage.
+ */
+export function makeBlock(name: BlockName, small = false) {
+  const { finish, rest } = BLOCKS[name];
+  const [rx, ry, rz] = rest;
+  const wrap = new Group();
+  wrap.add(new Mesh(blockGeometry(), material(small ? BLOCKS[name].small : finish)));
+  wrap.rotation.set(rx, ry, rz);
+  wrap.scale.setScalar(2.8);
+  wrap.userData.rest = wrap.quaternion.clone();
+  wrap.userData.distance = DISTANCE;
+  wrap.userData.lights = [keyLight()];
+  return wrap;
 }

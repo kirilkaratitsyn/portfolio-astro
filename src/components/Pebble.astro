@@ -1,15 +1,21 @@
 ---
-// A 3D pebble. The rendered poster is the first paint and the fallback; scripts/stage.ts swaps in a live,
+// A small 3D block, one of the hero cube's blocks on its own (src/lib/cube.ts, makeBlock); it took the place of the
+// pebbles, hence the name. The rendered poster is the first paint and the fallback; scripts/stage.ts swaps in a live,
 // interactive WebGL object over it. Decorative, so no alt text. Position and size classes go on the wrapper.
+// `small`: for blocks a few dozen pixels wide, a simpler finish that stays clean at that size.
+import type { BlockName } from '../lib/cube';
+
 interface Props {
-  name: 'cobalt' | 'white' | 'black' | 'cobalt2';
+  name: BlockName;
+  small?: boolean;
   class?: string;
 }
 
-const { name, class: className = '' } = Astro.props;
+const { name, small = false, class: className = '' } = Astro.props;
+const id = small ? `${name}-small` : name;
 const positioned = /(^|\s)(absolute|relative|fixed)(\s|$)/.test(className);
 ---
 
-<span data-pebble={name} class:list={['pebble block', !positioned && 'relative', className]}>
-  <img src={`/source/3d/pebble-${name}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
+<span data-pebble={id} class:list={['pebble block', !positioned && 'relative', className]}>
+  <img src={`/source/3d/block-${id}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
 </span>

@@ -578,8 +578,16 @@ function contact() {
   // Tied straight to the scroll (Lenis already smooths it): a lagging scrub would replay the growth after every
   // refresh, e.g. when an FAQ answer above is opened. Desktop only, like every effect tied to the scroll.
   if (fine) gsap.fromTo(panel, { scale: 0.88, borderRadius: 96 }, { scale: 1, borderRadius: 28, ease: 'none', scrollTrigger: { trigger: panel, start: 'top 100%', end: 'top 30%', scrub: true } });
-  // The pebbles fall into the block and bounce.
-  gsap.from(qsa('.pebble', panel), { yPercent: -260, duration: 1.9, ease: 'bounce.out', stagger: 0.2, scrollTrigger: { trigger: panel, start: 'top 55%', once: true } });
+  // The logo and the two blocks drop in one after the other and land with a small knock (the black block on the white
+  // one, from 768px), heavy rather than bouncy. All fall from the same height, so a later one stays above the earlier
+  // ones all the way down.
+  const drops = qsa('.pebble', panel);
+  const fall = Math.max(...drops.map((el) => el.offsetWidth)) * 2.6;
+  const drop = gsap.timeline({ scrollTrigger: { trigger: panel, start: 'top 55%', once: true } });
+  drops.forEach((el, i) => {
+    drop.from(el, { y: -fall, duration: 0.8, ease: 'power2.in' }, i * 0.3);
+    drop.to(el, { y: -Math.round(el.offsetWidth * 0.06), duration: 0.12, ease: 'power1.out', yoyo: true, repeat: 1 }, '>');
+  });
 }
 
 function footer() {
