@@ -33,10 +33,24 @@ Diese Website setzt selbst keine Cookies und nutzt keine Analyse- oder Tracking-
 
 Die Website verlinkt auf andere Angebote, zum Beispiel Upwork, LinkedIn, GitHub und Shops meiner Kunden. Daten gehen dorthin erst, wenn Sie einen Link anklicken; ab dann gilt die Datenschutzerklärung des jeweiligen Anbieters.
 
-## 8. Ihre Rechte
+## 8. Geschäftliche E-Mails an Shopify-Shops und Agenturen
+
+Ich schreibe Shopify-Shops und Agenturen in den USA, im Vereinigten Königreich und in Australien per E-Mail an, um ihnen meine Leistungen als Shopify-Entwickler anzubieten: eine E-Mail mit dem Angebot und höchstens eine Erinnerung.
+
+Dafür verarbeite ich den Namen des Unternehmens, die geschäftliche E-Mail-Adresse, die das Unternehmen selbst veröffentlicht hat, den Namen der Kontaktperson, wenn er auf der Website des Unternehmens steht, und die Seite, auf der ich die Adresse gefunden habe; außerdem das Datum meiner E-Mails und Ihre Antwort, falls Sie antworten. Quelle dieser Daten ist die öffentliche Website des Unternehmens.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse, Unternehmen meine Leistungen anzubieten (Direktwerbung, Erwägungsgrund 47 DSGVO). Wenn Sie antworten und Interesse haben, gilt Abschnitt 3.
+
+Kommt keine Antwort, lösche ich die Daten spätestens 12 Monate nach der ersten E-Mail. Wenn Sie widersprechen oder kein Interesse haben, behalte ich nur Ihre E-Mail-Adresse und die Domain auf einer Liste „nicht mehr anschreiben“, damit ich Ihnen nicht erneut schreibe.
+
+Die Kontaktliste liegt bei Notion (Notion Labs, Inc., USA), die E-Mails verschicke ich über Microsoft 365. Beide verarbeiten die Daten in meinem Auftrag. Soweit Daten in die USA gehen, stützt sich das auf das EU-US Data Privacy Framework, unter dem Notion Labs, Inc. und Microsoft Corporation zertifiziert sind (Art. 45 DSGVO).
+
+Sie können dieser Verarbeitung jederzeit widersprechen (Art. 21 Abs. 2 DSGVO): Antworten Sie einfach mit „no“ auf die E-Mail oder schreiben Sie an kiril@karatitsyn.com. Dann schreibe ich Ihnen nicht mehr. Ihre Rechte auf Auskunft, Berichtigung und Löschung und Ihr Beschwerderecht stehen im nächsten Abschnitt.
+
+## 9. Ihre Rechte
 
 Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21). Schreiben Sie dafür an kiril@karatitsyn.com.
 
 Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der für mich zuständigen: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, https://www.lfd.niedersachsen.de
 
-Stand: 14.10.2026
+Stand: 15.10.2026

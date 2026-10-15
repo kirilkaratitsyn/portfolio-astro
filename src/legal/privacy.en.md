@@ -33,10 +33,24 @@ This website sets no cookies of its own and uses no analytics or tracking tools.
 
 The website links to other services, such as Upwork, LinkedIn, GitHub and my clients' shops. No data goes there until you click a link; from then on, that provider's privacy policy applies.
 
-## 8. Your rights
+## 8. Business emails to Shopify stores and agencies
+
+I email Shopify stores and agencies in the USA, the United Kingdom and Australia to offer them my services as a Shopify developer: one email with the offer and at most one reminder.
+
+For this I process the company's name, the business email address the company has published itself, the name of the contact person if it appears on the company's website, and the page where I found the address; as well as the dates of my emails and your reply if you answer. The source of this data is the company's public website.
+
+The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in offering my services to businesses (direct marketing, Recital 47 GDPR). If you reply and are interested, section 3 applies.
+
+If there is no reply, I delete the data no later than 12 months after the first email. If you object or are not interested, I keep only your email address and the domain on a "do not contact" list, so that I do not write to you again.
+
+The contact list is kept in Notion (Notion Labs, Inc., USA) and I send the emails through Microsoft 365. Both process the data on my behalf. Where data goes to the USA, the transfer relies on the EU-U.S. Data Privacy Framework, under which Notion Labs, Inc. and Microsoft Corporation are certified (Art. 45 GDPR).
+
+You can object to this processing at any time (Art. 21(2) GDPR): simply reply "no" to the email or write to kiril@karatitsyn.com. I will then not write to you again. Your rights of access, rectification and erasure and your right to complain are in the next section.
+
+## 9. Your rights
 
 You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on Art. 6(1)(f) GDPR (Art. 21). To use them, write to kiril@karatitsyn.com.
 
 You may also lodge a complaint with a data protection supervisory authority, for example the one responsible for me: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, Germany, https://www.lfd.niedersachsen.de
 
-Last updated: 14 October 2026
+Last updated: 15 October 2026
