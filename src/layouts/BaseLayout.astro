@@ -133,9 +133,11 @@ const { locale, path } = seo;
           el.setAttribute('data-cal-config', JSON.stringify(Object.assign(JSON.parse(el.getAttribute('data-cal-config') || '{}'), utm)));
         });
         document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
-          const [address, params = ''] = a.getAttribute('href').split('?');
-          const subject = `${new URLSearchParams(params).get('subject') || ''} (via ${utm.utm_source})`.trim();
-          a.setAttribute('href', `${address}?subject=${encodeURIComponent(subject)}`);
+          const [address, query = ''] = a.getAttribute('href').split('?');
+          const params = new URLSearchParams(query);
+          params.set('subject', `${params.get('subject') || ''} (via ${utm.utm_source})`.trim());
+          // mailto wants %20 for spaces, not the + that URLSearchParams writes.
+          a.setAttribute('href', `${address}?${[...params].map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&')}`);
         });
       })();
     </script>

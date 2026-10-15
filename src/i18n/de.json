@@ -421,7 +421,9 @@
     "shopCheck": {
       "title": "Kostenloser Shop-Check",
       "text": "Ich sehe mir Ihren Shopify-Shop an und schicke Ihnen innerhalb von zwei Werktagen eine kurze Liste: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch.",
-      "button": "Shop-Check anfragen"
+      "button": "Shop-Check anfragen",
+      "mailSubject": "Kostenloser Shop-Check",
+      "mailBody": "Shop-URL: \nWas ist Ihr größtes Problem mit dem Shop? \nWie haben Sie mich gefunden? "
     }
   },
   "blog": {

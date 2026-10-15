@@ -421,7 +421,9 @@
     "shopCheck": {
       "title": "Free store check",
       "text": "I'll look at your Shopify store and send you a short list within two working days: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call.",
-      "button": "Request a store check"
+      "button": "Request a store check",
+      "mailSubject": "Free store check",
+      "mailBody": "Store URL: \nWhat is your biggest problem with the store? \nHow did you find me? "
     }
   },
   "blog": {
