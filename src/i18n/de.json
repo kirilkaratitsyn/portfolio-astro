@@ -901,5 +901,16 @@
     "label": "Ausgewählte Case Studies",
     "prev": "Vorheriges Projekt",
     "next": "Nächstes Projekt"
+  },
+  "servicePage": {
+    "back": "Alle Leistungen",
+    "audience": "Für wen",
+    "scope": "Was ich übernehme",
+    "steps": "Ablauf",
+    "proof": "Referenz",
+    "viewCase": "Case Study ansehen",
+    "faq": "Häufige Fragen",
+    "article": "Mehr dazu",
+    "more": "Mehr zur Leistung"
   }
 }

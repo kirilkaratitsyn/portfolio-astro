@@ -1,0 +1,12 @@
+---
+import ServiceView from '../../../views/ServiceView.astro';
+import { PREFIXED_LOCALES, servicePaths } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  return servicePaths(PREFIXED_LOCALES);
+}
+
+const { locale, service } = Astro.props;
+---
+
+<ServiceView locale={locale} service={service} />

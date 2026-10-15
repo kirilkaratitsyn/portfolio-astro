@@ -7,7 +7,7 @@
 import Icon3D from '../components/Icon3D.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import { thumb } from '../lib/thumbs';
-import type { WorkKind, WorkProject } from '../lib/content';
+import { getServices, type WorkKind, type WorkProject } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -21,6 +21,7 @@ const icons = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy'] as co
 const kinds: WorkKind[] = ['build', 'migration', 'features', 'speed', 'redesign', 'support'];
 
 // Screens: projects of the kind, ones not shown in an earlier row first, so the rows do not repeat each other.
+const servicePages = await getServices(locale);
 const shown = new Set<string>();
 const rows = t.services.items.map((item, index) => {
   const kind = kinds[index] ?? 'build';
@@ -34,6 +35,7 @@ const rows = t.services.items.map((item, index) => {
     count: related.length,
     shots,
     href: `${localizePath(locale, '/projects')}?work=${kind}`,
+    page: servicePages.find((page) => page.kind === kind),
   };
 });
 ---
@@ -62,6 +64,12 @@ const rows = t.services.items.map((item, index) => {
                       <li>{tag}</li>
                     ))}
                   </ul>
+                  {row.page && (
+                    <a href={localizePath(locale, `/services/${row.page.slug}`)} class="svc-more">
+                      {t.servicePage.more}: {row.page.title}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                   {row.count > 0 && (
                     <a href={row.href} class="svc-more">
                       {t.services.related}

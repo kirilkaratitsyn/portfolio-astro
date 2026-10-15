@@ -72,4 +72,27 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { projects, works, blog };
+// Service pages: src/content/services/<locale>/<slug>.md, one per kind of work that has its own page.
+const services = defineCollection({
+  loader: glob({ pattern: '*/*.md', base: './src/content/services' }),
+  schema: z.object({
+    order: z.number().int().positive(),
+    /** The kind of work in works.yaml / lib/content.ts WORK_KINDS; the Services row of that kind links here. */
+    kind: z.enum(['build', 'migration', 'redesign', 'features', 'speed', 'support', 'launch']),
+    title: z.string(),
+    seoTitle: z.string(),
+    description: z.string(),
+    lead: z.string(),
+    audience: z.array(z.string()).min(1),
+    scope: z.array(z.object({ title: z.string(), text: z.string() })).min(1),
+    steps: z.array(z.object({ title: z.string(), text: z.string() })).min(1),
+    /** A case study that proves the service, with a few lines about it. */
+    caseSlug: z.string(),
+    caseText: z.array(z.string()).min(1),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })),
+    /** A blog article on the same topic, if there is one. */
+    articleSlug: z.string().optional(),
+  }),
+});
+
+export const collections = { projects, works, blog, services };

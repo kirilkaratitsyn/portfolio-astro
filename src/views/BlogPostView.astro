@@ -13,14 +13,41 @@ interface Props {
 const { locale, post } = Astro.props;
 const t = useTranslations(locale);
 const { Content } = await render(post.entry);
+const site = Astro.site!;
+const pageUrl = new URL(localizePath(locale, `/blog/${post.slug}`), site).toString();
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${pageUrl}#article`,
+      headline: post.title,
+      description: post.excerpt,
+      url: pageUrl,
+      image: new URL(post.image, site).toString(),
+      datePublished: post.publishedAt.toISOString().slice(0, 10),
+      inLanguage: locale,
+      author: { '@id': new URL('/#person', site).toString() },
+      keywords: post.tags?.join(', '),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Kiril Karatitsyn', item: new URL(localizePath(locale, '/'), site).toString() },
+        { '@type': 'ListItem', position: 2, name: t.blog.title, item: new URL(localizePath(locale, '/blog'), site).toString() },
+        { '@type': 'ListItem', position: 3, name: post.title, item: pageUrl },
+      ],
+    },
+  ],
+};
 ---
 
-<BaseLayout title={post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale}>
+<BaseLayout title={post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale} structuredData={structuredData}>
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/blog')} class="text-sm font-medium text-mute hover:text-ink">← {t.blog.backToList}</a>
     <p class="mt-8 text-sm text-mute">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
     <h1 class="intro-lift mt-3 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
-    <div class="mt-10 max-w-2xl space-y-6 text-lg leading-relaxed md:mt-14 md:text-xl md:leading-relaxed">
+    <div class="post mt-10 max-w-2xl md:mt-14">
       <Content />
     </div>
   </article>

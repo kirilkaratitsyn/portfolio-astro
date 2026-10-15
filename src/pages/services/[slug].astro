@@ -1,0 +1,13 @@
+---
+import ServiceView from '../../views/ServiceView.astro';
+import { servicePaths } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const paths = await servicePaths(['en']);
+  return paths.map(({ params, props }) => ({ params: { slug: params.slug }, props }));
+}
+
+const { locale, service } = Astro.props;
+---
+
+<ServiceView locale={locale} service={service} />

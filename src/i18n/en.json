@@ -901,5 +901,16 @@
     "label": "Featured case studies",
     "prev": "Previous project",
     "next": "Next project"
+  },
+  "servicePage": {
+    "back": "All services",
+    "audience": "Who it is for",
+    "scope": "What I take care of",
+    "steps": "How it works",
+    "proof": "Case study",
+    "viewCase": "View case study",
+    "faq": "Questions",
+    "article": "Read more",
+    "more": "About this service"
   }
 }

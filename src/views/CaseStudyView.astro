@@ -7,7 +7,7 @@ import Pebble from '../components/Pebble.astro';
 import CaseStudyMoreProjects from '../components/CaseStudyMoreProjects.astro';
 import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
 import { shotSrcset, thumb } from '../lib/thumbs';
-import type { CaseStudy } from '../lib/content';
+import { getServices, type CaseStudy } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -22,6 +22,8 @@ const hasBody = Boolean(caseStudy.entry.body?.trim());
 const { Content } = await render(caseStudy.entry);
 
 const t = useTranslations(locale);
+// The service page this case study proves, if there is one.
+const service = (await getServices(locale)).find((item) => item.caseSlug === caseStudy.slug);
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/projects/${caseStudy.slug}`), site).toString();
 // The case as a piece of work by Kiril (the same Person as on the home page), and where it sits on the site.
@@ -137,6 +139,16 @@ const sections = [
                 <span>{copy.reviewRating.replace('{n}', caseStudy.review.rating.toFixed(1))} · {copy.reviewSource}</span>
               </figcaption>
             </figure>
+          </div>
+        )
+      }
+      {
+        service && (
+          <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
+            <h2 class="font-head text-2xl font-bold">{t.servicePage.more}</h2>
+            <a href={localizePath(locale, `/services/${service.slug}`)} class="max-w-3xl text-lg font-semibold text-blue hover:underline">
+              {service.title} →
+            </a>
           </div>
         )
       }

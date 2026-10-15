@@ -77,6 +77,13 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
     }));
 }
 
+export type ServicePage = CollectionEntry<'services'>['data'] & { slug: string };
+
+export async function getServices(locale: Locale): Promise<ServicePage[]> {
+  const entries = await getCollection('services', (entry) => splitEntryId(entry.id).locale === locale);
+  return entries.map((entry) => ({ ...entry.data, slug: splitEntryId(entry.id).slug })).sort((a, b) => a.order - b.order);
+}
+
 export async function getPosts(locale: Locale): Promise<BlogPost[]> {
   const entries = await getCollection('blog', (entry) => splitEntryId(entry.id).locale === locale);
 
