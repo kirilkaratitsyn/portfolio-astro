@@ -13,7 +13,7 @@ The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in a secure, workin
 
 ## 3. Contact by email
 
-If you email me, I process what you send (name, email address, message) to answer your enquiry. This includes a request for the free store check, for which I also look at the store whose address you give me. The legal basis is Art. 6(1)(b) GDPR where your enquiry aims at a contract, otherwise Art. 6(1)(f) GDPR. I delete the data once it is no longer needed, unless statutory retention periods apply.
+If you email me, I process what you send (name, email address, message) to answer your enquiry. My mailbox is hosted by Microsoft 365; Microsoft processes the messages on my behalf. Where data goes to the USA, the transfer relies on the EU-U.S. Data Privacy Framework, under which Microsoft Corporation is certified (Art. 45 GDPR). This includes a request for the free store check, for which I also look at the store whose address you give me. The legal basis is Art. 6(1)(b) GDPR where your enquiry aims at a contract, otherwise Art. 6(1)(f) GDPR. I delete the data once it is no longer needed, unless statutory retention periods apply.
 
 ## 4. Booking a call via Cal.com
 

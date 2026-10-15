@@ -19,7 +19,7 @@ const shopCheckMail = `mailto:${t.contact.email}?subject=${encodeURIComponent(t.
     <h2 data-split class="relative z-[2] max-w-[900px] font-head text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</h2>
     <div class="relative z-[2] mt-10 flex flex-col items-start gap-5 text-lg md:mt-14 md:flex-row md:items-center md:gap-8 md:text-xl">
       <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
-      <a href="mailto:karatitsynkiril@gmail.com?subject=Shopify%20project%20inquiry" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
+      <a href={`mailto:${t.contact.email}?subject=Shopify%20project%20inquiry`} class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
     <!-- A second door for those not ready for a call: a short email, the answer comes by email. -->
     <div class="relative z-[2] mt-10 max-w-[620px] border-t border-white/25 pt-8 md:mt-14 md:pt-10">

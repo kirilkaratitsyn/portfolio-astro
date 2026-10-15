@@ -13,7 +13,7 @@ Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse an e
 
 ## 3. Kontakt per E-Mail
 
-Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu beantworten. Das gilt auch für eine Anfrage zum kostenlosen Shop-Check: Dann sehe ich mir zusätzlich den Shop an, dessen Adresse Sie mir nennen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage auf einen Auftrag zielt, sonst Art. 6 Abs. 1 lit. f DSGVO. Ich lösche die Daten, wenn sie nicht mehr gebraucht werden, außer gesetzliche Aufbewahrungspflichten stehen dem entgegen.
+Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben (Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu beantworten. Mein Postfach liegt bei Microsoft 365; Microsoft verarbeitet die Nachrichten in meinem Auftrag. Soweit Daten in die USA gehen, stützt sich das auf das EU-US Data Privacy Framework, unter dem Microsoft Corporation zertifiziert ist (Art. 45 DSGVO). Das gilt auch für eine Anfrage zum kostenlosen Shop-Check: Dann sehe ich mir zusätzlich den Shop an, dessen Adresse Sie mir nennen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage auf einen Auftrag zielt, sonst Art. 6 Abs. 1 lit. f DSGVO. Ich lösche die Daten, wenn sie nicht mehr gebraucht werden, außer gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 
 ## 4. Terminbuchung über Cal.com
 
