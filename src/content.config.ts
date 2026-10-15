@@ -78,7 +78,7 @@ const services = defineCollection({
   schema: z.object({
     order: z.number().int().positive(),
     /** The kind of work in works.yaml / lib/content.ts WORK_KINDS; the Services row of that kind links here. */
-    kind: z.enum(['build', 'migration', 'redesign', 'features', 'speed', 'support', 'launch']),
+    kind: z.enum(['build', 'migration', 'redesign', 'features', 'speed', 'support', 'launch']).optional(),
     title: z.string(),
     seoTitle: z.string(),
     description: z.string(),

@@ -420,10 +420,32 @@
     "sendMessage": "Send Message",
     "shopCheck": {
       "title": "Free store check",
-      "text": "I'll look at your Shopify store and send you a short list within two working days: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call.",
-      "button": "Request a store check",
-      "mailSubject": "Free store check",
-      "mailBody": "Store URL: \nWhat is your biggest problem with the store? \nHow did you find me? "
+      "text": "I'll look at your Shopify store and send you a short list within two working days: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call."
+    },
+    "form": {
+      "check": "Free store check",
+      "project": "Project enquiry",
+      "name": "Name (optional)",
+      "email": "Email",
+      "shop": "Store URL",
+      "message": "Your message",
+      "messageHint": "What is the biggest problem with your store?",
+      "source": "How did you find me?",
+      "sourcePick": "Please choose",
+      "sources": [
+        "Google",
+        "LinkedIn",
+        "Malt",
+        "Upwork",
+        "Recommendation",
+        "Other"
+      ],
+      "send": "Send",
+      "sending": "Sending…",
+      "sent": "Thank you! Your message has arrived. You will hear from me within two working days.",
+      "failed": "Sorry, that did not work. Please write to me directly at kiril@karatitsyn.com.",
+      "privacy": "I use your details only to reply to you. More in the",
+      "privacyLink": "privacy policy"
     }
   },
   "blog": {

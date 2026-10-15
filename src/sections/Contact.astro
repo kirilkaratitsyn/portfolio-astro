@@ -9,9 +9,11 @@ interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale);
-// The store check is asked for by email: the visitor's mail app opens with three lines to fill in.
-const shopCheckMail = `mailto:${t.contact.email}?subject=${encodeURIComponent(t.contact.shopCheck.mailSubject)}&body=${encodeURIComponent(t.contact.shopCheck.mailBody)}`;
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const f = t.contact.form;
+const privacyHref = locale === 'de' ? '/de/datenschutz' : '/privacy';
+const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16px] text-ink placeholder:text-[#8a8fa3] focus:outline-none focus:ring-2 focus:ring-white/70';
 ---
 
 <section id="contact" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 px-5 md:mt-32 md:px-10">
@@ -21,13 +23,40 @@ const shopCheckMail = `mailto:${t.contact.email}?subject=${encodeURIComponent(t.
       <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
       <a href={`mailto:${t.contact.email}?subject=Shopify%20project%20inquiry`} class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
-    <!-- A second door for those not ready for a call: a short email, the answer comes by email. -->
-    <div class="relative z-[2] mt-10 max-w-[620px] border-t border-white/25 pt-8 md:mt-14 md:pt-10">
+    <!-- A second door for those not ready for a call: the store check or a project enquiry, sent to Kiril by email
+         through api/contact.js. Works without scripts too (a plain post and a thank-you page). -->
+    <div class="relative z-[2] mt-10 max-w-[720px] border-t border-white/25 pt-8 md:mt-14 md:pt-10">
       <h3 class="font-head text-[24px] font-bold leading-tight md:text-[30px]">{t.contact.shopCheck.title}</h3>
       <p class="mt-3 text-[17px] leading-relaxed text-white/85 md:text-lg">{t.contact.shopCheck.text}</p>
-      <a href={shopCheckMail} class="mt-6 inline-flex rounded-full border border-white/60 px-6 py-[13px] text-[16px] font-semibold text-white transition-colors hover:bg-white hover:text-blue">
-        {t.contact.shopCheck.button}
-      </a>
+      <form data-contact-form action="/api/contact" method="post" class="mt-7 grid gap-5 md:grid-cols-2">
+        <fieldset class="flex flex-wrap gap-2 md:col-span-2">
+          <legend class="sr-only">{f.check} / {f.project}</legend>
+          <label class="cf-topic"><input type="radio" name="topic" value="check" checked class="sr-only" /><span>{f.check}</span></label>
+          <label class="cf-topic"><input type="radio" name="topic" value="project" class="sr-only" /><span>{f.project}</span></label>
+        </fieldset>
+        <label class="text-[15px] font-medium">{f.email}<input type="email" name="email" required autocomplete="email" class={input} /></label>
+        <label class="text-[15px] font-medium">{f.shop}<input type="text" name="shop" inputmode="url" autocomplete="url" placeholder="https://" class={input} /></label>
+        <label class="text-[15px] font-medium md:col-span-2">{f.message}<textarea name="message" rows="4" placeholder={f.messageHint} class={`${input} resize-y`}></textarea></label>
+        <label class="text-[15px] font-medium">{f.name}<input type="text" name="name" autocomplete="name" class={input} /></label>
+        <label class="text-[15px] font-medium">{f.source}
+          <select name="source" class={input}>
+            <option value="">{f.sourcePick}</option>
+            {f.sources.map((item) => <option value={item}>{item}</option>)}
+          </select>
+        </label>
+        <!-- Only bots fill this in. -->
+        <label class="cf-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        <input type="hidden" name="lang" value={locale} />
+        <input type="hidden" name="page" value="" />
+        <input type="hidden" name="utm" value="" />
+        <div class="flex flex-col items-start gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
+          <button type="submit" data-label={f.send} data-sending={f.sending} class="inline-flex rounded-full bg-white px-7 py-[15px] text-[16px] font-semibold text-blue transition-opacity disabled:opacity-60">{f.send}</button>
+          <p class="text-[14px] leading-snug text-white/75">{f.privacy} <a href={privacyHref} class="underline underline-offset-2 hover:text-white">{f.privacyLink}</a>.</p>
+        </div>
+        <p data-form-status role="status" aria-live="polite" class="text-[17px] font-medium md:col-span-2" hidden></p>
+        <p data-form-sent hidden>{f.sent}</p>
+        <p data-form-failed hidden>{f.failed}</p>
+      </form>
     </div>
     <!-- The logo in white, as a live 3D object: drag it to turn it on any axis. On phones it sits above the heading. -->
     <span data-pebble="logo-white" data-grab class="pebble absolute right-3 top-3 z-[1] block size-[104px] md:right-[15%] md:top-5 md:size-[310px]">
@@ -37,3 +66,40 @@ const shopCheckMail = `mailto:${t.contact.email}?subject=${encodeURIComponent(t.
     <Pebble name="black" class="pointer-events-none absolute -top-8 right-[120px] w-[84px] md:-right-5 md:-top-[60px] md:w-[170px]" />
   </div>
 </section>
+
+<script>
+  // Sends the form without leaving the page, and says how it went. The page and the utm_* of its address go along,
+  // so the email shows where the visitor came from.
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-contact-form]')) {
+    const status = form.querySelector<HTMLElement>('[data-form-status]')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const say = (selector: string) => {
+      status.textContent = form.querySelector(selector)!.textContent;
+      status.hidden = false;
+    };
+    const hidden = (name: string) => form.querySelector<HTMLInputElement>(`input[name="${name}"]`)!;
+    hidden('page').value = location.pathname;
+    hidden('utm').value = new URLSearchParams([...new URLSearchParams(location.search)].filter(([key]) => key.startsWith('utm_'))).toString();
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      button.textContent = button.dataset.sending!;
+      status.hidden = true;
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { accept: 'application/json', 'content-type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        form.reset();
+        say('[data-form-sent]');
+      } catch {
+        say('[data-form-failed]');
+      } finally {
+        button.disabled = false;
+        button.textContent = button.dataset.label!;
+      }
+    });
+  }
+</script>

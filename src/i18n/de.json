@@ -420,10 +420,32 @@
     "sendMessage": "Nachricht senden",
     "shopCheck": {
       "title": "Kostenloser Shop-Check",
-      "text": "Ich sehe mir Ihren Shopify-Shop an und schicke Ihnen innerhalb von zwei Werktagen eine kurze Liste: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch.",
-      "button": "Shop-Check anfragen",
-      "mailSubject": "Kostenloser Shop-Check",
-      "mailBody": "Shop-URL: \nWas ist Ihr größtes Problem mit dem Shop? \nWie haben Sie mich gefunden? "
+      "text": "Ich sehe mir Ihren Shopify-Shop an und schicke Ihnen innerhalb von zwei Werktagen eine kurze Liste: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch."
+    },
+    "form": {
+      "check": "Kostenloser Shop-Check",
+      "project": "Projektanfrage",
+      "name": "Name (optional)",
+      "email": "E-Mail",
+      "shop": "Shop-URL",
+      "message": "Ihre Nachricht",
+      "messageHint": "Was ist Ihr größtes Problem mit dem Shop?",
+      "source": "Wie haben Sie mich gefunden?",
+      "sourcePick": "Bitte wählen",
+      "sources": [
+        "Google",
+        "LinkedIn",
+        "Malt",
+        "Upwork",
+        "Empfehlung",
+        "Andere"
+      ],
+      "send": "Senden",
+      "sending": "Wird gesendet…",
+      "sent": "Danke! Ihre Nachricht ist angekommen. Sie hören innerhalb von zwei Werktagen von mir.",
+      "failed": "Das hat leider nicht geklappt. Schreiben Sie mir bitte direkt an kiril@karatitsyn.com.",
+      "privacy": "Ich nutze Ihre Angaben nur, um Ihnen zu antworten. Mehr in der",
+      "privacyLink": "Datenschutzerklärung"
     }
   },
   "blog": {

@@ -11,9 +11,9 @@ This website is hosted by Vercel Inc., USA. Each time a page is requested, Verce
 
 The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in a secure, working website. Vercel processes the data on my behalf. Vercel is certified under the EU-U.S. Data Privacy Framework, which is the basis for the transfer to the USA (Art. 45 GDPR). Vercel keeps these logs for this project for at most one day. Details: https://vercel.com/legal/privacy-policy
 
-## 3. Contact by email
+## 3. Contact by email and contact form
 
-If you email me, I process what you send (name, email address, message) to answer your enquiry. My mailbox is hosted by Microsoft 365; Microsoft processes the messages on my behalf. Where data goes to the USA, the transfer relies on the EU-U.S. Data Privacy Framework, under which Microsoft Corporation is certified (Art. 45 GDPR). This includes a request for the free store check, for which I also look at the store whose address you give me. The legal basis is Art. 6(1)(b) GDPR where your enquiry aims at a contract, otherwise Art. 6(1)(f) GDPR. I delete the data once it is no longer needed, unless statutory retention periods apply.
+If you email me, I process what you send (name, email address, message) to answer your enquiry. My mailbox is hosted by Microsoft 365; Microsoft processes the messages on my behalf. Where data goes to the USA, the transfer relies on the EU-U.S. Data Privacy Framework, under which Microsoft Corporation is certified (Art. 45 GDPR). This also applies to the contact form and the free store check: the website sends what you enter in the form (email address, store address, message, optionally your name and how you found me, plus the page you write from) to me as an email through the service Resend (Resend, Inc., USA); nothing is stored on the website itself. Resend processes the data on my behalf and is certified under the EU-U.S. Data Privacy Framework (Art. 45 GDPR). For the store check I also look at the store whose address you give me. The legal basis is Art. 6(1)(b) GDPR where your enquiry aims at a contract, otherwise Art. 6(1)(f) GDPR. I delete the data once it is no longer needed, unless statutory retention periods apply.
 
 ## 4. Booking a call via Cal.com
 

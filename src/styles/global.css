@@ -137,6 +137,12 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .legal a { color: #2433f0; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 @media (min-width: 768px) { .legal h2 { font-size: 28px; } .legal p { font-size: 18px; } }
 
+/* Contact form (sections/Contact.astro): the two topics as pills, and a field only bots see. */
+.cf-topic span { display: inline-flex; cursor: pointer; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.55); padding: 9px 18px; font-size: 15px; font-weight: 600; transition: background-color 0.2s, color 0.2s; }
+.cf-topic input:checked + span { background: #fff; color: #2433f0; border-color: #fff; }
+.cf-topic input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
+.cf-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
 /* Blog article text (views/BlogPostView.astro): headings, lists and links from Markdown. */
 .post { font-size: 18px; line-height: 1.7; color: #1d2030; }
 .post > * + * { margin-top: 20px; }
