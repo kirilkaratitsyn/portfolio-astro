@@ -1,4 +1,4 @@
-// Live 3D for the homepage: the hero cube, the stones, the icon pebbles and the globe.
+// Live 3D for the site: the hero cube, the small blocks, the icons and logos, and the globe.
 //
 // One WebGL renderer draws every object and copies its picture into a small 2D canvas that lives inside the
 // object's own section. The canvases scroll with the page like any other element (no overlay that lags behind
@@ -6,20 +6,18 @@
 // The poster images stay in the HTML as the first paint and as the fallback when WebGL is unavailable.
 import {
   Group, NeutralToneMapping, PerspectiveCamera, PMREMGenerator, Quaternion, Scene, Vector3, WebGLRenderer,
-  type Mesh, type Object3D, type Texture,
+  type Object3D, type Texture,
 } from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { HERO_CAMERA, PEBBLE_CAMERA, makeHeroStones, makePebble, type PebbleName } from '../lib/stones';
 import { isIcon, makeIcon, makeLogo } from '../lib/icons';
 import { GLOBE_CAMERA, GLOBE_LAND, GLOBE_MAX_ZOOM, GLOBE_RADIUS, makeGlobe, type Globe, type GlobeMarker } from '../lib/globe';
 import { makeBlock, makeCube, parseBlock } from '../lib/cube';
 
 const DEG = Math.PI / 180;
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
-const HERO_DISTANCE = HERO_CAMERA.position[2];
-/** World units across the hero poster: 2 * distance * tan(fov / 2) * aspect. */
-const HERO_UNITS_WIDE = 2 * HERO_DISTANCE * Math.tan((HERO_CAMERA.fov / 2) * DEG) * HERO_CAMERA.aspect;
-/** World units across the pebble poster. */
+/** Camera of the objects in `data-pebble` hosts (cube, blocks, icons, logos): 9.5 units away, 32 degrees. */
+const PEBBLE_CAMERA = { fov: 32, distance: 9.5, y: 0.2 };
+/** World units across a `data-pebble` host (5.45). */
 const PEBBLE_UNITS = 2 * PEBBLE_CAMERA.distance * Math.tan((PEBBLE_CAMERA.fov / 2) * DEG);
 
 interface Pointer {
@@ -112,271 +110,10 @@ abstract class View {
   poke(_x: number, _y: number) {}
 }
 
-/* ------------------------------------------------------------------ hero stones */
+/* ------------------------------------------------------------------ cube, blocks, icons, logos */
 
-interface HeroStone {
-  mesh: Mesh;
-  home: Vector3;
-  radius: number;
-  /** Position in world units relative to the poster center, and velocity. */
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  /** Free spin (rad/s): pointer strokes, scroll, flings. Rolling is added on top. */
-  wx: number;
-  wy: number;
-  wz: number;
-  /** Parallax strength on scroll, from depth. */
-  drift: number;
-  grabbed: boolean;
-  grabDx: number;
-  grabDy: number;
-}
-
-class HeroView extends View {
-  readonly touchGrab = true;
-  private stones: HeroStone[];
-  private poster: HTMLImageElement;
-  private k = 1;
-  private cx = 0;
-  private cy = 0;
-  private pointer: Pointer | null = null;
-  private grabbed: HeroStone | null = null;
-
-  constructor(stage: Stage, host: HTMLElement, poster: HTMLImageElement) {
-    // The hero redraws on every scroll frame (its stones drift at different depths), so it gets the smaller budget.
-    super(stage, host, 1.5, 2.4e6);
-    this.poster = poster;
-    Object.assign(this.canvas.style, { inset: '0', width: '100%', height: '100%' });
-    host.append(this.canvas);
-    this.stones = makeHeroStones().map(({ mesh, home, radius }) => {
-      this.scene.add(mesh);
-      return {
-        mesh, home, radius, x: home.x, y: home.y, vx: 0, vy: 0, wx: 0, wy: 0, wz: 0,
-        drift: 0.05 + 0.1 * (1 - (home.z + 1.6) / 2.8), grabbed: false, grabDx: 0, grabDy: 0,
-      };
-    });
-    this.camera.position.set(0, HERO_CAMERA.position[1], HERO_DISTANCE);
-  }
-
-  showLive() {
-    this.poster.style.opacity = '0';
-    this.live = true;
-  }
-  hideLive() {
-    this.poster.style.opacity = '';
-    this.live = false;
-  }
-
-  protected measure() {
-    this.cssW = this.host.clientWidth;
-    this.cssH = this.host.clientHeight;
-    const hostRect = this.host.getBoundingClientRect();
-    const posterRect = this.poster.getBoundingClientRect();
-    this.cx = posterRect.left + posterRect.width / 2 - hostRect.left;
-    this.cy = posterRect.top + posterRect.height / 2 - hostRect.top;
-    this.k = posterRect.width / HERO_UNITS_WIDE;
-    // A frustum centered on the poster that covers the whole canvas, then the canvas slice of it.
-    const fullW = 2 * Math.max(this.cx, this.cssW - this.cx);
-    const fullH = 2 * Math.max(this.cy, this.cssH - this.cy);
-    this.camera.fov = (2 * Math.atan(fullH / this.k / 2 / HERO_DISTANCE)) / DEG;
-    this.camera.aspect = fullW / fullH;
-    this.camera.setViewOffset(fullW, fullH, fullW / 2 - this.cx, fullH / 2 - this.cy, this.cssW, this.cssH);
-    this.camera.lookAt(0, 0, 0);
-    this.camera.updateProjectionMatrix();
-  }
-
-  /** Screen scale of a point at depth z. */
-  private depth(z: number) {
-    return HERO_DISTANCE / (HERO_DISTANCE - z);
-  }
-
-  private local(p: Pointer) {
-    const rect = this.canvas.getBoundingClientRect();
-    return { x: p.x - rect.left, y: p.y - rect.top, inside: p.x >= rect.left && p.x <= rect.right && p.y >= rect.top && p.y <= rect.bottom };
-  }
-
-  pick(x: number, y: number) {
-    return this.stoneAt(x, y) !== null;
-  }
-
-  private stoneAt(clientX: number, clientY: number): HeroStone | null {
-    const rect = this.canvas.getBoundingClientRect();
-    const px = clientX - rect.left;
-    const py = clientY - rect.top;
-    let best: HeroStone | null = null;
-    for (const s of this.stones) {
-      const f = this.depth(s.home.z);
-      const dx = px - (this.cx + s.x * this.k * f);
-      const dy = py - (this.cy - s.y * this.k * f);
-      if (Math.hypot(dx, dy) < s.radius * this.k * f * 0.92 && (!best || s.home.z > best.home.z)) best = s;
-    }
-    return best;
-  }
-
-  hover(p: Pointer) {
-    this.pointer = p;
-    return this.local(p).inside;
-  }
-  leave() {
-    this.pointer = null;
-  }
-
-  grab(p: Pointer) {
-    const s = this.stoneAt(p.x, p.y);
-    if (!s) return;
-    const l = this.local(p);
-    const f = this.depth(s.home.z);
-    s.grabbed = true;
-    s.grabDx = s.x - (l.x - this.cx) / (this.k * f);
-    s.grabDy = s.y + (l.y - this.cy) / (this.k * f);
-    s.vx = s.vy = 0;
-    this.grabbed = s;
-  }
-  drag(p: Pointer) {
-    this.pointer = p;
-  }
-  release() {
-    if (this.grabbed) this.grabbed.grabbed = false;
-    this.grabbed = null;
-  }
-
-  poke(x: number, y: number) {
-    const s = this.stoneAt(x, y);
-    if (!s) return;
-    const rect = this.canvas.getBoundingClientRect();
-    const f = this.depth(s.home.z);
-    const dx = s.x - (x - rect.left - this.cx) / (this.k * f);
-    const dy = s.y + (y - rect.top - this.cy) / (this.k * f);
-    const d = Math.hypot(dx, dy) || 1;
-    s.vx += (dx / d) * 5;
-    s.vy += (dy / d) * 5 + 4;
-    s.wx += (Math.random() - 0.5) * 8;
-    s.wy += (Math.random() - 0.5) * 8;
-  }
-
-  /** A small shove so the stones visibly wake up when they turn live. */
-  wake() {
-    for (const s of this.stones) {
-      s.vx += (Math.random() - 0.5) * 2.4;
-      s.vy += (Math.random() - 0.2) * 2.4;
-      s.wx += (Math.random() - 0.5) * 3;
-      s.wy += (Math.random() - 0.5) * 3;
-    }
-  }
-
-  step(dt: number, scroll: number) {
-    const stones = this.stones;
-    const pointer = this.pointer;
-    // A finger only counts while it holds a stone (it does not hover).
-    const local = pointer && (pointer.type !== 'touch' || this.grabbed) ? this.local(pointer) : null;
-    let moving = false;
-    const steps = 2;
-    const h = dt / steps;
-
-    for (let n = 0; n < steps; n++) {
-      for (const s of stones) {
-        const f = this.depth(s.home.z);
-        let ax = -22 * (s.x - s.home.x) - 3.4 * s.vx;
-        let ay = -22 * (s.y - s.home.y) - 3.4 * s.vy;
-
-        if (s.grabbed && local && pointer) {
-          const tx = (local.x - this.cx) / (this.k * f) + s.grabDx;
-          const ty = -(local.y - this.cy) / (this.k * f) + s.grabDy;
-          ax = (tx - s.x) * 200 - s.vx * 24;
-          ay = (ty - s.y) * 200 - s.vy * 24;
-        } else if (local?.inside && pointer) {
-          // Cursor repels the stones it runs into; a quick swipe throws them.
-          const dx = s.x - (local.x - this.cx) / (this.k * f);
-          const dy = s.y + (local.y - this.cy) / (this.k * f);
-          const reach = s.radius * 0.9 + 1.1;
-          const d = Math.hypot(dx, dy) || 0.001;
-          if (d < reach) {
-            const push = (1 - d / reach) ** 2;
-            ax += (dx / d) * push * 120 + (pointer.vx / (this.k * f)) * push * 0.5;
-            ay += (dy / d) * push * 120 - (pointer.vy / (this.k * f)) * push * 0.5;
-            s.wx += (dy / d) * push * 0.4;
-            s.wy -= (dx / d) * push * 0.4;
-          }
-        }
-
-        s.vx += ax * h;
-        s.vy += ay * h;
-      }
-
-      // Stones bump into each other, but never closer than they sit at rest.
-      for (let i = 0; i < stones.length; i++) {
-        for (let j = i + 1; j < stones.length; j++) {
-          const a = stones[i]!;
-          const b = stones[j]!;
-          const rest = Math.hypot(a.home.x - b.home.x, a.home.y - b.home.y, (a.home.z - b.home.z) * 0.6);
-          const min = Math.min(rest, a.radius + b.radius) * 0.9;
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const d3 = Math.hypot(dx, dy, (a.home.z - b.home.z) * 0.6);
-          if (d3 < min) {
-            const d = Math.hypot(dx, dy) || 0.001;
-            const push = (min - d3) * 90;
-            a.vx += (dx / d) * push * h;
-            a.vy += (dy / d) * push * h;
-            b.vx -= (dx / d) * push * h;
-            b.vy -= (dy / d) * push * h;
-          }
-        }
-      }
-
-      for (const s of stones) {
-        const speed = Math.hypot(s.vx, s.vy);
-        if (speed > 38) {
-          s.vx *= 38 / speed;
-          s.vy *= 38 / speed;
-        }
-        s.x += s.vx * h;
-        s.y += s.vy * h;
-        // Walls of the canvas
-        const f = this.depth(s.home.z);
-        const edge = s.radius * 0.55;
-        const minX = edge - this.cx / (this.k * f);
-        const maxX = (this.cssW - this.cx) / (this.k * f) - edge;
-        const maxY = this.cy / (this.k * f) - edge;
-        const minY = -(this.cssH - this.cy) / (this.k * f) + edge;
-        if (s.x < minX) { s.x = minX; s.vx = Math.abs(s.vx) * 0.5; }
-        if (s.x > maxX) { s.x = maxX; s.vx = -Math.abs(s.vx) * 0.5; }
-        if (s.y > maxY) { s.y = maxY; s.vy = -Math.abs(s.vy) * 0.5; }
-        if (s.y < minY) { s.y = minY; s.vy = Math.abs(s.vy) * 0.5; }
-      }
-    }
-
-    const damp = Math.exp(-2.2 * dt);
-    for (const s of stones) {
-      // Rolling follows the motion; free spin fades out.
-      const roll = 1 / (s.radius * 0.9);
-      s.wx = s.wx * damp - scroll * 0.012;
-      s.wy *= damp;
-      s.wz *= damp;
-      spin(s.mesh, s.wx - s.vy * roll, s.wy + s.vx * roll, s.wz, dt);
-      const offset = Math.hypot(s.x - s.home.x, s.y - s.home.y);
-      if (s.grabbed || Math.hypot(s.vx, s.vy) > 0.02 || offset > 0.003 || Math.hypot(s.wx, s.wy, s.wz) > 0.03) moving = true;
-    }
-    if (scroll !== 0) this.dirty = true;
-    if (local?.inside && pointer && Math.hypot(pointer.vx, pointer.vy) > 20) moving = true;
-    return moving;
-  }
-
-  sync() {
-    const lift = window.scrollY;
-    for (const s of this.stones) {
-      const f = this.depth(s.home.z);
-      s.mesh.position.set(s.x, s.y - (lift * s.drift) / (this.k * f), s.home.z);
-    }
-  }
-}
-
-/* ------------------------------------------------------------------ icon pebbles */
-
-/** What a `data-pebble` host shows: a pebble, one of the icons, the logo or the hero cube. All but the pebbles have a resting pose. */
-function makeObject(name: string, hostWidth: number): { object: Object3D; rest: Quaternion | null } {
+/** What a `data-pebble` host shows: the hero cube, one of the icons, the logo or a block. Each has a resting pose. */
+function makeObject(name: string): { object: Object3D; rest: Quaternion } {
   if (name === 'cube') {
     const object = makeCube();
     return { object, rest: object.userData.rest as Quaternion };
@@ -389,21 +126,17 @@ function makeObject(name: string, hostWidth: number): { object: Object3D; rest: 
     const object = makeIcon(name);
     return { object, rest: object.userData.rest as Quaternion };
   }
-  // The decorative pebbles became single blocks of the hero cube, so the whole site is built from the same blocks.
-  const block = parseBlock(name);
-  if (block) {
-    const object = makeBlock(block.name, block.small);
-    return { object, rest: object.userData.rest as Quaternion };
-  }
-  // A pebble 270 px wide needs a fine mesh, one 54 px wide does not.
-  return { object: makePebble(name as PebbleName, Math.min(12, Math.max(5, Math.round(hostWidth / 16)))), rest: null };
+  // The decorative objects are blocks of the hero cube (they used to be pebbles): one set of blocks across the site.
+  const block = parseBlock(name) ?? { name: 'cobalt' as const, small: false };
+  const object = makeBlock(block.name, block.small);
+  return { object, rest: object.userData.rest as Quaternion };
 }
 
 class PebbleView extends View {
   readonly touchGrab = true;
   private group = new Group();
   private object: Object3D;
-  private rest: Quaternion | null;
+  private rest: Quaternion;
   private w = new Vector3();
   private tiltX = 0;
   private tiltY = 0;
@@ -417,12 +150,12 @@ class PebbleView extends View {
   private distance: number;
 
   constructor(stage: Stage, host: HTMLElement, readonly name: string, private img: HTMLImageElement) {
-    // The hero cube moves by itself and is drawn on every frame while it is on screen, so it gets the old hero stones'
-    // smaller budget (still 2x at its 540px desktop size, so it stays as sharp as its poster on a retina screen).
+    // The hero cube moves by itself and is drawn on every frame while it is on screen, so it gets a smaller budget
+    // (still 2x at its 540px desktop size, so it stays as sharp as its poster on a retina screen).
     super(stage, host, 2, name === 'cube' ? 2.4e6 : undefined);
     Object.assign(this.canvas.style, { left: '-20%', top: '-20%', width: '140%', height: '140%' });
     host.append(this.canvas);
-    const made = makeObject(name, host.clientWidth);
+    const made = makeObject(name);
     this.object = made.object;
     this.rest = made.rest;
     this.group.add(this.object);
@@ -532,8 +265,8 @@ class PebbleView extends View {
         w.x += p.vy * 0.00012;
       }
       spin(this.object, w.x, w.y, w.z, dt);
-      // Icons and the logo drift back to their resting pose.
-      if (this.rest) this.object.quaternion.slerp(this.rest, 1 - Math.exp(-1.5 * dt));
+      // Every object drifts back to its resting pose.
+      this.object.quaternion.slerp(this.rest, 1 - Math.exp(-1.5 * dt));
     }
 
     // Lean toward the cursor and grow a little when it is over the object.
@@ -545,7 +278,7 @@ class PebbleView extends View {
     this.tiltX += (targetX - this.tiltX) * ease;
     this.lift += ((this.hovering || this.grabbed ? 1 : 0) - this.lift) * ease;
 
-    const away = this.rest ? this.object.quaternion.angleTo(this.rest) : 0;
+    const away = this.object.quaternion.angleTo(this.rest);
     const settled =
       w.length() < 0.03 && away < 0.004 && Math.abs(this.tiltX - targetX) < 0.002 &&
       Math.abs(this.tiltY - targetY) < 0.002 && Math.abs(this.lift - (this.hovering ? 1 : 0)) < 0.002;
@@ -1376,26 +1109,16 @@ class Stage {
   };
 }
 
-/** globeOnly: only the globe goes live; the hero stones and the icons keep their posters. */
+/** globeOnly: only the globe goes live; the cube, the blocks and the icons keep their posters. */
 export async function start({ globeOnly = false }: { globeOnly?: boolean } = {}) {
-  const heroHost = globeOnly ? null : document.querySelector<HTMLElement>('[data-hero-stage]');
-  const poster = document.querySelector<HTMLImageElement>('[data-hero-poster]');
   const pebbleHosts = globeOnly ? [] : [...document.querySelectorAll<HTMLElement>('[data-pebble]')];
   const globeHost = document.querySelector<HTMLElement>('[data-globe]');
-  if (!(heroHost && poster) && !pebbleHosts.length && !globeHost) return;
+  if (!pebbleHosts.length && !globeHost) return;
 
   const stage = new Stage();
   await stage.prepare();
-  let hero: HeroView | null = null;
-  if (heroHost && poster) {
-    hero = new HeroView(stage, heroHost, poster);
-    stage.add(hero, poster);
-    // Compile the material off the main thread before the first frame.
-    await stage.renderer.compileAsync(hero.scene, hero.camera);
-    await yieldMain();
-  }
-  // Pebbles, icons and logos are built well before they reach the screen, one at a time in idle moments, with their
-  // shaders compiled in the background, so nothing heavy happens while the page is being scrolled.
+  // The cube, blocks, icons and logos are built well before they reach the screen, one at a time in idle moments, with
+  // their shaders compiled in the background, so nothing heavy happens while the page is being scrolled.
   const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
   const build = async (host: HTMLElement) => {
     const name = host.dataset.pebble ?? 'cobalt';
@@ -1444,12 +1167,5 @@ export async function start({ globeOnly = false }: { globeOnly?: boolean } = {})
     globeIo.observe(globeHost);
   }
   stage.wake();
-  // Turn the first picture on, then give the hero stones a nudge.
-  requestAnimationFrame(() => {
-    if (hero && hero.visible) {
-      hero.wake();
-      stage.wake();
-    }
-  });
   (window as unknown as { __stage?: Stage }).__stage = stage;
 }

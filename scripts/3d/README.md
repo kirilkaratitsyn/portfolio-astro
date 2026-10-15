@@ -1,38 +1,30 @@
-# 3D art for the homepage
+# 3D art for the site
 
-The cobalt stones in the hero and the pebbles used as icons exist twice:
+Every 3D object on the site exists twice:
 
-- as WebP posters in `public/source/3d/` (rendered once with the scripts here). They are the first paint, the LCP image and the fallback when WebGL, scripts or motion are unavailable.
-- as live three.js objects (`src/scripts/stage.ts`, shapes in `src/lib/stones.ts`) that replace the posters after the page has loaded. The shapes come from the same generator and seeds, so the swap is invisible. Seeds: pebbles cobalt 3, cobalt2 9, white 11, black 5; hero stones seed 7.
+- as a WebP poster in `public/source/3d/`, captured from the live object at rest by the scripts here. It is the first paint (the hero cube's is the LCP image) and the fallback when WebGL, scripts or motion are unavailable.
+- as a live three.js object (`src/scripts/stage.ts`; the cube and the blocks in `src/lib/cube.ts`, the icons and the logo in `src/lib/icons.ts`, the globe in `src/lib/globe.ts`) that replaces the poster once the page has loaded.
 
-Tone mapping is `NeutralToneMapping` at exposure 1 everywhere (live renderer, `stones.html`, `pebble.html`). ACES, used before, shifted the brand cobalt #2433F0 toward violet; keep the three in sync or the posters and the live objects will differ in color.
+Tone mapping is `NeutralToneMapping` at exposure 1 in the live renderer, and the posters are captured from it. ACES, used before, shifted the brand cobalt #2433F0 toward violet.
 
-If you change the shapes in `src/lib/stones.ts`, change `stones.html` / `pebble.html` the same way and re-render the posters (`pebble.html?...&r=2.25` is the size used on the site).
-
-To re-render:
-
-1. In a scratch folder: `npm i three@0.186.1`, copy `stones.html` and `pebble.html` next to `node_modules`, and serve the folder (`python3 -m http.server 8765`).
-2. Open `stones.html?p=cobalt` (1720 x 1188) and `pebble.html?c=%232433f0&seed=3` (520 x 520) in headless Chrome with `--enable-unsafe-swiftshader --use-angle=swiftshader`, wait for `window.__done`, and screenshot the `#c` canvas with a transparent background.
-3. Convert to WebP with sharp (stones: 1720 and 860 px wide, quality 82; pebbles: 360 px wide).
+`stones-1720.webp` is the picture of the stones that used to be in the hero. It stays only because `og-image.html` (the template of `public/og-image.jpg`) still uses it.
 
 ## Icons and the logo
 
-The icons of the Services and Process sections and the 3D logo (header and footer) are built in code, `src/lib/icons.ts`: simple shapes with soft bevels in the same glossy material as the stones, no model files. The logo is extruded from an outline traced from the brand PNG: `node scripts/3d/trace-mark.mjs` (needs `npm i --no-save d3-contour`), result `src/lib/mark-paths.json`.
+The icons of the Services and Process sections and the 3D logo (header and footer) are built in code, `src/lib/icons.ts`: simple shapes with soft bevels in a glossy clear-coated material, no model files. The logo is extruded from an outline traced from the brand PNG: `node scripts/3d/trace-mark.mjs` (needs `npm i --no-save d3-contour`), result `src/lib/mark-paths.json`.
 
 Every icon also has a poster image, `public/source/3d/icon-<name>.webp` (first paint and fallback). They are captured from the live objects at rest, so they match exactly: build the site, serve it on port 4321, then `node scripts/3d/capture-posters.mjs`. Re-run it after changing an icon.
 
-Dragging uses an arcball, so a drag inside the object turns it about X and Y and a drag near its edge spins it about Z. Icons and the logo drift back to their resting pose; pebbles stay where you leave them.
+Dragging uses an arcball, so a drag inside the object turns it about X and Y and a drag near its edge spins it about Z. Every object drifts back to its resting pose.
 
 ## Hero cube
 
 The puzzle cube in the hero is built in code too, `src/lib/cube.ts`: 27 rounded blocks in the site's colours, a few with a pattern drawn on a canvas (perforated, ribbed), no model or image files. It turns slowly, twists one layer every two or three seconds and, after a few twists, runs them backwards until it is whole again. It is a `data-pebble="cube"` host, so the stage gives it the same drag, tilt and poster swap as the icons, plus its own longer lens and key light (`userData.distance`, `userData.lights`).
 
-The cube replaced the stones in the hero; their code (`HeroView` in `src/scripts/stage.ts`, `makeHeroStones` in `src/lib/stones.ts`) and posters (`stones-*.webp`) are still in the repo but no page uses them.
-
 Its poster, `public/source/3d/cube-560.webp` and `cube-1120.webp`, is captured from the live cube at rest (paused, every block home): build the site, serve it on port 4321, then `node scripts/3d/capture-cube.mjs`. Re-run it after changing the cube; the script also warns when the resting cube reaches past its host.
 
 ## Blocks
 
-The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is perforated white, `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: plain white instead of the holes and three wide ribs instead of seven. Icons and blocks drift back to their resting pose after a drag.
+The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is perforated white, `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: plain white instead of the holes and three wide ribs instead of seven.
 
 Their posters, `public/source/3d/block-<name>.webp` and `block-<name>-small.webp` (360 x 360), are captured from the live blocks at rest: build the site, serve it on port 4321, then `node scripts/3d/capture-blocks.mjs`.

@@ -1,8 +1,9 @@
 // The hero cube: 27 rounded blocks in the site's colours (cobalt, white, pale, ink), most of them in the same glossy
-// finish as the stones and the 3D icons, a few with a pattern (perforated, ribbed). It turns slowly by itself, and
+// finish as the 3D icons, a few with a pattern (perforated, ribbed). It turns slowly by itself, and
 // every two or three seconds one layer twists a quarter turn, like a puzzle cube: a few twists mix it up, then the
 // same twists run backwards and it is whole again. Drawn by the stage as a `data-pebble="cube"` object
-// (scripts/stage.ts), so dragging, tilting and the poster fallback work as for the pebbles and icons.
+// (scripts/stage.ts), so dragging, tilting and the poster fallback work as for the icons. Single blocks of it, in the
+// same finishes, are the small 3D objects around the site (makeBlock, at the end).
 // Original work: shapes, colours and patterns are drawn here in code, no model or image files.
 import {
   CanvasTexture, DirectionalLight, Group, Matrix4, Mesh, MeshPhysicalMaterial, Quaternion, RepeatWrapping, SRGBColorSpace, Vector3,
