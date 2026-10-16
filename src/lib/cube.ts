@@ -337,7 +337,7 @@ export function makeCube() {
  * few dozen pixels wide (the stat cards), where seven ribs or 25 holes would only be noise.
  */
 export const BLOCKS = {
-  white: { finish: 'perforated', small: 'white', rest: [0.5, -0.62, 0.08] },
+  white: { finish: 'white', small: 'white', rest: [0.5, -0.62, 0.08] },
   black: { finish: 'ink', small: 'ink', rest: [0.44, 0.68, -0.06] },
   cobalt: { finish: 'ribbed', small: 'ribbedWide', rest: [0.52, -0.78, 0.04] },
   cobalt2: { finish: 'cobalt', small: 'cobalt', rest: [0.4, 0.58, 0.1] },

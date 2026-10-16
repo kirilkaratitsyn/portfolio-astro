@@ -7,7 +7,7 @@ Every 3D object on the site exists twice:
 
 Tone mapping is `NeutralToneMapping` at exposure 1 in the live renderer, and the posters are captured from it. ACES, used before, shifted the brand cobalt #2433F0 toward violet.
 
-`stones-1720.webp` is the picture of the stones that used to be in the hero. It stays only because `og-image.html` (the template of `public/og-image.jpg`) still uses it.
+`og-image.html` is the template of the share image `public/og-image.jpg` (1200 x 630, with the cube poster): open it in Chrome at 1200 x 630 and save a JPEG screenshot. Re-make it after changing the cube.
 
 ## Icons and the logo
 
@@ -25,6 +25,6 @@ Its poster, `public/source/3d/cube-560.webp` and `cube-1120.webp`, is captured f
 
 ## Blocks
 
-The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is perforated white, `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: plain white instead of the holes and three wide ribs instead of seven.
+The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is plain glossy white (the perforated finish alone looked like a die), `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: three wide ribs instead of seven.
 
 Their posters, `public/source/3d/block-<name>.webp` and `block-<name>-small.webp` (360 x 360), are captured from the live blocks at rest: build the site, serve it on port 4321, then `node scripts/3d/capture-blocks.mjs`.
