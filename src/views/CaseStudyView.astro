@@ -22,8 +22,8 @@ const hasBody = Boolean(caseStudy.entry.body?.trim());
 const { Content } = await render(caseStudy.entry);
 
 const t = useTranslations(locale);
-// The service page this case study proves, if there is one.
-const service = (await getServices(locale)).find((item) => item.caseSlug === caseStudy.slug);
+// The service pages this case study shows: the one it proves, and any that list it among their other cases.
+const services = (await getServices(locale)).filter((item) => item.caseSlug === caseStudy.slug || item.alsoCases?.includes(caseStudy.slug));
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/projects/${caseStudy.slug}`), site).toString();
 // The case as a piece of work by Kiril (the same Person as on the home page), and where it sits on the site.
@@ -143,12 +143,18 @@ const sections = [
         )
       }
       {
-        service && (
+        services.length > 0 && (
           <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
             <h2 class="font-head text-2xl font-bold">{t.servicePage.more}</h2>
-            <a href={localizePath(locale, `/services/${service.slug}`)} class="max-w-3xl text-lg font-semibold text-blue hover:underline">
-              {service.title} →
-            </a>
+            <ul class="grid max-w-3xl gap-2">
+              {services.map((service) => (
+                <li>
+                  <a href={localizePath(locale, `/services/${service.slug}`)} class="text-lg font-semibold text-blue hover:underline">
+                    {service.title} →
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )
       }

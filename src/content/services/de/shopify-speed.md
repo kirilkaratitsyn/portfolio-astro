@@ -30,6 +30,8 @@ steps:
   - title: "Go-live nach Ihrer schriftlichen Freigabe"
     text: "Danach prüfe ich Weiterleitungen und Search Console."
 caseSlug: pedchem
+alsoCases:
+  - petaljet
 caseText:
   - "Ein Shop für Schädlingsbekämpfung, vom Flex-Theme auf Enterprise, ohne Bezahl-Apps."
   - "Datentabellen aus Metafeldern auf 323 Produkten, Weiterleitungen aus Search-Console-Daten."

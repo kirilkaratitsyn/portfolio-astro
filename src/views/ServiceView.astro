@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CalButton from '../components/CalButton.astro';
 import Contact from '../sections/Contact.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
-import { getCaseStudies, getPosts, type ServicePage } from '../lib/content';
+import { getCaseStudies, getPosts, getServices, type ServicePage } from '../lib/content';
 import { thumb } from '../lib/thumbs';
 
 interface Props {
@@ -20,6 +20,7 @@ const copy = t.servicePage;
 const proof = (await getCaseStudies(locale)).find((item) => item.slug === service.caseSlug);
 if (!proof) throw new Error(`ServiceView: case study "${service.caseSlug}" not found for ${locale}`);
 const article = service.articleSlug ? (await getPosts(locale)).find((post) => post.slug === service.articleSlug) : undefined;
+const others = (await getServices(locale)).filter((item) => item.slug !== service.slug);
 
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/services/${service.slug}`), site).toString();
@@ -127,6 +128,22 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
             <a href={localizePath(locale, `/blog/${article.slug}`)} class="max-w-3xl text-lg font-semibold text-blue hover:underline">
               {article.title} →
             </a>
+          </div>
+        )
+      }
+      {
+        others.length > 0 && (
+          <div class={row}>
+            <h2 class="font-head text-2xl font-bold">{copy.others}</h2>
+            <ul class="grid max-w-3xl gap-2">
+              {others.map((item) => (
+                <li>
+                  <a href={localizePath(locale, `/services/${item.slug}`)} class="text-lg font-semibold text-blue hover:underline">
+                    {item.title} →
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )
       }

@@ -30,6 +30,8 @@ steps:
   - title: "Go-live after your written approval"
     text: "Then I check the redirects and Search Console."
 caseSlug: pedchem
+alsoCases:
+  - petaljet
 caseText:
   - "A pest control store, moved from the Flex theme to Enterprise, with no paid apps."
   - "Spec charts from metafields on 323 products, redirects from Search Console data."

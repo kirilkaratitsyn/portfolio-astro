@@ -89,6 +89,8 @@ const services = defineCollection({
     /** A case study that proves the service, with a few lines about it. */
     caseSlug: z.string(),
     caseText: z.array(z.string()).min(1),
+    /** Other case studies that show this kind of work; their pages link here too. */
+    alsoCases: z.array(z.string()).optional(),
     faq: z.array(z.object({ q: z.string(), a: z.string() })),
     /** A blog article on the same topic, if there is one. */
     articleSlug: z.string().optional(),

@@ -1,6 +1,6 @@
 ---
 import { localizePath, useTranslations, type Locale } from '../i18n';
-import { getPosts } from '../lib/content';
+import { getPosts, getServices } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -9,6 +9,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const hasPosts = (await getPosts(locale)).length > 0;
+const services = await getServices(locale);
 // German pages link the German Impressum and Datenschutzerklärung; English and Ukrainian pages the English versions.
 const legal =
   locale === 'de'
@@ -26,7 +27,21 @@ const legal =
 <footer id="footer" class="overflow-y-clip">
   <div class="mx-auto max-w-[1440px] px-5 md:px-10">
     <!-- Above the wordmark: its letters reach up into this row (and rise further under the cursor), and would catch the clicks. -->
-    <div class="relative z-[1] flex flex-col gap-3 pb-6 pt-14 text-[15px] text-mute md:flex-row md:justify-between md:pb-4 md:pt-16">
+    <div class="relative z-[1] pt-14 md:pt-16">
+      {
+        services.length > 0 && (
+          <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-5 text-[15px]">
+            <span class="font-semibold text-ink">{t.header.services}</span>
+            {services.map((service) => (
+              <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
+                {service.title}
+              </a>
+            ))}
+          </nav>
+        )
+      }
+    </div>
+    <div class="relative z-[1] flex flex-col gap-3 pb-6 pt-5 text-[15px] text-mute md:flex-row md:justify-between md:pb-4 md:pt-5">
       <span>© {new Date().getFullYear()} Kiril Karatitsyn. {t.footer.rights}</span>
       <span class="flex flex-wrap gap-x-5 gap-y-2">
         <span class="flex gap-2">

@@ -933,7 +933,8 @@
     "viewCase": "View case study",
     "faq": "Questions",
     "article": "Read more",
-    "more": "About this service"
+    "more": "About this service",
+    "others": "Other services"
   },
   "egg": {
     "title": "Block by block",
