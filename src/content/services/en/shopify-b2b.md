@@ -43,4 +43,5 @@ faq:
     a: "Yes, with Shopify Functions on the server. A field hidden in the theme is not enough."
   - q: "Do I have to create trade accounts by hand?"
     a: "Not necessarily. At Orska Rituals the company account is created automatically as soon as a professional is approved."
+articleSlug: shopify-b2b-wholesale
 ---

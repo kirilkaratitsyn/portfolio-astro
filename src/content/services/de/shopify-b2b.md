@@ -43,4 +43,5 @@ faq:
     a: "Ja, mit Shopify Functions auf dem Server. Ein im Theme verstecktes Feld reicht dafür nicht."
   - q: "Muss ich Händlerkonten von Hand anlegen?"
     a: "Nicht unbedingt. Bei Orska Rituals entsteht das Firmenkonto automatisch, sobald ein Profi freigegeben ist."
+articleSlug: shopify-b2b-wholesale
 ---
