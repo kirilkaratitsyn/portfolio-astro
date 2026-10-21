@@ -29,6 +29,7 @@ steps:
     text: "Your store keeps selling until everything is checked."
   - title: "Go-live after your written approval"
     text: "Then I check the redirects and Search Console."
+articleSlug: slow-shopify-store
 caseSlug: pedchem
 alsoCases:
   - petaljet

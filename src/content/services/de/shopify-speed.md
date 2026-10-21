@@ -29,6 +29,7 @@ steps:
     text: "Ihr Shop verkauft weiter, bis alles geprüft ist."
   - title: "Go-live nach Ihrer schriftlichen Freigabe"
     text: "Danach prüfe ich Weiterleitungen und Search Console."
+articleSlug: slow-shopify-store
 caseSlug: pedchem
 alsoCases:
   - petaljet

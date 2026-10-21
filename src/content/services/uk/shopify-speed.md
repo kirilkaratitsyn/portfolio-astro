@@ -29,6 +29,7 @@ steps:
     text: "Магазин продає далі, доки все не перевірено."
   - title: "Запуск після вашого письмового погодження"
     text: "Потім я перевіряю редиректи й Search Console."
+articleSlug: slow-shopify-store
 caseSlug: pedchem
 alsoCases:
   - petaljet
