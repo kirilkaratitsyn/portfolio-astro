@@ -29,6 +29,7 @@ steps:
     text: "Erst die Struktur, dann das Theme, unveröffentlicht. Ihr Feedback setze ich in kurzen Runden um."
   - title: "Go-live nach Ihrer Freigabe"
     text: "Das neue Theme geht erst live, wenn Sie es freigegeben haben. Danach bleibe ich für Korrekturen da."
+articleSlug: shopify-theme-customization
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings

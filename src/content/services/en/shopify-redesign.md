@@ -29,6 +29,7 @@ steps:
     text: "The structure first, then the theme, unpublished. I work your feedback in short rounds."
   - title: "Go-live after your approval"
     text: "The new theme goes live only once you have approved it. Then I stay on for fixes."
+articleSlug: shopify-theme-customization
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings
