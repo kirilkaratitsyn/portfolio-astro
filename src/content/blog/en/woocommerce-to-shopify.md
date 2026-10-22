@@ -79,4 +79,6 @@ Not sure yet whether a move is worth it or good maintenance is enough? [WooComme
 
 Coming from Wix rather than WooCommerce? See [Moving from Wix to Shopify: the Process, the Snags and What Does Not Come Along](/blog/wix-zu-shopify-umzug). Coming from Shopware or Magento? See [From Shopware or Magento to Shopify: What to Settle Before the Move](/blog/shopware-magento-zu-shopify).
 
+Want to know which payment methods Shopify offers in Germany? See [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland).
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

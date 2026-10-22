@@ -65,7 +65,7 @@ If you rarely change anything, the rhythm above is enough, and for problems the 
 - nobody on the team has time to keep an eye on apps and access,
 - a checkout outage would noticeably cost revenue.
 
-An example from my work: I have supported [Elanora Skin](/projects/elanora-skin), a skincare brand from Breda, on an ongoing basis since late 2025: offers, gift logic in the cart and storefront logic for fifteen markets in two languages. That is not an off-the-shelf maintenance package but continuing work on a store I know.
+An example from my work: I have worked on the [Elanora Skin](/projects/elanora-skin) store on an ongoing basis since late 2025. That is not an off-the-shelf maintenance package but continuing work on a store I know. What makes sense for you can therefore only be said once I have seen your theme, apps and the changes you plan.
 
 ## What to settle before a support agreement
 

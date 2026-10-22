@@ -67,6 +67,6 @@ Das hängt davon ab, welche B2B-Funktionen Sie brauchen und was Ihr Tarif enthä
 
 Ich richte [B2B und Großhandel in Shopify](/de/services/shopify-b2b) ein, zum Festpreis nach dem Briefing. Fragen Sie den kostenlosen Shop-Check an oder buchen Sie ein Erstgespräch.
 
-**Weiterlesen:** [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify-Shop erstellen lassen: Wovon die Kosten abhängen](/de/blog/shopify-shop-erstellen-lassen-kosten)
+**Weiterlesen:** [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify-Shop erstellen lassen: Wovon die Kosten abhängen](/de/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

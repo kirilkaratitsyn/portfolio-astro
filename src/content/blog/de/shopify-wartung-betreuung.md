@@ -65,7 +65,7 @@ Wenn Sie selten etwas ändern, genügt der Rhythmus oben, und bei Problemen helf
 - niemand im Team Zeit hat, Apps und Zugänge im Blick zu behalten,
 - ein Ausfall der Kasse spürbar Umsatz kostet.
 
-Ein Beispiel aus meiner Arbeit: [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke aus Breda, betreue ich seit Ende 2025 laufend: Angebote, Geschenk-Logik im Warenkorb und Storefront-Logik für fünfzehn Märkte in zwei Sprachen. Das ist kein Wartungspaket von der Stange, sondern fortlaufende Arbeit an einem Shop, den ich kenne.
+Ein Beispiel aus meiner Arbeit: Für [Elanora Skin](/de/projects/elanora-skin) arbeite ich seit Ende 2025 laufend am Shop. Das ist kein Wartungspaket von der Stange, sondern fortlaufende Arbeit an einem Shop, den ich kenne. Was bei Ihnen sinnvoll wäre, lässt sich deshalb erst sagen, wenn ich Theme, Apps und Ihre Änderungswünsche gesehen habe.
 
 ## Was Sie vor einem Betreuungsvertrag klären sollten
 

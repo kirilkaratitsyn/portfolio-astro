@@ -114,6 +114,6 @@ Das ist eine Einschätzung aus der Praxis, keine Vorgabe von Shopify:
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa wie Ihre Adressen aufgebaut sind und was Google bereits kennt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich für Shops mache, finden Sie unter [Leistungen](/de/services). Wie ich ein Projekt grundsätzlich angehe, steht in [Shopify-Shop erstellen lassen: Was Sie vorher wissen sollten](/de/blog/shopify-shop-erstellen-lassen-kosten). Wenn Sie zwischen Freelancer und Agentur abwägen, hilft [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
-**Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale)
+**Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
