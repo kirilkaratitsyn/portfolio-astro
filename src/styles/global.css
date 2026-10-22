@@ -725,19 +725,55 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 [data-post][hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { .post-card img { transition: none !important; } }
 
-/* Mega menu under the desktop navigation: the outer box has no gap, so the pointer can travel from the nav into the card. */
-.mega { position: absolute; left: 40px; right: 40px; top: 100%; display: none; padding-top: 10px; pointer-events: auto; }
-.mega.is-open { display: block; animation: mega-in 0.22s cubic-bezier(0.16, 1, 0.3, 1); }
+/* Mega menu under the desktop navigation: the outer box has no gap, so the pointer can travel from the nav into the card.
+   It fades and settles instead of switching display, so closing animates too; its items rise in one after another. */
+.mega { position: absolute; left: 40px; right: 40px; top: 100%; padding-top: 10px; visibility: hidden; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 0.16s ease, transform 0.2s ease, visibility 0s linear 0.2s; }
+.mega.is-open { visibility: visible; opacity: 1; transform: none; pointer-events: auto; transition: opacity 0.2s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s; }
 .mega__card { margin-inline: auto; max-width: 1040px; border-radius: 20px; background: #fff; padding: 20px 22px 14px; box-shadow: 0 24px 60px rgba(14, 16, 24, 0.18), 0 0 0 1px rgba(14, 16, 24, 0.04); }
 .mega__title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5f73; padding-inline: 8px; }
 .mega__foot { margin-top: 12px; border-top: 1px solid #d3d7e6; padding: 12px 8px 0; }
-@keyframes mega-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .mega.is-open { animation: none; } }
+.mega__card [data-mega-pane]:not([hidden]) { animation: mega-pane 0.24s ease both; }
+.mega__card [data-mega-pane]:not([hidden]) li { animation: mega-item 0.34s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.mega__card li:nth-child(2) { animation-delay: 30ms !important; }
+.mega__card li:nth-child(3) { animation-delay: 60ms !important; }
+.mega__card li:nth-child(4) { animation-delay: 90ms !important; }
+.mega__card li:nth-child(5) { animation-delay: 120ms !important; }
+.mega__card li:nth-child(6) { animation-delay: 150ms !important; }
+.mega__card li:nth-child(n + 7) { animation-delay: 180ms !important; }
+.mega__foot a svg, .mega a[href] > svg { transition: transform 0.2s ease; }
+.mega__foot a:hover svg { transform: translateX(3px); }
+[data-mega-trigger] svg { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s; }
+[data-mega-trigger][aria-expanded='true'] { color: #2433f0; }
+[data-mega-trigger][aria-expanded='true'] svg { transform: rotate(180deg); color: #2433f0; }
+@keyframes mega-pane { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mega-item { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .mega, .mega.is-open { transform: none; transition: opacity 0.1s linear, visibility 0s; }
+  .mega__card [data-mega-pane], .mega__card [data-mega-pane] li { animation: none !important; }
+  [data-mega-trigger] svg { transition: none; }
+}
 @media (max-width: 767px) { .mega { display: none !important; } }
 
-/* Search dialog */
+/* Search dialog: the box and the backdrop fade in; closing plays a short exit first (see SearchDialog.astro). */
 .search { margin: 0; padding: 0; border: 0; background: transparent; max-width: none; max-height: none; width: 100%; height: 100%; overflow: hidden; }
 .search::backdrop { background: rgba(14, 16, 24, 0.5); }
 .search__box { margin: 12vh auto 0; width: min(640px, calc(100% - 32px)); max-height: 76vh; display: flex; flex-direction: column; border-radius: 20px; background: #fff; box-shadow: 0 30px 80px rgba(14, 16, 24, 0.35); overflow: hidden; }
+.search[open]::backdrop { animation: search-fade 0.2s ease both; }
+.search[open] .search__box { animation: search-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.search.is-closing::backdrop { animation: search-fade 0.16s ease reverse both; }
+.search.is-closing .search__box { animation: search-out 0.16s ease both; }
+.search input:focus-visible { outline: none; }
+.search__result { position: relative; transition: background-color 0.12s; }
 .search__result[aria-selected='true'] { background: #edeff6; }
+.search__result[aria-selected='true']::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 3px; background: #2433f0; }
+.search__result mark { background: rgba(36, 51, 240, 0.12); color: inherit; border-radius: 3px; padding-inline: 1px; margin-inline: -1px; }
+.search__list--enter .search__result { animation: search-item 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(var(--i) * 28ms); }
+.search__kbd { display: inline-block; min-width: 20px; padding: 1px 6px; border: 1px solid #d3d7e6; border-radius: 6px; background: #f6f7fb; font: inherit; font-size: 11px; line-height: 16px; text-align: center; color: #5a5f73; }
+@keyframes search-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes search-in { from { opacity: 0; transform: translateY(-14px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes search-out { to { opacity: 0; transform: translateY(-8px) scale(0.98); } }
+@keyframes search-item { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .search[open]::backdrop, .search[open] .search__box, .search.is-closing::backdrop, .search.is-closing .search__box, .search__list--enter .search__result { animation: none !important; }
+}
 @media (max-width: 767px) { .search__box { margin-top: 72px; max-height: calc(100% - 88px); } }

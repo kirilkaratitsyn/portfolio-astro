@@ -68,11 +68,7 @@ const structuredData = {
           const pageHref = row.page ? localizePath(locale, `/services/${row.page.slug}`) : undefined;
           return (
             <li class="svc-card group flex flex-col rounded-3xl border border-line bg-white p-6 md:p-8">
-              <div class="flex items-start justify-between gap-4">
-                <img src={`/source/3d/icon-${row.icon}.webp`} alt="" width="360" height="360" loading={index < 2 ? 'eager' : 'lazy'} decoding="async" class="size-[72px] md:size-[88px]" />
-                <span class="font-head text-sm font-bold text-mute">{String(index + 1).padStart(2, '0')}</span>
-              </div>
-              <h2 class="mt-5 font-head text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[30px]">
+              <h2 class="font-head text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[30px]">
                 {pageHref ? <a href={pageHref} class="hover:text-blue">{row.title}</a> : row.title}
               </h2>
               <p class="mt-3 text-base leading-relaxed text-mute md:text-[17px]">{row.description}</p>

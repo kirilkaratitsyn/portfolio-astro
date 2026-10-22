@@ -172,22 +172,68 @@ const pill = 'rounded-full bg-white/95';
   let current: string | null = null;
   let timer: number | undefined;
 
+  const card = mega?.querySelector<HTMLElement>('[data-mega-card]');
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let openTimer: number | undefined;
+
+  // Moving between panels: the card grows or shrinks to the new panel instead of jumping.
+  const resizeCard = (change: () => void) => {
+    if (!card || calm.matches) return change();
+    const from = card.offsetHeight;
+    card.style.transition = 'none';
+    card.style.height = 'auto';
+    change();
+    const to = card.offsetHeight;
+    if (from === to) return;
+    card.style.height = `${from}px`;
+    card.style.overflow = 'hidden';
+    void card.offsetHeight;
+    card.style.transition = 'height 0.28s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.height = `${to}px`;
+    window.setTimeout(() => {
+      card.style.transition = card.style.height = card.style.overflow = '';
+    }, 300);
+  };
+
   const showMega = (id: string | null) => {
     window.clearTimeout(timer);
+    window.clearTimeout(openTimer);
+    const wasOpen = mega?.classList.contains('is-open') ?? false;
+    const previous = current;
     current = id;
+    if (id) {
+      const apply = () => {
+        for (const pane of panes) {
+          const show = pane.dataset.megaPane === id;
+          // A panel that opens from closed replays its entrance.
+          if (show && !wasOpen) pane.hidden = true;
+          pane.hidden = !show;
+        }
+      };
+      if (wasOpen && previous !== id) resizeCard(apply);
+      else apply();
+    }
     mega?.classList.toggle('is-open', Boolean(id));
-    for (const pane of panes) pane.hidden = pane.dataset.megaPane !== id;
+    // The last panel stays in place while the card fades out.
     for (const trigger of triggers) trigger.setAttribute('aria-expanded', String(trigger.dataset.megaTrigger === id));
   };
   const closeSoon = () => {
     window.clearTimeout(timer);
+    window.clearTimeout(openTimer);
     timer = window.setTimeout(() => showMega(null), 180);
   };
 
   if (mega && header) {
     for (const trigger of triggers) {
       const id = trigger.dataset.megaTrigger!;
-      trigger.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && showMega(id));
+      trigger.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        // Passing over the nav on the way elsewhere should not flash a panel: wait a moment unless one is already open.
+        if (mega.classList.contains('is-open')) showMega(id);
+        else openTimer = window.setTimeout(() => showMega(id), 90);
+      });
+      trigger.addEventListener('pointerleave', () => window.clearTimeout(openTimer));
       // Keyboard focus opens the panel; a tap also focuses the link, so only :focus-visible counts here.
       trigger.addEventListener('focus', () => trigger.matches(':focus-visible') && showMega(id));
       trigger.addEventListener('click', (event) => {
