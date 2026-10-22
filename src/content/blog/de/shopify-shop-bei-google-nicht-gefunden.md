@@ -54,7 +54,7 @@ Manche Themes und SEO-Apps haben Einstellungen, die Seiten auf „noindex“ set
 
 ### 6. Ein Umzug ohne Weiterleitungen
 
-Wenn Sie von einem anderen System zu Shopify gewechselt sind und die Adressen sich geändert haben, verliert Google die alten Seiten. Ohne Weiterleitungen sind die Rankings der alten Adressen weg. Wie man das vermeidet, steht in [Von WooCommerce zu Shopify umziehen, ohne Rankings zu verlieren](/de/blog/woocommerce-to-shopify). Bei [Jula Bloom](/de/projects/jula-bloom) wurde die Weiterleitungs-Tabelle geschrieben, solange die alte Seite noch lief.
+Wenn Sie von einem anderen System zu Shopify gewechselt sind und die Adressen sich geändert haben, verliert Google die alten Seiten. Ohne Weiterleitungen sind die Rankings der alten Adressen weg. Wie man das vermeidet, steht in [Von WooCommerce zu Shopify umziehen, ohne Rankings zu verlieren](/de/blog/woocommerce-to-shopify). Bei [Jula Bloom](/de/projects/jula-bloom) wurde die Weiterleitungs-Tabelle geschrieben, solange die alte Seite noch lief. Ist der Umzug schon passiert, zeigt [Shopify-Umzug und SEO: Weiterleitungen einrichten, Rankings schützen](/de/blog/shopify-migration-weiterleitungen), wie Sie die alten Adressen nachträglich rekonstruieren und weiterleiten.
 
 ### 7. Der Shop ist technisch zu langsam oder auf dem Smartphone schwach
 

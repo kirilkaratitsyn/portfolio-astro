@@ -37,7 +37,7 @@ This is how I do it:
 3. Import the spreadsheet as CSV in Shopify: *Content → Menus → URL redirects → Import*.
 4. After go-live, open every important old URL once and check that it lands in the right place.
 
-For Jula Bloom we wrote the redirect map while the WooCommerce site was still running. Old links now lead to their new pages. The rebuild of [Pedchem](/projects/pedchem) shows how to derive redirects from Search Console data, too.
+For Jula Bloom we wrote the redirect map while the WooCommerce site was still running. Old links now lead to their new pages. The rebuild of [Pedchem](/projects/pedchem) shows how to derive redirects from Search Console data, too. Redirects in detail, with Shopify's limits and the checks after launch, are covered in [Moving to Shopify and SEO: Set Up Redirects, Protect Your Rankings](/blog/shopify-migration-weiterleitungen).
 
 ## Theme: rebuild instead of a one-to-one copy
 

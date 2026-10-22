@@ -37,7 +37,7 @@ So gehe ich vor:
 3. Die Tabelle als CSV in Shopify importieren: *Inhalte → Menüs → URL-Weiterleitungen → Importieren*.
 4. Nach dem Go-live jede wichtige alte URL einmal aufrufen und prüfen, ob sie richtig ankommt.
 
-Bei Jula Bloom haben wir die Redirect-Map geschrieben, solange die WooCommerce-Seite noch lief. Alte Links führen heute auf ihre neuen Seiten. Wie man Weiterleitungen aus den Daten der Search Console ableitet, zeigt auch der Umbau von [Pedchem](/de/projects/pedchem).
+Bei Jula Bloom haben wir die Redirect-Map geschrieben, solange die WooCommerce-Seite noch lief. Alte Links führen heute auf ihre neuen Seiten. Wie man Weiterleitungen aus den Daten der Search Console ableitet, zeigt auch der Umbau von [Pedchem](/de/projects/pedchem). Die Weiterleitungen im Detail, mit den Grenzen von Shopify und der Kontrolle nach dem Start, beschreibt [Shopify-Umzug und SEO: Weiterleitungen einrichten, Rankings schützen](/de/blog/shopify-migration-weiterleitungen).
 
 ## Theme: neu aufbauen statt 1:1 kopieren
 

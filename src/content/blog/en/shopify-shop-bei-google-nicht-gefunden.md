@@ -54,7 +54,7 @@ Some themes and SEO apps have settings that put pages on "noindex". The `robots.
 
 ### 6. A move without redirects
 
-If you moved to Shopify from another system and the addresses changed, Google loses the old pages. Without redirects, the rankings of the old addresses are gone. How to avoid this is covered in [Moving from WooCommerce to Shopify without losing rankings](/blog/woocommerce-to-shopify). For [Jula Bloom](/projects/jula-bloom), the redirect table was written while the old site was still running.
+If you moved to Shopify from another system and the addresses changed, Google loses the old pages. Without redirects, the rankings of the old addresses are gone. How to avoid this is covered in [Moving from WooCommerce to Shopify without losing rankings](/blog/woocommerce-to-shopify). For [Jula Bloom](/projects/jula-bloom), the redirect table was written while the old site was still running. If the move has already happened, [Moving to Shopify and SEO: Set Up Redirects, Protect Your Rankings](/blog/shopify-migration-weiterleitungen) shows how to reconstruct the old addresses and redirect them afterwards.
 
 ### 7. The store is technically too slow or weak on mobile
 
