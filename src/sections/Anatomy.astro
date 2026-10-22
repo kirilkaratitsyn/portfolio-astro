@@ -2,8 +2,11 @@
 // How I work: the six steps of a project, from the kick-off call to analytics and launch. On desktop, with motion, the
 // section is a tall wrapper with a sticky stage (scripts/motion.ts anatomy(); no pin): one step at a time, its card
 // large on the right and its words large on the left, a rail of six segments filling as the page scrolls; a segment or
-// the card, clicked, scrolls to that step. Phones, and desktops without motion or scripts, get the plain list of cards.
+// the card, clicked, scrolls to that step. Phones get the same one-slot carousel as the projects (sections/Feature.astro:
+// the words, the card on a coloured panel, arrows and bars, swipe); desktops without motion, and phones without scripts,
+// get the plain list of cards.
 import AnatomyLayer from '../components/AnatomyLayer.astro';
+import Pebble from '../components/Pebble.astro';
 import { useTranslations, type Locale } from '../i18n';
 
 interface Props {
@@ -17,7 +20,7 @@ const layers = t.layers.map((layer, i) => ({ ...layer, kind: kinds[i]!, num: Str
 const total = String(layers.length).padStart(2, '0');
 ---
 
-<section id="anatomy" aria-labelledby="anatomy-title" class="mt-24 md:mt-36">
+<section id="anatomy" aria-labelledby="anatomy-title" class="anat-section mt-24 md:mt-36">
   <div data-anatomy class="anat relative">
     <div class="anat-sticky">
       <div class="anat-grid mx-auto max-w-[1440px] px-5 md:px-10">
@@ -78,6 +81,62 @@ const total = String(layers.length).padStart(2, '0');
     </div>
   </div>
 
+  <!-- Phones: the carousel of the projects (Feature), one step at a time. Shown by the script; until then the list below is. -->
+  <div data-anat-m hidden class="mx-auto mt-10 max-w-[1440px] px-5 md:hidden" style="--feat-accent:#2433f0" aria-roledescription="carousel" aria-label={t.carousel.label}>
+    <div class="feat-grid swipe-zone">
+      <div class="feat-copy min-w-0">
+        <div class="feat-texts">
+          {
+            layers.map((layer, i) => (
+              <div class:list={['feat-text', i === 0 && 'is-on']} data-anat-m-text={i} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${layers.length}`} inert={i === 0 ? undefined : true}>
+                <p class="text-[15px] font-semibold tabular-nums text-mute">
+                  <b class="text-blue">{layer.num}</b> / {total}
+                </p>
+                <h3 class="mt-2 font-head text-[40px] font-bold leading-[0.98] tracking-[-0.03em]">{layer.title}</h3>
+                <p class="mt-4 text-lg leading-relaxed text-mute">{layer.text}</p>
+                <p class="mt-5 flex flex-wrap gap-2">
+                  {layer.tags.map((tag) => (
+                    <span class="rounded-full bg-white px-3.5 py-[7px] text-[14px] font-semibold">{tag}</span>
+                  ))}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="feat-panel relative aspect-[760/540] overflow-hidden rounded-[28px] bg-blue">
+        {
+          layers.map((layer, i) => (
+            <div class:list={['feat-shot', i === 0 && 'is-on']} data-anat-m-shot={i} aria-hidden="true">
+              <div class="absolute inset-[7%]">
+                <AnatomyLayer kind={layer.kind} locale={locale} text={t.cards} />
+              </div>
+            </div>
+          ))
+        }
+        <Pebble name="white" class="absolute -bottom-[6%] -left-[4%] z-[2] w-[20%]" />
+        <Pebble name="black" class="absolute -right-[3%] -top-[5%] z-[2] w-[14%]" />
+      </div>
+
+      <div data-anat-m-controls hidden class="feat-controls is-still">
+        <button type="button" data-anat-m-step="-1" class="feat-arrow" aria-label={t.carousel.prev}>←</button>
+        <ol class="flex items-center gap-2">
+          {
+            layers.map((layer, i) => (
+              <li>
+                <button type="button" data-anat-m-dot={i} class="feat-dot" aria-label={layer.title} aria-current={i === 0 ? 'true' : undefined}>
+                  <span class="feat-bar"><i /></span>
+                </button>
+              </li>
+            ))
+          }
+        </ol>
+        <button type="button" data-anat-m-step="1" class="feat-arrow" aria-label={t.carousel.next}>→</button>
+      </div>
+    </div>
+  </div>
+
   <ol class="anat-list mx-auto mt-10 grid max-w-[1440px] gap-4 px-5 md:px-10">
     {
       layers.map((layer) => (
@@ -100,3 +159,40 @@ const total = String(layers.length).padStart(2, '0');
     }
   </ol>
 </section>
+
+<script>
+  import { swipe } from '../scripts/swipe';
+
+  // The phone carousel: the same moves as the projects slider (sections/Feature.astro) without the autoplay, since these
+  // are words to read. Arrows, bars, a swipe or a drag, and the arrow keys switch the step.
+  const root = document.querySelector<HTMLElement>('[data-anat-m]');
+  const texts = [...(root?.querySelectorAll<HTMLElement>('[data-anat-m-text]') ?? [])];
+  const shots = [...(root?.querySelectorAll<HTMLElement>('[data-anat-m-shot]') ?? [])];
+  const dots = [...(root?.querySelectorAll<HTMLButtonElement>('[data-anat-m-dot]') ?? [])];
+  const controls = root?.querySelector<HTMLElement>('[data-anat-m-controls]');
+  const grid = root?.querySelector<HTMLElement>('.feat-grid');
+  if (root && grid && controls && texts.length > 1) {
+    let active = 0;
+    root.hidden = false;
+    controls.hidden = false;
+    // The plain list gives way to the carousel on phones (CSS: .anat-section.has-slider).
+    root.closest('section')?.classList.add('has-slider');
+
+    const go = (next: number) => {
+      active = (next + texts.length) % texts.length;
+      texts.forEach((el, i) => {
+        el.classList.toggle('is-on', i === active);
+        el.inert = i !== active;
+      });
+      shots.forEach((el, i) => el.classList.toggle('is-on', i === active));
+      dots.forEach((dot, i) => {
+        if (i === active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    };
+    for (const dot of dots) dot.addEventListener('click', () => go(Number(dot.dataset.anatMDot)));
+    for (const b of root.querySelectorAll<HTMLButtonElement>('[data-anat-m-step]')) b.addEventListener('click', () => go(active + Number(b.dataset.anatMStep)));
+    swipe(grid, (dir) => go(active + dir));
+    go(0);
+  }
+</script>

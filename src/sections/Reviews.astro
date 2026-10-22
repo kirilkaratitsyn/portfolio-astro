@@ -10,7 +10,8 @@ const all = useTranslations(locale);
 const t = all.reviews;
 const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
 
-// The quotes are the clients' own words from Upwork, shown in the original English in every language.
+// The quotes are the clients' own words from Upwork, in English. On the German and Ukrainian pages each card shows a
+// translation (i18n reviews.cards) and a button swaps it for the English original (the same card of the English file).
 // Cards alternate cobalt, paper, ink and mist like the project cards; the key phrase of each is marked.
 const tones = [
   { box: 'bg-blue text-white', mark: 'rgba(255,255,255,0.3)', meta: 'text-white/75', link: 'bg-white text-blue hover:bg-ink hover:text-white' },
@@ -26,17 +27,28 @@ const linkOf = (url?: string) =>
     : url.startsWith('/')
       ? { href: localizePath(locale, url), label: `${all.caseStudies.viewCase} →`, external: false }
       : { href: url, label: `${new URL(url).hostname.replace(/^www\./, '')} ↗`, external: true };
+const originals = useTranslations('en').reviews.cards;
+const translated = locale !== 'en';
+// A quote cut around its marked phrase.
+const split = ({ quote, highlight }: { quote: string; highlight: string }) => {
+  const at = quote.indexOf(highlight);
+  return {
+    before: at < 0 ? quote : quote.slice(0, at),
+    marked: at < 0 ? '' : highlight,
+    after: at < 0 ? '' : quote.slice(at + highlight.length),
+  };
+};
 const cards = t.cards.map((card, i) => {
-  const at = card.quote.indexOf(card.highlight);
+  const original = originals[i] ?? card;
   return {
     ...card,
     link: linkOf((card as { url?: string }).url),
-    // A long quote gets a wider card and smaller type so it fits the card's height (global.css .review-card--long).
-    long: card.quote.length > 300,
+    // A long quote gets a wider card and smaller type so it fits the card's height (global.css .review-card--long);
+    // the longer of the translation and the original decides, so both fit.
+    long: Math.max(card.quote.length, original.quote.length) > 240,
     tone: tones[i % tones.length]!,
-    before: at < 0 ? card.quote : card.quote.slice(0, at),
-    marked: at < 0 ? '' : card.highlight,
-    after: at < 0 ? '' : card.quote.slice(at + card.highlight.length),
+    text: split(card),
+    original: translated ? split(original) : null,
   };
 });
 ---
@@ -73,20 +85,34 @@ const cards = t.cards.map((card, i) => {
     >
       {
         cards.map((card) => (
-          <li class:list={['review-card w-[84vw] shrink-0 snap-start sm:w-[440px] md:h-[clamp(400px,calc(100vh_-_400px),540px)]', card.long ? 'review-card--long lg:w-[720px]' : 'lg:w-[500px]']} style={`--hl:${card.tone.mark}`}>
+          <li class:list={['review-card w-[84vw] shrink-0 snap-start sm:w-[440px] md:min-h-[clamp(400px,calc(100vh_-_400px),540px)]', card.long ? 'review-card--long lg:w-[720px]' : 'lg:w-[500px]']} style={`--hl:${card.tone.mark}`}>
             <figure class={`flex h-full flex-col justify-between rounded-[28px] p-7 md:p-10 ${card.tone.box}`}>
               <div>
                 <span class="block font-head text-[72px] font-bold leading-[0.6] opacity-40" aria-hidden="true">“</span>
-                <blockquote lang="en" class="mt-4 font-head text-[18px] font-medium leading-[1.32] tracking-[-0.01em] md:mt-5 md:text-[27px] md:leading-[1.22]">
-                  {card.before}
-                  {card.marked && <mark>{card.marked}</mark>}
-                  {card.after}
+                <blockquote lang={locale} data-quote="text" class="mt-4 font-head text-[18px] font-medium leading-[1.32] tracking-[-0.01em] md:mt-5 md:text-[27px] md:leading-[1.22]">
+                  {card.text.before}
+                  {card.text.marked && <mark>{card.text.marked}</mark>}
+                  {card.text.after}
                 </blockquote>
+                {card.original && (
+                  <blockquote lang="en" hidden data-quote="original" class="mt-4 font-head text-[18px] font-medium leading-[1.32] tracking-[-0.01em] md:mt-5 md:text-[27px] md:leading-[1.22]">
+                    {card.original.before}
+                    {card.original.marked && <mark>{card.original.marked}</mark>}
+                    {card.original.after}
+                  </blockquote>
+                )}
               </div>
               <figcaption class={`mt-10 flex items-end justify-between gap-4 text-sm ${card.tone.meta}`}>
                 <span class="min-w-0">
                   <b class="block text-[15px] tracking-[0.12em]" aria-label={`${card.rating} / 5`}>{'★'.repeat(card.rating)}<span class="opacity-35">{'★'.repeat(5 - card.rating)}</span></b>
                   <span class="mt-2 block text-[15px] font-semibold text-inherit [color:inherit]">{card.context}</span>
+                  {
+                    card.original && (
+                      <button type="button" data-quote-toggle aria-pressed="false" data-label-original={t.showOriginal} data-label-text={t.showTranslation} class="mt-2 text-[14px] font-semibold underline decoration-1 underline-offset-4 opacity-80 hover:opacity-100">
+                        {t.showOriginal}
+                      </button>
+                    )
+                  }
                 </span>
                 {
                   card.link && (
@@ -118,3 +144,20 @@ const cards = t.cards.map((card, i) => {
     {t.originalNote && <p class="mx-auto mt-4 max-w-[1440px] px-5 text-sm text-mute md:px-10">{t.originalNote}</p>}
   </div>
 </section>
+
+<script>
+  // German and Ukrainian cards: the button swaps the translation for the English original and back.
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-quote-toggle]')) {
+    const card = button.closest('.review-card');
+    const text = card?.querySelector<HTMLElement>('[data-quote="text"]');
+    const original = card?.querySelector<HTMLElement>('[data-quote="original"]');
+    if (!text || !original) continue;
+    button.addEventListener('click', () => {
+      const showOriginal = original.hidden;
+      original.hidden = !showOriginal;
+      text.hidden = showOriginal;
+      button.setAttribute('aria-pressed', String(showOriginal));
+      button.textContent = showOriginal ? button.dataset.labelText ?? '' : button.dataset.labelOriginal ?? '';
+    });
+  }
+</script>

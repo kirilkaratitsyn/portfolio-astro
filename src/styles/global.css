@@ -196,7 +196,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 
 /* Featured case studies (sections/Feature.astro): the slides share one grid cell (texts) or the panel (screens), and
    the one .is-on shows. The active bar fills in 6 s; its animationend moves the slider on. */
-.feat-grid { display: grid; gap: 28px; }
+.feat-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
 @media (min-width: 768px) {
   /* Two rows beside the panel: the story ends at the middle line, the controls start under it. */
   .feat-grid { grid-template-columns: 1fr minmax(0, 760px); grid-template-rows: auto auto; column-gap: 40px; row-gap: 0; }
@@ -204,6 +204,14 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .feat-controls { grid-area: 2 / 1 / 3 / 2; align-self: start; margin-top: 40px; }
   .feat-panel { grid-area: 1 / 2 / 3 / 3; align-self: center; }
 }
+/* Swipeable carousels (scripts/swipe.ts): a sideways move is the carousel's, an up-down move still scrolls the page. */
+.swipe-zone { touch-action: pan-y; }
+@media (hover: hover) and (pointer: fine) {
+  .swipe-zone { cursor: grab; }
+  .swipe-zone a, .swipe-zone button { cursor: pointer; }
+}
+.swipe-zone.is-dragging, .swipe-zone.is-dragging * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }
+.swipe-zone img { -webkit-user-drag: none; }
 .feat-texts { display: grid; }
 .feat-text { grid-area: 1 / 1; transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
 .feat-text:not(.is-on) { opacity: 0; transform: translateY(16px); visibility: hidden; transition: opacity 0.35s ease, transform 0.6s ease, visibility 0s 0.4s; }
@@ -346,6 +354,17 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   .anat-list { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; scrollbar-width: none; }
   .anat-list::-webkit-scrollbar { display: none; }
   .anat-list > li { flex: 0 0 86%; scroll-snap-align: start; }
+}
+/* Six steps do not fit the project bars (28px each), so on phones the bars share the width between the arrows. */
+[data-anat-m] .feat-controls { gap: 8px; }
+[data-anat-m] .feat-controls ol { flex: 1; min-width: 0; gap: 2px; }
+[data-anat-m] .feat-controls li { flex: 1 1 0; min-width: 0; }
+[data-anat-m] .feat-controls li:has(.feat-dot[aria-current='true']) { flex-grow: 2; }
+[data-anat-m] .feat-dot { width: 100%; padding: 0 2px; }
+[data-anat-m] .feat-bar, [data-anat-m] .feat-dot[aria-current='true'] .feat-bar { width: 100%; }
+/* With scripts, phones get the carousel (sections/Anatomy.astro, [data-anat-m]) instead of this list. */
+@media (max-width: 767px) {
+  .anat-section.has-slider .anat-list { display: none; }
 }
 .anat-card {
   /* A size container: the drawing inside is measured in cqi, so it scales with the card. */
@@ -701,7 +720,8 @@ html.lenis, html.lenis body { height: auto; }
 html.is-grab, html.is-grab * { cursor: grab !important; }
 html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select: none; -webkit-user-select: none; }
 
-@keyframes marquee { to { transform: translateX(-50%); } }
+/* The band holds 8 identical runs (sections/Marquee.astro): one loop shifts it by one run, 100% / 8. */
+@keyframes marquee { to { transform: translateX(-12.5%); } }
 .marquee-track { animation: marquee 38s linear infinite; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

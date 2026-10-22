@@ -608,7 +608,9 @@
         "url": "https://lineargent.com/"
       }
     ],
-    "badge": "Top Rated on Upwork"
+    "badge": "Top Rated on Upwork",
+    "showOriginal": "Show original",
+    "showTranslation": "Show translation"
   },
   "bio": {
     "title": "Hi, I'm Kiril.",
@@ -814,6 +816,11 @@
         "events": "Events",
         "launch": "Launch"
       }
+    },
+    "carousel": {
+      "label": "How I work, step by step",
+      "prev": "Previous step",
+      "next": "Next step"
     }
   },
   "stack": {

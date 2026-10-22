@@ -1,12 +1,15 @@
 ---
-// Technologies from the case studies. The second copy is hidden from assistive tech and keeps the loop seamless.
+// Technologies from the case studies. The band holds COPIES identical runs (the loop shifts by exactly one run, see
+// .marquee-track in styles/global.css and marquee() in scripts/motion.ts), so even a very wide screen never sees an end or a restart.
+// Only the first run is read by assistive tech.
+const COPIES = 8;
 const tech = ['Shopify', 'Liquid', 'Online Store 2.0', 'JavaScript', 'Klaviyo API', 'Figma to theme'];
 ---
 
 <div data-marquee-wrap class="overflow-hidden bg-blue py-2.5 text-white md:py-3" role="presentation">
   <div data-marquee class="marquee-track flex w-max whitespace-nowrap font-head text-[15px] font-bold leading-none tracking-[-0.01em] md:text-[20px]">
     {
-      [false, true].map((hidden) => (
+      Array.from({ length: COPIES }, (_, n) => n > 0).map((hidden) => (
         <p class="flex shrink-0" aria-hidden={hidden ? 'true' : undefined}>
           {tech.map((item) => (
             <span class="pr-5 md:pr-8">

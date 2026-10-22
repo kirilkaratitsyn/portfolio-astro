@@ -558,57 +558,59 @@
   },
   "reviews": {
     "title": "Was Kunden sagen",
-    "lead": "Eine Auswahl öffentlicher Bewertungen von meinem Upwork-Profil, im Wortlaut der Kunden.",
+    "lead": "Eine Auswahl öffentlicher Bewertungen von meinem Upwork-Profil, aus dem Englischen übersetzt. Das Original steht jeweils dabei.",
     "summary": "26 Bewertungen · 95 % Job Success",
     "openProfile": "Upwork-Profil öffnen",
     "previous": "Vorherige Bewertungen",
     "next": "Nächste Bewertungen",
-    "originalNote": "Bewertungen im englischen Original",
+    "originalNote": "Aus dem Englischen übersetzt. Mit „Original zeigen“ lesen Sie den Wortlaut der Kunden auf Upwork.",
     "cards": [
       {
-        "quote": "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs",
-        "highlight": "helped redesign my entire website from the ground up",
+        "quote": "Kiril ist ein Profi, der mir geholfen hat, meine gesamte Website von Grund auf neu zu gestalten. Ich hatte nur eine vage Vorstellung davon, was ich wollte, und er hat mich durch den ganzen Prozess geführt, da ich mich mit Webdesign nicht gut auskenne. Er hat meine Website modern und stilvoll gemacht, passend für die Kundschaft, die ich ansprechen wollte. Die Zusammenarbeit mit ihm ist unkompliziert, und er war sehr geduldig mit mir. Ich würde gerne weiter mit ihm an meinen Shopify-Themen arbeiten",
+        "highlight": "geholfen hat, meine gesamte Website von Grund auf neu zu gestalten",
         "rating": 5,
         "context": "Komplettes Website-Redesign",
         "url": "https://lumppings.com/"
       },
       {
-        "quote": "During the period we worked together, Kiril clearly developed his communication skills as well. His work was always at a good level and he actively tries to come up with solutions and workarounds for dificult issues.",
-        "highlight": "he actively tries to come up with solutions and workarounds",
+        "quote": "In der Zeit unserer Zusammenarbeit hat Kiril auch seine Kommunikation deutlich weiterentwickelt. Seine Arbeit war stets auf gutem Niveau, und er bemüht sich aktiv um Lösungen und Workarounds für schwierige Probleme.",
+        "highlight": "er bemüht sich aktiv um Lösungen und Workarounds",
         "rating": 5,
         "context": "Menüleiste und weitere Bereiche",
         "url": "https://elanoraskin.com/"
       },
       {
-        "quote": "Kiril is overall a talented freelancer that brings a lot of great skills and qualities to the project. I hired him to take an existing figma design and map it onto a shopify store. He did a good job overall.",
-        "highlight": "a talented freelancer that brings a lot of great skills and qualities to the project",
+        "quote": "Kiril ist insgesamt ein talentierter Freelancer, der viele großartige Fähigkeiten und Eigenschaften in das Projekt einbringt. Ich habe ihn beauftragt, ein bestehendes Figma-Design auf einen Shopify-Shop zu übertragen. Insgesamt hat er gute Arbeit geleistet.",
+        "highlight": "ein talentierter Freelancer, der viele großartige Fähigkeiten und Eigenschaften in das Projekt einbringt",
         "rating": 4,
         "context": "Store-Redesign nach Figma-Design",
         "url": "https://marinepatches.com/"
       },
       {
-        "quote": "Hi Kiril, I appreciate the work you’ve put into this. Thank you for your help in getting the Shopify Store revamp and for your flexibility as the project scope evolved. Best of luck with your other projects!",
-        "highlight": "for your flexibility as the project scope evolved",
+        "quote": "Hallo Kiril, ich weiß die Arbeit zu schätzen, die Sie hineingesteckt haben. Vielen Dank für Ihre Hilfe bei der Überarbeitung des Shopify-Shops und für Ihre Flexibilität, als sich der Projektumfang weiterentwickelt hat. Viel Erfolg bei Ihren anderen Projekten!",
+        "highlight": "für Ihre Flexibilität, als sich der Projektumfang weiterentwickelt hat",
         "rating": 4,
         "context": "Redesign, technische Migration und SEO-Setup",
         "url": "https://whitecanvasearth.com/"
       },
       {
-        "quote": "Thank you, Kiril was helpful in our migration to Shopify 2 with a bunch of manually coded solutions.",
-        "highlight": "a bunch of manually coded solutions",
+        "quote": "Danke, Kiril hat uns bei unserer Migration auf Shopify 2 mit einer ganzen Reihe von manuell programmierten Lösungen geholfen.",
+        "highlight": "einer ganzen Reihe von manuell programmierten Lösungen",
         "rating": 5,
         "context": "Migration auf Online Store 2.0",
         "url": "https://www.m-oceans.com/"
       },
       {
-        "quote": "Kiril is a good professional, he works efficiently and solves the problems delivering accurate job on time and welldone.",
-        "highlight": "solves the problems delivering accurate job on time",
+        "quote": "Kiril ist ein guter Profi, er arbeitet effizient, löst die Probleme und liefert pünktlich genaue, gut gemachte Arbeit ab.",
+        "highlight": "löst die Probleme und liefert pünktlich",
         "rating": 5,
         "context": "Performance-Optimierung, laufend",
         "url": "https://lineargent.com/"
       }
     ],
-    "badge": "Top Rated auf Upwork"
+    "badge": "Top Rated auf Upwork",
+    "showOriginal": "Original zeigen",
+    "showTranslation": "Übersetzung zeigen"
   },
   "bio": {
     "title": "Hi, ich bin Kiril.",
@@ -814,6 +816,11 @@
         "events": "Ereignisse",
         "launch": "Launch"
       }
+    },
+    "carousel": {
+      "label": "So arbeite ich, Schritt für Schritt",
+      "prev": "Vorheriger Schritt",
+      "next": "Nächster Schritt"
     }
   },
   "stack": {

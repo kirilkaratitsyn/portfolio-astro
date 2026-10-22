@@ -387,13 +387,17 @@ function marquee() {
   // Phones keep the plain CSS drift, which runs off the main thread.
   if (!wrap || !track || !fine) return;
   track.style.animation = 'none';
-  const wrapX = gsap.utils.wrap(-50, 0);
-  let position = 0;
+  // 8 identical runs (sections/Marquee.astro): the band loops over one run, 12.5% of its width, and always keeps
+  // a run left of the screen edge and several to the right, so neither end shows even on a very wide screen or while skewed.
+  const run = 100 / 8;
+  const wrapX = gsap.utils.wrap(-2 * run, -run);
+  let position = -run;
   let boost = 0;
   let direction = -1;
   let running = false;
   const skew = gsap.quickSetter(track, 'skewX', 'deg') as (value: number) => void;
   const apply = gsap.quickSetter(track, 'xPercent') as (value: number) => void;
+  apply(position);
 
   ScrollTrigger.create({
     trigger: wrap,

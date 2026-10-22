@@ -3,7 +3,7 @@
 // shows ten different cases. One slot, each laid out as before (the story on the left, the store
 // on a panel in the project's own colour on the right). It moves on by itself every 6 s, shown by the bar under the
 // active name, and holds while the pointer or focus is on it, while it is off screen, and for reduced motion. Arrows
-// and the bars switch by hand. Without scripts the first project is shown. Scroll motion: scripts/motion.ts feature().
+// and the bars switch by hand, and so does a swipe or a mouse drag (scripts/swipe.ts). Without scripts the first project is shown. Scroll motion: scripts/motion.ts feature().
 import Phone from '../components/Phone.astro';
 import Pebble from '../components/Pebble.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
@@ -26,7 +26,7 @@ const slides = caseStudies
 ---
 
 <section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" style={`--feat-accent:${slides[0]?.accent}`} aria-roledescription="carousel" aria-label={t.feature.label}>
-  <div class="feat-grid">
+  <div class="feat-grid swipe-zone">
     <div class="feat-copy min-w-0">
       <div class="feat-texts">
         {
@@ -86,6 +86,8 @@ const slides = caseStudies
 </section>
 
 <script>
+  import { swipe } from '../scripts/swipe';
+
   const root = document.querySelector<HTMLElement>('[data-feature]');
   const texts = [...(root?.querySelectorAll<HTMLElement>('[data-feature-text]') ?? [])];
   const shots = [...(root?.querySelectorAll<HTMLElement>('[data-feature-shot]') ?? [])];
@@ -132,6 +134,9 @@ const slides = caseStudies
       });
     }
     for (const b of root.querySelectorAll<HTMLButtonElement>('[data-feature-step]')) b.addEventListener('click', () => go(active + Number(b.dataset.featureStep)));
+    // A swipe or a mouse drag over the story or the screens moves on too (arrow keys as well).
+    const grid = root.querySelector<HTMLElement>('.feat-grid');
+    if (grid) swipe(grid, (dir) => go(active + dir));
 
     // Hold while someone is looking at it closely, while it is off screen, and while the tab is hidden.
     let hover = false;
