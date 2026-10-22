@@ -72,6 +72,12 @@ const COVERS = {
     de: { h: 'Bei Google|nicht gefunden', chips: ['Indexierung', 'Sitemap', 'Search Console'] },
     uk: { h: 'Немає|в Google', chips: ['Індексація', 'Sitemap', 'Search Console'] },
   },
+  'shopify-shop-optimieren-lassen': {
+    topic: 'speed',
+    en: { h: 'Store|optimization', chips: ['Goal', 'Baseline', 'Access'] },
+    de: { h: 'Shop|optimieren lassen', chips: ['Ziel', 'Messung', 'Zugang'] },
+    uk: { h: 'Оптимізація|магазину', chips: ['Ціль', 'Вимірювання', 'Доступ'] },
+  },
   'shopify-theme-customization': {
     topic: 'redesign',
     en: { h: 'Theme|customization', chips: ['Editor', 'Code'] },

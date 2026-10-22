@@ -56,7 +56,7 @@ Dieselben Fragen gelten für Agenturen. Sie sind kein Misstrauen, sondern ein no
 5. **Was passiert nach dem Go-live?** Und was, wenn mein Ansprechpartner nicht erreichbar ist?
 6. **Arbeiten Sie in einer unveröffentlichten Kopie,** sodass mein Live-Shop weiter verkauft, bis ich freigebe?
 
-Die Antworten sagen mehr als jede Selbstdarstellung auf einer Website.
+Die Antworten sagen mehr als jede Selbstdarstellung auf einer Website. Was speziell bei einem Optimierungsauftrag ins Angebot gehört, steht in [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen).
 
 ## Mischformen sind normal
 

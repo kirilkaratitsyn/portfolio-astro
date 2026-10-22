@@ -56,7 +56,7 @@ The same questions apply to agencies. They are not distrust, they are a normal p
 5. **What happens after go-live?** And what if my contact is unreachable?
 6. **Do you work in an unpublished copy,** so that my live store keeps selling until I approve?
 
-The answers say more than any self-presentation on a website.
+The answers say more than any self-presentation on a website. What belongs in the offer for an optimization job in particular is covered in [Hiring Someone to Optimize Your Shopify Store](/blog/shopify-shop-optimieren-lassen).
 
 ## Mixed setups are normal
 

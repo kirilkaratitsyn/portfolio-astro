@@ -63,7 +63,7 @@ Startseiten wachsen mit jeder Aktion um eine Section. Zwanzig Sections mit Produ
 
 ## Wann ein Entwickler mehr bringt
 
-Wenn die einfachen Schritte erledigt sind und der Shop trotzdem langsam bleibt, steckt die Ursache meist im Code: App-Reste im Theme, Skripte, die alles blockieren, oder ein Theme, das sich nicht mehr sinnvoll aufräumen lässt. Dann ist entweder ein gezieltes Aufräumen oder ein Wechsel auf ein schlankeres Theme der größere Hebel.
+Wenn die einfachen Schritte erledigt sind und der Shop trotzdem langsam bleibt, steckt die Ursache meist im Code: App-Reste im Theme, Skripte, die alles blockieren, oder ein Theme, das sich nicht mehr sinnvoll aufräumen lässt. Dann ist entweder ein gezieltes Aufräumen oder ein Wechsel auf ein schlankeres Theme der größere Hebel. Wie Sie so einen Auftrag vorbereiten, Ausgangswerte festhalten und einem Dienstleister sicher Zugang geben, steht in [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen).
 
 ## Ein Beispiel: Pedchem
 

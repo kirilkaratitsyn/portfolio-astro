@@ -63,7 +63,7 @@ Home pages grow by a section with every campaign. Twenty sections with product c
 
 ## When a developer helps more
 
-If the simple steps are done and the store is still slow, the cause is usually in the code: app leftovers in the theme, scripts that block everything, or a theme that can no longer be cleaned up sensibly. Then either a targeted cleanup or a move to a leaner theme is the bigger lever.
+If the simple steps are done and the store is still slow, the cause is usually in the code: app leftovers in the theme, scripts that block everything, or a theme that can no longer be cleaned up sensibly. Then either a targeted cleanup or a move to a leaner theme is the bigger lever. How to prepare such a job, record baseline values and give a provider access safely is covered in [Hiring Someone to Optimize Your Shopify Store](/blog/shopify-shop-optimieren-lassen).
 
 ## An example: Pedchem
 
