@@ -77,4 +77,6 @@ I handle the [WooCommerce to Shopify migration](/services/woocommerce-to-shopify
 
 Not sure yet whether a move is worth it or good maintenance is enough? [WooCommerce Security and Plugin Updates: Maintain or Switch?](/blog/woocommerce-sicherheit-plugin-updates) helps you decide.
 
+Coming from Wix rather than WooCommerce? See [Moving from Wix to Shopify: the Process, the Snags and What Does Not Come Along](/blog/wix-zu-shopify-umzug).
+
 *Kiril Karatitsyn, Shopify developer in Germany*

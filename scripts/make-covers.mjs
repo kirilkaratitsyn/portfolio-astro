@@ -48,6 +48,12 @@ const COVERS = {
     de: { h: 'Weiterleitungen|nach dem Umzug', chips: ['301', 'SEO', 'CSV'] },
     uk: { h: 'Редиректи|після переїзду', chips: ['301', 'SEO', 'CSV'] },
   },
+  'wix-zu-shopify-umzug': {
+    topic: 'migration',
+    en: { h: 'Wix|→ Shopify', chips: ['Products', 'Domain', 'Redirects'] },
+    de: { h: 'Wix|→ Shopify', chips: ['Produkte', 'Domain', 'Weiterleitungen'] },
+    uk: { h: 'Wix|→ Shopify', chips: ['Товари', 'Домен', 'Редиректи'] },
+  },
   'woocommerce-sicherheit-plugin-updates': {
     topic: 'migration',
     en: { h: 'WooCommerce|security', chips: ['Updates', 'Plugins'] },
