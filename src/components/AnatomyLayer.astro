@@ -299,7 +299,7 @@ const code: [string, string][][] = [
         <div class="flex min-w-0 flex-col gap-[1.2cqi]">
           <!-- The store on a laptop and a phone, side by side (no overlap), both passed. -->
           <div class="relative min-h-0 flex-1 overflow-hidden rounded-[1.4cqi] bg-[#f1f2f7]">
-            <div class="absolute inset-x-[4%] bottom-[13%] top-[7%] flex items-center gap-[5%]">
+            <div class="absolute inset-x-[4%] bottom-[12%] top-[6%] flex items-center gap-[6%]">
               <div class="relative aspect-[16/10] w-full min-w-0 flex-1">
                 <div class="absolute inset-0 flex flex-col overflow-hidden rounded-[0.8cqi] bg-white shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.12)]">
                   <span class="flex items-center gap-[0.5cqi] bg-[#eceff3] px-[1cqi] py-[0.6cqi]">
@@ -313,8 +313,10 @@ const code: [string, string][][] = [
                 <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
               </div>
               <!-- The phone of the projects (Phone.astro), full height: its box is two widths tall. -->
-              <div class="relative aspect-[1/2] h-full shrink-0">
-                <Phone image="/source/mobile/orska-rituals-mobile.webp" domain="orskarituals.com" sizes="120px" class="w-full" />
+              <div class="relative aspect-[1/2] h-[82%] shrink-0">
+                <Phone domain="yourstore.com" class="w-full">
+                  <MiniStore store={store} prices={prices} mobile tall class="absolute inset-0" />
+                </Phone>
                 <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
               </div>
             </div>
