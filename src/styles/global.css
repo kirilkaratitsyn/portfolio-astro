@@ -250,6 +250,13 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 .svc-bar { display: flex; gap: 3px; padding: 4px 6px; background: #f1f2f6; }
 .svc-bar i { width: 4px; height: 4px; border-radius: 99px; background: #cfd2de; }
 .svc-shot img { display: block; width: 100%; height: auto; aspect-ratio: 640 / 444; object-fit: cover; object-position: top; }
+/* Cards on /services: a link row and a strip of real screens of the kind of work. */
+.svc-link { display: inline-flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 600; color: #2433f0; }
+.svc-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.card-shot { display: block; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 8px 20px rgba(14, 16, 24, 0.1); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.card-shot img { display: block; width: 100%; height: auto; aspect-ratio: 480 / 333; object-fit: cover; object-position: top; }
+@media (hover: hover) { .svc-card:hover .card-shot { transform: translateY(-4px); } .svc-card:hover .card-shot:nth-child(2) { transition-delay: 0.05s; } .svc-card:hover .card-shot:nth-child(3) { transition-delay: 0.1s; } }
+@media (prefers-reduced-motion: reduce) { .card-shot { transition: none !important; } }
 .svc.is-ready .svc-row.is-open { background: #fff; }
 .svc.is-ready .svc-row.is-open .svc-num { color: #2433f0; }
 .svc.is-ready .svc-row.is-open .svc-plus { border-color: #0e1018; background: #0e1018; color: #fff; }

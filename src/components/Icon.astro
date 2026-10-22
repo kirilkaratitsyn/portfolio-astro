@@ -1,0 +1,30 @@
+---
+// A small line icon for the interface (menus, search, cards, buttons): 24 px grid, 1.8 stroke, takes the text color.
+// The big rounded 3D icons are Icon3D; these stay flat so they cost nothing to draw. Decorative: no alt text.
+import { ICONS, type IconKey } from '../lib/ui-icons';
+
+interface Props {
+  name: IconKey;
+  /** Size in px (square). */
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 20, class: className } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  width={size}
+  height={size}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+  class={className}
+  set:html={ICONS[name]}
+/>

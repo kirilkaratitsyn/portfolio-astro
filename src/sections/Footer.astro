@@ -32,7 +32,7 @@ const legal =
       {
         services.length > 0 && (
           <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-5 text-[15px]">
-            <span class="font-semibold text-ink">{t.header.services}</span>
+            <a href={localizePath(locale, '/services')} class="font-semibold text-ink hover:text-blue">{t.header.services}</a>
             {[...services, ...localPages].map((service) => (
               <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
                 {service.title}

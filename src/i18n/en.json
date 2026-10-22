@@ -981,5 +981,36 @@
     ],
     "found": "You found the easter egg!",
     "tap": "Tap or press Space to drop a block"
+  },
+  "servicesIndex": {
+    "seoTitle": "Shopify Services: Setup, Migration, Speed, Support",
+    "seoDescription": "Shopify services from Kiril Karatitsyn: store setup, migration from WooCommerce, app integration, speed and SEO, redesign and ongoing support. Free store check, fixed price after a briefing.",
+    "details": "Details",
+    "start": {
+      "title": "How we start",
+      "steps": [
+        {
+          "title": "Free store check",
+          "text": "Send me your store address. I look at what is visible from the outside and send a short list of what I would do first."
+        },
+        {
+          "title": "Short call",
+          "text": "We talk through your goal, your deadline and what has to change."
+        },
+        {
+          "title": "Fixed price after a briefing",
+          "text": "You get the scope and a fixed price in writing. Then the work begins."
+        }
+      ]
+    },
+    "local": {
+      "title": "Looking for a Shopify developer near you?",
+      "text": "I work remotely for stores in Germany and beyond, and meet in person near Bad Bentheim by arrangement."
+    },
+    "cta": {
+      "title": "Not sure which service fits?",
+      "text": "Tell me about your store. The free store check shows what I would do first."
+    },
+    "all": "All services"
   }
 }

@@ -981,5 +981,36 @@
     ],
     "found": "Easter Egg gefunden!",
     "tap": "Tippen oder Leertaste: Block fallen lassen"
+  },
+  "servicesIndex": {
+    "seoTitle": "Shopify-Leistungen: Aufbau, Umzug, Speed, Support",
+    "seoDescription": "Shopify-Leistungen von Kiril Karatitsyn: Shop-Aufbau, Umzug von WooCommerce, App-Anbindung, Speed und SEO, Redesign und laufender Support. Kostenloser Shop-Check, Festpreis nach dem Briefing.",
+    "details": "Details",
+    "start": {
+      "title": "So starten wir",
+      "steps": [
+        {
+          "title": "Kostenloser Shop-Check",
+          "text": "Schicken Sie mir die Adresse Ihres Shops. Ich sehe mir an, was von außen sichtbar ist, und schicke Ihnen eine kurze Liste, was ich zuerst angehen würde."
+        },
+        {
+          "title": "Kurzes Gespräch",
+          "text": "Wir besprechen Ihr Ziel, Ihren Termin und was sich ändern muss."
+        },
+        {
+          "title": "Festpreis nach dem Briefing",
+          "text": "Sie erhalten Umfang und Festpreis schriftlich. Danach beginnt die Arbeit."
+        }
+      ]
+    },
+    "local": {
+      "title": "Sie suchen einen Shopify-Entwickler in Ihrer Nähe?",
+      "text": "Ich arbeite remote für Shops in Deutschland und darüber hinaus und treffe mich nach Absprache persönlich in der Nähe von Bad Bentheim."
+    },
+    "cta": {
+      "title": "Sie wissen nicht, welche Leistung passt?",
+      "text": "Erzählen Sie mir von Ihrem Shop. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
+    },
+    "all": "Alle Leistungen ansehen"
   }
 }

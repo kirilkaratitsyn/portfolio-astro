@@ -4,10 +4,12 @@
 // desktop the row under the pointer (or focus) opens and one is always open; every open panel has the same height, so
 // the page never changes length (Anatomy below is pinned to measured positions). On phones a tap opens or closes a row
 // (scripts/motion.ts measures the scroll triggers again when the page changes length). Without scripts every row is open.
+import Icon from '../components/Icon.astro';
 import Icon3D from '../components/Icon3D.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import { thumb } from '../lib/thumbs';
-import { getServices, type WorkKind, type WorkProject } from '../lib/content';
+import { getServiceRows } from '../lib/services';
+import type { WorkProject } from '../lib/content';
 
 interface Props {
   locale: Locale;
@@ -16,28 +18,7 @@ interface Props {
 
 const { locale, works } = Astro.props;
 const t = useTranslations(locale);
-// One 3D icon and one kind of project per service, in the order of the list.
-const icons = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy'] as const;
-const kinds: WorkKind[] = ['build', 'migration', 'features', 'speed', 'redesign', 'support'];
-
-// Screens: projects of the kind, ones not shown in an earlier row first, so the rows do not repeat each other.
-const servicePages = await getServices(locale);
-const shown = new Set<string>();
-const rows = t.services.items.map((item, index) => {
-  const kind = kinds[index] ?? 'build';
-  const related = works.filter((w) => w.work.includes(kind));
-  const live = related.filter((w) => !w.archived);
-  const shots = [...live.filter((w) => !shown.has(w.id)), ...live.filter((w) => shown.has(w.id))].slice(0, 3);
-  for (const w of shots) shown.add(w.id);
-  return {
-    ...item,
-    icon: icons[index] ?? 'shop',
-    count: related.length,
-    shots,
-    href: `${localizePath(locale, '/projects')}?work=${kind}`,
-    page: servicePages.find((page) => page.kind === kind),
-  };
-});
+const rows = await getServiceRows(locale, t, works);
 ---
 
 <section id="services" data-services class="svc mx-auto mt-24 max-w-[1440px] scroll-mt-24 md:mt-32">
@@ -99,6 +80,12 @@ const rows = t.services.items.map((item, index) => {
       ))
     }
   </ul>
+  <p class="px-5 pt-8 md:px-10 md:pt-10">
+    <a href={localizePath(locale, '/services')} class="svc-link">
+      {t.servicesIndex.all}
+      <Icon name="arrow" size={18} />
+    </a>
+  </p>
 </section>
 <!-- Accordion mode before the section is painted, so the page keeps its length once the scripts run. -->
 <script is:inline>
