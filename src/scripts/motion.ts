@@ -188,6 +188,8 @@ function flyLogo(): boolean {
     fly.style.opacity = started ? String(1 - land) : '0';
     name.style.maxWidth = `${geo.full * Math.min(1, p / 0.9)}px`;
     name.style.opacity = String(land);
+    // The page behind the hero word is light, the header logo is dark: the copy turns white on its way in.
+    fly.style.color = `color-mix(in srgb, #fff ${Math.round(Math.min(1, Math.max(0, (p - 0.6) / 0.35)) * 100)}%, #0E1018)`;
   };
 
   gsap.to(state, {
