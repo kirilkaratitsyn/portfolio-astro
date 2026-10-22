@@ -4,7 +4,7 @@ import CalButton from '../components/CalButton.astro';
 import Icon from '../components/Icon.astro';
 import MegaMenu from '../components/MegaMenu.astro';
 import SearchDialog from '../components/SearchDialog.astro';
-import markWhite from '../assets/brand/mark-white.png';
+import markDisc from '../assets/brand/mark-disc.png';
 import { SWITCHER_LOCALES, localizePath, useTranslations, type Locale } from '../i18n';
 import { getPosts, getWorks } from '../lib/content';
 import { getServiceRows } from '../lib/services';
@@ -41,8 +41,8 @@ const pill = 'rounded-full bg-white/95';
 <header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">
   <div class="relative mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-5 pt-5 md:gap-3 md:px-10 md:pt-6">
     <a href={localizePath(locale, '/')} class="pointer-events-auto flex items-center rounded-full bg-ink py-1.5 pl-2.5 pr-2.5 font-head font-bold text-white">
-      <span data-pebble="logo-white" data-grab class="pebble relative block size-[44px] shrink-0 md:size-[48px]">
-        <Image src={markWhite} alt="" width={64} height={72} class="size-full object-contain" loading="eager" />
+      <span data-pebble="logo-disc" data-grab class="pebble relative block size-[50px] shrink-0 md:size-[54px]">
+        <Image src={markDisc} alt="" width={108} height={108} class="size-full object-contain" loading="eager" />
       </span>
       <!-- On the home page the surname arrives here from the hero while you scroll (see .brand-name in global.css). -->
       <span class="brand-name" data-brand-name><span class="brand-text" data-brand-text>Karatitsyn</span></span>

@@ -258,6 +258,17 @@ export function makeLogo(tone: LogoTone = 'ink', radius = 2.35) {
     const back = new Mesh(solid(coin, 0.1, 0.04, 28), mat('#0e1018', { roughness: 0.8, clearcoat: 0, envMapIntensity: 0.04 }));
     back.position.set(c.x, c.y, box.min.z - 0.07);
     content.add(back);
+    // The same mark on the other face, so the coin reads as the logo from both sides: turned half a round about the
+    // coin's own axis and mirrored through its middle plane.
+    const coinBox = new Box3().setFromObject(back);
+    const zm = (coinBox.min.z + coinBox.max.z) / 2;
+    const flip = new Group();
+    flip.position.set(c.x, c.y, zm);
+    flip.rotation.y = Math.PI;
+    const rear = new Mesh(logoGeometry, material);
+    rear.position.set(-c.x, -c.y, -zm);
+    flip.add(rear);
+    content.add(flip);
   }
   return present(content, 'logo', radius);
 }
