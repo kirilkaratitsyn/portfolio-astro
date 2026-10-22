@@ -296,9 +296,9 @@ const code: [string, string][][] = [
     kind === 'qa' && (
       <div class="grid min-h-0 flex-1 grid-cols-[1.3fr_1fr] gap-[1.6cqi] p-[1.8cqi]">
         <div class="flex min-w-0 flex-col gap-[1.2cqi]">
-          <!-- The store on a laptop and a phone, both passed. -->
+          <!-- The store on a laptop and a phone, side by side (no overlap), both passed. -->
           <div class="relative min-h-0 flex-1 overflow-hidden rounded-[1.4cqi] bg-[#f1f2f7]">
-            <div class="absolute left-[5%] top-[7%] flex h-[78%] w-[72%] flex-col overflow-hidden rounded-[0.8cqi] bg-white shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.12)]">
+            <div class="absolute left-[4%] top-[9%] flex h-[74%] w-[62%] flex-col overflow-hidden rounded-[0.8cqi] bg-white shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.12)]">
               <span class="flex items-center gap-[0.5cqi] bg-[#eceff3] px-[1cqi] py-[0.6cqi]">
                 <i class="size-[0.8cqi] rounded-full bg-[#ff5f57]" />
                 <i class="size-[0.8cqi] rounded-full bg-[#febc2e]" />
@@ -307,16 +307,15 @@ const code: [string, string][][] = [
               </span>
               <MiniStore store={store} prices={prices} class="min-h-0 flex-1" />
             </div>
-            <div class="absolute bottom-[6%] right-[5%] h-[80%] w-[24%] rounded-[1.6cqi] bg-ink p-[0.45cqi] shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.25)]">
-              <div class="relative h-full overflow-hidden rounded-[1.2cqi] bg-white">
-                <MiniStore store={store} prices={prices} mobile class="h-full" />
-                <i class="absolute left-1/2 top-[1.5%] h-[2.4%] w-[30%] -translate-x-1/2 rounded-full bg-ink" />
+            <div class="absolute bottom-[8%] right-[6%] flex h-[80%] w-[22%] flex-col rounded-[1.6cqi] bg-ink p-[0.45cqi] shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.25)]">
+              <div class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[1.2cqi] bg-white">
+                <span class="grid h-[4.5%] shrink-0 place-items-center bg-white"><i class="h-[55%] w-[30%] rounded-full bg-ink" /></span>
+                <MiniStore store={store} prices={prices} mobile class="min-h-0 flex-1" />
               </div>
             </div>
-            {['left-[73%] top-[4%]', 'right-[3%] top-[11%]'].map((at) => (
-              <span class={`absolute ${at} ${okTick} !size-[3cqi]`} set:html={check} />
-            ))}
-            <span class={`absolute bottom-[3%] left-[5%] flex gap-[0.6cqi] ${s.xxs} font-semibold`}>
+            <span class={`absolute left-[62%] top-[4%] ${okTick} !size-[3cqi]`} set:html={check} />
+            <span class={`absolute right-[3%] top-[4%] ${okTick} !size-[3cqi]`} set:html={check} />
+            <span class={`absolute bottom-[3%] left-[4%] flex gap-[0.6cqi] ${s.xxs} font-semibold`}>
               {['iPhone · Safari', 'Android · Chrome'].map((d) => (
                 <span class="rounded-full bg-white px-[1cqi] py-[0.3cqi]">{d}</span>
               ))}
