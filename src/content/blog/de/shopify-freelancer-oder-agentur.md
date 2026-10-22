@@ -80,4 +80,6 @@ Entwicklung und Marketing müssen nicht beim selben Anbieter liegen. Eine gängi
 
 Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zu Ihrem Vorhaben für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen ehrlich, ob das ein Fall für mich ist oder ob eine Agentur besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote. Typische Aufgaben sind das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign) oder der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify).
 
+**Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help)
+
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

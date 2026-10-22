@@ -72,4 +72,6 @@ Und wenn Ihr Shop vor allem langsam ist: Die häufigsten Ursachen dafür stecken
 
 Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze dazu, was Sie stört, für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, was Sie selbst im Editor lösen können und wofür es Code braucht. Wenn Sie es abgeben möchten: Ich passe Themes an oder baue sie im Rahmen eines [Shopify-Redesigns](/de/services/shopify-redesign) neu auf, zum Festpreis nach dem Briefing.
 
+**Weiterlesen:** [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help)
+
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

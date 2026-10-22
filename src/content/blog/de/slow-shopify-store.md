@@ -83,4 +83,6 @@ Wenn die einfachen Schritte erledigt sind und der Shop trotzdem langsam bleibt, 
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir Ladezeit, Apps und Theme an und sage Ihnen, was am meisten bringt, auch wenn Sie es danach selbst umsetzen. Wenn Sie es lieber abgeben: Ich [mache Ihren Shopify-Shop schneller](/de/services/shopify-speed), zum Festpreis nach dem Briefing.
 
+**Weiterlesen:** [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization)
+
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
