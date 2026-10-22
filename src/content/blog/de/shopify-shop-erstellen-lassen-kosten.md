@@ -100,6 +100,6 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 ## Wie viel Shop brauchen Sie?
 
-Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen ehrlich, welcher Umfang für Ihr Ziel sinnvoll ist, und Sie bekommen nach dem Briefing ein Angebot zum Festpreis. Je nach Fall passt der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify) oder das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
+Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen ehrlich, welcher Umfang für Ihr Ziel sinnvoll ist, und Sie bekommen nach dem Briefing ein Angebot zum Festpreis. Je nach Fall passt der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify) oder das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur). Planen Sie mehrere Länder? Dann lesen Sie [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender).
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
