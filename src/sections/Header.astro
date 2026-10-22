@@ -1,9 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import CalButton from '../components/CalButton.astro';
+import Icon from '../components/Icon.astro';
+import MegaMenu from '../components/MegaMenu.astro';
+import SearchDialog from '../components/SearchDialog.astro';
 import markBlack from '../assets/brand/mark-black.png';
 import { SWITCHER_LOCALES, localizePath, useTranslations, type Locale } from '../i18n';
-import { getPosts } from '../lib/content';
+import { getPosts, getWorks } from '../lib/content';
+import { getServiceRows } from '../lib/services';
 
 interface Props {
   locale: Locale;
@@ -18,12 +22,16 @@ const t = useTranslations(locale);
 
 // Blog joins the menu once there are articles.
 const hasPosts = (await getPosts(locale)).length > 0;
+// `mega` names the panel that opens under the link on desktop (components/MegaMenu.astro).
 const links = [
-  { name: t.header.works, to: '/projects' },
-  { name: t.header.services, to: '/services' },
-  ...(hasPosts ? [{ name: t.header.blog, to: '/blog' }] : []),
-  { name: t.faq.title, to: '/#faq' },
+  { name: t.header.works, to: '/projects', mega: 'projects' },
+  { name: t.header.services, to: '/services', mega: 'services' },
+  ...(hasPosts ? [{ name: t.header.blog, to: '/blog', mega: 'blog' }] : []),
+  { name: t.faq.title, to: '/#faq', mega: undefined },
 ].map((link) => ({ ...link, href: localizePath(locale, link.to) }));
+
+// The service names under "Services" in the mobile menu.
+const serviceRows = await getServiceRows(locale, t, await getWorks(locale));
 
 const languages = SWITCHER_LOCALES.map((item) => ({ ...item, href: switchLinks?.[item.locale] ?? localizePath(item.locale, path), current: item.locale === locale }));
 // Solid pills: a backdrop blur is recomputed on every scroll frame over the moving page and the 3D canvases.
@@ -31,7 +39,7 @@ const pill = 'rounded-full bg-white/95';
 ---
 
 <header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">
-  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-5 pt-5 md:gap-3 md:px-10 md:pt-6">
+  <div class="relative mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-5 pt-5 md:gap-3 md:px-10 md:pt-6">
     <a href={localizePath(locale, '/')} class={`pointer-events-auto flex items-center py-2 pl-2.5 pr-2.5 font-head font-bold ${pill}`}>
       <span data-pebble="logo" data-grab class="pebble relative block size-[34px] shrink-0">
         <Image src={markBlack} alt="" width={64} height={72} class="size-full object-contain" loading="eager" />
@@ -41,7 +49,21 @@ const pill = 'rounded-full bg-white/95';
     </a>
 
     <nav class={`pointer-events-auto hidden items-center gap-7 px-7 py-3 text-[15px] font-medium md:flex ${pill}`} aria-label="Main">
-      {links.map((link) => <a href={link.href} class="hover:text-blue">{link.name}</a>)}
+      {
+        links.map((link) =>
+          link.mega ? (
+            <a href={link.href} class="inline-flex items-center gap-1 hover:text-blue" data-mega-trigger={link.mega} aria-haspopup="true" aria-expanded="false">
+              {link.name}
+              <Icon name="chevron-down" size={14} class="text-mute" />
+            </a>
+          ) : (
+            <a href={link.href} class="hover:text-blue">{link.name}</a>
+          ),
+        )
+      }
+      <button type="button" data-search-open class="-mx-1 inline-flex items-center gap-2 rounded-full p-1.5 text-ink hover:bg-bg hover:text-blue" aria-label={t.search.title} title={`${t.header.search} (Ctrl/⌘ K)`}>
+        <Icon name="search" size={18} />
+      </button>
       <span class="flex items-center gap-2 text-[13px] text-mute">
         {
           languages.map((item, index) => (
@@ -61,6 +83,7 @@ const pill = 'rounded-full bg-white/95';
         }
       </span>
     </nav>
+    <MegaMenu locale={locale} />
 
     <div class="pointer-events-auto flex items-center gap-1.5 md:gap-2">
       <CalButton class="whitespace-nowrap rounded-full bg-blue px-3.5 py-3 text-sm font-medium text-white md:px-[22px] md:text-[15px]">
@@ -81,19 +104,37 @@ const pill = 'rounded-full bg-white/95';
   </div>
 </header>
 
+<SearchDialog locale={locale} />
+
 <div id="menu" class="menu fixed inset-0 z-40 overflow-y-auto bg-bg px-5 pb-10 pt-28 md:hidden" data-menu inert>
+  <button type="button" data-search-open class="menu-item mb-4 flex w-full items-center gap-3 rounded-full border border-line bg-white px-5 py-3.5 text-left text-base text-mute" style="--i:0">
+    <Icon name="search" size={20} />
+    {t.search.placeholder}
+  </button>
   <ul class="grid gap-1">
     {
       links.map((link, index) => (
-        <li class="menu-item border-b border-line" style={`--i:${index}`}>
+        <li class="menu-item border-b border-line" style={`--i:${index + 1}`}>
           <a href={link.href} class="block py-4 font-head text-4xl font-bold" data-menu-close>
             {link.name}
           </a>
+          {link.mega === 'services' && (
+            <ul class="-mt-1 flex flex-wrap gap-2 pb-4">
+              {serviceRows.map((row) => (
+                <li>
+                  <a href={row.page ? localizePath(locale, `/services/${row.page.slug}`) : row.href} class="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-1.5 pr-3.5 text-[15px] font-medium" data-menu-close>
+                    <img src={`/source/3d/icon-${row.icon}.webp`} alt="" width="28" height="28" loading="lazy" class="size-7 rounded-full" />
+                    {row.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))
     }
   </ul>
-  <p class="menu-item mt-8 flex items-center gap-4 text-lg" style={`--i:${links.length}`}>
+  <p class="menu-item mt-8 flex items-center gap-4 text-lg" style={`--i:${links.length + 1}`}>
     {
       languages.map((item) => (
         <a href={item.href} hreflang={item.locale} lang={item.locale} aria-current={item.current ? 'true' : undefined} class={item.current ? 'font-bold' : 'text-mute'}>
@@ -102,7 +143,7 @@ const pill = 'rounded-full bg-white/95';
       ))
     }
   </p>
-  <CalButton class="menu-item mt-10 inline-flex rounded-full bg-blue px-7 py-4 text-lg font-semibold text-white" style={`--i:${links.length + 1}`}>
+  <CalButton class="menu-item mt-10 inline-flex rounded-full bg-blue px-7 py-4 text-lg font-semibold text-white" style={`--i:${links.length + 2}`}>
     {t.header.bookCall}
   </CalButton>
 </div>
@@ -122,4 +163,51 @@ const pill = 'rounded-full bg-white/95';
   toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
   document.querySelectorAll('[data-menu-close]').forEach((link) => link.addEventListener('click', () => setOpen(false)));
   document.addEventListener('keydown', (event) => event.key === 'Escape' && setOpen(false));
+
+  // Mega menu: opens on hover or focus, closes a moment after the pointer leaves; on touch the first tap opens it.
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const mega = document.querySelector<HTMLElement>('[data-mega]');
+  const triggers = [...document.querySelectorAll<HTMLAnchorElement>('[data-mega-trigger]')];
+  const panes = [...document.querySelectorAll<HTMLElement>('[data-mega-pane]')];
+  let current: string | null = null;
+  let timer: number | undefined;
+
+  const showMega = (id: string | null) => {
+    window.clearTimeout(timer);
+    current = id;
+    mega?.classList.toggle('is-open', Boolean(id));
+    for (const pane of panes) pane.hidden = pane.dataset.megaPane !== id;
+    for (const trigger of triggers) trigger.setAttribute('aria-expanded', String(trigger.dataset.megaTrigger === id));
+  };
+  const closeSoon = () => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => showMega(null), 180);
+  };
+
+  if (mega && header) {
+    for (const trigger of triggers) {
+      const id = trigger.dataset.megaTrigger!;
+      trigger.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && showMega(id));
+      trigger.addEventListener('focus', () => showMega(id));
+      trigger.addEventListener('click', (event) => {
+        // Touch screens have no hover: the first tap shows the panel, the second one goes to the page.
+        if (window.matchMedia('(hover: none)').matches && current !== id) {
+          event.preventDefault();
+          showMega(id);
+        }
+      });
+    }
+    // Links without a panel (FAQ, search, language) close it.
+    document.querySelectorAll('nav[aria-label="Main"] > a:not([data-mega-trigger])').forEach((link) => link.addEventListener('pointerenter', () => showMega(null)));
+    header.addEventListener('pointerleave', (event) => event.pointerType === 'mouse' && closeSoon());
+    header.addEventListener('pointerenter', () => window.clearTimeout(timer));
+    header.addEventListener('focusout', (event) => {
+      if (!header.contains(event.relatedTarget as Node | null)) showMega(null);
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (current && !header.contains(event.target as Node)) showMega(null);
+    });
+    document.addEventListener('keydown', (event) => event.key === 'Escape' && showMega(null));
+    mega.addEventListener('click', () => showMega(null));
+  }
 </script>

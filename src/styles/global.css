@@ -723,3 +723,20 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .chip:focus-visible { outline: 2px solid #2433f0; outline-offset: 2px; }
 [data-post][hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { .post-card img { transition: none !important; } }
+
+/* Mega menu under the desktop navigation: the outer box has no gap, so the pointer can travel from the nav into the card. */
+.mega { position: absolute; left: 40px; right: 40px; top: 100%; display: none; padding-top: 10px; pointer-events: auto; }
+.mega.is-open { display: block; animation: mega-in 0.22s cubic-bezier(0.16, 1, 0.3, 1); }
+.mega__card { margin-inline: auto; max-width: 1040px; border-radius: 20px; background: #fff; padding: 20px 22px 14px; box-shadow: 0 24px 60px rgba(14, 16, 24, 0.18), 0 0 0 1px rgba(14, 16, 24, 0.04); }
+.mega__title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a5f73; padding-inline: 8px; }
+.mega__foot { margin-top: 12px; border-top: 1px solid #d3d7e6; padding: 12px 8px 0; }
+@keyframes mega-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .mega.is-open { animation: none; } }
+@media (max-width: 767px) { .mega { display: none !important; } }
+
+/* Search dialog */
+.search { margin: 0; padding: 0; border: 0; background: transparent; max-width: none; max-height: none; width: 100%; height: 100%; overflow: hidden; }
+.search::backdrop { background: rgba(14, 16, 24, 0.5); }
+.search__box { margin: 12vh auto 0; width: min(640px, calc(100% - 32px)); max-height: 76vh; display: flex; flex-direction: column; border-radius: 20px; background: #fff; box-shadow: 0 30px 80px rgba(14, 16, 24, 0.35); overflow: hidden; }
+.search__result[aria-selected='true'] { background: #edeff6; }
+@media (max-width: 767px) { .search__box { margin-top: 72px; max-height: calc(100% - 88px); } }

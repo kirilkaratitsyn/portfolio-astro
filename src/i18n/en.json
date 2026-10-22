@@ -517,7 +517,15 @@
     "blog": "Blog",
     "resume": "Resume",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "search": "Search",
+    "allProjects": "All projects",
+    "allServices": "All services",
+    "allArticles": "All articles",
+    "byKind": "By kind of work",
+    "byTopic": "By topic",
+    "selectedProjects": "Selected case studies",
+    "latestArticles": "Latest articles"
   },
   "footer": {
     "blurb": "Shopify development for brands that need custom work, cleaner UX, and dependable support without unnecessary complexity.",
@@ -1027,5 +1035,22 @@
       "text": "Tell me about your store. The free store check shows what I would do first."
     },
     "all": "All services"
+  },
+  "search": {
+    "title": "Search the site",
+    "placeholder": "Search projects, services, articles",
+    "close": "Close search",
+    "hint": "↑ ↓ to choose, Enter to open, Esc to close",
+    "noResults": "Nothing found for “{{query}}”. Try another word.",
+    "suggestions": "Where to start",
+    "loading": "Loading…",
+    "error": "The search could not be loaded. Please try again.",
+    "count": "{{count}} results",
+    "types": {
+      "project": "Case study",
+      "service": "Service",
+      "article": "Article",
+      "page": "Page"
+    }
   }
 }

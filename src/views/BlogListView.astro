@@ -111,5 +111,8 @@ const seo = {
       });
     }
     input.addEventListener('input', apply);
+    // /blog?topic=speed (from the menu) starts with that topic chosen.
+    const wanted = new URLSearchParams(location.search).get('topic');
+    if (wanted) buttons.find((b) => b.dataset.topicBtn === wanted)?.click();
   }
 </script>

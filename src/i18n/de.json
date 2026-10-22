@@ -517,7 +517,15 @@
     "blog": "Blog",
     "resume": "Lebenslauf",
     "menu": "Menü",
-    "close": "Schließen"
+    "close": "Schließen",
+    "search": "Suche",
+    "allProjects": "Alle Projekte",
+    "allServices": "Alle Leistungen",
+    "allArticles": "Alle Artikel",
+    "byKind": "Nach Art der Arbeit",
+    "byTopic": "Nach Thema",
+    "selectedProjects": "Ausgewählte Fallstudien",
+    "latestArticles": "Neueste Artikel"
   },
   "footer": {
     "blurb": "Shopify Entwicklung für Marken, die individuelle Lösungen, saubereren UX und verlässlichen Support ohne unnötige Komplexität brauchen.",
@@ -1027,5 +1035,22 @@
       "text": "Erzählen Sie mir von Ihrem Shop. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
     },
     "all": "Alle Leistungen ansehen"
+  },
+  "search": {
+    "title": "Website durchsuchen",
+    "placeholder": "Projekte, Leistungen, Artikel durchsuchen",
+    "close": "Suche schließen",
+    "hint": "↑ ↓ auswählen, Enter öffnen, Esc schließen",
+    "noResults": "Nichts gefunden für „{{query}}“. Versuchen Sie ein anderes Wort.",
+    "suggestions": "Hier können Sie starten",
+    "loading": "Wird geladen …",
+    "error": "Die Suche konnte nicht geladen werden. Bitte versuchen Sie es erneut.",
+    "count": "{{count}} Treffer",
+    "types": {
+      "project": "Fallstudie",
+      "service": "Leistung",
+      "article": "Artikel",
+      "page": "Seite"
+    }
   }
 }

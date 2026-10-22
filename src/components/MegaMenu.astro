@@ -1,0 +1,128 @@
+---
+// The wide panels under the desktop navigation (Projects, Services, Blog). They open on hover or focus, with a short delay on leaving;
+// on a touch screen the first tap opens the panel and the second follows the link. The behaviour is in the Header script.
+import Icon from './Icon.astro';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { WORK_KINDS, getCaseStudies, getPosts, getWorks } from '../lib/content';
+import { getServiceRows } from '../lib/services';
+import { BLOG_TOPICS, TOPIC_ICONS } from '../lib/blog-topics';
+import { ogThumb, thumb } from '../lib/thumbs';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const to = (path: string) => localizePath(locale, path);
+
+const [works, cases, posts] = await Promise.all([getWorks(locale), getCaseStudies(locale), getPosts(locale)]);
+const rows = await getServiceRows(locale, t, works);
+const featured = cases.filter((c) => !c.archived).slice(0, 3);
+const latest = posts.slice(0, 3);
+const topics = BLOG_TOPICS.filter((topic) => posts.some((post) => post.topic === topic));
+const kinds = WORK_KINDS.filter((kind) => works.some((w) => w.work.includes(kind)));
+const link = 'group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-bg focus-visible:bg-bg';
+const all = 'inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:underline hover:underline-offset-4';
+---
+
+<div class="mega" data-mega>
+  <div class="mega__card" data-mega-card>
+    <div data-mega-pane="projects" hidden>
+      <div class="grid gap-6 md:grid-cols-[1fr_220px]">
+        <div>
+          <p class="mega__title">{t.header.selectedProjects}</p>
+          <ul class="mt-2 grid grid-cols-3 gap-3">
+            {
+              featured.map((c) => (
+                <li>
+                  <a href={to(`/projects/${c.slug}`)} class="group block rounded-xl p-2 transition-colors hover:bg-bg focus-visible:bg-bg">
+                    <span class="block aspect-[480/333] overflow-hidden rounded-lg bg-bg shadow-[0_6px_16px_rgba(14,16,24,0.1)]">
+                      <img src={thumb(c.image, '480')} alt="" width="480" height="333" loading="lazy" decoding="async" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
+                    </span>
+                    <span class="mt-2 block font-head text-[15px] font-bold leading-tight">{c.title}</span>
+                    <span class="mt-0.5 line-clamp-2 block text-[13px] leading-snug text-mute">{c.summary}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <p class="mega__title">{t.header.byKind}</p>
+          <ul class="mt-2 grid gap-0.5">
+            {
+              kinds.map((kind) => (
+                <li>
+                  <a href={`${to('/projects')}?work=${kind}`} class="flex items-center justify-between rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue">
+                    {t.works.filters.kinds[kind]}
+                    <Icon name="arrow" size={16} class="text-mute" />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <p class="mega__foot"><a href={to('/projects')} class={all}>{t.header.allProjects}<Icon name="arrow" size={16} /></a></p>
+    </div>
+
+    <div data-mega-pane="services" hidden>
+      <ul class="grid grid-cols-3 gap-x-2 gap-y-1">
+        {
+          rows.map((row) => (
+            <li>
+              <a href={row.page ? to(`/services/${row.page.slug}`) : row.href} class={link}>
+                <img src={`/source/3d/icon-${row.icon}.webp`} alt="" width="44" height="44" loading="lazy" decoding="async" class="size-11 shrink-0 rounded-xl" />
+                <span class="min-w-0">
+                  <span class="block font-head text-[15px] font-bold leading-tight">{row.title}</span>
+                  <span class="mt-0.5 line-clamp-2 block text-[13px] leading-snug text-mute">{row.description}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mega__foot"><a href={to('/services')} class={all}>{t.header.allServices}<Icon name="arrow" size={16} /></a></p>
+    </div>
+
+    {
+      latest.length > 0 && (
+        <div data-mega-pane="blog" hidden>
+          <div class="grid gap-6 md:grid-cols-[1fr_220px]">
+            <div>
+              <p class="mega__title">{t.header.latestArticles}</p>
+              <ul class="mt-2 grid grid-cols-3 gap-3">
+                {latest.map((post) => (
+                  <li>
+                    <a href={to(`/blog/${post.slug}`)} class="group block rounded-xl p-2 transition-colors hover:bg-bg focus-visible:bg-bg">
+                      <span class="block aspect-[800/420] overflow-hidden rounded-lg bg-bg">
+                        <img src={ogThumb(post.image, '480')} alt="" width="480" height="252" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                      </span>
+                      <span class="mt-2 line-clamp-3 block font-head text-[15px] font-bold leading-tight">{post.title}</span>
+                      <span class="mt-0.5 block text-[13px] text-mute">{post.date}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="mega__title">{t.header.byTopic}</p>
+              <ul class="mt-2 grid gap-0.5">
+                {topics.map((topic) => (
+                  <li>
+                    <a href={`${to('/blog')}?topic=${topic}`} class="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue">
+                      <Icon name={TOPIC_ICONS[topic]} size={16} class="text-mute" />
+                      {t.blog.topics[topic]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p class="mega__foot"><a href={to('/blog')} class={all}>{t.header.allArticles}<Icon name="arrow" size={16} /></a></p>
+        </div>
+      )
+    }
+  </div>
+</div>
