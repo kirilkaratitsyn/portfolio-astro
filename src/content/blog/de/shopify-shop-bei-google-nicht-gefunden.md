@@ -83,4 +83,4 @@ Google bewertet vor allem die Smartphone-Version. Ein sehr langsamer Shop wird s
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir die technischen Gründe an (Passwortschutz, Sitemap, noindex, Weiterleitungen, Ladezeit) und sage Ihnen ehrlich, was sich beheben lässt und was nicht in meiner Hand liegt. Bei einem Shop, der zu langsam ist, passt die [Beschleunigung](/de/services/shopify-speed), bei einem Umzug der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify).
 
-*Kiril Karatitsyn, Shopify-Entwickler in Deutschland*
+*[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -80,4 +80,4 @@ tags:
 
 Надішліть мені адресу магазину й одне-два речення про задум на [безкоштовну перевірку](#contact). Я чесно скажу, чи це справа для мене, чи краще агенція. Я працюю з [Бад-Бентгайма](/uk/services/shopify-bad-bentheim), здебільшого віддалено. Типові завдання це [редизайн зі зміною теми](/uk/services/shopify-redesign) або [перехід з WooCommerce](/uk/services/woocommerce-to-shopify).
 
-*Kiril Karatitsyn, Shopify-розробник у Німеччині*
+*[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

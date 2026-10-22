@@ -24,6 +24,7 @@ export async function getSearchIndex(locale: Locale, t: UI): Promise<SearchItem[
     { k: 'page', t: t.header.works, d: '', g: '', u: to('/projects'), s: 1 },
     { k: 'page', t: t.header.services, d: t.servicesIndex.seoDescription, g: '', u: to('/services'), s: 1 },
     ...(posts.length ? [{ k: 'page' as const, t: t.header.blog, d: t.blog.subtitle, g: '', u: to('/blog'), s: 1 as const }] : []),
+    { k: 'page', t: t.header.about, d: t.aboutPage.seoDescription, g: '', u: to('/about'), s: 1 },
     { k: 'page', t: t.faq.title, d: '', g: '', u: to('/#faq'), s: 1 },
     { k: 'page', t: t.header.contact, d: '', g: '', u: to('/#contact'), s: 1 },
   ];

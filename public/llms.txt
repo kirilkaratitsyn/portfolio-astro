@@ -12,6 +12,7 @@ Important notes:
 ## Primary Pages
 
 - [Home](https://www.karatitsyn.com/): Main overview of services, featured work, experience, and contact options.
+- [About](https://www.karatitsyn.com/about): Who builds the stores: Kiril Karatitsyn, freelance Shopify developer in Bad Bentheim, Germany. Background, working method, languages and profiles.
 - [Projects](https://www.karatitsyn.com/projects): Full project archive and storefront work catalog.
 - [Blog](https://www.karatitsyn.com/blog): Articles about Shopify development, conversion, and launch best practices.
 

@@ -79,4 +79,4 @@ Noch unsicher, ob sich ein Umzug für Sie lohnt oder saubere Pflege reicht? Dabe
 
 Kommen Sie nicht von WooCommerce, sondern von Wix? Dazu gibt es [Von Wix zu Shopify wechseln: Ablauf, Stolperstellen und was nicht mitkommt](/de/blog/wix-zu-shopify-umzug). Kommen Sie von Shopware oder Magento? Dazu gibt es [Von Shopware oder Magento zu Shopify: Was Sie vor dem Umzug klären sollten](/de/blog/shopware-magento-zu-shopify).
 
-*Kiril Karatitsyn, Shopify-Entwickler in Deutschland*
+*[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -67,4 +67,4 @@ It depends on which B2B features you need and what your plan includes. I settle 
 
 I set up [B2B and wholesale in Shopify](/services/shopify-b2b), at a fixed price after the briefing. Request the free store check or book an intro call.
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

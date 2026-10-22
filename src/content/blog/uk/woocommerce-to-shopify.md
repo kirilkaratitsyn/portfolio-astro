@@ -79,4 +79,4 @@ Shopify може прийняти товари, клієнтів, історію
 
 Переходите не з WooCommerce, а з Wix? Дивіться [Перехід з Wix на Shopify: порядок дій, підводні камені і що не переноситься](/uk/blog/wix-zu-shopify-umzug). Переходите з Shopware або Magento? Дивіться [З Shopware або Magento на Shopify: що з'ясувати перед переходом](/uk/blog/shopware-magento-zu-shopify).
 
-*Kiril Karatitsyn, Shopify-розробник у Німеччині*
+*[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

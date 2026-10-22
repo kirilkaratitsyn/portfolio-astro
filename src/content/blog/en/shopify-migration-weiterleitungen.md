@@ -110,4 +110,4 @@ How much comes back cannot be said beforehand, and nobody can guarantee it.
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, for example how old addresses respond and which pages are missing from the Google index. I only work with publicly visible data, without access to your backend and without a security scan. If you come from WooCommerce, I take on the [move to Shopify](/services/woocommerce-to-shopify) with a redirect map and launch support at a fixed price after the briefing. For other systems we clarify in the intro call what is feasible. The reasons for a switch are covered in [WooCommerce Security and Plugin Updates: Maintain or Switch?](/blog/woocommerce-sicherheit-plugin-updates).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

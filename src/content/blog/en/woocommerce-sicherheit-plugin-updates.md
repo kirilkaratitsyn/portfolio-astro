@@ -113,4 +113,4 @@ If you can only answer "don't know" to several of them, that already answers the
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside: which plugins are in use and how fast the pages load. I only work with publicly visible data, without access to your backend and without a security scan. Then I tell you honestly whether maintaining or switching suits you better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remotely, and take on the [move from WooCommerce to Shopify](/services/woocommerce-to-shopify) at a fixed price after the briefing when needed. What to expect beforehand is in [What a Shopify store costs](/blog/shopify-shop-erstellen-lassen-kosten).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

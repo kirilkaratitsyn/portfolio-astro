@@ -67,4 +67,4 @@ tags:
 
 Я налаштовую [B2B та опт у Shopify](/uk/services/shopify-b2b) за фіксованою ціною після брифінгу. Замовте безкоштовну перевірку магазину або забронюйте перший дзвінок.
 
-*Kiril Karatitsyn, Shopify-розробник у Німеччині*
+*[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

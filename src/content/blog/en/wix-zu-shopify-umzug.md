@@ -135,4 +135,4 @@ After the launch, submit the new sitemap (`/sitemap.xml`, which Shopify creates 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, for example how your addresses are built and which pages are in the Google index. I only work with publicly visible data, without access to your account. For moves to Shopify there is the page [WooCommerce to Shopify](/services/woocommerce-to-shopify) with a redirect map and launch support at a fixed price after the briefing. For Wix we clarify in the intro call what is feasible and what the move includes in your case. How I approach a platform move is also shown in [Moving from WooCommerce to Shopify without losing rankings](/blog/woocommerce-to-shopify). Coming from Shopware or Magento? See [From Shopware or Magento to Shopify: What to Settle Before the Move](/blog/shopware-magento-zu-shopify).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

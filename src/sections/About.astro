@@ -3,7 +3,7 @@
 // The photo reveals and drifts on scroll (scripts/motion.ts, about()); without scripts it is just the picture.
 import CalButton from '../components/CalButton.astro';
 import Pebble from '../components/Pebble.astro';
-import { useTranslations, type Locale } from '../i18n';
+import { localizePath, useTranslations, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -33,6 +33,7 @@ const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
       <div data-reveal class="mt-9 flex flex-wrap items-center gap-3">
         <CalButton class="rounded-full bg-ink px-6 py-[15px] font-medium text-white">{t.header.bookCall}</CalButton>
         <a href={PROFILE} target="_blank" rel="noopener noreferrer" class="rounded-full border border-ink/20 px-6 py-[15px] font-medium transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white">{b.upwork} ↗</a>
+        <a href={localizePath(Astro.props.locale, '/about')} class="px-2 py-[15px] font-semibold text-blue hover:underline">{b.more} →</a>
       </div>
     </div>
 

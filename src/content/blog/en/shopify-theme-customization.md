@@ -72,4 +72,4 @@ And if your store is mainly slow: the most common causes sit in the theme too. I
 
 Send me your store's address and a sentence or two on what bothers you for the [free store check](#contact). I tell you what you can solve yourself in the editor and what needs code. If you would rather hand it over: I customize themes or rebuild them as part of a [Shopify redesign](/services/shopify-redesign), at a fixed price after the briefing.
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

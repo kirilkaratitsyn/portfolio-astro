@@ -110,4 +110,4 @@ Wie viel zurückkommt, lässt sich vorher nicht sagen, und niemand kann es garan
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sehe mir an, was von außen sichtbar ist, zum Beispiel wie alte Adressen antworten und welche Seiten im Google-Index fehlen. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Backend und ohne Sicherheitsscan. Kommen Sie von WooCommerce, übernehme ich den [Umzug zu Shopify](/de/services/woocommerce-to-shopify) mit Redirect-Map und Launch-Begleitung zum Festpreis nach dem Briefing. Bei anderen Systemen klären wir im Erstgespräch, was machbar ist. Welche Gründe es für einen Wechsel gibt, steht in [WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln?](/de/blog/woocommerce-sicherheit-plugin-updates).
 
-*Kiril Karatitsyn, Shopify-Entwickler in Deutschland*
+*[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

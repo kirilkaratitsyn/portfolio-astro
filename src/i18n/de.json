@@ -629,7 +629,8 @@
       }
     ],
     "upwork": "Upwork-Profil",
-    "photoAlt": "Kiril Karatitsyn am Meer bei Sonnenuntergang"
+    "photoAlt": "Kiril Karatitsyn am Meer bei Sonnenuntergang",
+    "more": "Mehr über mich"
   },
   "globe": {
     "title": "Kunden in {n} Ländern",
@@ -1051,6 +1052,75 @@
       "service": "Leistung",
       "article": "Artikel",
       "page": "Seite"
+    }
+  },
+  "aboutPage": {
+    "seoTitle": "Über Kiril Karatitsyn: freiberuflicher Shopify-Entwickler in Deutschland",
+    "seoDescription": "Wer Ihren Shopify-Shop baut: Kiril Karatitsyn, freiberuflicher Shopify-Entwickler in Bad Bentheim. Wie ich arbeite, mein Werdegang, Sprachen und wo Sie mich finden.",
+    "title": "Über Kiril Karatitsyn",
+    "lead": "Ich bin freiberuflicher Shopify-Entwickler in Bad Bentheim. Ich arbeite für Marken und Händler in Deutschland und darüber hinaus, meist remote, und treffe mich nach Absprache persönlich in der Nähe von Bad Bentheim.",
+    "facts": [
+      {
+        "label": "Standort",
+        "value": "Bad Bentheim, Deutschland"
+      },
+      {
+        "label": "Sprachen",
+        "value": "Englisch, Deutsch, Ukrainisch"
+      },
+      {
+        "label": "Auf Upwork",
+        "value": "Top Rated, 95% Job Success"
+      }
+    ],
+    "whatTitle": "Was ich mache",
+    "whatText": "Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein, ziehe Shops von WooCommerce und anderen Systemen zu Shopify um und mache langsame Shops schneller. Marken beauftragen mich, wenn sie eine Person wollen, die die ganze Aufgabe verantwortet, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch.",
+    "whatLink": "Alle Leistungen",
+    "howTitle": "So arbeite ich",
+    "how": [
+      {
+        "title": "Zuerst schriftlich",
+        "text": "Vor dem Start erhalten Sie Umfang, Zeitplan und Festpreis schriftlich, damit nichts offenbleibt."
+      },
+      {
+        "title": "Ihr Live-Shop verkauft weiter",
+        "text": "Ich baue in einem Vorschau-Theme. Ihr Live-Shop nimmt während der Arbeit weiter Bestellungen an, und nichts geht online, bevor Sie es gesehen haben."
+      },
+      {
+        "title": "Eine Person, auch nach dem Launch",
+        "text": "Sie sprechen mit der Person, die den Code schreibt. Nach dem Launch bleibe ich für Fixes da, auf Deutsch, Englisch oder Ukrainisch."
+      }
+    ],
+    "backgroundTitle": "Werdegang",
+    "timeline": [
+      {
+        "when": "2026 bis heute",
+        "role": "Frontend-Entwickler, Praktikum",
+        "place": "Funduino GmbH, Nordhorn",
+        "text": "Arbeit an Oberfläche und Shop einer Arduino-Lernplattform, mitten in einem laufenden Unternehmen."
+      },
+      {
+        "when": "2024 bis 2025",
+        "role": "Shopify-Entwickler",
+        "place": "Collab IT und Great Dev, remote",
+        "text": "Shopify-Entwicklung für Kundenprojekte in zwei Remote-Teams."
+      },
+      {
+        "when": "2024 bis heute",
+        "role": "Ausbildung",
+        "place": "KBS Nordhorn",
+        "text": "Kaufmännische Berufsbildende Schulen Nordhorn, neben echten Shopify-Projekten."
+      }
+    ],
+    "workTitle": "Arbeiten zum Ansehen",
+    "workText": "Diese Fallstudien zeigen, wie ein fertiges Projekt aussieht: ein B2B-Shop mit Händlerpreisen, ein Umzug von WooCommerce zu Shopify mit Weiterleitungsplan und eine laufende Zusammenarbeit.",
+    "appTitle": "Meine eigene Shopify-App",
+    "appText": "Neben der Kundenarbeit veröffentliche ich Reviews Core, meine eigene App für Produktbewertungen, im Shopify App Store.",
+    "appLink": "Reviews Core im Shopify App Store",
+    "elsewhereTitle": "Weitere Profile",
+    "cta": {
+      "title": "Passen wir zusammen?",
+      "text": "Schicken Sie mir die Adresse Ihres Shops. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
     }
   }
 }

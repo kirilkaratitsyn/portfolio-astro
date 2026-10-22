@@ -74,4 +74,4 @@ An example: I have supported [Elanora Skin](/projects/elanora-skin), a skincare 
 
 Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign). And if you are still weighing whether a freelancer or an agency fits your plan: [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

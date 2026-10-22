@@ -124,4 +124,4 @@ The Magento guide also advises lowering the DNS TTL 24 to 48 hours before the sw
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, for example how your addresses are built and which pages are in the Google index. I only work with publicly visible data, without access to your account. For moves to Shopify there is the page [WooCommerce to Shopify](/services/woocommerce-to-shopify) with a redirect map and launch support at a fixed price after the briefing. For Shopware and Magento we clarify in the intro call what is feasible and what the move includes in your case. How I approach a platform move is also shown in [Moving from WooCommerce to Shopify without losing rankings](/blog/woocommerce-to-shopify). Coming from Wix? Then read [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

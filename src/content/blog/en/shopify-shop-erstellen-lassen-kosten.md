@@ -102,4 +102,4 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 
 Write to me for the [free store check](#contact) about what you plan: a new store, a move or a rebuild. I tell you honestly which scope makes sense for your goal, and after the briefing you get a fixed-price quote. Depending on the case, the [WooCommerce migration](/services/woocommerce-to-shopify) or the [redesign with a theme change](/services/shopify-redesign) fits. And if you are still weighing whether a freelancer or an agency fits your plan: [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

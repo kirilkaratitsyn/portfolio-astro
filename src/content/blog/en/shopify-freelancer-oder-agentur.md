@@ -80,4 +80,4 @@ I have looked after [Elanora Skin](/projects/elanora-skin), a skincare brand fro
 
 Send me your store's address and a sentence or two about your plan for the [free store check](#contact). I tell you honestly whether it is a case for me or whether an agency fits better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remote. Typical jobs are the [redesign with a theme change](/services/shopify-redesign) or the [move from WooCommerce](/services/woocommerce-to-shopify).
 
-*Kiril Karatitsyn, Shopify developer in Germany*
+*[Kiril Karatitsyn](/about), Shopify developer in Germany*

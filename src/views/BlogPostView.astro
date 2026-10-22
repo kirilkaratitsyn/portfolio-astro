@@ -8,6 +8,7 @@ import PostCard from '../components/PostCard.astro';
 import { getPosts, type BlogPost } from '../lib/content';
 import { TOPIC_ICONS } from '../lib/blog-topics';
 import { ogThumb } from '../lib/thumbs';
+import { PERSON_ID } from '../lib/person';
 
 interface Props {
   locale: Locale;
@@ -34,7 +35,7 @@ const structuredData = {
       image: new URL(post.image, site).toString(),
       datePublished: post.publishedAt.toISOString().slice(0, 10),
       inLanguage: locale,
-      author: { '@id': new URL('/#person', site).toString() },
+      author: { '@type': 'Person', '@id': PERSON_ID, name: 'Kiril Karatitsyn', url: new URL(localizePath(locale, '/about'), site).toString() },
       keywords: post.tags?.join(', '),
     },
     {

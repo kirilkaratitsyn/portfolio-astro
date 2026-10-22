@@ -113,4 +113,4 @@ Wenn Sie bei mehreren Fragen nur „weiß nicht“ antworten können, ist das be
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sehe mir an, was von außen sichtbar ist: welche Plugins im Einsatz sind und wie schnell die Seiten laden. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Backend und ohne Sicherheitsscan. Dann sage ich Ihnen ehrlich, ob Pflegen oder Wechseln für Sie besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote, und übernehme bei Bedarf den [Umzug von WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) zum Festpreis nach dem Briefing. Was Sie dabei im Vorfeld erwartet, steht in [Was ein Shopify-Shop kostet](/de/blog/shopify-shop-erstellen-lassen-kosten).
 
-*Kiril Karatitsyn, Shopify-Entwickler in Deutschland*
+*[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

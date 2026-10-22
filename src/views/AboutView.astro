@@ -1,0 +1,212 @@
+---
+// /about: who is behind the site. The "Who" of Google's helpful-content guidance (articles link their signature here):
+// short bio, how the work runs, background, three case studies, links to the profiles. Facts only from the site's own
+// copy (bio, services, experience) and the public profiles.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalButton from '../components/CalButton.astro';
+import Icon from '../components/Icon.astro';
+import Pebble from '../components/Pebble.astro';
+import Contact from '../sections/Contact.astro';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+import { getCaseStudies } from '../lib/content';
+import { PERSON } from '../lib/person';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const copy = t.aboutPage;
+const FEATURED = ['orska-rituals', 'jula-bloom', 'elanora-skin'];
+const caseStudies = await getCaseStudies(locale);
+const featured = FEATURED.map((slug) => caseStudies.find((c) => c.slug === slug)).filter((c) => c !== undefined);
+
+const PROFILES = [
+  { name: 'Upwork', href: 'https://www.upwork.com/freelancers/~0165dda3529105e6f3' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/' },
+  { name: 'GitHub', href: 'https://github.com/kirilkaratitsyn' },
+];
+
+const site = Astro.site!;
+const pageUrl = new URL(localizePath(locale, '/about'), site).toString();
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': `${pageUrl}#page`,
+      url: pageUrl,
+      name: copy.title,
+      description: copy.seoDescription,
+      inLanguage: locale,
+      isPartOf: { '@id': new URL('/#website', site).toString() },
+      mainEntity: { ...PERSON, description: copy.lead, address: { '@type': 'PostalAddress', addressLocality: 'Bad Bentheim', addressRegion: 'Niedersachsen', addressCountry: 'DE' } },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Kiril Karatitsyn', item: new URL(localizePath(locale, '/'), site).toString() },
+        { '@type': 'ListItem', position: 2, name: t.header.about, item: pageUrl },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout title={copy.seoTitle} description={copy.seoDescription} path="/about" locale={locale} structuredData={structuredData}>
+  <section class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44" aria-labelledby="about-page-title">
+    <div class="grid items-center gap-14 md:grid-cols-12 md:gap-8">
+      <div class="md:col-span-7">
+        <h1 id="about-page-title" class="intro-lift font-head text-[clamp(38px,10vw,52px)] font-bold leading-[0.98] tracking-[-0.03em] md:text-[84px]">{copy.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed md:mt-8 md:text-xl">{copy.lead}</p>
+        <dl class="mt-9 grid max-w-[720px] gap-px overflow-hidden rounded-2xl bg-line sm:grid-cols-3">
+          {
+            copy.facts.map((fact) => (
+              <div class="bg-bg px-5 py-4">
+                <dt class="text-[13px] text-mute">{fact.label}</dt>
+                <dd class="mt-1 font-head text-[17px] font-bold leading-snug">{fact.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <CalButton class="inline-flex rounded-full bg-blue px-7 py-[15px] text-[16px] font-semibold text-white">{t.header.bookCall}</CalButton>
+          <a href="#contact" class="text-[16px] font-semibold text-blue hover:underline">{t.contact.shopCheck.title} →</a>
+        </div>
+      </div>
+
+      <div class="relative md:col-span-4 md:col-start-9">
+        <div aria-hidden="true" class="absolute inset-0 translate-x-3 translate-y-3 -rotate-3 rounded-[32px] bg-blue md:translate-x-4 md:translate-y-4"></div>
+        <figure class="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#dfe2f0] shadow-[0_30px_60px_rgba(8,12,90,0.18)]">
+          <img
+            src="/source/profile/kiril-1000.webp"
+            srcset="/source/profile/kiril-640.webp 640w, /source/profile/kiril-1000.webp 1000w"
+            sizes="(min-width: 768px) 420px, 90vw"
+            width="1000"
+            height="1250"
+            alt={t.bio.photoAlt}
+            fetchpriority="high"
+            decoding="async"
+            class="block h-full w-full object-cover"
+          />
+        </figure>
+        <Pebble name="white" class="absolute -bottom-6 -left-5 z-[2] w-[24%] md:-left-9 md:w-[22%]" />
+        <Pebble name="black" class="absolute -right-3 -top-6 z-[2] w-[15%] md:-right-5 md:w-[13%]" />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="what-title">
+    <div class="grid gap-6 md:grid-cols-12 md:gap-8">
+      <h2 id="what-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:col-span-5 md:text-[56px] md:leading-[1.02]">{copy.whatTitle}</h2>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="text-lg leading-relaxed md:text-xl">{copy.whatText}</p>
+        <a href={localizePath(locale, '/services')} class="svc-link mt-6">
+          {copy.whatLink}
+          <Icon name="arrow" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="how-title">
+    <h2 id="how-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.howTitle}</h2>
+    <ol class="mt-8 grid border-t border-line md:mt-10 md:grid-cols-3">
+      {
+        copy.how.map((step, index) => (
+          <li class="border-b border-line py-7 md:border-b-0 md:py-8 md:pr-8 [&:not(:first-child)]:md:border-l [&:not(:first-child)]:md:pl-8">
+            <span class="font-head text-xl font-bold text-blue">{String(index + 1).padStart(2, '0')}</span>
+            <h3 class="mt-3 font-head text-2xl font-bold leading-tight">{step.title}</h3>
+            <p class="mt-2 text-lg leading-relaxed text-mute">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="background-title">
+    <h2 id="background-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.backgroundTitle}</h2>
+    <ul class="mt-8 border-t border-line md:mt-10">
+      {
+        copy.timeline.map((item) => (
+          <li class="grid gap-2 border-b border-line py-6 md:grid-cols-12 md:gap-8 md:py-8">
+            <p class="font-head text-lg font-bold text-blue md:col-span-3 md:text-xl">{item.when}</p>
+            <div class="md:col-span-4">
+              <h3 class="font-head text-2xl font-bold leading-tight">{item.role}</h3>
+              <p class="mt-1 text-base text-mute">{item.place}</p>
+            </div>
+            <p class="text-lg leading-relaxed md:col-span-5">{item.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    featured.length > 0 && (
+      <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="work-title">
+        <h2 id="work-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.workTitle}</h2>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-mute md:text-xl">{copy.workText}</p>
+        <ul class="mt-8 grid gap-5 md:mt-10 md:grid-cols-3 md:gap-6">
+          {featured.map((c) => (
+            <li>
+              <a href={localizePath(locale, `/projects/${c.slug}`)} class="group flex h-full flex-col rounded-3xl border border-line bg-white p-6 transition-colors hover:border-ink md:p-8">
+                <span class="font-head text-[24px] font-bold leading-tight group-hover:text-blue md:text-[26px]">{c.title}</span>
+                <span class="mt-3 block text-base leading-relaxed text-mute">{c.summary}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href={localizePath(locale, '/projects')} class="svc-link mt-8">
+          {t.header.allProjects}
+          <Icon name="arrow" size={18} />
+        </a>
+      </section>
+    )
+  }
+
+  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="app-title">
+    <div class="grid gap-6 md:grid-cols-12 md:gap-8">
+      <h2 id="app-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:col-span-5 md:text-[48px] md:leading-[1.05]">{copy.appTitle}</h2>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="text-lg leading-relaxed md:text-xl">{copy.appText}</p>
+        <a href="https://apps.shopify.com/reviews-core" target="_blank" rel="noopener noreferrer" class="svc-link mt-6">
+          {copy.appLink}
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="elsewhere-title">
+    <h2 id="elsewhere-title" class="font-head text-[28px] font-bold tracking-[-0.02em] md:text-[40px]">{copy.elsewhereTitle}</h2>
+    <ul class="mt-6 flex flex-wrap gap-3">
+      {
+        PROFILES.map((profile) => (
+          <li>
+            <a href={profile.href} target="_blank" rel="noopener noreferrer me" class="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-[13px] font-medium transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white">
+              {profile.name}
+              <Icon name="arrow-up-right" size={16} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-[1440px] px-5 md:mt-24 md:px-10">
+    <div class="rounded-3xl bg-ink px-6 py-10 text-white md:flex md:items-center md:justify-between md:gap-10 md:px-12 md:py-14">
+      <div class="max-w-2xl">
+        <h2 class="font-head text-[30px] font-bold leading-tight tracking-[-0.02em] md:text-[44px]">{copy.cta.title}</h2>
+        <p class="mt-3 text-lg leading-relaxed text-white/75">{copy.cta.text}</p>
+      </div>
+      <a href="#contact" class="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-7 py-[15px] text-[16px] font-semibold text-ink md:mt-0 md:shrink-0">
+        {t.contact.shopCheck.title}
+        <Icon name="arrow" size={18} />
+      </a>
+    </div>
+  </section>
+
+  <Contact locale={locale} />
+</BaseLayout>

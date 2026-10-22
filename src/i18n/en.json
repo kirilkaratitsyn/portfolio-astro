@@ -629,7 +629,8 @@
       }
     ],
     "upwork": "Upwork profile",
-    "photoAlt": "Kiril Karatitsyn at the sea at sunset"
+    "photoAlt": "Kiril Karatitsyn at the sea at sunset",
+    "more": "More about me"
   },
   "globe": {
     "title": "Clients in {n} countries",
@@ -1051,6 +1052,75 @@
       "service": "Service",
       "article": "Article",
       "page": "Page"
+    }
+  },
+  "aboutPage": {
+    "seoTitle": "About Kiril Karatitsyn: Freelance Shopify Developer in Germany",
+    "seoDescription": "Who builds your Shopify store: Kiril Karatitsyn, freelance Shopify developer in Bad Bentheim, Germany. How I work, my background, languages and where to find me.",
+    "title": "About Kiril Karatitsyn",
+    "lead": "I am a freelance Shopify developer based in Bad Bentheim, Germany. I work for brands and merchants in Germany and beyond, mostly remote, and meet in person near Bad Bentheim by arrangement.",
+    "facts": [
+      {
+        "label": "Based in",
+        "value": "Bad Bentheim, Germany"
+      },
+      {
+        "label": "Languages",
+        "value": "English, German, Ukrainian"
+      },
+      {
+        "label": "On Upwork",
+        "value": "Top Rated, 95% Job Success"
+      }
+    ],
+    "whatTitle": "What I do",
+    "whatText": "I build custom Shopify themes, set up Markets for new countries, move stores to Shopify from WooCommerce and other systems, and make slow stores faster. Brands hire me when they want one person who owns the whole task, from the first look at the store to the fixes after launch.",
+    "whatLink": "All services",
+    "howTitle": "How I work",
+    "how": [
+      {
+        "title": "In writing first",
+        "text": "Before we start you get the scope, the timeline and a fixed price in writing, so nothing is left to guess."
+      },
+      {
+        "title": "Your live store keeps selling",
+        "text": "I build on a preview theme. Your live store keeps taking orders while we work, and nothing goes live before you have seen it."
+      },
+      {
+        "title": "One person, also after launch",
+        "text": "You talk to the person who writes the code. After launch I stay on for fixes, in German, English or Ukrainian."
+      }
+    ],
+    "backgroundTitle": "Background",
+    "timeline": [
+      {
+        "when": "2026 to today",
+        "role": "Frontend Developer, internship",
+        "place": "Funduino GmbH, Nordhorn",
+        "text": "Interface and storefront work at an Arduino learning platform, inside a live company."
+      },
+      {
+        "when": "2024 to 2025",
+        "role": "Shopify Developer",
+        "place": "Collab IT and Great Dev, remote",
+        "text": "Shopify development for client projects in two remote teams."
+      },
+      {
+        "when": "2024 to today",
+        "role": "Studies",
+        "place": "KBS Nordhorn",
+        "text": "Kaufmännische Berufsbildende Schulen Nordhorn, alongside real Shopify projects."
+      }
+    ],
+    "workTitle": "Work you can look at",
+    "workText": "These case studies show what a finished project looks like: a B2B store with wholesale prices, a move from WooCommerce to Shopify with a redirect map, and an ongoing partnership.",
+    "appTitle": "My own Shopify app",
+    "appText": "Besides client work I publish Reviews Core, my own product reviews app, in the Shopify App Store.",
+    "appLink": "Reviews Core in the Shopify App Store",
+    "elsewhereTitle": "Elsewhere",
+    "cta": {
+      "title": "Want to know if we fit?",
+      "text": "Send me your store address. The free store check shows what I would do first."
     }
   }
 }

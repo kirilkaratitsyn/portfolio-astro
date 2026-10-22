@@ -17,6 +17,7 @@ import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
 import { DEFAULT_LOCALE, useTranslations, type Locale } from '../i18n';
 import { getCaseStudies, getWorks } from '../lib/content';
+import { PERSON, PERSON_ID, SITE_URL } from '../lib/person';
 
 interface Props {
   locale: Locale;
@@ -32,31 +33,12 @@ const seo = {
   description: t.hero.seoDescription,
 };
 
-const SITE_URL = 'https://www.karatitsyn.com/';
-const PERSON_ID = `${SITE_URL}#person`;
-
 // Person + website + the services from the Services section. No rating or review data
 // until there are real published client reviews.
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Person',
-      '@id': PERSON_ID,
-      name: 'Kiril Karatitsyn',
-      url: SITE_URL,
-      image: `${SITE_URL}source/profile/kiril-1000.webp`,
-      jobTitle: 'Shopify Developer',
-      address: { '@type': 'PostalAddress', addressCountry: 'DE' },
-      knowsLanguage: ['de', 'en', 'uk'],
-      worksFor: { '@type': 'Organization', name: 'Independent' },
-      sameAs: [
-        'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
-        'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
-        'https://github.com/kirilkaratitsyn',
-      ],
-      knowsAbout: ['Shopify', 'Shopify theme development', 'Shopify Markets', 'B2B wholesale on Shopify', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
-    },
+    PERSON,
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}#website`,
