@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import markWhite from '../assets/brand/mark-white.png';
+import markDisc from '../assets/brand/mark-disc.png';
 import CalButton from '../components/CalButton.astro';
 import Pebble from '../components/Pebble.astro';
 import { useTranslations, type Locale } from '../i18n';
@@ -58,12 +58,11 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
         <p data-form-failed hidden>{f.failed}</p>
       </form>
     </div>
-    <!-- The logo in white, as a live 3D object: drag it to turn it on any axis. On phones it sits above the heading. -->
-    <div class="absolute right-3 top-3 z-[1] grid size-[116px] place-items-center rounded-full bg-ink md:right-[calc(15%-15px)] md:top-1 md:size-[340px] min-[1028px]:right-[5%] min-[1028px]:top-6 min-[1028px]:size-[150px]">
-      <span data-pebble="logo-white" data-grab class="pebble relative block size-[90%]">
-        <Image src={markWhite} alt="" width={310} height={351} class="size-full object-contain" loading="lazy" />
-      </span>
-    </div>
+    <!-- The logo in white on a black disc, one live 3D object: the disc turns with the mark, drag it to turn it on any axis.
+         On phones it sits above the heading. -->
+    <span data-pebble="logo-disc" data-grab class="pebble absolute right-3 top-3 z-[1] block size-[116px] md:right-[calc(15%-15px)] md:top-1 md:size-[340px] min-[1028px]:right-[5%] min-[1028px]:top-6 min-[1028px]:size-[150px]">
+      <Image src={markDisc} alt="" width={600} height={600} class="size-full object-contain" loading="lazy" />
+    </span>
     <!-- Two blocks of the hero cube drop in (scripts/motion.ts). From 768px they land as a small pile in the corner, the
          black one on the white one; on phones the black one stays up by the logo, clear of the form. -->
     <Pebble name="white" class="pointer-events-none absolute -bottom-9 -right-7 w-[104px] md:-bottom-[70px] md:-right-10 md:w-[270px]" />

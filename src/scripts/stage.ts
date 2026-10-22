@@ -119,7 +119,7 @@ function makeObject(name: string): { object: Object3D; rest: Quaternion } {
     return { object, rest: object.userData.rest as Quaternion };
   }
   if (name.startsWith('logo')) {
-    const object = makeLogo(name === 'logo-white' ? 'white' : 'ink');
+    const object = makeLogo(name === 'logo-disc' ? 'disc' : name === 'logo-white' ? 'white' : 'ink');
     return { object, rest: object.userData.rest as Quaternion };
   }
   if (isIcon(name)) {

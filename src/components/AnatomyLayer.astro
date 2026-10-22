@@ -298,23 +298,30 @@ const code: [string, string][][] = [
         <div class="flex min-w-0 flex-col gap-[1.2cqi]">
           <!-- The store on a laptop and a phone, side by side (no overlap), both passed. -->
           <div class="relative min-h-0 flex-1 overflow-hidden rounded-[1.4cqi] bg-[#f1f2f7]">
-            <div class="absolute left-[4%] top-[9%] flex h-[74%] w-[62%] flex-col overflow-hidden rounded-[0.8cqi] bg-white shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.12)]">
-              <span class="flex items-center gap-[0.5cqi] bg-[#eceff3] px-[1cqi] py-[0.6cqi]">
-                <i class="size-[0.8cqi] rounded-full bg-[#ff5f57]" />
-                <i class="size-[0.8cqi] rounded-full bg-[#febc2e]" />
-                <i class="size-[0.8cqi] rounded-full bg-[#28c840]" />
-                <span class={`ml-[1cqi] rounded-full bg-white px-[1.2cqi] py-[0.2cqi] ${s.xxs} text-mute`}>Safari · macOS</span>
-              </span>
-              <MiniStore store={store} prices={prices} class="min-h-0 flex-1" />
-            </div>
-            <div class="absolute bottom-[8%] right-[6%] flex h-[80%] w-[22%] flex-col rounded-[1.6cqi] bg-ink p-[0.45cqi] shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.25)]">
-              <div class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[1.2cqi] bg-white">
-                <span class="grid h-[4.5%] shrink-0 place-items-center bg-white"><i class="h-[55%] w-[30%] rounded-full bg-ink" /></span>
-                <MiniStore store={store} prices={prices} mobile class="min-h-0 flex-1" />
+            <div class="absolute inset-x-[4%] bottom-[13%] top-[7%] flex items-center gap-[5%]">
+              <div class="relative aspect-[16/10] w-full min-w-0 flex-1">
+                <div class="absolute inset-0 flex flex-col overflow-hidden rounded-[0.8cqi] bg-white shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.12)]">
+                  <span class="flex items-center gap-[0.5cqi] bg-[#eceff3] px-[1cqi] py-[0.6cqi]">
+                    <i class="size-[0.8cqi] rounded-full bg-[#ff5f57]" />
+                    <i class="size-[0.8cqi] rounded-full bg-[#febc2e]" />
+                    <i class="size-[0.8cqi] rounded-full bg-[#28c840]" />
+                    <span class={`ml-[1cqi] rounded-full bg-white px-[1.2cqi] py-[0.2cqi] ${s.xxs} text-mute`}>Safari · macOS</span>
+                  </span>
+                  <MiniStore store={store} prices={prices} class="min-h-0 flex-1" />
+                </div>
+                <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
+              </div>
+              <!-- An iPhone's real proportions (9 : 19.5), full height. -->
+              <div class="relative aspect-[9/19.5] h-full shrink-0">
+                <div class="absolute inset-0 flex flex-col rounded-[1.8cqi] bg-ink p-[0.45cqi] shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.25)]">
+                  <div class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[1.4cqi] bg-white">
+                    <span class="grid h-[4%] shrink-0 place-items-center bg-white"><i class="h-[60%] w-[30%] rounded-full bg-ink" /></span>
+                    <MiniStore store={store} prices={prices} mobile tall class="min-h-0 flex-1" />
+                  </div>
+                </div>
+                <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
               </div>
             </div>
-            <span class={`absolute left-[62%] top-[4%] ${okTick} !size-[3cqi]`} set:html={check} />
-            <span class={`absolute right-[3%] top-[4%] ${okTick} !size-[3cqi]`} set:html={check} />
             <span class={`absolute bottom-[3%] left-[4%] flex gap-[0.6cqi] ${s.xxs} font-semibold`}>
               {['iPhone · Safari', 'Android · Chrome'].map((d) => (
                 <span class="rounded-full bg-white px-[1cqi] py-[0.3cqi]">{d}</span>

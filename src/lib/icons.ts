@@ -12,7 +12,7 @@ import markData from './mark-paths.json';
 export const ICON_NAMES = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy', 'chat', 'tag', 'layers', 'rocket'] as const;
 export type IconName = (typeof ICON_NAMES)[number];
 export type ObjectName = IconName | 'logo';
-export type LogoTone = 'ink' | 'white';
+export type LogoTone = 'ink' | 'white' | 'disc';
 
 const COBALT = '#2433f0';
 const WHITE = '#f4f5f9';
@@ -244,10 +244,21 @@ export function makeLogo(tone: LogoTone = 'ink', radius = 2.35) {
   }
   const content = new Group();
   const material =
-    tone === 'white'
-      ? mat(WHITE, { roughness: 0.28, clearcoat: 0.8, envMapIntensity: 0.9 })
-      : mat('#07080c', { roughness: 0.62, clearcoat: 0, envMapIntensity: 0.16 });
+    tone === 'ink'
+      ? mat('#07080c', { roughness: 0.62, clearcoat: 0, envMapIntensity: 0.16 })
+      : mat(WHITE, { roughness: 0.28, clearcoat: 0.8, envMapIntensity: 0.9 });
   content.add(new Mesh(logoGeometry, material));
+  if (tone === 'disc') {
+    // The white mark on a black coin, one object: the coin sits right behind the plate, centred on the mark, and the mark
+    // fills about nine tenths of its height, so the two appear, turn and are thrown together.
+    logoGeometry.computeBoundingBox();
+    const box = logoGeometry.boundingBox!;
+    const c = box.getCenter(new Vector3());
+    const coin = new Shape().absarc(0, 0, (box.max.y - box.min.y) / 2 / 0.9, 0, Math.PI * 2, false);
+    const back = new Mesh(solid(coin, 0.1, 0.04, 28), mat('#0e1018', { roughness: 0.6, clearcoat: 0.1, envMapIntensity: 0.12 }));
+    back.position.set(c.x, c.y, box.min.z - 0.07);
+    content.add(back);
+  }
   return present(content, 'logo', radius);
 }
 
