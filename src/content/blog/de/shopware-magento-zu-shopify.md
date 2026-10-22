@@ -25,7 +25,7 @@ Ein Umzug kostet Zeit und birgt SEO-Risiken. Diese Fragen helfen bei der Entsche
 - **Wer betreibt und pflegt Ihren Shop heute?** Wenn Updates, Hosting und Erweiterungen bei Ihnen oder einer Agentur liegen, gehört das in die Rechnung.
 - **Wie viel Umsatz hängt an Ihren Google-Platzierungen?** Je mehr, desto sorgfältiger muss der Umzug geplant werden.
 
-Bei Shopware 5 kommt ein weiterer Punkt dazu. Nach Angaben von Shopware auf der Migrationsseite gibt es dort bis Ende Juli 2024 nur noch Sicherheitsupdates. Derselbe Anbieter schreibt, der Wechsel von Shopware 5 auf Shopware 6 sei keine einfache Aktualisierung mit wenigen Klicks. Ein Neuaufbau steht also in beiden Fällen an, und die Frage lautet: Shopware 6 oder ein anderes System. Das ist eine echte Entscheidung, die Sie mit Zahlen und Anforderungen treffen sollten, nicht aus Gewohnheit.
+Bei Shopware 5 kommt ein weiterer Punkt dazu. Laut Shopware auf der Migrationsseite wurde Shopware 5 bis Ende Juli 2024 unterstützt, in der letzten Phase nur noch mit Sicherheitsupdates. Derselbe Anbieter schreibt, der Wechsel von Shopware 5 auf Shopware 6 sei keine einfache Aktualisierung mit wenigen Klicks. Ein Neuaufbau steht also in beiden Fällen an, und die Frage lautet: Shopware 6 oder ein anderes System. Das ist eine echte Entscheidung, die Sie mit Zahlen und Anforderungen treffen sollten, nicht aus Gewohnheit.
 
 ## Was lässt sich übernehmen, was nicht?
 
@@ -55,13 +55,13 @@ Bewahren Sie diese Liste auf. Sie ist später die Grundlage für die Weiterleitu
 
 ## Schritt 2: Daten aus dem alten System exportieren
 
-**Shopware 6.** Der Export liegt unter *Einstellungen → Import/Export*. Nach der offiziellen Dokumentation arbeitet das Modul mit CSV-Dateien in UTF-8, Semikolon als Trennzeichen und Anführungszeichen als Texttrenner. Ein **Profil** legt fest, welche Spalte in welchem Datenfeld landet. Standardprofile gibt es unter anderem für Produkte, Kunden, Kategorien und Medien. Drei Stolperstellen nennt die Dokumentation selbst:
+**Shopware 6.** Der Export liegt im Bereich Import/Export der Einstellungen. Nach der offiziellen Dokumentation arbeitet das Modul mit CSV-Dateien in UTF-8, Semikolon als Trennzeichen und Anführungszeichen als Texttrenner. Ein **Profil** legt fest, welche Spalte in welchem Datenfeld landet. Standardprofile gibt es unter anderem für Produkte, Kunden, Kategorien und Medien. Drei Stolperstellen nennt die Dokumentation selbst:
 
 - Preise brauchen einen Punkt als Dezimaltrennzeichen, ein Komma führt zu fehlerhaftem Import.
 - Programme wie Excel erzeugen unter Umständen keine UTF-8-konforme Datei.
 - **Bestellungen** lassen sich nur mit einem Profil exportieren, das Sie selbst anlegen. Pflichtfelder sind id, salesChannelId, orderDateTime und stateId.
 
-**Shopware 5.** Der Export läuft anders als in Shopware 6, und dazu habe ich keine Dokumentation geprüft. Schauen Sie in die Dokumentation Ihrer Version, oder fragen Sie, ob eine Migrations-App aus dem Shopify App Store Ihr System unterstützt. Machen Sie in jedem Fall zuerst einen Probeexport.
+**Shopware 5.** Der Export läuft anders als in Shopware 6. Schauen Sie in die Dokumentation Ihrer Version, oder fragen Sie, ob eine Migrations-App aus dem Shopify App Store Ihr System unterstützt. Machen Sie in jedem Fall zuerst einen Probeexport.
 
 **Magento.** Hier hängt der Weg von Version und Setup ab. Wichtig ist, dass Sie die Attribute vorher zuordnen (siehe Schritt 1) und nur exportieren, was Sie wirklich brauchen.
 

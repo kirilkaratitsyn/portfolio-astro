@@ -25,7 +25,7 @@ A move costs time and carries SEO risk. These questions help with the decision:
 - **Who runs and maintains your store today?** If updates, hosting and extensions sit with you or an agency, that belongs in the calculation.
 - **How much revenue depends on your Google rankings?** The more, the more carefully the move has to be planned.
 
-Shopware 5 adds one more point. According to Shopware's migration page, only security updates are provided there until the end of July 2024. The same vendor writes that moving from Shopware 5 to Shopware 6 is not a simple update done in a few clicks. So a rebuild is coming either way, and the question is Shopware 6 or another system. That is a real decision to make with numbers and requirements, not out of habit.
+Shopware 5 adds one more point. According to Shopware's migration page, Shopware 5 was supported until the end of July 2024, in its final phase with security updates only. The same vendor writes that moving from Shopware 5 to Shopware 6 is not a simple update done in a few clicks. So a rebuild is coming either way, and the question is Shopware 6 or another system. That is a real decision to make with numbers and requirements, not out of habit.
 
 ## What can be carried over, what cannot?
 
@@ -55,13 +55,13 @@ Keep this list. Later it is the basis for the redirects.
 
 ## Step 2: Export the data from the old system
 
-**Shopware 6.** The export sits under *Settings → Import/Export*. According to the official documentation, the module works with CSV files in UTF-8, a semicolon as the field separator and quotation marks as the text delimiter. A **profile** defines which column ends up in which data field. Default profiles exist for products, customers, categories and media, among others. The documentation names three snags itself:
+**Shopware 6.** The export sits in the Import/Export area of the settings. According to the official documentation, the module works with CSV files in UTF-8, a semicolon as the field separator and quotation marks as the text delimiter. A **profile** defines which column ends up in which data field. Default profiles exist for products, customers, categories and media, among others. The documentation names three snags itself:
 
 - Prices need a period as the decimal separator; a comma leads to a faulty import.
 - Programs such as Excel may not produce a UTF-8 compliant file.
 - **Orders** can only be exported with a profile you create yourself. Mandatory fields are id, salesChannelId, orderDateTime and stateId.
 
-**Shopware 5.** The export works differently than in Shopware 6, and I have not checked documentation for it. Look at the documentation of your version, or ask whether a migration app from the Shopify App Store supports your system. Either way, do a test export first.
+**Shopware 5.** The export works differently than in Shopware 6. Look at the documentation of your version, or ask whether a migration app from the Shopify App Store supports your system. Either way, do a test export first.
 
 **Magento.** The path depends on version and setup. What matters is that you map the attributes beforehand (see step 1) and export only what you really need.
 
