@@ -74,4 +74,6 @@ In den ersten Wochen zeigt die Search Console Seiten, die Google nicht mehr find
 
 Ich übernehme den [Umzug von WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) mit Redirect-Map und Launch-Begleitung, zum Festpreis nach dem Briefing. Fragen Sie den kostenlosen Shop-Check an oder buchen Sie ein Erstgespräch.
 
+Noch unsicher, ob sich ein Umzug für Sie lohnt oder saubere Pflege reicht? Dabei hilft [WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln?](/de/blog/woocommerce-sicherheit-plugin-updates).
+
 *Kiril Karatitsyn, Shopify-Entwickler in Deutschland*

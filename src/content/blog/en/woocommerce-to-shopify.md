@@ -74,4 +74,6 @@ In the first weeks Search Console shows pages Google can no longer find ("Not fo
 
 I handle the [WooCommerce to Shopify migration](/services/woocommerce-to-shopify) with a redirect map and launch support, at a fixed price after the briefing. Request the free store check or book an intro call.
 
+Not sure yet whether a move is worth it or good maintenance is enough? [WooCommerce Security and Plugin Updates: Maintain or Switch?](/blog/woocommerce-sicherheit-plugin-updates) helps you decide.
+
 *Kiril Karatitsyn, Shopify developer in Germany*

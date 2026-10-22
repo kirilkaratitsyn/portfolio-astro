@@ -20,9 +20,9 @@ Das Herz von WordPress ist selten das Problem. Der Sicherheitsanbieter Patchstac
 Zwei weitere Zahlen aus demselben Bericht erklären, warum Zeit hier zählt:
 
 - **46 Prozent** der Schwachstellen hatten bei der Veröffentlichung noch keinen Fix des Entwicklers.
-- Bei den am häufigsten ausgenutzten Lücken lag die mittlere Zeit bis zu Massenangriffen bei rund **5 Stunden**; etwa die Hälfte der folgenschweren Lücken wurde binnen 24 Stunden ausgenutzt.
+- Bei den am häufigsten ausgenutzten Lücken lag die Zeit bis zu Massenangriffen im Median bei rund **5 Stunden**; etwa die Hälfte der folgenschweren Lücken wurde binnen 24 Stunden ausgenutzt.
 
-Ein Hinweis zur Einordnung: Patchstack verkauft Sicherheitslösungen, und die Zahlen gelten für WordPress insgesamt, nicht nur für WooCommerce. Das Muster ist trotzdem eindeutig: Jedes zusätzliche Plugin ist zusätzliche Angriffsfläche, und ein Update, das erst nach einer Woche eingespielt wird, kommt für manche Lücken zu spät.
+Ein Hinweis zur Einordnung: Patchstack verkauft Sicherheitslösungen, und die Zahlen gelten für WordPress insgesamt, nicht nur für WooCommerce. Das Muster ist trotzdem eindeutig: Jedes zusätzliche Plugin ist zusätzliche Angriffsfläche, und ein Update, das erst nach einer Woche eingespielt wird, kommt für manche Lücken zu spät. Weil zudem fast jede zweite Lücke bei Bekanntwerden noch keinen Fix hat, reichen Updates allein nicht: Wer weniger Plugins einsetzt, hat weniger, was überhaupt betroffen sein kann.
 
 ## Was „regelmäßig pflegen“ konkret heißt
 
@@ -56,8 +56,8 @@ Shopify ist kein Freifahrtschein. Das bleibt bei Ihnen:
 
 - **Apps auswählen und ausmisten.** Jede App ist Code von Dritten mit Zugriff auf Ihre Daten. Weniger Apps bedeuten weniger Risiko und einen schnelleren Shop (siehe [Langsamer Shopify-Shop? 7 Ursachen](/de/blog/slow-shopify-store)).
 - **Zugänge verwalten.** Wer ist Mitarbeiter im Shop, mit welchen Rechten, mit Zwei-Faktor-Anmeldung? Ehemalige Mitarbeiter und Agenturen gehören entfernt.
-- **Theme-Code.** Eigene Anpassungen im Theme verantworten Sie oder Ihr Entwickler.
-- **Phishing und Passwörter.** Die meisten Konten werden nicht durch Lücken übernommen, sondern durch gestohlene Zugangsdaten.
+- **Theme-Updates und Theme-Code.** Themes aus dem Theme Store bekommen neue Versionen, die Sie bewusst übernehmen müssen. Eigene Anpassungen verantworten Sie oder Ihr Entwickler, und ein angepasstes Theme aktualisiert sich nicht von selbst.
+- **Phishing und Passwörter.** Konten werden häufig nicht durch Lücken übernommen, sondern durch gestohlene Zugangsdaten.
 
 Der Unterschied ist die Größenordnung: Sie pflegen einen kleinen Kreis aus Zugängen und Apps statt eines ganzen Systems.
 
@@ -110,6 +110,6 @@ Wenn Sie bei mehreren Fragen nur „weiß nicht“ antworten können, ist das be
 
 ## Wie gut ist Ihr Shop heute gepflegt?
 
-Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sehe mir an, was von außen sichtbar ist: welche Plugins im Einsatz sind, wie schnell die Seiten laden und ob Warenkorb und Kasse sauber funktionieren. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Backend und ohne Sicherheitsscan. Dann sage ich Ihnen ehrlich, ob Pflegen oder Wechseln für Sie besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote, und übernehme bei Bedarf den [Umzug von WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) zum Festpreis nach dem Briefing. Was Sie dabei im Vorfeld erwartet, steht in [Was ein Shopify-Shop kostet](/de/blog/shopify-shop-erstellen-lassen-kosten).
+Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sehe mir an, was von außen sichtbar ist: welche Plugins im Einsatz sind und wie schnell die Seiten laden. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Backend und ohne Sicherheitsscan. Dann sage ich Ihnen ehrlich, ob Pflegen oder Wechseln für Sie besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote, und übernehme bei Bedarf den [Umzug von WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) zum Festpreis nach dem Briefing. Was Sie dabei im Vorfeld erwartet, steht in [Was ein Shopify-Shop kostet](/de/blog/shopify-shop-erstellen-lassen-kosten).
 
 *Kiril Karatitsyn, Shopify-Entwickler in Deutschland*

@@ -22,7 +22,7 @@ Two more figures from the same report show why time matters:
 - **46 percent** of the vulnerabilities had no fix from the developer yet when they were disclosed.
 - For the most heavily exploited vulnerabilities, the median time to mass attacks was about **5 hours**; roughly half of the high-impact ones were exploited within 24 hours.
 
-A note for context: Patchstack sells security products, and the numbers cover WordPress as a whole, not only WooCommerce. The pattern is still clear. Every additional plugin is additional attack surface, and an update that waits a week comes too late for some vulnerabilities.
+A note for context: Patchstack sells security products, and the numbers cover WordPress as a whole, not only WooCommerce. The pattern is still clear. Every additional plugin is additional attack surface, and an update that waits a week comes too late for some vulnerabilities. And because almost every second vulnerability has no fix yet when it becomes public, updates alone are not enough: the fewer plugins you run, the less there is that can be affected at all.
 
 ## What "maintain regularly" means in practice
 
@@ -56,8 +56,8 @@ Shopify is not a free pass. These stay with you:
 
 - **Choosing and pruning apps.** Every app is third-party code with access to your data. Fewer apps mean less risk and a faster store (see [Slow Shopify store? 7 reasons](/blog/slow-shopify-store)).
 - **Managing access.** Who is staff in the store, with which permissions, with two-factor authentication? Former employees and agencies should be removed.
-- **Theme code.** You or your developer are responsible for custom changes in the theme.
-- **Phishing and passwords.** Most accounts are not taken over through vulnerabilities but through stolen credentials.
+- **Theme updates and theme code.** Themes from the Theme Store get new versions that you have to adopt deliberately. You or your developer are responsible for custom changes, and a customized theme does not update itself.
+- **Phishing and passwords.** Accounts are often taken over not through vulnerabilities but through stolen credentials.
 
 The difference is the scale: you look after a small circle of access and apps instead of a whole system.
 
@@ -110,6 +110,6 @@ If you can only answer "don't know" to several of them, that already answers the
 
 ## How well is your store maintained today?
 
-Send me your store's address for the [free store check](#contact). I look at what is visible from the outside: which plugins are in use, how fast the pages load and whether cart and checkout work cleanly. I only work with publicly visible data, without access to your backend and without a security scan. Then I tell you honestly whether maintaining or switching suits you better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remotely, and take on the [move from WooCommerce to Shopify](/services/woocommerce-to-shopify) at a fixed price after the briefing when needed. What to expect beforehand is in [What a Shopify store costs](/blog/shopify-shop-erstellen-lassen-kosten).
+Send me your store's address for the [free store check](#contact). I look at what is visible from the outside: which plugins are in use and how fast the pages load. I only work with publicly visible data, without access to your backend and without a security scan. Then I tell you honestly whether maintaining or switching suits you better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remotely, and take on the [move from WooCommerce to Shopify](/services/woocommerce-to-shopify) at a fixed price after the briefing when needed. What to expect beforehand is in [What a Shopify store costs](/blog/shopify-shop-erstellen-lassen-kosten).
 
 *Kiril Karatitsyn, Shopify developer in Germany*
