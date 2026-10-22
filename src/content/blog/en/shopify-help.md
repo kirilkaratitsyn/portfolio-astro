@@ -1,7 +1,7 @@
 ---
-publishedAt: 2026-10-23
+publishedAt: 2026-10-22
 title: "Shopify help: when the Help Center is enough and when you need a developer"
-date: 23 October 2026
+date: 22 October 2026
 readingTime: 5 min
 excerpt: "Shopify Support, Help Center, app maker or developer: who to turn to for which problem, so you do not lose days with the wrong place."
 image: /og/projects/elanora-skin.jpg
@@ -71,6 +71,6 @@ An example: I have supported [Elanora Skin](/projects/elanora-skin), a skincare 
 
 ## Not sure who is responsible?
 
-Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign).
+Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign). And if you are still weighing whether a freelancer or an agency fits your plan: [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
 
 *Kiril Karatitsyn, Shopify developer in Germany*

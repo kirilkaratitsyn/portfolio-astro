@@ -1,7 +1,7 @@
 ---
-publishedAt: 2026-10-23
+publishedAt: 2026-10-22
 title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ein Festpreis-Angebot bekommen"
-date: 23. Oktober 2026
+date: 22. Oktober 2026
 readingTime: 7 Min
 excerpt: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können.
 image: /og/projects/minbie.jpg
@@ -99,6 +99,6 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 ## Wie viel Shop brauchen Sie?
 
-Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen ehrlich, welcher Umfang für Ihr Ziel sinnvoll ist, und Sie bekommen nach dem Briefing ein Angebot zum Festpreis. Je nach Fall passt der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify) oder das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign).
+Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen ehrlich, welcher Umfang für Ihr Ziel sinnvoll ist, und Sie bekommen nach dem Briefing ein Angebot zum Festpreis. Je nach Fall passt der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify) oder das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
 *Kiril Karatitsyn, Shopify-Entwickler in Deutschland*

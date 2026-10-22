@@ -1,7 +1,7 @@
 ---
-publishedAt: 2026-10-23
+publishedAt: 2026-10-22
 title: "Having a Shopify store built: what the cost depends on and how to get a fixed-price quote"
-date: 23 October 2026
+date: 22 October 2026
 readingTime: 7 min
 excerpt: What drives the cost of building a Shopify store, which running costs come on top and how to get a fixed-price quote you can actually compare.
 image: /og/projects/minbie.jpg
@@ -99,6 +99,6 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 
 ## How much store do you need?
 
-Write to me for the [free store check](#contact) about what you plan: a new store, a move or a rebuild. I tell you honestly which scope makes sense for your goal, and after the briefing you get a fixed-price quote. Depending on the case, the [WooCommerce migration](/services/woocommerce-to-shopify) or the [redesign with a theme change](/services/shopify-redesign) fits.
+Write to me for the [free store check](#contact) about what you plan: a new store, a move or a rebuild. I tell you honestly which scope makes sense for your goal, and after the briefing you get a fixed-price quote. Depending on the case, the [WooCommerce migration](/services/woocommerce-to-shopify) or the [redesign with a theme change](/services/shopify-redesign) fits. And if you are still weighing whether a freelancer or an agency fits your plan: [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
 
 *Kiril Karatitsyn, Shopify developer in Germany*

@@ -1,7 +1,7 @@
 ---
-publishedAt: 2026-10-23
+publishedAt: 2026-10-22
 title: "Shopify Hilfe: Wann das Help Center reicht und wann Sie einen Entwickler brauchen"
-date: 23. Oktober 2026
+date: 22. Oktober 2026
 readingTime: 5 Min
 excerpt: "Shopify Support, Help Center, App-Hersteller oder Entwickler: An wen Sie sich bei welchem Problem wenden, damit Sie nicht Tage mit der falschen Stelle verlieren."
 image: /og/projects/elanora-skin.jpg
@@ -71,6 +71,6 @@ Ein Beispiel: [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke aus
 
 ## Nicht sicher, wer zuständig ist?
 
-Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Wenn es ein Fall für einen Entwickler ist, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign).
+Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Wenn es ein Fall für einen Entwickler ist, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
 *Kiril Karatitsyn, Shopify-Entwickler in Deutschland*
