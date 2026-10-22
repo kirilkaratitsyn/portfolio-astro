@@ -13,8 +13,18 @@ export function thumb(image: string | undefined, size: ThumbSize): string | unde
 /** Small WebP versions of the project preview images (public/og/projects, made by scripts/make-og-thumbs.mjs). */
 export type OgThumbSize = '480' | '800' | '1200';
 
-export const ogThumb = (image: string, size: OgThumbSize) =>
-  image.startsWith('/og/projects/') ? `/og/thumbs/${image.split('/').pop()!.replace(/\.[^.]+$/, '')}-${size}.webp` : image;
+export const ogThumb = (image: string, size: OgThumbSize) => {
+  const name = ogThumbName(image);
+  return name ? `/og/thumbs/${name}-${size}.webp` : image;
+};
+
+/** Thumbnail base name of a preview image: `<name>` for /og/projects/<name>.jpg, `blog-<locale>-<slug>` for /og/blog/<locale>/<slug>.jpg. */
+function ogThumbName(image: string): string | undefined {
+  const base = (file: string) => file.replace(/\.[^.]+$/, '');
+  if (image.startsWith('/og/projects/')) return base(image.split('/').pop()!);
+  if (image.startsWith('/og/blog/')) return `blog-${base(image.slice('/og/blog/'.length).replace('/', '-'))}`;
+  return undefined;
+}
 
 /** srcset of a preview image for cards: 480 and 800 px wide. */
-export const ogSrcset = (image: string) => (image.startsWith('/og/projects/') ? `${ogThumb(image, '480')} 480w, ${ogThumb(image, '800')} 800w` : undefined);
+export const ogSrcset = (image: string) => (ogThumbName(image) ? `${ogThumb(image, '480')} 480w, ${ogThumb(image, '800')} 800w` : undefined);

@@ -713,8 +713,9 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .post-card__photo img { aspect-ratio: 800 / 420; }
 @media (min-width: 768px) {
   .post-card--featured > a { flex-direction: row; }
-  .post-card--featured .post-card__photo { flex: 0 0 58%; aspect-ratio: auto; }
-  .post-card--featured .post-card__photo img { aspect-ratio: auto; }
+  /* The covers are type: keep their 1200x630 shape here instead of cropping them to the height of the text. */
+  .post-card--featured .post-card__photo { flex: 0 0 58%; align-self: center; aspect-ratio: 1200 / 630; }
+  .post-card--featured .post-card__photo img { aspect-ratio: 1200 / 630; }
   .post-card--featured > a > span:last-child { padding: 36px; justify-content: center; }
 }
 .chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid #d3d7e6; border-radius: 999px; background: #fff; font-size: 14px; font-weight: 600; color: #0e1018; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }

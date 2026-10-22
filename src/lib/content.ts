@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { splitEntryId, type Locale } from '../i18n';
 
@@ -98,6 +100,15 @@ export async function getPosts(locale: Locale): Promise<BlogPost[]> {
   const entries = await getCollection('blog', (entry) => splitEntryId(entry.id).locale === locale);
 
   return entries
-    .map((entry) => ({ ...entry.data, slug: splitEntryId(entry.id).slug, entry }))
+    .map((entry) => {
+      const slug = splitEntryId(entry.id).slug;
+      return { ...entry.data, image: blogCover(locale, slug) ?? entry.data.image, slug, entry };
+    })
     .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+}
+
+/** The type-only cover of an article (public/og/blog/<locale>/<slug>.jpg, made by scripts/make-covers.mjs), when there is one. */
+function blogCover(locale: Locale, slug: string): string | undefined {
+  const file = `/og/blog/${locale}/${slug}.jpg`;
+  return fs.existsSync(path.join(process.cwd(), 'public', file)) ? file : undefined;
 }
