@@ -104,7 +104,7 @@ Wie viel zurückkommt, lässt sich vorher nicht sagen, und niemand kann es garan
 
 **Wie viele Weiterleitungen erlaubt Shopify?** Bis zu 100.000, im Plus-Tarif bis zu 20.000.000.
 
-**Gilt das auch, wenn ich nicht von WooCommerce komme?** Das Vorgehen ist gleich: sammeln, zuordnen, weiterleiten, kontrollieren. Die alten Adressmuster unterscheiden sich je nach System, und Adressen mit Parametern sollten Sie früh testen. Für Wix gibt es einen eigenen Artikel: [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug).
+**Gilt das auch, wenn ich nicht von WooCommerce komme?** Das Vorgehen ist gleich: sammeln, zuordnen, weiterleiten, kontrollieren. Die alten Adressmuster unterscheiden sich je nach System, und Adressen mit Parametern sollten Sie früh testen. Für Wix gibt es einen eigenen Artikel: [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug). Kommen Sie von Shopware oder Magento? Dazu gibt es [Von Shopware oder Magento zu Shopify: Was Sie vor dem Umzug klären sollten](/de/blog/shopware-magento-zu-shopify).
 
 ## Umzug geplant oder schon passiert?
 

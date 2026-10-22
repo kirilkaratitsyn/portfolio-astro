@@ -104,7 +104,7 @@ How much comes back cannot be said beforehand, and nobody can guarantee it.
 
 **How many redirects does Shopify allow?** Up to 100,000, and up to 20,000,000 on the Plus plan.
 
-**Does this also apply if I am not coming from WooCommerce?** The approach is the same: collect, map, redirect, check. The old address patterns differ from system to system, and addresses with parameters should be tested early. For Wix there is a separate article: [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug).
+**Does this also apply if I am not coming from WooCommerce?** The approach is the same: collect, map, redirect, check. The old address patterns differ from system to system, and addresses with parameters should be tested early. For Wix there is a separate article: [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug). Coming from Shopware or Magento? See [From Shopware or Magento to Shopify: What to Settle Before the Move](/blog/shopware-magento-zu-shopify).
 
 ## Move planned or already done?
 
