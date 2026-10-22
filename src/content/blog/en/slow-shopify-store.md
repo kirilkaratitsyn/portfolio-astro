@@ -5,6 +5,7 @@ date: 22 October 2026
 readingTime: 6 min
 excerpt: Why a Shopify store loads slowly, how to measure it yourself in ten minutes and which causes you can fix without a developer. With a real example.
 image: /og/projects/pedchem.jpg
+topic: speed
 tags:
   - Shopify
   - Page speed

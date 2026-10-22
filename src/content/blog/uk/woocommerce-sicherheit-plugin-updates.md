@@ -4,7 +4,8 @@ title: "Безпека WooCommerce та оновлення плагінів: п�
 date: 22 жовтня 2026
 readingTime: 7 хв
 excerpt: Чому майже всі вразливості WordPress лежать у плагінах, що означають регулярні оновлення в магазині WooCommerce і коли перехід на Shopify зменшує обсяг підтримки.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/petaljet.jpg
+topic: migration
 tags:
   - WooCommerce
   - Безпека

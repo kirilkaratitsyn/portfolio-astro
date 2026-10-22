@@ -5,6 +5,7 @@ date: 22 October 2026
 readingTime: 7 min
 excerpt: What drives the cost of building a Shopify store, which running costs come on top and how to get a fixed-price quote you can actually compare.
 image: /og/projects/minbie.jpg
+topic: build
 tags:
   - Shopify
   - Cost

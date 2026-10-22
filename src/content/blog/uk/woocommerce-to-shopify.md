@@ -5,6 +5,7 @@ date: 15 жовтня 2026
 readingTime: 6 хв
 excerpt: Дані, карта редиректів, тема й чекліст запуску з реального переїзду, щоб старі посилання й позиції в Google залишилися.
 image: /og/projects/jula-bloom.jpg
+topic: migration
 tags:
   - Shopify
   - WooCommerce

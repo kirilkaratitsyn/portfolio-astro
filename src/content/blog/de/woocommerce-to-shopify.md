@@ -5,6 +5,7 @@ date: 15. Oktober 2026
 readingTime: 6 Min
 excerpt: Daten, Redirect-Map, Theme und Launch-Checkliste aus einem echten Umzug, damit alte Links und Google-Rankings erhalten bleiben.
 image: /og/projects/jula-bloom.jpg
+topic: migration
 tags:
   - Shopify
   - WooCommerce

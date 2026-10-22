@@ -3,7 +3,11 @@ import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
 import { interpolate, localizePath, useTranslations, type Locale } from '../i18n';
-import type { BlogPost } from '../lib/content';
+import Icon from '../components/Icon.astro';
+import PostCard from '../components/PostCard.astro';
+import { getPosts, type BlogPost } from '../lib/content';
+import { TOPIC_ICONS } from '../lib/blog-topics';
+import { ogThumb } from '../lib/thumbs';
 
 interface Props {
   locale: Locale;
@@ -13,6 +17,9 @@ interface Props {
 const { locale, post } = Astro.props;
 const t = useTranslations(locale);
 const { Content } = await render(post.entry);
+// Up to three more articles: same topic first, then the newest.
+const others = (await getPosts(locale)).filter((p) => p.slug !== post.slug);
+const related = [...others.filter((p) => p.topic && p.topic === post.topic), ...others.filter((p) => !p.topic || p.topic !== post.topic)].slice(0, 3);
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/blog/${post.slug}`), site).toString();
 const structuredData = {
@@ -45,11 +52,31 @@ const structuredData = {
 <BaseLayout title={post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale} structuredData={structuredData}>
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/blog')} class="text-sm font-medium text-mute hover:text-ink">← {t.blog.backToList}</a>
-    <p class="mt-8 text-sm text-mute">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
-    <h1 class="intro-lift mt-3 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
+    <p class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-mute">
+      {post.topic && (
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 font-medium text-ink">
+          <Icon name={TOPIC_ICONS[post.topic]} size={14} />
+          {t.blog.topics[post.topic]}
+        </span>
+      )}
+      <span>{post.date}</span>
+      <span class="inline-flex items-center gap-1.5"><Icon name="clock" size={14} />{interpolate(t.blog.estimatedRead, { time: post.readingTime })}</span>
+    </p>
+    <h1 class="intro-lift mt-4 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
+    <img src={ogThumb(post.image, '1200')} alt="" width="1200" height="630" fetchpriority="high" decoding="async" class="mt-10 aspect-[1200/630] w-full max-w-4xl rounded-2xl border border-line object-cover md:mt-14" />
     <div class="post mt-10 max-w-2xl md:mt-14">
       <Content />
     </div>
   </article>
+  {
+    related.length > 0 && (
+      <section class="mx-auto mt-16 max-w-[1440px] px-5 md:mt-24 md:px-10" aria-labelledby="keep-reading">
+        <h2 id="keep-reading" class="font-head text-[28px] font-bold tracking-[-0.02em] md:text-[40px]">{t.blog.keepReading}</h2>
+        <ul class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => <PostCard locale={locale} post={p} />)}
+        </ul>
+      </section>
+    )
+  }
   <Contact locale={locale} />
 </BaseLayout>

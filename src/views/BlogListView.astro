@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
-import { DEFAULT_LOCALE, interpolate, localizePath, useTranslations, type Locale } from '../i18n';
+import { DEFAULT_LOCALE, interpolate, useTranslations, type Locale } from '../i18n';
+import Icon from '../components/Icon.astro';
+import PostCard from '../components/PostCard.astro';
 import { getPosts } from '../lib/content';
+import { BLOG_TOPICS, TOPIC_ICONS } from '../lib/blog-topics';
 
 interface Props {
   locale: Locale;
@@ -11,6 +14,9 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const posts = await getPosts(locale);
+const [latest, ...rest] = posts;
+// Only the topics that have at least one article in the grid.
+const topics = BLOG_TOPICS.filter((topic) => rest.some((post) => post.topic === topic));
 
 const seo = {
   title: locale === DEFAULT_LOCALE ? 'Shopify Blog' : `Shopify ${t.blog.title}`,
@@ -25,21 +31,85 @@ const seo = {
 
 <BaseLayout {...seo} path="/blog" locale={locale}>
   <section class="pt-32 md:pt-44">
-    <h1 class="intro-lift mx-auto max-w-[1440px] px-5 pb-8 font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:px-10 md:pb-12 md:text-[96px]">{t.blog.title}</h1>
-    {!posts.length && <p class="mx-auto max-w-[1440px] px-5 pb-10 text-lg text-mute md:px-10">{t.blog.empty}</p>}
-    <ul class="border-t border-line">
-      {
-        posts.map((post) => (
-          <li class="border-b border-line" data-row>
-            <a href={localizePath(locale, `/blog/${post.slug}`)} class="group mx-auto grid max-w-[1440px] gap-3 px-5 py-7 transition-colors hover:bg-blue hover:text-white md:grid-cols-[1fr_minmax(0,520px)_120px] md:items-center md:gap-10 md:px-10">
-              <h2 class="font-head text-[26px] font-bold leading-tight tracking-[-0.02em] md:text-[34px]">{post.title}</h2>
-              <p class="text-base leading-relaxed text-mute group-hover:text-white/90">{post.excerpt}</p>
-              <p class="text-sm text-mute group-hover:text-white/90 md:text-right">{post.date} · {interpolate(t.blog.estimatedRead, { time: post.readingTime })}</p>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="mx-auto max-w-[1440px] px-5 md:px-10">
+      <h1 class="intro-lift font-head text-[44px] font-bold leading-[0.98] tracking-[-0.03em] md:text-[96px]">{t.blog.title}</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-mute md:mt-6 md:text-xl">{t.blog.subtitle}</p>
+    </div>
+
+    {!posts.length && <p class="mx-auto max-w-[1440px] px-5 pt-10 text-lg text-mute md:px-10">{t.blog.empty}</p>}
+
+    {
+      latest && (
+        <div class="mx-auto mt-10 max-w-[1440px] px-5 md:mt-14 md:px-10">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.08em] text-mute">{t.blog.latest}</p>
+          <ul>
+            <PostCard locale={locale} post={latest} featured eager />
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      rest.length > 0 && (
+        <div class="mx-auto mt-12 max-w-[1440px] px-5 md:mt-16 md:px-10" data-blog-filter>
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex flex-wrap gap-2" role="group" aria-label={t.blog.filterLabel}>
+              <button type="button" class="chip" data-topic-btn="" aria-pressed="true">{t.blog.all}</button>
+              {topics.map((topic) => (
+                <button type="button" class="chip" data-topic-btn={topic} aria-pressed="false">
+                  <Icon name={TOPIC_ICONS[topic]} size={16} />
+                  {t.blog.topics[topic]}
+                </button>
+              ))}
+            </div>
+            <label class="relative block md:w-72">
+              <span class="sr-only">{t.blog.filterPlaceholder}</span>
+              <Icon name="search" size={18} class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-mute" />
+              <input type="search" data-blog-query placeholder={t.blog.filterPlaceholder} autocomplete="off" class="w-full rounded-full border border-line bg-white py-2.5 pl-11 pr-4 text-[15px] outline-none focus:border-blue" />
+            </label>
+          </div>
+          <p class="mt-5 text-sm text-mute" data-blog-count data-template={t.blog.count} aria-live="polite">{interpolate(t.blog.count, { count: String(rest.length) })}</p>
+          <ul class="mt-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => <PostCard locale={locale} post={post} />)}
+          </ul>
+          <p class="mt-8 hidden text-lg text-mute" data-blog-empty>{t.blog.noMatch}</p>
+        </div>
+      )
+    }
+    <div class="h-16 md:h-24"></div>
   </section>
   <Contact locale={locale} />
 </BaseLayout>
+
+<script>
+  // Filters the cards on this page by topic and by words. Nothing is stored; without JavaScript all cards stay visible.
+  const root = document.querySelector<HTMLElement>('[data-blog-filter]');
+  if (root) {
+    const cards = [...root.querySelectorAll<HTMLElement>('[data-post]')];
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-topic-btn]')];
+    const input = root.querySelector<HTMLInputElement>('[data-blog-query]')!;
+    const count = root.querySelector<HTMLElement>('[data-blog-count]')!;
+    const empty = root.querySelector<HTMLElement>('[data-blog-empty]')!;
+    const template = count.dataset.template ?? '';
+    let topic = '';
+    const apply = () => {
+      const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const card of cards) {
+        const ok = (!topic || card.dataset.topic === topic) && words.every((w) => (card.dataset.search ?? '').includes(w));
+        card.hidden = !ok;
+        if (ok) shown++;
+      }
+      count.textContent = template.replace('{{count}}', String(shown));
+      empty.classList.toggle('hidden', shown > 0);
+    };
+    for (const b of buttons) {
+      b.addEventListener('click', () => {
+        topic = b.dataset.topicBtn ?? '';
+        for (const o of buttons) o.setAttribute('aria-pressed', String(o === b));
+        apply();
+      });
+    }
+    input.addEventListener('input', apply);
+  }
+</script>

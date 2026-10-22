@@ -458,7 +458,22 @@
     "featuredSubtitle": "Frische Erkenntnisse aus aktuellen Projekten und Launches.",
     "viewAll": "Alle anzeigen",
     "estimatedRead": "{{time}} Lesezeit",
-    "empty": "Die ersten Artikel sind in Arbeit. Bis dahin zeigen die Case Studies, wie ich arbeite."
+    "empty": "Die ersten Artikel sind in Arbeit. Bis dahin zeigen die Case Studies, wie ich arbeite.",
+    "latest": "Neuester Artikel",
+    "all": "Alle",
+    "filterLabel": "Nach Thema filtern",
+    "filterPlaceholder": "Artikel durchsuchen",
+    "count": "{{count}} Artikel",
+    "noMatch": "Kein Artikel gefunden. Versuchen Sie ein anderes Wort oder Thema.",
+    "keepReading": "Weiterlesen",
+    "topics": {
+      "build": "Shop aufbauen",
+      "migration": "Umzug",
+      "speed": "Tempo und Google",
+      "redesign": "Theme und Design",
+      "support": "Hilfe und Betreuung"
+    },
+    "cta": "Unsicher, wo Ihr Shop steht? Schicken Sie mir die Adresse für einen kostenlosen Shop-Check."
   },
   "faq": {
     "title": "FAQ",

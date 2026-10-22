@@ -4,7 +4,8 @@ title: "Shopify store not found on Google: 7 causes and what you can check"
 date: 22 October 2026
 readingTime: 6 min
 excerpt: Your Shopify store does not show up on Google? First find out whether it is missing from the index or just ranked low. Then seven typical causes and a ten-minute check you can do without a developer.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/nimfa.jpg
+topic: speed
 tags:
   - Shopify
   - SEO

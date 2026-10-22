@@ -4,7 +4,8 @@ title: "Shopify-Shop wird bei Google nicht gefunden: 7 Ursachen und was Sie prü
 date: 22. Oktober 2026
 readingTime: 6 Min
 excerpt: Ihr Shopify-Shop taucht bei Google nicht auf? Erst klären, ob er gar nicht im Index ist oder nur schlecht platziert. Dann sieben typische Ursachen und ein Zehn-Minuten-Check, den Sie ohne Entwickler machen können.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/nimfa.jpg
+topic: speed
 tags:
   - Shopify
   - SEO

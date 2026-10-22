@@ -5,6 +5,7 @@ date: 17. Oktober 2026
 readingTime: 4 Min
 excerpt: Wie Endkunden und Händler im selben Shopify-Shop kaufen, mit eigenen Preisen, Quick Order und Kaufregeln, die der Server durchsetzt. Aus einem echten Projekt.
 image: /og/projects/orska-rituals.jpg
+topic: build
 tags:
   - Shopify
   - B2B

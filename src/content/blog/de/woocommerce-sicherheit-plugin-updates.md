@@ -4,7 +4,8 @@ title: "WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln?"
 date: 22. Oktober 2026
 readingTime: 7 Min
 excerpt: Warum fast alle WordPress-Sicherheitslücken in Plugins liegen, was regelmäßige Updates in einem WooCommerce-Shop wirklich bedeuten und wann ein Wechsel zu Shopify weniger Pflegeaufwand bringt.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/petaljet.jpg
+topic: migration
 tags:
   - WooCommerce
   - Sicherheit

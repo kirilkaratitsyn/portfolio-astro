@@ -5,6 +5,7 @@ date: 22 жовтня 2026
 readingTime: 6 хв
 excerpt: Що можна змінити самому в редакторі тем Shopify, які зміни потребують коду і як розробник змінює тему, не ризикуючи живим магазином.
 image: /og/projects/lineargent.jpg
+topic: redesign
 tags:
   - Shopify
   - Тема

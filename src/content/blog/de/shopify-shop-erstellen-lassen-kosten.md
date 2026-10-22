@@ -5,6 +5,7 @@ date: 22. Oktober 2026
 readingTime: 7 Min
 excerpt: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können.
 image: /og/projects/minbie.jpg
+topic: build
 tags:
   - Shopify
   - Kosten

@@ -5,6 +5,7 @@ date: 22 жовтня 2026
 readingTime: 5 хв
 excerpt: "Підтримка Shopify, Help Center, розробник застосунку чи розробник магазину: до кого звертатися з якою проблемою, щоб не втрачати дні не на тому місці."
 image: /og/projects/elanora-skin.jpg
+topic: support
 tags:
   - Shopify
   - Підтримка

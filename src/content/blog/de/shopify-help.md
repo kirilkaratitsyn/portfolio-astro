@@ -5,6 +5,7 @@ date: 22. Oktober 2026
 readingTime: 5 Min
 excerpt: "Shopify Support, Help Center, App-Hersteller oder Entwickler: An wen Sie sich bei welchem Problem wenden, damit Sie nicht Tage mit der falschen Stelle verlieren."
 image: /og/projects/elanora-skin.jpg
+topic: support
 tags:
   - Shopify
   - Support

@@ -5,6 +5,7 @@ date: 22 жовтня 2026
 readingTime: 7 хв
 excerpt: Що впливає на вартість створення магазину Shopify, які поточні витрати додаються і як отримати пропозицію з фіксованою ціною, яку можна порівняти.
 image: /og/projects/minbie.jpg
+topic: build
 tags:
   - Shopify
   - Вартість

@@ -9,3 +9,12 @@ export function thumb(image: string | undefined, size: ThumbSize): string | unde
   const name = image.split('/').pop()!.replace(/\.[^.]+$/, '').replace(/-(desktop|mobile)$/, '');
   return `/source/thumbs/${name}-${size}.webp`;
 }
+
+/** Small WebP versions of the project preview images (public/og/projects, made by scripts/make-og-thumbs.mjs). */
+export type OgThumbSize = '480' | '800' | '1200';
+
+export const ogThumb = (image: string, size: OgThumbSize) =>
+  image.startsWith('/og/projects/') ? `/og/thumbs/${image.split('/').pop()!.replace(/\.[^.]+$/, '')}-${size}.webp` : image;
+
+/** srcset of a preview image for cards: 480 and 800 px wide. */
+export const ogSrcset = (image: string) => (image.startsWith('/og/projects/') ? `${ogThumb(image, '480')} 480w, ${ogThumb(image, '800')} 800w` : undefined);

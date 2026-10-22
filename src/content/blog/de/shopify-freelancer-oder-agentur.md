@@ -5,6 +5,7 @@ date: 22. Oktober 2026
 readingTime: 6 Min
 excerpt: Freelancer oder Agentur für Ihren Shopify-Shop? Was beide leisten, wo die Risiken liegen und woran Sie erkennen, wer zu Ihrem Vorhaben passt. Von einem Freelancer, der ehrlich sagt, wann eine Agentur die bessere Wahl ist.
 image: /og/projects/peter-bijoux.jpg
+topic: support
 tags:
   - Shopify
   - Freelancer

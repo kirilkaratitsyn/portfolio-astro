@@ -5,6 +5,7 @@ date: 22 October 2026
 readingTime: 6 min
 excerpt: What you can change yourself in the Shopify theme editor, which customizations need code and how a developer changes your theme without putting the live store at risk.
 image: /og/projects/lineargent.jpg
+topic: redesign
 tags:
   - Shopify
   - Theme

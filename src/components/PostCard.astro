@@ -1,0 +1,57 @@
+---
+// An article card: photo, topic, title, excerpt, date and reading time. `featured` makes it a wide card with a larger photo.
+import Icon from './Icon.astro';
+import { interpolate, localizePath, useTranslations, type Locale } from '../i18n';
+import type { BlogPost } from '../lib/content';
+import { TOPIC_ICONS } from '../lib/blog-topics';
+import { ogSrcset, ogThumb } from '../lib/thumbs';
+
+interface Props {
+  locale: Locale;
+  post: BlogPost;
+  featured?: boolean;
+  /** Load the photo right away (the first card on the page). */
+  eager?: boolean;
+}
+
+const { locale, post, featured = false, eager = false } = Astro.props;
+const t = useTranslations(locale);
+const href = localizePath(locale, `/blog/${post.slug}`);
+const topic = post.topic;
+const search = [post.title, post.excerpt, ...(post.tags ?? [])].join(' ').toLowerCase();
+---
+
+<li class:list={['post-card', featured && 'post-card--featured']} data-post data-topic={topic ?? ''} data-search={search}>
+  <a href={href} class="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(14,16,24,0.12)]">
+    <span class="post-card__photo block overflow-hidden bg-bg">
+      <img
+        src={ogThumb(post.image, featured ? '1200' : '800')}
+        srcset={featured ? undefined : ogSrcset(post.image)}
+        sizes={featured ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw'}
+        alt=""
+        width={featured ? 1200 : 800}
+        height={featured ? 630 : 420}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+    </span>
+    <span class="flex flex-1 flex-col gap-3 p-5 md:p-6">
+      <span class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] font-medium text-mute">
+        {topic && (
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-bg px-2.5 py-1 text-ink">
+            <Icon name={TOPIC_ICONS[topic]} size={14} />
+            {t.blog.topics[topic]}
+          </span>
+        )}
+        <span class="inline-flex items-center gap-1.5"><Icon name="clock" size={14} />{interpolate(t.blog.estimatedRead, { time: post.readingTime })}</span>
+      </span>
+      <h2 class:list={['font-head font-bold leading-tight tracking-[-0.02em]', featured ? 'text-[26px] md:text-[40px]' : 'text-[21px] md:text-[23px]']}>{post.title}</h2>
+      <p class:list={['text-[15px] leading-relaxed text-mute', featured ? 'md:line-clamp-5' : 'line-clamp-3']}>{post.excerpt}</p>
+      <span class="mt-auto flex items-center justify-between pt-2 text-sm">
+        <span class="text-mute">{post.date}</span>
+        <span class="inline-flex items-center gap-1.5 font-semibold text-blue">{t.blog.readMore}<Icon name="arrow" size={16} class="transition-transform duration-300 group-hover:translate-x-1" /></span>
+      </span>
+    </span>
+  </a>
+</li>

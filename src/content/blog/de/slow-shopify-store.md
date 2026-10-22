@@ -5,6 +5,7 @@ date: 22. Oktober 2026
 readingTime: 6 Min
 excerpt: Warum ein Shopify-Shop langsam lädt, wie Sie es in zehn Minuten selbst messen und welche Ursachen Sie ohne Entwickler beheben können. Mit einem echten Beispiel.
 image: /og/projects/pedchem.jpg
+topic: speed
 tags:
   - Shopify
   - Ladezeit

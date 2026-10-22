@@ -5,6 +5,7 @@ date: 15 October 2026
 readingTime: 6 min
 excerpt: Data, redirect map, theme and a launch checklist from a real migration, so old links and Google rankings keep working.
 image: /og/projects/jula-bloom.jpg
+topic: migration
 tags:
   - Shopify
   - WooCommerce

@@ -4,7 +4,8 @@ title: "Магазин Shopify не знаходиться в Google: 7 прич
 date: 22 жовтня 2026
 readingTime: 6 хв
 excerpt: Ваш магазин Shopify не з'являється в Google? Спершу з'ясуйте, чи його немає в індексі, чи він просто низько в видачі. Далі сім типових причин і десятихвилинна перевірка, яку можна зробити без розробника.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/nimfa.jpg
+topic: speed
 tags:
   - Shopify
   - SEO

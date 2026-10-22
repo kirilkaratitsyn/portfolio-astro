@@ -5,6 +5,7 @@ date: 22 жовтня 2026
 readingTime: 6 хв
 excerpt: Чому магазин Shopify повільно завантажується, як виміряти це самому за десять хвилин і які причини можна усунути без розробника. З реальним прикладом.
 image: /og/projects/pedchem.jpg
+topic: speed
 tags:
   - Shopify
   - Швидкість

@@ -5,6 +5,7 @@ date: 17 жовтня 2026
 readingTime: 4 хв
 excerpt: Як роздрібні клієнти й оптовики купують в одному магазині Shopify, зі своїми цінами, Quick Order і правилами покупки, які забезпечує сервер. З реального проєкту.
 image: /og/projects/orska-rituals.jpg
+topic: build
 tags:
   - Shopify
   - B2B

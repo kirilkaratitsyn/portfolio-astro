@@ -5,6 +5,7 @@ date: 17 October 2026
 readingTime: 4 min
 excerpt: How retail customers and trade buyers shop in the same Shopify store, with their own prices, Quick Order and purchase rules the server enforces. From a real project.
 image: /og/projects/orska-rituals.jpg
+topic: build
 tags:
   - Shopify
   - B2B

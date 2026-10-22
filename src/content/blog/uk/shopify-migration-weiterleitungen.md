@@ -4,7 +4,8 @@ title: "Перехід на Shopify і SEO: налаштувати перена�
 date: 22 жовтня 2026
 readingTime: 8 хв
 excerpt: Які старі адреси зібрати до переходу, як перенаправити їх у Shopify, де Shopify ставить обмеження і що перевірити після запуску. Також на випадок, якщо перехід уже відбувся без перенаправлень.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/lumppings.jpg
+topic: migration
 tags:
   - Shopify
   - SEO

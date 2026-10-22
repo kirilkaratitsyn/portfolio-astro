@@ -4,7 +4,8 @@ title: "WooCommerce Security and Plugin Updates: Maintain or Switch?"
 date: October 22, 2026
 readingTime: 7 min
 excerpt: Why almost all WordPress vulnerabilities sit in plugins, what regular updates really mean in a WooCommerce store, and when moving to Shopify cuts the maintenance work.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/petaljet.jpg
+topic: migration
 tags:
   - WooCommerce
   - Security

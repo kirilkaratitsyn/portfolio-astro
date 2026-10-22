@@ -4,7 +4,8 @@ title: "Moving to Shopify and SEO: Set Up Redirects, Protect Your Rankings"
 date: October 22, 2026
 readingTime: 8 min
 excerpt: Which old addresses to collect before the move, how to redirect them in Shopify, where Shopify sets limits and what to check after launch. Also for the case where the move already happened without redirects.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/lumppings.jpg
+topic: migration
 tags:
   - Shopify
   - SEO

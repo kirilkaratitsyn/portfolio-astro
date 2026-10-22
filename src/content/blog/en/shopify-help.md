@@ -5,6 +5,7 @@ date: 22 October 2026
 readingTime: 5 min
 excerpt: "Shopify Support, Help Center, app maker or developer: who to turn to for which problem, so you do not lose days with the wrong place."
 image: /og/projects/elanora-skin.jpg
+topic: support
 tags:
   - Shopify
   - Support

@@ -68,6 +68,8 @@ const blog = defineCollection({
     readingTime: z.string(),
     excerpt: z.string(),
     image: z.string(),
+    /** The kind of article, for the topic filter on /blog (labels: i18n blog.topics). */
+    topic: z.enum(['build', 'migration', 'speed', 'redesign', 'support']).optional(),
     tags: z.array(z.string()).optional(),
   }),
 });

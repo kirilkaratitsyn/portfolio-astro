@@ -5,6 +5,7 @@ date: 22. Oktober 2026
 readingTime: 6 Min
 excerpt: Was Sie im Theme-Editor von Shopify selbst ändern können, welche Anpassungen Code brauchen und wie ein Entwickler Ihr Theme ändert, ohne den Live-Shop zu gefährden.
 image: /og/projects/lineargent.jpg
+topic: redesign
 tags:
   - Shopify
   - Theme

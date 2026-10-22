@@ -4,7 +4,8 @@ title: "Shopify-Umzug und SEO: Weiterleitungen einrichten, Rankings schützen"
 date: 22. Oktober 2026
 readingTime: 8 Min
 excerpt: Welche alten Adressen Sie vor dem Umzug sammeln, wie Sie sie in Shopify weiterleiten, wo Shopify Grenzen setzt und was nach dem Start zu prüfen ist. Auch für den Fall, dass der Umzug schon ohne Weiterleitungen passiert ist.
-image: /og/projects/jula-bloom.jpg
+image: /og/projects/lumppings.jpg
+topic: migration
 tags:
   - Shopify
   - SEO

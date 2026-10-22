@@ -458,7 +458,22 @@
     "featuredSubtitle": "Fresh takeaways from recent projects and launches.",
     "viewAll": "View all",
     "estimatedRead": "{{time}} read",
-    "empty": "The first articles are on their way. Until then, the case studies show how I work."
+    "empty": "The first articles are on their way. Until then, the case studies show how I work.",
+    "latest": "Latest article",
+    "all": "All",
+    "filterLabel": "Filter by topic",
+    "filterPlaceholder": "Search articles",
+    "count": "{{count}} articles",
+    "noMatch": "No article matches. Try another word or topic.",
+    "keepReading": "Keep reading",
+    "topics": {
+      "build": "Building a store",
+      "migration": "Migration",
+      "speed": "Speed and Google",
+      "redesign": "Theme and design",
+      "support": "Help and support"
+    },
+    "cta": "Not sure where your store stands? Send me its address for a free store check."
   },
   "faq": {
     "title": "FAQ",
