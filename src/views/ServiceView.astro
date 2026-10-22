@@ -34,7 +34,9 @@ const structuredData = {
       description: service.description,
       url: pageUrl,
       serviceType: 'Shopify development',
-      areaServed: ['DE', 'AT', 'CH', 'US', 'GB', 'AU'],
+      areaServed: service.area
+        ? [service.area.place, ...service.area.nearby].map((name) => ({ '@type': 'AdministrativeArea', name }))
+        : ['DE', 'AT', 'CH', 'US', 'GB', 'AU'],
       provider: { '@id': new URL('/#person', site).toString() },
     },
     {

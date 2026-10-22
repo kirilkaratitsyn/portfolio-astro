@@ -79,9 +79,19 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
 
 export type ServicePage = CollectionEntry<'services'>['data'] & { slug: string };
 
-export async function getServices(locale: Locale): Promise<ServicePage[]> {
+async function loadServicePages(locale: Locale): Promise<ServicePage[]> {
   const entries = await getCollection('services', (entry) => splitEntryId(entry.id).locale === locale);
   return entries.map((entry) => ({ ...entry.data, slug: splitEntryId(entry.id).slug })).sort((a, b) => a.order - b.order);
+}
+
+/** The pages for kinds of work (the Services row, the footer); local pages are left out. */
+export async function getServices(locale: Locale): Promise<ServicePage[]> {
+  return (await loadServicePages(locale)).filter((page) => !page.area);
+}
+
+/** The local pages ("Shopify developer in <place>"), which share the service page layout. */
+export async function getLocalPages(locale: Locale): Promise<ServicePage[]> {
+  return (await loadServicePages(locale)).filter((page) => page.area);
 }
 
 export async function getPosts(locale: Locale): Promise<BlogPost[]> {

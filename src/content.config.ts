@@ -94,6 +94,8 @@ const services = defineCollection({
     faq: z.array(z.object({ q: z.string(), a: z.string() })),
     /** A blog article on the same topic, if there is one. */
     articleSlug: z.string().optional(),
+    /** A local page ("Shopify developer in <place>"): the places it serves. It stays out of the Services row and the footer. */
+    area: z.object({ place: z.string(), nearby: z.array(z.string()).min(1) }).optional(),
   }),
 });
 

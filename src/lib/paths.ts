@@ -1,5 +1,5 @@
 import { DEFAULT_LOCALE, LOCALES, type Locale } from '../i18n';
-import { getCaseStudies, getPosts, getServices } from './content';
+import { getCaseStudies, getLocalPages, getPosts, getServices } from './content';
 
 /** Locales that live under a URL prefix (/de, /uk). English is served from the root. */
 export const PREFIXED_LOCALES = LOCALES.filter((locale) => locale !== DEFAULT_LOCALE);
@@ -32,7 +32,7 @@ export async function postPaths(locales: readonly Locale[]) {
 export async function servicePaths(locales: readonly Locale[]) {
   const paths = [];
   for (const locale of locales) {
-    for (const service of await getServices(locale)) {
+    for (const service of [...(await getServices(locale)), ...(await getLocalPages(locale))]) {
       paths.push({ params: { lang: locale, slug: service.slug }, props: { locale, service } });
     }
   }
