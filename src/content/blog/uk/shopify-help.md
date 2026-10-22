@@ -74,6 +74,6 @@ tags:
 
 Надішліть мені адресу магазину й одне-два речення про проблему на [безкоштовну перевірку](#contact). Я скажу, де проблема і хто може її усунути, навіть якщо це не я. Якщо це справа для розробника, після брифінгу ви отримаєте пропозицію з фіксованою ціною, наприклад на [редизайн чи доробку теми](/uk/services/shopify-redesign). А якщо ще вагаєтеся, чи підійде вашому задуму фрилансер чи агенція: [Shopify-фрилансер чи агенція](/uk/blog/shopify-freelancer-oder-agentur).
 
-**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale)
+**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale) · [Супровід магазину Shopify](/uk/blog/shopify-wartung-betreuung)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

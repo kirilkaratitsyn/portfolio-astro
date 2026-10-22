@@ -74,6 +74,6 @@ Ein Beispiel: [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke aus
 
 Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Wenn es ein Fall für einen Entwickler ist, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
-**Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale)
+**Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale) · [Shopify Wartung: Was die Plattform übernimmt](/de/blog/shopify-wartung-betreuung)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

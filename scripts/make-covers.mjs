@@ -102,6 +102,12 @@ const COVERS = {
     de: { h: 'Freelancer|oder Agentur?', chips: ['Freelancer', 'Agentur'] },
     uk: { h: 'Фрілансер|чи агенція?', chips: ['Фрілансер', 'Агенція'] },
   },
+  'shopify-wartung-betreuung': {
+    topic: 'support',
+    en: { h: 'Shopify|maintenance', chips: ['Theme', 'Apps', 'Access'] },
+    de: { h: 'Shopify-|Wartung', chips: ['Theme', 'Apps', 'Zugänge'] },
+    uk: { h: 'Супровід|Shopify', chips: ['Тема', 'Додатки', 'Доступи'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {
