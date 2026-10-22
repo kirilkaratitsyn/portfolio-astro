@@ -119,4 +119,6 @@ Und die Erwartung an Google: Google empfiehlt auf Search Central gute Core Web V
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist: Ladezeit, Apps im Theme und die Grundlagen der Auffindbarkeit. Danach sage ich Ihnen, welcher der vier Bereiche bei Ihnen am meisten bringt, auch wenn Sie es danach selbst umsetzen. Wenn Sie es lieber abgeben: Ich [mache Ihren Shopify-Shop schneller](/de/services/shopify-speed), zum Festpreis nach dem Briefing.
 
+**Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help)
+
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

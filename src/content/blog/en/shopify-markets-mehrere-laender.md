@@ -114,4 +114,6 @@ This is an assessment from practice, not a Shopify requirement:
 
 Send me your store address for the [free store check](#contact). I look at what is visible from the outside, such as how your addresses are built and what Google already knows. I only work with publicly visible data, without access to your account. What I do for stores you can find under [Services](/services). How I approach a project in general is in [Having a Shopify store built: what the cost depends on and how to get a fixed-price quote](/blog/shopify-shop-erstellen-lassen-kosten). If you are weighing a freelancer against an agency, [Shopify freelancer or agency: which one fits your store?](/blog/shopify-freelancer-oder-agentur) helps.
 
+**Further reading:** [Shopify B2B: trade prices and Quick Order](/blog/shopify-b2b-wholesale)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
