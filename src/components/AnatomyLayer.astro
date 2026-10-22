@@ -6,6 +6,7 @@
 // the step next to it. Sizes are in cqi (the card is a size container), so the drawing scales with the card. Logos:
 // Simple Icons (CC0).
 import MiniStore from './MiniStore.astro';
+import Phone from './Phone.astro';
 import shopify from '../assets/stack/shopify.svg?raw';
 import figma from '../assets/stack/figma.svg?raw';
 import meet from '../assets/stack/googlemeet.svg?raw';
@@ -311,14 +312,9 @@ const code: [string, string][][] = [
                 </div>
                 <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
               </div>
-              <!-- An iPhone's real proportions (9 : 19.5), full height. -->
-              <div class="relative aspect-[9/19.5] h-full shrink-0">
-                <div class="absolute inset-0 flex flex-col rounded-[1.8cqi] bg-ink p-[0.45cqi] shadow-[0_0.8cqi_2cqi_rgba(14,16,40,0.25)]">
-                  <div class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[1.4cqi] bg-white">
-                    <span class="grid h-[4%] shrink-0 place-items-center bg-white"><i class="h-[60%] w-[30%] rounded-full bg-ink" /></span>
-                    <MiniStore store={store} prices={prices} mobile tall class="min-h-0 flex-1" />
-                  </div>
-                </div>
+              <!-- The phone of the projects (Phone.astro), full height: its box is two widths tall. -->
+              <div class="relative aspect-[1/2] h-full shrink-0">
+                <Phone image="/source/mobile/orska-rituals-mobile.webp" domain="orskarituals.com" sizes="120px" class="w-full" />
                 <span class={`absolute -right-[1.2cqi] -top-[1.2cqi] ${okTick} !size-[3cqi]`} set:html={check} />
               </div>
             </div>
