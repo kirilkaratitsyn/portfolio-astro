@@ -188,7 +188,8 @@ const pill = 'rounded-full bg-white/95';
     for (const trigger of triggers) {
       const id = trigger.dataset.megaTrigger!;
       trigger.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && showMega(id));
-      trigger.addEventListener('focus', () => showMega(id));
+      // Keyboard focus opens the panel; a tap also focuses the link, so only :focus-visible counts here.
+      trigger.addEventListener('focus', () => trigger.matches(':focus-visible') && showMega(id));
       trigger.addEventListener('click', (event) => {
         // Touch screens have no hover: the first tap shows the panel, the second one goes to the page.
         if (window.matchMedia('(hover: none)').matches && current !== id) {
