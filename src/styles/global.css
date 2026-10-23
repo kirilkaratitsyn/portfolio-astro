@@ -140,7 +140,7 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
 @media (min-width: 768px) { .legal h2 { font-size: 28px; } .legal p { font-size: 18px; } }
 
 /* Contact form (sections/Contact.astro): the two topics as pills, and a field only bots see. */
-.cf-topic span { display: inline-flex; cursor: pointer; border-radius: 999px; border: 1px solid rgba(14, 16, 24, 0.5); padding: 9px 18px; font-size: 15px; font-weight: 600; transition: background-color 0.2s, color 0.2s; }
+.cf-topic span { display: inline-flex; cursor: pointer; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.8); padding: 9px 18px; font-size: 15px; font-weight: 600; transition: background-color 0.2s, color 0.2s; }
 .cf-topic input:checked + span { background: #fff; color: #3072d8; border-color: #fff; }
 .cf-topic input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
 .cf-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
