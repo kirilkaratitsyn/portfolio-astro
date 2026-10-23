@@ -151,6 +151,6 @@ Ein Geschenkkarten-Produkt legen Sie selbst an. Hilfe lohnt sich, wenn das Theme
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sehe mir an, was von außen sichtbar ist, zum Beispiel Ladezeit, Apps im Quelltext und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich sonst für Shops mache, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions)
+**Weiterlesen:** [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

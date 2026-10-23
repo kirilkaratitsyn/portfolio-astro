@@ -113,6 +113,6 @@ Die Pre-Order-App installieren und konfigurieren können Sie selbst. Hilfe lohnt
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quellcode und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich sonst für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen)
+**Weiterlesen:** [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

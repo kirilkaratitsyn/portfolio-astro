@@ -120,6 +120,6 @@ Shopify радить партнерам, які роблять великий і
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді сторінки та структуру сторінок, і скажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Якщо ви переходите з WooCommerce, я беру на себе [перехід на Shopify](/uk/services/woocommerce-to-shopify). Що ще я роблю для магазинів, дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug)
+**Читайте також:** [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug) · [Складські залишки в Shopify](/uk/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

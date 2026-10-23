@@ -122,6 +122,6 @@ Ein festes Set oder ein Multipack legen Sie selbst in der App an. Hilfe lohnt si
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quellcode und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugriff auf Ihr Konto. Was ich sonst für Shops mache, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Gratisartikel im Warenkorb](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder)
+**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Gratisartikel im Warenkorb](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

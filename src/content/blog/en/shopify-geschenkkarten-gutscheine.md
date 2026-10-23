@@ -151,6 +151,6 @@ You create a gift card product yourself. Help is worthwhile when the theme does 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Discount code or automatic discount in Shopify](/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Markets](/blog/shopify-markets-mehrere-laender) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions)
+**Further reading:** [Discount code or automatic discount in Shopify](/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Markets](/blog/shopify-markets-mehrere-laender) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

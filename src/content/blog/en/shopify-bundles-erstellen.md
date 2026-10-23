@@ -122,6 +122,6 @@ A fixed set or a multipack you create yourself in the app. Help is worthwhile wh
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Discount code or automatic discount in Shopify](/blog/shopify-rabattcodes-automatische-rabatte) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder)
+**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Discount code or automatic discount in Shopify](/blog/shopify-rabattcodes-automatische-rabatte) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
