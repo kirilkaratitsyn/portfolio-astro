@@ -72,7 +72,7 @@ Für Zonen und Raten brauchen Sie in der Regel keinen. Hilfe lohnt sich bei viel
 
 ## Häufige Fragen
 
-**Kann ich kostenlosen Versand ab einem Bestellwert anbieten?** Ja, laut Shopify-Hilfe bei jedem Ratentyp.
+**Kann ich kostenlosen Versand ab einem Bestellwert anbieten?** Ja, laut Shopify-Hilfe bei jedem Ratentyp. Soll es stattdessen ein Geschenk ab Bestellwert sein, lesen Sie [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb).
 
 **Warum sieht ein Kunde keine Versandart?** Häufige Gründe sind ein nicht aktiver Markt, eine Lücke in den Bereichen oder fehlende Gewichte. Mit einer Testbestellung finden Sie es schnell.
 

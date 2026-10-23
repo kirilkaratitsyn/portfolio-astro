@@ -72,6 +72,6 @@ tags:
 
 Надішліть мені адресу магазину й одне-два речення про те, що заважає, на [безкоштовну перевірку](#contact). Я скажу, що можна вирішити самому в редакторі, а для чого потрібен код. Якщо хочете віддати роботу: я доробляю теми або перебудовую їх у межах [редизайну Shopify](/uk/services/shopify-redesign) за фіксованою ціною після брифінгу.
 
-**Читайте також:** [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help)
+**Читайте також:** [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help) · [Безкоштовний подарунок від суми замовлення в Shopify](/uk/blog/shopify-gratisartikel-warenkorb)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

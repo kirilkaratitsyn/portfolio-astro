@@ -138,6 +138,12 @@ const COVERS = {
     de: { h: 'Shopify-|Richtlinien', chips: ['Rückgabe', 'AGB', 'Kontakt'] },
     uk: { h: 'Політики|Shopify', chips: ['Повернення', 'Умови', 'Контакти'] },
   },
+  'shopify-gratisartikel-warenkorb': {
+    topic: 'build',
+    en: { h: 'Free gift|in the cart', chips: ['Buy X get Y', 'Discounts', 'Cart'] },
+    de: { h: 'Gratisartikel|im Warenkorb', chips: ['Kaufe X, erhalte Y', 'Rabatte', 'Warenkorb'] },
+    uk: { h: 'Подарунок|у кошику', chips: ['Купи X, отримай Y', 'Знижки', 'Кошик'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {

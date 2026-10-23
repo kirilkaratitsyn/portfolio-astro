@@ -116,6 +116,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад як побудовані ваші адреси і що Google уже знає. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що я роблю для магазинів, дивіться в розділі [Послуги](/uk/services). Як я загалом підходжу до проєкту, написано в статті [Створення магазину Shopify на замовлення: від чого залежить вартість і як отримати пропозицію з фіксованою ціною](/uk/blog/shopify-shop-erstellen-lassen-kosten). Якщо вагаєтеся між фрилансером і агенцією, допоможе [Shopify-фрилансер чи агенція: хто підійде вашому магазину?](/uk/blog/shopify-freelancer-oder-agentur).
 
-**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland)
+**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Безкоштовний подарунок від суми замовлення в Shopify](/uk/blog/shopify-gratisartikel-warenkorb)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

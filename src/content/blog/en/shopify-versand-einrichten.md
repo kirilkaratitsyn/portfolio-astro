@@ -72,7 +72,7 @@ For zones and rates you usually do not need one. Help is worthwhile with many pr
 
 ## Frequently asked questions
 
-**Can I offer free shipping above an order value?** Yes, on any rate type according to the Shopify Help Center.
+**Can I offer free shipping above an order value?** Yes, on any rate type according to the Shopify Help Center. If you would rather offer a gift above an order value, read [Free gift over a minimum order value in Shopify](/blog/shopify-gratisartikel-warenkorb).
 
 **Why does a customer see no shipping method?** Common reasons are an inactive market, a gap in the ranges or missing weights. A test order finds it quickly.
 
