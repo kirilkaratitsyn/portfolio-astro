@@ -83,6 +83,6 @@ If the simple steps are done and the store is still slow, the cause is usually i
 
 Send me your store's address for the [free store check](#contact). I look at load time, apps and theme and tell you what helps most, even if you then do it yourself. If you would rather hand it over: I [make your Shopify store faster](/services/shopify-speed), at a fixed price after the briefing.
 
-**Further reading:** [Shopify theme customization](/blog/shopify-theme-customization) · [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects)
+**Further reading:** [Shopify theme customization](/blog/shopify-theme-customization) · [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects) · [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
