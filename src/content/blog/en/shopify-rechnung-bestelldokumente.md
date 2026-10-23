@@ -101,4 +101,6 @@ For the first printout and small text changes you do not need one. Help is worth
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. It does not check anything for tax purposes. What else I do for stores is under [Services](/services).
 
+**Further reading:** [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
