@@ -122,6 +122,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді та побудову сторінок, і кажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що ще я роблю для магазинів, дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Безкоштовні товари в кошику Shopify](/uk/blog/shopify-gratisartikel-warenkorb) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Код знижки чи автоматична знижка в Shopify](/uk/blog/shopify-rabattcodes-automatische-rabatte)
+**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Безкоштовні товари в кошику Shopify](/uk/blog/shopify-gratisartikel-warenkorb) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Код знижки чи автоматична знижка в Shopify](/uk/blog/shopify-rabattcodes-automatische-rabatte) · [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

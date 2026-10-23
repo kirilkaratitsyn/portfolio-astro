@@ -118,6 +118,6 @@ Logo, Farben und Schrift ändern Sie selbst im Editor. Hilfe lohnt sich, wenn ei
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte)
+**Weiterlesen:** [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Rabattcode oder automatischer Rabatt](/de/blog/shopify-rabattcodes-automatische-rabatte) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
