@@ -23,6 +23,14 @@ const others = (await getPosts(locale)).filter((p) => p.slug !== post.slug);
 const related = [...others.filter((p) => p.topic && p.topic === post.topic), ...others.filter((p) => !p.topic || p.topic !== post.topic)].slice(0, 3);
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/blog/${post.slug}`), site).toString();
+// schema.org dates need a time zone; the articles only carry a day, so use noon in Germany.
+const berlinNoon = (d: Date) => {
+  const day = d.toISOString().slice(0, 10);
+  const offset = new Intl.DateTimeFormat('en', { timeZone: 'Europe/Berlin', timeZoneName: 'longOffset' })
+    .formatToParts(new Date(`${day}T12:00:00Z`))
+    .find((x) => x.type === 'timeZoneName')!.value.replace('GMT', '');
+  return `${day}T12:00:00${offset || '+00:00'}`;
+};
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -33,8 +41,8 @@ const structuredData = {
       description: post.excerpt,
       url: pageUrl,
       image: new URL(post.image, site).toString(),
-      datePublished: post.publishedAt.toISOString().slice(0, 10),
-      dateModified: (post.updatedAt ?? post.publishedAt).toISOString().slice(0, 10),
+      datePublished: berlinNoon(post.publishedAt),
+      dateModified: berlinNoon(post.updatedAt ?? post.publishedAt),
       inLanguage: locale,
       author: { '@type': 'Person', '@id': PERSON_ID, name: 'Kiril Karatitsyn', url: new URL(localizePath(locale, '/about'), site).toString() },
       keywords: post.tags?.join(', '),
