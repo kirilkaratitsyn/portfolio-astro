@@ -7,7 +7,7 @@ export default {
         bg: '#EDEFF6',
         ink: '#0E1018',
         mute: '#5a5f73',
-        blue: '#2433F0',
+        blue: '#5b8fe0',
         line: '#d3d7e6',
       },
       fontFamily: {

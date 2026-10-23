@@ -45,7 +45,7 @@ const meetIcons = {
 
 // Type in units of the card's width.
 const s = { xxs: 'text-[1.25cqi]', xs: 'text-[1.45cqi]', sm: 'text-[1.7cqi]', md: 'text-[2cqi]', lg: 'text-[2.4cqi]', xl: 'text-[3.2cqi]' };
-const tick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#e3e6ff] p-[0.45cqi] text-blue';
+const tick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#edf3fc] p-[0.45cqi] text-blue';
 const okTick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#2f9e44] p-[0.45cqi] text-white';
 const panel = 'rounded-[1.4cqi] border border-[#e6e8f1] bg-white';
 const { call, brief, build, qa, seo, analytics: ga } = text;
@@ -186,7 +186,7 @@ const code: [string, string][][] = [
                 <span class={`pl-[2.6cqi] ${s.xxs} leading-snug text-mute`}>{brief.lines[i]}</span>
               </span>
             ))}
-            <span class={`mt-auto w-fit rounded-full bg-[#e3e6ff] px-[1.1cqi] py-[0.5cqi] ${s.xxs} font-semibold text-blue`}>{brief.agreed}</span>
+            <span class={`mt-auto w-fit rounded-full bg-[#edf3fc] px-[1.1cqi] py-[0.5cqi] ${s.xxs} font-semibold text-blue`}>{brief.agreed}</span>
           </div>
           <span class={`absolute left-[37%] top-[3.5%] ${s.xxs} text-mute`}>{brief.desktop}</span>
           <div class="absolute left-[37%] top-[9%] h-[72%] w-[44%] overflow-hidden bg-white shadow-[0_0.6cqi_1.6cqi_rgba(14,16,40,0.1)]">
@@ -437,9 +437,9 @@ const code: [string, string][][] = [
           <div class={`${panel} relative flex min-w-0 flex-col p-[1.4cqi]`}>
             <svg viewBox="0 0 120 60" preserveAspectRatio="none" class="min-h-0 w-full flex-1" aria-hidden="true">
               {[15, 30, 45].map((y) => <path d={`M0 ${y} H120`} stroke="#eceef5" stroke-width="0.6" />)}
-              <path d="M58 0 V60" stroke="#2433f0" stroke-width="1" stroke-dasharray="2 2" vector-effect="non-scaling-stroke" />
-              <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11 L120 60 L0 60 Z" fill="rgba(36,51,240,0.1)" />
-              <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11" fill="none" stroke="#2433f0" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+              <path d="M58 0 V60" stroke="#5b8fe0" stroke-width="1" stroke-dasharray="2 2" vector-effect="non-scaling-stroke" />
+              <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11 L120 60 L0 60 Z" fill="rgba(91,143,224,0.1)" />
+              <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11" fill="none" stroke="#5b8fe0" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
             </svg>
             <span class={`absolute left-[49%] top-[1.2cqi] rounded-full bg-blue px-[0.9cqi] py-[0.2cqi] ${s.xxs} font-semibold text-white`}>{ga.launch}</span>
             <span class={`mt-[0.6cqi] flex justify-between ${s.xxs} text-mute`}>

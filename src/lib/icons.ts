@@ -14,7 +14,7 @@ export type IconName = (typeof ICON_NAMES)[number];
 export type ObjectName = IconName | 'logo';
 export type LogoTone = 'ink' | 'white' | 'disc';
 
-const COBALT = '#2433f0';
+const COBALT = '#5b8fe0';
 const WHITE = '#f4f5f9';
 const BLACK = '#0d0e12';
 const MIST = '#dfe2ee';

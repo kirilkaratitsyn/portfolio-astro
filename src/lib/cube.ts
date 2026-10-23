@@ -11,7 +11,7 @@ import {
 } from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
-const COBALT = '#2433f0';
+const COBALT = '#5b8fe0';
 const INK = '#0e1018';
 const WHITE = '#f4f5fa';
 const PALE = '#c9cfe4';
@@ -95,8 +95,8 @@ function material(name: FinishName) {
   // The ribbed finish, at hero size or with three wide ribs for blocks too small for seven.
   const ribbed = (n: number) =>
     glossy(COBALT, {
-      map: colour(pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#c3c8f2', n))),
-      bumpMap: pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#1a1f5a', n)),
+      map: colour(pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#d3e1f7', n))),
+      bumpMap: pattern((ctx, s) => ribs(ctx, s, '#ffffff', '#213554', n)),
       bumpScale: 2.2, roughness: 0.34, clearcoat: 0.35, clearcoatRoughness: 0.25,
     });
   materials ??= {

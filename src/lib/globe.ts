@@ -22,7 +22,7 @@ export const GLOBE_LAND = [
 /** Where the arcs start: Bad Bentheim, Germany. */
 export const HOME = { lat: 52.3, lng: 7.16 };
 
-const COBALT = '#2433f0';
+const COBALT = '#5b8fe0';
 const INK = '#0e1018';
 
 /** A pin as the page hands it over (data-markers on the globe host). */

@@ -18,7 +18,7 @@ const s = t.store;
 const ids = ['announcement', 'hero', 'products', 'reviews'] as const;
 type Id = (typeof ids)[number];
 const price = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
-const products = s.items.map((name, i) => ({ name, now: price.format([49, 29, 39, 25][i]!), was: i % 2 ? '' : price.format([65, 0, 52, 0][i]!), art: ['#d9c7b0', '#2433f0', '#e7a1b8', '#0e1018'][i]! }));
+const products = s.items.map((name, i) => ({ name, now: price.format([49, 29, 39, 25][i]!), was: i % 2 ? '' : price.format([65, 0, 52, 0][i]!), art: ['#d9c7b0', '#5b8fe0', '#e7a1b8', '#0e1018'][i]! }));
 const schemes = ['light', 'cobalt', 'sand', 'ink'] as const;
 
 // The Liquid behind each section, as [setting the line belongs to, line].
@@ -179,7 +179,7 @@ const icon = {
 };
 const shopifyLogo = shopify.replace(/<title>.*?<\/title>/, '').replace('<svg ', '<svg aria-hidden="true" fill="currentColor" width="18" height="18" ');
 // Colour schemes as the editor shows them: "Aa" on the scheme's background with its two button colours.
-const schemeLook = { light: ['#ffffff', '#0e1018', '#0e1018'], cobalt: ['#2433f0', '#ffffff', '#ffffff'], sand: ['#efe4d3', '#3b2a1a', '#3b2a1a'], ink: ['#0e1018', '#ffffff', '#2433f0'] } as const;
+const schemeLook = { light: ['#ffffff', '#0e1018', '#0e1018'], cobalt: ['#5b8fe0', '#ffffff', '#ffffff'], sand: ['#efe4d3', '#3b2a1a', '#3b2a1a'], ink: ['#0e1018', '#ffffff', '#5b8fe0'] } as const;
 const groups = [
   { title: t.groups.header, rows: [{ id: 'announcement' as Id, icon: icon.section }, { name: t.static.header, icon: icon.header }] },
   { title: t.groups.template, rows: [{ id: 'hero' as Id, icon: icon.section }, { id: 'products' as Id, icon: icon.section }, { id: 'reviews' as Id, icon: icon.section }], add: true },

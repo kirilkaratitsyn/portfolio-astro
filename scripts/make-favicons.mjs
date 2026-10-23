@@ -15,7 +15,7 @@ const mark = fs.readFileSync(path.join(root, 'src/assets/brand/mark.svg'), 'utf8
 const d = mark.match(/ d="([^"]+)"/)[1];
 const [, , mw, mh] = mark.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number);
 
-const BG = '#2433F0';
+const BG = '#5b8fe0';
 const FG = '#FFFFFF';
 
 /** The icon as SVG: tile corner radius and mark size as shares of the tile, line weight in mark units. */

@@ -15,11 +15,11 @@ const FONTS = path.join(ROOT, 'public/fonts');
 const OUT = path.join(ROOT, 'public/og/blog');
 
 const TOPIC = {
-  build: { bg: '#2433F0', fg: '#fff', chipBg: '#fff', chipFg: '#0E1018' },
+  build: { bg: '#5b8fe0', fg: '#fff', chipBg: '#fff', chipFg: '#0E1018' },
   migration: { bg: '#0F766E', fg: '#fff', chipBg: '#fff', chipFg: '#0E1018' },
   speed: { bg: '#FF6B1A', fg: '#fff', chipBg: '#fff', chipFg: '#0E1018' },
   redesign: { bg: '#6D28D9', fg: '#fff', chipBg: '#fff', chipFg: '#0E1018' },
-  support: { bg: '#0E1018', fg: '#fff', chipBg: '#2433F0', chipFg: '#fff' },
+  support: { bg: '#0E1018', fg: '#fff', chipBg: '#5b8fe0', chipFg: '#fff' },
 };
 
 // slug -> topic and, per language, the headline ("|" breaks the line) and up to three chips.

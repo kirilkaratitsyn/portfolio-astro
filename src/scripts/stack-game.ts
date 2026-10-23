@@ -25,7 +25,7 @@ interface Chunk {
 }
 
 const COLORS = [
-  { face: '#2433f0', top: '#5b66ff', side: '#1b26c4', text: '#ffffff' },
+  { face: '#5b8fe0', top: '#b1caf0', side: '#3072d8', text: '#ffffff' },
   { face: '#f4f5fa', top: '#ffffff', side: '#d9ddea', text: '#0e1018' },
   { face: '#0e1018', top: '#2a2e3d', side: '#05060a', text: '#ffffff' },
   { face: '#c9cfe4', top: '#e4e8f5', side: '#aab2cc', text: '#0e1018' },
@@ -152,8 +152,8 @@ export function startStack(canvas: HTMLCanvasElement, text: StackText, onOver: (
     }
     const roomRight = width - (b.x + b.w + TOP);
     const right = roomRight >= tw + 22 || roomRight >= b.x;
-    ctx.fillStyle = strong ? '#2433f0' : '#5a5f73';
-    ctx.strokeStyle = strong ? '#2433f0' : '#b6bccf';
+    ctx.fillStyle = strong ? '#5b8fe0' : '#5a5f73';
+    ctx.strokeStyle = strong ? '#5b8fe0' : '#b6bccf';
     ctx.lineWidth = 1;
     ctx.beginPath();
     if (right) {
@@ -191,14 +191,14 @@ export function startStack(canvas: HTMLCanvasElement, text: StackText, onOver: (
       box(moving.x, yUp, moving.w, moving.color);
       // The floor being built, named above the moving block.
       ctx.font = '700 12px Onest, system-ui, sans-serif';
-      ctx.fillStyle = '#2433f0';
+      ctx.fillStyle = '#5b8fe0';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'alphabetic';
       ctx.fillText(label(tower.length), moving.x + moving.w / 2, screenY(yUp) - TOP - 6);
     }
     ctx.textBaseline = 'alphabetic';
     if (flash > 0) {
-      ctx.fillStyle = `rgba(36, 51, 240, ${flash})`;
+      ctx.fillStyle = `rgba(91,143,224, ${flash})`;
       ctx.font = '700 18px Onest, system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(text.perfect, width / 2, 58);

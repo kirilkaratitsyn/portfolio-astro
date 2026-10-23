@@ -16,7 +16,7 @@ interface Props {
 }
 
 const { store, prices, mobile = false, tall = false, class: className = '' } = Astro.props;
-const art = ['#d9c7b0', '#2433f0', '#e7a1b8', '#0e1018'];
+const art = ['#d9c7b0', '#5b8fe0', '#e7a1b8', '#0e1018'];
 const items = store.items.slice(0, mobile && !tall ? 2 : 4);
 ---
 

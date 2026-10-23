@@ -18,11 +18,11 @@ interface Props {
 
 const { locale, caseStudies, works } = Astro.props;
 const t = useTranslations(locale);
-const accentOf = new Map(works.filter((w) => w.caseStudySlug).map((w) => [w.caseStudySlug!, w.accent ?? '#2433f0']));
+const accentOf = new Map(works.filter((w) => w.caseStudySlug).map((w) => [w.caseStudySlug!, w.accent ?? '#5b8fe0']));
 const slides = caseStudies
   .filter((c) => !c.archived)
   .slice(5, 10)
-  .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#2433f0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
+  .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#5b8fe0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
 ---
 
 <section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" style={`--feat-accent:${slides[0]?.accent}`} aria-roledescription="carousel" aria-label={t.feature.label}>
@@ -46,7 +46,7 @@ const slides = caseStudies
       {
         slides.map((cs, i) => (
           <div class:list={['feat-shot', i === 0 && 'is-on']} data-feature-shot={i} data-accent={cs.accent} aria-hidden={i === 0 ? undefined : 'true'}>
-            <div data-feature-desk class="absolute left-[8%] top-[13%] w-[73%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(8,12,90,0.35)]">
+            <div data-feature-desk class="absolute left-[8%] top-[13%] w-[73%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(33,53,84,0.35)]">
               <div class="flex h-[5%] min-h-[14px] items-center gap-1.5 bg-[#f1f2f6] px-3 py-1.5" aria-hidden="true">
                 <i class="block size-2 rounded-full bg-[#cfd2de]" />
                 <i class="block size-2 rounded-full bg-[#cfd2de]" />
