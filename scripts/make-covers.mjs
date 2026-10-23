@@ -120,6 +120,12 @@ const COVERS = {
     de: { h: 'Shopify-|Produktimport', chips: ['CSV', 'Sicherung', 'Varianten'] },
     uk: { h: 'Імпорт товарів|у Shopify', chips: ['CSV', 'Копія', 'Варіанти'] },
   },
+  'shopify-cookie-banner-datenschutz': {
+    topic: 'build',
+    en: { h: 'Shopify|cookie banner', chips: ['Privacy', 'Consent', 'Pixels'] },
+    de: { h: 'Shopify-|Cookie-Banner', chips: ['Datenschutz', 'Einwilligung', 'Pixel'] },
+    uk: { h: 'Cookie-банер|у Shopify', chips: ['Конфіденційність', 'Згода', 'Пікселі'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {

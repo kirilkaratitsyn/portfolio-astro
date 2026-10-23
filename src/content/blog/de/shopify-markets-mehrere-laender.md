@@ -104,7 +104,7 @@ Das ist eine Einschätzung aus der Praxis, keine Vorgabe von Shopify:
 
 **Brauche ich für Österreich oder die Schweiz einen eigenen Shop?** Nein, in der Regel reicht ein Shop mit mehreren Märkten.
 
-**Muss ich alles übersetzen?** Für Käufer aus Österreich genügt Deutsch, die Texte können Sie aber an lokale Gepflogenheiten anpassen. Für weitere Sprachen übersetzen Sie mit Translate & Adapt oder einer Übersetzungs-App.
+**Muss ich alles übersetzen?** Für Käufer aus Österreich genügt Deutsch, die Texte können Sie aber an lokale Gepflogenheiten anpassen. Für weitere Sprachen übersetzen Sie mit Translate & Adapt oder einer Übersetzungs-App. Auch Cookie-Banner und Datenschutzerklärung gehören in jede Shop-Sprache, wie das geht, beschreibt [Shopify Cookie-Banner und Datenschutzerklärung](/de/blog/shopify-cookie-banner-datenschutz).
 
 **Kann ich pro Land andere Preise setzen?** Ja, über Kataloge mit Aufschlag oder festen Preisen. Welche Funktionen Ihr Plan enthält, prüfen Sie in der Shopify-Hilfe.
 

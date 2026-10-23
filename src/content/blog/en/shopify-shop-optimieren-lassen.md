@@ -21,7 +21,7 @@ Four areas usually get thrown into one pot. It pays to separate them:
 - **Load time.** Apps, scripts, images and the theme itself. The causes and what you can check yourself are in [Slow Shopify store? 7 causes](/blog/slow-shopify-store).
 - **Technical findability.** Errors in Search Console, sitemap, redirects, clean titles and descriptions. If your store does not show up on Google at all, start with [Shopify Store Not Found on Google](/blog/shopify-shop-bei-google-nicht-gefunden).
 - **Usability.** How well do the product page, cart and checkout work on a phone? That is a check with test orders, not a promise of a specific increase in sales.
-- **Housekeeping in the background.** Tracking scripts, leftovers of old apps, duplicate code. It saves load time and makes later changes cheaper.
+- **Housekeeping in the background.** Tracking scripts, leftovers of old apps, duplicate code. It saves load time and makes later changes cheaper. How scripts and pixels relate to the cookie banner and consent is covered in [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz).
 
 A serious offer says which of these areas it covers and which it does not.
 

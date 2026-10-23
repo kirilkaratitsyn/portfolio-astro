@@ -21,7 +21,7 @@ Vier Bereiche werden meist in einen Topf geworfen. Es lohnt sich, sie zu trennen
 - **Ladezeit.** Apps, Skripte, Bilder und das Theme selbst. Die Ursachen und was Sie selbst prüfen können, stehen in [Shopify-Shop langsam? 7 Ursachen](/de/blog/slow-shopify-store).
 - **Technische Auffindbarkeit.** Fehler in der Search Console, Sitemap, Weiterleitungen, saubere Titel und Beschreibungen. Wenn Ihr Shop gar nicht erst in Google auftaucht, beginnen Sie bei [Shopify-Shop wird bei Google nicht gefunden](/de/blog/shopify-shop-bei-google-nicht-gefunden).
 - **Bedienbarkeit.** Wie gut lassen sich Produktseite, Warenkorb und Kasse am Handy benutzen? Das ist eine Prüfung mit Testbestellungen, kein Versprechen auf eine bestimmte Umsatzsteigerung.
-- **Aufräumen im Hintergrund.** Tracking-Skripte, Reste alter Apps, doppelter Code. Das spart Ladezeit und macht spätere Änderungen billiger.
+- **Aufräumen im Hintergrund.** Tracking-Skripte, Reste alter Apps, doppelter Code. Das spart Ladezeit und macht spätere Änderungen billiger. Wie Skripte und Pixel mit Cookie-Banner und Einwilligung zusammenhängen, steht in [Shopify Cookie-Banner und Datenschutzerklärung](/de/blog/shopify-cookie-banner-datenschutz).
 
 Ein seriöses Angebot benennt, welche dieser Bereiche gemeint sind und welche nicht.
 

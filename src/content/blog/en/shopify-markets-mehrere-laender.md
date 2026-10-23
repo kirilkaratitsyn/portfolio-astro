@@ -104,7 +104,7 @@ This is an assessment from practice, not a Shopify requirement:
 
 **Do I need a separate store for Austria or Switzerland?** No, as a rule one store with several markets is enough.
 
-**Do I have to translate everything?** For buyers in Austria German is enough, but you can adapt the texts to local habits. For further languages you translate with Translate & Adapt or a translation app.
+**Do I have to translate everything?** For buyers in Austria German is enough, but you can adapt the texts to local habits. For further languages you translate with Translate & Adapt or a translation app. The cookie banner and privacy policy belong in every store language too; how that works is covered in [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz).
 
 **Can I set different prices per country?** Yes, through catalogs with an adjustment or fixed prices. Check in the Shopify Help Center which features your plan includes.
 
