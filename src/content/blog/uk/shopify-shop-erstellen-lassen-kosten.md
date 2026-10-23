@@ -102,6 +102,6 @@ tags:
 
 Напишіть мені на [безкоштовну перевірку](#contact), що ви плануєте: новий магазин, перехід чи перебудову. Я чесно скажу, який обсяг має сенс для вашої мети, а після брифінгу ви отримаєте пропозицію з фіксованою ціною. Залежно від випадку підійде [перехід з WooCommerce](/uk/services/woocommerce-to-shopify) або [редизайн зі зміною теми](/uk/services/shopify-redesign). А якщо ще вагаєтеся, чи підійде вашому задуму фрилансер чи агенція: [Shopify-фрилансер чи агенція](/uk/blog/shopify-freelancer-oder-agentur). Плануєте кілька країн? Тоді читайте [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender).
 
-**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale) · [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug) · [З Shopware або Magento на Shopify](/uk/blog/shopware-magento-zu-shopify)
+**Читайте також:** [Shopify B2B: оптові ціни та Quick Order](/uk/blog/shopify-b2b-wholesale) · [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug) · [З Shopware або Magento на Shopify](/uk/blog/shopware-magento-zu-shopify) · [Безпека WooCommerce та оновлення плагінів](/uk/blog/woocommerce-sicherheit-plugin-updates)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*
