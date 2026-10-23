@@ -68,6 +68,6 @@ tags:
 
 Я налаштовую [B2B та опт у Shopify](/uk/services/shopify-b2b) за фіксованою ціною після брифінгу. Замовте безкоштовну перевірку магазину або забронюйте перший дзвінок.
 
-**Читайте також:** [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender) · [Створення магазину Shopify: від чого залежить вартість](/uk/blog/shopify-shop-erstellen-lassen-kosten) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv)
+**Читайте також:** [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender) · [Створення магазину Shopify: від чого залежить вартість](/uk/blog/shopify-shop-erstellen-lassen-kosten) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

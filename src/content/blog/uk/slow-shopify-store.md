@@ -83,6 +83,6 @@ Google Analytics, піксель Meta, TikTok, Pinterest, теплові кар�
 
 Надішліть мені адресу магазину на [безкоштовну перевірку](#contact). Я подивлюся на швидкість, застосунки й тему і скажу, що дасть найбільше, навіть якщо потім ви зробите це самі. Якщо хочете віддати роботу: я [пришвидшую магазини Shopify](/uk/services/shopify-speed) за фіксованою ціною після брифінгу.
 
-**Читайте також:** [Налаштування теми Shopify](/uk/blog/shopify-theme-customization)
+**Читайте також:** [Налаштування теми Shopify](/uk/blog/shopify-theme-customization) · [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

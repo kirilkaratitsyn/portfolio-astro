@@ -124,6 +124,6 @@ Der Magento-Leitfaden rät außerdem, die TTL des DNS-Eintrags 24 bis 48 Stunden
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa wie Ihre Adressen aufgebaut sind und welche Seiten im Google-Index stehen. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Für Umzüge zu Shopify gibt es die Seite [WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) mit Weiterleitungsplan und Launch-Begleitung zum Festpreis nach dem Briefing. Für Shopware und Magento klären wir im Erstgespräch, was machbar ist und was der Umzug in Ihrem Fall umfasst. Wie ich einen Plattformwechsel angehe, zeigt auch [Von WooCommerce zu Shopify umziehen, ohne Rankings zu verlieren](/de/blog/woocommerce-to-shopify). Kommen Sie von Wix? Dann lesen Sie [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug).
 
-**Weiterlesen:** [WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln](/de/blog/woocommerce-sicherheit-plugin-updates)
+**Weiterlesen:** [WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln](/de/blog/woocommerce-sicherheit-plugin-updates) · [Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen](/de/blog/shopify-metafelder-metaobjects)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

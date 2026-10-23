@@ -68,6 +68,6 @@ It depends on which B2B features you need and what your plan includes. I settle 
 
 I set up [B2B and wholesale in Shopify](/services/shopify-b2b), at a fixed price after the briefing. Request the free store check or book an intro call.
 
-**Further reading:** [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: what the cost depends on](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv)
+**Further reading:** [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: what the cost depends on](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
