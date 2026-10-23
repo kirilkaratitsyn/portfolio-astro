@@ -118,6 +118,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді та побудову сторінок, і кажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що ще я роблю для магазинів, дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions)
+**Читайте також:** [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Код знижки чи автоматична знижка в Shopify](/uk/blog/shopify-rabattcodes-automatische-rabatte)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

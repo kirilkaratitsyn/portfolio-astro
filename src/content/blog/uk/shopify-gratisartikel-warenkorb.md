@@ -108,6 +108,6 @@ Shopify має три класи знижок: на товари, на замо�
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді та побудову сторінок, і кажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що ще я роблю для магазинів, дивіться в розділі [Послуги](/uk/services) та на сторінці [Перебудова магазину і редизайн](/uk/services/shopify-redesign).
 
-**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions)
+**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Код знижки чи автоматична знижка в Shopify](/uk/blog/shopify-rabattcodes-automatische-rabatte)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*
