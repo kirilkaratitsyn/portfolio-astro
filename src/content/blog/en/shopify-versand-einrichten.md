@@ -82,4 +82,6 @@ For zones and rates you usually do not need one. Help is worthwhile with many pr
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do for stores is under [Services](/services) and [store rebuild and redesign](/services/shopify-redesign).
 
+**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
