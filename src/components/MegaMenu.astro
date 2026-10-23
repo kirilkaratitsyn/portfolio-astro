@@ -23,7 +23,7 @@ const latest = posts.slice(0, 3);
 const topics = BLOG_TOPICS.filter((topic) => posts.some((post) => post.topic === topic));
 const kinds = WORK_KINDS.filter((kind) => works.some((w) => w.work.includes(kind)));
 const link = 'group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-bg focus-visible:bg-bg';
-const all = 'inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:underline hover:underline-offset-4';
+const all = 'inline-flex items-center gap-1.5 text-sm font-semibold text-blue-dark hover:underline hover:underline-offset-4';
 ---
 
 <div class="mega" data-mega>
@@ -54,7 +54,7 @@ const all = 'inline-flex items-center gap-1.5 text-sm font-semibold text-blue ho
             {
               kinds.map((kind) => (
                 <li>
-                  <a href={`${to('/projects')}?work=${kind}`} class="flex items-center justify-between rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue">
+                  <a href={`${to('/projects')}?work=${kind}`} class="flex items-center justify-between rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue-deep">
                     {t.works.filters.kinds[kind]}
                     <Icon name="arrow" size={16} class="text-mute" />
                   </a>
@@ -111,7 +111,7 @@ const all = 'inline-flex items-center gap-1.5 text-sm font-semibold text-blue ho
               <ul class="mt-2 grid gap-0.5">
                 {topics.map((topic) => (
                   <li>
-                    <a href={`${to('/blog')}?topic=${topic}`} class="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue">
+                    <a href={`${to('/blog')}?topic=${topic}`} class="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[15px] font-medium hover:bg-bg hover:text-blue-deep">
                       <Icon name={TOPIC_ICONS[topic]} size={16} class="text-mute" />
                       {t.blog.topics[topic]}
                     </a>

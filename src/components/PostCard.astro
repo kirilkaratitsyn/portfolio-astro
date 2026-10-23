@@ -50,7 +50,7 @@ const search = [post.title, post.excerpt, ...(post.tags ?? [])].join(' ').toLowe
       <p class:list={['text-[15px] leading-relaxed text-mute', featured ? 'md:line-clamp-5' : 'line-clamp-3']}>{post.excerpt}</p>
       <span class="mt-auto flex items-center justify-between pt-2 text-sm">
         <span class="text-mute">{post.date}</span>
-        <span class="inline-flex items-center gap-1.5 font-semibold text-blue">{t.blog.readMore}<Icon name="arrow" size={16} class="transition-transform duration-300 group-hover:translate-x-1" /></span>
+        <span class="inline-flex items-center gap-1.5 font-semibold text-blue-dark">{t.blog.readMore}<Icon name="arrow" size={16} class="transition-transform duration-300 group-hover:translate-x-1" /></span>
       </span>
     </span>
   </a>

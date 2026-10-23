@@ -34,7 +34,7 @@ const slides = caseStudies
             <div class:list={['feat-text', i === 0 && 'is-on']} data-feature-text={i} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${slides.length}`} inert={i === 0 ? undefined : true}>
               <h2 data-split={i === 0 ? '' : undefined} class="font-head text-[48px] font-bold leading-[0.95] tracking-[-0.03em] md:text-[84px]">{cs.title}</h2>
               <p class="mt-5 max-w-[430px] text-lg leading-relaxed text-mute md:mt-[22px] md:text-xl">{cs.summary}</p>
-              <a href={localizePath(locale, `/projects/${cs.slug}`)} class="mt-7 inline-block text-lg font-semibold text-blue hover:underline">{t.caseStudies.viewCase} →</a>
+              <a href={localizePath(locale, `/projects/${cs.slug}`)} class="mt-7 inline-block text-lg font-semibold text-blue-dark hover:underline">{t.caseStudies.viewCase} →</a>
             </div>
           ))
         }

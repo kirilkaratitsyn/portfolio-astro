@@ -90,7 +90,7 @@ const total = String(layers.length).padStart(2, '0');
             layers.map((layer, i) => (
               <div class:list={['feat-text', i === 0 && 'is-on']} data-anat-m-text={i} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${layers.length}`} inert={i === 0 ? undefined : true}>
                 <p class="text-[15px] font-semibold tabular-nums text-mute">
-                  <b class="text-blue">{layer.num}</b> / {total}
+                  <b class="text-blue-dark">{layer.num}</b> / {total}
                 </p>
                 <h3 class="mt-2 font-head text-[40px] font-bold leading-[0.98] tracking-[-0.03em]">{layer.title}</h3>
                 <p class="mt-4 text-lg leading-relaxed text-mute">{layer.text}</p>
@@ -145,7 +145,7 @@ const total = String(layers.length).padStart(2, '0');
             <AnatomyLayer kind={layer.kind} locale={locale} text={t.cards} />
           </div>
           <h3 class="mt-5 flex items-baseline gap-3 font-head text-[24px] font-bold leading-tight">
-            <span class="text-[15px] text-blue">{layer.num}</span>
+            <span class="text-[15px] text-blue-dark">{layer.num}</span>
             {layer.title}
           </h3>
           <p class="mt-2 text-[17px] leading-relaxed text-[#3d4152]">{layer.text}</p>

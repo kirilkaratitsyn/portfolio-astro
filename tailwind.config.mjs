@@ -8,6 +8,8 @@ export default {
         ink: '#0E1018',
         mute: '#5a5f73',
         blue: '#5b8fe0',
+        'blue-deep': '#3072d8',
+        'blue-dark': '#213554',
         line: '#d3d7e6',
       },
       fontFamily: {

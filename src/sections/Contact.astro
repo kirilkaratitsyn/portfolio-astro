@@ -17,17 +17,17 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
 ---
 
 <section id="contact" class="mx-auto mt-24 max-w-[1440px] scroll-mt-24 px-5 md:mt-32 md:px-10">
-  <div data-contact class="on-blue relative overflow-hidden rounded-[28px] bg-blue px-6 pb-12 pt-[128px] text-white md:px-16 md:pb-16 md:pt-20">
-    <h2 data-split class="relative z-[2] max-w-[900px] font-head text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</h2>
+  <div data-contact class="on-blue relative overflow-hidden rounded-[28px] bg-blue px-6 pb-12 pt-[128px] text-ink md:px-16 md:pb-16 md:pt-20">
+    <h2 data-split class="relative z-[2] max-w-[900px] font-head text-white text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</h2>
     <div class="relative z-[2] mt-10 flex flex-col items-start gap-5 text-lg md:mt-14 md:flex-row md:items-center md:gap-8 md:text-xl">
-      <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue">{t.header.bookCall}</CalButton>
-      <a href={`mailto:${t.contact.email}?subject=Shopify%20project%20inquiry`} class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
+      <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue-deep">{t.header.bookCall}</CalButton>
+      <a href={`mailto:${t.contact.email}?subject=Shopify%20project%20inquiry`} class="underline decoration-ink/40 underline-offset-4 hover:decoration-ink">{t.contact.email}</a>
     </div>
     <!-- A second door for those not ready for a call: the store check or a project enquiry, sent to Kiril by email
          through api/contact.js. Works without scripts too (a plain post and a thank-you page). -->
-    <div class="relative z-[2] mt-10 max-w-[720px] border-t border-white/25 pt-8 md:mt-14 md:pt-10">
-      <h3 class="font-head text-[24px] font-bold leading-tight md:text-[30px]">{t.contact.shopCheck.title}</h3>
-      <p class="mt-3 text-[17px] leading-relaxed text-white/85 md:text-lg">{t.contact.shopCheck.text}</p>
+    <div class="relative z-[2] mt-10 max-w-[720px] border-t border-ink/20 pt-8 md:mt-14 md:pt-10">
+      <h3 class="font-head text-white text-[24px] font-bold leading-tight md:text-[30px]">{t.contact.shopCheck.title}</h3>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink md:text-lg">{t.contact.shopCheck.text}</p>
       <form data-contact-form action="/api/contact" method="post" class="mt-7 grid gap-5 md:grid-cols-2">
         <fieldset class="flex flex-wrap gap-2 md:col-span-2">
           <legend class="sr-only">{f.check} / {f.project}</legend>
@@ -50,8 +50,8 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
         <input type="hidden" name="page" value="" />
         <input type="hidden" name="utm" value="" />
         <div class="flex flex-col items-start gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-          <button type="submit" data-label={f.send} data-sending={f.sending} class="inline-flex rounded-full bg-white px-7 py-[15px] text-[16px] font-semibold text-blue transition-opacity disabled:opacity-60">{f.send}</button>
-          <p class="text-[14px] leading-snug text-white/75">{f.privacy} <a href={privacyHref} class="underline underline-offset-2 hover:text-white">{f.privacyLink}</a>.</p>
+          <button type="submit" data-label={f.send} data-sending={f.sending} class="inline-flex rounded-full bg-white px-7 py-[15px] text-[16px] font-semibold text-blue-deep transition-opacity disabled:opacity-60">{f.send}</button>
+          <p class="text-[14px] leading-snug text-ink/90">{f.privacy} <a href={privacyHref} class="underline underline-offset-2 hover:no-underline">{f.privacyLink}</a>.</p>
         </div>
         <p data-form-status role="status" aria-live="polite" class="text-[17px] font-medium md:col-span-2" hidden></p>
         <p data-form-sent hidden>{f.sent}</p>

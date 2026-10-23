@@ -45,7 +45,7 @@ const meetIcons = {
 
 // Type in units of the card's width.
 const s = { xxs: 'text-[1.25cqi]', xs: 'text-[1.45cqi]', sm: 'text-[1.7cqi]', md: 'text-[2cqi]', lg: 'text-[2.4cqi]', xl: 'text-[3.2cqi]' };
-const tick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#edf3fc] p-[0.45cqi] text-blue';
+const tick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#edf3fc] p-[0.45cqi] text-blue-deep';
 const okTick = 'grid size-[2.3cqi] shrink-0 place-items-center rounded-full bg-[#2f9e44] p-[0.45cqi] text-white';
 const panel = 'rounded-[1.4cqi] border border-[#e6e8f1] bg-white';
 const { call, brief, build, qa, seo, analytics: ga } = text;
@@ -142,7 +142,7 @@ const code: [string, string][][] = [
                 <span class="truncate">{item}</span>
               </span>
             ))}
-            <span class={`flex items-center gap-[0.8cqi] ${s.xs} font-semibold text-blue`}>
+            <span class={`flex items-center gap-[0.8cqi] ${s.xs} font-semibold text-blue-deep`}>
               <span class="size-[2cqi] shrink-0 rounded-full border-[0.3cqi] border-blue border-r-transparent" />
               <span class="truncate">{call.now}</span>
             </span>
@@ -186,7 +186,7 @@ const code: [string, string][][] = [
                 <span class={`pl-[2.6cqi] ${s.xxs} leading-snug text-mute`}>{brief.lines[i]}</span>
               </span>
             ))}
-            <span class={`mt-auto w-fit rounded-full bg-[#edf3fc] px-[1.1cqi] py-[0.5cqi] ${s.xxs} font-semibold text-blue`}>{brief.agreed}</span>
+            <span class={`mt-auto w-fit rounded-full bg-[#edf3fc] px-[1.1cqi] py-[0.5cqi] ${s.xxs} font-semibold text-blue-deep`}>{brief.agreed}</span>
           </div>
           <span class={`absolute left-[37%] top-[3.5%] ${s.xxs} text-mute`}>{brief.desktop}</span>
           <div class="absolute left-[37%] top-[9%] h-[72%] w-[44%] overflow-hidden bg-white shadow-[0_0.6cqi_1.6cqi_rgba(14,16,40,0.1)]">
@@ -253,7 +253,7 @@ const code: [string, string][][] = [
               {build.names.map((name, i) => (
                 <span class={`flex items-center gap-[0.8cqi] ${s.xs} font-medium`}>
                   {i < 3 ? <span class={`${tick} !size-[2cqi]`} set:html={check} /> : <span class="size-[2cqi] shrink-0 rounded-full border-[0.3cqi] border-blue border-r-transparent" />}
-                  <span class={`truncate ${i < 3 ? '' : 'text-blue'}`}>{name}</span>
+                  <span class={`truncate ${i < 3 ? '' : 'text-blue-deep'}`}>{name}</span>
                 </span>
               ))}
             </span>
@@ -393,7 +393,7 @@ const code: [string, string][][] = [
             ].map(([from, to]) => (
               <span class="flex min-w-0 items-center gap-[0.7cqi] font-mono">
                 <span class="truncate text-mute">{from}</span>
-                <span class="text-blue">→</span>
+                <span class="text-blue-deep">→</span>
                 <span class="truncate">{to}</span>
                 <span class="ml-auto rounded-[0.4cqi] bg-[#e6f6ea] px-[0.6cqi] font-sans font-semibold text-[#1b7a31]">301</span>
               </span>
@@ -441,7 +441,7 @@ const code: [string, string][][] = [
               <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11 L120 60 L0 60 Z" fill="rgba(91,143,224,0.1)" />
               <path d="M0 50 L10 48 L20 49 L30 47 L40 48 L50 46 L58 45 L68 36 L78 33 L88 26 L98 24 L108 17 L120 11" fill="none" stroke="#5b8fe0" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
             </svg>
-            <span class={`absolute left-[49%] top-[1.2cqi] rounded-full bg-blue px-[0.9cqi] py-[0.2cqi] ${s.xxs} font-semibold text-white`}>{ga.launch}</span>
+            <span class={`absolute left-[49%] top-[1.2cqi] rounded-full bg-blue-deep px-[0.9cqi] py-[0.2cqi] ${s.xxs} font-semibold text-white`}>{ga.launch}</span>
             <span class={`mt-[0.6cqi] flex justify-between ${s.xxs} text-mute`}>
               {ga.days.map((d) => <span>{d}</span>)}
             </span>
@@ -461,7 +461,7 @@ const code: [string, string][][] = [
                 ))}
               </span>
             ))}
-            <span class={`mt-auto w-fit rounded-full bg-blue px-[1.2cqi] py-[0.5cqi] font-sans ${s.xs} font-semibold text-white`}>{ga.live}</span>
+            <span class={`mt-auto w-fit rounded-full bg-blue-deep px-[1.2cqi] py-[0.5cqi] font-sans ${s.xs} font-semibold text-white`}>{ga.live}</span>
           </div>
         </div>
       </div>

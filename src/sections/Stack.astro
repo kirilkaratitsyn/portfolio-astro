@@ -71,7 +71,7 @@ const projects = localizePath(locale, '/projects');
       themes.map((theme) => (
         <a href={`${projects}?theme=${theme.slug}`} class="rounded-full border border-line px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-white">
           {theme.name === 'Custom' ? all.works.filters.custom : theme.name}
-          <span class="ml-1 opacity-50">{theme.count}</span>
+          <span class="ml-1 opacity-70">{theme.count}</span>
         </a>
       ))
     }

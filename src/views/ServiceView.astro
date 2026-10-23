@@ -60,8 +60,8 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
       <h1 class="intro-lift font-head text-[clamp(34px,9vw,48px)] font-bold leading-[0.98] tracking-[-0.03em] md:text-[84px]">{service.title}</h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-mute md:mt-8 md:text-xl">{service.lead}</p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
-        <CalButton class="inline-flex rounded-full bg-blue px-7 py-[15px] text-[16px] font-semibold text-white">{t.header.bookCall}</CalButton>
-        <a href="#contact" class="text-[16px] font-semibold text-blue hover:underline">{t.contact.shopCheck.title} →</a>
+        <CalButton class="inline-flex rounded-full bg-blue-deep px-7 py-[15px] text-[16px] font-semibold text-white">{t.header.bookCall}</CalButton>
+        <a href="#contact" class="text-[16px] font-semibold text-blue-dark hover:underline">{t.contact.shopCheck.title} →</a>
       </div>
     </header>
 
@@ -88,7 +88,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
           {
             service.steps.map((step, i) => (
               <li class="grid grid-cols-[36px_1fr] gap-2">
-                <span class="font-head text-xl font-bold text-blue">{String(i + 1).padStart(2, '0')}</span>
+                <span class="font-head text-xl font-bold text-blue-deep">{String(i + 1).padStart(2, '0')}</span>
                 <span>
                   <b class="font-semibold">{step.title}.</b> {step.text}
                 </span>
@@ -102,9 +102,9 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         <a href={localizePath(locale, `/projects/${proof.slug}`)} class="group grid max-w-3xl gap-5 md:grid-cols-[220px_1fr] md:items-start">
           <img src={thumb(proof.image, '480')} alt={proof.title} width="480" height="333" loading="lazy" decoding="async" class="w-full rounded-xl border border-line object-cover object-top" />
           <span class="block">
-            <span class="block font-head text-[26px] font-bold leading-tight group-hover:text-blue">{proof.title}</span>
+            <span class="block font-head text-[26px] font-bold leading-tight group-hover:text-blue-deep">{proof.title}</span>
             <ul class="mt-3 grid gap-2 text-lg leading-relaxed">{service.caseText.map((item) => <li>{item}</li>)}</ul>
-            <span class="mt-3 inline-block font-semibold text-blue">{copy.viewCase} →</span>
+            <span class="mt-3 inline-block font-semibold text-blue-dark">{copy.viewCase} →</span>
           </span>
         </a>
       </div>
@@ -127,7 +127,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         article && (
           <div class={row}>
             <h2 class="font-head text-2xl font-bold">{copy.article}</h2>
-            <a href={localizePath(locale, `/blog/${article.slug}`)} class="max-w-3xl text-lg font-semibold text-blue hover:underline">
+            <a href={localizePath(locale, `/blog/${article.slug}`)} class="max-w-3xl text-lg font-semibold text-blue-dark hover:underline">
               {article.title} →
             </a>
           </div>
@@ -140,7 +140,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
             <ul class="grid max-w-3xl gap-2">
               {others.map((item) => (
                 <li>
-                  <a href={localizePath(locale, `/services/${item.slug}`)} class="text-lg font-semibold text-blue hover:underline">
+                  <a href={localizePath(locale, `/services/${item.slug}`)} class="text-lg font-semibold text-blue-dark hover:underline">
                     {item.title} →
                   </a>
                 </li>
