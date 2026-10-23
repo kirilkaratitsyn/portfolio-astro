@@ -147,6 +147,6 @@ Shopify рахує не одне число. За довідкою є п'ять 
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні: швидкість завантаження, застосунки в коді сторінок, побудову сторінок, і розповідаю, що впадає в око. Я працюю лише з публічно видимими даними, без доступу до вашого облікового запису. Що ще я роблю для магазинів, читайте в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten)
+**Читайте також:** [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten) · [Варіанти товару в Shopify](/uk/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

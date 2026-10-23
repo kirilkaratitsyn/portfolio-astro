@@ -147,6 +147,6 @@ Die Grundeinstellungen setzen Sie selbst. Hilfe lohnt sich, wenn Bestände aus e
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quellcode und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich sonst für Shops tue, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten)
+**Weiterlesen:** [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

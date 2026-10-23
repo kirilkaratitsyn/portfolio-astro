@@ -147,6 +147,6 @@ You set the basics yourself. Help is worthwhile when quantities should be taken 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten)
+**Further reading:** [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten) · [Setting up Shopify product variants](/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

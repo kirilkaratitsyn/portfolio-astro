@@ -126,6 +126,6 @@ Einen einfachen Abo-Plan legen Sie selbst in der App an. Hilfe lohnt sich, wenn 
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich sonst für Shops mache, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Zahlungsarten in Shopify für Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen)
+**Weiterlesen:** [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Zahlungsarten in Shopify für Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

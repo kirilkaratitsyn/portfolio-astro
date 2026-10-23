@@ -120,6 +120,6 @@ For a few dozen products, many store owners manage with export, spreadsheet and 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. If you are coming from WooCommerce, I take care of the [move to Shopify](/services/woocommerce-to-shopify). What else I do for stores is under [Services](/services).
 
-**Further reading:** [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten)
+**Further reading:** [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten) · [Setting up Shopify product variants](/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

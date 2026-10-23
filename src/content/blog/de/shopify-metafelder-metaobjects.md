@@ -101,6 +101,6 @@ Für ein paar Felder mit dynamischen Quellen brauchen Sie keinen. Hilfe lohnt si
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen)
+**Weiterlesen:** [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

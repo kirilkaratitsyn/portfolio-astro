@@ -120,6 +120,6 @@ Für wenige Dutzend Produkte kommen viele Händler mit Export, Tabelle und Impor
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Kommen Sie von WooCommerce, übernehme ich den [Umzug zu Shopify](/de/services/woocommerce-to-shopify). Was ich sonst für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen](/de/blog/shopify-metafelder-metaobjects) · [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten)
+**Weiterlesen:** [Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen](/de/blog/shopify-metafelder-metaobjects) · [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
