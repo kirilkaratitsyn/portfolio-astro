@@ -58,7 +58,7 @@ With these five details a bug can often be narrowed down quickly, without anyone
 
 Some stores only need a quick fix now and then. Others change something all the time: new campaigns, new markets, new features. For those, a fixed technical contact who knows the store is worth it, instead of starting from zero each time.
 
-An example: I have supported [Elanora Skin](/projects/elanora-skin), a skincare brand from Breda, on an ongoing basis since late 2025. The work covers tested offers, gift logic in the cart and storefront logic for fifteen markets in two languages. Because I know the store, new campaigns go live quickly without risky quick fixes ending up in the theme.
+What ongoing support can look like and how it differs from one-off jobs is described in the article [Shopify maintenance and support](/blog/shopify-wartung-betreuung). One ongoing example from my work is [Elanora Skin](/projects/elanora-skin), since late 2025.
 
 ## Frequently asked questions
 

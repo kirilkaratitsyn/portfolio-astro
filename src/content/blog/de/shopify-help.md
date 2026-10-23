@@ -58,7 +58,7 @@ Mit diesen fünf Angaben lässt sich ein Fehler oft in kurzer Zeit eingrenzen, o
 
 Manche Shops brauchen nur gelegentlich einen Handgriff. Andere ändern ständig etwas: neue Aktionen, neue Märkte, neue Funktionen. Für diese Shops lohnt sich ein fester technischer Ansprechpartner, der den Shop kennt, statt jedes Mal bei null anzufangen.
 
-Ein Beispiel: [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke aus Breda, betreue ich seit Ende 2025 laufend. Dort geht es um getestete Angebote, eine Geschenk-Logik im Warenkorb und Storefront-Logik für fünfzehn Märkte in zwei Sprachen. Weil ich den Shop kenne, gehen neue Aktionen schnell live, ohne dass riskante Schnellschüsse im Theme landen.
+Wie laufende Betreuung aussehen kann und was sie von Einzelaufträgen unterscheidet, beschreibe ich im Artikel [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung). Ein laufendes Beispiel aus meiner Arbeit ist [Elanora Skin](/de/projects/elanora-skin), seit Ende 2025.
 
 ## Häufige Fragen
 
