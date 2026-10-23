@@ -139,4 +139,6 @@ A developer does not write the texts themselves; that is for a lawyer or a provi
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as whether policies are linked in the footer, how pages and menus are built and what stands out. I only work with publicly visible data, without access to your account. That does not replace a legal review. What else I do for stores is under [Services](/services).
 
+**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

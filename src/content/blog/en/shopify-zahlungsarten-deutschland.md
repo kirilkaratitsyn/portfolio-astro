@@ -112,4 +112,6 @@ Related: [Setting up Shopify shipping](/blog/shopify-versand-einrichten), so cus
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do for stores is under [Services](/services).
 
+**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

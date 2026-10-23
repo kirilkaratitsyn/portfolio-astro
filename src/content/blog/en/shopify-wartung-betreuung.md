@@ -94,4 +94,6 @@ On whether an individual or a team suits you better: [Shopify freelancer or agen
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do for stores is under [Services](/services).
 
+**Further reading:** [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

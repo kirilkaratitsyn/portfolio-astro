@@ -139,4 +139,6 @@ Die Texte selbst schreibt kein Entwickler, das ist Sache von Anwalt oder Rechtst
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa ob Richtlinien im Footer verlinkt sind, wie Seiten und Menüs aufgebaut sind und was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Eine rechtliche Prüfung ersetzt das nicht. Was ich sonst für Shops mache, finden Sie unter [Leistungen](/de/services).
 
+**Weiterlesen:** [Shopify Rechnung erstellen: Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente)
+
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
