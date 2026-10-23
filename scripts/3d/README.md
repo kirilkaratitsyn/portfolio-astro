@@ -5,7 +5,7 @@ Every 3D object on the site exists twice:
 - as a WebP poster in `public/source/3d/`, captured from the live object at rest by the scripts here. It is the first paint (the hero cube's is the LCP image) and the fallback when WebGL, scripts or motion are unavailable.
 - as a live three.js object (`src/scripts/stage.ts`; the cube and the blocks in `src/lib/cube.ts`, the icons and the logo in `src/lib/icons.ts`, the globe in `src/lib/globe.ts`) that replaces the poster once the page has loaded.
 
-Tone mapping is `NeutralToneMapping` at exposure 1 in the live renderer, and the posters are captured from it. ACES, used before, shifted the brand cobalt #5b8fe0 toward violet.
+Tone mapping is `NeutralToneMapping` at exposure 1 in the live renderer, and the posters are captured from it. ACES, used before, shifted the brand cobalt (then #2433F0) toward violet.
 
 `og-image.html` is the template of the share image `public/og-image.jpg` (1200 x 630, with the cube poster): open it in Chrome at 1200 x 630 and save a JPEG screenshot. Re-make it after changing the cube.
 
