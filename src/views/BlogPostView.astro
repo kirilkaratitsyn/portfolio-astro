@@ -34,6 +34,7 @@ const structuredData = {
       url: pageUrl,
       image: new URL(post.image, site).toString(),
       datePublished: post.publishedAt.toISOString().slice(0, 10),
+      dateModified: (post.updatedAt ?? post.publishedAt).toISOString().slice(0, 10),
       inLanguage: locale,
       author: { '@type': 'Person', '@id': PERSON_ID, name: 'Kiril Karatitsyn', url: new URL(localizePath(locale, '/about'), site).toString() },
       keywords: post.tags?.join(', '),
