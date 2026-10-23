@@ -43,7 +43,7 @@ Praktisch zu wissen:
 
 - Im Text arbeitet Shopify mit Variablen, etwa für Adresse, E-Mail und Shop-Name, und mit Bedingungen wie „verkauft nach Europa“. So passt sich der Inhalt an Ihre aktiven Märkte an.
 - Frühere Fassungen archiviert Shopify laut Hilfe **zwei Jahre** lang. Sie lassen sich unter **Settings > Policies** (Richtlinien) exportieren. Wie lange Sie Änderungen aufbewahren müssen, liegt in Ihrer Verantwortung.
-- Das Cookie-Banner und die Widerspruchsseite lassen sich erst einschalten, wenn die Datenschutzerklärung veröffentlicht ist.
+- Das Cookie-Banner und die Widerspruchsseite lassen sich erst einschalten, wenn die Datenschutzerklärung veröffentlicht ist. Die übrigen Texte des Shops, etwa Rückgabe und Versand, stehen im selben Bereich, siehe [Shopify Rechtstexte und Richtlinien: wo Sie Rückgabe, AGB, Versand und Kontaktangaben pflegen](/de/blog/shopify-rechtstexte-richtlinien).
 
 ## Das Cookie-Banner von Shopify
 

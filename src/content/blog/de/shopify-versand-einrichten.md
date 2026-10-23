@@ -68,7 +68,7 @@ Prüfen Sie das auch auf dem Smartphone. Wie Sie danach die Zahlung klären, ste
 
 ## Wann ein Entwickler hilft
 
-Für Zonen und Raten brauchen Sie in der Regel keinen. Hilfe lohnt sich bei vielen Profilen, bei Lieferzeiten- und Versandart-Logik, die die Standardeinstellungen nicht abbilden, oder wenn ein Umzug von einem anderen System ansteht ([WooCommerce zu Shopify](/de/blog/woocommerce-to-shopify)). Wer wofür zuständig ist, erklärt [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help).
+Für Zonen und Raten brauchen Sie in der Regel keinen. Hilfe lohnt sich bei vielen Profilen, bei Lieferzeiten- und Versandart-Logik, die die Standardeinstellungen nicht abbilden, oder wenn ein Umzug von einem anderen System ansteht ([WooCommerce zu Shopify](/de/blog/woocommerce-to-shopify)). Wer wofür zuständig ist, erklärt [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help). Der Text der Versandrichtlinie entsteht aus denselben Einstellungen, siehe [Shopify Rechtstexte und Richtlinien: wo Sie Rückgabe, AGB, Versand und Kontaktangaben pflegen](/de/blog/shopify-rechtstexte-richtlinien).
 
 ## Häufige Fragen
 

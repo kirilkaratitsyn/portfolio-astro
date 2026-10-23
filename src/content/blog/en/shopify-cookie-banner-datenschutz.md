@@ -43,7 +43,7 @@ Good to know:
 
 - The text uses variables, for example for address, email and shop name, and conditions such as "selling to Europe". That is how the content adapts to your active markets.
 - According to the help, Shopify archives earlier versions for **two years**. You can export them under **Settings > Policies**. How long you need to keep records of changes is your responsibility.
-- You can only switch on the cookie banner and the opt-out page once the privacy policy is published.
+- You can only switch on the cookie banner and the opt-out page once the privacy policy is published. The shop's other texts, such as returns and shipping, live in the same area, see [Shopify store policies: where to manage returns, terms, shipping and contact details](/blog/shopify-rechtstexte-richtlinien).
 
 ## Shopify's cookie banner
 

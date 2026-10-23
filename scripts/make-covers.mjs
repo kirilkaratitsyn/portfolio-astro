@@ -132,6 +132,12 @@ const COVERS = {
     de: { h: 'Shopify-|Versand', chips: ['Zonen', 'Raten', 'Profile'] },
     uk: { h: 'Доставка|в Shopify', chips: ['Зони', 'Тарифи', 'Профілі'] },
   },
+  'shopify-rechtstexte-richtlinien': {
+    topic: 'build',
+    en: { h: 'Shopify|store policies', chips: ['Returns', 'Terms', 'Contact'] },
+    de: { h: 'Shopify-|Richtlinien', chips: ['Rückgabe', 'AGB', 'Kontakt'] },
+    uk: { h: 'Політики|Shopify', chips: ['Повернення', 'Умови', 'Контакти'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {

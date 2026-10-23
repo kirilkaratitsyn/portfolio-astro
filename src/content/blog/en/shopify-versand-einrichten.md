@@ -68,7 +68,7 @@ Check this on your phone too. How to settle payment afterwards is in [Shopify pa
 
 ## When a developer helps
 
-For zones and rates you usually do not need one. Help is worthwhile with many profiles, with delivery-time and shipping-method logic the default settings cannot express, or when a move from another system is coming ([WooCommerce to Shopify](/blog/woocommerce-to-shopify)). Who handles what is explained in [Shopify help: when the Help Center is enough](/blog/shopify-help).
+For zones and rates you usually do not need one. Help is worthwhile with many profiles, with delivery-time and shipping-method logic the default settings cannot express, or when a move from another system is coming ([WooCommerce to Shopify](/blog/woocommerce-to-shopify)). Who handles what is explained in [Shopify help: when the Help Center is enough](/blog/shopify-help). The text of the shipping policy is generated from the same settings, see [Shopify store policies: where to manage returns, terms, shipping and contact details](/blog/shopify-rechtstexte-richtlinien).
 
 ## Frequently asked questions
 
