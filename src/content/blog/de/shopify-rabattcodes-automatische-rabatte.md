@@ -140,6 +140,6 @@ Einen einfachen Code oder automatischen Rabatt legen Sie selbst im Admin an. Hil
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quellcode und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich sonst für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions)
+**Weiterlesen:** [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

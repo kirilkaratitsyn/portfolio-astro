@@ -140,6 +140,6 @@ A simple code or automatic discount you create yourself in the admin. Help is wo
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions)
+**Further reading:** [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up Shopify gift cards](/blog/shopify-geschenkkarten-gutscheine)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
