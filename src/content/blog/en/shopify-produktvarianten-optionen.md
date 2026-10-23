@@ -128,6 +128,6 @@ You set up the basics yourself. Help is worthwhile with more than three options 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen)
+**Further reading:** [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Shopify try before you buy](/blog/shopify-try-before-you-buy)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
