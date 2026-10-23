@@ -101,6 +101,6 @@ Für den ersten Ausdruck und kleine Textänderungen brauchen Sie keinen. Hilfe l
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Steuerlich prüft das nichts. Was ich für Shops mache, finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten)
+**Weiterlesen:** [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -82,6 +82,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді сторінки та структуру сторінок, і скажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що я роблю для магазинів, дивіться в розділі [Послуги](/uk/services) та [перебудова й редизайн магазину](/uk/services/shopify-redesign).
 
-**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten)
+**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten) · [Email-сповіщення в Shopify](/uk/blog/shopify-email-benachrichtigungen)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

@@ -113,6 +113,6 @@ You can install and configure the pre-order app yourself. Help is worthwhile whe
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland)
+**Further reading:** [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
