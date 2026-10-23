@@ -64,7 +64,7 @@ Die Kasse zeigt erst Versandoptionen, wenn eine Lieferadresse eingegeben ist, un
 - eine Adresse in einem Land, das Sie bewusst nicht beliefern, das sollte eine klare Meldung zeigen;
 - ein Warenkorb knapp unter und knapp über der Grenze für kostenlosen Versand.
 
-Prüfen Sie das auch auf dem Smartphone. Wie Sie danach die Zahlung klären, steht in [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland).
+Prüfen Sie das auch auf dem Smartphone. Wie Sie danach die Zahlung klären, steht in [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland). Was in das Paket gehört, etwa der Lieferschein, beschreibt [Shopify Rechnung erstellen: Bestelldokumente, Order Printer und Vorlagen](/de/blog/shopify-rechnung-bestelldokumente).
 
 ## Wann ein Entwickler hilft
 

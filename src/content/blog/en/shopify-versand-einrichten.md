@@ -64,7 +64,7 @@ Checkout shows shipping options only once a delivery address is entered, and onl
 - an address in a country you deliberately do not serve, which should show a clear message;
 - a cart just below and just above the free-shipping threshold.
 
-Check this on your phone too. How to settle payment afterwards is in [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland).
+Check this on your phone too. How to settle payment afterwards is in [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland). What goes into the parcel, such as the packing slip, is covered in [Creating invoices in Shopify: order documents, Order Printer and templates](/blog/shopify-rechnung-bestelldokumente).
 
 ## When a developer helps
 

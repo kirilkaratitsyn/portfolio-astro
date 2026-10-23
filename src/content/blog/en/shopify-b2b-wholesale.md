@@ -62,6 +62,7 @@ It depends on which B2B features you need and what your plan includes. I settle 
 - Which products and content are for trade buyers only?
 - Who maintains product data, and where?
 - Test the trade and retail views separately before go-live.
+- Which order documents do trade buyers need, such as an invoice or packing slip? (See [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente).)
 
 ## Planning B2B?
 

@@ -62,6 +62,7 @@ Das hängt davon ab, welche B2B-Funktionen Sie brauchen und was Ihr Tarif enthä
 - Welche Produkte und Inhalte sind nur für Händler?
 - Wer pflegt Produktdaten, und wo?
 - Händler- und Endkundensicht vor dem Go-live getrennt testen.
+- Welche Bestelldokumente brauchen Händler, etwa Rechnung oder Lieferschein? (Siehe [Shopify Rechnung erstellen](/de/blog/shopify-rechnung-bestelldokumente).)
 
 ## B2B geplant?
 
