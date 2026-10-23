@@ -106,6 +106,8 @@ Für das Aktivieren der Zahlungsarten brauchen Sie in der Regel keinen. Hilfe lo
 
 **Was kosten die Zahlungsarten?** Das hängt vom Tarif und vom Anbieter ab. Konkrete Beträge nenne ich hier nicht.
 
+Passend dazu: [Shopify Versand einrichten](/de/blog/shopify-versand-einrichten), damit Kunden an der Kasse nicht an einer Versandlücke scheitern.
+
 ## Wie steht es um Ihren Shop?
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Was ich für Shops mache, finden Sie unter [Leistungen](/de/services).

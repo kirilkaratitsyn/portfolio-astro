@@ -100,6 +100,8 @@ This is an assessment from practice, not a Shopify requirement:
 4. **Really adapt content**, not just translate it: delivery times, returns, contact and messages in the cart.
 5. **After launch**, check in Search Console whether the new addresses get indexed.
 
+Shipping per country is a topic of its own: [Setting up Shopify shipping](/blog/shopify-versand-einrichten).
+
 ## Frequently asked questions
 
 **Do I need a separate store for Austria or Switzerland?** No, as a rule one store with several markets is enough.

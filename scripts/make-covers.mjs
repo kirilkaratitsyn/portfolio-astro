@@ -126,6 +126,12 @@ const COVERS = {
     de: { h: 'Shopify-|Cookie-Banner', chips: ['Datenschutz', 'Einwilligung', 'Pixel'] },
     uk: { h: 'Cookie-банер|у Shopify', chips: ['Конфіденційність', 'Згода', 'Пікселі'] },
   },
+  'shopify-versand-einrichten': {
+    topic: 'build',
+    en: { h: 'Shopify|shipping', chips: ['Zones', 'Rates', 'Profiles'] },
+    de: { h: 'Shopify-|Versand', chips: ['Zonen', 'Raten', 'Profile'] },
+    uk: { h: 'Доставка|в Shopify', chips: ['Зони', 'Тарифи', 'Профілі'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {

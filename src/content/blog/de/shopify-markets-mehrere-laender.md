@@ -100,6 +100,8 @@ Das ist eine Einschätzung aus der Praxis, keine Vorgabe von Shopify:
 4. **Inhalte wirklich anpassen**, nicht nur übersetzen: Lieferzeiten, Rückgabe, Kontakt und Hinweise im Warenkorb.
 5. **Nach dem Start** in der Search Console prüfen, ob die neuen Adressen indexiert werden.
 
+Versand je Land ist ein eigenes Thema: [Shopify Versand einrichten](/de/blog/shopify-versand-einrichten).
+
 ## Häufige Fragen
 
 **Brauche ich für Österreich oder die Schweiz einen eigenen Shop?** Nein, in der Regel reicht ein Shop mit mehreren Märkten.
