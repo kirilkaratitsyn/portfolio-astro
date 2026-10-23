@@ -118,6 +118,6 @@ Logo, colours and font you change yourself in the editor. Help is worthwhile whe
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
-**Further reading:** [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten)
+**Further reading:** [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

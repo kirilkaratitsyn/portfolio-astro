@@ -101,4 +101,6 @@ For a few fields with dynamic sources you do not need one. Help is worthwhile wh
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
 
+**Further reading:** [Creating Shopify bundles](/blog/shopify-bundles-erstellen)
+
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
