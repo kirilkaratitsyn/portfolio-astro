@@ -71,7 +71,7 @@ Danach folgt die Arbeit, die meist unterschätzt wird: Die Spalten des alten Sys
 - **Bilder:** Eine CSV-Datei enthält nur Text. Shopify liest Bilder von öffentlich erreichbaren Adressen (URLs). Prüfen Sie, ob Ihr Export Bildadressen enthält.
 - **Veröffentlichung:** Beim Import rät Shopify, „auf allen Vertriebskanälen veröffentlichen“ auszuschalten, damit nichts Halbfertiges sichtbar wird.
 
-Importieren Sie zuerst **drei bis fünf Testprodukte** und prüfen Sie Preis, Gewicht, Bestand, Beschreibung und Bilder, bevor der Rest folgt.
+Importieren Sie zuerst **drei bis fünf Testprodukte** und prüfen Sie Preis, Gewicht, Bestand, Beschreibung und Bilder, bevor der Rest folgt. Die allgemeinen Regeln und Fehlerquellen des CSV-Imports (Sicherung, Überschreiben, Kodierung) beschreibt [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv).
 
 ## Schritt 3: Kunden und Bestellungen
 

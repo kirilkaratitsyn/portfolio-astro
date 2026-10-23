@@ -61,7 +61,7 @@ Then comes the work that is usually underestimated: the Wix file has different c
 - **Stock:** The quantity column in the template only fits a single location. With several locations you need the separate inventory CSV.
 - **Publishing:** When importing, Shopify advises turning off "publish to all sales channels" so that nothing half-finished becomes visible.
 
-According to Shopify, the "Store Migration" app takes the Wix file without changes, but it has restrictions: prices by location are not supported (the highest price applies then), and products with more than three options are not imported with those options. Import **three to five test products** first, check price, weight, stock, description and images, and only then the rest.
+According to Shopify, the "Store Migration" app takes the Wix file without changes, but it has restrictions: prices by location are not supported (the highest price applies then), and products with more than three options are not imported with those options. Import **three to five test products** first, check price, weight, stock, description and images, and only then the rest. The general rules and pitfalls of the CSV import (backup, overwriting, encoding) are covered in [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv).
 
 ## Step 3: Customers, orders, reviews
 

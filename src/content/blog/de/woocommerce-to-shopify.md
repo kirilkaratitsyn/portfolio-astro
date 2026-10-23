@@ -20,7 +20,7 @@ Er lohnt sich, wenn Sie mehr Zeit mit Updates, Plugin-Konflikten und Hosting ver
 
 ## Was umzieht und in welcher Reihenfolge
 
-Shopify kann Produkte, Kunden, Bestellhistorie, Geschenkgutscheine, Blogartikel und Seiten übernehmen. Produkte und Kunden gehen per CSV direkt im Shopify-Admin; für die Bestellhistorie und die Inhalte braucht es eine Migrations-App oder die API. Die Reihenfolge ist wichtig: erst Produkte, dann Kunden, dann Bestellungen, damit jede Bestellung mit dem richtigen Produkt und Kunden verknüpft wird. Bei Jula Bloom haben wir Produkte und Kunden per CSV übertragen.
+Shopify kann Produkte, Kunden, Bestellhistorie, Geschenkgutscheine, Blogartikel und Seiten übernehmen. Produkte und Kunden gehen per CSV direkt im Shopify-Admin; für die Bestellhistorie und die Inhalte braucht es eine Migrations-App oder die API. Die Reihenfolge ist wichtig: erst Produkte, dann Kunden, dann Bestellungen, damit jede Bestellung mit dem richtigen Produkt und Kunden verknüpft wird. Bei Jula Bloom haben wir Produkte und Kunden per CSV übertragen. Die allgemeinen Regeln und Fehlerquellen des CSV-Imports (Sicherung, Überschreiben, Kodierung) beschreibt [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv).
 
 Zwei Dinge ziehen nicht einfach mit:
 

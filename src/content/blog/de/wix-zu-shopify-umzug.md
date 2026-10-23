@@ -61,7 +61,7 @@ Danach folgt die Arbeit, die meist unterschätzt wird: Die Wix-Datei hat andere 
 - **Bestand:** Die Spalte für die Menge in der Vorlage passt nur zu einem einzigen Lagerort. Mit mehreren Lagerorten brauchen Sie die separate Bestands-CSV.
 - **Veröffentlichung:** Shopify empfiehlt beim Import, die Option „für alle Verkaufskanäle veröffentlichen“ auszuschalten, damit nichts halbfertig sichtbar wird.
 
-Die App „Store Migration“ nimmt die Wix-Datei laut Shopify ohne Änderungen entgegen, hat aber Einschränkungen: Preise nach Standort werden nicht unterstützt (es gilt dann der höchste Preis), und Produkte mit mehr als drei Optionen werden an diesen Optionen nicht übernommen. Importieren Sie zuerst **drei bis fünf Testprodukte**, kontrollieren Sie Preis, Gewicht, Bestand, Beschreibung und Bilder, und erst dann den Rest.
+Die App „Store Migration“ nimmt die Wix-Datei laut Shopify ohne Änderungen entgegen, hat aber Einschränkungen: Preise nach Standort werden nicht unterstützt (es gilt dann der höchste Preis), und Produkte mit mehr als drei Optionen werden an diesen Optionen nicht übernommen. Importieren Sie zuerst **drei bis fünf Testprodukte**, kontrollieren Sie Preis, Gewicht, Bestand, Beschreibung und Bilder, und erst dann den Rest. Die allgemeinen Regeln und Fehlerquellen des CSV-Imports (Sicherung, Überschreiben, Kodierung) beschreibt [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv).
 
 ## Schritt 3: Kunden, Bestellungen, Bewertungen
 

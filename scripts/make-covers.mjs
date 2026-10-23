@@ -114,6 +114,12 @@ const COVERS = {
     de: { h: 'Shopify-|Zahlungsarten', chips: ['Shopify Payments', 'PayPal', 'Klarna'] },
     uk: { h: 'Способи|оплати Shopify', chips: ['Shopify Payments', 'PayPal', 'Klarna'] },
   },
+  'shopify-produkte-importieren-csv': {
+    topic: 'migration',
+    en: { h: 'Shopify|product import', chips: ['CSV', 'Backup', 'Variants'] },
+    de: { h: 'Shopify-|Produktimport', chips: ['CSV', 'Sicherung', 'Varianten'] },
+    uk: { h: 'Імпорт товарів|у Shopify', chips: ['CSV', 'Копія', 'Варіанти'] },
+  },
 };
 
 const html = (topic, { h, chips }) => {

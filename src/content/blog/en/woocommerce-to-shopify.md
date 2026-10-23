@@ -20,7 +20,7 @@ It pays off when you spend more time on updates, plugin conflicts and hosting th
 
 ## What moves, and in what order
 
-Shopify can take over products, customers, order history, gift cards, blog posts and pages. Products and customers go in by CSV straight in the Shopify admin; order history and content need a migration app or the API. The order matters: products first, then customers, then orders, so every order is linked to the right product and customer. For Jula Bloom we moved products and customers by CSV.
+Shopify can take over products, customers, order history, gift cards, blog posts and pages. Products and customers go in by CSV straight in the Shopify admin; order history and content need a migration app or the API. The order matters: products first, then customers, then orders, so every order is linked to the right product and customer. For Jula Bloom we moved products and customers by CSV. The general rules and pitfalls of the CSV import (backup, overwriting, encoding) are covered in [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv).
 
 Two things do not simply move along:
 

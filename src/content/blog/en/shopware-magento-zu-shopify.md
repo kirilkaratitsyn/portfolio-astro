@@ -71,7 +71,7 @@ Then comes the work that is usually underestimated: the columns of the old syste
 - **Images:** A CSV file contains only text. Shopify reads images from publicly accessible addresses (URLs). Check whether your export contains image addresses.
 - **Publishing:** When importing, Shopify advises turning off "publish to all sales channels" so that nothing half-finished becomes visible.
 
-Import **three to five test products** first and check price, weight, stock, description and images before the rest follows.
+Import **three to five test products** first and check price, weight, stock, description and images before the rest follows. The general rules and pitfalls of the CSV import (backup, overwriting, encoding) are covered in [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv).
 
 ## Step 3: Customers and orders
 
