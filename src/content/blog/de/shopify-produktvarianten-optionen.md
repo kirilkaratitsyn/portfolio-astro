@@ -128,6 +128,6 @@ Die Grundlagen legen Sie selbst an. Hilfe lohnt sich bei mehr als drei Optionen 
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugriff auf Ihr Konto. Was ich sonst für Shops mache, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten) · [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Try before you buy](/de/blog/shopify-try-before-you-buy)
+**Weiterlesen:** [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten) · [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify Try before you buy](/de/blog/shopify-try-before-you-buy) · [Shopify Kollektionen und Filter](/de/blog/shopify-kollektionen-filter)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

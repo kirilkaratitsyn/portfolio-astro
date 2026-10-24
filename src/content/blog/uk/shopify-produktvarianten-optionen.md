@@ -128,6 +128,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні: швидкість завантаження, застосунки в коді сторінок, побудову сторінок, і розповідаю, що впадає в око. Я працюю лише з публічно видимими даними, без доступу до вашого облікового запису. Що ще я роблю для магазинів, читайте в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Складські залишки в Shopify](/uk/blog/shopify-lagerbestand-verwalten) · [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Shopify try before you buy](/uk/blog/shopify-try-before-you-buy)
+**Читайте також:** [Складські залишки в Shopify](/uk/blog/shopify-lagerbestand-verwalten) · [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Shopify try before you buy](/uk/blog/shopify-try-before-you-buy) · [Колекції й фільтри в Shopify](/uk/blog/shopify-kollektionen-filter)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

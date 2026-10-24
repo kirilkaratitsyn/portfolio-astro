@@ -101,6 +101,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді та побудову сторінок, і кажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Що ще я роблю для магазинів, дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Варіанти товару в Shopify](/uk/blog/shopify-produktvarianten-optionen)
+**Читайте також:** [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Варіанти товару в Shopify](/uk/blog/shopify-produktvarianten-optionen) · [Колекції й фільтри в Shopify](/uk/blog/shopify-kollektionen-filter)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*
