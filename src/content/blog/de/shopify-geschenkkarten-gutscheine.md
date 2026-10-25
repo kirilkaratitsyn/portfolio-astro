@@ -131,7 +131,7 @@ Einen Shop, bei dem ich ausschließlich Geschenkkarten eingerichtet habe, gibt e
 
 ## Wann ein Entwickler hilft
 
-Ein Geschenkkarten-Produkt legen Sie selbst an. Hilfe lohnt sich, wenn das Theme die **Empfängerfelder** nicht unterstützt, wenn die **E-Mail-Vorlagen** oder die Karten-Seite zur Marke passen sollen, wenn Karten in **mehreren Märkten und Währungen** sauber laufen müssen oder wenn die Einlösung an der Kasse unter Bedingungen eingeschränkt werden soll (die Hilfe verweist dafür auf eine Zahlungsanpassung per App). Karten automatisch nach einer Bestellung auszustellen, empfiehlt die Hilfe mit Shopify Flow. Danach gehört das Setup in die laufende Pflege, siehe [Shopify Wartung](/de/blog/shopify-wartung-betreuung).
+Ein Geschenkkarten-Produkt legen Sie selbst an. Hilfe lohnt sich, wenn das Theme die **Empfängerfelder** nicht unterstützt, wenn die **E-Mail-Vorlagen** oder die Karten-Seite zur Marke passen sollen, wenn Karten in **mehreren Märkten und Währungen** sauber laufen müssen oder wenn die Einlösung an der Kasse unter Bedingungen eingeschränkt werden soll (die Hilfe verweist dafür auf eine Zahlungsanpassung per App). Karten automatisch nach einer Bestellung auszustellen, empfiehlt die Hilfe mit [Shopify Flow](/de/blog/shopify-flow-automatisierung). Danach gehört das Setup in die laufende Pflege, siehe [Shopify Wartung](/de/blog/shopify-wartung-betreuung).
 
 ## Häufige Fragen
 

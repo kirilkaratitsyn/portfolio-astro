@@ -66,7 +66,7 @@ By default a sold-out product stays visible. The help describes four ways to hid
 - **Collections:** add the condition **Inventory stock** "is greater than" 0 together with **Match all conditions**. It does not work with "any condition". Tracking has to be on.
 - **The default "Catalog" collection** (`/collections/all`): first override it with your own collection, then set the same condition.
 - **Apps** for inventory management from the App Store, some hide products automatically.
-- **Shopify Flow:** the template **Publish and unpublish products based on inventory level** or your own workflow with the trigger **Product variant inventory quantity changed**.
+- **[Shopify Flow](/blog/shopify-flow-automatisierung):** the template **Publish and unpublish products based on inventory level** or your own workflow with the trigger **Product variant inventory quantity changed**.
 
 When stock arrives again, the products show in the collections once more. The page I read says nothing on whether hiding is sensible for search engines. That is a separate question.
 

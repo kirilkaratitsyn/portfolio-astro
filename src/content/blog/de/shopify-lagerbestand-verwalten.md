@@ -66,7 +66,7 @@ Standardmäßig bleibt ein ausverkauftes Produkt sichtbar. Die Hilfe beschreibt 
 - **Kollektionen:** Bedingung **Inventory stock** „is greater than" 0 hinzufügen, zusammen mit **Match all conditions**. Mit „any condition" funktioniert das nicht. Die Verfolgung muss eingeschaltet sein.
 - **Standard-Kollektion „Catalog"** (`/collections/all`): erst durch eine eigene Kollektion überschreiben, dann dieselbe Bedingung setzen.
 - **Apps** für Bestandsverwaltung aus dem App Store, manche blenden Produkte automatisch aus.
-- **Shopify Flow:** Vorlage **Publish and unpublish products based on inventory level** oder ein eigener Workflow mit dem Trigger **Product variant inventory quantity changed**.
+- **[Shopify Flow](/de/blog/shopify-flow-automatisierung):** Vorlage **Publish and unpublish products based on inventory level** oder ein eigener Workflow mit dem Trigger **Product variant inventory quantity changed**.
 
 Kommt Ware wieder an, erscheinen die Produkte in den Kollektionen erneut. Die Seite, die ich gelesen habe, sagt nichts dazu, ob das Ausblenden für Suchmaschinen sinnvoll ist. Das ist eine eigene Frage.
 

@@ -131,7 +131,7 @@ Among my published projects there is no store where I set up gift cards on their
 
 ## When a developer helps
 
-You create a gift card product yourself. Help is worthwhile when the theme does not support the **recipient fields**, when the **email templates** or the card page should match the brand, when cards must run cleanly across **several markets and currencies**, or when redemption at checkout should be restricted under conditions (the help points to a payment customization app for that). For issuing cards automatically after an order the help recommends Shopify Flow. After that the setup belongs in the ongoing upkeep, see [Shopify maintenance](/blog/shopify-wartung-betreuung).
+You create a gift card product yourself. Help is worthwhile when the theme does not support the **recipient fields**, when the **email templates** or the card page should match the brand, when cards must run cleanly across **several markets and currencies**, or when redemption at checkout should be restricted under conditions (the help points to a payment customization app for that). For issuing cards automatically after an order the help recommends [Shopify Flow](/blog/shopify-flow-automatisierung). After that the setup belongs in the ongoing upkeep, see [Shopify maintenance](/blog/shopify-wartung-betreuung).
 
 ## Frequently asked questions
 

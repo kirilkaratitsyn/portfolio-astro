@@ -66,7 +66,7 @@ Shopify рахує не одне число. За довідкою є п'ять 
 - **Колекції:** додати умову **Inventory stock** «is greater than» 0 разом із **Match all conditions**. З «any condition» не працює. Облік має бути ввімкнений.
 - **Стандартна колекція «Catalog»** (`/collections/all`): спершу перекрити її власною колекцією, потім задати ту саму умову.
 - **Застосунки** для керування залишками з App Store, деякі приховують товари автоматично.
-- **Shopify Flow:** шаблон **Publish and unpublish products based on inventory level** або власний робочий процес із тригером **Product variant inventory quantity changed**.
+- **[Shopify Flow](/uk/blog/shopify-flow-automatisierung):** шаблон **Publish and unpublish products based on inventory level** або власний робочий процес із тригером **Product variant inventory quantity changed**.
 
 Коли товар надходить знову, він повертається в колекції. Сторінка, яку я читав, нічого не каже про те, чи доцільно приховувати з погляду пошукових систем. Це окреме питання.
 
