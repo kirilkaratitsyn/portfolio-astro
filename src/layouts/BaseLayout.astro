@@ -104,6 +104,12 @@ const { locale, path } = seo;
         });
       })(window, 'https://app.cal.com/embed/embed.js', 'init', 'free-consultation-call');
     </script>
+    <!-- Vercel Web Analytics: cookieless page views and referrers (no heatmaps). Returns 404 until it is enabled in the
+         Vercel project (Analytics tab). Described in the privacy policy, section 6. -->
+    <script is:inline>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script is:inline defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <Header locale={locale} path={switchTo ?? path} links={switchLinks} />

@@ -27,7 +27,11 @@ Die Schriftarten liegen auf dem Server dieser Website. Beim Laden der Seite wird
 
 ## 6. Cookies und Analyse
 
-Diese Website setzt selbst keine Cookies und nutzt keine Analyse- oder Tracking-Werkzeuge.
+Diese Website setzt selbst keine Cookies und legt nichts auf Ihrem Gerät ab. Um zu verstehen, welche Seiten gelesen werden und woher Besucher kommen, nutze ich Vercel Web Analytics (Vercel Inc., USA). Der Dienst arbeitet ohne Cookies. Er erfasst pro Seitenaufruf die aufgerufene Seite, die Referrer-Seite, das Land bzw. die Region, Browser und Betriebssystem sowie den Gerätetyp. Besucher werden nicht über Websites hinweg verfolgt; eine Sitzung wird aus den Anfragedaten abgeleitet und nach 24 Stunden verworfen. Ich sehe nur zusammengefasste Statistiken.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse, die Website zu verbessern und ihre Reichweite zu verstehen. Vercel verarbeitet die Daten in meinem Auftrag; zur Übermittlung in die USA siehe Abschnitt 2. Details: https://vercel.com/docs/analytics/privacy-policy
+
+Heatmaps, Sitzungsaufzeichnungen oder Werbe-Tracker setze ich nicht ein.
 
 ## 7. Links zu anderen Websites
 
