@@ -536,6 +536,14 @@
     "legal": "Legal notice",
     "privacy": "Privacy"
   },
+  "consent": {
+    "label": "Cookie settings",
+    "text": "May I use Microsoft Clarity to see how visitors use this site (heatmaps and recordings of visits)? It sets cookies. Without your OK, nothing is loaded.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "more": "Privacy policy",
+    "settings": "Cookie settings"
+  },
   "stats": {
     "items": [
       {

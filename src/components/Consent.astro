@@ -1,0 +1,148 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+import { CLARITY_ID } from '../lib/analytics';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
+---
+
+{
+  CLARITY_ID && (
+    <div id="consent" role="region" aria-label={t.consent.label} data-clarity={CLARITY_ID} hidden>
+      <p>{t.consent.text}</p>
+      <div class="consent-actions">
+        <button type="button" data-consent="granted">{t.consent.accept}</button>
+        <button type="button" data-consent="denied">{t.consent.decline}</button>
+      </div>
+      <a href={privacy} class="consent-more">{t.consent.more}</a>
+    </div>
+  )
+}
+
+<style>
+  #consent {
+    position: fixed;
+    z-index: 60;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 440px;
+    padding: 18px 20px;
+    background: #edeff6;
+    color: #0e1018;
+    border: 1px solid #d3d7e6;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgb(14 16 24 / 0.12);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  #consent[hidden] {
+    display: none;
+  }
+  .consent-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  /* Same look for both choices: neither is nudged. */
+  .consent-actions button {
+    flex: 1;
+    padding: 9px 14px;
+    border: 1px solid #0e1018;
+    border-radius: 999px;
+    background: transparent;
+    color: #0e1018;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .consent-actions button:hover {
+    background: #d3d7e6;
+  }
+  .consent-actions button:focus-visible,
+  .consent-more:focus-visible {
+    outline: 2px solid #3072d8;
+    outline-offset: 2px;
+  }
+  .consent-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #5a5f73;
+    text-decoration: underline;
+  }
+  .consent-more:hover {
+    color: #0e1018;
+  }
+</style>
+
+<script>
+  const KEY = 'consent-analytics';
+  const box = document.getElementById('consent');
+
+  function read(): string | null {
+    try {
+      return localStorage.getItem(KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function write(value: string) {
+    try {
+      localStorage.setItem(KEY, value);
+    } catch {
+      // Private mode: the choice then lasts for this page only.
+    }
+  }
+
+  function loadClarity(id: string) {
+    const w = window as any;
+    if (w.clarity) return;
+    w.clarity = function () {
+      (w.clarity.q = w.clarity.q || []).push(arguments);
+    };
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.clarity.ms/tag/' + id;
+    document.head.appendChild(s);
+  }
+
+  if (box) {
+    const id = box.dataset.clarity!;
+
+    if (read() === 'granted') loadClarity(id);
+    else if (read() === null) box.hidden = false;
+
+    box.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const granted = button.dataset.consent === 'granted';
+        const before = read();
+        write(granted ? 'granted' : 'denied');
+        box.hidden = true;
+        if (granted) {
+          loadClarity(id);
+        } else if (before === 'granted') {
+          // Withdrawn after it was on: tell Clarity, then reload so its script and cookies are gone.
+          try {
+            (window as any).clarity?.('consent', false);
+          } catch {
+            // Reloading is the fallback.
+          }
+          location.reload();
+        }
+      });
+    });
+
+    // The "Cookie settings" link in the footer opens the banner again.
+    document.addEventListener('click', (event) => {
+      if (!(event.target as Element).closest('[data-consent-open]')) return;
+      box.hidden = false;
+      box.querySelector<HTMLButtonElement>('button')?.focus();
+    });
+  }
+</script>

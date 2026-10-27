@@ -536,6 +536,14 @@
     "legal": "Impressum",
     "privacy": "Datenschutz"
   },
+  "consent": {
+    "label": "Cookie-Einstellungen",
+    "text": "Darf ich Microsoft Clarity einsetzen, um zu sehen, wie diese Website genutzt wird (Heatmaps und Aufzeichnungen von Besuchen)? Dabei werden Cookies gesetzt. Ohne Ihre Zustimmung wird nichts geladen.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "more": "Datenschutzerklärung",
+    "settings": "Cookie-Einstellungen"
+  },
   "stats": {
     "items": [
       {

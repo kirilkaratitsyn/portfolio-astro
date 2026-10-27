@@ -1,5 +1,6 @@
 ---
 import { localizePath, useTranslations, type Locale } from '../i18n';
+import { CLARITY_ID } from '../lib/analytics';
 import { getLocalPages, getPosts, getServices } from '../lib/content';
 
 interface Props {
@@ -50,6 +51,7 @@ const legal =
           <span aria-hidden="true">·</span>
           <a href={legal[1]!.href} class="hover:text-ink">{legal[1]!.name}</a>
         </span>
+        {CLARITY_ID && <button type="button" data-consent-open class="hover:text-ink">{t.consent.settings}</button>}
         <a href={localizePath(locale, '/about')} class="hover:text-ink">{t.header.about}</a>
         {hasPosts && <a href={localizePath(locale, '/blog')} class="hover:text-ink">{t.header.blog}</a>}
         <a href="https://github.com/kirilkaratitsyn" target="_blank" rel="noopener noreferrer" class="hover:text-ink">{t.contact.github}</a>

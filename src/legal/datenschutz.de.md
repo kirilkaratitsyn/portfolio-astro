@@ -27,11 +27,15 @@ Die Schriftarten liegen auf dem Server dieser Website. Beim Laden der Seite wird
 
 ## 6. Cookies und Analyse
 
-Diese Website setzt selbst keine Cookies und legt nichts auf Ihrem Gerät ab. Um zu verstehen, welche Seiten gelesen werden und woher Besucher kommen, nutze ich Vercel Web Analytics (Vercel Inc., USA). Der Dienst arbeitet ohne Cookies. Er erfasst pro Seitenaufruf die aufgerufene Seite, die Referrer-Seite, das Land bzw. die Region, Browser und Betriebssystem sowie den Gerätetyp. Besucher werden nicht über Websites hinweg verfolgt; eine Sitzung wird aus den Anfragedaten abgeleitet und nach 24 Stunden verworfen. Ich sehe nur zusammengefasste Statistiken.
+Ohne Ihre Zustimmung setzt diese Website selbst keine Cookies und legt nichts auf Ihrem Gerät ab. Um zu verstehen, welche Seiten gelesen werden und woher Besucher kommen, nutze ich Vercel Web Analytics (Vercel Inc., USA). Der Dienst arbeitet ohne Cookies. Er erfasst pro Seitenaufruf die aufgerufene Seite, die Referrer-Seite, das Land bzw. die Region, Browser und Betriebssystem sowie den Gerätetyp. Besucher werden nicht über Websites hinweg verfolgt; eine Sitzung wird aus den Anfragedaten abgeleitet und nach 24 Stunden verworfen. Ich sehe nur zusammengefasste Statistiken.
 
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse, die Website zu verbessern und ihre Reichweite zu verstehen. Vercel verarbeitet die Daten in meinem Auftrag; zur Übermittlung in die USA siehe Abschnitt 2. Details: https://vercel.com/docs/analytics/privacy-policy
 
-Heatmaps, Sitzungsaufzeichnungen oder Werbe-Tracker setze ich nicht ein.
+**Microsoft Clarity (nur mit Ihrer Einwilligung).** Beim ersten Besuch frage ich in einem Hinweisfenster, ob ich Microsoft Clarity einsetzen darf. Erst wenn Sie „Akzeptieren“ wählen, wird das Skript von Microsoft (Microsoft Corporation, USA) geladen; bei „Ablehnen“ oder ohne Auswahl wird nichts geladen und nichts gesetzt. Clarity erstellt Heatmaps (wo Besucher klicken und scrollen) und Aufzeichnungen von Besuchen (Mausbewegungen, Klicks, Scrollen). Dabei setzt es die Cookies `_clck` und `_clsk` und verarbeitet Angaben wie Gerät, Browser, Land, besuchte Seiten und Interaktionen. Meine Auswahl speichere ich in Ihrem Browser (Local Storage, Eintrag `consent-analytics`), damit ich nicht bei jedem Besuch erneut frage.
+
+Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Verarbeitung kann Übermittlungen in die USA einschließen; sie findet nur mit Ihrer Einwilligung statt. Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: über den Link „Cookie-Einstellungen“ im Fußbereich jeder Seite und die Wahl „Ablehnen“. Details von Microsoft: https://privacy.microsoft.com/privacystatement
+
+Werbe-Tracker setze ich nicht ein.
 
 ## 7. Links zu anderen Websites
 
@@ -57,4 +61,4 @@ Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Lösch
 
 Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der für mich zuständigen: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, https://www.lfd.niedersachsen.de
 
-Stand: 15.10.2026
+Stand: 27.10.2026

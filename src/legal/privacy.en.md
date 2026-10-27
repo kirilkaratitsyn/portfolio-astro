@@ -27,11 +27,15 @@ The fonts are stored on this website's own server. No connection to Google or ot
 
 ## 6. Cookies and analytics
 
-This website sets no cookies of its own and stores nothing on your device. To understand which pages are read and where visitors come from, I use Vercel Web Analytics (Vercel Inc., USA). The service works without cookies. For each page view it records the page, the referring page, the country or region, browser and operating system, and the device type. Visitors are not tracked across websites; a session is derived from the request data and discarded after 24 hours. I only see aggregated statistics.
+Without your consent, this website sets no cookies of its own and stores nothing on your device. To understand which pages are read and where visitors come from, I use Vercel Web Analytics (Vercel Inc., USA). The service works without cookies. For each page view it records the page, the referring page, the country or region, browser and operating system, and the device type. Visitors are not tracked across websites; a session is derived from the request data and discarded after 24 hours. I only see aggregated statistics.
 
 The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in improving the website and understanding its reach. Vercel processes the data on my behalf; for the transfer to the USA see section 2. Details: https://vercel.com/docs/analytics/privacy-policy
 
-I do not use heatmaps, session recordings or advertising trackers.
+**Microsoft Clarity (only with your consent).** On your first visit I ask in a notice whether I may use Microsoft Clarity. Only if you choose "Accept" is the script from Microsoft (Microsoft Corporation, USA) loaded; if you choose "Decline" or make no choice, nothing is loaded and nothing is set. Clarity creates heatmaps (where visitors click and scroll) and recordings of visits (mouse movements, clicks, scrolling). It sets the cookies `_clck` and `_clsk` and processes details such as device, browser, country, pages visited and interactions. I store your choice in your browser (local storage, entry `consent-analytics`) so that I do not have to ask on every visit.
+
+The legal basis is your consent under Art. 6(1)(a) GDPR and Section 25(1) of the German TDDDG. The processing may involve transfers to the USA; it takes place only with your consent. You can withdraw your consent at any time with effect for the future: through the "Cookie settings" link in the footer of every page and the choice "Decline". Details from Microsoft: https://privacy.microsoft.com/privacystatement
+
+I do not use advertising trackers.
 
 ## 7. Links to other websites
 
@@ -57,4 +61,4 @@ You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (A
 
 You may also lodge a complaint with a data protection supervisory authority, for example the one responsible for me: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, Germany, https://www.lfd.niedersachsen.de
 
-Last updated: 15 October 2026
+Last updated: 27 October 2026
