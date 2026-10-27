@@ -143,6 +143,6 @@ Logo, Farbe und Absender stellen Sie selbst ein. Hilfe lohnt sich, wenn Vorlagen
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugriff auf Ihr Konto. Was ich sonst für Shops mache, steht unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Rechnungen und Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder)
+**Weiterlesen:** [Shopify Rechnungen und Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Try before you buy](/de/blog/shopify-try-before-you-buy)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

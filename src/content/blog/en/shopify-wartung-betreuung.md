@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-23
-title: "Shopify maintenance: what the platform handles and what stays with your store"
+title: "Shopify maintenance and support: what the platform handles and what stays with your store"
 date: 23 October 2026
 readingTime: 6 min
 excerpt: "Shopify is hosted, yet a store still needs care: theme updates, apps, access, copies before changes. A list of what you can do yourself and what to settle before you hire ongoing support."
@@ -92,7 +92,7 @@ On whether an individual or a team suits you better: [Shopify freelancer or agen
 
 ## How is your store doing?
 
-Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do for stores is under [Services](/services).
+Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. How ongoing work with me looks is described under [Shopify support and maintenance](/services/shopify-betreuung); everything else I do is under [Services](/services).
 
 **Further reading:** [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions)
 

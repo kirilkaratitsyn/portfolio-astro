@@ -143,6 +143,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні: швидкість завантаження, застосунки в коді сторінок, побудову сторінок, і розповідаю, що впадає в око. Я працюю лише з публічно видимими даними, без доступу до вашого облікового запису. Що ще я роблю для магазинів, читайте в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Рахунки й документи замовлень у Shopify](/uk/blog/shopify-rechnung-bestelldokumente) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten) · [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder)
+**Читайте також:** [Рахунки й документи замовлень у Shopify](/uk/blog/shopify-rechnung-bestelldokumente) · [Налаштування доставки в Shopify](/uk/blog/shopify-versand-einrichten) · [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/uk/blog/shopify-try-before-you-buy)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*
