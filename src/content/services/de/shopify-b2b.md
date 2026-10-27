@@ -2,7 +2,7 @@
 order: 2
 kind: build
 title: "Shopify B2B und Großhandel"
-seoTitle: "Shopify B2B: Großhandel und Endkunden in einem Shop"
+seoTitle: "Shopify B2B einrichten lassen: Großhandel und Endkunden"
 description: "Großhandelspreise, Quick Order und Händlerkonten in Shopify, mit Regeln, die der Server durchsetzt: Endkunden und Händler kaufen im selben Shop."
 lead: "Händler sollen andere Preise, Mengen und Werkzeuge sehen als Endkunden, ohne zweiten Shop. Ich richte B2B in Shopify so ein, dass die Regeln nicht nur im Theme versteckt sind, sondern von der Plattform durchgesetzt werden."
 audience:

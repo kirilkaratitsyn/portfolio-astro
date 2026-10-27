@@ -2,7 +2,7 @@
 order: 2
 kind: build
 title: "Shopify B2B and wholesale"
-seoTitle: "Shopify B2B: Wholesale and Retail in One Store"
+seoTitle: "Shopify B2B Developer: Wholesale and Retail in One Store"
 description: "Wholesale prices, Quick Order and trade accounts in Shopify, with rules the server enforces: retail customers and trade buyers shop in the same store."
 lead: "Trade buyers should see different prices, quantities and tools than retail customers, without a second store. I set up B2B in Shopify so the rules are not just hidden in the theme but enforced by the platform."
 audience:
