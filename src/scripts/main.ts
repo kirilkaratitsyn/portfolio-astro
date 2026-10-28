@@ -1,5 +1,9 @@
 // Entry point: tiny on purpose. The heavy parts load after the page has finished loading, so the poster
 // images paint first and the Lighthouse numbers hold.
+import { trackClicks } from '../lib/track';
+
+trackClicks();
+
 const root = document.documentElement;
 
 /** WebGL works here (it can be off, or the GPU blocklisted): without it the posters stay and three.js never loads. */

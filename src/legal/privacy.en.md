@@ -27,7 +27,7 @@ The fonts are stored on this website's own server. No connection to Google or ot
 
 ## 6. Cookies and analytics
 
-Without your consent, this website sets no cookies of its own and stores nothing on your device. To understand which pages are read and where visitors come from, I use Vercel Web Analytics (Vercel Inc., USA). The service works without cookies. For each page view it records the page, the referring page, the country or region, browser and operating system, and the device type. Visitors are not tracked across websites; a session is derived from the request data and discarded after 24 hours. I only see aggregated statistics.
+Without your consent, this website sets no cookies of its own and stores nothing on your device. To understand which pages are read and where visitors come from, I use Vercel Web Analytics (Vercel Inc., USA). The service works without cookies. For each page view it records the page, the referring page, the country or region, browser and operating system, and the device type. Visitors are not tracked across websites; a session is derived from the request data and discarded after 24 hours. In addition I count how often three actions happen: sending the contact form, clicking the email address and opening the booking calendar. Only the name of the action is sent, never anything you typed into the form. I only see aggregated statistics.
 
 The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in improving the website and understanding its reach. Vercel processes the data on my behalf; for the transfer to the USA see section 2. Details: https://vercel.com/docs/analytics/privacy-policy
 

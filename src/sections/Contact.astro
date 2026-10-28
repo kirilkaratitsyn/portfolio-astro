@@ -71,6 +71,8 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
 </section>
 
 <script>
+  import { track } from '../lib/track';
+
   // Sends the form without leaving the page, and says how it went. The page and the utm_* of its address go along,
   // so the email shows where the visitor came from.
   for (const form of document.querySelectorAll<HTMLFormElement>('[data-contact-form]')) {
@@ -97,6 +99,7 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
         if (!response.ok) throw new Error(String(response.status));
         form.reset();
         say('[data-form-sent]');
+        track('form_sent');
       } catch {
         say('[data-form-failed]');
       } finally {
