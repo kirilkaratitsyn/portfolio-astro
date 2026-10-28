@@ -30,6 +30,8 @@ steps:
   - title: "Робота невеликими кроками"
     text: "Кожна зміна в копії теми, у живий магазин лише після вашого погодження."
 articleSlug: shopify-wartung-betreuung
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

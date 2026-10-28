@@ -20,6 +20,7 @@ const copy = t.servicePage;
 const proof = (await getCaseStudies(locale)).find((item) => item.slug === service.caseSlug);
 if (!proof) throw new Error(`ServiceView: case study "${service.caseSlug}" not found for ${locale}`);
 const article = service.articleSlug ? (await getPosts(locale)).find((post) => post.slug === service.articleSlug) : undefined;
+const alsoArticles = (await getPosts(locale)).filter((post) => service.alsoArticles?.includes(post.slug));
 const others = (await getServices(locale)).filter((item) => item.slug !== service.slug);
 
 const site = Astro.site!;
@@ -127,9 +128,15 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         article && (
           <div class={row}>
             <h2 class="font-head text-2xl font-bold">{copy.article}</h2>
-            <a href={localizePath(locale, `/blog/${article.slug}`)} class="max-w-3xl text-lg font-semibold text-blue-dark hover:underline">
-              {article.title} →
-            </a>
+            <ul class="grid max-w-3xl gap-2">
+              {[article, ...alsoArticles].map((post) => (
+                <li>
+                  <a href={localizePath(locale, `/blog/${post.slug}`)} class="text-lg font-semibold text-blue-dark hover:underline">
+                    {post.title} →
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )
       }

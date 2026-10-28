@@ -30,6 +30,9 @@ steps:
   - title: "Go-live after your written approval"
     text: "Then I check the redirects and Search Console."
 articleSlug: slow-shopify-store
+alsoArticles:
+  - shopify-shop-optimieren-lassen
+  - shopify-shop-bei-google-nicht-gefunden
 caseSlug: pedchem
 alsoCases:
   - petaljet

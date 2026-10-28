@@ -44,4 +44,6 @@ faq:
   - q: "Kann ich mein Design behalten?"
     a: "Ja. Ich baue es auf einem Shopify-Theme nach und räume dabei auf, was im alten Shop gewachsen ist."
 articleSlug: woocommerce-to-shopify
+alsoArticles:
+  - shopify-migration-weiterleitungen
 ---

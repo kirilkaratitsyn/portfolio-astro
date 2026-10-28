@@ -30,6 +30,8 @@ steps:
   - title: "Arbeit in kleinen Schritten"
     text: "Jede Änderung in einer Kopie des Themes, live erst nach Ihrer Freigabe."
 articleSlug: shopify-wartung-betreuung
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

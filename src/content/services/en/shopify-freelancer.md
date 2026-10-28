@@ -32,6 +32,8 @@ steps:
   - title: "Go-live after your approval"
     text: "The change goes live only after you approve it. Afterwards I stay on for fixes."
 articleSlug: shopify-freelancer-oder-agentur
+alsoArticles:
+  - shopify-shop-erstellen-lassen-kosten
 caseSlug: peter-bijoux
 alsoCases:
   - lineargent

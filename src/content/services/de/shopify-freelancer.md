@@ -32,6 +32,8 @@ steps:
   - title: "Go-live nach Ihrer Freigabe"
     text: "Erst wenn Sie freigegeben haben, geht die Änderung live. Danach bleibe ich für Korrekturen da."
 articleSlug: shopify-freelancer-oder-agentur
+alsoArticles:
+  - shopify-shop-erstellen-lassen-kosten
 caseSlug: peter-bijoux
 alsoCases:
   - lineargent

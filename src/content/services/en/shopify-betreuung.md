@@ -30,6 +30,8 @@ steps:
   - title: "Work in small steps"
     text: "Every change is made in a copy of the theme and goes live only after your approval."
 articleSlug: shopify-wartung-betreuung
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

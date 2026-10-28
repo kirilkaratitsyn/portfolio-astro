@@ -30,6 +30,9 @@ steps:
   - title: "Запуск після вашого письмового погодження"
     text: "Потім я перевіряю редиректи й Search Console."
 articleSlug: slow-shopify-store
+alsoArticles:
+  - shopify-shop-optimieren-lassen
+  - shopify-shop-bei-google-nicht-gefunden
 caseSlug: pedchem
 alsoCases:
   - petaljet

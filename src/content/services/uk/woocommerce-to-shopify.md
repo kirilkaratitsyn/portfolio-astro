@@ -44,4 +44,6 @@ faq:
   - q: "Чи можна зберегти мій дизайн?"
     a: "Так. Я відтворюю його на темі Shopify і заодно прибираю те, що наросло в старому магазині."
 articleSlug: woocommerce-to-shopify
+alsoArticles:
+  - shopify-migration-weiterleitungen
 ---

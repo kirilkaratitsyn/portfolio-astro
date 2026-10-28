@@ -32,6 +32,8 @@ steps:
   - title: "Запуск після вашого погодження"
     text: "Зміни виходять в ефір лише після вашого погодження. Потім я лишаюся на зв'язку для виправлень."
 articleSlug: shopify-freelancer-oder-agentur
+alsoArticles:
+  - shopify-shop-erstellen-lassen-kosten
 caseSlug: peter-bijoux
 alsoCases:
   - lineargent

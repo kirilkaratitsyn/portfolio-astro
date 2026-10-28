@@ -30,6 +30,9 @@ steps:
   - title: "Go-live nach Ihrer schriftlichen Freigabe"
     text: "Danach prüfe ich Weiterleitungen und Search Console."
 articleSlug: slow-shopify-store
+alsoArticles:
+  - shopify-shop-optimieren-lassen
+  - shopify-shop-bei-google-nicht-gefunden
 caseSlug: pedchem
 alsoCases:
   - petaljet

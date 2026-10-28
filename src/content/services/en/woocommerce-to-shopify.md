@@ -44,4 +44,6 @@ faq:
   - q: "Can I keep my design?"
     a: "Yes. I rebuild it on a Shopify theme and tidy up what has grown in the old store along the way."
 articleSlug: woocommerce-to-shopify
+alsoArticles:
+  - shopify-migration-weiterleitungen
 ---
