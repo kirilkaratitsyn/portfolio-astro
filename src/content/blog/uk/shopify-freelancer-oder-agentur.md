@@ -78,7 +78,7 @@ tags:
 
 ## Чи підходить фрилансер вашому задуму?
 
-Надішліть мені адресу магазину й одне-два речення про задум на [безкоштовну перевірку](#contact). Я чесно скажу, чи це справа для мене, чи краще агенція. Я працюю з [Бад-Бентгайма](/uk/services/shopify-bad-bentheim), здебільшого віддалено. Типові завдання це [редизайн зі зміною теми](/uk/services/shopify-redesign) або [перехід з WooCommerce](/uk/services/woocommerce-to-shopify).
+Надішліть мені адресу магазину й одне-два речення про задум на [безкоштовну перевірку](#contact). Я чесно скажу, чи це справа для мене, чи краще агенція. Я працюю з [Бад-Бентгайма](/uk/services/shopify-bad-bentheim), здебільшого віддалено. Типові завдання це [редизайн зі зміною теми](/uk/services/shopify-redesign) або [перехід з WooCommerce](/uk/services/woocommerce-to-shopify). Як проходить співпраця, описано на сторінці [Shopify-фрилансер у Німеччині](/uk/services/shopify-freelancer).
 
 **Читайте також:** [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help) · [Супровід магазину Shopify](/uk/blog/shopify-wartung-betreuung) · [З Shopware або Magento на Shopify](/uk/blog/shopware-magento-zu-shopify) · [Безпека WooCommerce та оновлення плагінів](/uk/blog/woocommerce-sicherheit-plugin-updates) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug)
 

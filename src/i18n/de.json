@@ -25,8 +25,8 @@
       "Maestro"
     ],
     "claim": "Schnelle, klare Shopify-Shops, die leicht zu betreiben sind.",
-    "seoTitle": "Kiril Karatitsyn | Shopify-Entwickler in Deutschland",
-    "seoDescription": "Shopify-Entwickler in Deutschland (DE/EN): individuelle Themes, Shopify-Markets-Setups und Performance-Arbeit für Marken, die in DACH verkaufen. Monatlicher Retainer oder Projekt.",
+    "seoTitle": "Kiril Karatitsyn | Shopify-Freelancer und Entwickler in Deutschland",
+    "seoDescription": "Shopify-Freelancer und Entwickler in Deutschland (DE/EN): individuelle Themes, Shopify-Markets-Setups und Performance-Arbeit für Marken, die in DACH verkaufen. Monatlicher Retainer oder Projekt.",
     "sub": "Freiberuflicher Shopify-Entwickler in Deutschland: Themes, Markets, Migrationen und Performance."
   },
   "clients": {
@@ -1022,7 +1022,7 @@
     "tap": "Tippen oder Leertaste: Block fallen lassen"
   },
   "servicesIndex": {
-    "seoTitle": "Shopify-Leistungen: Aufbau, Umzug, Speed, Support",
+    "seoTitle": "Shopify-Freelancer Leistungen: Aufbau, Umzug, Speed, Support",
     "seoDescription": "Shopify-Leistungen von Kiril Karatitsyn: Shop-Aufbau, Umzug von WooCommerce, App-Anbindung, Speed und SEO, Redesign und laufender Support. Kostenloser Shop-Check, Festpreis nach dem Briefing.",
     "details": "Details",
     "start": {
@@ -1070,7 +1070,7 @@
     }
   },
   "aboutPage": {
-    "seoTitle": "Über Kiril Karatitsyn: freiberuflicher Shopify-Entwickler in Deutschland",
+    "seoTitle": "Über Kiril Karatitsyn: Shopify-Freelancer aus Bad Bentheim",
     "seoDescription": "Wer Ihren Shopify-Shop baut: Kiril Karatitsyn, freiberuflicher Shopify-Entwickler in Bad Bentheim. Wie ich arbeite, mein Werdegang, Sprachen und wo Sie mich finden.",
     "title": "Über Kiril Karatitsyn",
     "lead": "Ich bin freiberuflicher Shopify-Entwickler in Bad Bentheim. Ich arbeite für Marken und Händler in Deutschland und darüber hinaus, meist remote, und treffe mich nach Absprache persönlich in der Nähe von Bad Bentheim.",
@@ -1091,6 +1091,7 @@
     "whatTitle": "Was ich mache",
     "whatText": "Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein, ziehe Shops von WooCommerce und anderen Systemen zu Shopify um und mache langsame Shops schneller. Marken beauftragen mich, wenn sie eine Person wollen, die die ganze Aufgabe verantwortet, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch.",
     "whatLink": "Alle Leistungen",
+    "whatLink2": "Als Shopify-Freelancer arbeiten: so läuft es ab",
     "howTitle": "So arbeite ich",
     "how": [
       {

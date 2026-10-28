@@ -78,7 +78,7 @@ I have looked after [Elanora Skin](/projects/elanora-skin), a skincare brand fro
 
 ## Does a freelancer fit your plan?
 
-Send me your store's address and a sentence or two about your plan for the [free store check](#contact). I tell you honestly whether it is a case for me or whether an agency fits better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remote. Typical jobs are the [redesign with a theme change](/services/shopify-redesign) or the [move from WooCommerce](/services/woocommerce-to-shopify).
+Send me your store's address and a sentence or two about your plan for the [free store check](#contact). I tell you honestly whether it is a case for me or whether an agency fits better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remote. Typical jobs are the [redesign with a theme change](/services/shopify-redesign) or the [move from WooCommerce](/services/woocommerce-to-shopify). How working together goes is described on the page [Shopify freelancer in Germany](/services/shopify-freelancer).
 
 **Further reading:** [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Shopify maintenance: what the platform handles](/blog/shopify-wartung-betreuung) · [From Shopware or Magento to Shopify](/blog/shopware-magento-zu-shopify) · [WooCommerce security and plugin updates](/blog/woocommerce-sicherheit-plugin-updates) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug)
 

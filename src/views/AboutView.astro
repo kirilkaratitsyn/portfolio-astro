@@ -102,10 +102,16 @@ const structuredData = {
       <h2 id="what-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:col-span-5 md:text-[56px] md:leading-[1.02]">{copy.whatTitle}</h2>
       <div class="md:col-span-6 md:col-start-7">
         <p class="text-lg leading-relaxed md:text-xl">{copy.whatText}</p>
-        <a href={localizePath(locale, '/services')} class="svc-link mt-6">
-          {copy.whatLink}
-          <Icon name="arrow" size={18} />
-        </a>
+        <div class="mt-6 flex flex-col items-start gap-3">
+          <a href={localizePath(locale, '/services')} class="svc-link">
+            {copy.whatLink}
+            <Icon name="arrow" size={18} />
+          </a>
+          <a href={localizePath(locale, '/services/shopify-freelancer')} class="svc-link">
+            {copy.whatLink2}
+            <Icon name="arrow" size={18} />
+          </a>
+        </div>
       </div>
     </div>
   </section>
