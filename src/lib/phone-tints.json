@@ -7,10 +7,6 @@
     "tint": "#fee4e8",
     "dark": false
   },
-  "crafts-cove-marine": {
-    "tint": "#0f2633",
-    "dark": true
-  },
   "elanora-skin": {
     "tint": "#111111",
     "dark": true
@@ -54,10 +50,6 @@
   "lunesi": {
     "tint": "#ffffff",
     "dark": false
-  },
-  "m-oceans": {
-    "tint": "#da4f3e",
-    "dark": true
   },
   "marinepatches": {
     "tint": "#000000",

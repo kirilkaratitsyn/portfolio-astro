@@ -138,23 +138,6 @@
     uk: "Запустив нову Shopify-тему для австралійського бренду товарів для годування малюків: прив’язка шаблонів до кожного товару й колекції, перебудована сторінка інструкцій, сторінка відгуків, колекція поїльників з перемикачем кольору, нове мега-меню та футер."
   accent: "#ef7a98"
   accentLocked: true
-- id: m-oceans
-  order: 18
-  title: M-Oceans
-  url: https://m-oceans.com/
-  theme: Woodstock
-  work: [migration, redesign, support]
-  country: CA
-  city: "Toronto"
-  lat: 43.77
-  lng: -79.41
-  image: /source/desktop/m-oceans-desktop.webp
-  mobileImage: /source/mobile/m-oceans-mobile.webp
-  tech:
-    en: "Ongoing work for a marine equipment store: catalogue and SKU clean-up against brand price lists, product pages and cards for outboards and accessories, bundles, and advice on inventory and invoicing systems, plus homepage and product page redesign."
-    de: "Laufende Arbeit für einen Shop für Marinezubehör: Katalog- und SKU-Bereinigung anhand der Markenpreislisten, Produktseiten und Karten für Außenborder und Zubehör, Bundles und Beratung zu Lager- und Rechnungssystemen sowie Redesign von Startseite und Produktseite."
-    uk: "Постійна робота для магазину морського обладнання: впорядкування каталогу й SKU за прайсами брендів, сторінки та картки човнових моторів і аксесуарів, бандли, поради щодо систем обліку й виставлення рахунків та редизайн головної й сторінки товару."
-  accent: "#0b4b6b"
 - id: lineargent
   order: 7
   title: Lineargent
@@ -174,23 +157,6 @@
     uk: Постійна підтримка Shopify-магазину з фокусом на SEO, CRO, performance і покращення функціоналу, зокрема міграцію Searchspring на Beacon 2.0 з трекінгом подій пошуку, категорій, автодоповнення та рекомендацій.
   accent: "#1b1d26"
   accentLocked: true
-- id: crafts-cove-marine
-  order: 23
-  title: Crafts Cove Marine
-  url: https://www.craftscove.ca/
-  theme: Fashionopolism
-  work: [speed]
-  country: CA
-  city: "Toronto"
-  lat: 43.65
-  lng: -79.38
-  image: /source/desktop/crafts-cove-marine-desktop.webp
-  mobileImage: /source/mobile/crafts-cove-marine-mobile.webp
-  tech:
-    en: "Fixed site errors and mobile speed for a marine electric store: PageSpeed fixes, then a second performance phase with critical CSS, a rebuilt theme script and an audit of apps and tracking tags."
-    de: "Seitenfehler und mobile Ladezeit eines Marine-Elektro-Shops behoben: PageSpeed-Fixes, danach eine zweite Performance-Phase mit Critical CSS, neu aufgebautem Theme-Skript und einem Audit von Apps und Tracking-Tags."
-    uk: "Виправив помилки сайту та швидкість на мобільному для магазину морської електрики: правки PageSpeed, а потім друга фаза з critical CSS, перебудованим скриптом теми та аудитом застосунків і трекінг-тегів."
-  accent: "#298dc6"
 - id: marinepatches
   order: 19
   title: MarinePatches

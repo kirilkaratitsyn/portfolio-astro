@@ -27,7 +27,7 @@ const LOCALES = ['en', 'de', 'uk'];
 
 // Order and pinning rules copied from src/hooks/useCaseStudies.ts and useWorks.ts.
 const CASE_STUDY_ORDER = ['bazar-bizar', 'elanora-skin', 'petaljet', 'nimfa', 'indian-affairs', 'silk-tallow'];
-const PINNED_PROJECTS = ['ReviewCore', 'MarinePatches', 'White Canvas Earth', 'Lineargent', 'Peter Bijoux', 'M-Oceans'];
+const PINNED_PROJECTS = ['ReviewCore', 'MarinePatches', 'White Canvas Earth', 'Lineargent', 'Peter Bijoux'];
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const write = (relative, content) => {
