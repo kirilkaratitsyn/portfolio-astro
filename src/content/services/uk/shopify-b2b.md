@@ -1,6 +1,6 @@
 ---
 order: 2
-kind: build
+kind: features
 title: "Shopify B2B та опт"
 seoTitle: "Shopify B2B розробник: опт і роздріб в одному магазині"
 description: "Оптові ціни, Quick Order і акаунти партнерів у Shopify з правилами, які перевіряє сервер: роздрібні покупці й оптовики купують в одному магазині."

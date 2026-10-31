@@ -30,6 +30,8 @@ steps:
   - title: "Запуск після вашого погодження"
     text: "Нова тема виходить наживо лише після вашого погодження. Після цього я лишаюся на виправлення."
 articleSlug: shopify-theme-customization
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings

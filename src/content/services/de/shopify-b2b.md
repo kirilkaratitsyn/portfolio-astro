@@ -1,6 +1,6 @@
 ---
 order: 2
-kind: build
+kind: features
 title: "Shopify B2B und Großhandel"
 seoTitle: "Shopify B2B einrichten lassen: Großhandel und Endkunden"
 description: "Großhandelspreise, Quick Order und Händlerkonten in Shopify, mit Regeln, die der Server durchsetzt: Endkunden und Händler kaufen im selben Shop."

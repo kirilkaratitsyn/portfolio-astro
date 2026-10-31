@@ -1,6 +1,6 @@
 ---
 order: 2
-kind: build
+kind: features
 title: "Shopify B2B and wholesale"
 seoTitle: "Shopify B2B Developer: Wholesale and Retail in One Store"
 description: "Wholesale prices, Quick Order and trade accounts in Shopify, with rules the server enforces: retail customers and trade buyers shop in the same store."

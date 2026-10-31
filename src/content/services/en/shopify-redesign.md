@@ -30,6 +30,8 @@ steps:
   - title: "Go-live after your approval"
     text: "The new theme goes live only once you have approved it. Then I stay on for fixes."
 articleSlug: shopify-theme-customization
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings

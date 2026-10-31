@@ -30,6 +30,8 @@ steps:
   - title: "Go-live nach Ihrer Freigabe"
     text: "Das neue Theme geht erst live, wenn Sie es freigegeben haben. Danach bleibe ich für Korrekturen da."
 articleSlug: shopify-theme-customization
+alsoArticles:
+  - shopify-shop-optimieren-lassen
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings
