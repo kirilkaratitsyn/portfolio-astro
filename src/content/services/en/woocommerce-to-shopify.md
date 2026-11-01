@@ -2,8 +2,8 @@
 order: 1
 kind: migration
 title: "WooCommerce to Shopify migration"
-seoTitle: "WooCommerce to Shopify Migration Without Losing Rankings"
-description: "I move your WooCommerce store to Shopify: products, customers, orders, content and a redirect map, so old links and Google rankings keep working."
+seoTitle: "Hire a WooCommerce to Shopify Migration Without Losing Rankings"
+description: "Have your WooCommerce store migrated to Shopify: products, customers, orders, content and a redirect map, so old links and Google rankings stay intact. Fixed price after the briefing, access without sharing passwords."
 lead: "You want to be done with WordPress updates, plugin conflicts and hosting worries, without losing your Google rankings or your regular customers. I move your store to Shopify: the data, the design and every old link that has to keep working."
 audience:
   - "WooCommerce stores tired of maintenance and plugins that want to focus on selling."
@@ -43,7 +43,16 @@ faq:
     a: "Passwords cannot be moved, because they are encrypted outside Shopify. Your customers get an invitation and set up their account again."
   - q: "Can I keep my design?"
     a: "Yes. I rebuild it on a Shopify theme and tidy up what has grown in the old store along the way."
+  - q: "What should a migration quote include?"
+    a: "Which data moves (products, customers, orders, blog, pages), whether the design is rebuilt or a theme is adapted, who writes and tests the redirect map, how long 404 errors are watched after launch, and what is not included, such as the legal texts themselves. With me you get this in writing after the briefing, at a fixed price."
+  - q: "What access do you need for the migration?"
+    a: "For WooCommerce, a separate administrator account in WordPress instead of your password, which you delete after the move. For Shopify, a collaborator request from my Partner account: you review the permissions under Users in the settings and can remove access at any time."
+  - q: "How do I check that the migration worked?"
+    a: "Open old product and category links, for example from Google results or your bookmarks: they should land on the matching new page. Compare products, prices and variants with the old store, place a test order and check Search Console for 404 errors during the first weeks."
+  - q: "What does it cost to have the migration done?"
+    a: "It depends on the scope: the number of products and variants, whether orders and the blog come along, how many old URLs need redirects and whether the design is new. After the briefing you get a written fixed-price quote. What drives the price of a Shopify project in general is covered in the article on Shopify store costs."
 articleSlug: woocommerce-to-shopify
 alsoArticles:
   - shopify-migration-weiterleitungen
+  - shopify-shop-erstellen-lassen-kosten
 ---

@@ -5,6 +5,7 @@ date: 15 October 2026
 readingTime: 6 min
 excerpt: Data, redirect map, theme and a launch checklist from a real migration, so old links and Google rankings keep working.
 image: /og/projects/jula-bloom.jpg
+updatedAt: 2026-11-01
 topic: migration
 tags:
   - Shopify
@@ -73,7 +74,7 @@ In the first weeks Search Console shows pages Google can no longer find ("Not fo
 
 ## Planning a move?
 
-I handle the [WooCommerce to Shopify migration](/services/woocommerce-to-shopify) with a redirect map and launch support, at a fixed price after the briefing. Request the free store check or book an intro call.
+Would rather not do the move yourself? You can [have your WooCommerce store migrated to Shopify](/services/woocommerce-to-shopify): with a redirect map and launch support, at a fixed price after the briefing. That page also covers what a good migration quote includes and how to give access without sharing passwords. Send me your store's address for the [free store check](#contact) or book an intro call.
 
 Not sure yet whether a move is worth it or good maintenance is enough? [WooCommerce Security and Plugin Updates: Maintain or Switch?](/blog/woocommerce-sicherheit-plugin-updates) helps you decide.
 

@@ -5,6 +5,7 @@ date: 15. Oktober 2026
 readingTime: 6 Min
 excerpt: Daten, Redirect-Map, Theme und Launch-Checkliste aus einem echten Umzug, damit alte Links und Google-Rankings erhalten bleiben.
 image: /og/projects/jula-bloom.jpg
+updatedAt: 2026-11-01
 topic: migration
 tags:
   - Shopify
@@ -73,7 +74,7 @@ In den ersten Wochen zeigt die Search Console Seiten, die Google nicht mehr find
 
 ## Umzug geplant?
 
-Ich übernehme den [Umzug von WooCommerce zu Shopify](/de/services/woocommerce-to-shopify) mit Redirect-Map und Launch-Begleitung, zum Festpreis nach dem Briefing. Fragen Sie den kostenlosen Shop-Check an oder buchen Sie ein Erstgespräch.
+Sie wollen den Umzug nicht selbst machen? Sie können [WooCommerce zu Shopify migrieren lassen](/de/services/woocommerce-to-shopify): mit Redirect-Map und Launch-Begleitung, zum Festpreis nach dem Briefing. Dort steht auch, was in ein gutes Angebot für den Umzug gehört und wie Sie Zugang geben, ohne Passwörter weiterzugeben. Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact) oder buchen Sie ein Erstgespräch.
 
 Noch unsicher, ob sich ein Umzug für Sie lohnt oder saubere Pflege reicht? Dabei hilft [WooCommerce Sicherheit und Plugin-Updates: pflegen oder wechseln?](/de/blog/woocommerce-sicherheit-plugin-updates).
 
