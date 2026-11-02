@@ -65,6 +65,8 @@ const blog = defineCollection({
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     title: z.string(),
+    /** Shorter search title when the headline runs past ~60 characters (the headline stays the H1). */
+    seoTitle: z.string().optional(),
     date: z.string(),
     readingTime: z.string(),
     excerpt: z.string(),

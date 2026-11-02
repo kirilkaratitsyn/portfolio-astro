@@ -44,7 +44,9 @@ const absolute = (value: string) => new URL(value, site).toString();
 const canonicalUrl = absolute(localizePath(locale, path));
 const imageUrl = absolute(image);
 const ogImageSize = image === DEFAULT_IMAGE ? DEFAULT_IMAGE_SIZE : imageSize;
-const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+// Search results show about 60 characters: the name is added only when it still fits.
+const withName = `${title} | ${SITE_NAME}`;
+const fullTitle = title.includes(SITE_NAME) || withName.length > 60 ? title : withName;
 const alternateLinks = alternates
   ? LOCALES.map((alternate) => ({
       hreflang: alternate,

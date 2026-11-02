@@ -1,6 +1,7 @@
 ---
 publishedAt: 2026-10-22
 title: "Shopify-Shop optimieren lassen: Was dazugehört und woran Sie ein gutes Angebot erkennen"
+seoTitle: "Shopify-Shop optimieren lassen: Umfang und gutes Angebot"
 date: 22. Oktober 2026
 readingTime: 8 Min
 excerpt: „Optimieren“ kann vieles heißen. Wie Sie klären, was Ihr Shop wirklich braucht, Ausgangswerte und Ziel festhalten, einem Dienstleister sicher Zugang geben und das Ergebnis nachprüfen.

@@ -1,6 +1,7 @@
 ---
 publishedAt: 2026-10-22
 title: "Hiring Someone to Optimize Your Shopify Store: What It Covers and How to Spot a Good Offer"
+seoTitle: "Hiring Someone to Optimize Your Shopify Store"
 date: October 22, 2026
 readingTime: 8 min
 excerpt: “Optimize” can mean many things. How to work out what your store really needs, record baseline values and a goal, give a provider access safely and check the result afterwards.

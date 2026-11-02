@@ -59,7 +59,7 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale} structuredData={structuredData}>
+<BaseLayout title={post.seoTitle ?? post.title} description={post.excerpt} type="article" image={post.image} path={`/blog/${post.slug}`} locale={locale} structuredData={structuredData}>
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/blog')} class="text-sm font-medium text-mute hover:text-ink">← {t.blog.backToList}</a>
     <p class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-mute">
