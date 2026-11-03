@@ -25,12 +25,16 @@ function boot() {
 
   const nav = navigator as Navigator & { deviceMemory?: number };
   const weak = (nav.deviceMemory !== undefined && nav.deviceMemory < 4) || (nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency < 4);
-  if (weak || !webgl()) return; // the posters stay
+  if (weak) return; // the posters stay
   const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 300));
-  const stage = (globeOnly: boolean) =>
+  // The WebGL check opens a GL context, which can hold the main thread for a long time on a phone or a machine without
+  // a GPU: it runs only once three.js is about to load, never in the load event.
+  const stage = (globeOnly: boolean) => {
+    if (!webgl()) return; // the posters stay
     import('./stage')
       .then((m) => m.start({ globeOnly }))
       .catch(() => {});
+  };
 
   // Touch screens: every 3D object goes live after the first touch, scroll or key (a page that is only loaded stays
   // light), or when the globe comes near; until then the posters show the same picture. With a mouse, once idle.

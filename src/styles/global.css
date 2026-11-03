@@ -7,11 +7,12 @@
   color-scheme: light;
 }
 
-@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Regular.woff2') format('woff2'); font-weight: 400; }
-@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Medium.woff2') format('woff2'); font-weight: 500; }
-@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Bold.woff2') format('woff2'); font-weight: 700; }
-@font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Medium.woff2') format('woff2'); font-weight: 500; }
-@font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Bold.woff2') format('woff2'); font-weight: 700; }
+/* swap: text shows at once in the width-matched fallback below instead of waiting for the font file. */
+@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Onest'; src: url('/fonts/Onest-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'e-UkraineHead'; src: url('/fonts/e-UkraineHead-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 /* Until the web fonts arrive the text is set in Arial stretched to the same width, so nothing reflows when they do
    (ratios measured: real font width / Arial width over a sample of the site's text). */
