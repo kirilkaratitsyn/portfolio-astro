@@ -13,7 +13,7 @@ Tone mapping is `NeutralToneMapping` at exposure 1 in the live renderer, and the
 
 The icons of the Services and Process sections and the 3D logo (header and footer) are built in code, `src/lib/icons.ts`: simple shapes with soft bevels in a glossy clear-coated material, no model files. The logo is extruded from an outline traced from the brand PNG: `node scripts/3d/trace-mark.mjs` (needs `npm i --no-save d3-contour`), result `src/lib/mark-paths.json`.
 
-Every icon also has a poster image, `public/source/3d/icon-<name>.webp` (first paint and fallback). They are captured from the live objects at rest, so they match exactly: build the site, serve it on port 4321, then `node scripts/3d/capture-posters.mjs`. Re-run it after changing an icon.
+Every icon also has a poster image, `public/source/3d/icon-<name>.webp` (first paint and fallback), and a 160 px copy, `icon-<name>-160.webp`, for the places where it is small. They are captured from the live objects at rest, so they match exactly: build the site, serve it on port 4321, then `node scripts/3d/capture-posters.mjs`. Re-run it after changing an icon.
 
 Dragging uses an arcball, so a drag inside the object turns it about X and Y and a drag near its edge spins it about Z. Every object drifts back to its resting pose.
 
@@ -21,10 +21,10 @@ Dragging uses an arcball, so a drag inside the object turns it about X and Y and
 
 The puzzle cube in the hero is built in code too, `src/lib/cube.ts`: 27 rounded blocks in the site's colours, a few with a pattern drawn on a canvas (perforated, ribbed), no model or image files. It turns slowly, twists one layer every two or three seconds and, after a few twists, runs them backwards until it is whole again. It is a `data-pebble="cube"` host, so the stage gives it the same drag, tilt and poster swap as the icons, plus its own longer lens and key light (`userData.distance`, `userData.lights`).
 
-Its poster, `public/source/3d/cube-560.webp` and `cube-1120.webp`, is captured from the live cube at rest (paused, every block home): build the site, serve it on port 4321, then `node scripts/3d/capture-cube.mjs`. Re-run it after changing the cube; the script also warns when the resting cube reaches past its host.
+Its poster, `public/source/3d/cube-560.webp` to `cube-1120.webp` (one file per srcset width), is captured from the live cube at rest (paused, every block home): build the site, serve it on port 4321, then `node scripts/3d/capture-cube.mjs`. Re-run it after changing the cube; the script also warns when the resting cube reaches past its host.
 
 ## Blocks
 
 The small 3D objects around the site (stat cards, About, Feature, Contact, case pages) are single blocks of the hero cube, `makeBlock` in `src/lib/cube.ts`, placed with `src/components/Pebble.astro` (named after the pebbles they replaced). Same shape, finishes, lens and light as the cube: `white` is plain glossy white (the perforated finish alone looked like a die), `black` glossy ink, `cobalt` ribbed cobalt, `cobalt2` glossy cobalt. `<Pebble small>` (`data-pebble="<name>-small"`) is for blocks a few dozen pixels wide: three wide ribs instead of seven.
 
-Their posters, `public/source/3d/block-<name>.webp` and `block-<name>-small.webp` (360 x 360), are captured from the live blocks at rest: build the site, serve it on port 4321, then `node scripts/3d/capture-blocks.mjs`.
+Their posters, `public/source/3d/block-<name>.webp` and `block-<name>-small.webp` (360 x 360, the small ones also as `block-<name>-small-160.webp`), are captured from the live blocks at rest: build the site, serve it on port 4321, then `node scripts/3d/capture-blocks.mjs`.

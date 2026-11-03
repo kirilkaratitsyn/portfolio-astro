@@ -1,4 +1,4 @@
-// Renders the poster of the globe (public/source/3d/globe-1000.webp and -640.webp) from the live object on the built
+// Renders the poster of the globe (public/source/3d/globe-1000.webp, -840, -720 and -640) from the live object on the built
 // site, in its starting pose. Usage: build, serve on port 4321 (npm run preview), then node scripts/3d/capture-globe.mjs
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
@@ -22,6 +22,9 @@ await page.evaluate(() => {
 const url = await page.evaluate(() => document.querySelector('[data-globe] canvas').toDataURL('image/png'));
 const png = Buffer.from(url.split(',')[1], 'base64');
 await sharp(png).resize(1000, 1000).webp({ quality: 84, alphaQuality: 90 }).toFile(`${out}globe-1000.webp`);
+// The in-between sizes are for phones (sections/Globe.astro srcset), so they do not have to take the 1000 px file.
+await sharp(png).resize(840, 840).webp({ quality: 82, alphaQuality: 90 }).toFile(`${out}globe-840.webp`);
+await sharp(png).resize(720, 720).webp({ quality: 82, alphaQuality: 90 }).toFile(`${out}globe-720.webp`);
 await sharp(png).resize(640, 640).webp({ quality: 82, alphaQuality: 90 }).toFile(`${out}globe-640.webp`);
 console.log('globe poster written');
 await browser.close();

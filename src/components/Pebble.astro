@@ -2,20 +2,23 @@
 // A small 3D block, one of the hero cube's blocks on its own (src/lib/cube.ts, makeBlock); it took the place of the
 // pebbles, hence the name. The rendered poster is the first paint and the fallback; scripts/stage.ts swaps in a live,
 // interactive WebGL object over it. Decorative, so no alt text. Position and size classes go on the wrapper.
-// `small`: for blocks a few dozen pixels wide, a simpler finish that stays clean at that size.
+// `small`: for blocks a few dozen pixels wide, a simpler finish that stays clean at that size. With `sizes` (their width
+// on the page) a small block may take its 160 px poster instead of the 360 px one.
 import type { BlockName } from '../lib/cube';
 
 interface Props {
   name: BlockName;
   small?: boolean;
+  sizes?: string;
   class?: string;
 }
 
-const { name, small = false, class: className = '' } = Astro.props;
+const { name, small = false, sizes, class: className = '' } = Astro.props;
 const id = small ? `${name}-small` : name;
+const srcset = small && sizes ? `/source/3d/block-${id}-160.webp 160w, /source/3d/block-${id}.webp 360w` : undefined;
 const positioned = /(^|\s)(absolute|relative|fixed)(\s|$)/.test(className);
 ---
 
 <span data-pebble={id} class:list={['pebble block', !positioned && 'relative', className]}>
-  <img src={`/source/3d/block-${id}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
+  <img src={`/source/3d/block-${id}.webp`} srcset={srcset} sizes={srcset && sizes} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
 </span>

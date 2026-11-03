@@ -30,7 +30,7 @@ const rows = await getServiceRows(locale, t, works);
           <h3>
             <button type="button" data-svc-head id={`svc-${row.id}`} aria-controls={`svc-${row.id}-panel`} aria-expanded="true" class="svc-head">
               <span class="svc-num">{String(i + 1).padStart(2, '0')}</span>
-              <Icon3D name={row.icon} class="svc-icon" />
+              <Icon3D name={row.icon} sizes="(min-width: 768px) 72px, 48px" class="svc-icon" />
               <span class="svc-title">{row.title}</span>
               <span class="svc-plus" aria-hidden="true" />
             </button>
@@ -68,7 +68,7 @@ const rows = await getServiceRows(locale, t, works);
                           <i />
                           <i />
                         </span>
-                        <img src={thumb(w.image, '640')} alt="" width="640" height="444" loading="lazy" decoding="async" />
+                        <img src={thumb(w.image, '640')} srcset={`${thumb(w.image, '320')} 320w, ${thumb(w.image, '640')} 640w`} sizes="(min-width: 1024px) 300px, calc((100vw - 56px) / 3)" alt="" width="640" height="444" loading="lazy" decoding="async" />
                       </span>
                     ))}
                   </a>

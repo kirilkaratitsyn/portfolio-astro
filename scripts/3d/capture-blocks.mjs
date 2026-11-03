@@ -1,5 +1,6 @@
-// Renders the posters of the small 3D blocks (public/source/3d/block-<name>.webp, 360 x 360) from the live blocks at
-// rest. Usage: npm run build && npx serve@14 -c serve.json -l 4321 (in another terminal), then:
+// Renders the posters of the small 3D blocks (public/source/3d/block-<name>.webp, 360 x 360, and a 160 px copy of the
+// small ones, block-<name>-small-160.webp) from the live blocks at rest.
+// Usage: npm run build && npx serve@14 -c serve.json -l 4321 (in another terminal), then:
 //   node scripts/3d/capture-blocks.mjs [port]   (needs playwright-core and Google Chrome)
 // The posters are the first paint and the fallback, so they have to look exactly like the live blocks at rest. The
 // script puts one 360 px host per block on top of the home page, lets the stage build them and copies each canvas.
@@ -48,7 +49,10 @@ for (const name of names) {
   for (let y = 0; y < info.height; y++) for (let x = 0; x < info.width; x++) {
     if ((x < pad || y < pad || x >= pad + inner || y >= pad + inner) && data[(y * info.width + x) * 4 + 3] > 4) spill++;
   }
-  await sharp(png).extract({ left: pad, top: pad, width: inner, height: inner }).resize(360, 360).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}block-${name}.webp`);
+  const crop = () => sharp(png).extract({ left: pad, top: pad, width: inner, height: inner });
+  await crop().resize(360, 360).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}block-${name}.webp`);
+  // The small blocks show at 40-54 px (sections/Numbers.astro): 160 px is enough for a 3x screen.
+  if (name.endsWith('-small')) await crop().resize(160, 160).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}block-${name}-160.webp`);
   console.log(`poster block-${name}.webp`, spill ? `(${spill} pixels past the host: make the block smaller)` : '');
 }
 await browser.close();

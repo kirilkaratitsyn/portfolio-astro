@@ -17,8 +17,9 @@ const { href, title, image, mobileImage } = Astro.props;
   <span class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 md:gap-8 md:px-10 md:py-5">
     <span data-row-title class="min-w-0 font-head text-[30px] font-bold leading-none tracking-[-0.02em] md:text-[44px]">{title}</span>
     <span class="flex shrink-0 items-center gap-2" data-strip>
-      <img src={thumb(image, '480')} alt="" width="120" height="78" loading="lazy" decoding="async" class="h-[56px] w-[84px] rounded-md object-cover object-top md:h-[78px] md:w-[120px]" />
-      {mobileImage && <img src={thumb(mobileImage, 'm200')} alt="" width="46" height="78" loading="lazy" decoding="async" class="h-[56px] w-[32px] rounded-md object-cover object-top md:h-[78px] md:w-[46px]" />}
+      <img src={thumb(image, '480')} srcset={`${thumb(image, '200')} 200w, ${thumb(image, '320')} 320w, ${thumb(image, '480')} 480w`} sizes="(min-width: 768px) 120px, 84px" alt="" width="120" height="78" loading="lazy" decoding="async" class="h-[56px] w-[84px] rounded-md object-cover object-top md:h-[78px] md:w-[120px]" />
+      {/* The phone shot is cropped to its box by height, so it shows a little wider than the box: 34 / 47 px. */}
+      {mobileImage && <img src={thumb(mobileImage, 'm200')} srcset={`${thumb(mobileImage, 'm120')} 120w, ${thumb(mobileImage, 'm200')} 200w`} sizes="(min-width: 768px) 47px, 34px" alt="" width="46" height="78" loading="lazy" decoding="async" class="h-[56px] w-[32px] rounded-md object-cover object-top md:h-[78px] md:w-[46px]" />}
       <span class="ml-2 text-[22px] text-blue-deep group-hover:text-white md:ml-6" data-arrow aria-hidden="true">→</span>
     </span>
   </span>

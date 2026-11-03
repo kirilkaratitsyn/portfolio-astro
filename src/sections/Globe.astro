@@ -60,7 +60,7 @@ const [before, after] = t.title.split('{n}');
           class="globe relative aspect-square w-full"
           aria-hidden="true"
         >
-          <img src="/source/3d/globe-1000.webp" srcset="/source/3d/globe-640.webp 640w, /source/3d/globe-1000.webp 1000w" sizes="(min-width: 768px) 720px, 92vw" width="1000" height="1000" alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full" />
+          <img src="/source/3d/globe-1000.webp" srcset="/source/3d/globe-640.webp 640w, /source/3d/globe-720.webp 720w, /source/3d/globe-840.webp 840w, /source/3d/globe-1000.webp 1000w" sizes="(min-width: 768px) min(720px, calc(58.33vw - 60px)), calc(100vw - 40px)" width="1000" height="1000" alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full" />
         </div>
         <!-- Shown once the live globe is on (scripts/stage.ts GlobeView); the poster has nothing to zoom. -->
         <div data-globe-zoom hidden class="globe-zoom">

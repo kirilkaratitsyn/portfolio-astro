@@ -35,7 +35,10 @@ for (const name of names) {
   const { width } = await sharp(png).metadata();
   const inner = Math.round(width / 1.4);
   const pad = Math.round((width - inner) / 2);
-  await sharp(png).extract({ left: pad, top: pad, width: inner, height: inner }).resize(360, 360).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}icon-${name}.webp`);
+  const crop = () => sharp(png).extract({ left: pad, top: pad, width: inner, height: inner });
+  await crop().resize(360, 360).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}icon-${name}.webp`);
+  // A 160 px copy for the small places (the 48-72 px Services icons, the header and menu chips).
+  await crop().resize(160, 160).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}icon-${name}-160.webp`);
   console.log('poster', name);
 }
 await browser.close();

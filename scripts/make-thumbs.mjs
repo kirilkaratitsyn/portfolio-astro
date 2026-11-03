@@ -1,8 +1,9 @@
 // Generates small WebP thumbnails of the store screenshots for the work lists:
+//   public/source/thumbs/<name>-200.webp / -320.webp (desktop -> 200 / 320 wide, the tiny row and Services thumbnails)
 //   public/source/thumbs/<name>-480.webp  (desktop 2880x2000 -> 480 wide, rows)
 //   public/source/thumbs/<name>-640.webp  (desktop -> 640 wide, cards on phones)
 //   public/source/thumbs/<name>-1000.webp (desktop -> 1000 wide, feature and case pages)
-//   public/source/thumbs/<name>-m200.webp / -m400.webp / -m800.webp (mobile 1179x1977 -> 200 / 400 / 800 wide)
+//   public/source/thumbs/<name>-m120.webp / -m200.webp / -m400.webp / -m800.webp (mobile 1179x1977 -> 120 to 800 wide)
 //   src/lib/phone-tints.json: the color of the top of each mobile screenshot, which tints the status bar of the
 //   phone mockup (components/Phone.astro), the way Safari does
 // Run after adding or replacing a screenshot: node scripts/make-thumbs.mjs
@@ -28,8 +29,8 @@ const out = path.join(root, 'thumbs');
 fs.mkdirSync(out, { recursive: true });
 
 const jobs = [
-  ['desktop', '-desktop', [['480', 480, 74], ['640', 640, 76], ['1000', 1000, 78]]],
-  ['mobile', '-mobile', [['m200', 200, 74], ['m400', 400, 78], ['m800', 800, 76]]],
+  ['desktop', '-desktop', [['200', 200, 74], ['320', 320, 74], ['480', 480, 74], ['640', 640, 76], ['1000', 1000, 78]]],
+  ['mobile', '-mobile', [['m120', 120, 74], ['m200', 200, 74], ['m400', 400, 78], ['m800', 800, 76]]],
 ];
 
 const tints = {};

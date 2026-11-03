@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { useTranslations, type Locale } from '../i18n';
@@ -27,12 +28,20 @@ const { locale, works } = Astro.props;
 const t = useTranslations(locale);
 // Each logo's own size goes on its <img>, so a logo that has not loaded yet (they are lazy) already takes its place:
 // no jump when it arrives, and its link is never a zero-width stop for the keyboard.
+// The smaller copies (scripts/make-client-logos.mjs) go in a srcset, with the width the logo takes in the strip: its
+// height times its proportions, at most 96 px on phones and 290 px from md up (the classes on the <img> below).
+const dir = path.join(process.cwd(), 'public/source/logos/clients');
 const clients = await Promise.all(
   CLIENTS.map(async (client) => {
     const work = works.find((item) => item.id === client.id);
     if (!work) throw new Error(`ClientStrip: "${client.id}" is not in works.yaml`);
-    const { width = 300, height = 100 } = await sharp(path.join(process.cwd(), 'public/source/logos/clients', client.logo)).metadata();
-    return { ...client, title: work.title, url: work.url, width, size: height };
+    const { width = 300, height = 100 } = await sharp(path.join(dir, client.logo)).metadata();
+    const name = client.logo.replace(/\.webp$/, '');
+    const copies = client.logo.endsWith('.webp') ? [200, 300].filter((w) => fs.existsSync(path.join(dir, `${name}-${w}.webp`))) : [];
+    const srcset = copies.length ? [...copies.map((w) => `/source/logos/clients/${name}-${w}.webp ${w}w`), `/source/logos/clients/${client.logo} ${width}w`].join(', ') : undefined;
+    const slot = (h: number, max: number) => Math.ceil(Math.min(max, (h * width) / height));
+    const sizes = srcset ? `(min-width: 768px) ${slot(client.height, 290)}px, ${slot(client.height * 0.46, 96)}px` : undefined;
+    return { ...client, title: work.title, url: work.url, width, size: height, srcset, sizes };
   }),
 );
 ---
@@ -46,6 +55,8 @@ const clients = await Promise.all(
           <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-80 transition duration-300 hover:scale-105 hover:opacity-100" style={`--h: ${client.height}px`}>
             <img
               src={`/source/logos/clients/${client.logo}`}
+              srcset={client.srcset}
+              sizes={client.sizes}
               alt={client.title}
               width={client.width}
               height={client.size}

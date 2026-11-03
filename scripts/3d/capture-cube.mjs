@@ -1,4 +1,4 @@
-// Renders the poster of the hero cube (public/source/3d/cube-560.webp and cube-1120.webp) from the live cube at rest.
+// Renders the poster of the hero cube (public/source/3d/cube-<width>.webp, 560 to 1120 wide) from the live cube at rest.
 // Usage: npm run build && npx serve@14 -c serve.json -l 4321 (in another terminal), then:
 //   node scripts/3d/capture-cube.mjs [port]   (needs playwright-core and Google Chrome)
 // The poster is the first paint, the LCP image and the fallback, so it has to look exactly like the live cube before
@@ -57,7 +57,8 @@ console.log(`canvas ${width}x${height}, poster ${inner}px, pixels outside the ho
 if (spill > 0) console.warn('The resting cube reaches past its host: make it smaller in src/lib/cube.ts (root.scale).');
 
 const crop = () => sharp(png).extract({ left: pad, top: pad, width: inner, height: inner });
-await crop().resize(1120, 1120).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}cube-1120.webp`);
-await crop().resize(560, 560).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}cube-560.webp`);
-console.log('poster cube-1120.webp, cube-560.webp');
+// One file per srcset width in sections/Hero.astro: 640 is a 412 px phone at 1.75x, 840 a phone or tablet at 2x.
+const widths = [1120, 840, 640, 560];
+for (const size of widths) await crop().resize(size, size).webp({ quality: 86, alphaQuality: 92 }).toFile(`${out}cube-${size}.webp`);
+console.log('poster', widths.map((size) => `cube-${size}.webp`).join(', '));
 await browser.close();

@@ -1,17 +1,20 @@
 ---
 // A 3D icon (scripts/stage.ts builds the live object from src/lib/icons.ts). The rendered poster is the first paint
 // and the fallback. Decorative, so no alt text. Position and size classes go on the wrapper.
+// `sizes`: the icon's width on the page; with it the browser may take the 160 px poster instead of the 360 px one.
 import type { IconName } from '../lib/icons';
 
 interface Props {
   name: IconName;
+  sizes?: string;
   class?: string;
 }
 
-const { name, class: className = '' } = Astro.props;
+const { name, sizes, class: className = '' } = Astro.props;
+const srcset = sizes ? `/source/3d/icon-${name}-160.webp 160w, /source/3d/icon-${name}.webp 360w` : undefined;
 const positioned = /(^|\s)(absolute|relative|fixed)(\s|$)/.test(className);
 ---
 
 <span data-pebble={name} class:list={['pebble block', !positioned && 'relative', className]}>
-  <img src={`/source/3d/icon-${name}.webp`} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
+  <img src={`/source/3d/icon-${name}.webp`} srcset={srcset} sizes={sizes} alt="" width="360" height="360" loading="lazy" decoding="async" class="block h-auto w-full" />
 </span>
