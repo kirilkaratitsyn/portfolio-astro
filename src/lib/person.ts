@@ -15,7 +15,8 @@ export const PERSON = {
   worksFor: { '@type': 'Organization', name: 'Independent' },
   sameAs: [
     'https://www.upwork.com/freelancers/~0165dda3529105e6f3',
-    'https://www.linkedin.com/in/kiril-karatitsyn-bb278b332/',
+    'https://www.linkedin.com/in/kirilkaratitsyn/',
+    'https://www.malt.com/de-de/profile/kirilkaratitsyn',
     'https://github.com/kirilkaratitsyn',
   ],
   knowsAbout: ['Shopify', 'Shopify theme development', 'Shopify Markets', 'B2B wholesale on Shopify', 'Online Store 2.0', 'Liquid', 'Storefront UX', 'Performance optimization'],
