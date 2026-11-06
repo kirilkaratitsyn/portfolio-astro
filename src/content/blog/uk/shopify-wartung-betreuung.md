@@ -94,6 +94,6 @@ Shopify не переносить нові версії теми у вашу р�
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні, наприклад час завантаження, додатки в коді сторінки та структуру сторінок, і скажу, що впадає в око. Я працюю лише з публічно доступними даними, без доступу до вашого акаунта. Як виглядає постійна співпраця зі мною, описано на сторінці [Супровід і підтримка Shopify](/uk/services/shopify-betreuung); решту моїх послуг дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Cookie-банер і політика конфіденційності в Shopify](/uk/blog/shopify-cookie-banner-datenschutz) · [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions)
+**Читайте також:** [Cookie-банер і політика конфіденційності в Shopify](/uk/blog/shopify-cookie-banner-datenschutz) · [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Замовити релонч магазину Shopify](/uk/blog/shopify-relaunch-theme-wechsel)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

@@ -112,6 +112,6 @@ Wenn die Liste der Wünsche lang wird, lohnt sich die Frage, ob das alte Theme n
 
 Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze dazu, was Sie stört, für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, was Sie selbst im Editor lösen können und wofür es Code braucht. Wenn Sie es abgeben möchten: Ich passe Themes an oder baue sie im Rahmen eines [Shopify-Redesigns](/de/services/shopify-redesign) neu auf, zum Festpreis nach dem Briefing.
 
-**Weiterlesen:** [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen)
+**Weiterlesen:** [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

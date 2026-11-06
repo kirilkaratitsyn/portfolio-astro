@@ -120,6 +120,6 @@ And the expectation towards Google: on Search Central, Google recommends good Co
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside: load time, apps in the theme and the basics of findability. Then I tell you which of the four areas will bring the most in your case, even if you implement it yourself afterwards. If you would rather hand it over: I [make your Shopify store faster](/services/shopify-speed), at a fixed price after the briefing.
 
-**Further reading:** [Shopify help: when the Help Center is enough](/blog/shopify-help)
+**Further reading:** [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

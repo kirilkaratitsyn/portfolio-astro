@@ -32,6 +32,7 @@ steps:
 articleSlug: shopify-theme-customization
 alsoArticles:
   - shopify-shop-optimieren-lassen
+  - shopify-relaunch-theme-wechsel
 caseSlug: peter-bijoux
 alsoCases:
   - lumppings
