@@ -112,6 +112,6 @@ When the wish list gets long, it is worth asking whether the old theme is still 
 
 Send me your store's address and a sentence or two on what bothers you for the [free store check](#contact). I tell you what you can solve yourself in the editor and what needs code. If you would rather hand it over: I customize themes or rebuild them as part of a [Shopify redesign](/services/shopify-redesign), at a fixed price after the briefing.
 
-**Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Free gift over a minimum order value in Shopify](/blog/shopify-gratisartikel-warenkorb) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel)
+**Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Free gift over a minimum order value in Shopify](/blog/shopify-gratisartikel-warenkorb) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

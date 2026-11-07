@@ -94,6 +94,6 @@ On whether an individual or a team suits you better: [Shopify freelancer or agen
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. How ongoing work with me looks is described under [Shopify support and maintenance](/services/shopify-betreuung); everything else I do is under [Services](/services).
 
-**Further reading:** [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel)
+**Further reading:** [Shopify cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

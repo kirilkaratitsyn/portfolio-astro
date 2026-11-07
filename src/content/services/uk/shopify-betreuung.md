@@ -32,6 +32,7 @@ steps:
 articleSlug: shopify-wartung-betreuung
 alsoArticles:
   - shopify-shop-optimieren-lassen
+  - shopify-entwickler-wechseln
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

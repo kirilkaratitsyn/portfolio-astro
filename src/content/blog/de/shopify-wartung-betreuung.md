@@ -94,6 +94,6 @@ Zur Frage, ob eine Einzelperson oder ein Team besser zu Ihnen passt: [Shopify-Fr
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und die Struktur der Seiten, und sage Ihnen, was auffällt. Dabei arbeite ich nur mit öffentlich sichtbaren Daten, ohne Zugang zu Ihrem Konto. Wie die laufende Zusammenarbeit bei mir aussieht, steht unter [Shopify Betreuung und Wartung](/de/services/shopify-betreuung); alle Leistungen finden Sie unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Cookie-Banner und Datenschutzerklärung](/de/blog/shopify-cookie-banner-datenschutz) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel)
+**Weiterlesen:** [Shopify Cookie-Banner und Datenschutzerklärung](/de/blog/shopify-cookie-banner-datenschutz) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
