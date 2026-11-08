@@ -101,6 +101,6 @@ tags:
 
 Надішліть адресу магазину для [безкоштовного Shop-Check](#contact). Я подивлюся, що видно ззовні, і скажу, де ризики передачі, навіть якщо потім ви замовите роботу комусь іншому. Якщо хочете передати постійний супровід: [Підтримка Shopify](/uk/services/shopify-betreuung) із чітким обсягом і фіксованою ціною після брифінгу.
 
-**Читайте також:** [Доопрацювання теми Shopify](/uk/blog/shopify-theme-customization) · [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Релонч Shopify](/uk/blog/shopify-relaunch-theme-wechsel)
+**Читайте також:** [Доопрацювання теми Shopify](/uk/blog/shopify-theme-customization) · [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Релонч Shopify](/uk/blog/shopify-relaunch-theme-wechsel) · [Замовити застосунок Shopify](/uk/blog/shopify-app-entwickeln-lassen)
 
 *[Kiril Karatitsyn](/uk/about), розробник Shopify у Німеччині*

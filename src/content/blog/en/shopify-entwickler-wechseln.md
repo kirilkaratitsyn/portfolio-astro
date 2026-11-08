@@ -101,6 +101,6 @@ Whether a freelancer or an agency fits better depends on your store: [Shopify fr
 
 Send me your store address for the [free Shop-Check](#contact). I look at what is visible from the outside and tell you where the risks of a handover are, even if you hire someone else afterwards. If you would rather hand over ongoing care: [Shopify support](/services/shopify-betreuung) with a clear scope and a fixed price after the briefing.
 
-**Further reading:** [Shopify theme customization](/blog/shopify-theme-customization) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify relaunch](/blog/shopify-relaunch-theme-wechsel)
+**Further reading:** [Shopify theme customization](/blog/shopify-theme-customization) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify relaunch](/blog/shopify-relaunch-theme-wechsel) · [Having a Shopify app built](/blog/shopify-app-entwickeln-lassen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

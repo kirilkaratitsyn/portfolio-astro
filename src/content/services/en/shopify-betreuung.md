@@ -33,6 +33,7 @@ articleSlug: shopify-wartung-betreuung
 alsoArticles:
   - shopify-shop-optimieren-lassen
   - shopify-entwickler-wechseln
+  - shopify-app-entwickeln-lassen
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

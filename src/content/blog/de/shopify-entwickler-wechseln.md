@@ -101,6 +101,6 @@ Ob ein Freelancer oder eine Agentur besser passt, hängt von Ihrem Shop ab: [Sho
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, und sage Ihnen, wo bei einer Übergabe die Risiken liegen, auch wenn Sie danach jemand anderen beauftragen. Wenn Sie die Betreuung lieber abgeben: [Shopify-Betreuung](/de/services/shopify-betreuung) mit klarem Umfang und Festpreis nach dem Briefing.
 
-**Weiterlesen:** [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel)
+**Weiterlesen:** [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify-App entwickeln lassen](/de/blog/shopify-app-entwickeln-lassen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
