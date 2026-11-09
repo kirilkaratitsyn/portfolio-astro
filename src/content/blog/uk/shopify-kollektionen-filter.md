@@ -138,6 +138,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я дивлюся на те, що видно ззовні: швидкість завантаження, застосунки в коді сторінок, побудову сторінок, і розповідаю, що впадає в око. Я працюю лише з публічно видимими даними, без доступу до вашого облікового запису. Що я роблю під час редизайну, читайте на сторінці [Редизайн Shopify](/uk/services/shopify-redesign).
 
-**Читайте також:** [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects) · [Варіанти товару в Shopify](/uk/blog/shopify-produktvarianten-optionen) · [Магазин Shopify не знаходиться в Google](/uk/blog/shopify-shop-bei-google-nicht-gefunden)
+**Читайте також:** [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects) · [Варіанти товару в Shopify](/uk/blog/shopify-produktvarianten-optionen) · [Магазин Shopify не знаходиться в Google](/uk/blog/shopify-shop-bei-google-nicht-gefunden) · [Замовити SEO для Shopify](/uk/blog/shopify-seo-optimieren-lassen)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

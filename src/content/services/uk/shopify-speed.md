@@ -31,6 +31,7 @@ steps:
     text: "Потім я перевіряю редиректи й Search Console."
 articleSlug: slow-shopify-store
 alsoArticles:
+  - shopify-seo-optimieren-lassen
   - shopify-shop-optimieren-lassen
   - shopify-shop-bei-google-nicht-gefunden
 caseSlug: pedchem

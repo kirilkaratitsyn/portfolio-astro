@@ -138,6 +138,6 @@ Kollektionen und Standardfilter richten Sie selbst ein. Hilfe lohnt sich, wenn d
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, etwa Ladezeit, Apps im Quelltext und den Aufbau der Seiten, und sage Ihnen, was auffällt. Ich arbeite nur mit öffentlich sichtbaren Daten, ohne Zugriff auf Ihr Konto. Was ich bei einem Redesign mache, steht unter [Shopify-Redesign](/de/services/shopify-redesign).
 
-**Weiterlesen:** [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen) · [Shopify-Shop wird bei Google nicht gefunden](/de/blog/shopify-shop-bei-google-nicht-gefunden)
+**Weiterlesen:** [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects) · [Shopify Produktvarianten anlegen](/de/blog/shopify-produktvarianten-optionen) · [Shopify-Shop wird bei Google nicht gefunden](/de/blog/shopify-shop-bei-google-nicht-gefunden) · [Shopify SEO optimieren lassen](/de/blog/shopify-seo-optimieren-lassen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -138,6 +138,6 @@ You can set up collections and standard filters yourself. Help is worth it when 
 
 Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do in a redesign is under [Shopify redesign](/services/shopify-redesign).
 
-**Further reading:** [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Setting up Shopify product variants](/blog/shopify-produktvarianten-optionen) · [Shopify store not found on Google](/blog/shopify-shop-bei-google-nicht-gefunden)
+**Further reading:** [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Setting up Shopify product variants](/blog/shopify-produktvarianten-optionen) · [Shopify store not found on Google](/blog/shopify-shop-bei-google-nicht-gefunden) · [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
