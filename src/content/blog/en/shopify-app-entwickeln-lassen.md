@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-08
+updatedAt: 2026-11-11
 title: "Having a Shopify App Built: When a Custom App Makes Sense and When a Ready-Made App Is Enough"
 seoTitle: "Shopify Custom App or Ready-Made App? How to Decide"
 date: November 8, 2026
@@ -65,7 +66,7 @@ A custom app is not a one-off project. Shopify notes that apps that are no longe
 
 ## An example from practice
 
-For [Elanora Skin](/projects/elanora-skin) I built a gift engine in the cart that adds free products as real line items, added checkout blocks (including a removable insurance extension and a reviews block) and built a custom back-in-stock flow via the Klaviyo API. That is ongoing development on storefront and checkout; the project write-up doesn't say it is a custom app in Shopify's sense, so I don't present it as one. I also publish my own app in the Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
+For [Elanora Skin](/projects/elanora-skin) I built a gift engine in the cart that adds free products as real line items, built a checkout app with seven extensions (two cart validation Functions and five checkout blocks, including a removable shipping protection line and a reviews block) and a custom back-in-stock flow via the Klaviyo API. The app was built for this one store and is not an App Store app. I also publish my own app in the Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
 
 ## Frequently asked questions
 

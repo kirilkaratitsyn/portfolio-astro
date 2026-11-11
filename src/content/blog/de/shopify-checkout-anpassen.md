@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Checkout anpassen: was ohne Plus geht, was Apps leisten und wo Code nötig ist"
 date: 23. Oktober 2026
 readingTime: 7 Min
@@ -85,7 +86,7 @@ Die Hilfeseiten sagen nichts dazu, **welche Anpassung die Abschlussrate erhöht*
 
 ## Beispiele aus der Praxis
 
-Für [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke mit 15 Märkten in zwei Sprachen, habe ich im Rahmen der laufenden Betreuung Checkout-Blöcke ergänzt, darunter eine entfernbare Versicherungs-Extension und einen Bewertungsblock. Dazu gehört, dass die Rabatt-Labels in beiden Sprachen korrekt angezeigt werden. Ob so etwas zu Ihrem Shop passt, hängt von Tarif, Sortiment und Märkten ab.
+Für [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke mit 15 Märkten in zwei Sprachen, habe ich im Rahmen der laufenden Betreuung Checkout-Blöcke ergänzt, darunter eine entfernbare Versandschutz-Zeile und einen Bewertungsblock. Dazu gehört, dass die Rabatt-Labels in beiden Sprachen korrekt angezeigt werden. Ob so etwas zu Ihrem Shop passt, hängt von Tarif, Sortiment und Märkten ab.
 
 ## Vor dem Start: eine Checkliste
 

@@ -11,9 +11,9 @@
   image: /source/desktop/orska-rituals-desktop.webp
   caseStudySlug: orska-rituals
   tech:
-    en: "A Shopify store for a professional skincare brand, built from an HTML prototype: wholesale pricing for approved estheticians, a members-only Pro Vault, Quick Order, and a first-order limit on the Discovery Kit that the server enforces."
-    de: "Ein Shopify-Store für eine professionelle Hautpflegemarke, umgesetzt nach einem HTML-Prototyp: Großhandelspreise für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order und ein Limit für das Discovery Kit, das der Server durchsetzt."
-    uk: "Shopify-магазин для професійного бренду догляду за шкірою за HTML-прототипом: оптові ціни для підтверджених косметологів, закритий Pro Vault для учасників, Quick Order і ліміт першого замовлення на Discovery Kit, який перевіряє сервер."
+    en: "A Shopify store for a professional skincare brand, built from the client’s HTML prototype: access tiers for approved estheticians, a members-only Pro Vault, Quick Order, a Cloudflare Worker that creates the B2B company on approval, cart Functions and a dropship backend."
+    de: "Ein Shopify-Store für eine professionelle Hautpflegemarke, nach dem HTML-Prototyp des Kunden gebaut: Zugriffsstufen für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order, ein Cloudflare Worker, der bei der Freigabe das B2B-Unternehmen anlegt, Warenkorb-Functions und ein Dropship-Backend."
+    uk: "Shopify-магазин для професійного бренду догляду за шкірою за HTML-прототипом клієнта: рівні доступу для підтверджених косметологів, закритий Pro Vault, Quick Order, Cloudflare Worker, що створює B2B-компанію після підтвердження, Functions кошика та dropship-бекенд."
   accent: "#7f4e31"
 - id: jula-bloom
   order: 3
@@ -62,9 +62,9 @@
   image: /source/desktop/elanora-skin-desktop.webp
   caseStudySlug: elanora-skin
   tech:
-    en: "An ongoing Shopify partnership since the end of 2025: tested offers, a gift engine in the cart, checkout blocks, and storefront logic for fifteen markets in two languages."
-    de: "Eine laufende Shopify-Partnerschaft seit Ende 2025: getestete Angebote, eine Geschenk-Engine im Warenkorb, Checkout-Blöcke und Storefront-Logik für fünfzehn Märkte in zwei Sprachen."
-    uk: "Постійна Shopify-співпраця з кінця 2025 року: тестовані пропозиції, движок подарунків у кошику, блоки checkout і storefront-логіка для п’ятнадцяти ринків двома мовами."
+    en: "An ongoing Shopify partnership since the end of 2025: a checkout app with two Functions and five checkout blocks, a gift engine in the cart, A/B tests counted per order, and storefront logic for markets in nine currencies and two languages."
+    de: "Eine laufende Shopify-Partnerschaft seit Ende 2025: eine Checkout-App mit zwei Functions und fünf Checkout-Blöcken, eine Geschenk-Engine im Warenkorb, A/B-Tests pro Bestellung gezählt und Storefront-Logik für Märkte in neun Währungen und zwei Sprachen."
+    uk: "Постійна Shopify-співпраця з кінця 2025 року: застосунок для checkout із двома Functions і п’ятьма блоками checkout, движок подарунків у кошику, A/B-тести по замовленнях і storefront-логіка для ринків у дев’яти валютах двома мовами."
   accent: "#a1303c"
   accentLocked: true
 - id: petaljet
@@ -80,9 +80,9 @@
   image: /source/desktop/petaljet-desktop.webp
   caseStudySlug: petaljet
   tech:
-    en: An ongoing Shopify partnership that started with an SEO audit and performance work and grew into custom product builders for wholesale flower buyers.
-    de: Eine laufende Shopify-Partnerschaft, die mit einem SEO-Audit und Performance-Arbeit begann und zu individuellen Produkt-Buildern für Blumen-Großkunden wuchs.
-    uk: Постійна Shopify-співпраця, що почалася з SEO-аудиту та роботи над швидкістю і переросла в кастомні конструктори товарів для оптових покупців квітів.
+    en: "Ongoing Shopify work for a wholesale flower supplier: box builders with a delivery date inside, a site search that finds partial words and synonyms (“carna” from 0 to 63 results), prices hidden from logged-out visitors, and technical SEO fixes."
+    de: "Laufende Shopify-Arbeit für einen Blumen-Großhändler: Box-Builder mit Lieferdatum, eine Shop-Suche, die Wortteile und Synonyme findet („carna“ von 0 auf 63 Treffer), Preise, die für nicht angemeldete Besucher verborgen sind, und technische SEO-Korrekturen."
+    uk: "Постійна Shopify-робота для оптового постачальника квітів: конструктори коробок з датою доставки, пошук, що знаходить частини слів і синоніми («carna» з 0 до 63 результатів), ціни, приховані від незалогінених відвідувачів, і технічні SEO-виправлення."
   accent: "#6d812e"
 - id: onlyphila
   order: 16
@@ -182,7 +182,7 @@
   title: White Canvas Earth
   url: https://whitecanvasearth.com/
   theme: Atelier
-  work: [redesign, migration, speed]
+  work: [redesign, features]
   country: IN
   city: "Indore"
   lat: 22.72
@@ -190,9 +190,9 @@
   image: /source/desktop/white-canvas-earth-desktop.webp
   mobileImage: /source/mobile/white-canvas-earth-mobile.webp
   tech:
-    en: Delivered a Shopify redesign with technical migration, SEO foundations, and growth marketing setup. The work connected the new storefront structure with cleaner launch readiness and better visibility foundations.
-    de: Shopify Redesign mit technischer Migration, SEO-Grundlagen und Growth-Marketing-Setup. Die Arbeit verband eine neue Storefront-Struktur mit Launch-Readiness und einer stärkeren Basis für organische Sichtbarkeit.
-    uk: Shopify redesign з технічною міграцією, SEO-фундаментом і growth marketing setup. Робота поєднала нову структуру storefront, готовність до запуску та кращу базу для видимості в пошуку.
+    en: "Wholesale for a fashion brand on Atelier: an application form that creates a B2B company for approval, a B2B-only catalogue on a collection template, a minimum-order panel and per-piece wholesale shipping on a Basic plan. Earlier, redesign pages and technical SEO fixes."
+    de: "Großhandel für eine Modemarke auf Atelier: ein Antragsformular, das ein B2B-Unternehmen zur Freigabe anlegt, ein reiner B2B-Katalog auf einem Kollektions-Template, ein Mindestbestellwert-Panel und Großhandelsversand pro Stück im Basic-Tarif. Zuvor Redesign-Seiten und technische SEO-Korrekturen."
+    uk: "Опт для модного бренду на Atelier: форма заявки, що створює B2B-компанію на підтвердження, B2B-каталог на шаблоні колекції, панель мінімального замовлення та оптова доставка за штуки на тарифі Basic. Раніше сторінки редизайну й технічні SEO-виправлення."
   accent: "#0f4894"
 - id: peter-bijoux
   order: 4

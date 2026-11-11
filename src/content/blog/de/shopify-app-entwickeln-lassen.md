@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-08
+updatedAt: 2026-11-11
 title: "Shopify-App entwickeln lassen: Wann eine Custom App sinnvoll ist und wann eine fertige App reicht"
 seoTitle: "Shopify-App entwickeln lassen: Custom App oder fertige App?"
 date: 8. November 2026
@@ -65,7 +66,7 @@ Eine Custom App ist kein einmaliges Projekt. Shopify weist darauf hin, dass Apps
 
 ## Ein Beispiel aus der Praxis
 
-Bei [Elanora Skin](/de/projects/elanora-skin) habe ich eine Geschenk-Engine im Warenkorb gebaut, die Gratisprodukte als echte Positionen hinzufügt, Checkout-Blöcke ergänzt (darunter eine entfernbare Versicherungs-Extension und einen Bewertungsblock) und über die Klaviyo API einen eigenen Back-in-Stock-Flow gebaut. Das ist laufende Entwicklung am Storefront und am Checkout, die Beschreibung im Projektbericht sagt nichts über eine Custom App im Shopify-Sinne, deshalb stelle ich es nicht als solche dar. Außerdem veröffentliche ich eine eigene App im Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
+Bei [Elanora Skin](/de/projects/elanora-skin) habe ich eine Geschenk-Engine im Warenkorb gebaut, die Gratisprodukte als echte Positionen hinzufügt, eine Checkout-App mit sieben Erweiterungen gebaut (zwei Warenkorb-Validierungs-Functions und fünf Checkout-Blöcke, darunter eine entfernbare Versandschutz-Zeile und ein Bewertungsblock) und über die Klaviyo API einen eigenen Back-in-Stock-Flow. Die App ist für diesen einen Shop gebaut und keine App aus dem App Store. Außerdem veröffentliche ich eine eigene App im Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
 
 ## Häufige Fragen
 

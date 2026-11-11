@@ -835,7 +835,7 @@
       },
       {
         "name": "Shopify Markets",
-        "text": "Prices, languages and storefront logic for 15 markets in two languages (Elanora)."
+        "text": "Prices, languages and storefront logic for markets in nine currencies and two languages (Elanora)."
       },
       {
         "name": "Shopify Functions",
@@ -863,7 +863,7 @@
       },
       {
         "name": "JavaScript",
-        "text": "Product builders, gift logic and colour pickers without extra apps (PetalJet, Elanora, HaftX)."
+        "text": "Product builders, gift logic and colour pickers built into the theme (PetalJet, Elanora, HaftX)."
       },
       {
         "name": "Figma & prototypes",

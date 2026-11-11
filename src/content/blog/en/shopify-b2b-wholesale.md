@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-17
+updatedAt: 2026-11-11
 title: "Shopify B2B: trade prices, Quick Order and rules that hold"
 date: 17 October 2026
 readingTime: 4 min
@@ -24,7 +25,7 @@ A second store just for trade buyers means maintaining products, content and sto
 
 ## Trade prices by region
 
-Wholesale prices do not have to be the same everywhere. At Orska they are set by region. Which price someone sees is decided by Shopify, based on the company account a professional is logged in with, not by a script in the theme.
+Wholesale prices do not have to be the same everywhere. At Orska the B2B catalogue and markets were already set up in Shopify before I joined. Which price someone sees is decided by Shopify, based on the company account a professional is logged in with, not by a script in the theme. What I added is the worker below, which makes sure a new company’s location attaches to them.
 
 ## Trade accounts without manual work
 
@@ -42,7 +43,7 @@ At Orska the Discovery Kit is limited for the first order, on three levels:
 
 1. in the theme, that is, in the interface,
 2. by a check on the server,
-3. by an access rule, so that nobody outside the programme can buy it.
+3. by an access rule in the client’s own apps, so that nobody outside the programme can buy it.
 
 If one level fails, the others hold.
 

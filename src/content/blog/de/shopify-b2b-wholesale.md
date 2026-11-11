@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-17
+updatedAt: 2026-11-11
 title: "Shopify B2B: Händlerpreise, Quick Order und Regeln, die halten"
 date: 17. Oktober 2026
 readingTime: 4 Min
@@ -24,7 +25,7 @@ Ein zweiter Shop nur für Händler heißt: Produkte, Inhalte und Bestände doppe
 
 ## Händlerpreise je Region
 
-Großhandelspreise müssen nicht überall gleich sein. Bei Orska gelten sie je Region. Wer welchen Preis sieht, entscheidet Shopify anhand des Firmenkontos, mit dem ein Profi angemeldet ist, nicht ein Skript im Theme.
+Großhandelspreise müssen nicht überall gleich sein. Bei Orska waren B2B-Katalog und Märkte in Shopify schon eingerichtet, bevor ich dazukam. Wer welchen Preis sieht, entscheidet Shopify anhand des Firmenkontos, mit dem ein Profi angemeldet ist, nicht ein Skript im Theme. Ich habe den Worker unten ergänzt, der dafür sorgt, dass sich der Standort eines neuen Unternehmens daran anhängt.
 
 ## Händlerkonten ohne Handarbeit
 
@@ -42,7 +43,7 @@ Bei Orska ist das Discovery Kit für die Erstbestellung begrenzt, und zwar in dr
 
 1. im Theme, also in der Oberfläche,
 2. durch eine Prüfung auf dem Server,
-3. durch eine Zugriffsregel, so dass niemand außerhalb des Programms es kaufen kann.
+3. durch eine Zugriffsregel in den eigenen Apps des Kunden, so dass niemand außerhalb des Programms es kaufen kann.
 
 Fällt eine Ebene aus, halten die anderen.
 

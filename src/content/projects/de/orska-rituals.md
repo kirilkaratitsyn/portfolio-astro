@@ -1,41 +1,51 @@
 ---
 order: 1
 title: Orska Rituals
-seoTitle: "Orska Rituals: Shopify-B2B-Shop für Profi-Hautpflege"
-summary: "Ein Shopify-Store für eine professionelle Hautpflegemarke, umgesetzt nach einem HTML-Prototyp: Großhandelspreise für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order und ein Limit für das Discovery Kit, das der Server durchsetzt."
+seoTitle: "Orska Rituals: Shopify-B2B-Shop, Worker und Dropship"
+summary: "Ein Shopify-Shop für eine professionelle Hautpflegemarke, nach dem HTML-Prototyp des Kunden gebaut: Zugriffsstufen für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order, ein Cloudflare Worker, der aus einem freigegebenen Profi ein B2B-Unternehmen macht, Warenkorb-Validierungs-Functions und ein Dropship-Backend."
 brandSummary: Orska Rituals ist eine professionelle Hautpflegemarke für Kosmetikstudios und Spas mit anpassbaren Protokollen und Behandlungsprodukten, einer Retail-Linie und einem Partnerprogramm für den Großhandel.
 brandDescription: Orska Rituals verbindet intelligente Hautkorrektur mit anpassbaren Protokollen für professionelle Kosmetikerinnen und Kosmetiker. Die Marke bedient Behandlungsräume sowie Hotels und Resorts, verkauft über ein Partnerprogramm an Profis und lässt allen anderen den Retail-Zugang offen.
 image: /source/desktop/orska-rituals-desktop.webp
 mobileImage: /source/mobile/orska-rituals-mobile.webp
 liveUrl: https://orskarituals.com/
 tags:
-  - B2B
-  - Shopify Functions
-  - Custom Theme
-challenge: "Die Marke hatte einen HTML-Prototyp und brauchte daraus einen echten Shopify-Store für zwei Zielgruppen: Retail-Besucher und freigegebene Profis, die andere Preise, Werkzeuge und Inhalte sehen. Großhandelsregeln, Pro Vault und das Limit für das Discovery Kit sollte die Plattform durchsetzen, statt sie nur in der Oberfläche zu verstecken."
+  - "B2B"
+  - "Shopify Functions"
+  - "Cloudflare Workers"
+challenge: "Die Marke hatte einen HTML-Prototyp und brauchte daraus einen echten Shopify-Shop für mehrere Zielgruppen: Gäste, freigegebene Profis und Partner auf höheren Stufen, jeweils mit anderen Preisen, Werkzeugen und Inhalten. Die Regeln jeder Stufe mussten in Warenkorb und Checkout gelten, nicht nur in der Oberfläche."
 scope:
-  - "Den HTML-Prototyp in ein Shopify-Theme überführen: Startseite, Shop, Produktseiten, Journal, FAQ, Warenkorb und den Pro Vault."
-  - "B2B einrichten: regionale Großhandelspreise, Quick Order für Profis und ein Unternehmen, das nach der Freigabe eines Profis automatisch angelegt wird."
-  - Kaufregeln serverseitig durchsetzen, darunter das Limit für die Erstbestellung des Discovery Kits und die Mindestbestellregeln im Großhandel.
+  - "Den HTML-Prototyp in ein Shopify-Theme umsetzen: Home, Shop, Produktseiten, Journal, FAQ, Quick Order und den Pro Vault."
+  - "Preise, Werkzeuge und Inhalte nach Zugriffsstufe freischalten."
+  - "Beim Freigeben eines Profis automatisch ein B2B-Unternehmen anlegen."
+  - "Kaufregeln im Warenkorb durchsetzen, darunter das Discovery-Kit-Limit und die Mindestbestellung im Großhandel."
+  - "Das Backend für Dropship-Bestellungen bauen, die Partner für ihre eigenen Kunden aufgeben."
 solution:
-  - "Das Theme nach dem Prototyp gebaut, mit Produktseiten, die über Metafelder gesteuert werden: Die Akkordeons Key Ingredients, How To Use und Curated For lesen Daten pro Produkt, dazu eine Galerie mit Lightbox und Platz für Video."
-  - Nicht angemeldeten Besuchern Retail-Preise und eine Partner-Login-Aufforderung gezeigt, nur für Profis gedachte Inhalte wie die Preise der chemischen Peelings verborgen und Quick Order ausschließlich angemeldeten Profis angezeigt.
-  - Einen kleinen Cloudflare Worker geschrieben, der das Shopify-Unternehmen nach der Freigabe eines Profis anlegt, und Shopify Functions für die Warenkorbprüfung eingerichtet.
-  - "Das Discovery Kit in drei Ebenen begrenzt: im Theme, durch eine Prüfung auf dem Server und durch eine Zugriffsregel, sodass niemand außerhalb des Programms es kaufen kann."
+  - "Das Theme nach dem Prototyp gebaut: 71 Sections, 167 Blöcke und 14 Templates. Die Produktseiten lesen die Akkordeons Key Ingredients, How To Use und Curated For aus Metafeldern, dazu ein Galerie-Overlay, das die Kerndateien von Horizon unangetastet lässt, Breadcrumbs und Organization-Markup."
+  - "Jedem Kunden über Tags eine Zugriffsstufe gegeben (Gast, freigegeben, bestellt, committed), in einem Snippet. Pro Vault, Quick Order und die Kaufbuttons lesen sie, und Artikel nur für Profis bleiben für Gäste verborgen."
+  - "Den Pro Vault auf Metaobjekten gebaut: Playlists, eine Medienbibliothek mit Filtern und Paginierung und eine Trainingsbibliothek."
+  - "Einen Cloudflare Worker geschrieben, der aus einem freigegebenen Profi ein natives B2B-Unternehmen macht: Er prüft den Webhook, liest den Kunden über die Admin-API, legt Unternehmen und Kontakt an und weist die Rolle Location admin und den Hauptkontakt zu. Der Haken: Shopify hängt Markt und Katalog erst an eine Location, wenn ein Kontakt eine Bestellrolle hat. Am Live-Auftrag zeigte sich auch, warum Etiketten nicht druckten, und der Fix setzt den Firmennamen dorthin, wo das Etikett ihn erwartet."
+  - "Zwei Warenkorb-Validierungs-Functions geschrieben: eine Mindestbestellung im Großhandel und ein Discovery-Kit-Limit von einem pro Konto und zwei pro Bestellung. Das Theme mit dem Locksmith-Schloss, den Helium-Tags und der Bestelllimit-App des Kunden abgeglichen, damit Produktseite und Checkout über denselben Kunden nie verschiedener Meinung sind."
+  - "Das Dropship-Backend als zweiten Worker hinter einem App Proxy gebaut: signierte Anfrage, Identität nur vom angemeldeten Kunden, ein Kundenbuch in einem Kunden-Metafeld und eine Bestellung als Entwurf an den Kunden des Partners, mit Preisen und Versand aus draftOrderCalculate, sodass die Rechnung zum Panel passt. Die Währung ist auf USD festgelegt."
+  - "„Ship to any address“ bei den B2B-Standorten von Partnern unterhalb der Stufe committed abgeschaltet, mit den alten Werten für einen Rollback."
 outcome:
-  - Retail-Besucher und freigegebene Profis sehen im selben Storefront unterschiedliche Preise und Werkzeuge.
-  - Ein Profi erhält direkt nach der Freigabe ein Großhandelskonto, ganz ohne manuelle Einrichtung.
-  - Das Limit für das Discovery Kit hält, auch wenn jemand die Oberfläche umgeht.
-  - Das Team pflegt Produktdetails in Shopify statt im Code.
+  - "Gäste, freigegebene Profis und höhere Stufen sehen im selben Shop andere Preise und Werkzeuge."
+  - "Ein frisch freigegebener Profi wird ohne manuelle Einrichtung zum B2B-Unternehmen: Der vom Worker angelegte Standort bekommt 2 Märkte, 1 Katalog und „Bestellen genehmigt“."
+  - "Das Discovery-Kit-Limit setzt eine Function im Warenkorb durch, und das Theme stimmt damit überein."
+  - "Dropship-Bestellungen tragen das Tag dropship auf echten Bestellungen, seit dem 26. Oktober 2026."
 stack:
-  - Shopify
-  - Liquid
-  - Shopify B2B
-  - Shopify Functions
-  - Cloudflare Workers
-  - Metafelder
+  - "Shopify"
+  - "Horizon-Theme"
+  - "Liquid"
+  - "Shopify B2B"
+  - "Shopify Functions"
+  - "Cloudflare Workers"
+  - "App Proxy"
+  - "Metaobjekte"
 screenshotCaptions:
-  - Startseite, nach dem HTML-Prototyp neu aufgebaut.
-  - Großhandelspreise und Quick Order nur für freigegebene Profis.
-  - Produktdetails und Pro Vault, gesteuert über Daten pro Produkt.
+  - "Startseite nach dem HTML-Prototyp neu aufgebaut."
+  - "Preise und Quick Order hängen von der Zugriffsstufe ab."
+  - "Produktdetails und der Pro Vault aus Daten pro Produkt."
+review:
+  quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
+  rating: 5
 ---

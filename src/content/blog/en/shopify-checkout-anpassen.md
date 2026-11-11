@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Customizing the Shopify checkout: what works without Plus, what apps do and where code is needed"
 date: 23 October 2026
 readingTime: 7 min
@@ -85,7 +86,7 @@ The help pages say nothing about **which customisation raises your completion ra
 
 ## Examples from practice
 
-For [Elanora Skin](/projects/elanora-skin), a skincare brand selling in 15 markets in two languages, I added checkout blocks as part of the ongoing support, including a removable insurance extension and a review block. That includes making sure the discount labels display correctly in both languages. Whether something like this suits your shop depends on your plan, range and markets.
+For [Elanora Skin](/projects/elanora-skin), a skincare brand selling in 15 markets in two languages, I added checkout blocks as part of the ongoing support, including a removable shipping protection line and a review block. That includes making sure the discount labels display correctly in both languages. Whether something like this suits your shop depends on your plan, range and markets.
 
 ## Before you start: a checklist
 
