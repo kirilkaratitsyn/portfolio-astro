@@ -24,7 +24,7 @@ solution:
   - "Den Farbwähler über getrennte Produkte gebaut: bis zu vier Produkte in einem Block, jedes mit eigenem Farbfeld und Beschriftung, die aktuelle Farbe für Screenreader markiert. Jede Farbe bleibt ein eigenes Produkt mit eigener URL."
   - "Okendo-Sternebewertungen auf Produktkarten und der Produktseite gezeigt, gelesen aus Okendos eigenen Metafeldern, und die Bewertungsanzahl auf der Startseite aktualisiert."
   - "Die Anleitungsseite nach dem Vorbild der alten neu aufgebaut, den Footer aus Blöcken gebaut, ein Mega-Menü mit Shop-Links und Kacheln ergänzt und eine Trinklernbecher-Kollektion in Shop All und auf die Startseite gesetzt."
-  - "Die Übergangszeit von 0,6 auf 0,3 Sekunden gesenkt und die im Juli bei der Prüfung gefundenen Regressionen behoben: Kollektionsfilter, Shop-All-Karten, Produktmedien und Abstände, das FAQ-Banner und die mobile Our-Story-Seite."
+  - "Das Theme am 1. Juli für den Go-live vorbereitet: ein Badge, Korrekturen an Header und Kontakt, Buttons, ein Template für die Bewertungsseite und ein Schalter für das Konto-Icon in den Theme-Einstellungen. Die Übergangszeit von 0,6 auf 0,3 Sekunden gesenkt und die im Juli bei der Prüfung gefundenen Regressionen behoben: Kollektionsfilter, Shop-All-Karten, Produktmedien und Abstände, das FAQ-Banner und die mobile Our-Story-Seite."
 outcome:
   - "Von Januar bis Juli 2026 auf dem Blum-Theme gebaut."
   - "Vier Trinklernbecher-Farben teilen sich einen Farbwähler, und jede behält ihre eigene Produktseite."

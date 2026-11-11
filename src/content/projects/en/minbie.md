@@ -24,7 +24,7 @@ solution:
   - "Built the colour switcher across separate products: up to four products in one block, each with its own swatch and label, the current colour marked for screen readers. Each colour stays a product of its own with its own URL."
   - "Showed Okendo star ratings on product cards and the product page, read from Okendo’s own metafields, and updated the review count on the home page."
   - "Rebuilt the Instructions page to match the old one, made the footer from blocks, added a mega menu with shop links and tiles, and placed a sippy-cup collection in Shop All and on the home page."
-  - "Cut the transition time from 0.6 to 0.3 seconds, and fixed the regressions found in review in July: collection filter, Shop All cards, product media and spacing, the FAQ banner and the mobile Our Story."
+  - "Prepared the theme for go-live on 1 July: a badge, header and contact fixes, buttons, a reviews page template and an account-icon switch in the theme settings. Cut the transition time from 0.6 to 0.3 seconds, and fixed the regressions found in review in July: collection filter, Shop All cards, product media and spacing, the FAQ banner and the mobile Our Story."
 outcome:
   - "Built from January to July 2026 on the Blum theme."
   - "Four sippy-cup colours share one switcher, and each keeps its own product page."
