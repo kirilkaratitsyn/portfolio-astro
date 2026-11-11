@@ -187,6 +187,7 @@
   city: "Indore"
   lat: 22.72
   lng: 75.86
+  caseStudySlug: white-canvas-earth
   image: /source/desktop/white-canvas-earth-desktop.webp
   mobileImage: /source/mobile/white-canvas-earth-mobile.webp
   tech:
