@@ -244,9 +244,9 @@
   mobileImage: /source/mobile/pedchem-mobile.webp
   caseStudySlug: pedchem
   tech:
-    en: "Replaced the theme of a pest control store and cleaned it up: Enterprise with no paid apps, spec charts from metafields on 323 products, redirects from Search Console data, and a preview that scored 96 against 57 in a lab test."
-    de: "Theme eines Shops für Schädlingsbekämpfung ersetzt und aufgeräumt: Enterprise ohne kostenpflichtige Apps, Datentabellen aus Metafeldern für 323 Produkte, Weiterleitungen aus Search-Console-Daten und eine Vorschau, die im Labortest 96 statt 57 Punkte erreichte."
-    uk: "Заміна теми й чистка магазину засобів від шкідників: Enterprise без платних застосунків, таблиці характеристик із метаполів для 323 товарів, редиректи за даними Search Console і превʼю з 96 балами проти 57 у лабораторному тесті."
+    en: "Replaced the theme of a pest control store and cleaned it up: Enterprise with no new apps, spec charts from typed metafields on 323 products, redirects from Search Console data, and live mobile PageSpeed up from 57 to 82."
+    de: "Theme eines Shops für Schädlingsbekämpfung ersetzt und aufgeräumt: Enterprise ohne neue Apps, Datentabellen aus typisierten Metafeldern für 323 Produkte, Weiterleitungen aus Search-Console-Daten und Mobile-PageSpeed live von 57 auf 82."
+    uk: "Заміна теми й чистка магазину засобів від шкідників: Enterprise без нових застосунків, таблиці характеристик із типізованих метаполів для 323 товарів, редиректи за даними Search Console і мобільний PageSpeed на живому сайті з 57 до 82."
   accent: "#137246"
 - id: bazar-bizar
   order: 8

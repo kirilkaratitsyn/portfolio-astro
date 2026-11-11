@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Shopify-Shop langsam? 7 Ursachen und was Sie selbst prüfen können"
 date: 22. Oktober 2026
 readingTime: 6 Min
@@ -67,7 +68,7 @@ Wenn die einfachen Schritte erledigt sind und der Shop trotzdem langsam bleibt, 
 
 ## Ein Beispiel: Pedchem
 
-[Pedchem](/de/projects/pedchem), ein Shop für Schädlingsbekämpfung mit 323 Produkten, lief auf dem Flex-Theme mit mehreren Bezahl-Apps. Ich habe den Shop auf dem Enterprise-Theme neu aufgebaut, ohne Bezahl-Apps, die Produktdaten in Metafelder verlegt und Tracking in ein Custom Pixel. Im Labortest erreichte das neue Theme 96 Punkte für Performance, das alte 57. Der Live-Shop hat in der Zeit weiter verkauft, gewechselt wurde erst nach schriftlicher Freigabe.
+[Pedchem](/de/projects/pedchem), ein Shop für Schädlingsbekämpfung mit 323 Produkten, lief auf dem Flex-Theme. Ich habe den Shop auf dem Enterprise-Theme neu aufgebaut, ohne eine App hinzuzufügen, den Produktdaten in Metafeldern passende Typen gegeben und das Tracking in ein Custom Pixel verlegt. Der Mobile-PageSpeed der Startseite stieg live von 57 auf 82, der LCP von 12,0 auf 4,2 Sekunden. Der Live-Shop hat in der Zeit weiter verkauft, gewechselt wurde erst nach schriftlicher Freigabe.
 
 ## Häufige Fragen
 

@@ -43,7 +43,7 @@ caseText:
   - "In a lab test the new theme scored 96 for performance, the old one 57."
 faq:
   - q: "Do I need a new theme?"
-    a: "Not always. Sometimes cleaning up apps and scripts is enough. For Pedchem, switching to a leaner theme with no paid apps was the bigger lever."
+    a: "Not always. Sometimes cleaning up apps and scripts is enough. At Pedchem, removing the leftover of an uninstalled app and switching to a leaner theme took live mobile PageSpeed from 57 to 82."
   - q: "What does 96 against 57 mean?"
     a: "It is the performance score in a lab test (Lighthouse) for the new theme against the old one. Google collects real user data only after go-live."
   - q: "Does my store keep selling during the work?"

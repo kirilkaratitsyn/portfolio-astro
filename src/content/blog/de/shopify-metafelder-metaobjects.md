@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen und anzeigen"
 date: 23. Oktober 2026
 readingTime: 7 Min
@@ -68,7 +69,7 @@ Die Hilfeseiten sagen nichts dazu, **wie Sie Ihre Produktdaten fachlich gliedern
 
 ## Beispiele aus der Praxis
 
-Bei [Pedchem](/de/projects/pedchem), einem Shop für Schädlingsbekämpfung, habe ich die Produktdaten von 323 Produkten in Metafelder überführt. Auf jeder Produktseite entsteht daraus eine Datentabelle. Bei [Orska Rituals](/de/projects/orska-rituals) lesen die Akkordeons Key Ingredients, How To Use und Curated For ihre Daten pro Produkt aus Metafeldern. Das Team pflegt sie in Shopify, ohne Code. Ob diese Aufteilung für Ihren Shop passt, hängt von Ihren Produkten ab.
+Bei [Pedchem](/de/projects/pedchem), einem Shop für Schädlingsbekämpfung, habe ich den Spezifikationsdaten von 323 Produkten passende Metafeld-Typen gegeben. Auf jeder Produktseite entsteht daraus eine Datentabelle. Bei [Orska Rituals](/de/projects/orska-rituals) lesen die Akkordeons Key Ingredients, How To Use und Curated For ihre Daten pro Produkt aus Metafeldern. Das Team pflegt sie in Shopify, ohne Code. Ob diese Aufteilung für Ihren Shop passt, hängt von Ihren Produkten ab.
 
 ## Vor dem Start: eine Checkliste
 

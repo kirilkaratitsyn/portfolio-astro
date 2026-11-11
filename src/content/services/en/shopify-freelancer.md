@@ -41,7 +41,7 @@ alsoCases:
 caseText:
   - "Peter Bijoux, a fashion jewellery store from Merano: a redesign from the Expanse to the Prestige theme, rated 5.0 by the client on Upwork."
   - "Lineargent, a silver jewellery brand: a theme audit, then fixes and new features in small milestones. The work continues under a second contract."
-  - "Pedchem, a pest control store: a new theme without paid apps, 96 performance points in the lab test instead of 57."
+  - "Pedchem, a pest control store: a new theme with no new apps, live mobile PageSpeed up from 57 to 82."
 faq:
   - q: "Who works on my store?"
     a: "I do, from planning to go-live. You talk to the person who writes the code."

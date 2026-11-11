@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Hiring Someone to Optimize Your Shopify Store: What It Covers and How to Spot a Good Offer"
 seoTitle: "Hiring Someone to Optimize Your Shopify Store"
 date: October 22, 2026
@@ -102,7 +103,7 @@ And the expectation towards Google: on Search Central, Google recommends good Co
 
 ## An example: Pedchem
 
-[Pedchem](/projects/pedchem), a pest control store with 323 products, ran on the Flex theme with several paid apps. I rebuilt the store on the Enterprise theme without paid apps, moved the product data into metafields, fixed errors from Search Console and set up redirects from its data. In the lab test the preview theme reached 96 points for performance, the old theme 57. The speed targets were agreed in advance; Google only collects real user data after go-live. Everything was built on a preview theme while the old theme kept selling, and was published only after written approval.
+[Pedchem](/projects/pedchem), a pest control store with 323 products, ran on the Flex theme. I rebuilt the store on the Enterprise theme without adding any apps, gave the product data in metafields proper types, fixed errors from Search Console and set up redirects from its data. Live mobile PageSpeed on the home page went from 57 to 82 (median of three runs), and at day 28 the field LCP fell from 3.0 to 1.5 seconds. The speed targets were agreed in advance. Everything was built on a preview theme while the old theme kept selling, and was published only after written approval.
 
 ## Frequently asked questions
 

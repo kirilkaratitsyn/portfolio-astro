@@ -43,7 +43,7 @@ caseText:
   - "Im Labortest erreichte das neue Theme 96 Punkte für Performance, das alte 57."
 faq:
   - q: "Brauche ich ein neues Theme?"
-    a: "Nicht immer. Manchmal reicht es, Apps und Skripte aufzuräumen. Bei Pedchem war der Wechsel auf ein schlankeres Theme ohne Bezahl-Apps der größere Hebel."
+    a: "Nicht immer. Manchmal reicht es, Apps und Skripte aufzuräumen. Bei Pedchem haben das Entfernen des Überbleibsels einer deinstallierten App und der Wechsel auf ein schlankeres Theme den Mobile-PageSpeed live von 57 auf 82 gebracht."
   - q: "Was bedeutet 96 statt 57?"
     a: "Das ist der Performance-Wert im Labortest (Lighthouse) für das neue Theme im Vergleich zum alten. Echte Nutzerdaten sammelt Google erst nach dem Go-live."
   - q: "Verkauft mein Shop während der Arbeit weiter?"

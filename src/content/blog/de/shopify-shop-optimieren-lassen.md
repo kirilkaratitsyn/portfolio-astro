@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Shopify-Shop optimieren lassen: Was dazugehört und woran Sie ein gutes Angebot erkennen"
 seoTitle: "Shopify-Shop optimieren lassen: Umfang und gutes Angebot"
 date: 22. Oktober 2026
@@ -102,7 +103,7 @@ Und die Erwartung an Google: Google empfiehlt auf Search Central gute Core Web V
 
 ## Ein Beispiel: Pedchem
 
-[Pedchem](/de/projects/pedchem), ein Shop für Schädlingsbekämpfung mit 323 Produkten, lief auf dem Flex-Theme mit mehreren Bezahl-Apps. Ich habe den Shop auf dem Enterprise-Theme neu aufgebaut, ohne Bezahl-Apps, die Produktdaten in Metafelder verlegt, Fehler aus der Search Console behoben und Weiterleitungen aus ihren Daten eingerichtet. Im Labortest erreichte das Vorschau-Theme 96 Punkte für Performance, das alte Theme 57. Die Geschwindigkeitsziele waren vorab vereinbart; echte Nutzerdaten sammelt Google erst nach dem Go-live. Alles wurde auf einem Vorschau-Theme gebaut, während das alte Theme weiter verkaufte, und erst nach schriftlicher Freigabe veröffentlicht.
+[Pedchem](/de/projects/pedchem), ein Shop für Schädlingsbekämpfung mit 323 Produkten, lief auf dem Flex-Theme. Ich habe den Shop auf dem Enterprise-Theme neu aufgebaut, ohne eine App hinzuzufügen, den Produktdaten in Metafeldern passende Typen gegeben, Fehler aus der Search Console behoben und Weiterleitungen aus ihren Daten eingerichtet. Der Mobile-PageSpeed der Startseite stieg live von 57 auf 82 (Median aus drei Messungen), und am Tag 28 sank der Feld-LCP von 3,0 auf 1,5 Sekunden. Die Geschwindigkeitsziele waren vorab vereinbart. Alles wurde auf einem Vorschau-Theme gebaut, während das alte Theme weiter verkaufte, und erst nach schriftlicher Freigabe veröffentlicht.
 
 ## Häufige Fragen
 

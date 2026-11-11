@@ -41,7 +41,7 @@ alsoCases:
 caseText:
   - "Peter Bijoux, ein Modeschmuck-Shop aus Meran: Redesign vom Expanse- auf das Prestige-Theme, vom Kunden mit 5,0 auf Upwork bewertet."
   - "Lineargent, eine Marke für Silberschmuck: Theme-Audit, dann Fixes und neue Funktionen in kleinen Meilensteinen. Die Zusammenarbeit läuft in einem zweiten Vertrag weiter."
-  - "Pedchem, ein Shop für Schädlingsbekämpfung: neues Theme ohne Bezahl-Apps, im Labortest 96 Punkte für Performance statt 57."
+  - "Pedchem, ein Shop für Schädlingsbekämpfung: neues Theme ohne neue Apps, Mobile-PageSpeed live von 57 auf 82."
 faq:
   - q: "Wer arbeitet an meinem Shop?"
     a: "Ich selbst, von der Planung bis zum Go-live. Sie sprechen mit der Person, die den Code schreibt."

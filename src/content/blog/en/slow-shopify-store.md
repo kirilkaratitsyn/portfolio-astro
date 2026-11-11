@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Slow Shopify store? 7 causes and what you can check yourself"
 date: 22 October 2026
 readingTime: 6 min
@@ -67,7 +68,7 @@ If the simple steps are done and the store is still slow, the cause is usually i
 
 ## An example: Pedchem
 
-[Pedchem](/projects/pedchem), a pest control store with 323 products, ran on the Flex theme with several paid apps. I rebuilt the store on the Enterprise theme without paid apps, moved the product data into metafields and the tracking into a custom pixel. In the lab test the new theme scored 96 for performance, the old one 57. The live store kept selling in the meantime, and the switch happened only after written approval.
+[Pedchem](/projects/pedchem), a pest control store with 323 products, ran on the Flex theme. I rebuilt the store on the Enterprise theme without adding any apps, gave the product data in metafields proper types and moved the tracking into a custom pixel. Live mobile PageSpeed on the home page went from 57 to 82, LCP from 12.0 to 4.2 seconds. The live store kept selling in the meantime, and the switch happened only after written approval.
 
 ## Frequently asked questions
 

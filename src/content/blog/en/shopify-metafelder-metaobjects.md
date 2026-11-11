@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify metafields and metaobjects: maintaining and showing structured product data"
 date: 23 October 2026
 readingTime: 7 min
@@ -68,7 +69,7 @@ The help pages say nothing about **how to structure your product data** for your
 
 ## Examples from practice
 
-For [Pedchem](/projects/pedchem), a pest control store, I moved the product data of 323 products into metafields. Each product page generates a data table from them. At [Orska Rituals](/projects/orska-rituals) the accordions Key Ingredients, How To Use and Curated For read their data per product from metafields. The team maintains them in Shopify, without code. Whether this split suits your store depends on your products.
+For [Pedchem](/projects/pedchem), a pest control store, I gave the specification data of 323 products proper metafield types. Each product page generates a data table from them. At [Orska Rituals](/projects/orska-rituals) the accordions Key Ingredients, How To Use and Curated For read their data per product from metafields. The team maintains them in Shopify, without code. Whether this split suits your store depends on your products.
 
 ## Before you start: a checklist
 
