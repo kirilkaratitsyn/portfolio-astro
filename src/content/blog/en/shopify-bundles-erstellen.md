@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Creating Shopify bundles: bundle types, limits of the free app and what to watch for"
 date: 23 October 2026
 readingTime: 7 min
@@ -89,7 +90,7 @@ The help pages say nothing about **which products sell well as a bundle**, how l
 
 ## Examples from practice
 
-For [Reserve Kava](/projects/reserve-kava), an instant kava brand, I added a bundle that puts both cans into the cart while rebuilding the product pages. Alongside there are single and multiple cans with a subscription. This shows why the limits above matter before the build: according to the help, Shopify bundles cannot be combined with subscriptions, so it has to be clear beforehand which purchase options should come together on the product page. Which solution suits your shop depends on plan, range and the purchase options you want.
+I have no published project case for a bundle. The closest is the buy box I built at [Reserve Kava](/projects/reserve-kava), an instant kava brand: a one-time purchase and a monthly subscription in one block. It shows why the limits above matter before the build: according to the help, Shopify bundles cannot be combined with subscriptions, so it has to be clear beforehand which purchase options should come together on the product page. Which solution suits your shop depends on plan, range and the purchase options you want.
 
 ## Before you start: a checklist
 

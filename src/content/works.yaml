@@ -45,9 +45,9 @@
   image: /source/desktop/reserve-kava-desktop.webp
   caseStudySlug: reserve-kava
   tech:
-    en: "Product pages for an instant-kava brand, rebuilt from the client’s design handoff: a clean buy column, a bundle that adds both jars, multi-jar variants with subscriptions, and ready templates for new products."
-    de: "Produktseiten für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut: eine klare Kaufspalte, ein Bundle mit beiden Dosen, Mehrfachvarianten mit Abos und fertige Templates für neue Produkte."
-    uk: "Сторінки товарів для бренду розчинної kava, перебудовані за дизайн-handoff клієнта: чітка колонка покупки, бандл з обома банками, варіанти з кількома банками й підписками та готові шаблони для нових товарів."
+    en: "A subscribe-first product page for an instant-kava brand, built to the client’s design handoff and put on the live theme as a second template: one purchase selector for a one-time purchase and a monthly subscription, and a home page of its own sections."
+    de: "Eine Produktseite mit Abo zuerst für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden gebaut und als zweites Template live gestellt: eine Kaufauswahl für Einmalkauf und monatliches Abo und eine Startseite aus eigenen Sections."
+    uk: "Сторінка товару з підпискою першою для бренду розчинної kava, зроблена за дизайн-handoff клієнта й випущена на живу тему другим шаблоном: один вибір покупки для разової покупки та щомісячної підписки і головна з власних секцій."
   accent: "#16cce0"
 - id: elanora-skin
   order: 2
@@ -133,9 +133,10 @@
   mobileImage: /source/mobile/minbie-mobile.webp
   caseStudySlug: minbie
   tech:
-    en: "Launched a new Shopify theme for an Australian baby feeding brand: template mapping for every product and collection, a rebuilt Instructions page, a reviews page, a sippy cups collection with a colour switcher, and a new mega-menu and footer."
-    de: "Neues Shopify-Theme für eine australische Marke für Baby-Fütterprodukte gestartet: Template-Zuordnung für jedes Produkt und jede Kollektion, neu aufgebaute Anleitungsseite, Bewertungsseite, Kollektion für Trinklernbecher mit Farbwähler sowie neues Mega-Menü und neuer Footer."
-    uk: "Запустив нову Shopify-тему для австралійського бренду товарів для годування малюків: прив’язка шаблонів до кожного товару й колекції, перебудована сторінка інструкцій, сторінка відгуків, колекція поїльників з перемикачем кольору, нове мега-меню та футер."
+    en: "Custom sections on the Blum theme for an Australian baby feeding brand: a teat comparison, story tiles, a colour switcher across four sippy-cup products, Okendo star ratings, and a rebuilt Instructions page, footer and mega menu."
+    de: "Eigene Sections auf dem Blum-Theme für eine australische Marke für Baby-Fütterprodukte: ein Saugervergleich, Story-Kacheln, ein Farbwähler über vier Trinklernbecher-Produkte, Okendo-Sternebewertungen sowie eine neu aufgebaute Anleitungsseite, Footer und Mega-Menü."
+    uk: "Власні секції на темі Blum для австралійського бренду товарів для годування малюків: порівняння сосок, плитки історій, перемикач кольору між чотирма поїльниками, зірки рейтингу Okendo та перебудовані сторінка інструкцій, футер і мегаменю."
+  noLiveLink: true
   accent: "#ef7a98"
   accentLocked: true
 - id: lineargent
@@ -152,9 +153,9 @@
   mobileImage: /source/mobile/lineargent-mobile.webp
   caseStudySlug: lineargent
   tech:
-    en: Ongoing Shopify store support focused on SEO, CRO, performance and functional improvements, including a migration of Searchspring to Beacon 2.0 with tracking of search, category, autocomplete and recommendation events.
-    de: Laufende Shopify-Store-Betreuung mit Fokus auf SEO, CRO, Performance und funktionale Verbesserungen, einschließlich der Migration von Searchspring auf Beacon 2.0 mit Tracking von Such-, Kategorie-, Autocomplete- und Empfehlungs-Events.
-    uk: Постійна підтримка Shopify-магазину з фокусом на SEO, CRO, performance і покращення функціоналу, зокрема міграцію Searchspring на Beacon 2.0 з трекінгом подій пошуку, категорій, автодоповнення та рекомендацій.
+    en: "Ongoing support for a jewellery store on Prestige: Searchspring collection and search grids, Beacon 2.0 tracking, a Google tag loader that came 15 seconds late and now loads at 2.9 s, and 1,773 internal links rewritten in 114 collections through the Admin API."
+    de: "Laufende Betreuung eines Schmuck-Shops auf Prestige: Searchspring-Raster für Kollektionen und Suche, Beacon-2.0-Tracking, ein Google-Tag-Loader, der 15 Sekunden zu spät kam und jetzt bei 2,9 s lädt, und 1.773 interne Links in 114 Kollektionen über die Admin-API neu geschrieben."
+    uk: "Постійна підтримка магазину прикрас на Prestige: сітки колекцій і пошуку на Searchspring, трекінг Beacon 2.0, завантажувач тегів Google, що запізнювався на 15 секунд і тепер вантажиться за 2,9 с, та 1773 внутрішні посилання, переписані у 114 колекціях через Admin API."
   accent: "#1b1d26"
   accentLocked: true
 - id: marinepatches
@@ -226,9 +227,9 @@
   mobileImage: /source/mobile/lumppings-mobile.webp
   caseStudySlug: lumppings
   tech:
-    en: "Redesigned a video producer's Shopify site from the ground up: a site map first, then Home, Work, Shop, FAQ and a Free Downloads page whose weekly drops expire after 48 hours."
-    de: "Shopify-Website eines Videoproduzenten von Grund auf neu gestaltet: zuerst die Sitemap, dann Home, Work, Shop, FAQ und eine Seite für Gratis-Downloads, deren wöchentliche Drops nach 48 Stunden ablaufen."
-    uk: "Редизайн сайту відеопродюсера на Shopify з нуля: спершу карта сайту, потім Home, Work, Shop, FAQ і сторінка безкоштовних завантажень, де щотижневі роздачі зникають через 48 годин."
+    en: "Built a video producer’s Shopify theme on Horizon: a prototype turned into 33 sections and 89 blocks the owner edits in the theme editor, with Free Downloads drops on a countdown the owner sets by date."
+    de: "Shopify-Theme eines Videoproduzenten auf Horizon gebaut: ein Prototyp, umgebaut zu 33 Sections und 89 Blöcken, die der Inhaber im Theme-Editor pflegt, mit Gratis-Drops im Countdown, den der Inhaber per Datum setzt."
+    uk: "Зібрав тему Shopify для відеопродюсера на Horizon: прототип, перебудований у 33 секції та 89 блоків, які власник редагує в редакторі теми, з безкоштовними роздачами на відліку, який власник задає датами."
   accent: "#e09916"
 - id: pedchem
   order: 6
@@ -261,9 +262,9 @@
   image: /source/desktop/bazar-bizar-desktop.webp
   caseStudySlug: bazar-bizar
   tech:
-    en: Worked on a large, complex Shopify store with many templates and custom logic. Delivered deep customization across sections and layouts, implemented functional improvements, and supported larger changes while keeping the site stable.
-    de: Arbeit an einem großen, komplexen Shopify-Store mit vielen Templates und Custom-Logik. Tiefgreifende Anpassungen an Sections und Layouts, funktionale Verbesserungen und Support größerer Changes — bei stabiler Basis.
-    uk: Працював з великим складним Shopify-магазином із багатьма шаблонами та кастомною логікою. Робив глибоку кастомізацію секцій і лейаутів, впроваджував функціональні покращення та підтримував великі зміни, зберігаючи стабільність.
+    en: "Custom logic on a Dawn-based store that sells in 6 languages and 53 countries: pre-paint auto-localization, collection filters and grid layouts built as theme blocks, and a wishlist and Mailchimp signup without apps."
+    de: "Eigene Logik in einem Dawn-basierten Shop, der in 6 Sprachen und 53 Ländern verkauft: Auto-Lokalisierung vor dem Rendern, Kollektionsfilter und Raster-Layouts als Theme-Blöcke sowie Wunschliste und Mailchimp-Anmeldung ohne Apps."
+    uk: "Власна логіка в магазині на базі Dawn, що продає 6 мовами в 53 країнах: автолокалізація до відмальовування, фільтри колекцій і розкладки сітки як блоки теми, вішліст і підписка Mailchimp без застосунків."
   accent: "#947151"
 - id: nimfa
   order: 24

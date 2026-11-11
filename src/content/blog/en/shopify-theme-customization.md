@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-10-31
+updatedAt: 2026-11-11
 title: "Hiring someone to customize your Shopify theme: what a developer takes on and how to hand over the job safely"
 date: 22 October 2026
 readingTime: 8 min
@@ -94,7 +94,7 @@ When the wish list gets long, it is worth asking whether the old theme is still 
 
 ## An example: Lineargent
 
-[Lineargent](/projects/lineargent), a silver jewellery brand from near Barcelona, runs a customized Prestige theme with hundreds of products and an external tool for search. Instead of rebuilding everything at once, I audited the theme first and then worked through the fixes in seven small milestones, each small enough to check on the live store. Along the way came an "Add to cart" button on related products and breadcrumbs that show where a collection sits in the catalogue. The work continues under a second contract, the way [ongoing Shopify support](/services/shopify-betreuung) does.
+[Lineargent](/projects/lineargent), a silver jewellery brand from near Barcelona, runs a customized Prestige theme with hundreds of products and an external tool for search. Instead of rebuilding everything at once, I changed the theme in small steps, each small enough to check on the live store. Along the way came breadcrumbs that show where a collection sits in the catalogue and a fix for a Google tag loader that came 15 seconds late. The work continues under a second contract, the way [ongoing Shopify support](/services/shopify-betreuung) does.
 
 ## Frequently asked questions
 

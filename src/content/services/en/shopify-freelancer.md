@@ -40,7 +40,7 @@ alsoCases:
   - pedchem
 caseText:
   - "Peter Bijoux, a fashion jewellery store from Merano: a redesign from the Expanse to the Prestige theme, rated 5.0 by the client on Upwork."
-  - "Lineargent, a silver jewellery brand: a theme audit, then fixes and new features in small milestones. The work continues under a second contract."
+  - "Lineargent, a silver jewellery brand: Searchspring collections and search, Beacon 2.0 tracking and a Google tag loader that came 15 seconds late and now loads at 2.9 s. The work continues under a second contract."
   - "Pedchem, a pest control store: a new theme with no new apps, live mobile PageSpeed up from 57 to 82."
 faq:
   - q: "Who works on my store?"

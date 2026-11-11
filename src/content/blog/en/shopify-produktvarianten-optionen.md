@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Setting up Shopify product variants: options, limits, prices, images and what to know first"
 date: 23 October 2026
 readingTime: 9 min
@@ -93,7 +94,7 @@ The pages I read say nothing on **how many variants** are still clear for your c
 
 ## Examples from practice
 
-At [Reserve Kava](/projects/reserve-kava), a brand for instant kava, I added options for single and multiple jars with a subscription while rebuilding the product pages, plus a bundle that puts both jars in the cart. I built the selector for three and five jars on an unlisted test product. At [Petaljet](/projects/petaljet) I made the variant list cleaner in a configurator for carnation boxes. Whether something like this suits your store depends on theme, range and need. More on the neighboring topics: [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) and [Creating Shopify bundles](/blog/shopify-bundles-erstellen).
+At [Reserve Kava](/projects/reserve-kava), a brand for instant kava, I built a purchase selector for a one-time purchase and a monthly subscription, with the price per jar and the saving calculated from the live price. At [Petaljet](/projects/petaljet) I made the variant list cleaner in a configurator for carnation boxes. Whether something like this suits your store depends on theme, range and need. More on the neighboring topics: [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) and [Creating Shopify bundles](/blog/shopify-bundles-erstellen).
 
 ## Before you start: a checklist
 

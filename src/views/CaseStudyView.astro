@@ -40,7 +40,7 @@ const structuredData = {
       inLanguage: locale,
       keywords: caseStudy.tags.join(', '),
       creator: { '@id': new URL('/#person', site).toString() },
-      about: { '@type': 'Organization', name: caseStudy.title, ...(caseStudy.archived ? {} : { url: caseStudy.liveUrl }) },
+      about: { '@type': 'Organization', name: caseStudy.title, ...(caseStudy.archived || caseStudy.noLiveLink ? {} : { url: caseStudy.liveUrl }) },
     },
     {
       '@type': 'BreadcrumbList',
@@ -92,7 +92,7 @@ const sections = [
         {
           caseStudy.archived ? (
             <p class="mt-6 text-sm leading-relaxed text-mute">{copy.archivedNote}</p>
-          ) : (
+          ) : caseStudy.noLiveLink ? null : (
             <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex rounded-full bg-ink px-6 py-3.5 font-medium text-white hover:bg-blue-deep">
               {copy.visitStore} ↗
             </a>
@@ -111,7 +111,7 @@ const sections = [
       {
         caseStudy.mobileImage && (
           <div class="absolute right-[6%] top-[9%] w-[22%] md:right-[9%] md:top-[11%] md:w-[16%]">
-            <Phone image={caseStudy.mobileImage} domain={caseStudy.archived ? undefined : new URL(caseStudy.liveUrl).hostname.replace(/^www\./, '')} sizes="(min-width: 768px) 16vw, 22vw" loading="eager" />
+            <Phone image={caseStudy.mobileImage} domain={caseStudy.archived || caseStudy.noLiveLink ? undefined : new URL(caseStudy.liveUrl).hostname.replace(/^www\./, '')} sizes="(min-width: 768px) 16vw, 22vw" loading="eager" />
           </div>
         )
       }

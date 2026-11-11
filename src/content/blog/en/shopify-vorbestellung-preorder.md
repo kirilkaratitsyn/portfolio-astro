@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Setting up Shopify pre-orders: pre-order app, checkout limits and what to clarify first"
 date: 23 October 2026
 readingTime: 7 min
@@ -80,7 +81,7 @@ The help pages say nothing about **which pre-order app** suits your store, how h
 
 ## Examples from practice
 
-I have no published project case with pre-orders. Closely related is the question of which purchase options fit together on a product page. For [Reserve Kava](/projects/reserve-kava), an instant kava brand, I added a bundle that puts both cans into the cart while rebuilding the product pages, alongside single and multiple cans with a subscription. That shows why the limits above matter before the start: which purchase options should come together has to be clear before building.
+I have no published project case with pre-orders. Closely related is the question of which purchase options fit together on a product page. For [Reserve Kava](/projects/reserve-kava), an instant kava brand, I built one buy box for the product page with a one-time purchase and a monthly subscription. That shows why the limits above matter before the start: which purchase options should come together has to be clear before building.
 
 ## Before you start: a checklist
 

@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Abos einrichten: Voraussetzungen, Zahlarten, Kundenportal und typische Stolpersteine"
 date: 23. Oktober 2026
 readingTime: 8 Min
@@ -91,7 +92,7 @@ Die Hilfeseiten sagen nichts dazu, **welche Produkte sich für ein Abo eignen**,
 
 ## Beispiele aus der Praxis
 
-Für [Reserve Kava](/de/projects/reserve-kava), eine Instant-Kava-Marke, habe ich beim Neuaufbau der Produktseiten Einzel- und Mehrfachdosen mit Abo ergänzt, neben einem Bundle, das beide Dosen in den Warenkorb legt. Das zeigt, warum die Grenzen oben vor dem Start wichtig sind: Laut Hilfe lassen sich Shopify-Bundles nicht mit Abos kombinieren, also muss vorher klar sein, welche Kaufoptionen auf der Produktseite zusammenkommen sollen. Welche Lösung zu Ihrem Shop passt, hängt von Tarif, Sortiment und gewünschten Kaufoptionen ab.
+Für [Reserve Kava](/de/projects/reserve-kava), eine Instant-Kava-Marke, habe ich auf der Produktseite eine Kaufauswahl mit Einmalkauf und monatlichem Abo gebaut. Das zeigt, warum die Grenzen oben vor dem Start wichtig sind: Laut Hilfe lassen sich Shopify-Bundles nicht mit Abos kombinieren, also muss vorher klar sein, welche Kaufoptionen auf der Produktseite zusammenkommen sollen. Welche Lösung zu Ihrem Shop passt, hängt von Tarif, Sortiment und gewünschten Kaufoptionen ab.
 
 ## Vor dem Start: Checkliste
 

@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Vorbestellung einrichten: Pre-Order-App, Grenzen an der Kasse und was Sie vorab klären sollten"
 date: 23. Oktober 2026
 readingTime: 7 Min
@@ -80,7 +81,7 @@ Die Hilfeseiten sagen nichts dazu, **welche Pre-Order-App** zu Ihrem Shop passt,
 
 ## Beispiele aus der Praxis
 
-Einen veröffentlichten Projektfall mit Vorbestellungen gibt es von mir nicht. Nah verwandt ist die Frage, welche Kaufoptionen auf einer Produktseite zusammenpassen. Für [Reserve Kava](/de/projects/reserve-kava), eine Instant-Kava-Marke, habe ich beim Umbau der Produktseiten ein Bundle ergänzt, das beide Dosen in den Warenkorb legt, daneben einzelne und mehrere Dosen mit Abo. Das zeigt, warum die Grenzen oben vor dem Start zählen: Welche Kaufoptionen zusammenkommen sollen, muss klar sein, bevor gebaut wird.
+Einen veröffentlichten Projektfall mit Vorbestellungen gibt es von mir nicht. Nah verwandt ist die Frage, welche Kaufoptionen auf einer Produktseite zusammenpassen. Für [Reserve Kava](/de/projects/reserve-kava), eine Instant-Kava-Marke, habe ich auf der Produktseite eine Kaufauswahl mit Einmalkauf und monatlichem Abo gebaut. Das zeigt, warum die Grenzen oben vor dem Start zählen: Welche Kaufoptionen zusammenkommen sollen, muss klar sein, bevor gebaut wird.
 
 ## Vor dem Start: eine Checkliste
 

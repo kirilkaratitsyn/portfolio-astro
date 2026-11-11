@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Setting up Shopify subscriptions: requirements, payment methods, customer portal and common pitfalls"
 date: 23 October 2026
 readingTime: 8 min
@@ -91,7 +92,7 @@ The help pages say nothing about **which products suit a subscription**, how lar
 
 ## Examples from practice
 
-For [Reserve Kava](/projects/reserve-kava), an instant kava brand, I added single and multiple cans with a subscription while rebuilding the product pages, alongside a bundle that puts both cans into the cart. This shows why the limits above matter before the build: according to the help, Shopify bundles cannot be combined with subscriptions, so it has to be clear beforehand which purchase options should come together on the product page. Which solution suits your shop depends on plan, range and the purchase options you want.
+For [Reserve Kava](/projects/reserve-kava), an instant kava brand, I built one buy box for the product page with a one-time purchase and a monthly subscription. This shows why the limits above matter before the build: according to the help, Shopify bundles cannot be combined with subscriptions, so it has to be clear beforehand which purchase options should come together on the product page. Which solution suits your shop depends on plan, range and the purchase options you want.
 
 ## Before you start: a checklist
 

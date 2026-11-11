@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Bundles erstellen: Bundle-Arten, Grenzen der kostenlosen App und worauf Sie achten sollten"
 date: 23. Oktober 2026
 readingTime: 7 Min
@@ -89,7 +90,7 @@ Die Hilfeseiten sagen nichts dazu, **welche Produkte sich als Bundle gut verkauf
 
 ## Beispiele aus der Praxis
 
-Für [Reserve Kava](/de/projects/reserve-kava), eine Marke für Instant-Kava, habe ich im Zuge des Neuaufbaus der Produktseiten ein Bundle ergänzt, das beide Dosen in den Warenkorb legt. Daneben gibt es Einzel- und Mehrfachdosen mit Abo. Hier zeigt sich, warum die Einschränkungen oben vor dem Aufbau zählen: Laut Hilfe lassen sich Shopify-Bundles nicht mit Abos kombinieren, also muss vorher klar sein, welche Kaufoptionen auf der Produktseite zusammenkommen sollen. Welche Lösung zu Ihrem Shop passt, hängt von Tarif, Sortiment und gewünschten Kaufoptionen ab.
+Einen veröffentlichten Projektfall mit einem Bundle gibt es von mir nicht. Am nächsten liegt die Kaufauswahl, die ich bei [Reserve Kava](/de/projects/reserve-kava), einer Marke für Instant-Kava, gebaut habe: Einmalkauf und monatliches Abo in einem Block. Sie zeigt, warum die Einschränkungen oben vor dem Aufbau zählen: Laut Hilfe lassen sich Shopify-Bundles nicht mit Abos kombinieren, also muss vorher klar sein, welche Kaufoptionen auf der Produktseite zusammenkommen sollen. Welche Lösung zu Ihrem Shop passt, hängt von Tarif, Sortiment und gewünschten Kaufoptionen ab.
 
 ## Vor dem Start: eine Checkliste
 

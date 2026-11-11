@@ -39,8 +39,8 @@ alsoCases:
   - elanora-skin
 caseText:
   - "A silver jewellery brand with a customised Prestige theme and a catalogue of hundreds of pieces."
-  - "First a theme audit, then fixes and new features in seven small milestones, each one checkable on the live store."
-  - "That included breadcrumbs for collections, an add-to-cart button on similar products and moving Searchspring tracking to Beacon 2.0."
+  - "Small changes, each one checkable on the live store: collection and search grids on Searchspring, Beacon 2.0 tracking and breadcrumbs for collections."
+  - "A Google tag loader that came 15 seconds late was traced to the theme’s speed optimiser; on the live store it now loads at 2.9 s."
   - "Rated 5.0 by the client on Upwork; the work continues in a second contract."
 faq:
   - q: "Do I need a support contract?"

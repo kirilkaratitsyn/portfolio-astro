@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Having a Shopify store built: what the cost depends on and how to get a fixed-price quote"
 seoTitle: "Having a Shopify Store Built: Cost and Fixed-Price Quotes"
 date: 22 October 2026
@@ -79,7 +80,7 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 
 ## An example: Minbie
 
-[Minbie](/projects/minbie), an Australian baby feeding brand, wanted a new store on the Blum theme, built from its own Figma wireframes and launched without losing existing products, collections and content. The scope was clearly defined: home page in two variants, three collection pages, product page, About, Reviews and Contact. The store launched in July 2026, and support continues after that.
+[Minbie](/projects/minbie), an Australian baby feeding brand, runs on the Blum theme with the Monti preset. There I built sections specific to the brand, a colour switcher that links four separate sippy-cup products, and Okendo star ratings on product cards and product pages.
 
 ## How you get to your fixed price
 

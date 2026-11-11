@@ -39,6 +39,7 @@ export type WorkProject = {
   tech: string;
   caseStudySlug?: string;
   archived?: boolean;
+  noLiveLink?: boolean;
   accent?: string;
 };
 
@@ -75,6 +76,7 @@ export async function getWorks(locale: Locale): Promise<WorkProject[]> {
       tech: data.tech[locale],
       caseStudySlug: data.caseStudySlug,
       archived: data.archived,
+      noLiveLink: data.noLiveLink,
       accent: data.accent,
     }));
 }

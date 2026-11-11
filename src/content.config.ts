@@ -18,6 +18,8 @@ const projects = defineCollection({
     liveUrl: z.url(),
     /** The store has closed: keep the case study, hide links to the store. */
     archived: z.boolean().optional(),
+    /** The live store is not the version delivered (another theme is published): keep the case study, no link or domain. */
+    noLiveLink: z.boolean().optional(),
     tags: z.array(z.string()),
     challenge: z.string(),
     scope: z.array(z.string()),
@@ -51,6 +53,7 @@ const works = defineCollection({
     mobileImage: z.string().optional(),
     caseStudySlug: z.string().optional(),
     archived: z.boolean().optional(),
+    noLiveLink: z.boolean().optional(),
     /** Brand color of the project (scripts/make-accents.mjs), used as the background of its card. */
     accent: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
     accentLocked: z.boolean().optional(),

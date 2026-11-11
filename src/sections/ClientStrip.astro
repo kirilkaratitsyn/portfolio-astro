@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { useTranslations, type Locale } from '../i18n';
+import { localizePath, useTranslations, type Locale } from '../i18n';
 import type { WorkProject } from '../lib/content';
 
 interface Props {
@@ -41,7 +41,7 @@ const clients = await Promise.all(
     const srcset = copies.length ? [...copies.map((w) => `/source/logos/clients/${name}-${w}.webp ${w}w`), `/source/logos/clients/${client.logo} ${width}w`].join(', ') : undefined;
     const slot = (h: number, max: number) => Math.ceil(Math.min(max, (h * width) / height));
     const sizes = srcset ? `(min-width: 768px) ${slot(client.height, 290)}px, ${slot(client.height * 0.46, 96)}px` : undefined;
-    return { ...client, title: work.title, url: work.url, width, size: height, srcset, sizes };
+    return { ...client, title: work.title, url: work.noLiveLink && work.caseStudySlug ? localizePath(locale, `/projects/${work.caseStudySlug}`) : work.url, external: !work.noLiveLink, width, size: height, srcset, sizes };
   }),
 );
 ---
@@ -52,7 +52,7 @@ const clients = await Promise.all(
     {
       clients.map((client) => (
         <li class="flex h-[56px] items-center justify-center md:h-[110px]">
-          <a href={client.url} target="_blank" rel="noopener noreferrer" class="block opacity-80 transition duration-300 hover:scale-105 hover:opacity-100" style={`--h: ${client.height}px`}>
+          <a href={client.url} target={client.external ? '_blank' : undefined} rel={client.external ? 'noopener noreferrer' : undefined} class="block opacity-80 transition duration-300 hover:scale-105 hover:opacity-100" style={`--h: ${client.height}px`}>
             <img
               src={`/source/logos/clients/${client.logo}`}
               srcset={client.srcset}

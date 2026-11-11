@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-11
 title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ein Festpreis-Angebot bekommen"
 seoTitle: "Shopify-Shop erstellen lassen: Kosten und Festpreis-Angebot"
 date: 22. Oktober 2026
@@ -79,7 +80,7 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 ## Ein Beispiel: Minbie
 
-[Minbie](/de/projects/minbie), eine australische Marke für Baby-Fütterprodukte, wollte einen neuen Shop auf dem Blum-Theme, gebaut nach eigenen Figma-Wireframes und gestartet, ohne bestehende Produkte, Kollektionen und Inhalte zu verlieren. Der Umfang war klar umrissen: Startseite in zwei Varianten, drei Kollektionsseiten, Produktseite, About, Reviews und Kontakt. Der Shop ist im Juli 2026 gestartet, die Betreuung läuft danach weiter.
+[Minbie](/de/projects/minbie), eine australische Marke für Baby-Fütterprodukte, läuft auf dem Blum-Theme mit dem Preset Monti. Dort habe ich Sections speziell für die Marke gebaut, einen Farbwähler, der vier getrennte Trinklernbecher-Produkte verknüpft, und Okendo-Sternebewertungen auf Produktkarten und Produktseiten.
 
 ## Wie Sie zu Ihrem Festpreis kommen
 

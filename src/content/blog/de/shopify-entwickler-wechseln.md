@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-07
+updatedAt: 2026-11-11
 title: "Shopify-Entwickler wechseln: So übernimmt ein neuer Entwickler Ihren Shop, ohne dass etwas verloren geht"
 seoTitle: "Shopify-Entwickler wechseln: Übergabe, Zugänge, Audit"
 date: 7. November 2026
@@ -83,7 +84,7 @@ Ob ein Freelancer oder eine Agentur besser passt, hängt von Ihrem Shop ab: [Sho
 
 ## Ein Beispiel aus der Praxis: Lineargent
 
-[Lineargent](/de/projects/lineargent), eine Marke für Silberschmuck aus der Nähe von Barcelona, nutzt ein angepasstes Prestige-Theme mit Hunderten Produkten und einem externen Tool für Suche und Merchandising. Bei dieser Zusammenarbeit habe ich das bestehende Theme zuerst geprüft und die Fixes dann in sieben kleinen Meilensteinen umgesetzt, jeder klein genug, um ihn im Live-Shop zu prüfen. Der Kunde hat das Projekt auf Upwork mit 5,0 bewertet, die Zusammenarbeit läuft mit einem zweiten Auftrag weiter. Das ist ein Beispiel für das Vorgehen „erst prüfen, dann in kleinen Schritten ändern“, nicht der Bericht einer Übernahme von einem Vorgänger.
+[Lineargent](/de/projects/lineargent), eine Marke für Silberschmuck aus der Nähe von Barcelona, nutzt ein angepasstes Prestige-Theme mit Hunderten Produkten und einem externen Tool für Suche und Merchandising. Bei dieser Zusammenarbeit arbeite ich in kleinen Schritten, die sich jeweils im Live-Shop prüfen lassen. So wurde ein Google-Tag-Loader, der 15 Sekunden zu spät kam, auf den Geschwindigkeits-Optimierer des Themes zurückgeführt und in einer Änderung behoben, nachdem die Live-Dateien mit einem Backup verglichen worden waren, weil auch das Design-Team des Kunden das Live-Theme bearbeitet. Der Kunde hat das Projekt auf Upwork mit 5,0 bewertet, die Zusammenarbeit läuft mit einem zweiten Auftrag weiter. Das ist ein Beispiel für das Vorgehen „erst prüfen, dann in kleinen Schritten ändern“, nicht der Bericht einer Übernahme von einem Vorgänger.
 
 ## Häufige Fragen
 

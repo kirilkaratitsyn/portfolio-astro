@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify try before you buy: test first, pay later – requirements, limits and managing orders"
 date: 23 October 2026
 readingTime: 8 min
@@ -69,7 +70,7 @@ The pages I read say nothing on **which app** to choose, how long the trial peri
 
 ## Examples from practice
 
-Among my published projects there is none where I set up try before you buy, and I do not invent one. Closest are the subscription and bundle options I built at [Reserve Kava](/projects/reserve-kava). They follow different rules than TBYB.
+Among my published projects there is none where I set up try before you buy, and I do not invent one. Closest is the subscription option I built at [Reserve Kava](/projects/reserve-kava). They follow different rules than TBYB.
 
 ## Before you start: a checklist
 

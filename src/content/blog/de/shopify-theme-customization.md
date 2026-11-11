@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-10-31
+updatedAt: 2026-11-11
 title: "Shopify-Theme anpassen lassen: Was ein Entwickler übernimmt und wie Sie den Auftrag sicher vergeben"
 date: 22. Oktober 2026
 readingTime: 8 Min
@@ -94,7 +94,7 @@ Wenn die Liste der Wünsche lang wird, lohnt sich die Frage, ob das alte Theme n
 
 ## Ein Beispiel: Lineargent
 
-[Lineargent](/de/projects/lineargent), eine Marke für Silberschmuck aus der Nähe von Barcelona, nutzt ein angepasstes Prestige-Theme mit Hunderten Produkten und einem externen Tool für die Suche. Statt alles auf einmal umzubauen, habe ich das Theme zuerst geprüft und die Fixes dann in sieben kleinen Meilensteinen umgesetzt, jeder klein genug, um ihn im Live-Shop zu prüfen. Dazu kamen ein „In den Warenkorb“-Button bei ähnlichen Produkten und Breadcrumbs, die zeigen, wo eine Kollektion im Katalog liegt. Die Zusammenarbeit läuft mit einem zweiten Auftrag weiter, so wie bei einer [Shopify-Betreuung](/de/services/shopify-betreuung).
+[Lineargent](/de/projects/lineargent), eine Marke für Silberschmuck aus der Nähe von Barcelona, nutzt ein angepasstes Prestige-Theme mit Hunderten Produkten und einem externen Tool für die Suche. Statt alles auf einmal umzubauen, habe ich das Theme in kleinen Schritten geändert, jeder klein genug, um ihn im Live-Shop zu prüfen. Dazu kamen Breadcrumbs, die zeigen, wo eine Kollektion im Katalog liegt, und die Behebung eines Google-Tag-Loaders, der 15 Sekunden zu spät kam. Die Zusammenarbeit läuft mit einem zweiten Auftrag weiter, so wie bei einer [Shopify-Betreuung](/de/services/shopify-betreuung).
 
 ## Häufige Fragen
 

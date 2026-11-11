@@ -41,7 +41,7 @@ alsoCases:
   - nimfa
   - jula-bloom
 caseText:
-  - "Minbie, eine australische Marke für Baby-Fütterprodukte: neuer Shop auf dem Blum-Theme mit dem Preset Monti, gebaut nach Figma-Wireframes, im Juli 2026 gestartet und seitdem betreut."
+  - "Minbie, eine australische Marke für Baby-Fütterprodukte: eigene Sections auf dem Blum-Theme mit dem Preset Monti, ein Farbwähler über vier Trinklernbecher-Produkte und Okendo-Sternebewertungen."
   - "Orska Rituals, eine Marke für professionelle Hautpflege: ein Shopify-Store nach einem HTML-Prototyp, mit Großhandelspreisen und Quick Order für freigegebene Profis."
   - "Nimfa, eine Marke für Intimate Wellness: ein individuelles, mehrsprachiges Theme nach Figma."
   - "Jula Bloom, eine Marke für Seidenblumen aus Seattle: einen unfertigen Theme-Aufbau fertiggestellt und den Umzug von WooCommerce vorbereitet. Live seit September 2026."

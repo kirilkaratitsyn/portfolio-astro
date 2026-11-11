@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Try before you buy: erst ausprobieren, später zahlen – Voraussetzungen, Grenzen und Verwaltung"
 date: 23. Oktober 2026
 readingTime: 8 Min
@@ -69,7 +70,7 @@ Die Seiten, die ich gelesen habe, sagen nichts dazu, **welche App** Sie wählen 
 
 ## Beispiele aus der Praxis
 
-Unter meinen veröffentlichten Projekten gibt es keinen, in dem ich Try before you buy eingerichtet habe, und ich erfinde keinen. Am nächsten liegen die Kaufoptionen Abo und Bundle, die ich bei [Reserve Kava](/de/projects/reserve-kava) umgesetzt habe. Sie haben aber andere Regeln als TBYB.
+Unter meinen veröffentlichten Projekten gibt es keinen, in dem ich Try before you buy eingerichtet habe, und ich erfinde keinen. Am nächsten liegt die Kaufoption Abo, die ich bei [Reserve Kava](/de/projects/reserve-kava) umgesetzt habe. Sie haben aber andere Regeln als TBYB.
 
 ## Vor dem Start: eine Checkliste
 

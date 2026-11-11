@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-24
+updatedAt: 2026-11-11
 title: "Setting up Shopify collections and filters: conditions, sorting and Search & Discovery"
 date: 24 October 2026
 readingTime: 8 min
@@ -103,7 +104,7 @@ The pages I read don't say how many collections a range needs, how deep navigati
 
 ## Examples from practice
 
-For [Lineargent](/projects/lineargent) I built breadcrumbs for collection pages that show where a collection sits in the catalogue. Search and merchandising there run through Searchspring, not Search & Discovery. For [Minbie](/projects/minbie) every collection got its own template, plus a sippy cups collection with a colour switcher. For [Jula Bloom](/projects/jula-bloom) one of the things I did was give the filter bar on collection pages a calmer design. Setting up Search & Discovery filters for a client isn't described in my published projects, and I won't make anything up about it.
+For [Lineargent](/projects/lineargent) I built breadcrumbs for collection pages that show where a collection sits in the catalogue. Search and merchandising there run through Searchspring, not Search & Discovery. For [Minbie](/projects/minbie) four sippy-cup colours, each its own product, are linked by a colour switcher on the product page. For [Jula Bloom](/projects/jula-bloom) one of the things I did was give the filter bar on collection pages a calmer design. Setting up Search & Discovery filters for a client isn't described in my published projects, and I won't make anything up about it.
 
 ## Before you start: a checklist
 

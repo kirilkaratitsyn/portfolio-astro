@@ -40,7 +40,7 @@ alsoCases:
   - pedchem
 caseText:
   - "Peter Bijoux, ein Modeschmuck-Shop aus Meran: Redesign vom Expanse- auf das Prestige-Theme, vom Kunden mit 5,0 auf Upwork bewertet."
-  - "Lineargent, eine Marke für Silberschmuck: Theme-Audit, dann Fixes und neue Funktionen in kleinen Meilensteinen. Die Zusammenarbeit läuft in einem zweiten Vertrag weiter."
+  - "Lineargent, eine Marke für Silberschmuck: Searchspring für Kollektionen und Suche, Beacon-2.0-Tracking und ein Google-Tag-Loader, der 15 Sekunden zu spät kam und jetzt bei 2,9 s lädt. Die Zusammenarbeit läuft in einem zweiten Vertrag weiter."
   - "Pedchem, ein Shop für Schädlingsbekämpfung: neues Theme ohne neue Apps, Mobile-PageSpeed live von 57 auf 82."
 faq:
   - q: "Wer arbeitet an meinem Shop?"

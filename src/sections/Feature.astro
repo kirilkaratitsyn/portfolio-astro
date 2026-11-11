@@ -22,7 +22,7 @@ const accentOf = new Map(works.filter((w) => w.caseStudySlug).map((w) => [w.case
 const slides = caseStudies
   .filter((c) => !c.archived)
   .slice(5, 10)
-  .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#5b8fe0', domain: new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
+  .map((c) => ({ ...c, accent: accentOf.get(c.slug) ?? '#5b8fe0', domain: c.noLiveLink ? undefined : new URL(c.liveUrl).hostname.replace(/^www\./, '') }));
 ---
 
 <section data-feature class="feat mx-auto mt-20 max-w-[1440px] px-5 md:mt-28 md:px-10" style={`--feat-accent:${slides[0]?.accent}`} aria-roledescription="carousel" aria-label={t.feature.label}>

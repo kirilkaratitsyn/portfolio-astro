@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-07
+updatedAt: 2026-11-11
 title: "Switching Your Shopify Developer: How a New Developer Takes Over Your Store Without Losing Anything"
 seoTitle: "Switch Shopify Developer: Handover, Access, Audit"
 date: November 7, 2026
@@ -83,7 +84,7 @@ Whether a freelancer or an agency fits better depends on your store: [Shopify fr
 
 ## An example from practice: Lineargent
 
-[Lineargent](/projects/lineargent), a silver jewelry brand from near Barcelona, runs a customized Prestige theme with hundreds of products and an external tool for search and merchandising. In this collaboration I first reviewed the existing theme and then delivered the fixes in seven small milestones, each small enough to check in the live store. The client rated the project 5.0 on Upwork, and the collaboration continues with a second contract. It is an example of the "review first, then change in small steps" approach, not a report of a takeover from a predecessor.
+[Lineargent](/projects/lineargent), a silver jewelry brand from near Barcelona, runs a customized Prestige theme with hundreds of products and an external tool for search and merchandising. In this collaboration I work in small steps that can each be checked in the live store. For example, a Google tag loader that came 15 seconds late was traced to the theme’s speed optimiser and fixed in one change, after the live files had been compared with a backup, because the client’s designer also edits the live theme. The client rated the project 5.0 on Upwork, and the collaboration continues with a second contract. It is an example of the "review first, then change in small steps" approach, not a report of a takeover from a predecessor.
 
 ## Frequently asked questions
 

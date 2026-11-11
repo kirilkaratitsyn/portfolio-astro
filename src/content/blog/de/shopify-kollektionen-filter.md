@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-24
+updatedAt: 2026-11-11
 title: "Shopify Kollektionen und Filter einrichten: Bedingungen, Sortierung und Search & Discovery"
 date: 24. Oktober 2026
 readingTime: 8 Min
@@ -103,7 +104,7 @@ Die Seiten, die ich gelesen habe, sagen nicht, wie viele Kollektionen ein Sortim
 
 ## Beispiele aus der Praxis
 
-Bei [Lineargent](/de/projects/lineargent) habe ich Breadcrumbs für Kollektionsseiten gebaut, die zeigen, wo eine Kollektion im Katalog liegt. Suche und Merchandising laufen dort über Searchspring, nicht über Search & Discovery. Bei [Minbie](/de/projects/minbie) hat jede Kollektion ihr eigenes Template bekommen, dazu kam eine Kollektion für Trinklernbecher mit Farbwähler. Bei [Jula Bloom](/de/projects/jula-bloom) habe ich unter anderem die Filterleiste auf den Kollektionsseiten ruhiger gestaltet. Filter in Search & Discovery für einen Kunden einzurichten, ist in meinen veröffentlichten Projekten nicht beschrieben, und ich erfinde dazu nichts.
+Bei [Lineargent](/de/projects/lineargent) habe ich Breadcrumbs für Kollektionsseiten gebaut, die zeigen, wo eine Kollektion im Katalog liegt. Suche und Merchandising laufen dort über Searchspring, nicht über Search & Discovery. Bei [Minbie](/de/projects/minbie) sind vier Trinklernbecher-Farben, jede ein eigenes Produkt, über einen Farbwähler auf der Produktseite verknüpft. Bei [Jula Bloom](/de/projects/jula-bloom) habe ich unter anderem die Filterleiste auf den Kollektionsseiten ruhiger gestaltet. Filter in Search & Discovery für einen Kunden einzurichten, ist in meinen veröffentlichten Projekten nicht beschrieben, und ich erfinde dazu nichts.
 
 ## Vor dem Start: eine Checkliste
 

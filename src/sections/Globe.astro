@@ -16,7 +16,7 @@ interface Props {
 const { locale, works } = Astro.props;
 const t = useTranslations(locale).globe;
 const names = new Intl.DisplayNames([locale], { type: 'region' });
-const placed = works.filter((w) => !w.archived && w.country && w.lat !== undefined && w.lng !== undefined);
+const placed = works.filter((w) => !w.archived && !w.noLiveLink && w.country && w.lat !== undefined && w.lng !== undefined);
 // Checked against public/ in the project (the build runs from its root), not next to this file once bundled.
 const logo = (id: string) => (fs.existsSync(path.join(process.cwd(), 'public/source/store-logos', `${id}.webp`)) ? `/source/store-logos/${id}.webp` : undefined);
 const markers = placed.map((w) => ({ t: w.title, c: w.city ?? '', n: names.of(w.country!) ?? w.country!, k: w.country!, u: w.url, la: w.lat!, lo: w.lng!, l: logo(w.id) }));

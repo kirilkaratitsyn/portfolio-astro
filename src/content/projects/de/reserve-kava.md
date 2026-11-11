@@ -1,39 +1,40 @@
 ---
 order: 10
 title: Reserve Kava
-seoTitle: "Reserve Kava: Shopify-Produktseiten mit Bundles"
-summary: "Produktseiten für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut: eine klare Kaufspalte, ein Bundle mit beiden Dosen, Mehrfachvarianten mit Abos und fertige Templates für neue Produkte."
+seoTitle: "Reserve Kava: Shopify-Produktseite, Abo zuerst"
+summary: "Eine Produktseite für eine Instant-Kava-Marke, nach dem Design-Handoff des Kunden neu aufgebaut und als zweites Template live gestellt, ohne bestehende Seiten anzufassen: eine Kaufauswahl für Einmalkauf und monatliches Abo und eine Startseite aus eigenen Sections."
 brandSummary: "Reserve Kava verkauft 100 % edlen Instant-Kava aus Vanuatu: eine Dose, die man mit Wasser anrührt, ohne Kneten, Abseihen oder Aufbrühen, positioniert als Abendritual zur Entspannung."
 brandDescription: Die Marke verkauft zwei Instant-Kava-Dosen, Borogu und Kelai. Die Website setzt auf einen minimalistischen Look mit Monospace-Schrift und direkte Texte, im Mittelpunkt steht das Produkt, nicht die Dekoration.
 image: /source/desktop/reserve-kava-desktop.webp
 mobileImage: /source/mobile/reserve-kava-mobile.webp
 liveUrl: https://reservekava.com/
 tags:
-  - Produktseiten
-  - Bundles
-  - Abos
-challenge: Die Produktseite sollte nach einem Design-Handoff neu aufgebaut werden, während der Live-Store weiter verkaufte, und der Kunde verfeinert Texte und testet Änderungen laufend. Jedes neue Produkt sollte dieselbe Seite bekommen, ohne bei null zu beginnen.
+  - "Produktseiten"
+  - "Abos"
+  - "Sicherer Rollout"
+challenge: "Die Produktseite von Borogu musste nach dem Design-Handoff des Kunden neu aufgebaut werden, während der Shop weiter verkaufte. Das Live-Theme lag nicht in der Versionskontrolle, und die neue Seite gab es nur in einem Vorschau-Theme. Sie musste live gehen, ohne die Seiten zu ändern, die schon verkauften."
 scope:
-  - "Die Produktseite nach dem Design-Handoff neu aufbauen: Galerie, Kaufspalte und Inhaltsabschnitte."
-  - Ein Bundle ergänzen, das beide Dosen in den Warenkorb legt, dazu Einzel- und Mehrfachdosen mit Abo.
-  - Templates für weitere Produkte vorbereiten, die der Kunde im Theme-Editor einrichten kann.
+  - "Die Produktseite von Borogu nach dem Design-Handoff neu aufbauen: Galerie, Kaufspalte und Inhaltsbereiche."
+  - "In der Kaufspalte eine Kaufauswahl für Einmalkauf und monatliches Abo einbauen."
+  - "Die Seite als zweites Produkt-Template live stellen und die bestehenden Seiten unverändert lassen."
 solution:
-  - Die Seiten für Borogu und Kelai im Vorschau-Theme nach dem Handoff neu aufgebaut, mit den Fotos des Kunden in den Begründungskarten und im Vergleichsblock.
-  - Das Relaxation Bundle ergänzt, das beide Dosen in den Warenkorb legt, und ein nicht gelistetes Testprodukt angelegt, um den Selektor für 3 und 5 Dosen darauf zu bauen.
-  - Eigene Templates für zwei kommende Produkte erstellt, sodass jedes im Editor mit eigenem Layout öffnet.
-  - Das Pinning der Galerie korrigiert, den Header-Button einzeilig gehalten, das Produkt-Laufband bis zum Bildschirmrand geführt und die Produktkarten der Startseite auf die Produktseite verlinkt.
+  - "Die Seite aus eigenen Sections gebaut: eine Galerie mit quadratischem Foto und Vorschaureihe, die auf dem Desktop in einem Sticky-Block mitläuft, ein Produkt-Marquee, das bei reduzierter Bewegung stillsteht, sowie Sections für Gründe, Vergleich, Zeitverlauf und Call-to-Action."
+  - "Die Kaufauswahl als einen Block gebaut: Einmalkauf und monatliches Abo. Preis pro Dose und Ersparnis werden aus dem Live-Preis berechnet, eine Preisänderung braucht also keinen Entwickler."
+  - "Die Seite als zweites Template auf das Live-Theme gebracht: 15 neue Dateien, keine Änderung an bestehenden. Die kopierten Sections bekamen eigene Root-Klassen, denn Shopify bündelt das CSS aller Sections in einer Datei und die Stile der Kopie würden sonst in die Originalseite durchschlagen."
+  - "Nach dem Rollout geprüft: Die Original-Seite von Borogu, Kelai und die Startseite hatten dieselbe HTML-Länge und dieselbe Section-Liste, die Screenshots des ersten Bildschirms stimmten pixelgenau überein, und /cart.js zeigte den Abo-Plan neben einem Einmalkauf ohne Plan."
+  - "Die Startseite aus eigenen Sections gebaut: Hero, Education, Origin, Proof, Story, Produkte, Bundle, Bewertungen, FAQ und E-Mail."
 outcome:
-  - Der Kaufbereich ist klarer und entspricht dem Design des Kunden.
-  - Neue Produkte starten auf einem fertigen Template statt mit einem neuen Aufbau.
-  - Richtlinien-, Versand- und Infoseiten samt vollständigem Footer geben dem Store eine komplette Vertrauensebene.
+  - "Die Borogu-Seite mit Abo zuerst ist seit dem 5. November 2026 die Live-Produktseite; das alte Template bleibt für den Rollback erhalten."
+  - "Kaufoptionen, Preis pro Dose und Ersparnis kommen aus einem Block und folgen dem Live-Preis."
+  - "Die bestehenden Seiten von Borogu, Kelai und die Startseite blieben vom Rollout unverändert."
 stack:
-  - Shopify
-  - Liquid
-  - Produktseiten
-  - Bundles
-  - Abos
+  - "Shopify"
+  - "Liquid"
+  - "Dawn-Theme"
+  - "Produktseiten"
+  - "Abos"
 screenshotCaptions:
-  - Startseite mit den beiden Dosen im Vordergrund.
-  - Produktseite, nach dem Design-Handoff neu aufgebaut.
-  - Bundle und Mehrfachdosen in einer Kaufspalte.
+  - "Startseite mit den beiden Dosen im Vordergrund."
+  - "Produktseite nach dem Design-Handoff neu aufgebaut."
+  - "Die Kaufspalte der Produktseite."
 ---

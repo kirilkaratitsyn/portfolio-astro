@@ -39,8 +39,8 @@ alsoCases:
   - elanora-skin
 caseText:
   - "Eine Marke für Silberschmuck mit angepasstem Prestige-Theme und einem Katalog mit Hunderten Stücken."
-  - "Zuerst ein Theme-Audit, dann Fixes und neue Funktionen in sieben kleinen Meilensteinen, jeder im Live-Shop prüfbar."
-  - "Dazu Breadcrumbs für Kollektionen, „In den Warenkorb“ bei ähnlichen Produkten und die Umstellung des Searchspring-Trackings auf Beacon 2.0."
+  - "Kleine Änderungen, jede im Live-Shop prüfbar: Raster für Kollektionen und Suche auf Searchspring, Beacon-2.0-Tracking und Breadcrumbs für Kollektionen."
+  - "Ein Google-Tag-Loader, der 15 Sekunden zu spät kam, wurde auf den Geschwindigkeits-Optimierer des Themes zurückgeführt; im Live-Shop lädt er jetzt bei 2,9 s."
   - "Vom Kunden mit 5,0 auf Upwork bewertet; die Zusammenarbeit läuft in einem zweiten Vertrag weiter."
 faq:
   - q: "Brauche ich einen Betreuungsvertrag?"

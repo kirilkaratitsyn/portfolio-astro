@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-11
 title: "Shopify Produktvarianten anlegen: Optionen, Grenzen, Preise, Bilder und was Sie vorher wissen sollten"
 date: 23. Oktober 2026
 readingTime: 9 Min
@@ -93,7 +94,7 @@ Die Seiten, die ich gelesen habe, sagen nichts dazu, **wie viele Varianten** fü
 
 ## Beispiele aus der Praxis
 
-Bei [Reserve Kava](/de/projects/reserve-kava), einer Marke für Instant-Kava, habe ich beim Neuaufbau der Produktseiten Optionen für Einzel- und Mehrfachdosen mit Abo ergänzt, dazu ein Bundle, das beide Dosen in den Warenkorb legt. Die Auswahl für drei und fünf Dosen habe ich an einem nicht gelisteten Testprodukt gebaut. Bei [Petaljet](/de/projects/petaljet) habe ich in einem Konfigurator für Nelkenboxen die Variantenliste übersichtlicher gemacht. Ob so etwas zu Ihrem Shop passt, hängt von Theme, Sortiment und Bedarf ab. Mehr zu den Nachbarthemen: [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) und [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen).
+Bei [Reserve Kava](/de/projects/reserve-kava), einer Marke für Instant-Kava, habe ich eine Kaufauswahl für Einmalkauf und monatliches Abo gebaut, bei der Preis pro Dose und Ersparnis aus dem Live-Preis berechnet werden. Bei [Petaljet](/de/projects/petaljet) habe ich in einem Konfigurator für Nelkenboxen die Variantenliste übersichtlicher gemacht. Ob so etwas zu Ihrem Shop passt, hängt von Theme, Sortiment und Bedarf ab. Mehr zu den Nachbarthemen: [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) und [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen).
 
 ## Vor dem Start: eine Checkliste
 
