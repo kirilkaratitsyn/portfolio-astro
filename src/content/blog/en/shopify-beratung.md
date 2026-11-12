@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-12
+updatedAt: 2026-11-12
 title: "Shopify consulting: when it is worth it and how to prepare for the conversation"
 seoTitle: "Shopify consulting: when it pays off and how to prepare"
 date: 12 November 2026
@@ -103,7 +104,7 @@ I am a Shopify developer, not a marketing, tax or legal consultant, and I say so
 
 ## Want to know where your store stands?
 
-Send me your shop address for the [free Shop-Check](#contact). I will tell you honestly what stands out, what you can do yourself and where help is worth it. If you are looking for a fixed contact person, [Shopify support and maintenance](/services/shopify-betreuung) explains how that works with me.
+Send me your shop address for the [free Shop-Check](#contact). I will tell you honestly what stands out, what you can do yourself and where help is worth it. If you are looking for a fixed contact person, [Shopify support and maintenance](/services/shopify-betreuung) explains how that works with me. If the end goal is a completely new store, the page [Have your Shopify store built](/services/shopify-shop-erstellen-lassen) shows how that works with me.
 
 **Further reading:** [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln)
 

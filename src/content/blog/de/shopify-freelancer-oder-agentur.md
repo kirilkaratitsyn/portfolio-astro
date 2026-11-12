@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-12
 title: "Shopify-Freelancer oder Agentur: Wer passt zu Ihrem Shop?"
 date: 22. Oktober 2026
 readingTime: 6 Min
@@ -78,7 +79,7 @@ Entwicklung und Marketing müssen nicht beim selben Anbieter liegen. Eine gängi
 
 ## Passt ein Freelancer zu Ihrem Vorhaben?
 
-Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zu Ihrem Vorhaben für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen ehrlich, ob das ein Fall für mich ist oder ob eine Agentur besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote. Typische Aufgaben sind das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign) oder der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify). Wie die Zusammenarbeit abläuft, steht auf der Seite [Shopify-Freelancer in Deutschland](/de/services/shopify-freelancer).
+Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zu Ihrem Vorhaben für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen ehrlich, ob das ein Fall für mich ist oder ob eine Agentur besser passt. Ich arbeite von [Bad Bentheim](/de/services/shopify-bad-bentheim) aus, meist remote. Typische Aufgaben sind das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign) oder der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify). Wie die Zusammenarbeit abläuft, steht auf der Seite [Shopify-Freelancer in Deutschland](/de/services/shopify-freelancer). Brauchen Sie einen komplett neuen Shop? Wie ich ihn aufbaue, steht unter [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen).
 
 **Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Shopify Wartung: Was die Plattform übernimmt](/de/blog/shopify-wartung-betreuung) · [Von Shopware oder Magento zu Shopify](/de/blog/shopware-magento-zu-shopify) · [WooCommerce Sicherheit und Plugin-Updates](/de/blog/woocommerce-sicherheit-plugin-updates) · [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln) · [Shopify Beratung: Wann sie sich lohnt](/de/blog/shopify-beratung)
 

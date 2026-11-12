@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-12
+updatedAt: 2026-11-12
 title: "Shopify Beratung: Wann sie sich lohnt und wie Sie das Gespräch vorbereiten"
 seoTitle: "Shopify Beratung: Wann sie sich lohnt, wie Sie sich vorbereiten"
 date: 12. November 2026
@@ -103,7 +104,7 @@ Ich bin Shopify-Entwickler, kein Marketing-, Steuer- oder Rechtsberater, und sag
 
 ## Wollen Sie wissen, wo Ihr Shop steht?
 
-Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen ehrlich, was auffällt, was Sie selbst erledigen können und wofür sich Hilfe lohnt. Wenn Sie einen festen Ansprechpartner suchen, finden Sie unter [Shopify-Betreuung](/de/services/shopify-betreuung), wie das bei mir abläuft.
+Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen ehrlich, was auffällt, was Sie selbst erledigen können und wofür sich Hilfe lohnt. Wenn Sie einen festen Ansprechpartner suchen, finden Sie unter [Shopify-Betreuung](/de/services/shopify-betreuung), wie das bei mir abläuft. Soll am Ende ein ganz neuer Shop stehen, zeigt die Seite [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen), wie das bei mir abläuft.
 
 **Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln)
 

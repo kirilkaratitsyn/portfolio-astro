@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-06
+updatedAt: 2026-11-12
 title: "Shopify-Relaunch lassen: Was dazugehört und wie der Shop dabei weiter verkauft"
 seoTitle: "Shopify-Relaunch lassen: Ablauf, Theme-Wechsel, Angebot"
 date: 6. November 2026
@@ -108,7 +109,7 @@ Keine seriöse Stelle garantiert, dass ein neues Design mehr verkauft oder höhe
 
 ## Soll ich mir Ihren Shop ansehen?
 
-Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, und sage Ihnen, ob bei Ihnen ein Aufräumen oder ein Theme-Wechsel sinnvoller ist, auch wenn Sie es danach selbst umsetzen. Wenn Sie den Relaunch lieber abgeben: Ich baue [Shopify-Redesigns und Theme-Wechsel](/de/services/shopify-redesign) zum Festpreis nach dem Briefing.
+Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, und sage Ihnen, ob bei Ihnen ein Aufräumen oder ein Theme-Wechsel sinnvoller ist, auch wenn Sie es danach selbst umsetzen. Wenn Sie den Relaunch lieber abgeben: Ich baue [Shopify-Redesigns und Theme-Wechsel](/de/services/shopify-redesign) zum Festpreis nach dem Briefing. Wollen Sie statt eines Wechsels lieber von Grund auf neu starten, hilft die Seite [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen).
 
 **Weiterlesen:** [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur) · [Shopify-Shop erstellen lassen: Wovon die Kosten abhängen](/de/blog/shopify-shop-erstellen-lassen-kosten)
 

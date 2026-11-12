@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-11-06
+updatedAt: 2026-11-12
 title: "Hiring Someone for a Shopify Relaunch: What It Covers and How the Store Keeps Selling"
 seoTitle: "Shopify Relaunch: Process, Theme Switch, What to Ask"
 date: November 6, 2026
@@ -108,7 +109,7 @@ No serious provider guarantees that a new design sells more or ranks higher. Wha
 
 ## Shall I take a look at your store?
 
-Send me your store's address for the [free store check](#contact). I look at what is visible from the outside and tell you whether a tidy-up or a theme switch makes more sense for you, even if you implement it yourself afterwards. If you would rather hand the relaunch over: I build [Shopify redesigns and theme switches](/services/shopify-redesign) at a fixed price after the briefing.
+Send me your store's address for the [free store check](#contact). I look at what is visible from the outside and tell you whether a tidy-up or a theme switch makes more sense for you, even if you implement it yourself afterwards. If you would rather hand the relaunch over: I build [Shopify redesigns and theme switches](/services/shopify-redesign) at a fixed price after the briefing. If you would rather start from scratch than switch themes, the page [Have your Shopify store built](/services/shopify-shop-erstellen-lassen) helps.
 
 **Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur) · [Hiring someone to build a Shopify store: what the cost depends on](/blog/shopify-shop-erstellen-lassen-kosten)
 

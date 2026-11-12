@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-12
 title: "Shopify freelancer or agency: which one fits your store?"
 date: 22 October 2026
 readingTime: 6 min
@@ -78,7 +79,7 @@ I have looked after [Elanora Skin](/projects/elanora-skin), a skincare brand fro
 
 ## Does a freelancer fit your plan?
 
-Send me your store's address and a sentence or two about your plan for the [free store check](#contact). I tell you honestly whether it is a case for me or whether an agency fits better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remote. Typical jobs are the [redesign with a theme change](/services/shopify-redesign) or the [move from WooCommerce](/services/woocommerce-to-shopify). How working together goes is described on the page [Shopify freelancer in Germany](/services/shopify-freelancer).
+Send me your store's address and a sentence or two about your plan for the [free store check](#contact). I tell you honestly whether it is a case for me or whether an agency fits better. I work from [Bad Bentheim](/services/shopify-bad-bentheim), mostly remote. Typical jobs are the [redesign with a theme change](/services/shopify-redesign) or the [move from WooCommerce](/services/woocommerce-to-shopify). How working together goes is described on the page [Shopify freelancer in Germany](/services/shopify-freelancer). Do you need a completely new store? How I build one is described under [Have your Shopify store built](/services/shopify-shop-erstellen-lassen).
 
 **Further reading:** [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Shopify maintenance: what the platform handles](/blog/shopify-wartung-betreuung) · [From Shopware or Magento to Shopify](/blog/shopware-magento-zu-shopify) · [WooCommerce security and plugin updates](/blog/woocommerce-sicherheit-plugin-updates) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln) · [Shopify consulting: when it is worth it](/blog/shopify-beratung)
 
