@@ -40,6 +40,19 @@ const structuredData = {
         : ['DE', 'AT', 'CH', 'US', 'GB', 'AU'],
       provider: { '@id': new URL('/#person', site).toString() },
     },
+    ...(service.faq.length > 0
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#faq`,
+            mainEntity: service.faq.map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
+          },
+        ]
+      : []),
     {
       '@type': 'BreadcrumbList',
       itemListElement: [

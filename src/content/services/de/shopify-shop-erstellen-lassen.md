@@ -3,7 +3,7 @@ order: 1
 kind: build
 title: "Shopify-Shop erstellen lassen"
 seoTitle: "Shopify-Shop erstellen lassen: vom Entwickler, zum Festpreis"
-description: "Shopify-Shop erstellen lassen von einem freiberuflichen Entwickler aus Bad Bentheim: auf einem Theme aus dem Theme Store oder als individuelles Theme nach Ihrem Figma-Design, mit Zahlungen, Versand und Rechtstexten. Festpreis nach dem Briefing, kostenloses Erstgespräch."
+description: "Shopify-Shop erstellen lassen von einem freiberuflichen Entwickler aus Bad Bentheim: auf einem Theme aus dem Theme Store oder als individuelles Theme nach Ihrem Figma-Design, mit Zahlungen, Versand und Rechtstexten. Ab 500 € zzgl. MwSt., Festpreis nach dem Briefing, kostenloses Erstgespräch."
 lead: "Ich baue Ihren Shopify-Shop von der Einrichtung bis zum Go-live: auf einem fertigen Theme, das ich an Ihre Marke anpasse, oder als individuelles Theme nach Ihrem Design. Sie sprechen dabei mit der Person, die den Code schreibt, und bekommen nach dem Briefing einen Festpreis."
 audience:
   - "Marken und Händler, die zum ersten Mal online verkaufen und einen Shop wollen, der von Anfang an sauber aufgebaut ist."
@@ -49,7 +49,7 @@ faq:
   - q: "Fertiges Theme oder individuelles Theme?"
     a: "Für die meisten Shops reicht ein gutes Theme aus dem Theme Store, an die Marke angepasst. Ein individuelles Theme lohnt sich, wenn Sie ein eigenes Design in Figma haben, das sich mit keinem Theme sauber umsetzen lässt, oder Funktionen brauchen, die kein Theme mitbringt. Im Erstgespräch sage ich Ihnen, was zu Ihrem Vorhaben passt."
   - q: "Was kostet es, einen Shopify-Shop erstellen zu lassen?"
-    a: "Das hängt vom Umfang ab: Theme oder individuelles Design, Anzahl der Seiten und Produkte, Sprachen, Apps und Sonderfunktionen. Nach dem Briefing bekommen Sie ein schriftliches Angebot zum Festpreis. Wovon der Preis abhängt, steht im Artikel zu den Kosten eines Shopify-Shops."
+    a: "Das hängt vom Umfang ab: Theme oder individuelles Design, Anzahl der Seiten und Produkte, Sprachen, Apps und Sonderfunktionen. Ausgangspreise: ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System, jeweils zzgl. MwSt. Nach dem Briefing bekommen Sie ein schriftliches Angebot zum Festpreis. Wovon der Preis abhängt, steht im Artikel zu den Kosten eines Shopify-Shops."
   - q: "Gehört der Shop danach mir?"
     a: "Ja. Der Shop liegt auf Ihrem eigenen Shopify-Konto, ich arbeite mit einem Mitarbeiterzugang, den Sie jederzeit entziehen können."
   - q: "Kann ich den Shop danach selbst pflegen?"

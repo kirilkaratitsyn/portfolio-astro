@@ -3,7 +3,7 @@ order: 1
 kind: build
 title: "Have your Shopify store built"
 seoTitle: "Have Your Shopify Store Built by a Developer, at a Fixed Price"
-description: "Have your Shopify store built by a freelance developer based in Germany: on a theme from the Theme Store or as a custom theme from your Figma design, with payments, shipping and legal pages. Fixed price after a briefing, free first call."
+description: "Have your Shopify store built by a freelance developer based in Germany: on a theme from the Theme Store or as a custom theme from your Figma design, with payments, shipping and legal pages. From €500 excl. VAT, fixed price after a briefing, free first call."
 lead: "I build your Shopify store from setup to launch: on a ready-made theme adapted to your brand, or as a custom theme from your design. You talk to the person who writes the code, and you get a fixed price after the briefing."
 audience:
   - "Brands and sellers going online for the first time who want a store that is built cleanly from day one."
@@ -49,7 +49,7 @@ faq:
   - q: "Ready-made theme or custom theme?"
     a: "For most stores a good theme from the Theme Store, adapted to the brand, is enough. A custom theme pays off when you have your own design in Figma that no theme can reproduce cleanly, or need features no theme offers. On the first call I tell you which fits your project."
   - q: "What does it cost to have a Shopify store built?"
-    a: "It depends on the scope: theme or custom design, number of pages and products, languages, apps and special features. After the briefing you get a written fixed-price quote. What the price depends on is explained in the article on the cost of a Shopify store."
+    a: "It depends on the scope: theme or custom design, number of pages and products, languages, apps and special features. Starting prices: from €500 for a store on a ready-made theme, from €1,500 with a custom design and from €2,000 for a migration from another system, each excl. VAT. After the briefing you get a written fixed-price quote. What the price depends on is explained in the article on the cost of a Shopify store."
   - q: "Do I own the store afterwards?"
     a: "Yes. The store sits on your own Shopify account, and I work through a staff account you can remove at any time."
   - q: "Can I run the store myself afterwards?"
