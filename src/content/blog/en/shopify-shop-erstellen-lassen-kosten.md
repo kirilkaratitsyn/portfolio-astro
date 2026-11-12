@@ -21,7 +21,7 @@ tags:
 - The price depends mainly on **scope, theme (store or custom), migration and special features**, not on “a store”.
 - On top of the build come **running costs**: Shopify plan, apps, domain, payment fees and upkeep.
 - Quotes become comparable only as a **fixed price after a written briefing**, with a list of what is included.
-- With me: **from €500** for a store on a ready-made theme, **from €1,500** with a custom design, **from €2,000** for a migration.
+- With me: **from €500** for a store on a ready-made theme, **from €1,500** with a custom design, **from €2,000** for a migration (all prices excl. VAT).
 
 ## What the price is made of
 
@@ -75,7 +75,7 @@ A fixed price is only as reliable as the scope written into it. Have the quote s
 
 ## What it roughly costs with me
 
-These are starting prices for typical cases. The exact price depends on scope and comes in the fixed-price quote after the briefing.
+These are starting prices for typical cases, all prices excl. VAT. The exact price depends on scope and comes in the fixed-price quote after the briefing.
 
 - **A store on a ready-made theme:** from €500
 - **A store with a custom design:** from €1,500
@@ -112,7 +112,7 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 
 **Which costs come after launch?** The Shopify plan, paid apps, the domain, payment fees per order and, if you do not want to do everything yourself, upkeep and further development. Shopify lists the current plans on its own pricing page.
 
-**What does a Shopify store cost with you?** From €500 for a store on a ready-made theme, from €1,500 with a custom design and from €2,000 for a migration from another system. The exact price depends on scope, so after the briefing you get a firm number that fits your store.
+**What does a Shopify store cost with you?** From €500 for a store on a ready-made theme, from €1,500 with a custom design and from €2,000 for a migration from another system, each excl. VAT. The exact price depends on scope, so after the briefing you get a firm number that fits your store.
 
 **Can I start with a small scope and extend later?** Yes. A store grows well in stages when the foundation is clean.
 

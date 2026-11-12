@@ -21,7 +21,7 @@ tags:
 - Der Preis hängt vor allem von **Umfang, Theme (Store oder individuell), Umzug und Sonderfunktionen** ab, nicht von „einem Shop“.
 - Zur Erstellung kommen **laufende Kosten**: Shopify-Tarif, Apps, Domain, Zahlungsgebühren und Pflege.
 - Vergleichbar werden Angebote erst als **Festpreis nach schriftlichem Briefing**, mit Liste dessen, was enthalten ist.
-- Bei mir: **ab 500 €** für einen Shop auf einem fertigen Theme, **ab 1.500 €** mit individuellem Design, **ab 2.000 €** für den Umzug.
+- Bei mir: **ab 500 €** für einen Shop auf einem fertigen Theme, **ab 1.500 €** mit individuellem Design, **ab 2.000 €** für den Umzug (alle Preise zzgl. MwSt.).
 
 ## Woraus sich der Preis zusammensetzt
 
@@ -75,7 +75,7 @@ Ein Festpreis ist nur so belastbar wie der Umfang, der darin steht. Lassen Sie s
 
 ## Was es bei mir ungefähr kostet
 
-Das sind Ausgangspreise für typische Fälle. Der genaue Preis hängt vom Umfang ab und steht im Festpreis-Angebot nach dem Briefing.
+Das sind Ausgangspreise für typische Fälle, alle Preise zzgl. MwSt. Der genaue Preis hängt vom Umfang ab und steht im Festpreis-Angebot nach dem Briefing.
 
 - **Shop auf einem fertigen Theme:** ab 500 €
 - **Shop mit individuellem Design:** ab 1.500 €
@@ -112,7 +112,7 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 **Welche Kosten kommen nach dem Launch dazu?** Der Shopify-Tarif, kostenpflichtige Apps, die Domain, Zahlungsgebühren pro Bestellung und, wenn Sie nicht alles selbst machen wollen, Pflege und Weiterentwicklung. Die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
 
-**Was kostet ein Shopify-Shop bei Ihnen?** Ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System. Der genaue Preis hängt vom Umfang ab, deshalb bekommen Sie nach dem Briefing eine feste Zahl, die zu Ihrem Shop passt.
+**Was kostet ein Shopify-Shop bei Ihnen?** Ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System, jeweils zzgl. MwSt. Der genaue Preis hängt vom Umfang ab, deshalb bekommen Sie nach dem Briefing eine feste Zahl, die zu Ihrem Shop passt.
 
 **Kann ich mit einem kleinen Umfang starten und später erweitern?** Ja. Ein Shop wächst gut in Etappen, wenn das Fundament sauber ist.
 
