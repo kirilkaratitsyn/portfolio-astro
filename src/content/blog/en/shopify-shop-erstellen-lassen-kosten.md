@@ -5,7 +5,7 @@ title: "Having a Shopify store built: what the cost depends on and how to get a 
 seoTitle: "Having a Shopify Store Built: Cost 2026 & Fixed Price"
 date: 22 October 2026
 readingTime: 7 min
-excerpt: What drives the cost of building a Shopify store, which running costs come on top and how to get a fixed-price quote you can actually compare.
+excerpt: "From €500: what drives the cost of building a Shopify store, which running costs come on top and how to get a fixed-price quote you can actually compare."
 image: /og/projects/minbie.jpg
 topic: build
 tags:
@@ -14,13 +14,14 @@ tags:
   - Quote
 ---
 
-"What does a Shopify store cost?" is the first question in almost every conversation, and the honest answer is: it depends. That sounds like dodging, but it is the reason quotes are so far apart. This article shows what the price is made of, what to look for in quotes and how to get a fixed price you can really compare. You will not find numbers here on purpose: a price without your scope would be a guess.
+"What does a Shopify store cost?" is the first question in almost every conversation, and the honest answer is: it depends. That sounds like dodging, but it is the reason quotes are so far apart. This article shows what the price is made of, what to look for in quotes and how to get a fixed price you can really compare. You will find starting prices for typical cases further down; the exact price comes in the quote after the briefing.
 
 **In short:**
 
 - The price depends mainly on **scope, theme (store or custom), migration and special features**, not on “a store”.
 - On top of the build come **running costs**: Shopify plan, apps, domain, payment fees and upkeep.
 - Quotes become comparable only as a **fixed price after a written briefing**, with a list of what is included.
+- With me: **from €500** for a store on a ready-made theme, **from €1,500** with a custom design, **from €2,000** for a migration.
 
 ## What the price is made of
 
@@ -72,6 +73,15 @@ A tip: the more a clean solution does in the theme itself, the fewer apps you ne
 
 A fixed price is only as reliable as the scope written into it. Have the quote spell out what is included and what is not.
 
+## What it roughly costs with me
+
+These are starting prices for typical cases. The exact price depends on scope and comes in the fixed-price quote after the briefing.
+
+- **A store on a ready-made theme:** from €500
+- **A store with a custom design:** from €1,500
+- **Migration from another system**, for example from WooCommerce: from €2,000
+- **Ongoing support:** on average €300 to €500 per month
+
 ## How to tell quotes you can compare
 
 Two quotes can only be compared if they describe the same thing. Watch for:
@@ -102,7 +112,7 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 
 **Which costs come after launch?** The Shopify plan, paid apps, the domain, payment fees per order and, if you do not want to do everything yourself, upkeep and further development. Shopify lists the current plans on its own pricing page.
 
-**Why do you not give prices?** Because a price without a scope would be a guess. After the briefing you get a firm number that fits your store.
+**What does a Shopify store cost with you?** From €500 for a store on a ready-made theme, from €1,500 with a custom design and from €2,000 for a migration from another system. The exact price depends on scope, so after the briefing you get a firm number that fits your store.
 
 **Can I start with a small scope and extend later?** Yes. A store grows well in stages when the foundation is clean.
 

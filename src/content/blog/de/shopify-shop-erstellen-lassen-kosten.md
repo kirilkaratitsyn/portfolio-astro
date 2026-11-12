@@ -5,7 +5,7 @@ title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ei
 seoTitle: "Shopify-Shop erstellen lassen: Kosten 2026 & Festpreis"
 date: 22. Oktober 2026
 readingTime: 7 Min
-excerpt: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können.
+excerpt: "Ab 500 €: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können."
 image: /og/projects/minbie.jpg
 topic: build
 tags:
@@ -14,13 +14,14 @@ tags:
   - Angebot
 ---
 
-„Was kostet ein Shopify-Shop?“ ist die erste Frage fast jedes Gesprächs, und die ehrliche Antwort ist: Es kommt darauf an. Das klingt nach Ausweichen, ist aber der Grund, warum Angebote so weit auseinanderliegen. Dieser Artikel zeigt, woraus sich der Preis zusammensetzt, worauf Sie bei Angeboten achten sollten und wie Sie zu einem Festpreis kommen, den Sie wirklich vergleichen können. Zahlen finden Sie hier bewusst nicht: Ein Preis ohne Ihren Umfang wäre geraten.
+„Was kostet ein Shopify-Shop?“ ist die erste Frage fast jedes Gesprächs, und die ehrliche Antwort ist: Es kommt darauf an. Das klingt nach Ausweichen, ist aber der Grund, warum Angebote so weit auseinanderliegen. Dieser Artikel zeigt, woraus sich der Preis zusammensetzt, worauf Sie bei Angeboten achten sollten und wie Sie zu einem Festpreis kommen, den Sie wirklich vergleichen können. Ab-Preise für typische Fälle finden Sie weiter unten; den genauen Preis nennt Ihnen das Angebot nach dem Briefing.
 
 **Kurz gesagt:**
 
 - Der Preis hängt vor allem von **Umfang, Theme (Store oder individuell), Umzug und Sonderfunktionen** ab, nicht von „einem Shop“.
 - Zur Erstellung kommen **laufende Kosten**: Shopify-Tarif, Apps, Domain, Zahlungsgebühren und Pflege.
 - Vergleichbar werden Angebote erst als **Festpreis nach schriftlichem Briefing**, mit Liste dessen, was enthalten ist.
+- Bei mir: **ab 500 €** für einen Shop auf einem fertigen Theme, **ab 1.500 €** mit individuellem Design, **ab 2.000 €** für den Umzug.
 
 ## Woraus sich der Preis zusammensetzt
 
@@ -72,6 +73,15 @@ Ein Tipp: Je mehr eine saubere Lösung im Theme selbst erledigt, desto weniger A
 
 Ein Festpreis ist nur so belastbar wie der Umfang, der darin steht. Lassen Sie sich im Angebot aufschreiben, was enthalten ist und was nicht.
 
+## Was es bei mir ungefähr kostet
+
+Das sind Ausgangspreise für typische Fälle. Der genaue Preis hängt vom Umfang ab und steht im Festpreis-Angebot nach dem Briefing.
+
+- **Shop auf einem fertigen Theme:** ab 500 €
+- **Shop mit individuellem Design:** ab 1.500 €
+- **Umzug von einem anderen System**, zum Beispiel von WooCommerce: ab 2.000 €
+- **Laufende Betreuung:** durchschnittlich 300 bis 500 € pro Monat
+
 ## Woran Sie ein vergleichbares Angebot erkennen
 
 Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf sollten Sie achten:
@@ -102,7 +112,7 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 **Welche Kosten kommen nach dem Launch dazu?** Der Shopify-Tarif, kostenpflichtige Apps, die Domain, Zahlungsgebühren pro Bestellung und, wenn Sie nicht alles selbst machen wollen, Pflege und Weiterentwicklung. Die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
 
-**Warum nennen Sie keine Preise?** Weil ein Preis ohne Umfang geraten wäre. Nach dem Briefing bekommen Sie eine feste Zahl, die zu Ihrem Shop passt.
+**Was kostet ein Shopify-Shop bei Ihnen?** Ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System. Der genaue Preis hängt vom Umfang ab, deshalb bekommen Sie nach dem Briefing eine feste Zahl, die zu Ihrem Shop passt.
 
 **Kann ich mit einem kleinen Umfang starten und später erweitern?** Ja. Ein Shop wächst gut in Etappen, wenn das Fundament sauber ist.
 
