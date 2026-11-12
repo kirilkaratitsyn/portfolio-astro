@@ -84,6 +84,12 @@ const COVERS = {
     de: { h: 'Shop|optimieren lassen', chips: ['Ziel', 'Messung', 'Zugang'] },
     uk: { h: 'Оптимізація|магазину', chips: ['Ціль', 'Вимірювання', 'Доступ'] },
   },
+  'shopify-beratung': {
+    topic: 'support',
+    en: { h: 'Shopify|consulting', chips: ['When', 'Prepare', 'Result'] },
+    de: { h: 'Shopify|Beratung', chips: ['Wann', 'Vorbereitung', 'Ergebnis'] },
+    uk: { h: 'Консультація|з Shopify', chips: ['Коли', 'Підготовка', 'Результат'] },
+  },
   'shopify-seo-optimieren-lassen': {
     topic: 'speed',
     en: { h: 'Hiring help|for Shopify SEO', chips: ['Built in', 'Your job', 'Offers'] },

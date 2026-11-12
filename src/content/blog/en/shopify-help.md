@@ -74,6 +74,6 @@ What ongoing support can look like and how it differs from one-off jobs is descr
 
 Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign). And if you are still weighing whether a freelancer or an agency fits your plan: [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
 
-**Further reading:** [Shopify B2B: trade prices and Quick Order](/blog/shopify-b2b-wholesale) · [Shopify maintenance: what the platform handles](/blog/shopify-wartung-betreuung)
+**Further reading:** [Shopify B2B: trade prices and Quick Order](/blog/shopify-b2b-wholesale) · [Shopify maintenance: what the platform handles](/blog/shopify-wartung-betreuung) · [Shopify consulting: when it is worth it](/blog/shopify-beratung)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

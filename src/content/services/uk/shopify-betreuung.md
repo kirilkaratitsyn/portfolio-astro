@@ -31,6 +31,7 @@ steps:
     text: "Кожна зміна в копії теми, у живий магазин лише після вашого погодження."
 articleSlug: shopify-wartung-betreuung
 alsoArticles:
+  - shopify-beratung
   - shopify-shop-optimieren-lassen
   - shopify-entwickler-wechseln
   - shopify-app-entwickeln-lassen

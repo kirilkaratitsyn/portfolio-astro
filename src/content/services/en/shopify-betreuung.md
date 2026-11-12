@@ -31,6 +31,7 @@ steps:
     text: "Every change is made in a copy of the theme and goes live only after your approval."
 articleSlug: shopify-wartung-betreuung
 alsoArticles:
+  - shopify-beratung
   - shopify-shop-optimieren-lassen
   - shopify-entwickler-wechseln
   - shopify-app-entwickeln-lassen

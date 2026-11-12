@@ -31,6 +31,7 @@ steps:
     text: "Jede Änderung in einer Kopie des Themes, live erst nach Ihrer Freigabe."
 articleSlug: shopify-wartung-betreuung
 alsoArticles:
+  - shopify-beratung
   - shopify-shop-optimieren-lassen
   - shopify-entwickler-wechseln
   - shopify-app-entwickeln-lassen
