@@ -58,4 +58,10 @@ faq:
     a: "Für den Umzug mit Produkten, Kunden, Bestellungen und Weiterleitungen gibt es eine eigene Seite: Umzug von WooCommerce zu Shopify. Oft gehört beides zusammen, dann bekommen Sie ein Angebot für den ganzen Weg."
   - q: "Gibt es ein kostenloses Erstgespräch?"
     a: "Ja, rund 30 Minuten. Sie erzählen von Ihrer Marke und Ihren Produkten, ich sage Ihnen ehrlich, welcher Weg passt."
+  - q: "Wer baut meinen Shop?"
+    a: "Ich selbst, Kiril Karatitsyn, freiberuflicher Shopify-Entwickler aus Bad Bentheim. Sie sprechen mit der Person, die den Code schreibt, nicht mit einer Vertriebsabteilung, und bekommen nach dem Briefing einen Festpreis."
+  - q: "Was muss ich für den Start mitbringen?"
+    a: "Am besten Ihre Produkte mit Bildern, Beschreibungen und Preisen (eine Tabelle genügt), Logo und Markenfarben sowie Texte für Über uns und FAQ. Die Texte für Impressum, Datenschutz, AGB und Widerruf kommen von Ihnen oder einem Rechtstexte-Dienst, ich binde sie als Seiten im Shop ein. Was noch fehlt, klären wir im Briefing."
+  - q: "Richten Sie Zahlungsarten, Versand und Steuern ein?"
+    a: "Ja. Zahlungsarten, Versandzonen, Steuern und die Benachrichtigungs-E-Mails gehören zur Einrichtung, passend für den Verkauf in Deutschland und der EU. Welche Zahlungsarten in Deutschland üblich sind, steht im Artikel zu Shopify Zahlungsarten in Deutschland."
 ---

@@ -58,4 +58,10 @@ faq:
     a: "Moving products, customers, orders and redirects has its own page: WooCommerce to Shopify migration. Often the two go together, and then you get one quote for the whole way."
   - q: "Is there a free first call?"
     a: "Yes, about 30 minutes. You tell me about your brand and your products, and I tell you honestly which route fits."
+  - q: "Who builds my store?"
+    a: "I do, Kiril Karatitsyn, a freelance Shopify developer based in Bad Bentheim. You talk to the person who writes the code, not to a sales department, and you get a fixed price after the briefing."
+  - q: "What do I need to bring to start?"
+    a: "Ideally your products with images, descriptions and prices (a spreadsheet is enough), your logo and brand colours, and texts for About and FAQ. The texts for imprint, privacy, terms and withdrawal come from you or a legal-text service, and I add them as pages in the store. Whatever is still missing we settle in the briefing."
+  - q: "Do you set up payments, shipping and taxes?"
+    a: "Yes. Payment methods, shipping zones, taxes and notification emails are part of the setup, suited to selling in Germany and the EU. Which payment methods are common in Germany is covered in the article on Shopify payment methods in Germany."
 ---
