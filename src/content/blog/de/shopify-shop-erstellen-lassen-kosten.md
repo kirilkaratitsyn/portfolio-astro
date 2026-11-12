@@ -1,8 +1,8 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-12
 title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ein Festpreis-Angebot bekommen"
-seoTitle: "Shopify-Shop erstellen lassen: Kosten und Festpreis-Angebot"
+seoTitle: "Shopify-Shop erstellen lassen: Kosten 2026 & Festpreis"
 date: 22. Oktober 2026
 readingTime: 7 Min
 excerpt: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können.
@@ -15,6 +15,12 @@ tags:
 ---
 
 „Was kostet ein Shopify-Shop?“ ist die erste Frage fast jedes Gesprächs, und die ehrliche Antwort ist: Es kommt darauf an. Das klingt nach Ausweichen, ist aber der Grund, warum Angebote so weit auseinanderliegen. Dieser Artikel zeigt, woraus sich der Preis zusammensetzt, worauf Sie bei Angeboten achten sollten und wie Sie zu einem Festpreis kommen, den Sie wirklich vergleichen können. Zahlen finden Sie hier bewusst nicht: Ein Preis ohne Ihren Umfang wäre geraten.
+
+**Kurz gesagt:**
+
+- Der Preis hängt vor allem von **Umfang, Theme (Store oder individuell), Umzug und Sonderfunktionen** ab, nicht von „einem Shop“.
+- Zur Erstellung kommen **laufende Kosten**: Shopify-Tarif, Apps, Domain, Zahlungsgebühren und Pflege.
+- Vergleichbar werden Angebote erst als **Festpreis nach schriftlichem Briefing**, mit Liste dessen, was enthalten ist.
 
 ## Woraus sich der Preis zusammensetzt
 
@@ -91,6 +97,10 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 5. **Go-live nach Ihrer Freigabe.**
 
 ## Häufige Fragen
+
+**Wovon hängt es ab, was ein Shopify-Shop kostet?** Vor allem vom Umfang: Anzahl und Art der Seiten, Theme aus dem Store oder individuelles Theme, Umzug von einem alten System, Funktionen über den Standard hinaus und davon, wer Texte, Bilder und Design liefert. Die sieben Punkte oben gehen Sie am besten im Erstgespräch durch.
+
+**Welche Kosten kommen nach dem Launch dazu?** Der Shopify-Tarif, kostenpflichtige Apps, die Domain, Zahlungsgebühren pro Bestellung und, wenn Sie nicht alles selbst machen wollen, Pflege und Weiterentwicklung. Die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
 
 **Warum nennen Sie keine Preise?** Weil ein Preis ohne Umfang geraten wäre. Nach dem Briefing bekommen Sie eine feste Zahl, die zu Ihrem Shop passt.
 

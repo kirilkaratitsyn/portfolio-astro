@@ -1,8 +1,8 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-12
 title: "Having a Shopify store built: what the cost depends on and how to get a fixed-price quote"
-seoTitle: "Having a Shopify Store Built: Cost and Fixed-Price Quotes"
+seoTitle: "Having a Shopify Store Built: Cost 2026 & Fixed Price"
 date: 22 October 2026
 readingTime: 7 min
 excerpt: What drives the cost of building a Shopify store, which running costs come on top and how to get a fixed-price quote you can actually compare.
@@ -15,6 +15,12 @@ tags:
 ---
 
 "What does a Shopify store cost?" is the first question in almost every conversation, and the honest answer is: it depends. That sounds like dodging, but it is the reason quotes are so far apart. This article shows what the price is made of, what to look for in quotes and how to get a fixed price you can really compare. You will not find numbers here on purpose: a price without your scope would be a guess.
+
+**In short:**
+
+- The price depends mainly on **scope, theme (store or custom), migration and special features**, not on “a store”.
+- On top of the build come **running costs**: Shopify plan, apps, domain, payment fees and upkeep.
+- Quotes become comparable only as a **fixed price after a written briefing**, with a list of what is included.
 
 ## What the price is made of
 
@@ -91,6 +97,10 @@ Two quotes can only be compared if they describe the same thing. Watch for:
 5. **Go-live after your approval.**
 
 ## Frequently asked questions
+
+**What does the cost of a Shopify store depend on?** Mainly on scope: the number and kind of pages, a store theme or a custom theme, migration from an old system, features beyond the standard, and who supplies the copy, images and design. It is best to go through the seven points above in the first call.
+
+**Which costs come after launch?** The Shopify plan, paid apps, the domain, payment fees per order and, if you do not want to do everything yourself, upkeep and further development. Shopify lists the current plans on its own pricing page.
 
 **Why do you not give prices?** Because a price without a scope would be a guess. After the briefing you get a firm number that fits your store.
 
