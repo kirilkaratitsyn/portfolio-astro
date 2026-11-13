@@ -35,6 +35,7 @@ steps:
 articleSlug: shopify-shop-erstellen-lassen-kosten
 alsoArticles:
   - shopify-freelancer-oder-agentur
+  - shopify-domain-verbinden
 caseSlug: minbie
 alsoCases:
   - orska-rituals
