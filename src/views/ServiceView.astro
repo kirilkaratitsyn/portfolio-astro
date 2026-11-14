@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from '../lib/person';
 import TopRated from '../components/TopRated.astro';
 // A service page (src/content/services): who it is for, what is included, how the work goes, a case study that
 // proves it, FAQ and the two doors (a call, or the free store check by email in the Contact block). Laid out like a
@@ -64,7 +65,7 @@ const structuredData = {
       areaServed: service.area
         ? [service.area.place, ...service.area.nearby].map((name) => ({ '@type': 'AdministrativeArea', name }))
         : ['DE', 'AT', 'CH', 'US', 'GB', 'AU'],
-      provider: { '@id': new URL('/#person', site).toString() },
+      provider: BUSINESS,
     },
     ...(service.faq.length > 0
       ? [

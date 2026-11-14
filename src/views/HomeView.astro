@@ -13,7 +13,7 @@ import FAQ from '../sections/FAQ.astro';
 import Contact from '../sections/Contact.astro';
 import { DEFAULT_LOCALE, useTranslations, type Locale } from '../i18n';
 import { getCaseStudies, getWorks } from '../lib/content';
-import { PERSON, PERSON_ID, SITE_URL } from '../lib/person';
+import { PERSON, PERSON_ID, BUSINESS, BUSINESS_ID, SITE_URL } from '../lib/person';
 
 interface Props {
   locale: Locale;
@@ -35,6 +35,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     PERSON,
+    BUSINESS,
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}#website`,
@@ -48,7 +49,7 @@ const structuredData = {
       name: service.title,
       description: service.description,
       serviceType: 'Shopify development',
-      provider: { '@id': PERSON_ID },
+      provider: { '@id': BUSINESS_ID },
     })),
   ],
 };

@@ -1,6 +1,7 @@
 ---
 import { localizePath, useTranslations, type Locale } from '../i18n';
 import { CLARITY_ID } from '../lib/analytics';
+import { EMAIL, PHONE } from '../lib/person';
 import { getLocalPages, getPosts, getServices } from '../lib/content';
 
 interface Props {
@@ -70,7 +71,16 @@ const legal =
       }
     </div>
     <div class="relative z-[1] flex flex-col gap-3 pb-6 pt-5 text-[15px] text-mute md:flex-row md:justify-between md:pb-4 md:pt-5">
-      <span>© {new Date().getFullYear()} Kiril Karatitsyn. {t.footer.rights}</span>
+      <!-- Name, place and phone as in the Impressum and the Google Business Profile. -->
+      <span class="flex flex-wrap gap-x-2 gap-y-1">
+        <span>© {new Date().getFullYear()} Kiril Karatitsyn</span>
+        <span aria-hidden="true">·</span>
+        <span>48455 Bad Bentheim</span>
+        <span aria-hidden="true">·</span>
+        <a href={`tel:${PHONE.replace(/ /g, '')}`} class="whitespace-nowrap hover:text-ink">{PHONE}</a>
+        <span aria-hidden="true">·</span>
+        <a href={`mailto:${EMAIL}`} class="hover:text-ink">{EMAIL}</a>
+      </span>
       <span class="flex flex-wrap gap-x-5 gap-y-2">
         <span class="flex gap-2">
           <a href={legal[0]!.href} class="hover:text-ink">{legal[0]!.name}</a>
