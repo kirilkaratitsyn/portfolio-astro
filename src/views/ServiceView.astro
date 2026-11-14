@@ -145,8 +145,8 @@ const scopeIcons = ['rocket', 'migrate', 'puzzle', 'chart', 'layers', 'lifebuoy'
       <ul>
         {
           service.audience.map((item, i) => (
-            <li data-reveal class={`grid grid-cols-[48px_1fr] items-baseline gap-3 py-5 md:grid-cols-[72px_1fr] md:py-7 ${i > 0 ? 'border-t border-line' : 'pt-0 md:pt-0'}`}>
-              <span class="font-head text-lg font-bold text-blue-deep md:text-xl">{String(i + 1).padStart(2, '0')}</span>
+            <li data-reveal class={`flex flex-col gap-2 py-5 md:grid md:grid-cols-[72px_1fr] md:items-baseline md:gap-3 md:py-7 ${i > 0 ? 'border-t border-line' : 'pt-0 md:pt-0'}`}>
+              <span class="font-head text-base font-bold text-blue-deep md:text-xl">{String(i + 1).padStart(2, '0')}</span>
               <p class="font-head text-[22px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px]">{item}</p>
             </li>
           ))
