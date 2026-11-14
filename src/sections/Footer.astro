@@ -10,10 +10,16 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const hasPosts = (await getPosts(locale)).length > 0;
-const services = await getServices(locale);
+// The services row is the same in every language too: a service written in German only keeps its German link and title.
+const ownServices = await getServices(locale);
+const services = [...ownServices, ...(await getServices('de')).filter((de) => !ownServices.some((own) => own.slug === de.slug))].sort((a, b) => a.order - b.order);
+const ownService = new Set(ownServices.map((service) => service.slug));
 // Every service and town page gets a link from every page (Google finds and weighs them through it), kept short:
 // the services by name, the town pages as rows of town names under their kind.
-const localPages = await getLocalPages(locale);
+// The rows are the same in every language: a town page written in German only is linked in German (hreflang="de").
+const ownLocal = new Set((await getLocalPages(locale)).map((page) => page.slug));
+const localPages = await getLocalPages('de');
+const townHref = (slug: string) => (ownLocal.has(slug) ? localizePath(locale, `/services/${slug}`) : localizePath('de', `/services/${slug}`));
 const towns = [
   { label: t.footer.localShopify, pages: localPages.filter((page) => page.slug.startsWith('shopify-')) },
   { label: t.footer.localWeb, pages: localPages.filter((page) => page.slug.startsWith('webdesign-')) },
@@ -44,7 +50,7 @@ const legal =
             <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2">
               <a href={localizePath(locale, '/services')} class="font-semibold text-ink hover:text-blue-deep">{t.header.services}</a>
               {services.map((service) => (
-                <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
+                <a href={localizePath(ownService.has(service.slug) ? locale : 'de', `/services/${service.slug}`)} hreflang={ownService.has(service.slug) ? undefined : 'de'} class="text-mute hover:text-ink">
                   {service.title}
                 </a>
               ))}
@@ -53,7 +59,7 @@ const legal =
               <nav aria-label={row.label} class="flex flex-wrap gap-x-4 gap-y-1">
                 <span class="font-semibold text-ink">{row.label}</span>
                 {row.pages.map((page) => (
-                  <a href={localizePath(locale, `/services/${page.slug}`)} class="text-mute hover:text-ink">
+                  <a href={townHref(page.slug)} hreflang={ownLocal.has(page.slug) ? undefined : 'de'} class="text-mute hover:text-ink">
                     {page.area!.place.replace(/^das /, '').replace(/\s*\(.*\)$/, '')}
                   </a>
                 ))}
