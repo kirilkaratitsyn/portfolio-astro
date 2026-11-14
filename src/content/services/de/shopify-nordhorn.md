@@ -3,7 +3,7 @@ order: 91
 title: "Shopify-Entwickler für Nordhorn"
 seoTitle: "Shopify-Entwickler Nordhorn: Onlineshop erstellen lassen"
 description: "Shopify-Entwickler für Nordhorn: Onlineshop erstellen lassen, Umzug von WooCommerce, Verkauf in die Niederlande. Festpreis nach Briefing."
-lead: "Für Händler und Marken aus Nordhorn baue ich Onlineshops auf Shopify, ziehe bestehende Shops um und richte den Verkauf in die Niederlande ein. Ich habe 35+ Stores ausgeliefert, bin Top Rated auf Upwork und mache Praktikum und Ausbildung in Nordhorn."
+lead: "Für Händler und Marken aus Nordhorn baue ich Onlineshops auf Shopify, ziehe bestehende Shops um und richte den Verkauf in die Niederlande ein. Ich habe 35+ Stores ausgeliefert, bin Top Rated auf Upwork und arbeite bei der Funduino GmbH in Nordhorn."
 area:
   place: "Nordhorn"
   nearby:
@@ -26,7 +26,7 @@ scope:
   - title: "Theme-Anpassung und Tempo"
     text: "Änderungen entstehen in einer unveröffentlichten Vorschau, Ihr Live-Shop verkauft weiter; bei Pedchem stieg der Mobile-PageSpeed mit neuem Theme ohne neue Apps von 57 auf 82."
   - title: "Erfahrung in Nordhorn"
-    text: "Seit 2026 arbeite ich im Praktikum als Frontend-Entwickler bei der Funduino GmbH in Nordhorn an Oberfläche und Shop einer Arduino-Lernplattform, seit 2024 läuft meine Ausbildung an den KBS Nordhorn."
+    text: "Seit 2026 arbeite ich als Frontend-Entwickler bei der Funduino GmbH in Nordhorn an Oberfläche und Shop einer Arduino-Lernplattform."
 steps:
   - title: "Erstgespräch"
     text: "Rund 30 Minuten zu Betrieb, Sortiment und Ziel des Shops; für einen bestehenden Shop gibt es den kostenlosen Shop-Check."
@@ -47,7 +47,7 @@ alsoArticles:
   - woocommerce-to-shopify
 faq:
   - q: "Sitzen Sie in Nordhorn?"
-    a: "Nein, ich arbeite von Bad Bentheim aus. Mein Praktikum bei der Funduino GmbH und meine Ausbildung an den KBS sind in Nordhorn; ein Treffen dort ist nach Absprache möglich."
+    a: "Nein, ich arbeite von Bad Bentheim aus. Bei der Funduino GmbH arbeite ich in Nordhorn; ein Treffen dort ist nach Absprache möglich."
   - q: "Was kostet ein Onlineshop für einen Betrieb aus Nordhorn?"
     a: "Das hängt vom Umfang ab: Zahl der Produkte, Design, Umzug aus einem alten System, Sprachen. Nach dem Briefing bekommen Sie ein schriftliches Angebot zum Festpreis."
   - q: "Kann mein Shop auch auf Niederländisch verkaufen?"
