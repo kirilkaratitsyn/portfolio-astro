@@ -25,10 +25,12 @@ const words = t.hero.claim.split(' ');
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
         <p class="hero-sub mt-5 max-w-[460px] text-[17px] leading-snug text-mute">{t.hero.sub}</p>
-        <CalButton class="hero-cta mt-8 inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white">
-          {t.header.bookCall}
-        </CalButton>
-        <TopRated locale={Astro.props.locale} class="hero-cta mt-6 flex" />
+        <div class="hero-cta mt-8 flex flex-wrap items-center gap-4">
+          <CalButton class="inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white">
+            {t.header.bookCall}
+          </CalButton>
+          <TopRated locale={Astro.props.locale} />
+        </div>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
            the live cube that turns, twists its layers and can be dragged. -->

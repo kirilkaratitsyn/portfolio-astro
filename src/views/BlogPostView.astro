@@ -1,4 +1,5 @@
 ---
+import TopRated from '../components/TopRated.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
@@ -73,6 +74,7 @@ const structuredData = {
       <span class="inline-flex items-center gap-1.5"><Icon name="clock" size={14} />{interpolate(t.blog.estimatedRead, { time: post.readingTime })}</span>
     </p>
     <h1 class="intro-lift mt-4 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
+    <TopRated locale={locale} class="mt-8" />
     <img src={ogThumb(post.image, '1200')} alt="" width="1200" height="630" fetchpriority="high" decoding="async" class="mt-10 aspect-[1200/630] w-full max-w-4xl rounded-2xl border border-line object-cover md:mt-14" />
     <div class="post mt-10 max-w-2xl md:mt-14">
       <Content />

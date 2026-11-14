@@ -1,5 +1,4 @@
 ---
-import TopRated from '../components/TopRated.astro';
 import { Image } from 'astro:assets';
 import markDisc from '../assets/brand/mark-disc.png';
 import CalButton from '../components/CalButton.astro';
@@ -22,7 +21,6 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
     <h2 data-split class="relative z-[2] max-w-[900px] font-head text-[40px] font-bold leading-[0.98] tracking-[-0.025em] md:text-[84px]">{t.contact.subtitle}.</h2>
     <div class="relative z-[2] mt-10 flex flex-col items-start gap-5 text-lg md:mt-14 md:flex-row md:items-center md:gap-8 md:text-xl">
       <CalButton class="inline-flex rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue-deep">{t.header.bookCall}</CalButton>
-      <TopRated locale={locale} tone="onBlue" />
       <a href={`mailto:${t.contact.email}?subject=Shopify%20project%20inquiry`} class="underline decoration-white/40 underline-offset-4 hover:decoration-white">{t.contact.email}</a>
     </div>
     <!-- A second door for those not ready for a call: the store check or a project enquiry, sent to Kiril by email

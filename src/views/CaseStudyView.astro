@@ -84,16 +84,17 @@ const seo = {
         <ul class="mt-4 grid gap-3 text-base leading-relaxed">
           {caseStudy.outcome.map((item) => <li>{item}</li>)}
         </ul>
-        {
-          caseStudy.archived ? (
-            <p class="mt-6 text-sm leading-relaxed text-mute">{copy.archivedNote}</p>
-          ) : caseStudy.noLiveLink ? null : (
-            <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex rounded-full bg-ink px-6 py-3.5 font-medium text-white hover:bg-blue-deep">
-              {copy.visitStore} ↗
-            </a>
-          )
-        }
-        <TopRated locale={locale} class="mt-6 flex" />
+        {caseStudy.archived && <p class="mt-6 text-sm leading-relaxed text-mute">{copy.archivedNote}</p>}
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          {
+            !caseStudy.archived && !caseStudy.noLiveLink && (
+              <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-ink px-6 py-3.5 font-medium text-white hover:bg-blue-deep">
+                {copy.visitStore} ↗
+              </a>
+            )
+          }
+          <TopRated locale={locale} />
+        </div>
       </div>
     </header>
 
