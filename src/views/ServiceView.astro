@@ -5,7 +5,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CalButton from '../components/CalButton.astro';
 import Contact from '../sections/Contact.astro';
-import WorkList from '../sections/WorkList.astro';
+import Feature from '../sections/Feature.astro';
 import Numbers from '../sections/Numbers.astro';
 import ClientStrip from '../sections/ClientStrip.astro';
 import Globe from '../sections/Globe.astro';
@@ -85,7 +85,8 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
 ---
 
 <BaseLayout title={service.seoTitle} description={service.description} path={`/services/${service.slug}`} locale={locale} structuredData={structuredData} alternates={alternates} switchLinks={switchLinks}>
-  <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
+  <article>
+   <div class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/services')} class="text-sm font-medium text-mute hover:text-ink">← {copy.back}</a>
 
     <header class="mt-8 max-w-4xl">
@@ -96,7 +97,22 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         <a href="#contact" class="text-[16px] font-semibold text-blue-dark hover:underline">{t.contact.shopCheck.title} →</a>
       </div>
     </header>
+   </div>
 
+   {
+     /* A local page: first who I am and the projects, then the local text. */
+     service.area && (
+       <>
+         <About locale={locale} />
+         <Feature locale={locale} caseStudies={caseStudies} works={works} />
+         <Numbers locale={locale} />
+         <ClientStrip locale={locale} works={works} />
+         <Reviews locale={locale} />
+       </>
+     )
+   }
+
+   <div class="mx-auto max-w-[1440px] px-5 md:px-10">
     <div class="mt-16 border-b border-line md:mt-24">
       <div class={row}>
         <h2 class="font-head text-2xl font-bold">{copy.audience}</h2>
@@ -129,6 +145,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
           }
         </ol>
       </div>
+      {!service.area && (
       <div class={row}>
         <h2 class="font-head text-2xl font-bold">{copy.proof}</h2>
         <a href={localizePath(locale, `/projects/${proof.slug}`)} class="group grid max-w-3xl gap-5 md:grid-cols-[220px_1fr] md:items-start">
@@ -140,6 +157,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
           </span>
         </a>
       </div>
+      )}
       {
         service.faq.length > 0 && (
           <div class={row}>
@@ -204,22 +222,18 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         )
       }
     </div>
-  </article>
+   </div>
 
-  {
-    service.area && (
-      <>
-        <WorkList locale={locale} caseStudies={caseStudies} />
-        <Numbers locale={locale} />
-        <ClientStrip locale={locale} works={works} />
-        <Globe locale={locale} works={works} />
-        <About locale={locale} />
-        <Services locale={locale} works={works} />
-        <Stack locale={locale} />
-        <Reviews locale={locale} />
-      </>
-    )
-  }
+   {
+     service.area && (
+       <>
+         <Services locale={locale} works={works} />
+         <Stack locale={locale} />
+         <Globe locale={locale} works={works} />
+       </>
+     )
+   }
+  </article>
 
   <Contact locale={locale} />
 </BaseLayout>
