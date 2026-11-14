@@ -5,8 +5,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CalButton from '../components/CalButton.astro';
 import Contact from '../sections/Contact.astro';
-import { localizePath, useTranslations, type Locale } from '../i18n';
-import { getCaseStudies, getPosts, getServices, type ServicePage } from '../lib/content';
+import { LOCALES, localizePath, useTranslations, type Locale } from '../i18n';
+import { getCaseStudies, getLocalPages, getPosts, getServiceLocales, getServices, type ServicePage } from '../lib/content';
 import { thumb } from '../lib/thumbs';
 
 interface Props {
@@ -22,6 +22,12 @@ if (!proof) throw new Error(`ServiceView: case study "${service.caseSlug}" not f
 const article = service.articleSlug ? (await getPosts(locale)).find((post) => post.slug === service.articleSlug) : undefined;
 const alsoArticles = (await getPosts(locale)).filter((post) => service.alsoArticles?.includes(post.slug));
 const others = (await getServices(locale)).filter((item) => item.slug !== service.slug);
+// A local page links to the other places, so the local pages form one group.
+const places = service.area ? (await getLocalPages(locale)).filter((item) => item.slug !== service.slug) : [];
+// A page written in some languages only: hreflang lists those, the language switcher leads to the services overview elsewhere.
+const pageLocales = await getServiceLocales(service.slug);
+const alternates = LOCALES.filter((item) => pageLocales.includes(item));
+const switchLinks = Object.fromEntries(LOCALES.filter((item) => !pageLocales.includes(item)).map((item) => [item, localizePath(item, '/services')]));
 
 const site = Astro.site!;
 const pageUrl = new URL(localizePath(locale, `/services/${service.slug}`), site).toString();
@@ -66,7 +72,7 @@ const structuredData = {
 const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10';
 ---
 
-<BaseLayout title={service.seoTitle} description={service.description} path={`/services/${service.slug}`} locale={locale} structuredData={structuredData}>
+<BaseLayout title={service.seoTitle} description={service.description} path={`/services/${service.slug}`} locale={locale} structuredData={structuredData} alternates={alternates} switchLinks={switchLinks}>
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/services')} class="text-sm font-medium text-mute hover:text-ink">← {copy.back}</a>
 
@@ -146,6 +152,22 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
                 <li>
                   <a href={localizePath(locale, `/blog/${post.slug}`)} class="text-lg font-semibold text-blue-dark hover:underline">
                     {post.title} →
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      {
+        places.length > 0 && (
+          <div class={row}>
+            <h2 class="font-head text-2xl font-bold">{copy.places}</h2>
+            <ul class="grid max-w-3xl gap-2">
+              {places.map((item) => (
+                <li>
+                  <a href={localizePath(locale, `/services/${item.slug}`)} class="text-lg font-semibold text-blue-dark hover:underline">
+                    {item.title} →
                   </a>
                 </li>
               ))}

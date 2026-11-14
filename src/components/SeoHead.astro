@@ -18,8 +18,8 @@ export interface SeoProps {
   /** Pixel size of `image`, when known (the default image sets its own). */
   imageSize?: { width: number; height: number };
   robots?: string;
-  /** Set to false for pages that don't exist in every locale (e.g. 404). */
-  alternates?: boolean;
+  /** Set to false for pages with no versions in other languages (e.g. 404), or to the list of locales the page exists in. */
+  alternates?: boolean | readonly Locale[];
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -47,8 +47,10 @@ const ogImageSize = image === DEFAULT_IMAGE ? DEFAULT_IMAGE_SIZE : imageSize;
 // Search results show about 60 characters: the name is added only when it still fits.
 const withName = `${title} | ${SITE_NAME}`;
 const fullTitle = title.includes(SITE_NAME) || withName.length > 60 ? title : withName;
-const alternateLinks = alternates
-  ? LOCALES.map((alternate) => ({
+const alternateLocales = alternates === true ? LOCALES : alternates || [];
+// A page that exists in one language only has no alternates to announce.
+const alternateLinks = alternateLocales.length > 1
+  ? alternateLocales.map((alternate) => ({
       hreflang: alternate,
       href: absolute(localizePath(alternate, path)),
     }))

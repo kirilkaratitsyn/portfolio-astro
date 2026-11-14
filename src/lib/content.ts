@@ -98,6 +98,12 @@ export async function getLocalPages(locale: Locale): Promise<ServicePage[]> {
   return (await loadServicePages(locale)).filter((page) => page.area);
 }
 
+/** The locales a service or local page exists in (a local page may be written in German only). */
+export async function getServiceLocales(slug: string): Promise<Locale[]> {
+  const entries = await getCollection('services', (entry) => splitEntryId(entry.id).slug === slug);
+  return entries.map((entry) => splitEntryId(entry.id).locale as Locale);
+}
+
 export async function getPosts(locale: Locale): Promise<BlogPost[]> {
   const entries = await getCollection('blog', (entry) => splitEntryId(entry.id).locale === locale);
 
