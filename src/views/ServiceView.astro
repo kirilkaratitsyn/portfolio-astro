@@ -96,6 +96,8 @@ const scopeTones = [
   { box: 'bg-[#dfe2f0] text-ink', text: 'text-[#474c60]' },
   { box: 'bg-white text-ink', text: 'text-mute' },
 ] as const;
+// Rows of three; a remainder goes to wider cards in the first row (5 cards: 2 wide + 3, 4 cards: 2 + 2).
+const wideCards = service.scope.length % 3 === 0 ? 0 : service.scope.length % 3 === 2 ? 2 : 4;
 const scopeIcons = ['rocket', 'migrate', 'puzzle', 'chart', 'layers', 'lifebuoy'] as const;
 ---
 
@@ -138,32 +140,42 @@ const scopeIcons = ['rocket', 'migrate', 'puzzle', 'chart', 'layers', 'lifebuoy'
    <Numbers locale={locale} />
 
    <section class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="audience-title">
-    <h2 id="audience-title" data-split class="font-head text-[40px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.audience}</h2>
-    <ul class="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-5">
-      {
-        service.audience.map((item, i) => (
-          <li data-reveal class="flex flex-col gap-10 rounded-3xl bg-white p-6 md:min-h-[240px] md:justify-between md:p-8">
-            <span class="font-head text-[40px] font-bold leading-none tracking-[-0.02em] text-blue-deep md:text-[56px]">{String(i + 1).padStart(2, '0')}</span>
-            <p class="text-lg font-medium leading-snug md:text-xl">{item}</p>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="grid gap-8 rounded-[32px] bg-white p-6 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] md:gap-12 md:p-12">
+      <h2 id="audience-title" data-split class="font-head text-[40px] font-bold leading-none tracking-[-0.02em] md:text-[56px]">{copy.audience}</h2>
+      <ul>
+        {
+          service.audience.map((item, i) => (
+            <li data-reveal class={`grid grid-cols-[48px_1fr] items-baseline gap-3 py-5 md:grid-cols-[72px_1fr] md:py-7 ${i > 0 ? 'border-t border-line' : 'pt-0 md:pt-0'}`}>
+              <span class="font-head text-lg font-bold text-blue-deep md:text-xl">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-head text-[22px] font-bold leading-[1.2] tracking-[-0.01em] md:text-[32px]">{item}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
    </section>
 
    <section class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="scope-title">
     <h2 id="scope-title" data-split class="font-head text-[40px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.scope}</h2>
-    <ul class="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
+    <ul class="mt-8 grid gap-4 md:mt-10 md:grid-cols-6 md:gap-5">
       {
         service.scope.map((item, i) => {
           const tone = scopeTones[i % scopeTones.length]!;
+          const wide = i < wideCards;
           return (
-            <li data-reveal class={`flex flex-col gap-8 rounded-3xl p-6 md:min-h-[320px] md:justify-between md:p-8 ${tone.box}`}>
-              <img src={`/source/3d/icon-${scopeIcons[i % scopeIcons.length]}-160.webp`} alt="" width="72" height="72" loading="lazy" decoding="async" class="size-[72px] rounded-2xl" />
-              <div>
-                <h3 class="font-head text-2xl font-bold leading-tight tracking-[-0.01em] md:text-[28px]">{item.title}</h3>
-                <p class={`mt-3 text-base leading-relaxed md:text-lg ${tone.text}`}>{item.text}</p>
-              </div>
+            <li data-reveal class={`relative flex flex-col overflow-hidden rounded-[32px] p-6 md:p-9 ${wide ? 'min-h-[260px] md:col-span-3 md:min-h-[360px]' : 'min-h-[240px] md:col-span-2 md:min-h-[320px]'} ${tone.box}`}>
+              <img
+                src={`/source/3d/icon-${scopeIcons[i % scopeIcons.length]}.webp`}
+                alt=""
+                width="360"
+                height="360"
+                loading="lazy"
+                decoding="async"
+                class={`pointer-events-none -mr-2 -mt-2 mb-auto h-auto self-end ${wide ? 'w-[110px] md:w-[180px]' : 'w-[96px] md:w-[130px]'}`}
+              />
+              <span class={`mt-4 font-head text-base font-bold ${tone.text}`}>{String(i + 1).padStart(2, '0')}</span>
+              <h3 class={`mt-2 max-w-[18ch] font-head font-bold leading-[1.05] tracking-[-0.02em] ${wide ? 'text-[30px] md:text-[44px]' : 'text-[26px] md:text-[32px]'}`}>{item.title}</h3>
+              <p class={`mt-4 max-w-[52ch] text-base leading-relaxed md:text-lg ${tone.text}`}>{item.text}</p>
             </li>
           );
         })
