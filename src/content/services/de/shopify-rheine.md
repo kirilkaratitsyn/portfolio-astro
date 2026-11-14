@@ -3,7 +3,7 @@ order: 93
 title: "Shopify-Entwickler für Rheine"
 seoTitle: "Shopify-Entwickler Rheine: schneller Shop, feste Betreuung"
 description: "Shopify-Entwickler für Shops in Rheine: Ladezeit messen und verbessern, App-Reste entfernen, Theme aufräumen, laufende Betreuung. Festpreis nach Briefing."
-lead: "Für Shops aus Rheine mache ich langsame Shopify-Shops schneller und betreue sie danach weiter. Bisher: 35+ ausgelieferte Stores, Top Rated auf Upwork mit 95 % Job Success."
+lead: "Für Shops aus Rheine mache ich langsame Shopify-Shops schneller und betreue sie danach weiter. Bisher: 35+ ausgelieferte Stores, Top Rated auf Upwork mit 96 % Job Success."
 area:
   place: "Rheine"
   nearby:

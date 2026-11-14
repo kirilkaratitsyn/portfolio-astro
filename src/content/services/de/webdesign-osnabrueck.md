@@ -3,7 +3,7 @@ order: 105
 title: "Webdesign für Osnabrück"
 seoTitle: "Webdesign Osnabrück: Website erstellen lassen"
 description: "Webdesign Osnabrück: Website oder Onlineshop erstellen lassen, vom Freelancer aus Bad Bentheim. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Ich baue Websites und Onlineshops für Betriebe in Osnabrück, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 95 % Job Success."
+lead: "Ich baue Websites und Onlineshops für Betriebe in Osnabrück, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
 area:
   place: "Osnabrück"
   nearby:

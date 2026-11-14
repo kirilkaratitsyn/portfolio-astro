@@ -3,7 +3,7 @@ order: 104
 title: "Webdesign für Gronau"
 seoTitle: "Webdesign Gronau: Website erstellen lassen"
 description: "Webdesign Gronau: Website oder Onlineshop erstellen lassen, vom Freelancer aus Bad Bentheim. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Ich baue Websites und Onlineshops für Betriebe in Gronau, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 95 % Job Success."
+lead: "Ich baue Websites und Onlineshops für Betriebe in Gronau, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
 area:
   place: "Gronau (Westf.)"
   nearby:

@@ -3,7 +3,7 @@ order: 95
 title: "Shopify-Freelancer für Osnabrück"
 seoTitle: "Shopify-Freelancer Osnabrück: Entwickler statt Agentur"
 description: "Shopify-Freelancer für Osnabrück: Redesign, Theme-Entwicklung nach Figma, Umzug zu Shopify und laufende Betreuung. Festpreis nach Briefing."
-lead: "Für Shops in Osnabrück übernehme ich Redesign, Theme-Entwicklung nach Figma, Umzug und Betreuung, als ein Entwickler statt einer Agentur. Bisher: 35+ ausgelieferte Stores, 48 Jobs auf Upwork, Top Rated mit 95 % Job Success."
+lead: "Für Shops in Osnabrück übernehme ich Redesign, Theme-Entwicklung nach Figma, Umzug und Betreuung, als ein Entwickler statt einer Agentur. Bisher: 35+ ausgelieferte Stores, 48 Jobs auf Upwork, Top Rated mit 96 % Job Success."
 area:
   place: "Osnabrück"
   nearby:

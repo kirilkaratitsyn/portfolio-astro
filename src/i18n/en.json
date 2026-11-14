@@ -374,7 +374,7 @@
         "label": "Hours worked on Upwork"
       },
       {
-        "value": "95%",
+        "value": "96%",
         "label": "Job Success Score, Top Rated on Upwork"
       }
     ]
@@ -386,7 +386,7 @@
     "title": "What clients say",
     "lead": "A selection of public reviews from my Upwork profile, in the clients’ own words.",
     "leadPeople": "Clients by name at the top, in their own words. Below, public reviews from my Upwork profile.",
-    "summary": "26 reviews · 95% Job Success",
+    "summary": "26 reviews · 96% Job Success",
     "openProfile": "Open Upwork profile",
     "previous": "Previous reviews",
     "next": "Next reviews",
@@ -449,7 +449,7 @@
       },
       {
         "label": "On Upwork",
-        "value": "Top Rated, 95% Job Success"
+        "value": "Top Rated, 96% Job Success"
       }
     ],
     "upwork": "Upwork profile",
@@ -900,7 +900,7 @@
       },
       {
         "label": "On Upwork",
-        "value": "Top Rated, 95% Job Success"
+        "value": "Top Rated, 96% Job Success"
       }
     ],
     "whatTitle": "What I do",

@@ -3,7 +3,7 @@ order: 92
 title: "Shopify-Entwickler für Lingen"
 seoTitle: "Shopify-Entwickler Lingen: Onlineshop erstellen lassen"
 description: "Shopify-Entwickler für Lingen (Ems): neuer Onlineshop, individuelles Theme, Umzug zu Shopify. Eine Person statt Agentur, Festpreis nach Briefing."
-lead: "Ich baue Onlineshops auf Shopify für Händler und Marken in Lingen, vom ersten Entwurf bis zum Go-live, als eine Person statt einer Agentur. Bisher: 35+ ausgelieferte Stores, 48 Jobs und 601 Arbeitsstunden auf Upwork, Top Rated mit 95 % Job Success."
+lead: "Ich baue Onlineshops auf Shopify für Händler und Marken in Lingen, vom ersten Entwurf bis zum Go-live, als eine Person statt einer Agentur. Bisher: 35+ ausgelieferte Stores, 48 Jobs und 601 Arbeitsstunden auf Upwork, Top Rated mit 96 % Job Success."
 area:
   place: "Lingen (Ems)"
   nearby:
@@ -24,7 +24,7 @@ scope:
   - title: "Umzug aus dem alten System"
     text: "Umzug zu Shopify mit Weiterleitungen, wie bei Jula Bloom von WooCommerce: Die alten Links führen auf ihre neuen Seiten."
   - title: "Eine Person statt Agentur"
-    text: "Wer das Erstgespräch führt, baut auch den Shop: 26 Bewertungen auf Upwork, 95 % Job Success."
+    text: "Wer das Erstgespräch führt, baut auch den Shop: 26 Bewertungen auf Upwork, 96 % Job Success."
   - title: "Übergabe"
     text: "Im Videocall zeige ich Ihnen, wie Sie Produkte, Preise und Banner selbst ändern, und bleibe nach dem Go-live für Korrekturen da."
 steps:

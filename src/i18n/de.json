@@ -374,7 +374,7 @@
         "label": "Arbeitsstunden auf Upwork"
       },
       {
-        "value": "95%",
+        "value": "96%",
         "label": "Job Success Score, Top Rated auf Upwork"
       }
     ]
@@ -386,7 +386,7 @@
     "title": "Was Kunden sagen",
     "lead": "Eine Auswahl öffentlicher Bewertungen von meinem Upwork-Profil, aus dem Englischen übersetzt. Das Original steht jeweils dabei.",
     "leadPeople": "Oben Kunden mit Namen, in ihren eigenen Worten. Darunter öffentliche Bewertungen von meinem Upwork-Profil, aus dem Englischen übersetzt; das Original steht jeweils dabei.",
-    "summary": "26 Bewertungen · 95 % Job Success",
+    "summary": "26 Bewertungen · 96 % Job Success",
     "openProfile": "Upwork-Profil öffnen",
     "previous": "Vorherige Bewertungen",
     "next": "Nächste Bewertungen",
@@ -449,7 +449,7 @@
       },
       {
         "label": "Auf Upwork",
-        "value": "Top Rated, 95% Job Success"
+        "value": "Top Rated, 96% Job Success"
       }
     ],
     "upwork": "Upwork-Profil",
@@ -900,7 +900,7 @@
       },
       {
         "label": "Auf Upwork",
-        "value": "Top Rated, 95% Job Success"
+        "value": "Top Rated, 96% Job Success"
       }
     ],
     "whatTitle": "Was ich mache",
