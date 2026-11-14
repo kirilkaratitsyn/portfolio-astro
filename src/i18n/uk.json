@@ -139,20 +139,20 @@
   "experience": {
     "eyebrow": "Таймлайн",
     "title": "Досвід",
-    "subtitle": "Робота, навчання і стажування, що формують мій Shopify-шлях.",
+    "subtitle": "Етапи моєї роботи з Shopify і фронтендом.",
     "placeholderLabel": "Тимчасовий логотип",
     "stats": {
       "timeline": "Активні етапи таймлайну",
-      "since": "Навчаюся і розвиваюся з"
+      "since": "Працюю з Shopify з"
     },
     "items": [
       {
-        "kind": "Стажування",
+        "kind": "Робота",
         "role": "Frontend Developer",
         "company": "Funduino GmbH",
         "dateRange": "Лютий 2026 - дотепер",
         "location": "Нордгорн, Німеччина",
-        "summary": "Стажування на позиції Frontend Developer в Arduino-орієнтованій освітній платформі та бренді навчальних наборів. Фокус: інтерфейси й storefront у реальній компанії.",
+        "summary": "Frontend Developer в Arduino-орієнтованій освітній платформі та бренді навчальних наборів. Фокус: інтерфейси й storefront у реальній компанії.",
         "logo": "/source/logos/funduino.jpg",
         "logoAlt": "Логотип Funduino GmbH",
         "isPlaceholderLogo": false
@@ -920,7 +920,7 @@
     "timeline": [
       {
         "when": "2026 до сьогодні",
-        "role": "Frontend-розробник, стажування",
+        "role": "Frontend-розробник",
         "place": "Funduino GmbH, Нордгорн",
         "text": "Робота над інтерфейсом і магазином навчальної платформи Arduino всередині діючої компанії."
       },

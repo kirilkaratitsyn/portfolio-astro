@@ -139,20 +139,20 @@
   "experience": {
     "eyebrow": "Timeline",
     "title": "Erfahrung",
-    "subtitle": "Arbeit, Lernen und Praktikum, die meinen Shopify-Weg prägen.",
+    "subtitle": "Stationen meiner Arbeit mit Shopify und Frontend.",
     "placeholderLabel": "Platzhalter-Logo",
     "stats": {
       "timeline": "Aktive Timeline-Eintrage",
-      "since": "Lernen und Bauen seit"
+      "since": "Shopify-Arbeit seit"
     },
     "items": [
       {
-        "kind": "Praktikum",
+        "kind": "Arbeit",
         "role": "Frontend Developer",
         "company": "Funduino GmbH",
         "dateRange": "Februar 2026 - Heute",
         "location": "Nordhorn, Deutschland",
-        "summary": "Praktikum als Frontend Developer bei einer Arduino-Lernplattform und Education-Marke. Schwerpunkt: Interface- und Storefront-Arbeit im laufenden Unternehmen.",
+        "summary": "Frontend Developer bei einer Arduino-Lernplattform und Education-Marke. Schwerpunkt: Interface- und Storefront-Arbeit im laufenden Unternehmen.",
         "logo": "/source/logos/funduino.jpg",
         "logoAlt": "Funduino GmbH Logo",
         "isPlaceholderLogo": false
@@ -920,7 +920,7 @@
     "timeline": [
       {
         "when": "2026 bis heute",
-        "role": "Frontend-Entwickler, Praktikum",
+        "role": "Frontend-Entwickler",
         "place": "Funduino GmbH, Nordhorn",
         "text": "Arbeit an Oberfläche und Shop einer Arduino-Lernplattform, mitten in einem laufenden Unternehmen."
       },

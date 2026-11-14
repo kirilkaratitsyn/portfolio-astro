@@ -139,20 +139,20 @@
   "experience": {
     "eyebrow": "Timeline",
     "title": "Experience",
-    "subtitle": "Work, study, and internship experience shaping my Shopify path.",
+    "subtitle": "The roles behind my Shopify and frontend work.",
     "placeholderLabel": "Placeholder logo",
     "stats": {
       "timeline": "Active timeline entries",
-      "since": "Learning and building since"
+      "since": "Shopify work since"
     },
     "items": [
       {
-        "kind": "Internship",
+        "kind": "Work",
         "role": "Frontend Developer",
         "company": "Funduino GmbH",
         "dateRange": "February 2026 - Present",
         "location": "Nordhorn, Germany",
-        "summary": "Internship as a Frontend Developer at an Arduino-focused learning platform and education brand. Focus: interface and storefront work inside a running company.",
+        "summary": "Frontend Developer at an Arduino-focused learning platform and education brand. Focus: interface and storefront work inside a running company.",
         "logo": "/source/logos/funduino.jpg",
         "logoAlt": "Funduino GmbH logo",
         "isPlaceholderLogo": false
@@ -920,7 +920,7 @@
     "timeline": [
       {
         "when": "2026 to today",
-        "role": "Frontend Developer, internship",
+        "role": "Frontend Developer",
         "place": "Funduino GmbH, Nordhorn",
         "text": "Interface and storefront work at an Arduino learning platform, inside a live company."
       },
