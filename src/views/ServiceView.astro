@@ -27,13 +27,14 @@ const t = useTranslations(locale);
 const copy = t.servicePage;
 const caseStudies = await getCaseStudies(locale);
 // A local page is a full landing page: after its own text it shows the same sections as the home page.
-const works = service.area ? await getWorks(locale) : [];
+const works = await getWorks(locale);
 const proof = caseStudies.find((item) => item.slug === service.caseSlug);
 if (!proof) throw new Error(`ServiceView: case study "${service.caseSlug}" not found for ${locale}`);
 const article = service.articleSlug ? (await getPosts(locale)).find((post) => post.slug === service.articleSlug) : undefined;
 const alsoArticles = (await getPosts(locale)).filter((post) => service.alsoArticles?.includes(post.slug));
 // A local page shows the Services section below, so it needs no list of the other services.
-const others = service.area ? [] : (await getServices(locale)).filter((item) => item.slug !== service.slug);
+// The Services section below lists the other services.
+const others: Awaited<ReturnType<typeof getServices>> = [];
 // A local page links to the other places, so the local pages form one group.
 const group = (slug: string) => slug.split('-')[0];
 const place = (slug: string) => slug.slice(group(slug).length + 1);
@@ -107,7 +108,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
     </header>
     {
       /* A local page carries the puzzle cube from the home hero (scripts/stage.ts swaps the poster for the live cube). */
-      service.area && (
+      (
         <span data-pebble="cube" class="pebble relative z-[1] mx-auto mt-10 block w-[min(320px,80vw)] xl:absolute xl:right-0 xl:top-[-40px] xl:m-0 xl:w-[min(400px,28vw)]">
           <img
             src="/source/3d/cube-840.webp"
@@ -128,7 +129,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
 
    {
      /* A local page: first who I am and the projects, then the local text. */
-     service.area && (
+     (
        <>
          <About locale={locale} />
          <Feature locale={locale} caseStudies={caseStudies} works={works} />
@@ -252,7 +253,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
    </div>
 
    {
-     service.area && (
+     (
        <>
          <Services locale={locale} works={works} />
          <Stack locale={locale} />

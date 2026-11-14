@@ -3,7 +3,7 @@ import { getServices, type ServicePage, type WorkKind, type WorkProject } from '
 import type { IconName } from './icons';
 
 /** One 3D icon and one kind of project per service, in the order of services.items. */
-export const SERVICE_ICONS: IconName[] = ['shop', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy'];
+export const SERVICE_ICONS: IconName[] = ['rocket', 'migrate', 'puzzle', 'chart', 'funnel', 'lifebuoy'];
 export const SERVICE_KINDS: WorkKind[] = ['build', 'migration', 'features', 'speed', 'redesign', 'support'];
 
 export interface ServiceRow {
