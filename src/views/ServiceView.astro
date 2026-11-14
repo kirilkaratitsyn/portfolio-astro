@@ -1,4 +1,5 @@
 ---
+import TopRated from '../components/TopRated.astro';
 // A service page (src/content/services): who it is for, what is included, how the work goes, a case study that
 // proves it, FAQ and the two doors (a call, or the free store check by email in the Contact block). Laid out like a
 // case study, so the two kinds of page read as one site.
@@ -114,6 +115,7 @@ const scopeIcons = ['rocket', 'migrate', 'puzzle', 'chart', 'layers', 'lifebuoy'
         <CalButton class="inline-flex rounded-full bg-blue-deep px-7 py-[15px] text-[16px] font-semibold text-white">{t.header.bookCall}</CalButton>
         <a href="#contact" class="text-[16px] font-semibold text-blue-dark hover:underline">{t.contact.shopCheck.title} →</a>
       </div>
+      <TopRated locale={locale} class="mt-8" />
     </header>
     {
       /* A local page carries the puzzle cube from the home hero (scripts/stage.ts swaps the poster for the live cube). */

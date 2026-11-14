@@ -1,0 +1,44 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+
+// The Upwork Top Rated badge with the review count and Job Success Score, linking to the profile. The strongest
+// outside proof on the site, so it sits next to the main calls to action. tone: 'light' on the page background,
+// 'onBlue' on blue panels; size: 'lg' for section headers, 'md' next to buttons.
+interface Props {
+  locale: Locale;
+  size?: 'md' | 'lg';
+  tone?: 'light' | 'onBlue';
+  class?: string;
+}
+
+const { locale, size = 'md', tone = 'light', class: className = '' } = Astro.props;
+const t = useTranslations(locale).reviews;
+const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
+const lg = size === 'lg';
+---
+
+<a
+  href={PROFILE}
+  target="_blank"
+  rel="noopener noreferrer"
+  title={t.openProfile}
+  class:list={[
+    'group inline-flex w-fit items-center rounded-full transition-colors duration-300',
+    lg ? 'gap-4 py-3 pl-3 pr-3 md:gap-5 md:py-4 md:pl-4 md:pr-4' : 'gap-3 py-2.5 pl-2.5 pr-6 md:gap-4',
+    tone === 'onBlue' ? 'bg-white text-ink hover:bg-ink hover:text-white' : 'bg-white text-ink hover:bg-ink hover:text-white',
+    className,
+  ]}
+>
+  <img
+    src="/source/logos/upwork-top-rated.svg"
+    alt=""
+    width="80"
+    height="80"
+    class:list={['shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110', lg ? 'size-14 md:size-20' : 'size-12 md:size-14']}
+  />
+  <span class="leading-snug">
+    <span class:list={['block font-head font-bold tracking-[-0.01em]', lg ? 'text-xl md:text-[28px]' : 'text-lg md:text-xl']}>{t.badge}</span>
+    <span class:list={['block text-mute group-hover:text-white/80', lg ? 'text-sm md:text-base' : 'text-[13px] md:text-sm']}>{t.summary}</span>
+  </span>
+  {lg && <span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue text-xl text-white md:size-14" aria-hidden="true">↗</span>}
+</a>

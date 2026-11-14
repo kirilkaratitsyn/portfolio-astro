@@ -1,4 +1,5 @@
 ---
+import TopRated from '../components/TopRated.astro';
 import Phone from '../components/Phone.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -92,6 +93,7 @@ const seo = {
             </a>
           )
         }
+        <TopRated locale={locale} class="mt-6 flex" />
       </div>
     </header>
 
