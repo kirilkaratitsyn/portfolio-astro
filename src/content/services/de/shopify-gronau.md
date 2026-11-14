@@ -2,8 +2,8 @@
 order: 94
 title: "Shopify-Entwickler für Gronau"
 seoTitle: "Shopify-Entwickler Gronau: B2B-Shop und Verkauf nach NL"
-description: "Shopify-Entwickler für Betriebe in Gronau (Westf.) und Epe: Großhandel und Endkunden in einem Shop, niederländische Sprachversion für Kunden aus Enschede und Umgebung, neuer Shop oder Umzug. Aus Bad Bentheim, rund 15 Kilometer entfernt."
-lead: "Gronau liegt an der Grenze zu Enschede, viele Betriebe hier haben Kunden auf beiden Seiten und verkaufen an Händler wie an Endkunden. Beides lässt sich in einem Shopify-Shop abbilden. Ich bin Shopify-Entwickler in Bad Bentheim, rund 15 Kilometer von Gronau, und richte solche Shops ein."
+description: "Shopify-Entwickler für Gronau (Westf.): Großhandel und Endkunden in einem Shop, B2B-Preise, niederländische Sprachversion, neuer Shop oder Umzug."
+lead: "Für Betriebe in Gronau baue ich Shopify-Shops, in denen Händler und Endkunden im selben Shop kaufen, auf Wunsch auch auf Niederländisch. Bisher sind es 35+ ausgelieferte Stores, auf Upwork bin ich Top Rated mit 95 % Job Success."
 area:
   place: "Gronau (Westf.)"
   nearby:
@@ -13,32 +13,29 @@ area:
     - "Ochtrup"
     - "Bad Bentheim"
 audience:
-  - "Hersteller und Großhändler aus Gronau und Epe, die Händlern eigene Preise zeigen und trotzdem an Endkunden verkaufen wollen."
-  - "Betriebe mit Kundschaft aus den Niederlanden, die ihren Shop auch auf Niederländisch anbieten möchten."
-  - "Händler, die Bestellungen von Geschäftskunden noch per E-Mail oder Telefon annehmen und das in den Shop verlagern wollen."
-  - "Shops aus dem westlichen Münsterland, die von einem anderen System zu Shopify wechseln."
+  - "Hersteller und Großhändler aus Gronau und Epe mit eigenen Preisen für Händler."
+  - "Betriebe mit Kunden aus Enschede und Umgebung, die auch auf Niederländisch verkaufen wollen."
+  - "Händler, die Bestellungen von Geschäftskunden noch per E-Mail oder Telefon annehmen."
 scope:
   - title: "Großhandel und Endkunden in einem Shop"
-    text: "Freigegebene Geschäftskunden sehen nach dem Login ihre Preise, alle anderen die normalen. Ein Sortiment, ein Lager, ein Admin."
+    text: "Freigegebene Geschäftskunden sehen nach dem Login ihre Preise, alle anderen die normalen, so gebaut für die Hautpflegemarke Orska Rituals."
   - title: "Freigabe und Firmenkonten"
-    text: "Ein Antragsformular für Händler, eine Freigabe durch Sie, danach entsteht das Firmenkonto. Wer nicht freigegeben ist, sieht keine Händlerpreise."
+    text: "Händler stellen einen Antrag, Sie geben frei, und das Firmenkonto entsteht danach automatisch, wie bei Orska Rituals."
   - title: "Schnellbestellung"
-    text: "Eine Bestellliste für Stammkunden, die wissen, was sie brauchen: Artikel, Mengen, in den Warenkorb."
+    text: "Stammkunden legen Artikel und Mengen über eine Bestellliste in den Warenkorb, bei Orska Rituals als Quick Order für freigegebene Profis."
   - title: "Niederländische Sprachversion"
-    text: "Mit Shopify Markets bekommt derselbe Shop eine niederländische Version mit eigener Adresse. Die Übersetzung liefern Sie oder ein Übersetzer, ich richte Sprache und Markt ein."
+    text: "Ich richte Sprache und Markt mit Shopify Markets ein, die Übersetzung liefern Sie; ein mehrsprachiges Theme habe ich für die Marke Nimfa gebaut."
   - title: "Neuer Shop oder Umzug"
-    text: "Aufbau auf einem passenden Theme oder Umzug aus Ihrem bisherigen System, mit Weiterleitungen der alten Adressen."
-  - title: "Zusammenarbeit"
-    text: "Per Videocall und E-Mail, auf Deutsch oder Englisch. Ein Termin in Gronau ist nach Absprache möglich."
+    text: "Aufbau auf einem Theme oder Umzug mit Weiterleitungen der alten Adressen, wie bei Jula Bloom von WooCommerce zu Shopify."
 steps:
   - title: "Erstgespräch"
-    text: "Rund 30 Minuten: Wer kauft bei Ihnen, zu welchen Preisen, und wie kommen Bestellungen heute an?"
+    text: "Rund 30 Minuten zu Ihren Kunden, Preisen und Bestellwegen."
   - title: "Konzept und Festpreis"
-    text: "Sie bekommen eine kurze Beschreibung, wie Preise, Freigabe und Sprachen im Shop gelöst werden, und dazu ein Angebot zum Festpreis."
+    text: "Sie bekommen Umfang, Zeitplan und Festpreis schriftlich."
   - title: "Aufbau in der Vorschau"
-    text: "Der Shop entsteht in einem unveröffentlichten Theme. Sie testen als Endkunde und als Händler, bevor etwas live geht."
+    text: "Der Shop entsteht in einem unveröffentlichten Theme, Ihr Live-Shop verkauft weiter."
   - title: "Go-live nach Ihrer Freigabe"
-    text: "Danach bleibe ich für Korrekturen erreichbar."
+    text: "Live geht der Shop erst nach Ihrer Freigabe, danach bin ich für Korrekturen da."
 caseSlug: orska-rituals
 caseText:
   - "Eine Profi-Hautpflegemarke: Endkunden und freigegebene Kosmetikerinnen und Kosmetiker kaufen im selben Shop zu unterschiedlichen Preisen."
@@ -49,13 +46,9 @@ alsoArticles:
   - shopify-markets-mehrere-laender
 faq:
   - q: "Sitzen Sie in Gronau?"
-    a: "Nein, in Bad Bentheim, rund 15 Kilometer von Gronau. Die Arbeit läuft per Videocall und E-Mail, ein Treffen in Gronau ist nach Absprache möglich."
-  - q: "Brauche ich für Großhandel Shopify Plus?"
-    a: "Nicht zwingend. Unterschiedliche Preise für freigegebene Kunden lassen sich auch ohne Plus umsetzen. Welche Lösung zu Ihrem Fall passt, klären wir im Erstgespräch; die Unterschiede beschreibe ich im verlinkten Artikel."
+    a: "Nein, in Bad Bentheim. Die Arbeit läuft per Videocall und E-Mail, ein Treffen in Gronau ist nach Absprache möglich."
   - q: "Kann der Shop Deutsch und Niederländisch?"
-    a: "Ja. Shopify Markets erlaubt mehrere Sprachen in einem Shop. Steuer- und Rechtsfragen für den Verkauf in die Niederlande klären Sie bitte mit Ihrem Steuerberater."
-  - q: "Sehen Endkunden die Händlerpreise?"
-    a: "Nein. Händlerpreise sehen nur angemeldete, von Ihnen freigegebene Kunden."
+    a: "Ja, Shopify Markets erlaubt mehrere Sprachen in einem Shop. Steuer- und Rechtsfragen für den Verkauf in die Niederlande klären Sie bitte mit Ihrem Steuerberater."
   - q: "Was kostet das?"
-    a: "Das hängt vom Umfang ab. Nach dem Briefing bekommen Sie ein Angebot zum Festpreis."
+    a: "Das hängt vom Umfang ab. Nach dem Briefing bekommen Sie ein schriftliches Angebot zum Festpreis."
 ---
