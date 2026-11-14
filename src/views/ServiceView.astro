@@ -89,7 +89,8 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
    <div class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/services')} class="text-sm font-medium text-mute hover:text-ink">← {copy.back}</a>
 
-    <header class="mt-8 max-w-4xl">
+    <div class="relative">
+    <header class="relative z-[2] mt-8 max-w-4xl">
       <h1 class="intro-lift font-head text-[clamp(34px,9vw,48px)] font-bold leading-[0.98] tracking-[-0.03em] md:text-[84px]">{service.title}</h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-mute md:mt-8 md:text-xl">{service.lead}</p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -97,6 +98,25 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
         <a href="#contact" class="text-[16px] font-semibold text-blue-dark hover:underline">{t.contact.shopCheck.title} →</a>
       </div>
     </header>
+    {
+      /* A local page carries the puzzle cube from the home hero (scripts/stage.ts swaps the poster for the live cube). */
+      service.area && (
+        <span data-pebble="cube" class="pebble relative z-[1] mx-auto mt-10 block w-[min(320px,80vw)] xl:absolute xl:right-0 xl:top-[-40px] xl:m-0 xl:w-[min(400px,28vw)]">
+          <img
+            src="/source/3d/cube-840.webp"
+            srcset="/source/3d/cube-560.webp 560w, /source/3d/cube-640.webp 640w, /source/3d/cube-840.webp 840w"
+            sizes="(min-width: 1280px) min(400px, 28vw), min(320px, 80vw)"
+            width="1120"
+            height="1120"
+            alt=""
+            decoding="async"
+            draggable="false"
+            class="block h-auto w-full"
+          />
+        </span>
+      )
+    }
+    </div>
    </div>
 
    {
