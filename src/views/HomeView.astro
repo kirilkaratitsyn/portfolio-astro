@@ -4,13 +4,9 @@ import Hero from '../sections/Hero.astro';
 import WorkList from '../sections/WorkList.astro';
 import Numbers from '../sections/Numbers.astro';
 import ClientStrip from '../sections/ClientStrip.astro';
-import Marquee from '../sections/Marquee.astro';
-import Feature from '../sections/Feature.astro';
 import Services from '../sections/Services.astro';
 import About from '../sections/About.astro';
-import Globe from '../sections/Globe.astro';
 import Anatomy from '../sections/Anatomy.astro';
-import Stack from '../sections/Stack.astro';
 import Editor from '../sections/Editor.astro';
 import Reviews from '../sections/Reviews.astro';
 import FAQ from '../sections/FAQ.astro';
@@ -59,20 +55,16 @@ const structuredData = {
 ---
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData} flyLogo>
+  {/* Order for a client who lands here cold: proof, what I do, the work, clients' words, how it goes, who I am. */}
   <Hero locale={locale} />
-  <WorkList locale={locale} caseStudies={caseStudies} />
   <Numbers locale={locale} />
   <ClientStrip locale={locale} works={works} />
-  <Globe locale={locale} works={works} />
-  <About locale={locale} />
-  <Marquee />
-  <Feature locale={locale} caseStudies={caseStudies} works={works} />
   <Services locale={locale} works={works} />
-  <Anatomy locale={locale} />
-  <Stack locale={locale} />
-  <Editor locale={locale} />
-  {/* Test section: shown on preview deployments (the dev branch) and locally, not on production yet. */}
+  <WorkList locale={locale} caseStudies={caseStudies} />
   <Reviews locale={locale} />
+  <Anatomy locale={locale} />
+  <About locale={locale} />
+  <Editor locale={locale} />
   <FAQ locale={locale} />
   <Contact locale={locale} />
 </BaseLayout>
