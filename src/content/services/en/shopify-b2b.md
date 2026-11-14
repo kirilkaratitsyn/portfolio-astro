@@ -44,4 +44,6 @@ faq:
   - q: "Do I have to create trade accounts by hand?"
     a: "Not necessarily. At Orska Rituals the company account is created automatically as soon as a professional is approved."
 articleSlug: shopify-b2b-wholesale
+alsoArticles:
+  - shopify-plus-wann-lohnt
 ---

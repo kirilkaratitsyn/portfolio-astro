@@ -44,4 +44,6 @@ faq:
   - q: "Muss ich Händlerkonten von Hand anlegen?"
     a: "Nicht unbedingt. Bei Orska Rituals entsteht das Firmenkonto automatisch, sobald ein Profi freigegeben ist."
 articleSlug: shopify-b2b-wholesale
+alsoArticles:
+  - shopify-plus-wann-lohnt
 ---

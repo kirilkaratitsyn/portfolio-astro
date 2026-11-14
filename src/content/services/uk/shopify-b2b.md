@@ -44,4 +44,6 @@ faq:
   - q: "Чи треба створювати акаунти партнерів вручну?"
     a: "Не обов'язково. В Orska Rituals акаунт компанії створюється автоматично, щойно професіонала підтверджено."
 articleSlug: shopify-b2b-wholesale
+alsoArticles:
+  - shopify-plus-wann-lohnt
 ---

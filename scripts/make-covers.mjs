@@ -24,6 +24,12 @@ const TOPIC = {
 
 // slug -> topic and, per language, the headline ("|" breaks the line) and up to three chips.
 const COVERS = {
+  'shopify-plus-wann-lohnt': {
+    topic: 'build',
+    en: { h: 'Shopify|Plus', chips: ['Checkout', 'B2B', 'Team'] },
+    de: { h: 'Shopify|Plus', chips: ['Checkout', 'B2B', 'Team'] },
+    uk: { h: 'Shopify|Plus', chips: ['Чекаут', 'B2B', 'Команда'] },
+  },
   'shopify-domain-verbinden': {
     topic: 'build',
     en: { h: 'Connect a|domain', chips: ['Routes', 'DNS', 'Email'] },

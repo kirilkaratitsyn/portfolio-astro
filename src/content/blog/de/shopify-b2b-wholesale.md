@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-17
-updatedAt: 2026-11-11
+updatedAt: 2026-11-14
 title: "Shopify B2B: Händlerpreise, Quick Order und Regeln, die halten"
 date: 17. Oktober 2026
 readingTime: 4 Min
@@ -53,7 +53,7 @@ Profis brauchen mehr Informationen als Endkunden. Bei Orska kommen Inhaltsstoffe
 
 ## Brauche ich Shopify Plus?
 
-Das hängt davon ab, welche B2B-Funktionen Sie brauchen und was Ihr Tarif enthält. Das kläre ich im Erstgespräch mit Ihnen, bevor Sie etwas umstellen oder einen Tarif wechseln.
+Nicht unbedingt. Laut Shopify-Hilfe ist Shopify B2B in den Tarifen Basic, Grow, Advanced und Plus verfügbar. Plus ergänzt unter anderem unbegrenzt viele Kataloge, Anzahlungen und Teilzahlungen. Was davon Sie brauchen, kläre ich im Erstgespräch mit Ihnen, bevor Sie etwas umstellen oder einen Tarif wechseln. Die Übersicht steht in [Shopify Plus: Was der Tarif freischaltet](/de/blog/shopify-plus-wann-lohnt).
 
 ## Checkliste vor dem Start
 
@@ -69,6 +69,6 @@ Das hängt davon ab, welche B2B-Funktionen Sie brauchen und was Ihr Tarif enthä
 
 Ich richte [B2B und Großhandel in Shopify](/de/services/shopify-b2b) ein, zum Festpreis nach dem Briefing. Fragen Sie den kostenlosen Shop-Check an oder buchen Sie ein Erstgespräch.
 
-**Weiterlesen:** [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify-Shop erstellen lassen: Wovon die Kosten abhängen](/de/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen](/de/blog/shopify-metafelder-metaobjects) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten)
+**Weiterlesen:** [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender) · [Shopify-Shop erstellen lassen: Wovon die Kosten abhängen](/de/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Shopify Metafelder und Metaobjekte: Produktdaten strukturiert pflegen](/de/blog/shopify-metafelder-metaobjects) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten) · [Shopify Plus: Was der Tarif freischaltet](/de/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

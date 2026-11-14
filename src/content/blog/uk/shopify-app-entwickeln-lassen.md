@@ -82,6 +82,6 @@ Custom app не одноразовий проєкт. Shopify зазначає, �
 
 Надішліть адресу магазину для [безкоштовного Shop-Check](#contact). Я подивлюся на те, що видно ззовні, і чесно скажу, чи доречні готовий застосунок, зміна теми чи щось власне. Якщо потрібна постійна підтримка: [Підтримка Shopify](/uk/services/shopify-betreuung) із чітким обсягом.
 
-**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Зміна розробника Shopify](/uk/blog/shopify-entwickler-wechseln) · [Доопрацювання теми Shopify](/uk/blog/shopify-theme-customization) · [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen)
+**Читайте також:** [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Зміна розробника Shopify](/uk/blog/shopify-entwickler-wechseln) · [Доопрацювання теми Shopify](/uk/blog/shopify-theme-customization) · [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Shopify Plus: що відкриває тариф](/uk/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/uk/about), розробник Shopify у Німеччині*

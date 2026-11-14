@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-17
-updatedAt: 2026-11-11
+updatedAt: 2026-11-14
 title: "Shopify B2B: оптові ціни, Quick Order і правила, що тримаються"
 date: 17 жовтня 2026
 readingTime: 4 хв
@@ -53,7 +53,7 @@ tags:
 
 ## Чи потрібен мені Shopify Plus?
 
-Це залежить від того, які B2B-функції вам потрібні і що входить у ваш тариф. Я з'ясую це з вами на першому дзвінку, перш ніж ви щось зміните чи перейдете на інший тариф.
+Не обов'язково. За довідкою Shopify, Shopify B2B доступний у тарифах Basic, Grow, Advanced і Plus. Plus додає, зокрема, необмежену кількість каталогів, передоплати й оплату частинами. Що з цього потрібно вам, я з'ясую з вами на першому дзвінку, перш ніж ви щось зміните чи перейдете на інший тариф. Огляд у статті [Shopify Plus: що відкриває тариф](/uk/blog/shopify-plus-wann-lohnt).
 
 ## Чекліст перед стартом
 
@@ -69,6 +69,6 @@ tags:
 
 Я налаштовую [B2B та опт у Shopify](/uk/services/shopify-b2b) за фіксованою ціною після брифінгу. Замовте безкоштовну перевірку магазину або забронюйте перший дзвінок.
 
-**Читайте також:** [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender) · [Створення магазину Shopify: від чого залежить вартість](/uk/blog/shopify-shop-erstellen-lassen-kosten) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten)
+**Читайте також:** [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender) · [Створення магазину Shopify: від чого залежить вартість](/uk/blog/shopify-shop-erstellen-lassen-kosten) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Метаполя й метаоб'єкти Shopify: структуровані дані товарів](/uk/blog/shopify-metafelder-metaobjects) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten) · [Shopify Plus: що відкриває тариф](/uk/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

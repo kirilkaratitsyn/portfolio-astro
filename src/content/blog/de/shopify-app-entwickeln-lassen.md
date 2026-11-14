@@ -82,6 +82,6 @@ Bei [Elanora Skin](/de/projects/elanora-skin) habe ich eine Geschenk-Engine im W
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir an, was von außen sichtbar ist, und sage Ihnen ehrlich, ob eine fertige App, eine Theme-Anpassung oder etwas Eigenes sinnvoll ist. Wenn Sie laufende Unterstützung suchen: [Shopify-Betreuung](/de/services/shopify-betreuung) mit klarem Umfang.
 
-**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln) · [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen)
+**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln) · [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Plus: Was der Tarif freischaltet](/de/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

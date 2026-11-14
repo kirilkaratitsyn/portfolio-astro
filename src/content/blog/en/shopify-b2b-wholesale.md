@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-17
-updatedAt: 2026-11-11
+updatedAt: 2026-11-14
 title: "Shopify B2B: trade prices, Quick Order and rules that hold"
 date: 17 October 2026
 readingTime: 4 min
@@ -53,7 +53,7 @@ Professionals need more information than retail customers. At Orska the ingredie
 
 ## Do I need Shopify Plus?
 
-It depends on which B2B features you need and what your plan includes. I settle that with you on the intro call, before you change anything or switch plans.
+Not necessarily. According to the Shopify Help Center, Shopify B2B is available on the Basic, Grow, Advanced and Plus plans. Plus adds, among other things, unlimited catalogs, deposits and partial payments. Which of that you need, I settle with you on the intro call, before you change anything or switch plans. The overview is in [Shopify Plus: what the plan unlocks](/blog/shopify-plus-wann-lohnt).
 
 ## Checklist before you start
 
@@ -69,6 +69,6 @@ It depends on which B2B features you need and what your plan includes. I settle 
 
 I set up [B2B and wholesale in Shopify](/services/shopify-b2b), at a fixed price after the briefing. Request the free store check or book an intro call.
 
-**Further reading:** [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: what the cost depends on](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten)
+**Further reading:** [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: what the cost depends on](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects: structured product data](/blog/shopify-metafelder-metaobjects) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Shopify Plus: what the plan unlocks](/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

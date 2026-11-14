@@ -82,6 +82,6 @@ For [Elanora Skin](/projects/elanora-skin) I built a gift engine in the cart tha
 
 Send me your shop address for the [free Shop-Check](#contact). I look at what is visible from the outside and tell you honestly whether a ready-made app, a theme change or something custom makes sense. If you want ongoing support: [Shopify support](/services/shopify-betreuung) with a clear scope.
 
-**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln) · [Shopify theme customization](/blog/shopify-theme-customization) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen)
+**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln) · [Shopify theme customization](/blog/shopify-theme-customization) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify Plus: what the plan unlocks](/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
