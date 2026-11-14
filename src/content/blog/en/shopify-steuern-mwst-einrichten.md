@@ -2,8 +2,8 @@
 publishedAt: 2026-10-23
 title: "Setting up taxes and VAT in Shopify: price display, EU rules, OSS and what to clarify first"
 date: 23 October 2026
-readingTime: 9 min
-excerpt: "Taxes in Shopify: showing prices with or without tax, choosing a tax service, selling across the EU with OSS and the threshold, tax overrides, shipping tax, VAT numbers at checkout and invoices."
+readingTime: 8 min
+excerpt: "Setting up taxes and VAT in Shopify: prices with or without tax, tax service, EU sales with OSS, overrides, shipping tax, VAT numbers and invoices."
 image: /og/projects/lineargent.jpg
 topic: build
 tags:
@@ -13,114 +13,139 @@ tags:
   - OSS
 ---
 
-"Does my store show prices with or without VAT, and what happens when I sell to France?" That is often the first tax question in the Shopify admin. The settings exist, but they depend on each other: price display, tax service, registrations, exceptions. This article shows what the Shopify Help Center says, for merchants without a technical background.
+"Does my store show prices with or without VAT, and what happens when I sell to France?" That is often the first question when merchants start setting up taxes and VAT in Shopify.
 
 ## A note on scope
 
-Everything here comes from the Shopify Help Center, as of October 2026. Menus, availability and thresholds change, so check your admin. I do not name prices for apps or development. Which rate applies to your products, where you have to register and how you file returns is a question for your tax advisor or tax authority. The help itself says Shopify does not give tax advice. This article is only about the technology. Menu names are taken from the English interface.
+Everything here comes from the Shopify Help Center, as of October 2026. Menus and thresholds change, so check your admin. Which rate applies and where you register is a question for your tax advisor or tax authority. According to the help, Shopify does not give tax advice. Menu names are taken from the English interface.
 
 ## Who is responsible for tax
 
-The help is clear here: tax is your responsibility. Shopify does not remit or file taxes unless you use Shopify Tax with automated filing, and that does not apply everywhere. Default rates in the admin have to be confirmed by you. Shopify calculates the tax and collects it at checkout, nothing more.
+According to the help, you are. Shopify calculates the tax and collects it at checkout. It remits and files only with Shopify Tax and automated filing, and that does not apply everywhere. You confirm the default rates in the admin yourself.
 
-The general steps in the help: work out where you have to collect tax, register there, set up collection under **Settings > Taxes and duties**, use product categories or tax overrides for reduced rates or exemptions, file returns on the required schedule and keep an eye on your sales.
+The order in the help: work out where you have to collect tax, register there, set up collection under **Settings > Taxes and duties**, file returns on the required schedule.
 
 ## Showing prices with or without tax
 
-By default Shopify shows prices **without** tax and VAT, and tax is added at checkout. In many markets that is unusual. The help names two changes:
+By default Shopify shows prices **without** tax and VAT, and tax is added at checkout. Two options change that:
 
-- **Tax-inclusive pricing:** in the tax settings you turn on the option to include tax in product prices and shipping rates. The displayed price is then the final price. Tax appears at checkout as its own line, and subtotal and total stay the same.
-- **Dynamic by customer country:** prices show with or without tax depending on location, for example including VAT in the EU and excluding tax in the US. You set this per market, more in [Shopify Markets: selling in several countries](/blog/shopify-markets-mehrere-laender).
+- **Tax-inclusive pricing:** tax is part of product prices and shipping rates, and the displayed price is the final price. At checkout it appears as its own line, and subtotal and total stay the same.
+- **Dynamic by customer country:** prices show with or without tax depending on location, for example including VAT in the EU and excluding tax in the US. Set per market, see [Shopify Markets](/blog/shopify-markets-mehrere-laender).
 
-Important according to the help: both change only the **display**, not the calculation. With inclusive prices the tax portion is calculated out of the price you set. **Charge tax on this product** should also stay on for products so that the tax is part of the price. And: if a customer is marked tax exempt but you use inclusive prices, they still pay the full listed price, says the help. Managed Markets and duties and import taxes at checkout can override the tax settings.
+According to the help, both change only the **display**, not the calculation:
+
+- With inclusive prices the tax portion is calculated out of the price you set.
+- **Charge tax on this product** should stay on for products.
+- A tax-exempt customer still pays the full listed price with inclusive prices.
+- Managed Markets and duties and import taxes at checkout can override the tax settings.
 
 ## Which tax service you use
 
-For the EU the help distinguishes several routes:
+For the EU the help names several routes:
 
-- **Shopify Tax:** calculates rates from your registrations and product categories. Each calendar year the service is free up to a sales threshold per store, above that standard rates apply. The amounts are on the help page "Choose a tax service", I do not name them.
-- **Basic Tax:** in the EU available according to the help only if your store was set up to collect tax there **before May 13, 2026**. Stores already using Basic Tax can keep using it. New stores use Shopify Tax or manual tax settings.
-- **Manual Tax:** you enter the rates yourself. Default rates are not updated automatically afterwards unless you click **Reset to default tax rates** again. In return, features such as automatic calculation by product category, customer and B2B tax exemptions, tax liability insights and VAT invoices are missing.
+- **Shopify Tax:** calculates rates from your registrations and product categories. Each calendar year the service is free up to a sales threshold per store. The amounts are on the help page "Choose a tax service".
+- **Basic Tax:** in the EU, according to the help, only for stores that were set up to collect tax there **before May 13, 2026**. New stores use Shopify Tax or manual tax settings.
+- **Manual Tax:** you enter the rates yourself. They are updated only when you click **Reset to default tax rates** again. Missing features include calculation by product category, customer and B2B tax exemptions, tax liability insights and VAT invoices.
 - **Tax apps** from third parties for special cases.
 
-The help advises against mixing services: using Manual Tax together with Basic Tax or Shopify Tax in the EU and UK can mean duties are not collected correctly.
+Do not mix services. According to the help, Manual Tax next to Basic Tax or Shopify Tax can lead to wrongly collected duties in the EU and UK.
 
 ## Selling across the EU: registration, threshold, OSS
 
-For merchants in the EU the help describes this logic:
+For merchants in the EU the help says:
 
 - Customers in your **home country** pay your local VAT rate.
-- For customers in **other EU countries** a shared limit of **€10,000** annual sales to all other EU countries combined applies. Below it you can keep charging your home country's rate (the micro-business exemption, which you may have to apply for with your tax authority) or choose OSS. From €10,000 the customer's country rate applies, through OSS or a registration there.
-- **A registration in your own country** is typically needed, says the help, if you want to sell to other EU countries.
-- **OSS (One-Stop Shop)** lets you collect and remit VAT for all EU countries together instead of registering in each one. In Shopify OSS is available only if you use Shopify Tax or Basic Tax. With Manual Tax you enter the rates yourself.
-- A **significant presence** in a country (such as a warehouse or shop) can require its own registration there. You clarify that with the authority or your tax advisor.
+- For **other EU countries** a shared limit of **€10,000** annual sales to all other EU countries combined applies. Below it you can charge your home country's rate (the micro-business exemption, which you may have to apply for with your tax authority) or choose OSS. From €10,000 the customer's country rate applies, through OSS or a registration there.
+- If you sell to other EU countries, you typically need **a registration in your own country**.
+- With **OSS (One-Stop Shop)** you remit VAT for all EU countries together. In Shopify OSS is available only with Shopify Tax or Basic Tax.
+- A **significant presence** (such as a warehouse or shop) can require a separate registration in that country.
 
-In the admin: **Settings > Taxes and duties > Regional settings > European Union**. There you choose one of three registration types: local VAT registration, OSS or the micro-business exemption ("home country registration"). If you use the exemption and later have to be registered in other countries, you lose it. You then switch to OSS or a country-specific registration first.
+Under **Settings > Taxes and duties > Regional settings > European Union** you choose one of three registration types: local VAT registration, OSS or the micro-business exemption ("home country registration"). If you use the exemption and later have to be registered in other countries, you switch to OSS or a country-specific registration first.
 
 ## Product categories and tax overrides
 
-Not every product has the standard rate. Shopify offers two ways:
+For products without the standard rate there are two ways:
 
-- **Product categories** (Shopify Tax only): you assign products a category from Shopify's standard taxonomy, and the service takes reduced rates or exemptions into account. According to the help this reduces the need for overrides.
-- **Tax overrides:** you create a **manually filled collection** with the affected products and assign it a rate. Important: the percentage you enter is the rate that is collected, not the exempted share. Overrides work only with manually filled collections, not automated ones. For single products it is enough to turn off **Charge tax on this product**.
+- **Product categories** (Shopify Tax only): you assign products a category from Shopify's standard taxonomy. The service derives reduced rates or exemptions from it.
+- **Tax overrides:** you assign a rate to a **manually filled collection**. The percentage is the rate that is collected, not the exempted share. This does not work with automated collections. For single products it is enough to turn off **Charge tax on this product**.
 
-Note: an override takes precedence over the product category. A customer exemption takes precedence over all overrides. For an EU override you need at least one registration in the EU. That "0%" is a possible setting does not mean it is correct: the help advises always checking the rate with the tax authority.
+The order of precedence:
+
+- An override takes precedence over the product category.
+- A customer exemption takes precedence over all overrides.
+- For an EU override you need at least one registration in the EU.
+
+"0%" can be set, but that does not make it correct. According to the help, always check the rate with the tax authority.
 
 ## Tax on shipping
 
-In the EU shipping is taxed according to the help, regardless of the **Charge tax on shipping rates** setting. That option only affects countries where tax is not calculated automatically. Mixed carts with taxable and non-taxable items are covered by the help under "proportional shipping tax", and the rule depends on the country. Free items are not automatically tax exempt, they have to be set on the product. More on the rates themselves: [Setting up shipping in Shopify](/blog/shopify-versand-einrichten).
+In the EU shipping is taxed according to the help, regardless of the **Charge tax on shipping rates** setting. That option only affects countries where tax is not calculated automatically. Mixed carts fall under "proportional shipping tax", depending on the country. Free items are not automatically tax exempt, you set that on the product. On shipping rates: [Setting up shipping in Shopify](/blog/shopify-versand-einrichten).
 
 ## B2B: VAT numbers at checkout and invoices
 
-Two features mainly concern business customers, both with Shopify Tax only:
+Two features for business customers, both with Shopify Tax only:
 
-- **VAT validation at checkout:** customers enter a VAT ID and can use the reverse charge procedure on cross-border orders in the EU or to the UK. Then no VAT is charged, the customer reports it themselves, and a reverse charge note appears on the invoice. According to the help this applies only if the destination country differs from the fulfillment country, and only for guest or Shop Pay checkout, not for B2B-specific checkouts. You turn on the **Company VAT number** field in the checkout options. More on B2B: [Shopify B2B and wholesale](/blog/shopify-b2b-wholesale).
-- **VAT invoices for the EU and UK:** you activate them in the tax settings. They show on the order status page, where customers can save or print them. The help names conditions: destination in the EU or UK, VAT was calculated (even if zero), the order went through Shopify checkout and no duties were charged. After order changes they are not regenerated, so you adjust the PDF manually. There are no automatic VAT invoices for orders to Portugal. How invoices and order documents look in general: [Invoices and order documents in Shopify](/blog/shopify-rechnung-bestelldokumente).
+- **VAT validation at checkout:** customers enter a VAT ID and use the reverse charge procedure on cross-border orders in the EU or to the UK. No VAT is charged, the customer reports it themselves, and the invoice carries a note on it. According to the help this applies only if the destination country differs from the fulfillment country, and only for guest or Shop Pay checkout, not for B2B-specific checkouts. You turn on the **Company VAT number** field in the checkout options. More: [Shopify B2B and wholesale](/blog/shopify-b2b-wholesale).
+- **VAT invoices for the EU and UK:** you activate them in the tax settings, and customers find them on the order status page. Conditions according to the help: destination in the EU or UK, VAT was calculated (even if zero), order placed through Shopify checkout, no duties charged. After order changes you adjust the PDF manually. There are no automatic VAT invoices for Portugal. See also [Invoices and order documents in Shopify](/blog/shopify-rechnung-bestelldokumente).
 
 ## Reports and tax liabilities
 
-With Shopify Tax the store monitors your sales and locations so you can see in which EU countries obligations might arise. According to the help you get monthly notices, and in the admin each registration shows whether you are below, approaching or over a threshold. No registration recommendation follows from that, the help points to tax experts. For filing itself, reports such as **Taxes** and **Total sales by order** (as CSV) provide figures for your tax advisor.
+With Shopify Tax the store monitors your sales and locations. According to the help you get monthly notices, and in the admin each registration shows whether you are below, approaching or over a threshold. That is not a registration recommendation. For filing, reports such as **Taxes** and **Total sales by order** (as CSV) provide figures for your tax advisor.
 
 ## What the help does not answer here
 
-The help pages say nothing about **which rate applies to your products in Germany**, whether you should use the small business scheme, whether you should switch to OSS at your sales level, how to handle returns and payments to the tax office, or how accounting and Shopify reports fit together. They also leave open how prices work for your audience (gross or net) and which mandatory details have to appear in the store. That belongs to your tax advisor and a lawyer. On legal texts in the store: [Store policies and legal texts](/blog/shopify-rechtstexte-richtlinien). And what the implementation costs depends on the scope.
+The help pages say nothing about:
+
+- **which rate applies to your products in Germany**
+- whether you should use the small business scheme or switch to OSS
+- how to handle returns and payments to the tax office and reconcile them with your accounting
+- whether gross or net prices suit your audience and which mandatory details have to appear in the store
+
+That belongs to your tax advisor and a lawyer. On legal texts: [Store policies and legal texts](/blog/shopify-rechtstexte-richtlinien).
 
 ## Examples from practice
 
-Among my published projects there is no case where I set up a store's taxes, and I do not invent one. These settings depend on the merchant's registration and should be agreed with the tax advisor before they are mirrored in the admin. That is exactly the order the help describes: first clarify where tax arises, then set it up.
+Among my published projects there is no case where I set up a store's taxes, and I do not invent one.
 
 ## Before you start: a checklist
 
-1. Where do you sell? **Germany only** or **other EU countries** too, and is your sales there below or above **€10,000**?
-2. Which **registration** do you have, and was it agreed with your tax advisor?
-3. Which **tax service** fits: Shopify Tax, Basic Tax (only if already used before May 13, 2026) or manual rates?
-4. Should prices show **gross**, only in your own country or **dynamically** per market?
-5. Do products have **reduced rates or exemptions**, by category or by override collection?
-6. Is **shipping** taxed correctly, including in mixed carts?
-7. Do you sell to **business customers**, and should they enter the VAT ID at checkout?
-8. Are **VAT invoices** turned on, and have you checked a **test order** for each destination country?
+1. **Destination countries:** Germany only or other EU countries too, below or above **€10,000** there?
+2. **Registration:** which one do you have, agreed with your tax advisor?
+3. **Tax service:** Shopify Tax, Basic Tax (only if already used before May 13, 2026) or manual rates?
+4. **Price display:** gross, only in your own country or dynamic per market?
+5. **Reduced rates or exemptions:** by category or override collection?
+6. **Shipping:** taxed correctly, including in mixed carts?
+7. **Business customers:** VAT ID at checkout?
+8. **VAT invoices** turned on, **test order** checked for each destination country?
 
 ## When a developer helps
 
-You set the basic settings yourself. Help is worthwhile when price display, markets and tax service have to work together, when override collections should be built cleanly, when the VAT ID at checkout and invoices have to fit the flow with business customers, or when rates and customer exemptions are carried over in a move from another system. Checkout limits are covered in [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen). After that the setup belongs in the ongoing upkeep, see [Shopify maintenance](/blog/shopify-wartung-betreuung).
+You set the basic settings yourself. Help is worthwhile here:
+
+- Price display, markets and tax service have to work together.
+- Override collections should be built cleanly.
+- The VAT ID at checkout and invoices have to fit the flow with business customers.
+- Rates and customer exemptions are carried over in a move from another system.
+
+See also [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) and [Shopify maintenance](/blog/shopify-wartung-betreuung).
 
 ## Frequently asked questions
 
-**Does Shopify show prices with VAT by default?** No. By default without tax, and tax is added at checkout. With tax-inclusive pricing you change that, the calculation stays the same.
+**Does Shopify show prices with VAT by default?** No, tax is added at checkout. Tax-inclusive pricing changes only the display.
 
-**Does Shopify remit VAT to the tax office?** According to the help not, only with Shopify Tax and automated filing, and not everywhere. Filing and payment are up to you.
+**Does Shopify remit VAT to the tax office?** According to the help only with Shopify Tax and automated filing, and not everywhere.
 
-**Do I need OSS?** Your tax advisor decides that. The help describes OSS as a simplification for sales to other EU countries and names €10,000 as the limit.
+**Do I need OSS?** Your tax advisor decides that. The help names €10,000 as the limit.
 
-**Can I exempt single products?** Yes, on the product or through a manual collection with an override. Which rate applies, you clarify with the tax authority.
+**Can I exempt single products?** Yes, on the product or through a manual collection with an override.
 
-**Are there automatic invoices with VAT?** For the EU and UK yes, as VAT invoices with Shopify Tax, under the conditions above.
+**Are there automatic invoices with VAT?** For the EU and UK yes, as VAT invoices with Shopify Tax.
 
-**What does the setup cost?** That depends on the scope. I do not name amounts here.
+**What does the setup cost?** That depends on the scope.
 
 ## What about your store?
 
-Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the source code and how pages are built, and tell you what stands out. I only work with publicly visible data, without access to your account. What else I do for stores is under [Services](/services).
+Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, without access to your account. More under [Services](/services).
 
 **Further reading:** [Shopify Markets](/blog/shopify-markets-mehrere-laender) · [Store policies and legal texts](/blog/shopify-rechtstexte-richtlinien) · [Invoices and order documents in Shopify](/blog/shopify-rechnung-bestelldokumente)
 

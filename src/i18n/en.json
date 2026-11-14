@@ -4,7 +4,7 @@
     "topRated": "Top Rated on Upwork",
     "title": "I build Shopify stores that",
     "titleAccent": "convert, scale, and stay easy to manage.",
-    "subtitle": "Custom themes, Online Store 2.0 migrations, integrations, CRO-focused storefront work, and long-term support for brands that need more than a generic setup.",
+    "subtitle": "Custom themes, Online Store 2.0 migrations, integrations, CRO work and long-term support.",
     "description": "Cleaner UX, faster pages, stronger merchandising, and custom Shopify work that stays easy to run.",
     "book_call": "Book a Call",
     "send_message": "Send me a message",
@@ -35,7 +35,7 @@
   "about": {
     "eyebrow": "Why Shopify Teams Hire Me",
     "title": "A Shopify partner for growth-minded brands",
-    "text": "I turn business goals into Shopify storefronts that are clean, maintainable, and built to keep improving after launch.",
+    "text": "I turn business goals into Shopify stores that are cleanly built and easy to maintain.",
     "statYearLabel": "Years shipping Shopify work",
     "statProjectsLabel": "Projects delivered",
     "statHoursLabel": "Upwork hours worked",
@@ -50,7 +50,7 @@
       {
         "id": "store-setup",
         "title": "Shopify Store Setup From Scratch",
-        "description": "Launch a new store with a clean theme structure, flexible sections, and admin-friendly content—aligned to your brand before you scale.",
+        "description": "A new store with a clean theme structure, flexible sections and admin-friendly content, built around your brand.",
         "tags": [
           "Theme setup",
           "Custom sections",
@@ -60,7 +60,7 @@
       {
         "id": "platform-migration",
         "title": "Platform Migration",
-        "description": "Move from WooCommerce, Magento, custom stacks, or legacy Shopify themes to Online Store 2.0 without losing SEO, redirects, or critical customer flows.",
+        "description": "Move from WooCommerce, Magento, custom stacks or legacy Shopify themes to Online Store 2.0 without losing SEO, redirects or customer flows.",
         "tags": [
           "Products & customers",
           "301 redirects",
@@ -70,7 +70,7 @@
       {
         "id": "app-integration",
         "title": "App Integration for Shopify",
-        "description": "Connect apps, subscriptions, payments, CRMs, and custom APIs so storefront, cart, and admin stay reliable and easy to operate.",
+        "description": "Connect apps, subscriptions, payments, CRMs and custom APIs so storefront, cart and admin stay reliable.",
         "tags": [
           "Subscriptions & payments",
           "Klaviyo & CRM",
@@ -80,7 +80,7 @@
       {
         "id": "performance-seo",
         "title": "Performance & SEO Optimization",
-        "description": "Improve Core Web Vitals and perceived speed with leaner Liquid and assets, plus technical SEO foundations—structured data, metadata, and crawl-friendly templates.",
+        "description": "Better Core Web Vitals through leaner Liquid and assets. Plus technical SEO: structured data, metadata and crawl-friendly templates.",
         "tags": [
           "Core Web Vitals",
           "Structured data",
@@ -90,7 +90,7 @@
       {
         "id": "cro-audit",
         "title": "Conversion & UX Optimization Audit",
-        "description": "Review funnels, UX friction, and merchandising gaps—then ship prioritized fixes that lift conversion without a full rebuild.",
+        "description": "Review funnels, UX friction and merchandising gaps, then ship prioritized fixes that lift conversion without a full rebuild.",
         "tags": [
           "Funnel review",
           "UX fixes",
@@ -100,7 +100,7 @@
       {
         "id": "support",
         "title": "Ongoing Support and Maintenance",
-        "description": "Retainers for launches, bug fixes, theme updates, and iteration so your team can focus on growth while the storefront stays stable.",
+        "description": "Retainers for launches, bug fixes and theme updates, so the storefront stays stable while you grow.",
         "tags": [
           "Bug fixes",
           "Theme updates",
@@ -131,7 +131,7 @@
     "outcomeTitle": "Outcome",
     "screenshotTitle": "Project highlights",
     "moreProjectsTitle": "More Shopify projects",
-    "moreProjectsSubtitle": "A broader sample of Shopify work across migrations, CRO, support, custom sections, and storefront enhancements.",
+    "moreProjectsSubtitle": "More Shopify work: migrations, CRO, support, custom sections and storefront improvements.",
     "reviewTitle": "Client review",
     "reviewRating": "{n} out of 5",
     "reviewSource": "review on Upwork"
@@ -152,20 +152,9 @@
         "company": "Funduino GmbH",
         "dateRange": "February 2026 - Present",
         "location": "Nordhorn, Germany",
-        "summary": "An ongoing internship as a Frontend Developer at an Arduino-focused learning platform and education brand, contributing to interface and storefront work inside a live company environment.",
+        "summary": "Internship as a Frontend Developer at an Arduino-focused learning platform and education brand. Focus: interface and storefront work inside a running company.",
         "logo": "/source/logos/funduino.jpg",
         "logoAlt": "Funduino GmbH logo",
-        "isPlaceholderLogo": false
-      },
-      {
-        "kind": "Education",
-        "role": "Student",
-        "company": "KBS Nordhorn",
-        "dateRange": "2024 - Present",
-        "location": "Nordhorn, Germany",
-        "summary": "Studying at Kaufmännische Berufsbildende Schulen Nordhorn since 2024, building a stronger technical and professional foundation alongside real Shopify project work.",
-        "logo": "/source/logos/kbs-nordhorn.png",
-        "logoAlt": "KBS Nordhorn logo",
         "isPlaceholderLogo": false
       },
       {
@@ -197,14 +186,14 @@
     "title": "More Work",
     "subtitle": "A broader mix of Shopify launches, custom builds, and storefront improvements.",
     "allWorksTitle": "All Shopify projects",
-    "allWorksSubtitle": "A full catalog of Shopify work across custom builds, migrations, storefront improvements, merchandising logic, multilingual setups, and ongoing support.",
+    "allWorksSubtitle": "Custom builds, migrations, storefront improvements, merchandising logic, multilingual setups and ongoing support.",
     "loadMore": "See more",
     "visitWebsite": "Visit Website",
     "viewCase": "View Case Study",
     "backHome": "Back to homepage",
     "contactCard": {
       "title": "Your Project Here",
-      "text": "Have a project in mind? Let's work together to create a stunning website that helps your business grow online.",
+      "text": "Have a project in mind? Let's build a website that helps your business grow online.",
       "button": "Contact Me"
     },
     "allProjects": "All projects",
@@ -236,8 +225,8 @@
     "topRated": "Top Rated on Upwork",
     "subtitle": "Let’s talk about your Shopify project",
     "email": "kiril@karatitsyn.com",
-    "note": "Send your store link and a short task summary, and we can take it from there.",
-    "topRatedNote": "Work with a Top Rated Upwork freelancer who focuses on clean communication, reliable delivery, and Shopify work that stays solid after launch.",
+    "note": "Send your store link and a short task summary. We sort out the rest together.",
+    "topRatedNote": "A Top Rated Upwork freelancer: clear communication, reliable delivery and Shopify work that stays solid after launch.",
     "audit": "Free store audit and project discussion",
     "book_call": "Book a Call",
     "linkedin": "LinkedIn",
@@ -246,7 +235,7 @@
     "sendMessage": "Send Message",
     "shopCheck": {
       "title": "Free store check",
-      "text": "I'll look at your Shopify store and send you a short list within two working days: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call."
+      "text": "Within two working days you get a short list for your Shopify store: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call."
     },
     "form": {
       "check": "Free store check",
@@ -306,27 +295,27 @@
     "questions": [
       {
         "question": "What Shopify work do you usually take on?",
-        "answer": "Most projects fall into one of four buckets: custom theme work, Online Store 2.0 migrations, feature development for the storefront, and ongoing support after launch."
+        "answer": "Usually one of four things: custom theme work, Online Store 2.0 migrations, storefront feature development or ongoing support after launch."
       },
       {
         "question": "Can you work inside an existing Shopify store?",
-        "answer": "Yes. I regularly work inside live Shopify stores to improve sections, product pages, cart behavior, filtering, integrations, speed, and launch readiness."
+        "answer": "Yes. I regularly work inside live Shopify stores: sections, product pages, cart, filtering, integrations and speed."
       },
       {
         "question": "Do you handle migrations to Shopify Online Store 2.0?",
-        "answer": "Yes. I can help move a store from a legacy setup to OS 2.0 while protecting content structure, rebuilding custom logic, and reducing launch risk."
+        "answer": "Yes. I move stores from a legacy setup to OS 2.0, keep the content structure and rebuild custom logic."
       },
       {
         "question": "Can you help after launch too?",
-        "answer": "Yes. Many clients keep me involved after launch for fixes, experiments, SEO and speed improvements, new sections, and ongoing storefront development."
+        "answer": "Yes. Many clients keep me on after launch for fixes, experiments, SEO, speed and new sections."
       },
       {
         "question": "How do we start?",
-        "answer": "Send the store URL, the problem you want solved, and any deadlines or constraints. From there I can suggest the cleanest next step, whether that is an audit, a small sprint, or a larger implementation."
+        "answer": "Send the store URL, the task and any deadlines. I then suggest the next step: an audit, a small sprint or a larger implementation."
       },
       {
         "question": "Do you work with designers or existing specs?",
-        "answer": "Yes. I can build from Figma, Loom videos, written specs, or an existing storefront reference, and I also help tighten the implementation plan when requirements are still rough."
+        "answer": "Yes. I build from Figma, Loom videos, written specs or an existing storefront reference. If requirements are still rough, I help structure them."
       }
     ],
     "book_call": "Book a Call"
@@ -354,7 +343,7 @@
     "latestArticles": "Latest articles"
   },
   "footer": {
-    "blurb": "Shopify development for brands that need custom work, cleaner UX, and dependable support without unnecessary complexity.",
+    "blurb": "Shopify development for brands that need custom work, clean UX and dependable support.",
     "follow": "Elsewhere",
     "telegram": "Telegram",
     "instagram": "Instagram",
@@ -441,8 +430,8 @@
   },
   "bio": {
     "title": "Hi, I'm Kiril.",
-    "p1": "I'm a freelance Shopify developer in Germany. I build themes, set up Markets for new countries, move stores over to Shopify and speed up slow ones, for brands that want one person who owns the whole task.",
-    "p2": "You get the scope, timeline and price in writing first. I build on a preview theme, so your live store keeps selling while we work, and I stay on for fixes after launch.",
+    "p1": "I'm a freelance Shopify developer in Germany. I build themes, set up Markets, move stores to Shopify and speed up slow ones. One person owns the whole task.",
+    "p2": "You get scope, timeline and price in writing first. I build on a preview theme so your live store keeps selling, and I stay on for fixes after launch.",
     "facts": [
       {
         "label": "Based in",
@@ -474,11 +463,11 @@
   },
   "anatomy": {
     "title": "From first call to first sale",
-    "lead": "Every project goes through the same six steps. You always know what's happening, and your live store keeps selling while I build.",
+    "lead": "Every project goes through the same six steps. Your live store keeps selling while I build.",
     "layers": [
       {
         "title": "Kick-off call",
-        "text": "We meet on Google Meet and go through your store, goals and deadline. You get a clear scope, timeline and price before any work starts.",
+        "text": "On Google Meet we go through your store, goals and deadline. You get scope, timeline and price before any work starts.",
         "tags": [
           "Google Meet",
           "Fixed estimate"
@@ -707,7 +696,7 @@
   },
   "editor": {
     "title": "Your team edits it. No developer needed.",
-    "lead": "Every section I build comes with settings like these. Try them: this is how your team changes the store after launch.",
+    "lead": "Every section I build comes with settings like these. This is how your team changes the store after launch.",
     "hint": "Try it: type a heading, pick a colour, hide a section.",
     "label": "A working copy of the Shopify theme editor",
     "themeEditor": "Theme editor",
@@ -893,7 +882,7 @@
     "seoTitle": "About Kiril Karatitsyn: Shopify Freelancer in Bad Bentheim, Germany",
     "seoDescription": "Who builds your Shopify store: Kiril Karatitsyn, freelance Shopify developer in Bad Bentheim, Germany. How I work, my background, languages and where to find me.",
     "title": "About Kiril Karatitsyn",
-    "lead": "I am a freelance Shopify developer based in Bad Bentheim, Germany. I work for brands and merchants in Germany and beyond, mostly remote, and meet in person near Bad Bentheim by arrangement.",
+    "lead": "I am a freelance Shopify developer based in Bad Bentheim, Germany. I work mostly remote for brands and merchants in Germany and beyond.",
     "facts": [
       {
         "label": "Based in",
@@ -909,18 +898,18 @@
       }
     ],
     "whatTitle": "What I do",
-    "whatText": "I build custom Shopify themes, set up Markets for new countries, move stores to Shopify from WooCommerce and other systems, and make slow stores faster. Brands hire me when they want one person who owns the whole task, from the first look at the store to the fixes after launch.",
+    "whatText": "I build custom Shopify themes, set up Markets for new countries, move stores to Shopify from WooCommerce and other systems, and make slow stores faster. I own the whole task, from the first look at the store to the fixes after launch.",
     "whatLink": "All services",
     "whatLink2": "Working with a Shopify freelancer: how it goes",
     "howTitle": "How I work",
     "how": [
       {
         "title": "In writing first",
-        "text": "Before we start you get the scope, the timeline and a fixed price in writing, so nothing is left to guess."
+        "text": "Before we start you get the scope, the timeline and a fixed price in writing."
       },
       {
         "title": "Your live store keeps selling",
-        "text": "I build on a preview theme. Your live store keeps taking orders while we work, and nothing goes live before you have seen it."
+        "text": "I build on a preview theme. Your live store keeps taking orders, and nothing goes live before you have seen it."
       },
       {
         "title": "One person, also after launch",
@@ -940,16 +929,10 @@
         "role": "Shopify Developer",
         "place": "Collab IT and Great Dev, remote",
         "text": "Shopify development for client projects in two remote teams."
-      },
-      {
-        "when": "2024 to today",
-        "role": "Studies",
-        "place": "KBS Nordhorn",
-        "text": "Kaufmännische Berufsbildende Schulen Nordhorn, alongside real Shopify projects."
       }
     ],
     "workTitle": "Work you can look at",
-    "workText": "These case studies show what a finished project looks like: a B2B store with wholesale prices, a move from WooCommerce to Shopify with a redirect map, and an ongoing partnership.",
+    "workText": "Finished projects as case studies: a B2B store with wholesale prices, a move from WooCommerce to Shopify with a redirect map, and an ongoing partnership.",
     "appTitle": "My own Shopify app",
     "appText": "Besides client work I publish Reviews Core, my own product reviews app, in the Shopify App Store.",
     "appLink": "Reviews Core in the Shopify App Store",

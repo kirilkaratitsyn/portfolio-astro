@@ -2,8 +2,8 @@
 publishedAt: 2026-10-22
 title: "Shopify Hilfe: Wann das Help Center reicht und wann Sie einen Entwickler brauchen"
 date: 22. Oktober 2026
-readingTime: 5 Min
-excerpt: "Shopify Support, Help Center, App-Hersteller oder Entwickler: An wen Sie sich bei welchem Problem wenden, damit Sie nicht Tage mit der falschen Stelle verlieren."
+readingTime: 4 Min
+excerpt: "Shopify Hilfe: Support, Help Center, App-Hersteller oder Entwickler. An wen Sie sich bei welchem Problem wenden, damit Sie keine Tage verlieren."
 image: /og/projects/elanora-skin.jpg
 topic: support
 tags:
@@ -12,39 +12,39 @@ tags:
   - Hilfe
 ---
 
-Im Shop ist etwas kaputt, und Sie wissen nicht, wen Sie fragen sollen? Bei Shopify gibt es nicht die eine Anlaufstelle für alles. Je nachdem, wo das Problem steckt, ist eine andere Stelle zuständig. Wer das weiß, spart sich Tage im Hin und Her. Dieser Artikel sortiert die Probleme, die ich bei Shop-Inhabern am häufigsten sehe.
+Shopify Hilfe kommt von vier Stellen. Welche zuständig ist, hängt davon ab, wo das Problem steckt. Wer das weiß, spart sich Tage im Hin und Her.
 
 ## Vier Stellen, vier Zuständigkeiten
 
-**1. Das Shopify Help Center und der Shopify-Support.** Zuständig für die Plattform selbst: Tarif und Rechnung, Zahlungen über Shopify Payments, Domains, die Bedienung des Admin-Bereichs, Bestellungen, Versandeinstellungen. Das Help Center hat Anleitungen zu fast jeder Einstellung. Wenn Sie wissen wollen, *wo* etwas im Admin steckt oder *wie* eine Funktion gedacht ist, sind Sie hier richtig.
+**1. Das Shopify Help Center und der Shopify-Support.** Zuständig für die Plattform: Tarif und Rechnung, Zahlungen über Shopify Payments, Domains, Admin-Bereich, Bestellungen, Versandeinstellungen. Hier erfahren Sie, *wo* etwas im Admin steckt und *wie* eine Funktion gedacht ist.
 
-**2. Der Hersteller der App.** Eine App von einem Drittanbieter wird von diesem Anbieter betreut. Wenn die Bewertungs-App Sterne falsch anzeigt oder das Abo-Tool eine Bestellung nicht anlegt, schreiben Sie zuerst an den App-Support. Jede App hat dafür eine Kontaktmöglichkeit im Shopify App Store.
+**2. Der Hersteller der App.** Eine Drittanbieter-App betreut ihr Anbieter. Zeigt die Bewertungs-App Sterne falsch an oder legt das Abo-Tool keine Bestellung an, schreiben Sie zuerst dem App-Support. Den Kontakt finden Sie im Shopify App Store.
 
-**3. Der Theme-Hersteller.** Haben Sie ein Theme aus dem Theme Store, kann der Hersteller Fragen zu dessen Funktionen und Einstellungen beantworten, zum Beispiel, wie eine bestimmte Section gedacht ist.
+**3. Der Theme-Hersteller.** Bei einem Theme aus dem Theme Store beantwortet der Hersteller Fragen zu Funktionen und Einstellungen, zum Beispiel zu einer bestimmten Section.
 
-**4. Ein Entwickler.** Zuständig für alles, was in Ihrem Shop *individuell* ist: angepasster Code im Theme, das Zusammenspiel mehrerer Apps, Fehler nach einer Änderung, Funktionen, die es so nicht gibt. Hier endet in der Regel das, was Plattform-Support und App-Hersteller für Sie tun können.
+**4. Ein Entwickler.** Zuständig für alles *Individuelle*: angepasster Code im Theme, das Zusammenspiel mehrerer Apps, Fehler nach einer Änderung, Funktionen, die es so nicht gibt.
 
 ## Woran Sie erkennen, wer zuständig ist
 
-Stellen Sie sich zwei Fragen:
+Zwei Fragen helfen:
 
-- **Passiert es auch in einem frischen Shop ohne Anpassungen?** Wenn ja, liegt es an der Plattform oder an der App. Wenn nein, steckt die Ursache in Ihrem Theme oder in einer Anpassung.
+- **Passiert es auch in einem frischen Shop ohne Anpassungen?** Wenn ja, liegt es an der Plattform oder an der App. Wenn nein, an Ihrem Theme oder einer Anpassung.
 - **Hat sich vorher etwas geändert?** Eine neue App, ein Theme-Update, ein neuer Code-Schnipsel: Der Zeitpunkt, ab dem etwas nicht mehr geht, ist oft der beste Hinweis.
 
 ## Häufige Probleme und wohin damit
 
-- **Ich finde eine Einstellung nicht / verstehe eine Funktion nicht:** Help Center.
+- **Einstellung nicht gefunden oder Funktion nicht verstanden:** Help Center.
 - **Zahlung oder Auszahlung funktioniert nicht:** Shopify-Support.
 - **Eine App zeigt etwas falsch an oder legt keine Daten an:** App-Support, bei Streit zwischen zwei Apps zusätzlich ein Entwickler.
-- **Der Shop ist plötzlich langsam:** meist Apps oder Skripte im Theme, siehe [Shopify-Shop langsam? 7 Ursachen](/de/blog/slow-shopify-store).
-- **Ein Button, ein Abstand oder eine Section sieht auf dem Smartphone falsch aus:** erst im Theme-Editor prüfen, sonst Entwickler. Mehr dazu in [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization).
-- **Nach einem Theme-Update fehlt eine Anpassung:** Entwickler, am besten einer, der die ursprüngliche Anpassung kennt.
-- **Sie wechseln von einem anderen System auf Shopify:** Entwickler, mehr in [Von WooCommerce zu Shopify wechseln](/de/blog/woocommerce-to-shopify).
+- **Der Shop ist plötzlich langsam:** meist Apps oder Skripte im Theme: [Shopify-Shop langsam? 7 Ursachen](/de/blog/slow-shopify-store).
+- **Button, Abstand oder Section sieht auf dem Smartphone falsch aus:** erst im Theme-Editor prüfen, sonst Entwickler: [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization).
+- **Nach einem Theme-Update fehlt eine Anpassung:** Entwickler, am besten einer, der die Anpassung kennt.
+- **Wechsel von einem anderen System auf Shopify:** Entwickler: [Von WooCommerce zu Shopify wechseln](/de/blog/woocommerce-to-shopify).
 - **Eine Funktion, die Ihr Theme nicht hat:** Entwickler, wenn keine App sie sauber abdeckt.
 
 ## Was Sie dem Entwickler mitgeben sollten
 
-Je genauer die Meldung, desto schneller die Lösung. Notieren Sie:
+Notieren Sie fünf Angaben:
 
 1. **Wo:** die genaue Seite, am besten mit Adresse.
 2. **Was Sie erwartet haben und was stattdessen passiert.**
@@ -52,27 +52,25 @@ Je genauer die Meldung, desto schneller die Lösung. Notieren Sie:
 4. **Seit wann**, und was Sie davor geändert haben.
 5. **Einen Screenshot oder eine kurze Bildschirmaufnahme.**
 
-Mit diesen fünf Angaben lässt sich ein Fehler oft in kurzer Zeit eingrenzen, ohne dass jemand nachfragen muss.
-
 ## Einmalige Hilfe oder laufende Betreuung?
 
-Manche Shops brauchen nur gelegentlich einen Handgriff. Andere ändern ständig etwas: neue Aktionen, neue Märkte, neue Funktionen. Für diese Shops lohnt sich ein fester technischer Ansprechpartner, der den Shop kennt, statt jedes Mal bei null anzufangen.
+Manche Shops brauchen nur gelegentlich einen Handgriff. Andere ändern ständig etwas: neue Aktionen, neue Märkte, neue Funktionen. Dann lohnt sich ein fester technischer Ansprechpartner, der den Shop kennt.
 
-Wie laufende Betreuung aussehen kann und was sie von Einzelaufträgen unterscheidet, beschreibe ich im Artikel [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung). Ein laufendes Beispiel aus meiner Arbeit ist [Elanora Skin](/de/projects/elanora-skin), seit Ende 2025.
+Mehr dazu in [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung). Ein laufendes Beispiel aus meiner Arbeit ist [Elanora Skin](/de/projects/elanora-skin), seit Ende 2025.
 
 ## Häufige Fragen
 
-**Hilft mir der Shopify-Support bei Code-Problemen im Theme?** In der Regel nicht. Shopify betreut die Plattform, nicht Ihre individuellen Anpassungen. Dafür brauchen Sie einen Entwickler.
+**Hilft mir der Shopify-Support bei Code-Problemen im Theme?** In der Regel nicht. Shopify betreut die Plattform, nicht Ihre individuellen Anpassungen.
 
 **Brauche ich jemanden, der Deutsch spricht?** Es hilft, wenn Beschreibung und Rückfragen ohne Übersetzung funktionieren. Ich arbeite auf Deutsch und Englisch.
 
-**Kann ich einen Fehler selbst beschreiben, ohne technisch zu sein?** Ja. Die fünf Angaben oben reichen. Mehr Technik braucht es nicht.
+**Kann ich einen Fehler selbst beschreiben, ohne technisch zu sein?** Ja. Die fünf Angaben oben reichen.
 
 **Arbeiten Sie im Live-Shop?** Nein. Änderungen entstehen in einer unveröffentlichten Kopie des Themes und gehen erst nach Ihrer Freigabe live.
 
 ## Nicht sicher, wer zuständig ist?
 
-Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Wenn es ein Fall für einen Entwickler ist, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
+Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Ist es ein Fall für einen Entwickler, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Freelancer oder Agentur? Siehe [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
 **Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale) · [Shopify Wartung: Was die Plattform übernimmt](/de/blog/shopify-wartung-betreuung) · [Shopify Beratung: Wann sie sich lohnt](/de/blog/shopify-beratung)
 

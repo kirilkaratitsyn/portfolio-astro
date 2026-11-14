@@ -4,8 +4,8 @@ updatedAt: 2026-11-12
 title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ein Festpreis-Angebot bekommen"
 seoTitle: "Shopify-Shop erstellen lassen: Kosten 2026 & Festpreis"
 date: 22. Oktober 2026
-readingTime: 7 Min
-excerpt: "Ab 500 €: Was beeinflusst, was ein Shopify-Shop in der Erstellung kostet, welche laufenden Kosten dazukommen und wie Sie ein Angebot zum Festpreis bekommen, das Sie vergleichen können."
+readingTime: 5 Min
+excerpt: "Shopify-Shop erstellen lassen ab 500 €: wovon die Kosten abhängen, welche laufenden Kosten dazukommen und wie Sie ein Festpreis-Angebot bekommen."
 image: /og/projects/minbie.jpg
 topic: build
 tags:
@@ -14,68 +14,66 @@ tags:
   - Angebot
 ---
 
-„Was kostet ein Shopify-Shop?“ ist die erste Frage fast jedes Gesprächs, und die ehrliche Antwort ist: Es kommt darauf an. Das klingt nach Ausweichen, ist aber der Grund, warum Angebote so weit auseinanderliegen. Dieser Artikel zeigt, woraus sich der Preis zusammensetzt, worauf Sie bei Angeboten achten sollten und wie Sie zu einem Festpreis kommen, den Sie wirklich vergleichen können. Ab-Preise für typische Fälle finden Sie weiter unten; den genauen Preis nennt Ihnen das Angebot nach dem Briefing.
+Was es kostet, einen Shopify-Shop erstellen zu lassen, hängt vom Umfang ab. Deshalb liegen Angebote so weit auseinander. Ab-Preise stehen weiter unten, den genauen Preis nennt das Angebot nach dem Briefing.
 
 **Kurz gesagt:**
 
-- Der Preis hängt vor allem von **Umfang, Theme (Store oder individuell), Umzug und Sonderfunktionen** ab, nicht von „einem Shop“.
-- Zur Erstellung kommen **laufende Kosten**: Shopify-Tarif, Apps, Domain, Zahlungsgebühren und Pflege.
-- Vergleichbar werden Angebote erst als **Festpreis nach schriftlichem Briefing**, mit Liste dessen, was enthalten ist.
+- Der Preis hängt von **Umfang, Theme, Umzug und Sonderfunktionen** ab.
+- Dazu kommen **laufende Kosten**: Tarif, Apps, Domain, Zahlungsgebühren, Pflege.
+- Vergleichbar sind Angebote erst als **Festpreis nach schriftlichem Briefing**.
 - Bei mir: **ab 500 €** für einen Shop auf einem fertigen Theme, **ab 1.500 €** mit individuellem Design, **ab 2.000 €** für den Umzug (alle Preise zzgl. MwSt.).
 
 ## Woraus sich der Preis zusammensetzt
 
 ### 1. Theme aus dem Store oder individuelles Theme
 
-Bei einem Theme aus dem Shopify Theme Store passen Sie Aufbau, Farben und Inhalte an. Das ist der schnellere und günstigere Weg und für viele Shops genau richtig. Ein **individuelles Theme** nach Ihrem Design (zum Beispiel aus Figma) wird von Grund auf gebaut. Es bildet jedes Detail ab, kostet aber entsprechend mehr Zeit.
+Ein Theme aus dem Shopify Theme Store passen Sie in Aufbau, Farben und Inhalten an. Das ist der schnellere und günstigere Weg und passt für viele Shops. Ein **individuelles Theme** nach Ihrem Design (zum Beispiel aus Figma) wird von Grund auf gebaut und kostet mehr Zeit.
 
 ### 2. Anzahl und Art der Seiten
 
-Eine Startseite, ein paar Kollektionen und eine Produktseite sind schnell aufgebaut. Je mehr unterschiedliche Seitentypen es gibt (mehrere Startseiten-Varianten, Info-Seiten, Konfigurator, Händlerbereich), desto größer der Umfang.
+Eine Startseite, ein paar Kollektionen und eine Produktseite sind schnell aufgebaut. Jeder weitere Seitentyp (Startseiten-Varianten, Info-Seiten, Konfigurator, Händlerbereich) vergrößert den Umfang.
 
 ### 3. Produkte und Inhalte
 
-Zehn Produkte sind eine andere Aufgabe als mehrere hundert. Entscheidend ist auch, in welchem Zustand die Daten vorliegen: Liegen Texte, Bilder und Varianten sauber vor, oder müssen sie erst sortiert, ergänzt oder aus einem alten System übernommen werden?
+Zehn Produkte sind eine andere Aufgabe als mehrere hundert. Es zählt auch, ob Texte, Bilder und Varianten sauber vorliegen oder erst sortiert, ergänzt oder aus einem alten System übernommen werden müssen.
 
 ### 4. Umzug von einem anderen System
 
-Wenn Sie schon einen Shop haben, etwa auf WooCommerce, kommen Produkte, Kunden, Bestellungen und vor allem die **Weiterleitungen alter Adressen** dazu, damit Ihre Google-Rankings erhalten bleiben. Mehr dazu in [Von WooCommerce zu Shopify wechseln](/de/blog/woocommerce-to-shopify).
+Haben Sie schon einen Shop, etwa auf WooCommerce, kommen Produkte, Kunden, Bestellungen und die **Weiterleitungen alter Adressen** dazu, damit Ihre Google-Rankings erhalten bleiben. Mehr dazu in [Von WooCommerce zu Shopify wechseln](/de/blog/woocommerce-to-shopify).
 
 ### 5. Funktionen über den Standard hinaus
 
-Händlerpreise und Quick Order für B2B, ein Produktkonfigurator, Geschenk-Logik im Warenkorb, ein Wunschlisten-Feature: Alles, was das Theme nicht mitbringt, wird entweder über eine App gelöst oder im Code gebaut. Beides hat seinen Preis, die App meist als laufende Gebühr, der Code einmalig.
+Händlerpreise und Quick Order für B2B, Produktkonfigurator, Geschenk-Logik im Warenkorb, Wunschliste: Was das Theme nicht mitbringt, löst eine App oder eigener Code. Die App kostet meist eine laufende Gebühr, der Code einmalig.
 
 ### 6. Märkte, Sprachen und Währungen
 
-Ein Shop in einer Sprache für einen Markt ist einfacher als einer mit mehreren Sprachen, Währungen und länderspezifischen Preisen und Regeln.
+Eine Sprache für einen Markt ist einfacher als mehrere Sprachen, Währungen und länderspezifische Preise und Regeln.
 
 ### 7. Wer liefert Design, Texte und Fotos?
 
-Wenn Sie ein fertiges Design und Texte mitbringen, fließt die Zeit in den Aufbau. Muss die Struktur erst entwickelt werden, kommt ein Arbeitsschritt davor hinzu.
+Bringen Sie Design und Texte fertig mit, fließt die Zeit in den Aufbau. Sonst kommt ein Arbeitsschritt davor hinzu.
 
 ## Die laufenden Kosten, die oft vergessen werden
 
-Der Preis für die Erstellung ist nur ein Teil. Danach laufen weiter:
+Nach der Erstellung laufen weiter:
 
-- **Der Shopify-Tarif** selbst. Welcher passt, hängt von Ihrem Bedarf ab; die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
-- **Apps**, die Sie einsetzen, meist als monatliche Gebühr. Jede kostenpflichtige App gehört in die Rechnung, und sie bremst den Shop oft auch (siehe [Shopify-Shop langsam? 7 Ursachen](/de/blog/slow-shopify-store)).
+- **Der Shopify-Tarif.** Die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
+- **Apps**, meist als monatliche Gebühr. Sie bremsen den Shop oft auch (siehe [Shopify-Shop langsam? 7 Ursachen](/de/blog/slow-shopify-store)).
 - **Domain** und eventuell ein eigenes Postfach.
 - **Zahlungsgebühren** pro Bestellung beim Zahlungsanbieter.
-- **Pflege und Weiterentwicklung**, wenn Sie nicht alles selbst machen wollen oder können.
+- **Pflege und Weiterentwicklung**, wenn Sie nicht alles selbst machen.
 
-Ein Tipp: Je mehr eine saubere Lösung im Theme selbst erledigt, desto weniger Apps brauchen Sie, und desto kleiner sind die laufenden Kosten.
+Je mehr das Theme selbst erledigt, desto weniger Apps brauchen Sie und desto kleiner sind die laufenden Kosten.
 
 ## Festpreis oder Stundensatz?
 
-**Stundensatz:** Sie zahlen für die Zeit, die tatsächlich anfällt. Das passt, wenn der Umfang offen ist oder sich laufend ändert, etwa bei laufender Betreuung. Das Risiko liegt bei Ihnen: Sie wissen am Ende erst, was es gekostet hat.
+**Stundensatz:** Sie zahlen für die angefallene Zeit. Das passt bei offenem Umfang, etwa bei laufender Betreuung. Den Endpreis kennen Sie erst am Schluss.
 
-**Festpreis:** Sie wissen vorher, was der Shop kostet, und das Risiko von Mehraufwand liegt beim Entwickler. Dafür muss der Umfang vorher klar beschrieben sein. Genau das passiert im Briefing. Ich arbeite bei Projekten mit klarem Umfang mit einem **Festpreis nach dem Briefing**.
-
-Ein Festpreis ist nur so belastbar wie der Umfang, der darin steht. Lassen Sie sich im Angebot aufschreiben, was enthalten ist und was nicht.
+**Festpreis:** Sie kennen den Preis vorher, und das Risiko von Mehraufwand liegt beim Entwickler. Dafür muss der Umfang im Briefing klar beschrieben sein. Bei Projekten mit klarem Umfang arbeite ich mit einem **Festpreis nach dem Briefing**.
 
 ## Was es bei mir ungefähr kostet
 
-Das sind Ausgangspreise für typische Fälle, alle Preise zzgl. MwSt. Der genaue Preis hängt vom Umfang ab und steht im Festpreis-Angebot nach dem Briefing.
+Ausgangspreise für typische Fälle, alle Preise zzgl. MwSt.:
 
 - **Shop auf einem fertigen Theme:** ab 500 €
 - **Shop mit individuellem Design:** ab 1.500 €
@@ -84,19 +82,19 @@ Das sind Ausgangspreise für typische Fälle, alle Preise zzgl. MwSt. Der genaue
 
 ## Woran Sie ein vergleichbares Angebot erkennen
 
-Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf sollten Sie achten:
+Angebote sind nur vergleichbar, wenn sie dasselbe beschreiben. Prüfen Sie:
 
 1. **Welche Seiten und Funktionen sind enthalten?** Eine Liste, nicht nur „Shop-Erstellung“.
 2. **Theme aus dem Store oder individuell?**
 3. **Wer liefert Produktdaten, Texte, Bilder?** Und wer überträgt sie in den Shop?
 4. **Sind Rechtstexte, Zahlungen, Versand und Steuern eingerichtet?**
-5. **Was passiert nach dem Launch?** Gibt es eine Phase für Korrekturen?
+5. **Gibt es nach dem Launch eine Phase für Korrekturen?**
 6. **Läuft der alte Shop weiter, bis der neue freigegeben ist?**
 7. **Wem gehört am Ende was?** Der Shop sollte auf Ihrem Shopify-Konto liegen, nicht auf dem des Entwicklers.
 
 ## Ein Beispiel: Minbie
 
-[Minbie](/de/projects/minbie), eine australische Marke für Baby-Fütterprodukte, läuft auf dem Blum-Theme mit dem Preset Monti. Dort habe ich Sections speziell für die Marke gebaut, einen Farbwähler, der vier getrennte Trinklernbecher-Produkte verknüpft, und Okendo-Sternebewertungen auf Produktkarten und Produktseiten.
+[Minbie](/de/projects/minbie), eine australische Marke für Baby-Fütterprodukte, läuft auf dem Blum-Theme mit dem Preset Monti. Dort habe ich Sections für die Marke gebaut, einen Farbwähler, der vier getrennte Trinklernbecher-Produkte verknüpft, und Okendo-Sternebewertungen auf Produktkarten und Produktseiten.
 
 ## Wie Sie zu Ihrem Festpreis kommen
 
@@ -108,22 +106,24 @@ Zwei Angebote lassen sich nur vergleichen, wenn sie dasselbe beschreiben. Darauf
 
 ## Häufige Fragen
 
-**Wovon hängt es ab, was ein Shopify-Shop kostet?** Vor allem vom Umfang: Anzahl und Art der Seiten, Theme aus dem Store oder individuelles Theme, Umzug von einem alten System, Funktionen über den Standard hinaus und davon, wer Texte, Bilder und Design liefert. Die sieben Punkte oben gehen Sie am besten im Erstgespräch durch.
+**Wovon hängt es ab, was ein Shopify-Shop kostet?** Vom Umfang: Seiten, Theme, Umzug, Sonderfunktionen und davon, wer Texte, Bilder und Design liefert.
 
-**Welche Kosten kommen nach dem Launch dazu?** Der Shopify-Tarif, kostenpflichtige Apps, die Domain, Zahlungsgebühren pro Bestellung und, wenn Sie nicht alles selbst machen wollen, Pflege und Weiterentwicklung. Die aktuellen Tarife nennt Shopify auf der eigenen Preisseite.
+**Welche Kosten kommen nach dem Launch dazu?** Der Shopify-Tarif, kostenpflichtige Apps, die Domain, Zahlungsgebühren pro Bestellung und bei Bedarf Pflege und Weiterentwicklung.
 
-**Was kostet ein Shopify-Shop bei Ihnen?** Ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System, jeweils zzgl. MwSt. Der genaue Preis hängt vom Umfang ab, deshalb bekommen Sie nach dem Briefing eine feste Zahl, die zu Ihrem Shop passt.
+**Was kostet ein Shopify-Shop bei Ihnen?** Ab 500 € für einen Shop auf einem fertigen Theme, ab 1.500 € mit individuellem Design und ab 2.000 € für den Umzug von einem anderen System, jeweils zzgl. MwSt. Die feste Zahl für Ihren Shop bekommen Sie nach dem Briefing.
 
 **Kann ich mit einem kleinen Umfang starten und später erweitern?** Ja. Ein Shop wächst gut in Etappen, wenn das Fundament sauber ist.
 
-**Sollte der Shop auf meinem Konto laufen?** Unbedingt. Sie sollten Inhaber des Shops bleiben und dem Entwickler nur Zugriff geben, den Sie jederzeit wieder entziehen können.
+**Sollte der Shop auf meinem Konto laufen?** Ja. Sie bleiben Inhaber und geben dem Entwickler nur Zugriff, den Sie jederzeit entziehen können.
 
-**Muss ich technisches Wissen mitbringen?** Nein. Sie müssen wissen, was Sie verkaufen wollen. Der Rest wird im Briefing besprochen.
+**Muss ich technisches Wissen mitbringen?** Nein. Sie müssen nur wissen, was Sie verkaufen wollen.
 
 ## Wie viel Shop brauchen Sie?
 
-Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen ehrlich, welcher Umfang für Ihr Ziel sinnvoll ist, und Sie bekommen nach dem Briefing ein Angebot zum Festpreis. Wie ich einen neuen Shop aufbaue, steht auf der Seite [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen). Je nach Fall passt auch der [Umzug von WooCommerce](/de/services/woocommerce-to-shopify) oder das [Redesign mit Theme-Wechsel](/de/services/shopify-redesign). Und wenn Sie noch abwägen, ob ein Freelancer oder eine Agentur zu Ihrem Vorhaben passt: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur). Planen Sie mehrere Länder? Dann lesen Sie [Shopify Markets: In mehrere Länder verkaufen](/de/blog/shopify-markets-mehrere-laender).
+Schreiben Sie mir für den [kostenlosen Shop-Check](#contact), was Sie vorhaben: neuer Shop, Umzug oder Neuaufbau. Ich sage Ihnen, welcher Umfang sinnvoll ist. Nach dem Briefing bekommen Sie ein Festpreis-Angebot.
 
-**Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale) · [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Von Wix zu Shopify wechseln](/de/blog/wix-zu-shopify-umzug) · [Von Shopware oder Magento zu Shopify](/de/blog/shopware-magento-zu-shopify) · [WooCommerce Sicherheit und Plugin-Updates](/de/blog/woocommerce-sicherheit-plugin-updates) · [Shopify Domain verbinden](/de/blog/shopify-domain-verbinden)
+Passende Seiten: [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen), [Umzug von WooCommerce](/de/services/woocommerce-to-shopify), [Redesign mit Theme-Wechsel](/de/services/shopify-redesign), [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur) und [Shopify Markets](/de/blog/shopify-markets-mehrere-laender).
+
+**Weiterlesen:** [Shopify B2B](/de/blog/shopify-b2b-wholesale) · [Shopify Hilfe](/de/blog/shopify-help) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Von Wix zu Shopify](/de/blog/wix-zu-shopify-umzug) · [Von Shopware oder Magento zu Shopify](/de/blog/shopware-magento-zu-shopify) · [WooCommerce Sicherheit](/de/blog/woocommerce-sicherheit-plugin-updates) · [Shopify Domain verbinden](/de/blog/shopify-domain-verbinden)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

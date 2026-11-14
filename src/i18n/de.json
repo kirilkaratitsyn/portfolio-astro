@@ -4,7 +4,7 @@
     "topRated": "Top Rated auf Upwork",
     "title": "Ich entwickle Shopify Stores, die",
     "titleAccent": "konvertieren, skalieren und trotzdem leicht zu pflegen bleiben.",
-    "subtitle": "Custom Themes, Online-Store-2.0-Migrationen, Integrationen, CRO-orientierte Storefront-Arbeit und langfristiger Support für Marken, die mehr als ein Standard-Setup brauchen.",
+    "subtitle": "Custom Themes, Migrationen auf Online Store 2.0, Integrationen, CRO und langfristiger Support.",
     "description": "Sauberer UX, schnellere Seiten, stärkeres Merchandising und individuelle Shopify-Arbeit, die leicht zu betreiben bleibt.",
     "book_call": "Termin vereinbaren",
     "send_message": "Nachricht senden",
@@ -35,7 +35,7 @@
   "about": {
     "eyebrow": "Warum Shopify Teams mit mir arbeiten",
     "title": "Ein Shopify Partner für wachsende Marken",
-    "text": "Ich übersetze Business-Ziele in Shopify-Storefronts, die sauber aufgebaut, wartbar und auch nach dem Launch weiterentwickelbar sind.",
+    "text": "Ich setze Business-Ziele in Shopify-Shops um, die sauber gebaut und leicht zu pflegen sind.",
     "statYearLabel": "Jahre Shopify-Erfahrung",
     "statProjectsLabel": "Projekte umgesetzt",
     "statHoursLabel": "Upwork-Stunden",
@@ -50,7 +50,7 @@
       {
         "id": "store-setup",
         "title": "Shopify-Shop erstellen lassen",
-        "description": "Neuen Store mit sauberem Theme-Aufbau, flexiblen Sections und admin-freundlichen Inhalten—passend zur Marke und bereit zum Skalieren.",
+        "description": "Neuer Store mit sauberem Theme-Aufbau, flexiblen Sections und admin-freundlichen Inhalten, passend zur Marke.",
         "tags": [
           "Theme-Setup",
           "Eigene Sections",
@@ -60,7 +60,7 @@
       {
         "id": "platform-migration",
         "title": "Plattform-Migration",
-        "description": "Umzug von WooCommerce, Magento, Custom-Stacks oder Legacy-Themes zu Online Store 2.0—ohne SEO, Redirects oder kritische Kundenflüsse zu verlieren.",
+        "description": "Umzug von WooCommerce, Magento, Custom-Stacks oder Legacy-Themes zu Online Store 2.0, ohne SEO, Redirects oder Kundenflüsse zu verlieren.",
         "tags": [
           "Produkte & Kunden",
           "301-Weiterleitungen",
@@ -70,7 +70,7 @@
       {
         "id": "app-integration",
         "title": "App-Integration für Shopify",
-        "description": "Apps, Abos, Payments, CRMs und APIs anbinden, sodass Storefront, Warenkorb und Admin stabil und gut bedienbar bleiben.",
+        "description": "Apps, Abos, Payments, CRMs und APIs anbinden, sodass Storefront, Warenkorb und Admin stabil bleiben.",
         "tags": [
           "Abos & Zahlungen",
           "Klaviyo & CRM",
@@ -80,7 +80,7 @@
       {
         "id": "performance-seo",
         "title": "Performance- & SEO-Optimierung",
-        "description": "Core Web Vitals und gefühlte Geschwindigkeit verbessern mit schlankerem Liquid und Assets, plus technisches SEO—Structured Data, Metadaten, crawl-freundliche Templates.",
+        "description": "Bessere Core Web Vitals durch schlankeres Liquid und leichtere Assets. Dazu technisches SEO: Structured Data, Metadaten und crawl-freundliche Templates.",
         "tags": [
           "Core Web Vitals",
           "Strukturierte Daten",
@@ -90,7 +90,7 @@
       {
         "id": "cro-audit",
         "title": "Conversion- & UX-Optimierungs-Audit",
-        "description": "Funnels, UX-Reibung und Merchandising-Lücken prüfen—dann priorisierte Fixes, die Conversion verbessern ohne Full-Rebuild.",
+        "description": "Funnels, UX-Reibung und Merchandising-Lücken prüfen, dann priorisierte Fixes für mehr Conversion ohne Full-Rebuild.",
         "tags": [
           "Funnel-Analyse",
           "UX-Fixes",
@@ -100,7 +100,7 @@
       {
         "id": "support",
         "title": "Laufender Support und Wartung",
-        "description": "Retainer für Launches, Bugfixes, Theme-Updates und Iteration—damit ihr wachsen könnt, während der Store zuverlässig bleibt.",
+        "description": "Retainer für Launches, Bugfixes und Theme-Updates, damit Ihr Store zuverlässig bleibt, während Sie wachsen.",
         "tags": [
           "Bugfixes",
           "Theme-Updates",
@@ -131,7 +131,7 @@
     "outcomeTitle": "Ergebnis",
     "screenshotTitle": "Projekt-Highlights",
     "moreProjectsTitle": "Weitere Shopify Projekte",
-    "moreProjectsSubtitle": "Ein breiterer Ausschnitt meiner Shopify Arbeit: Migrationen, CRO, Support, Custom Sections und Storefront-Verbesserungen.",
+    "moreProjectsSubtitle": "Mehr Shopify-Arbeit: Migrationen, CRO, Support, Custom Sections und Storefront-Verbesserungen.",
     "reviewTitle": "Kundenstimme",
     "reviewRating": "{n} von 5",
     "reviewSource": "Bewertung auf Upwork"
@@ -152,20 +152,9 @@
         "company": "Funduino GmbH",
         "dateRange": "Februar 2026 - Heute",
         "location": "Nordhorn, Deutschland",
-        "summary": "Ein laufendes Praktikum als Frontend Developer bei einer Arduino-orientierten Lernplattform und Education-Marke, mit Fokus auf Interface- und Storefront-Arbeit im echten Unternehmensalltag.",
+        "summary": "Praktikum als Frontend Developer bei einer Arduino-Lernplattform und Education-Marke. Schwerpunkt: Interface- und Storefront-Arbeit im laufenden Unternehmen.",
         "logo": "/source/logos/funduino.jpg",
         "logoAlt": "Funduino GmbH Logo",
-        "isPlaceholderLogo": false
-      },
-      {
-        "kind": "Ausbildung",
-        "role": "Student",
-        "company": "KBS Nordhorn",
-        "dateRange": "2024 - Heute",
-        "location": "Nordhorn, Deutschland",
-        "summary": "Seit 2024 Schüler an den Kaufmännischen Berufsbildenden Schulen Nordhorn und parallel dazu technisches sowie berufliches Fundament durch echte Shopify-Projektarbeit vertieft.",
-        "logo": "/source/logos/kbs-nordhorn.png",
-        "logoAlt": "KBS Nordhorn Logo",
         "isPlaceholderLogo": false
       },
       {
@@ -197,14 +186,14 @@
     "title": "Weitere Arbeiten",
     "subtitle": "Ein breiterer Mix aus Shopify-Launches, Custom Builds und Storefront-Verbesserungen.",
     "allWorksTitle": "Alle Shopify Projekte",
-    "allWorksSubtitle": "Ein vollständiger Katalog meiner Shopify Arbeit: Custom Builds, Migrationen, Storefront-Verbesserungen, Merchandising-Logik, mehrsprachige Setups und laufender Support.",
+    "allWorksSubtitle": "Custom Builds, Migrationen, Storefront-Verbesserungen, Merchandising-Logik, mehrsprachige Setups und laufender Support.",
     "loadMore": "Mehr ansehen",
     "visitWebsite": "Website besuchen",
     "viewCase": "Case Study ansehen",
     "backHome": "Zurück zur Startseite",
     "contactCard": {
       "title": "Ihr Projekt hier",
-      "text": "Haben Sie ein Projekt im Kopf? Lassen Sie uns zusammenarbeiten, um eine atemberaubende Website zu erstellen, die Ihrem Unternehmen hilft, online zu wachsen.",
+      "text": "Haben Sie ein Projekt im Kopf? Lassen Sie uns eine Website bauen, mit der Ihr Unternehmen online wächst.",
       "button": "Kontaktieren Sie mich"
     },
     "allProjects": "Alle Projekte",
@@ -236,8 +225,8 @@
     "topRated": "Top Rated auf Upwork",
     "subtitle": "Lassen Sie uns über Ihr Shopify Projekt sprechen",
     "email": "kiril@karatitsyn.com",
-    "note": "Schicken Sie Ihren Store-Link und eine kurze Aufgabenbeschreibung, dann klären wir den Rest gemeinsam.",
-    "topRatedNote": "Arbeiten Sie mit einem Top Rated Upwork-Freelancer, der für klare Kommunikation, verlässliche Umsetzung und Shopify-Arbeit steht, die auch nach dem Launch stabil bleibt.",
+    "note": "Schicken Sie Ihren Store-Link und eine kurze Aufgabenbeschreibung. Den Rest klären wir gemeinsam.",
+    "topRatedNote": "Top Rated Freelancer auf Upwork: klare Kommunikation, verlässliche Umsetzung und Shopify-Arbeit, die nach dem Launch stabil bleibt.",
     "audit": "Kostenloser Store Audit und Projekterstgespräch",
     "book_call": "Termin vereinbaren",
     "linkedin": "LinkedIn",
@@ -246,7 +235,7 @@
     "sendMessage": "Nachricht senden",
     "shopCheck": {
       "title": "Kostenloser Shop-Check",
-      "text": "Ich sehe mir Ihren Shopify-Shop an und schicke Ihnen innerhalb von zwei Werktagen eine kurze Liste: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch."
+      "text": "Innerhalb von zwei Werktagen erhalten Sie eine kurze Liste zu Ihrem Shopify-Shop: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch."
     },
     "form": {
       "check": "Kostenloser Shop-Check",
@@ -306,27 +295,27 @@
     "questions": [
       {
         "question": "Welche Shopify Arbeit übernehmen Sie normalerweise?",
-        "answer": "Die meisten Projekte fallen in vier Kategorien: Custom Theme Arbeit, Online-Store-2.0-Migrationen, Feature-Entwicklung im Storefront und laufender Support nach dem Launch."
+        "answer": "Meist eines von vier Dingen: Custom-Theme-Arbeit, Online-Store-2.0-Migrationen, Feature-Entwicklung im Storefront oder laufender Support nach dem Launch."
       },
       {
         "question": "Können Sie in einem bestehenden Shopify Store arbeiten?",
-        "answer": "Ja. Ich arbeite regelmäßig in Live Stores und verbessere Sections, Produktseiten, Cart-Verhalten, Filtering, Integrationen, Geschwindigkeit und Launch-Readiness."
+        "answer": "Ja. Ich arbeite regelmäßig in Live Stores: Sections, Produktseiten, Warenkorb, Filter, Integrationen und Geschwindigkeit."
       },
       {
         "question": "Übernehmen Sie Migrationen auf Shopify Online Store 2.0?",
-        "answer": "Ja. Ich unterstütze bei der Umstellung von Legacy Setups auf OS 2.0, sichere Content-Struktur, baue individuelle Logik neu auf und reduziere Launch-Risiken."
+        "answer": "Ja. Ich stelle Legacy-Setups auf OS 2.0 um, erhalte die Content-Struktur und baue individuelle Logik neu auf."
       },
       {
         "question": "Können Sie auch nach dem Launch unterstützen?",
-        "answer": "Ja. Viele Kunden behalten mich nach dem Launch für Fixes, Experimente, SEO- und Speed-Verbesserungen, neue Sections und laufende Storefront-Entwicklung an Bord."
+        "answer": "Ja. Viele Kunden behalten mich nach dem Launch für Fixes, Experimente, SEO, Speed und neue Sections."
       },
       {
         "question": "Wie starten wir am besten?",
-        "answer": "Schicken Sie den Store-Link, die Aufgabe und eventuelle Deadlines oder Einschränkungen. Danach kann ich den sinnvollsten nächsten Schritt vorschlagen: Audit, kleiner Sprint oder größere Umsetzung."
+        "answer": "Schicken Sie den Store-Link, die Aufgabe und eventuelle Deadlines. Ich schlage dann den nächsten Schritt vor: Audit, kleiner Sprint oder größere Umsetzung."
       },
       {
         "question": "Arbeiten Sie mit Designern oder bestehenden Spezifikationen?",
-        "answer": "Ja. Ich kann auf Basis von Figma, Loom-Videos, schriftlichen Spezifikationen oder einem bestehenden Storefront-Referenzbild umsetzen und helfe auch dabei, unscharfe Anforderungen sauberer zu strukturieren."
+        "answer": "Ja. Ich setze nach Figma, Loom-Videos, schriftlichen Spezifikationen oder einer bestehenden Storefront als Referenz um. Unscharfe Anforderungen helfe ich zu strukturieren."
       }
     ],
     "book_call": "Termin vereinbaren"
@@ -354,7 +343,7 @@
     "latestArticles": "Neueste Artikel"
   },
   "footer": {
-    "blurb": "Shopify Entwicklung für Marken, die individuelle Lösungen, saubereren UX und verlässlichen Support ohne unnötige Komplexität brauchen.",
+    "blurb": "Shopify-Entwicklung für Marken, die individuelle Lösungen, sauberen UX und verlässlichen Support brauchen.",
     "follow": "Auch hier",
     "telegram": "Telegram",
     "instagram": "Instagram",
@@ -441,7 +430,7 @@
   },
   "bio": {
     "title": "Hi, ich bin Kiril.",
-    "p1": "Ich bin freiberuflicher Shopify-Entwickler in Deutschland. Ich baue Themes, richte Markets für neue Länder ein, ziehe Shops zu Shopify um und mache langsame Shops schneller, für Marken, die eine Person wollen, die die ganze Aufgabe verantwortet.",
+    "p1": "Ich bin freiberuflicher Shopify-Entwickler in Deutschland. Ich baue Themes, richte Markets ein, ziehe Shops zu Shopify um und mache langsame Shops schneller. Eine Person verantwortet die ganze Aufgabe.",
     "p2": "Zuerst bekommen Sie Umfang, Zeitplan und Preis schriftlich. Ich baue in einem Vorschau-Theme, damit Ihr Live-Shop weiter verkauft, und bleibe nach dem Launch für Fixes da.",
     "facts": [
       {
@@ -474,11 +463,11 @@
   },
   "anatomy": {
     "title": "Vom ersten Call zum ersten Verkauf",
-    "lead": "Jedes Projekt durchläuft dieselben sechs Schritte. Sie wissen immer, was gerade passiert, und Ihr Live-Shop verkauft weiter, während ich baue.",
+    "lead": "Jedes Projekt durchläuft dieselben sechs Schritte. Ihr Live-Shop verkauft weiter, während ich baue.",
     "layers": [
       {
         "title": "Kick-off-Call",
-        "text": "Wir treffen uns per Google Meet und gehen Shop, Ziele und Termin durch. Umfang, Zeitplan und Preis bekommen Sie, bevor die Arbeit beginnt.",
+        "text": "Per Google Meet gehen wir Shop, Ziele und Termin durch. Umfang, Zeitplan und Preis bekommen Sie vor Arbeitsbeginn.",
         "tags": [
           "Google Meet",
           "Festes Angebot"
@@ -707,7 +696,7 @@
   },
   "editor": {
     "title": "Ihr Team pflegt den Shop. Ohne Entwickler.",
-    "lead": "Jede Section, die ich baue, hat Einstellungen wie diese. Probieren Sie es aus: So ändert Ihr Team den Shop nach dem Launch.",
+    "lead": "Jede Section, die ich baue, hat solche Einstellungen. So ändert Ihr Team den Shop nach dem Launch.",
     "hint": "Probieren Sie es: Überschrift tippen, Farbe wählen, Section ausblenden.",
     "label": "Eine funktionierende Kopie des Shopify Theme-Editors",
     "themeEditor": "Theme-Editor",
@@ -893,7 +882,7 @@
     "seoTitle": "Über Kiril Karatitsyn: Shopify-Freelancer aus Bad Bentheim",
     "seoDescription": "Wer Ihren Shopify-Shop baut: Kiril Karatitsyn, freiberuflicher Shopify-Entwickler in Bad Bentheim. Wie ich arbeite, mein Werdegang, Sprachen und wo Sie mich finden.",
     "title": "Über Kiril Karatitsyn",
-    "lead": "Ich bin freiberuflicher Shopify-Entwickler in Bad Bentheim. Ich arbeite für Marken und Händler in Deutschland und darüber hinaus, meist remote, und treffe mich nach Absprache persönlich in der Nähe von Bad Bentheim.",
+    "lead": "Ich bin freiberuflicher Shopify-Entwickler in Bad Bentheim. Ich arbeite meist remote für Marken und Händler in Deutschland und darüber hinaus.",
     "facts": [
       {
         "label": "Standort",
@@ -909,18 +898,18 @@
       }
     ],
     "whatTitle": "Was ich mache",
-    "whatText": "Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein, ziehe Shops von WooCommerce und anderen Systemen zu Shopify um und mache langsame Shops schneller. Marken beauftragen mich, wenn sie eine Person wollen, die die ganze Aufgabe verantwortet, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch.",
+    "whatText": "Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein, ziehe Shops von WooCommerce und anderen Systemen zu Shopify um und mache langsame Shops schneller. Ich verantworte die ganze Aufgabe, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch.",
     "whatLink": "Alle Leistungen",
     "whatLink2": "Als Shopify-Freelancer arbeiten: so läuft es ab",
     "howTitle": "So arbeite ich",
     "how": [
       {
         "title": "Zuerst schriftlich",
-        "text": "Vor dem Start erhalten Sie Umfang, Zeitplan und Festpreis schriftlich, damit nichts offenbleibt."
+        "text": "Vor dem Start erhalten Sie Umfang, Zeitplan und Festpreis schriftlich."
       },
       {
         "title": "Ihr Live-Shop verkauft weiter",
-        "text": "Ich baue in einem Vorschau-Theme. Ihr Live-Shop nimmt während der Arbeit weiter Bestellungen an, und nichts geht online, bevor Sie es gesehen haben."
+        "text": "Ich baue in einem Vorschau-Theme. Ihr Live-Shop nimmt weiter Bestellungen an, und nichts geht online, bevor Sie es gesehen haben."
       },
       {
         "title": "Eine Person, auch nach dem Launch",
@@ -940,16 +929,10 @@
         "role": "Shopify-Entwickler",
         "place": "Collab IT und Great Dev, remote",
         "text": "Shopify-Entwicklung für Kundenprojekte in zwei Remote-Teams."
-      },
-      {
-        "when": "2024 bis heute",
-        "role": "Ausbildung",
-        "place": "KBS Nordhorn",
-        "text": "Kaufmännische Berufsbildende Schulen Nordhorn, neben echten Shopify-Projekten."
       }
     ],
     "workTitle": "Arbeiten zum Ansehen",
-    "workText": "Diese Fallstudien zeigen, wie ein fertiges Projekt aussieht: ein B2B-Shop mit Händlerpreisen, ein Umzug von WooCommerce zu Shopify mit Weiterleitungsplan und eine laufende Zusammenarbeit.",
+    "workText": "Fertige Projekte als Fallstudien: ein B2B-Shop mit Händlerpreisen, ein Umzug von WooCommerce zu Shopify mit Weiterleitungsplan und eine laufende Zusammenarbeit.",
     "appTitle": "Meine eigene Shopify-App",
     "appText": "Neben der Kundenarbeit veröffentliche ich Reviews Core, meine eigene App für Produktbewertungen, im Shopify App Store.",
     "appLink": "Reviews Core im Shopify App Store",

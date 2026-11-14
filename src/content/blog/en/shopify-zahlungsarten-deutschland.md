@@ -2,8 +2,8 @@
 publishedAt: 2026-10-23
 title: "Shopify payment methods in Germany: Shopify Payments, PayPal, Klarna and what to settle first"
 date: 23 October 2026
-readingTime: 7 min
-excerpt: "Which payment methods Shopify Payments includes in Germany, where PayPal and third-party providers come in, what bank transfer in advance means and which requirements to settle before launch."
+readingTime: 6 min
+excerpt: "Shopify payment methods in Germany: what Shopify Payments includes, how PayPal, Klarna and bank transfer fit in, and what to settle before launch."
 image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
@@ -13,104 +13,120 @@ tags:
   - Klarna
 ---
 
-"Which payment methods does my store need, and how do I get them in?" This question comes up before launch and again when customers ask for invoice, PayPal or Klarna. The good news: on Shopify, payment methods are switched on in the settings, usually without code. The less good news: there are three different routes, and they cannot be mixed freely. This text sorts them out for store owners without a technical background.
+In Germany you switch on Shopify payment methods in the settings, usually without code. There are three routes, and they cannot be mixed freely.
 
 ## A note first
 
-All statements about features and conditions come from the Shopify Help Center, as of October 2026. Shopify changes providers, country lists and conditions from time to time, so check important points again in your admin and in the Help Center before deciding. I do not name fees here: according to Shopify, they depend on your plan with Shopify Payments and on the provider's terms with others. I also do not cover legal and tax questions (for example mandatory information in the order process); a lawyer or tax adviser is the right address for those.
+All statements come from the Shopify Help Center, as of October 2026. Shopify changes providers, country lists and conditions. Check important points in your admin before you decide.
+
+I do not name fees: according to Shopify, they depend on your plan with Shopify Payments and on the provider's terms with others. Legal and tax questions are for a lawyer or tax adviser.
 
 ## The three routes at a glance
 
-1. **Shopify Payments:** Shopify's own payment processing, managed in your admin.
+1. **Shopify Payments:** Shopify's own payment processing.
 2. **Third-party providers and PayPal:** another provider for credit cards, and PayPal as a payment method of its own.
-3. **Manual payment methods:** for example bank transfer in advance or cash on delivery, where you match the money yourself.
+3. **Manual payment methods:** bank transfer in advance or cash on delivery. You match the money yourself.
 
-For many stores the first route plus PayPal is enough. When the others make sense is covered below.
+For many stores the first route plus PayPal is enough.
 
 ## Shopify Payments in Germany
 
-According to the Shopify Help Center, these come without further setup in Germany:
+Per the Shopify Help Center, these are active automatically in Germany once you switch on Shopify Payments:
 
-- **Credit and debit cards:** American Express, Maestro, Mastercard, UnionPay and Visa. They are activated automatically when you switch on Shopify Payments.
-- **Accelerated checkouts:** Apple Pay, Google Pay and Shop Pay, also active automatically.
+- **Credit and debit cards:** American Express, Maestro, Mastercard, UnionPay and Visa.
+- **Accelerated checkouts:** Apple Pay, Google Pay and Shop Pay.
 
-On top of that there are **local payment methods**, which you activate yourself under Settings > Payments. They are shown at checkout based on your customer's location, not your store's location. A store in Germany can therefore show different options depending on the customer's country. For Germany the Help Center lists, among others, Klarna, Bancontact (Belgium), BLIK and Przelewy24 (Poland), EPS (Austria), iDEAL | Wero (Netherlands), TWINT (Switzerland) and more.
+**Local payment methods** are ones you activate yourself under Settings > Payments. Checkout shows them based on the customer's location, not the store's. For Germany the Help Center lists, among others, Klarna, Bancontact (Belgium), BLIK and Przelewy24 (Poland), EPS (Austria), iDEAL | Wero (Netherlands), TWINT (Switzerland) and more.
 
 ### Klarna
 
-Klarna is a topic for many German merchants. According to Shopify, customers can pay immediately, by invoice, or in installments by direct debit or credit card; the money arrives with your next Shopify Payments payout, and the customer settles the rest with Klarna. Which Klarna options appear at checkout depends, per the Help Center, on the country of your Shopify Payments account, the customer's location and the chosen currency. Whether "buy on invoice" is actually offered in your store is therefore something you only see by checking it in your store.
+According to Shopify, customers can use Klarna to pay immediately, by invoice, or in installments by direct debit or credit card. The money arrives with your next Shopify Payments payout, and the customer settles the rest with Klarna.
+
+Which options appear depends, per the Help Center, on the country of your Shopify Payments account, the customer's location and the currency. You only see in your store whether "buy on invoice" is offered.
 
 ### iDEAL | Wero: a hurdle that is easy to miss
 
-If you want to serve customers in the Netherlands: according to the Help Center, you must have processed at least 100 orders with Shopify Payments in Germany before you can activate iDEAL | Wero. For a new store that means not planning it for launch day.
+Per the Help Center, you must have processed at least 100 orders with Shopify Payments in Germany before you can activate iDEAL | Wero for customers in the Netherlands. Do not plan it for a new store's launch.
 
 ### What is not on the list
 
-The Help Center page "Customer payment methods with Shopify Payments in Germany" lists neither PayPal nor SEPA direct debit as a Shopify Payments method. PayPal works on Shopify through a route of its own (below). For SEPA direct debit the help pages I checked say nothing, so I claim nothing here: if you need it, ask Shopify Support or check your admin.
+The Help Center page "Customer payment methods with Shopify Payments in Germany" lists neither PayPal nor SEPA direct debit. PayPal has a route of its own (below). The help pages I checked say nothing about SEPA direct debit. If you need it, ask Shopify Support.
 
 ## Requirements worth settling before launch
 
 For Shopify Payments in Germany, the Help Center requires, among other things:
 
-- an **eligible business type**: certain businesses are excluded in the Shopify Payments terms of service, so check there before you invest a lot of time in the store;
-- a **bank account** in euros that is eligible for SEPA transfers and has an IBAN from a supported country. Not supported are, among others, savings accounts, accounts that accept only wire transfers, accounts that hold several currencies at once, and fintech services that merely imitate a bank account;
-- **personal and business details** for the verification that Shopify and its banking partners must carry out under rules against financial crime. Further details may be requested later;
-- **two-step authentication** on your Shopify account, which is required for Shopify Payments (more on access: [Shopify maintenance](/blog/shopify-wartung-betreuung)).
+- an **eligible business type**: the Shopify Payments terms of service exclude certain businesses.
+- a **bank account** in euros that is eligible for SEPA transfers and has an IBAN from a supported country. Not supported are, among others, savings accounts, accounts that accept only wire transfers, accounts that hold several currencies at once, and fintech services that merely imitate a bank account.
+- **personal and business details** for the verification against financial crime. Shopify and its banking partners may request further details later.
+- **two-step authentication** on your Shopify account (more on access: [Shopify maintenance](/blog/shopify-wartung-betreuung)).
 
-The practical advice: submit the verification early, not the day before launch. I cannot predict when your account will be approved.
+Submit the verification early. When your account will be approved cannot be predicted.
 
 ## PayPal
 
-According to the Shopify Help Center, every new store automatically gets a PayPal Express Checkout account; Shopify asks for your email address for it and shares it with PayPal. You should complete the setup promptly, or deactivate PayPal in the payment settings if you do not want to use it. Only the store owner can edit the PayPal details.
+Per the Shopify Help Center, every new store automatically gets a PayPal Express Checkout account. Shopify asks for your email address for it and shares it with PayPal. Complete the setup, or deactivate PayPal in the payment settings. Only the store owner can edit the PayPal details.
 
-On costs the Help Center says: third-party transaction fees apply to all transactions through third-party and alternative payment providers, even when Shopify Payments is active. If Shopify Payments is your main provider, PayPal transactions are exempt. The actual fees for your location are on Shopify's pricing page or with support.
+On costs the Help Center says: third-party transaction fees apply to transactions through third-party and alternative payment providers, even when Shopify Payments is active. If Shopify Payments is your main provider, PayPal transactions are exempt. For the fees for your location, see Shopify's pricing page or ask support.
 
 ## Third-party providers instead of Shopify Payments
 
-If Shopify Payments is not an option for you (for example because of your business type, or because you already have a payment provider), Shopify offers over 100 credit card providers according to the Help Center. One important difference:
+If Shopify Payments is not an option because of your business type or an existing payment provider, Shopify offers over 100 credit card providers, per the Help Center:
 
 - With **direct providers**, your customers pay directly in your store.
-- With **external providers**, they go to a checkout page outside your store to pay.
+- With **external providers**, they pay on a checkout page outside your store.
 
-You can use a third-party provider alone or together with Shopify Payments. In the second variant the third-party provider handles cards, and Shopify Payments handles additional methods such as Shop Pay and local payment methods. Restrictions apply: only one direct third-party provider can run alongside, retrying failed payments applies to cards only, and subscription payments run through the third-party provider by default. Check these points in the Help Center before you plan such a setup.
+A third-party provider runs alone or together with Shopify Payments. It then handles cards, and Shopify Payments handles Shop Pay and local payment methods. Restrictions apply:
+
+- Only one direct third-party provider can run alongside.
+- Retrying failed payments applies to cards only.
+- Subscription payments run through the third-party provider by default.
 
 ## Manual payment methods: advance payment, cash on delivery
 
-For customers who do not want to pay online, Shopify knows manual payment methods such as bank transfer in advance or cash on delivery. It works like this: the customer orders, the order shows as **unpaid** in the admin, you send an invoice if needed, and once the payment arrives you **mark it as paid by hand** and ship. According to the Help Center, no third-party transaction fees apply to these. The price is the effort: you have to match incoming payments yourself. For business customers this can fit, see [Shopify B2B and wholesale](/blog/shopify-b2b-wholesale).
+For customers who do not want to pay online, there is bank transfer in advance or cash on delivery. The order shows as **unpaid** in the admin. You send an invoice if needed, **mark the order as paid by hand** once the payment arrives, and ship.
+
+Per the Help Center, no third-party transaction fees apply. You match incoming payments yourself. This can fit business customers, see [Shopify B2B and wholesale](/blog/shopify-b2b-wholesale).
 
 ## Do you also sell abroad?
 
-Then note: the payment methods at checkout depend on the customer's location, and some are tied to country and currency (EPS, for example, to Austrian customers paying in euros, TWINT to customers in Switzerland paying in CHF). How this fits with currencies and markets is covered in [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender).
+Some payment methods are tied to country and currency. EPS, for example, applies to Austrian customers paying in euros, TWINT to customers in Switzerland paying in CHF. More on currencies and markets: [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender).
 
 ## A simple checklist before launch
 
 1. Business type checked against the Shopify Payments terms of service?
 2. Bank account: euro, SEPA, right account type?
-3. Documents for verification ready and submitted early?
+3. Documents for verification submitted early?
 4. Two-step authentication switched on?
 5. PayPal set up, or deliberately deactivated?
-6. Every activated payment method looked at on a smartphone up to the payment choice?
-7. For manual methods: who matches incoming payments, and when?
+6. Every payment method looked at on a smartphone up to the payment choice?
+7. Manual methods: who matches incoming payments, and when?
 
 ## When a developer helps
 
-For switching on payment methods you usually need none. Help is worthwhile if a payment method does not appear and you cannot find the cause, if an existing store is to change its payment provider (for example when moving from another system, see [WooCommerce to Shopify](/blog/woocommerce-to-shopify)), or if several markets and currencies come together. Who is responsible for what is explained in [Shopify help: when the Help Center is enough](/blog/shopify-help).
+To switch on payment methods you usually need none. Help pays off in three cases:
+
+- A payment method does not appear and you cannot find the cause.
+- An existing store is to change its payment provider, for example when moving from another system (see [WooCommerce to Shopify](/blog/woocommerce-to-shopify)).
+- Several markets and currencies come together.
+
+Who is responsible for what is explained in [Shopify help: when the Help Center is enough](/blog/shopify-help).
 
 ## Frequently asked questions
 
-**Do I have to use Shopify Payments?** No. According to the Shopify Help Center you can also use third-party providers. Third-party transaction fees then apply to those transactions.
+**Do I have to use Shopify Payments?** No. Per the Shopify Help Center you can also use third-party providers. Third-party transaction fees then apply.
 
-**Can I offer PayPal and Shopify Payments at the same time?** Yes. If Shopify Payments is your main provider, PayPal transactions are exempt from third-party transaction fees according to the Help Center.
+**Can I offer PayPal and Shopify Payments at the same time?** Yes. If Shopify Payments is your main provider, PayPal transactions are exempt from third-party transaction fees, per the Help Center.
 
-**Is there buy on invoice?** The Help Center names invoice as one Klarna option; whether it is shown to you depends on country, customer location and currency. Check it in your store.
+**Is there buy on invoice?** The Help Center names invoice as one Klarna option. Whether it is shown depends on country, customer location and currency.
 
-**What do the payment methods cost?** That depends on the plan and the provider. I do not name amounts here.
+**What do the payment methods cost?** That depends on the plan and the provider.
 
-Related: [Setting up Shopify shipping](/blog/shopify-versand-einrichten), so customers do not get stuck on a shipping gap at checkout.
+Related: [Setting up Shopify shipping](/blog/shopify-versand-einrichten).
 
 ## How is your store doing?
 
-Send me your store's address for the [free store check](#contact). I look at what is visible from the outside, such as load time, apps in the page source and the structure of the pages, and tell you what stands out. I only work with publicly visible data, without access to your account. What I do for stores is under [Services](/services).
+Send me your store's address for the [free store check](#contact). I only check publicly visible data, such as load time, apps in the page source and page structure, without access to your account. More under [Services](/services).
 
 **Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy)
 
