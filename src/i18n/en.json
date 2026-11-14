@@ -380,8 +380,6 @@
     ]
   },
   "testimonials": {
-    "title": "Clients, by name and face",
-    "lead": "Personal words from clients, shown with their consent and unedited.",
     "source": "Review on {source}"
   },
   "reviews": {
@@ -398,7 +396,8 @@
         "highlight": "helped redesign my entire website from the ground up",
         "rating": 5,
         "context": "Full website redesign",
-        "url": "https://lumppings.com/"
+        "url": "https://lumppings.com/",
+        "id": "lumppings"
       },
       {
         "quote": "During the period we worked together, Kiril clearly developed his communication skills as well. His work was always at a good level and he actively tries to come up with solutions and workarounds for dificult issues.",
@@ -431,7 +430,8 @@
     ],
     "badge": "Top Rated on Upwork",
     "showOriginal": "Show original",
-    "showTranslation": "Show translation"
+    "showTranslation": "Show translation",
+    "verified": "Verified on Upwork"
   },
   "bio": {
     "title": "Hi, I'm Kiril.",
