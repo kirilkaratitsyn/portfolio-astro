@@ -11,12 +11,15 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const hasPosts = (await getPosts(locale)).length > 0;
 const services = await getServices(locale);
-// The footer names only the key pages: the main services and the home-town page. The other town pages are linked
-// from the services overview and from each other.
-const FOOTER = ['shopify-shop-erstellen-lassen', 'woocommerce-to-shopify', 'shopify-speed', 'shopify-redesign', 'website-erstellen-lassen', 'shopify-bad-bentheim'];
-const footerLinks = [...services, ...(await getLocalPages(locale))]
-  .filter((page) => FOOTER.includes(page.slug))
-  .sort((a, b) => FOOTER.indexOf(a.slug) - FOOTER.indexOf(b.slug));
+// Every service and town page gets a link from every page (Google finds and weighs them through it), kept short:
+// the services by name, the town pages as rows of town names under their kind.
+const localPages = await getLocalPages(locale);
+const towns = [
+  { label: t.footer.localShopify, pages: localPages.filter((page) => page.slug.startsWith('shopify-')) },
+  { label: t.footer.localWeb, pages: localPages.filter((page) => page.slug.startsWith('webdesign-')) },
+]
+  .map((row) => ({ ...row, pages: [...row.pages].sort((a, b) => Number(b.slug.endsWith('bad-bentheim')) - Number(a.slug.endsWith('bad-bentheim'))) }))
+  .filter((row) => row.pages.length > 0);
 // German pages link the German Impressum and Datenschutzerklärung; English and Ukrainian pages the English versions.
 const legal =
   locale === 'de'
@@ -37,14 +40,26 @@ const legal =
     <div class="relative z-[1] pt-14 md:pt-16">
       {
         services.length > 0 && (
-          <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-5 text-[15px]">
-            <a href={localizePath(locale, '/services')} class="font-semibold text-ink hover:text-blue-deep">{t.header.services}</a>
-            {footerLinks.map((service) => (
-              <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
-                {service.title}
-              </a>
+          <div class="grid gap-2 border-b border-line pb-5 text-[15px]">
+            <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2">
+              <a href={localizePath(locale, '/services')} class="font-semibold text-ink hover:text-blue-deep">{t.header.services}</a>
+              {services.map((service) => (
+                <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
+                  {service.title}
+                </a>
+              ))}
+            </nav>
+            {towns.map((row) => (
+              <nav aria-label={row.label} class="flex flex-wrap gap-x-4 gap-y-1">
+                <span class="font-semibold text-ink">{row.label}</span>
+                {row.pages.map((page) => (
+                  <a href={localizePath(locale, `/services/${page.slug}`)} class="text-mute hover:text-ink">
+                    {page.area!.place.replace(/^das /, '').replace(/\s*\(.*\)$/, '')}
+                  </a>
+                ))}
+              </nav>
             ))}
-          </nav>
+          </div>
         )
       }
     </div>

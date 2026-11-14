@@ -349,7 +349,9 @@
     "instagram": "Instagram",
     "rights": "Alle Rechte vorbehalten.",
     "legal": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "localShopify": "Shopify-Entwickler",
+    "localWeb": "Webdesign"
   },
   "consent": {
     "label": "Cookie-Einstellungen",
