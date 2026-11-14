@@ -11,7 +11,12 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const hasPosts = (await getPosts(locale)).length > 0;
 const services = await getServices(locale);
-const localPages = await getLocalPages(locale);
+// The footer names only the key pages: the main services and the home-town page. The other town pages are linked
+// from the services overview and from each other.
+const FOOTER = ['shopify-shop-erstellen-lassen', 'woocommerce-to-shopify', 'shopify-speed', 'shopify-redesign', 'website-erstellen-lassen', 'shopify-bad-bentheim'];
+const footerLinks = [...services, ...(await getLocalPages(locale))]
+  .filter((page) => FOOTER.includes(page.slug))
+  .sort((a, b) => FOOTER.indexOf(a.slug) - FOOTER.indexOf(b.slug));
 // German pages link the German Impressum and Datenschutzerklärung; English and Ukrainian pages the English versions.
 const legal =
   locale === 'de'
@@ -34,7 +39,7 @@ const legal =
         services.length > 0 && (
           <nav aria-label={t.header.services} class="flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-5 text-[15px]">
             <a href={localizePath(locale, '/services')} class="font-semibold text-ink hover:text-blue-deep">{t.header.services}</a>
-            {[...services, ...localPages].map((service) => (
+            {footerLinks.map((service) => (
               <a href={localizePath(locale, `/services/${service.slug}`)} class="text-mute hover:text-ink">
                 {service.title}
               </a>

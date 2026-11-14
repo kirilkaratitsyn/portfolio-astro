@@ -385,6 +385,7 @@
   "reviews": {
     "title": "What clients say",
     "lead": "A selection of public reviews from my Upwork profile, in the clients’ own words.",
+    "leadPeople": "Clients by name at the top, in their own words. Below, public reviews from my Upwork profile.",
     "summary": "26 reviews · 95% Job Success",
     "openProfile": "Open Upwork profile",
     "previous": "Previous reviews",

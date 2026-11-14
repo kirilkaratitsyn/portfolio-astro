@@ -63,12 +63,6 @@ const seo = {
   structuredData,
 };
 
-const sections = [
-  { title: copy.challengeTitle, text: caseStudy.challenge },
-  { title: copy.scopeTitle, list: caseStudy.scope },
-  { title: copy.solutionTitle, list: caseStudy.solution },
-  { title: copy.stackTitle, chips: caseStudy.stack },
-];
 ---
 
 <BaseLayout {...seo} path={`/projects/${caseStudy.slug}`} locale={locale}>
@@ -128,28 +122,64 @@ const sections = [
     }
 
     <div class="mt-16 border-b border-line md:mt-24">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+        <h2 class="font-head text-2xl font-bold">{copy.aboutBrandTitle}</h2>
+        <p class="max-w-3xl text-lg leading-relaxed">{caseStudy.brandDescription}</p>
+      </div>
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+        <h2 class="font-head text-2xl font-bold">{copy.challengeTitle}</h2>
+        <p class="max-w-3xl font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[28px]">{caseStudy.challenge}</p>
+      </div>
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+        <h2 class="font-head text-2xl font-bold">{copy.scopeTitle}</h2>
+        <ul class="grid max-w-3xl gap-4 text-lg leading-relaxed">
+          {caseStudy.scope.map((item) => (
+            <li class="flex gap-4">
+              <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue text-[13px] font-bold text-white" aria-hidden="true">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+        <h2 class="font-head text-2xl font-bold">{copy.solutionTitle}</h2>
+        <ol class="max-w-3xl">
+          {caseStudy.solution.map((item, i) => (
+            <li class={`flex flex-col gap-2 py-5 md:grid md:grid-cols-[56px_1fr] md:gap-3 ${i > 0 ? 'border-t border-line' : 'pt-0'}`}>
+              <span class="font-head text-base font-bold text-blue-deep md:text-lg">{String(i + 1).padStart(2, '0')}</span>
+              <p class="text-lg leading-relaxed">{item}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
       {
         caseStudy.review && (
-          <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
-            <h2 class="font-head text-2xl font-bold">{copy.reviewTitle}</h2>
-            <figure class="max-w-3xl">
-              <blockquote lang="en" class="font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[28px]">“{caseStudy.review.quote}”</blockquote>
-              <figcaption class="mt-4 flex items-center gap-2 text-[15px] text-mute">
-                <span class="text-blue-deep" aria-hidden="true">{'★'.repeat(Math.round(caseStudy.review.rating))}</span>
+          <div class="border-t border-line py-10 md:py-14">
+            <figure class="rounded-[32px] bg-blue p-7 text-white md:p-12">
+              <span class="block text-sm font-semibold uppercase tracking-[0.12em] text-white/75">{copy.reviewTitle}</span>
+              <blockquote lang="en" class="mt-5 max-w-5xl font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[34px] md:leading-[1.25]">“{caseStudy.review.quote}”</blockquote>
+              <figcaption class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-white/80">
+                <span class="tracking-[0.12em] text-white" aria-hidden="true">{'★'.repeat(Math.round(caseStudy.review.rating))}</span>
                 <span>{copy.reviewRating.replace('{n}', caseStudy.review.rating.toFixed(1))} · {copy.reviewSource}</span>
               </figcaption>
             </figure>
           </div>
         )
       }
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+        <h2 class="font-head text-2xl font-bold">{copy.stackTitle}</h2>
+        <ul class="flex flex-wrap content-start items-start gap-2">
+          {caseStudy.stack.map((item) => <li class="rounded-full bg-white px-4 py-2 text-base leading-none">{item}</li>)}
+        </ul>
+      </div>
       {
         services.length > 0 && (
-          <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
+          <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
             <h2 class="font-head text-2xl font-bold">{t.servicePage.more}</h2>
-            <ul class="grid max-w-3xl gap-2">
+            <ul class="flex flex-wrap content-start items-start gap-3">
               {services.map((service) => (
                 <li>
-                  <a href={localizePath(locale, `/services/${service.slug}`)} class="text-lg font-semibold text-blue-dark hover:underline">
+                  <a href={localizePath(locale, `/services/${service.slug}`)} class="inline-flex rounded-full bg-ink px-5 py-3 font-semibold text-white transition-colors duration-300 hover:bg-blue-deep">
                     {service.title} →
                   </a>
                 </li>
@@ -157,20 +187,6 @@ const sections = [
             </ul>
           </div>
         )
-      }
-      <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
-        <h2 class="font-head text-2xl font-bold">{copy.aboutBrandTitle}</h2>
-        <p class="max-w-3xl text-lg leading-relaxed">{caseStudy.brandDescription}</p>
-      </div>
-      {
-        sections.map((section) => (
-          <div class="grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:gap-10">
-            <h2 class="font-head text-2xl font-bold">{section.title}</h2>
-            {section.text && <p class="max-w-3xl text-lg leading-relaxed">{section.text}</p>}
-            {section.list && <ul class="grid max-w-3xl gap-3 text-lg leading-relaxed">{section.list.map((item) => <li>{item}</li>)}</ul>}
-            {section.chips && <ul class="flex flex-wrap gap-2">{section.chips.map((item) => <li class="rounded-full border border-line px-4 py-2 text-base">{item}</li>)}</ul>}
-          </div>
-        ))
       }
     </div>
 
