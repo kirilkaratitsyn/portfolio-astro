@@ -28,11 +28,10 @@ const linkOf = (url?: string) =>
     : url.startsWith('/')
       ? { href: localizePath(locale, url), label: `${all.caseStudies.viewCase} →`, external: false }
       : { href: url, label: `${new URL(url).hostname.replace(/^www\./, '')} ↗`, external: true };
-// Until the owner approves it for production, the block also shows named clients on top (photo, name, project:
-// src/content/testimonials.yaml) and drops their review from the rail below, matched by the card's id and the
-// entry's caseSlug, so one quote stands in one place.
-const withPeople = process.env.VERCEL_ENV !== 'production';
-const people = withPeople ? (await getCollection('testimonials')).map((entry) => entry.data).sort((a, b) => a.order - b.order) : [];
+// Named clients on top (photo, name, project: src/content/testimonials.yaml); their review is dropped from the rail
+// below, matched by the card's id and the entry's caseSlug, so one quote stands in one place.
+const withPeople = true;
+const people = (await getCollection('testimonials')).map((entry) => entry.data).sort((a, b) => a.order - b.order);
 const shown = new Set(people.map((person) => person.caseSlug).filter(Boolean));
 const originals = useTranslations('en').reviews.cards;
 const translated = locale !== 'en';
