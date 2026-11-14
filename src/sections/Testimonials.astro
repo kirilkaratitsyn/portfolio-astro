@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import { localizePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+// Personal testimonials: photo, name, project and the client's own words (src/content/testimonials.yaml).
+// A new card is one more entry in that file; the grid takes one, two or three per row.
+const { locale } = Astro.props;
+const all = useTranslations(locale);
+const t = all.testimonials;
+const cards = (await getCollection('testimonials')).map((entry) => entry.data).sort((a, b) => a.order - b.order);
+---
+
+{
+  cards.length > 0 && (
+    <section class="mx-auto mt-24 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title" data-split class="font-head text-[40px] font-bold tracking-[-0.02em] md:text-[56px]">
+        {t.title}
+      </h2>
+      <p data-reveal class="mt-3 max-w-[640px] text-base leading-snug text-mute">{t.lead}</p>
+      <ul class={`mt-10 grid gap-5 ${cards.length === 1 ? 'max-w-4xl' : cards.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 xl:grid-cols-3'}`}>
+        {cards.map((card) => (
+          <li data-reveal class="flex flex-col gap-6 rounded-3xl bg-white p-6 md:p-9">
+            {card.rating && (
+              <span class="text-lg tracking-[0.2em] text-blue-deep" role="img" aria-label={all.caseStudies.reviewRating.replace('{n}', String(card.rating))}>
+                {'★'.repeat(Math.round(card.rating))}
+              </span>
+            )}
+            <blockquote lang="en" class={`leading-relaxed text-ink ${cards.length === 1 ? 'text-lg md:text-2xl md:leading-snug' : 'text-lg'}`}>
+              “{card.quote}”
+            </blockquote>
+            <div class="mt-auto flex items-center gap-4">
+              <img src={card.photo} alt={card.name} width="64" height="64" loading="lazy" decoding="async" class="size-16 shrink-0 rounded-full object-cover" />
+              <div class="leading-snug">
+                <p class="font-head text-xl font-bold">{card.name}</p>
+                <p class="text-mute">
+                  {card.caseSlug ? (
+                    <a href={localizePath(locale, `/projects/${card.caseSlug}`)} class="font-semibold text-blue-dark hover:underline">
+                      {card.project} →
+                    </a>
+                  ) : (
+                    card.project
+                  )}
+                  {card.source && <span> · {t.source.replace('{source}', card.source)}</span>}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

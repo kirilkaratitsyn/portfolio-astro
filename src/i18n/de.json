@@ -379,6 +379,11 @@
       }
     ]
   },
+  "testimonials": {
+    "title": "Kunden mit Namen und Gesicht",
+    "lead": "Persönliche Stimmen von Kunden, mit ihrem Einverständnis und im Wortlaut.",
+    "source": "Bewertung auf {source}"
+  },
   "reviews": {
     "title": "Was Kunden sagen",
     "lead": "Eine Auswahl öffentlicher Bewertungen von meinem Upwork-Profil, aus dem Englischen übersetzt. Das Original steht jeweils dabei.",

@@ -379,6 +379,11 @@
       }
     ]
   },
+  "testimonials": {
+    "title": "Clients, by name and face",
+    "lead": "Personal words from clients, shown with their consent and unedited.",
+    "source": "Review on {source}"
+  },
   "reviews": {
     "title": "What clients say",
     "lead": "A selection of public reviews from my Upwork profile, in the clients’ own words.",

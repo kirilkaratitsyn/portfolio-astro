@@ -1,0 +1,12 @@
+# Personal testimonials: a client's own words with their photo and name, shown with their consent.
+# One entry per client. `quote` is the client's wording (English), never edited or translated here.
+# `caseSlug` is the case study in src/content/projects. `photo` is a square image in public/source/testimonials.
+humphrey-hu:
+  order: 1
+  name: Humphrey Hu
+  project: Lumppings
+  caseSlug: lumppings
+  rating: 5
+  source: Upwork
+  photo: /source/testimonials/humphrey-hu.jpg
+  quote: "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs"

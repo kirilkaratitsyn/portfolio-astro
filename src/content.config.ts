@@ -109,4 +109,22 @@ const services = defineCollection({
   }),
 });
 
-export const collections = { projects, works, blog, services };
+// Personal testimonials (photo, name, quote), one entry per client: src/content/testimonials.yaml
+const testimonials = defineCollection({
+  loader: file('./src/content/testimonials.yaml'),
+  schema: z.object({
+    order: z.number().int().positive(),
+    name: z.string(),
+    project: z.string(),
+    /** The case study of the project (src/content/projects/<locale>/<caseSlug>.md). */
+    caseSlug: z.string().optional(),
+    rating: z.number().min(1).max(5).optional(),
+    /** Where the words were published first, e.g. "Upwork". */
+    source: z.string().optional(),
+    photo: z.string(),
+    /** The client's own words, in the language they wrote them. */
+    quote: z.string(),
+  }),
+});
+
+export const collections = { projects, works, blog, services, testimonials };
