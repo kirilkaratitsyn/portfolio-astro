@@ -15,7 +15,7 @@ area:
 audience:
   - "Shop-Betreiber aus Rheine, deren Shopify-Shop auf dem Smartphone langsam lädt."
   - "Shops mit vielen Apps, bei denen niemand mehr weiß, welche noch gebraucht werden."
-  - "Betriebe aus dem Kreis Steinfurt, die eine feste Person für laufende Änderungen suchen."
+  - "Betriebe aus dem Kreis Steinfurt, die eine feste Person für laufende Änderungen am Onlineshop suchen."
 scope:
   - title: "Messung vor der Arbeit"
     text: "Ich messe Startseite, Kollektion und Produktseite mobil mit PageSpeed Insights, jeweils mehrfach, bevor etwas geändert wird."

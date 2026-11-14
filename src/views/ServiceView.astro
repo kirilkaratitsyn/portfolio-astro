@@ -35,7 +35,14 @@ const alsoArticles = (await getPosts(locale)).filter((post) => service.alsoArtic
 // A local page shows the Services section below, so it needs no list of the other services.
 const others = service.area ? [] : (await getServices(locale)).filter((item) => item.slug !== service.slug);
 // A local page links to the other places, so the local pages form one group.
-const places = service.area ? (await getLocalPages(locale)).filter((item) => item.slug !== service.slug) : [];
+const group = (slug: string) => slug.split('-')[0];
+const place = (slug: string) => slug.slice(group(slug).length + 1);
+// The same place in the other group first, then the other places of this group.
+const places = service.area
+  ? (await getLocalPages(locale))
+      .filter((item) => item.slug !== service.slug && (group(item.slug) === group(service.slug) || place(item.slug) === place(service.slug)))
+      .sort((x, y) => Number(group(x.slug) === group(service.slug)) - Number(group(y.slug) === group(service.slug)))
+  : [];
 // A page written in some languages only: hreflang lists those, the language switcher leads to the services overview elsewhere.
 const pageLocales = await getServiceLocales(service.slug);
 const alternates = LOCALES.filter((item) => pageLocales.includes(item));

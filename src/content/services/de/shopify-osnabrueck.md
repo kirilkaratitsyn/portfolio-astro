@@ -14,7 +14,7 @@ area:
     - "Ibbenbüren"
 audience:
   - "Händler aus Osnabrück, deren Shopify-Shop ein Redesign braucht."
-  - "Betriebe, die von WooCommerce zu Shopify wechseln."
+  - "Betriebe, die ihren Onlineshop von WooCommerce zu Shopify umziehen."
   - "Agenturen aus Osnabrück, die die Shopify-Umsetzung nach eigenem Briefing abgeben."
 scope:
   - title: "Redesign"

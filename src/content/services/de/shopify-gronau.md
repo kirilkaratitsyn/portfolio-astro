@@ -15,7 +15,7 @@ area:
 audience:
   - "Hersteller und Großhändler aus Gronau und Epe mit eigenen Preisen für Händler."
   - "Betriebe mit Kunden aus Enschede und Umgebung, die auch auf Niederländisch verkaufen wollen."
-  - "Händler, die Bestellungen von Geschäftskunden noch per E-Mail oder Telefon annehmen."
+  - "Händler, die Bestellungen von Geschäftskunden noch per E-Mail oder Telefon annehmen und dafür einen Onlineshop brauchen."
 scope:
   - title: "Großhandel und Endkunden in einem Shop"
     text: "Freigegebene Geschäftskunden sehen nach dem Login ihre Preise, alle anderen die normalen, so gebaut für die Hautpflegemarke Orska Rituals."

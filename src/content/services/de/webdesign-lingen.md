@@ -1,0 +1,54 @@
+---
+order: 102
+title: "Webdesign für Lingen"
+seoTitle: "Webdesign Lingen: Website erstellen lassen"
+description: "Webdesign Lingen: Website oder Onlineshop erstellen lassen, vom Freelancer aus Bad Bentheim. Ein Ansprechpartner, Festpreis nach Briefing."
+lead: "Ich baue Websites und Onlineshops für Betriebe in Lingen, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 95 % Job Success."
+area:
+  place: "Lingen (Ems)"
+  nearby:
+    - "Emsland"
+    - "Meppen"
+    - "Nordhorn"
+    - "Rheine"
+    - "Bad Bentheim"
+audience:
+  - "Handwerksbetriebe, Praxen und Dienstleister aus Lingen, die eine neue Website brauchen."
+  - "Betriebe mit einer älteren Website, die auf dem Smartphone schlecht lesbar ist."
+  - "Läden und Hersteller aus dem Emsland, die zusätzlich online verkaufen wollen."
+scope:
+  - title: "Firmenwebsite"
+    text: "Startseite, Leistungen, Kontakt und Anfahrt, auf dem Smartphone gut lesbar und schnell geladen."
+  - title: "Onlineshop"
+    text: "Wenn Sie online verkaufen wollen, baue ich den Shop auf Shopify; bisher sind es 35+ ausgelieferte Stores."
+  - title: "Umsetzung nach Ihrem Design"
+    text: "Ich setze Figma-Dateien und HTML-Prototypen um, zum Beispiel für Nimfa und Orska Rituals."
+  - title: "Ladezeit"
+    text: "Schlanker Code ohne unnötige Skripte; bei Pedchem stieg der Mobile-PageSpeed mit einem neuen Theme ohne neue Apps von 57 auf 82."
+  - title: "Betreuung nach dem Start"
+    text: "Änderungen und Erweiterungen übernehme ich selbst: Wer das Erstgespräch führt, baut auch die Website."
+steps:
+  - title: "Erstgespräch"
+    text: "Rund 30 Minuten zu Betrieb, Ziel und Inhalten der Website."
+  - title: "Festpreis-Angebot"
+    text: "Nach dem Briefing bekommen Sie Umfang, Zeitplan und Festpreis schriftlich."
+  - title: "Aufbau in der Vorschau"
+    text: "Den Stand sehen Sie über einen Vorschau-Link und geben Feedback."
+  - title: "Go-live nach Ihrer Freigabe"
+    text: "Live geht die Website erst nach Ihrer Freigabe, danach bleibe ich für Korrekturen da."
+caseSlug: nimfa
+caseText:
+  - "Nimfa, eine Marke für Intimate Wellness: ein individuelles, mehrsprachiges Theme nach Figma."
+alsoArticles:
+  - shopify-freelancer-oder-agentur
+articleSlug: shopify-shop-erstellen-lassen-kosten
+faq:
+  - q: "Haben Sie ein Büro in Lingen?"
+    a: "Nein, ich arbeite von Bad Bentheim aus, per Videocall und E-Mail. Ein Treffen in Lingen ist nach Absprache möglich."
+  - q: "Was kostet eine Website?"
+    a: "Das hängt vom Umfang ab: Zahl der Seiten, Design, Shop ja oder nein. Nach dem Briefing bekommen Sie ein schriftliches Angebot zum Festpreis."
+  - q: "Bauen Sie auch Websites ohne Onlineshop?"
+    a: "Ja. Eine Firmenwebsite ohne Shop ist möglich, ein Shop lässt sich später ergänzen."
+  - q: "Wer arbeitet an meiner Website?"
+    a: "Ich selbst, vom Erstgespräch bis zum Go-live."
+---

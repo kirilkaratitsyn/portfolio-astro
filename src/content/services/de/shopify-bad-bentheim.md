@@ -13,7 +13,7 @@ area:
     - "Osnabrück"
     - "Münster"
 audience:
-  - "Händler und Marken aus Bad Bentheim und der Region, die einen Shopify-Shop aufbauen oder neu aufsetzen wollen."
+  - "Händler und Marken aus Bad Bentheim und der Region, die einen Onlineshop auf Shopify aufbauen oder neu aufsetzen wollen."
   - "Betriebe mit einem Shop auf WooCommerce oder einem anderen System, die zu Shopify wechseln."
   - "Shopify-Shops, die langsam laden oder eine Funktion brauchen, die das Theme nicht mitbringt."
 scope:
