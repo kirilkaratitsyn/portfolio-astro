@@ -24,7 +24,7 @@ scope:
   - title: "Schnellbestellung"
     text: "Stammkunden legen Artikel und Mengen über eine Bestellliste in den Warenkorb, bei Orska Rituals als Quick Order für freigegebene Profis."
   - title: "Niederländische Sprachversion"
-    text: "Ich richte Sprache und Markt mit Shopify Markets ein, die Übersetzung liefern Sie; ein mehrsprachiges Theme habe ich für die Marke Nimfa gebaut."
+    text: "Ich richte Sprache und Markt mit Shopify Markets ein, die Übersetzung liefern Sie."
   - title: "Neuer Shop oder Umzug"
     text: "Aufbau auf einem Theme oder Umzug mit Weiterleitungen der alten Adressen, wie bei Jula Bloom von WooCommerce zu Shopify."
 steps:

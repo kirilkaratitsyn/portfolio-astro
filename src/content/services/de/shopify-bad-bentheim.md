@@ -18,7 +18,7 @@ audience:
   - "Shopify-Shops, die langsam laden oder eine Funktion brauchen, die das Theme nicht mitbringt."
 scope:
   - title: "Neuer Shop"
-    text: "Aufbau auf einem Theme aus dem Shopify Theme Store oder als individuelles Theme, wie bei Nimfa: ein mehrsprachiges Theme nach Figma."
+    text: "Aufbau auf einem Theme aus dem Shopify Theme Store oder als individuelles Theme nach Ihrem Design; für Orska Rituals entstand der Store nach einem HTML-Prototyp."
   - title: "Umzug zu Shopify"
     text: "Umzug von WooCommerce oder einem anderen System mit Weiterleitungen der alten Adressen; bei Jula Bloom führen die alten WooCommerce-Links auf ihre neuen Seiten."
   - title: "Redesign und Theme-Anpassung"

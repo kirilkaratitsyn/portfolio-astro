@@ -18,7 +18,7 @@ audience:
   - "Shopify stores that load slowly or need a feature the theme does not have."
 scope:
   - title: "New store"
-    text: "Built on a theme from the Shopify Theme Store or as a custom theme, as for Nimfa: a multilingual theme built from Figma."
+    text: "Built on a theme from the Shopify Theme Store or as a custom theme from your design; the Orska Rituals store was built from an HTML prototype."
   - title: "Moving to Shopify"
     text: "A move from WooCommerce or another system with redirects of the old addresses; at Jula Bloom the old WooCommerce links lead to their new pages."
   - title: "Redesign and theme customization"

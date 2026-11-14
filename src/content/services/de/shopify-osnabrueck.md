@@ -20,7 +20,7 @@ scope:
   - title: "Redesign"
     text: "Zuerst ein Blueprint jeder Seite, dann das neue Theme, wie bei Peter Bijoux: mehrere tausend Produkte, vom Kunden mit 5,0 auf Upwork bewertet."
   - title: "Theme-Entwicklung nach Figma"
-    text: "Sections oder ein ganzes Theme nach Ihrem Entwurf, wie bei Nimfa: ein individuelles, mehrsprachiges Theme nach Figma."
+    text: "Sections oder ein ganzes Theme nach Ihrem Entwurf in Figma."
   - title: "Umzug zu Shopify"
     text: "Mit Weiterleitungen der alten Adressen, wie bei Jula Bloom: alte WooCommerce-Links führen auf ihre neuen Seiten."
   - title: "Laufende Betreuung"

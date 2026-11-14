@@ -14,7 +14,7 @@ scope:
   - title: "Onlineshop"
     text: "Wenn Sie online verkaufen wollen, baue ich den Shop auf Shopify; bisher sind es 35+ ausgelieferte Stores."
   - title: "Umsetzung nach Ihrem Design"
-    text: "Ich setze Figma-Dateien und HTML-Prototypen um, zum Beispiel für Nimfa und Orska Rituals."
+    text: "Ich setze Figma-Dateien und HTML-Prototypen um, zum Beispiel den Store von Orska Rituals nach einem HTML-Prototyp."
   - title: "Ladezeit"
     text: "Schlanker Code ohne unnötige Skripte; bei Pedchem stieg der Mobile-PageSpeed mit einem neuen Theme ohne neue Apps von 57 auf 82."
   - title: "Betreuung nach dem Start"
@@ -28,9 +28,9 @@ steps:
     text: "Den Stand sehen Sie über einen Vorschau-Link und geben Feedback."
   - title: "Go-live nach Ihrer Freigabe"
     text: "Live geht die Website erst nach Ihrer Freigabe, danach bleibe ich für Korrekturen da."
-caseSlug: nimfa
+caseSlug: orska-rituals
 caseText:
-  - "Nimfa, eine Marke für Intimate Wellness: ein individuelles, mehrsprachiges Theme nach Figma."
+  - "Orska Rituals, eine Marke für professionelle Hautpflege: ein Shopify-Store nach einem HTML-Prototyp, mit Großhandelspreisen und Quick Order für freigegebene Profis."
 alsoArticles:
   - shopify-freelancer-oder-agentur
 articleSlug: shopify-shop-erstellen-lassen-kosten

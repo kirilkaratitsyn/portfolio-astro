@@ -39,12 +39,10 @@ alsoArticles:
 caseSlug: minbie
 alsoCases:
   - orska-rituals
-  - nimfa
   - jula-bloom
 caseText:
   - "Minbie, an Australian brand of baby feeding products: custom sections on the Blum theme with the Monti preset, a colour switcher across four sippy-cup products and Okendo star ratings."
   - "Orska Rituals, a professional skincare brand: a Shopify store built from an HTML prototype, with wholesale pricing and Quick Order for approved professionals."
-  - "Nimfa, an intimate wellness brand: a custom multilingual theme built from Figma."
   - "Jula Bloom, a silk flower brand from Seattle: an unfinished theme build completed and the move from WooCommerce prepared. Live since September 2026."
 faq:
   - q: "Ready-made theme or custom theme?"

@@ -27,7 +27,8 @@ const t = useTranslations(locale);
 const copy = t.servicePage;
 const caseStudies = await getCaseStudies(locale);
 // A local page is a full landing page: after its own text it shows the same sections as the home page.
-const works = await getWorks(locale);
+// Service pages are read by local businesses: the intimate wellness store stays in the portfolio only.
+const works = (await getWorks(locale)).filter((work) => work.id !== 'nimfa' && work.title !== 'Nimfa');
 const proof = caseStudies.find((item) => item.slug === service.caseSlug);
 if (!proof) throw new Error(`ServiceView: case study "${service.caseSlug}" not found for ${locale}`);
 const article = service.articleSlug ? (await getPosts(locale)).find((post) => post.slug === service.articleSlug) : undefined;
@@ -127,18 +128,8 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
     </div>
    </div>
 
-   {
-     /* A local page: first who I am and the projects, then the local text. */
-     (
-       <>
-         <About locale={locale} />
-         <Feature locale={locale} caseStudies={caseStudies} works={works} />
-         <Numbers locale={locale} />
-         <ClientStrip locale={locale} works={works} />
-         <Reviews locale={locale} />
-       </>
-     )
-   }
+   {/* Order for a visitor from search: the numbers, what the page offers, who does it and the work, reviews, then how it runs. */}
+   <Numbers locale={locale} />
 
    <div class="mx-auto max-w-[1440px] px-5 md:px-10">
     <div class="mt-16 border-b border-line md:mt-24">
@@ -158,6 +149,15 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
           }
         </ul>
       </div>
+    </div>
+   </div>
+
+   <About locale={locale} />
+   <Feature locale={locale} caseStudies={caseStudies.filter((item) => item.slug !== 'nimfa')} works={works} />
+   <Reviews locale={locale} />
+
+   <div class="mx-auto max-w-[1440px] px-5 md:px-10">
+    <div class="mt-16 border-b border-line md:mt-24">
       <div class={row}>
         <h2 class="font-head text-2xl font-bold">{copy.steps}</h2>
         <ol class="grid max-w-3xl gap-5 text-lg leading-relaxed">
@@ -255,6 +255,7 @@ const row = 'grid gap-3 border-t border-line py-8 md:grid-cols-[260px_1fr] md:ga
    {
      (
        <>
+         <ClientStrip locale={locale} works={works} />
          <Services locale={locale} works={works} />
          <Stack locale={locale} />
          <Globe locale={locale} works={works} />

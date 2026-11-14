@@ -18,7 +18,7 @@ audience:
   - "Betriebe mit einem alten Webshop, der zu Shopify umziehen soll."
 scope:
   - title: "Neuer Onlineshop"
-    text: "Auf einem Theme aus dem Theme Store oder als individuelles Theme nach Ihrem Design, wie das mehrsprachige Theme nach Figma für Nimfa."
+    text: "Auf einem Theme aus dem Theme Store oder als individuelles Theme nach Ihrem Design; für Orska Rituals entstand der Store nach einem HTML-Prototyp."
   - title: "Eigene Sections statt Apps"
     text: "Was dem Theme fehlt, baue ich selbst: bei Minbie ein Farbwähler über vier Produkte, bei Pedchem ein neues Theme ohne neue Apps, Mobile-PageSpeed von 57 auf 82."
   - title: "Umzug aus dem alten System"

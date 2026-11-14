@@ -22,7 +22,7 @@ scope:
   - title: "Umzug zu Shopify"
     text: "Ich ziehe Produkte, Kunden, Bestellungen und Inhalte um und leite alte Adressen weiter; bei Jula Bloom führen die alten WooCommerce-Links auf ihre neuen Seiten."
   - title: "Verkauf in die Niederlande"
-    text: "Mit Shopify Markets bekommt derselbe Shop eine niederländische Sprachversion und eigene Einstellungen für das Nachbarland; ein mehrsprachiges Theme habe ich für Nimfa gebaut."
+    text: "Mit Shopify Markets bekommt derselbe Shop eine niederländische Sprachversion und eigene Einstellungen für das Nachbarland."
   - title: "Theme-Anpassung und Tempo"
     text: "Änderungen entstehen in einer unveröffentlichten Vorschau, Ihr Live-Shop verkauft weiter; bei Pedchem stieg der Mobile-PageSpeed mit neuem Theme ohne neue Apps von 57 auf 82."
   - title: "Erfahrung in Nordhorn"
