@@ -798,3 +798,51 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
   .search[open]::backdrop, .search[open] .search__box, .search.is-closing::backdrop, .search.is-closing .search__box, .search__list--enter .search__result { animation: none !important; }
 }
 @media (max-width: 767px) { .search__box { margin-top: 72px; max-height: calc(100% - 88px); } }
+
+/* ---- Case studies: the page stays this site's own; single elements take the client's colours and shapes
+   (CaseStudyView: .case--film, .case--ritual; the extra block is CaseFlair.astro). ---- */
+.flair-card { border-radius: 32px; background: #fff; padding: 24px; }
+@media (min-width: 768px) { .flair-card { padding: 36px; } }
+.flair-label { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5a5f73; }
+.flair-num { display: block; font: 700 clamp(34px, 6vw, 72px)/1 'e-UkraineHead', 'e-UkraineHead Fallback', sans-serif; letter-spacing: -0.03em; }
+.flair-cap { display: block; margin-top: 10px; font-size: 15px; color: #5a5f73; }
+
+/* Lumppings (video editor, lumppings.com): its blue #3c94f3, the orange, pink and cyan gradient with a dot grid from its
+   product cards, its pills. */
+.case--film { --accent: #3c94f3; --grad: linear-gradient(100deg, #ffa51f, #ff6f9c 55%, #38c6ff); }
+.case--film .case-stage { background: radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1.5px) 0 0 / 14px 14px, radial-gradient(55% 75% at 12% 18%, #ffb23a, transparent 70%), radial-gradient(55% 80% at 88% 25%, #45c8ff, transparent 70%), radial-gradient(70% 90% at 55% 105%, #ff6f9c, transparent 70%), #f4f4fa; }
+.case--film .flair-num { color: var(--accent); }
+.stage-hud { position: absolute; inset: auto 4% 5% 4%; z-index: 3; display: flex; justify-content: space-between; font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.12em; color: #0a0a0a; }
+.stage-hud i { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #eb001b; animation: rec 1.2s steps(2) infinite; }
+@keyframes rec { 50% { opacity: 0; } }
+.flair-grad { background: var(--grad); }
+.tl { position: relative; margin-top: 24px; font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.tl-ruler { display: flex; justify-content: space-between; margin-left: 34px; padding-bottom: 8px; border-bottom: 1px solid #d3d7e6; color: #5a5f73; }
+.tl-track { display: flex; align-items: center; height: 46px; border-bottom: 1px solid #e6e8f0; }
+.tl-name { width: 34px; flex: none; color: #5a5f73; }
+.tl-lane { display: flex; flex: 1; gap: 3px; min-width: 0; }
+.tl-clip { height: 32px; padding: 0 10px; border-radius: 8px; line-height: 32px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0a0a0a; }
+.tl-clip--0 { background: #ffc35c; } .tl-clip--1 { background: #ff9dbb; } .tl-clip--2 { background: #8adcff; }
+.tl-head { position: absolute; top: 14px; bottom: 0; left: 34px; width: 2px; background: #0e1018; animation: playhead 9s linear infinite; }
+.tl-head::before { content: ''; position: absolute; top: -4px; left: -5px; border: 6px solid transparent; border-top-color: #0e1018; }
+@keyframes playhead { to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) { .tl-head, .stage-hud i { animation: none; } }
+@media (max-width: 767px) { .tl-clip { padding: 0 5px; font-size: 9.5px; letter-spacing: -0.02em; } }
+
+/* Orska Rituals (professional skincare, orskarituals.com): its cream, umber #3a2e24 and gold #8c6a3f, spaced capitals,
+   a serif italic for numerals, square outlined shapes. */
+.case--ritual { --accent: #8c6a3f; --serif: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; }
+.case--ritual .case-stage { background: linear-gradient(160deg, #6b665f, #a59c8f 55%, #ddd2c0); }
+.case--ritual .case-review { background: #3a2e24; }
+.case--ritual .bg-blue.size-6 { background: var(--accent); }
+.case--ritual .text-blue-deep { color: var(--accent); }
+.case--ritual .flair-card { background: #f5f0e8; }
+.case--ritual .flair-label { color: var(--accent); letter-spacing: 0.2em; }
+.case--ritual .flair-num { font: 400 clamp(44px, 6vw, 80px)/1 var(--serif); color: #3a2e24; }
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.tiers::before { content: ''; position: absolute; top: 22px; left: 12%; right: 12%; height: 1px; background: rgba(58, 46, 36, 0.3); }
+.tiers li { position: relative; display: grid; justify-items: center; gap: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.tiers i { width: 44px; height: 44px; border-radius: 50%; box-shadow: 0 0 0 6px #f5f0e8; }
+.pipe-step { display: grid; grid-template-columns: 44px 1fr; align-items: baseline; padding: 14px 0; border-top: 1px solid rgba(58, 46, 36, 0.18); font-size: 18px; }
+.pipe-step span { font: italic 400 22px/1 var(--serif); color: var(--accent); }
+@media (max-width: 767px) { .tiers li { font-size: 10px; letter-spacing: 0.08em; } }
