@@ -35,6 +35,7 @@ alsoArticles:
   - shopify-shop-optimieren-lassen
   - shopify-entwickler-wechseln
   - shopify-app-entwickeln-lassen
+  - shopify-mehrsprachig-uebersetzen
 caseSlug: lineargent
 alsoCases:
   - elanora-skin

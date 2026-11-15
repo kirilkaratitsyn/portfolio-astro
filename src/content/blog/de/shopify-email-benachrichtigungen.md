@@ -144,6 +144,6 @@ Passende Themen: [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customiz
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich schaue mir nur öffentlich sichtbare Daten an, ohne Zugriff auf Ihr Konto, und sage Ihnen, was auffällt. Mehr unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Rechnungen und Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Try before you buy](/de/blog/shopify-try-before-you-buy) · [Shopify Domain verbinden](/de/blog/shopify-domain-verbinden)
+**Weiterlesen:** [Shopify Rechnungen und Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Versand in Shopify einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Try before you buy](/de/blog/shopify-try-before-you-buy) · [Shopify Domain verbinden](/de/blog/shopify-domain-verbinden) · [Shopify mehrsprachig: Shop übersetzen](/de/blog/shopify-mehrsprachig-uebersetzen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
