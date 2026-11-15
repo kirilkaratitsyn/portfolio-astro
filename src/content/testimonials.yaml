@@ -20,3 +20,11 @@ scott-nelles:
   source: Upwork
   photo: /source/testimonials/scott-nelles.jpg
   quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
+sam-van-wieren:
+  order: 3
+  name: Sam van Wieren
+  role: Co-founder
+  project: Elanora Skin
+  caseSlug: elanora-skin
+  photo: /source/testimonials/sam-van-wieren.jpg
+  quote: "Kiril is reliable and consistently delivers on what he promises. What really sets him apart is that he doesn't just execute tasks, but proactively identifies opportunities and implements improvements we hadn't even thought of ourselves. He's increasingly taking full ownership of key areas within our business, which makes him a very valuable part of our team."
