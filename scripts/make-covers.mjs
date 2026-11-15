@@ -24,6 +24,12 @@ const TOPIC = {
 
 // slug -> topic and, per language, the headline ("|" breaks the line) and up to three chips.
 const COVERS = {
+  'shopify-mehrsprachig-uebersetzen': {
+    topic: 'build',
+    en: { h: 'Multilingual|store', chips: ['Translate & Adapt', 'hreflang', 'CSV'] },
+    de: { h: 'Shopify|mehrsprachig', chips: ['Translate & Adapt', 'hreflang', 'CSV'] },
+    uk: { h: 'Багатомовний|магазин', chips: ['Translate & Adapt', 'hreflang', 'CSV'] },
+  },
   'shopify-plus-wann-lohnt': {
     topic: 'build',
     en: { h: 'Shopify|Plus', chips: ['Checkout', 'B2B', 'Team'] },
