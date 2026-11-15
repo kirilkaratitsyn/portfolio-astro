@@ -80,7 +80,7 @@ const cards = t.cards
               <img src={person.photo} alt={person.name} width="160" height="160" loading="lazy" decoding="async" class={`shrink-0 rounded-full object-cover ${people.length === 1 ? 'size-16 md:size-36' : 'size-16 md:size-20'}`} />
               <div class="leading-snug">
                 <p class="font-head text-xl font-bold tracking-[-0.01em] md:text-2xl">{person.name}</p>
-                <p class="mt-1 text-mute">{person.project}</p>
+                <p class="mt-1 text-mute">{person.role ? `${person.role}, ${person.project}` : person.project}</p>
                 {person.caseSlug && (
                   <a href={localizePath(locale, `/projects/${person.caseSlug}`)} class="mt-3 inline-block whitespace-nowrap rounded-full bg-ink px-4 py-2.5 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-blue-deep">
                     {all.caseStudies.viewCase} →

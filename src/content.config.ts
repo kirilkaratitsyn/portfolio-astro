@@ -116,6 +116,8 @@ const testimonials = defineCollection({
     order: z.number().int().positive(),
     name: z.string(),
     project: z.string(),
+    /** Their title at the client, shown before the project name, e.g. "Co-Founder". */
+    role: z.string().optional(),
     /** The case study of the project (src/content/projects/<locale>/<caseSlug>.md). */
     caseSlug: z.string().optional(),
     rating: z.number().min(1).max(5).optional(),

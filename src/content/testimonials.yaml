@@ -10,3 +10,13 @@ humphrey-hu:
   source: Upwork
   photo: /source/testimonials/humphrey-hu.jpg
   quote: "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs"
+scott-nelles:
+  order: 2
+  name: Scott Nelles
+  role: Co-Founder
+  project: Orska Rituals
+  caseSlug: orska-rituals
+  rating: 5
+  source: Upwork
+  photo: /source/testimonials/scott-nelles.jpg
+  quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
