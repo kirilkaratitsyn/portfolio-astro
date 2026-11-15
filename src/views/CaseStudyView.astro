@@ -1,6 +1,5 @@
 ---
 import TopRated from '../components/TopRated.astro';
-import CaseFlair from '../components/CaseFlair.astro';
 import Phone from '../components/Phone.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -20,8 +19,6 @@ interface Props {
 const { locale, caseStudy, caseStudies } = Astro.props;
 const copy = useTranslations(locale).caseStudies;
 // Optional long-form Markdown below the frontmatter of the case file.
-// Case studies drawn in the style of the client's trade (styles: global.css .case--film / .case--ritual).
-const theme = ({ lumppings: 'film', 'orska-rituals': 'ritual' } as Record<string, 'film' | 'ritual'>)[caseStudy.slug];
 const hasBody = Boolean(caseStudy.entry.body?.trim());
 const { Content } = await render(caseStudy.entry);
 
@@ -70,14 +67,13 @@ const seo = {
 ---
 
 <BaseLayout {...seo} path={`/projects/${caseStudy.slug}`} locale={locale}>
-  <div class={theme ? `case case--${theme}` : undefined}>
   <article class="mx-auto max-w-[1440px] px-5 pt-32 md:px-10 md:pt-44">
     <a href={localizePath(locale, '/projects')} class="text-sm font-medium text-mute hover:text-ink">← {copy.backToCases}</a>
 
     <header class="mt-8 grid grid-cols-1 gap-10 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
       <div class="min-w-0">
         <!-- Scales with the screen on phones, so a one-word name like MarinePatches still fits the line. -->
-        <h1 class="case-title intro-lift font-head text-[clamp(32px,11vw,48px)] font-bold leading-[0.95] tracking-[-0.03em] md:text-[104px]">{caseStudy.title}</h1>
+        <h1 class="intro-lift font-head text-[clamp(32px,11vw,48px)] font-bold leading-[0.95] tracking-[-0.03em] md:text-[104px]">{caseStudy.title}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-mute md:mt-8 md:text-xl">{caseStudy.summary}</p>
         <ul class="mt-6 flex flex-wrap gap-2 text-sm">
           {caseStudy.tags.map((tag) => <li class="rounded-full border border-line px-3 py-1 text-mute">{tag}</li>)}
@@ -102,7 +98,7 @@ const seo = {
       </div>
     </header>
 
-    <div class="case-stage relative mt-14 aspect-[760/540] overflow-hidden rounded-[28px] bg-blue md:mt-20 md:aspect-[1360/700]">
+    <div class="relative mt-14 aspect-[760/540] overflow-hidden rounded-[28px] bg-blue md:mt-20 md:aspect-[1360/700]">
       <div class="absolute left-[6%] top-[11%] w-[74%] overflow-hidden rounded-xl bg-white shadow-[0_24px_50px_rgba(33,53,84,0.35)] md:left-[9%] md:w-[58%]">
         <div class="flex h-[22px] items-center gap-1.5 bg-[#f1f2f6] px-3" aria-hidden="true">
           <i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i><i class="block size-2 rounded-full bg-[#cfd2de]"></i>
@@ -116,7 +112,6 @@ const seo = {
           </div>
         )
       }
-      {theme === 'film' && <div class="stage-hud" aria-hidden="true"><span><i />REC</span><span>00:00:33:89</span></div>}
       <Pebble name="white" class="absolute -bottom-[6%] -left-[3%] w-[18%] md:w-[11%]" />
       <Pebble name="black" class="absolute -right-[3%] -top-[5%] w-[13%] md:w-[8%]" />
     </div>
@@ -129,18 +124,16 @@ const seo = {
       ) : null
     }
 
-    {theme && <CaseFlair theme={theme} locale={locale} />}
-
-    <div class="case-rows mt-16 border-b border-line md:mt-24">
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+    <div class="mt-16 border-b border-line md:mt-24">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
         <h2 class="font-head text-2xl font-bold">{copy.aboutBrandTitle}</h2>
         <p class="max-w-3xl text-lg leading-relaxed">{caseStudy.brandDescription}</p>
       </div>
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
         <h2 class="font-head text-2xl font-bold">{copy.challengeTitle}</h2>
         <p class="max-w-3xl font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[28px]">{caseStudy.challenge}</p>
       </div>
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
         <h2 class="font-head text-2xl font-bold">{copy.scopeTitle}</h2>
         <ul class="grid max-w-3xl gap-4 text-lg leading-relaxed">
           {caseStudy.scope.map((item) => (
@@ -151,7 +144,7 @@ const seo = {
           ))}
         </ul>
       </div>
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
         <h2 class="font-head text-2xl font-bold">{copy.solutionTitle}</h2>
         <ol class="max-w-3xl">
           {caseStudy.solution.map((item, i) => (
@@ -165,7 +158,7 @@ const seo = {
       {
         caseStudy.review && (
           <div class="border-t border-line py-10 md:py-14">
-            <figure class="case-review rounded-[32px] bg-blue p-7 text-white md:p-12">
+            <figure class="rounded-[32px] bg-blue p-7 text-white md:p-12">
               <span class="block text-sm font-semibold uppercase tracking-[0.12em] text-white/75">{copy.reviewTitle}</span>
               <blockquote lang="en" class="mt-5 max-w-5xl font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[34px] md:leading-[1.25]">“{caseStudy.review.quote}”</blockquote>
               <figcaption class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-white/80">
@@ -176,7 +169,7 @@ const seo = {
           </div>
         )
       }
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+      <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
         <h2 class="font-head text-2xl font-bold">{copy.stackTitle}</h2>
         <ul class="flex flex-wrap content-start items-start gap-2">
           {caseStudy.stack.map((item) => <li class="rounded-full bg-white px-4 py-2 text-base leading-none">{item}</li>)}
@@ -184,7 +177,7 @@ const seo = {
       </div>
       {
         services.length > 0 && (
-          <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+          <div class="grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
             <h2 class="font-head text-2xl font-bold">{t.servicePage.more}</h2>
             <ul class="flex flex-wrap content-start items-start gap-3">
               {services.map((service) => (
@@ -208,7 +201,6 @@ const seo = {
       )
     }
   </article>
-  </div>
 
   <CaseStudyMoreProjects locale={locale} items={caseStudies} currentSlug={caseStudy.slug} />
   <Contact locale={locale} />
