@@ -815,19 +815,7 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .stage-hud { position: absolute; inset: auto 4% 5% 4%; z-index: 3; display: flex; justify-content: space-between; font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.12em; color: #0a0a0a; }
 .stage-hud i { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #eb001b; animation: rec 1.2s steps(2) infinite; }
 @keyframes rec { 50% { opacity: 0; } }
-.flair-grad { background: var(--grad); }
-.tl { position: relative; margin-top: 24px; font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
-.tl-ruler { display: flex; justify-content: space-between; margin-left: 34px; padding-bottom: 8px; border-bottom: 1px solid #d3d7e6; color: #5a5f73; }
-.tl-track { display: flex; align-items: center; height: 46px; border-bottom: 1px solid #e6e8f0; }
-.tl-name { width: 34px; flex: none; color: #5a5f73; }
-.tl-lane { display: flex; flex: 1; gap: 3px; min-width: 0; }
-.tl-clip { height: 32px; padding: 0 10px; border-radius: 8px; line-height: 32px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0a0a0a; }
-.tl-clip--0 { background: #ffc35c; } .tl-clip--1 { background: #ff9dbb; } .tl-clip--2 { background: #8adcff; }
-.tl-head { position: absolute; top: 14px; bottom: 0; left: 34px; width: 2px; background: #0e1018; animation: playhead 9s linear infinite; }
-.tl-head::before { content: ''; position: absolute; top: -4px; left: -5px; border: 6px solid transparent; border-top-color: #0e1018; }
-@keyframes playhead { to { left: 100%; } }
-@media (prefers-reduced-motion: reduce) { .tl-head, .stage-hud i { animation: none; } }
-@media (max-width: 767px) { .tl-clip { padding: 0 5px; font-size: 9.5px; letter-spacing: -0.02em; } }
+@media (prefers-reduced-motion: reduce) { .stage-hud i { animation: none; } }
 
 /* Orska Rituals (professional skincare, orskarituals.com): its cream, umber #3a2e24 and gold #8c6a3f, spaced capitals,
    a serif italic for numerals, square outlined shapes. */

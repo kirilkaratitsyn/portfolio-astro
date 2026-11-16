@@ -4,19 +4,13 @@ import type { Locale } from '../i18n';
 // The block that is unique to one case study, drawn in the style of the client's trade. It only re-presents facts
 // that already stand in the case file (pages built, counts, steps); nothing new is claimed here.
 interface Props {
-  theme: 'film' | 'ritual';
+  theme: 'ritual';
   locale: Locale;
 }
 
 const { theme, locale } = Astro.props;
 
 // Owner benefits first: what the store gained, not how many parts were built.
-const film = {
-  en: { stats: [['1', 'site for the portfolio, the shop and the free drops'], ['0', 'developers needed to change texts, images and links'], ['5.0', 'client rating on Upwork']], timeline: 'What is on the site, laid out as an edit timeline', demo: 'The drop timer from the store: drops end on their own' },
-  de: { stats: [['1', 'Website für Portfolio, Shop und Gratis-Drops'], ['0', 'Entwickler nötig, um Texte, Bilder und Links zu ändern'], ['5,0', 'Bewertung des Kunden auf Upwork']], timeline: 'Was auf der Website steht, als Schnitt-Timeline', demo: 'Der Drop-Timer aus dem Shop: Drops enden von selbst' },
-  uk: { stats: [['1', 'сайт для портфоліо, магазину і безкоштовних дропів'], ['0', 'розробників потрібно, щоб змінити тексти, фото і посилання'], ['5,0', 'оцінка клієнта на Upwork']], timeline: 'Що є на сайті, як монтажна стрічка', demo: 'Таймер дропу з магазину: дропи завершуються самі' },
-}[locale];
-
 const ritual = {
   en: {
     stats: [['1', 'store for guests and skincare professionals'], ['4', 'tiers, each with its own prices and tools'], ['0', 'manual steps when a professional is approved']],
@@ -38,56 +32,8 @@ const ritual = {
   },
 }[locale];
 
-const tracks = [
-  { name: 'V1', clips: [{ label: 'Home', w: 30 }, { label: 'Work', w: 26 }, { label: 'Shop', w: 30 }] },
-  { name: 'V2', offset: 18, clips: [{ label: 'Free Downloads', w: 40 }, { label: 'FAQ', w: 18 }] },
-  { name: 'A1', offset: 34, clips: [{ label: 'Selected', w: 24 }, { label: 'Shorts', w: 24 }] },
-];
 const roman = ['I', 'II', 'III'];
 ---
-
-{
-  theme === 'film' && (
-    <section class="mt-14 md:mt-20">
-      <div class="grid gap-3 md:grid-cols-[1.5fr_1fr] md:gap-5">
-        <div class="flair-card">
-          <p class="flair-label">{film.timeline}</p>
-          <div class="tl" aria-hidden="true">
-            <div class="tl-ruler">
-              {['00:00', '00:10', '00:20', '00:30', '00:40'].map((tc) => <span>{tc}</span>)}
-            </div>
-            {tracks.map((track, t) => (
-              <div class="tl-track">
-                <span class="tl-name">{track.name}</span>
-                <div class="tl-lane" style={`padding-left:${track.offset ?? 0}%`}>
-                  {track.clips.map((clip, c) => (
-                    <span class={`tl-clip tl-clip--${(t + c) % 3}`} style={`width:${clip.w}%`}>{clip.label}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-            <i class="tl-head" />
-          </div>
-        </div>
-
-        <div class="flair-card flex flex-col" data-drop-demo>
-          <p class="flair-label">{film.demo}</p>
-          <div class="flair-grad mt-5 h-24 rounded-2xl md:h-28" aria-hidden="true" />
-          <div class="mt-auto pt-5">
-            <div class="flex flex-wrap gap-2 text-[13px] font-medium">
-              <span class="rounded-full bg-[#3c94f3] px-3 py-1.5 text-white">Available for <span data-drop-time>23h 14m 07s</span></span>
-              <span class="rounded-full bg-[#c7c7cf] px-3 py-1.5">No email required</span>
-            </div>
-            <p class="mt-4 font-head text-2xl font-bold">Free drop</p>
-            <div class="mt-4 h-1.5 overflow-hidden rounded-full bg-[#e6e8f0]">
-              <i data-drop-bar class="block h-full w-[3%] rounded-full bg-[#3c94f3]" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 {
   theme === 'ritual' && (
@@ -117,26 +63,5 @@ const roman = ['I', 'II', 'III'];
         </div>
       </div>
     </section>
-  )
-}
-
-{
-  theme === 'film' && (
-    <script is:inline>
-      {`(() => {
-        const root = document.querySelector('[data-drop-demo]');
-        if (!root) return;
-        const time = root.querySelector('[data-drop-time]');
-        const bar = root.querySelector('[data-drop-bar]');
-        const DAY = 24 * 3600;
-        let left = 23 * 3600 + 14 * 60 + 7;
-        const pad = (n) => String(n).padStart(2, '0');
-        setInterval(() => {
-          left = left > 0 ? left - 1 : DAY;
-          time.textContent = Math.floor(left / 3600) + 'h ' + pad(Math.floor((left % 3600) / 60)) + 'm ' + pad(left % 60) + 's';
-          bar.style.width = Math.max(3, ((DAY - left) / DAY) * 100) + '%';
-        }, 1000);
-      })();`}
-    </script>
   )
 }
