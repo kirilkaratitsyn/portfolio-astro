@@ -43,4 +43,6 @@ screenshotCaptions:
   - "Laufende Shopify-Arbeit mit Fokus auf Angebote und Conversion."
   - "Geschenk- und Stufenlogik, die sich nach Markt und Sprache richtet."
   - "Back-in-Stock-Flow über die Klaviyo-API."
+industry: "Koreanisch inspirierte Hautpflege"
+period: "seit Ende 2025"
 ---

@@ -852,3 +852,35 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .case--ritual .case-bar.bg-blue, .case--ritual .bg-blue.size-7 { background: var(--accent); }
 .case--ritual .case-quote .text-blue { color: var(--accent); }
 .case--film .case-stat-num, .case--film .case-quote .text-blue { color: var(--accent); }
+.case--film .case-stat-num, .case--film .case-stars { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.case--film .case-tags li { background: #c7c7cf; color: #0a0a0a; }
+.case--film .case-tags li:first-child { background: var(--accent); color: #fff; }
+.case--film .case-bar.bg-blue, .case--film .case-check { background: var(--accent); }
+.case--film .case-bar.bg-ink { background: #0e1018; }
+.case--film .case-fact-icon { background: var(--grad); color: #fff; }
+.case--film .case-label { color: var(--accent); }
+.case--ritual .case-fact-icon { background: #f5f0e8; color: var(--accent); }
+.case--ritual .case-label, .case--ritual .case-stars { color: var(--accent); }
+.case--ritual .case-check { background: var(--accent); }
+
+/* élanora (Korean-inspired skincare, elanoraskin.com): its Space Mono type, black buttons, cream #ede9e0 and blush #ede6e7
+   panels, the green #00b67a of its badges and star ratings, near-square corners. */
+.case--mono { --accent: #00b67a; --mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+.case--mono .case-title, .case--mono .case-h2, .case--mono .case-stat-num, .case--mono .case-quote blockquote, .case--mono .case-label, .case--mono .case-tags, .case--mono .case-bar, .case--mono .case-facts b { font-family: var(--mono); font-weight: 700; letter-spacing: -0.02em; text-transform: none; }
+.case--mono .case-title { text-transform: lowercase; }
+.case--mono .case-stage { background: linear-gradient(140deg, #ede6e7, #ede9e0 60%, #f7f7f7); }
+.case--mono .case-stats, .case--mono .case-card, .case--mono .case-facts { border-radius: 8px; }
+.case--mono .case-stats, .case--mono .case-facts { background: #fdfbf7; }
+.case--mono .case-card { background: #fdfbf7; }
+.case--mono .case-stat-num { color: #121212; }
+.case--mono .case-tags li { border-radius: 4px; background: #f5f5f5; color: #121212; letter-spacing: 0; }
+.case--mono .case-tags li:first-child { background: var(--accent); color: #fff; }
+.case--mono .case-cta { border-radius: 8px; background: #000; letter-spacing: 0.06em; }
+.case--mono .case-label { color: #121212; letter-spacing: 0.02em; }
+.case--mono .case-check { border-radius: 4px; background: var(--accent); }
+.case--mono .case-stars { color: var(--accent); }
+.case--mono .case-bar { border-radius: 8px; }
+.case--mono .case-bar.bg-blue { background: #ede9e0; color: #121212; }
+.case--mono .case-bar.bg-ink { background: #000; }
+.case--mono .case-fact-icon { border-radius: 6px; background: #ede6e7; color: #121212; }
+.case--mono .rounded-\[28px\].case-stage { border-radius: 12px; }
