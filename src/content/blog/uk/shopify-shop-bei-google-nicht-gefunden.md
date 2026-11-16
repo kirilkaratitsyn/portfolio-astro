@@ -79,6 +79,6 @@ Google оцінює передусім мобільну версію. Дуже �
 
 Надішліть мені адресу магазину на [безкоштовну перевірку](#contact). Я перевірю захист паролем, карту сайту, noindex, перенаправлення та час завантаження і скажу, що можна виправити. Для надто повільного магазину підійде [прискорення](/uk/services/shopify-speed), для переходу [міграція з WooCommerce](/uk/services/woocommerce-to-shopify). Для продажу в кілька країн: [Shopify Markets: продавати в кілька країн](/uk/blog/shopify-markets-mehrere-laender).
 
-**Читайте також:** [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug) · [Замовити SEO для Shopify](/uk/blog/shopify-seo-optimieren-lassen)
+**Читайте також:** [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Перехід з Wix на Shopify](/uk/blog/wix-zu-shopify-umzug) · [Замовити SEO для Shopify](/uk/blog/shopify-seo-optimieren-lassen) · [Shopify і Google Shopping](/uk/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

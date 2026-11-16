@@ -116,6 +116,6 @@ I cannot show a case with documented rankings, so I quote no numbers. When [Jula
 
 Send me your shop address for the [free Shop-Check](#contact). I check titles, headings, structured data, sitemap and load time and tell you what is technical and what you can do yourself. The work usually runs under [Making your Shopify store faster](/services/shopify-speed), where Search Console errors and redirects are part of the scope.
 
-**Further reading:** [Shopify store not found on Google](/blog/shopify-shop-bei-google-nicht-gefunden) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur) · [A multilingual Shopify store](/blog/shopify-mehrsprachig-uebersetzen)
+**Further reading:** [Shopify store not found on Google](/blog/shopify-shop-bei-google-nicht-gefunden) · [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur) · [A multilingual Shopify store](/blog/shopify-mehrsprachig-uebersetzen) · [Connecting Shopify to Google Shopping](/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

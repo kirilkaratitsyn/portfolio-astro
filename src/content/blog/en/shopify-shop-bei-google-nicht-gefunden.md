@@ -79,6 +79,6 @@ Google mainly judges the mobile version. A very slow store is rated lower. Cause
 
 Send me your store's address for the [free store check](#contact). I check password protection, sitemap, noindex, redirects and load time and tell you what can be fixed. If the store is too slow, the [speed-up](/services/shopify-speed) fits; for a move, the [WooCommerce migration](/services/woocommerce-to-shopify). For selling to several countries: [Shopify Markets: selling to several countries](/blog/shopify-markets-mehrere-laender).
 
-**Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen)
+**Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen) · [Connecting Shopify to Google Shopping](/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

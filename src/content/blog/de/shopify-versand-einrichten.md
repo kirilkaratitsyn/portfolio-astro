@@ -82,6 +82,6 @@ Wer wofür zuständig ist, erklärt [Shopify Hilfe](/de/blog/shopify-help). Der 
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich prüfe nur öffentlich Sichtbares, etwa Ladezeit, Apps im Quelltext und Seitenstruktur, und sage Ihnen, was auffällt. Was ich für Shops mache, steht unter [Leistungen](/de/services) und [Shop-Umbau und Redesign](/de/services/shopify-redesign).
 
-**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten)
+**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify Lagerbestand verwalten](/de/blog/shopify-lagerbestand-verwalten) · [Shopify mit Google Shopping verbinden](/de/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

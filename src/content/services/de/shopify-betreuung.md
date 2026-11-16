@@ -36,6 +36,7 @@ alsoArticles:
   - shopify-entwickler-wechseln
   - shopify-app-entwickeln-lassen
   - shopify-mehrsprachig-uebersetzen
+  - shopify-google-shopping-merchant-center
 caseSlug: lineargent
 alsoCases:
   - elanora-skin
