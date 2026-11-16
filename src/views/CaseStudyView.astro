@@ -116,7 +116,7 @@ const seo = {
           </div>
         )
       }
-      {theme === 'film' && <div class="stage-hud" aria-hidden="true"><span><i />REC</span><span>00:00:33:89</span></div>}
+      {theme === 'film' && <div class="stage-hud" aria-hidden="true"><span><i />REC</span><span>00:01:24:12</span></div>}
       <Pebble name="white" class="absolute -bottom-[6%] -left-[3%] w-[18%] md:w-[11%]" />
       <Pebble name="black" class="absolute -right-[3%] -top-[5%] w-[13%] md:w-[8%]" />
     </div>
@@ -140,28 +140,6 @@ const seo = {
         <h2 class="font-head text-2xl font-bold">{copy.challengeTitle}</h2>
         <p class="max-w-3xl font-head text-[22px] font-medium leading-[1.3] tracking-[-0.01em] md:text-[28px]">{caseStudy.challenge}</p>
       </div>
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
-        <h2 class="font-head text-2xl font-bold">{copy.scopeTitle}</h2>
-        <ul class="grid max-w-3xl gap-4 text-lg leading-relaxed">
-          {caseStudy.scope.map((item) => (
-            <li class="flex gap-4">
-              <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue text-[13px] font-bold text-white" aria-hidden="true">✓</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
-        <h2 class="font-head text-2xl font-bold">{copy.solutionTitle}</h2>
-        <ol class="max-w-3xl">
-          {caseStudy.solution.map((item, i) => (
-            <li class={`flex flex-col gap-2 py-5 md:grid md:grid-cols-[56px_1fr] md:gap-3 ${i > 0 ? 'border-t border-line' : 'pt-0'}`}>
-              <span class="font-head text-base font-bold text-blue-deep md:text-lg">{String(i + 1).padStart(2, '0')}</span>
-              <p class="text-lg leading-relaxed">{item}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
       {
         caseStudy.review && (
           <div class="border-t border-line py-10 md:py-14">
@@ -176,12 +154,44 @@ const seo = {
           </div>
         )
       }
-      <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
-        <h2 class="font-head text-2xl font-bold">{copy.stackTitle}</h2>
-        <ul class="flex flex-wrap content-start items-start gap-2">
-          {caseStudy.stack.map((item) => <li class="rounded-full bg-white px-4 py-2 text-base leading-none">{item}</li>)}
-        </ul>
-      </div>
+      <!-- Store owners read the result first; how it was built stays on the page for those who want it. -->
+      <details class="case-tech group border-t border-line">
+        <summary class="grid cursor-pointer list-none gap-5 py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14 [&::-webkit-details-marker]:hidden">
+          <h2 class="font-head text-2xl font-bold">{copy.techTitle}</h2>
+          <span class="flex items-center gap-3 text-lg text-mute">
+            <span class="flex size-8 items-center justify-center rounded-full border border-line text-xl leading-none transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
+            {copy.techHint}
+          </span>
+        </summary>
+        <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+          <h2 class="font-head text-2xl font-bold">{copy.scopeTitle}</h2>
+          <ul class="grid max-w-3xl gap-4 text-lg leading-relaxed">
+            {caseStudy.scope.map((item) => (
+              <li class="flex gap-4">
+                <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue text-[13px] font-bold text-white" aria-hidden="true">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+          <h2 class="font-head text-2xl font-bold">{copy.solutionTitle}</h2>
+          <ol class="max-w-3xl">
+            {caseStudy.solution.map((item, i) => (
+              <li class={`flex flex-col gap-2 py-5 md:grid md:grid-cols-[56px_1fr] md:gap-3 ${i > 0 ? 'border-t border-line' : 'pt-0'}`}>
+                <span class="font-head text-base font-bold text-blue-deep md:text-lg">{String(i + 1).padStart(2, '0')}</span>
+                <p class="text-lg leading-relaxed">{item}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
+          <h2 class="font-head text-2xl font-bold">{copy.stackTitle}</h2>
+          <ul class="flex flex-wrap content-start items-start gap-2">
+            {caseStudy.stack.map((item) => <li class="rounded-full bg-white px-4 py-2 text-base leading-none">{item}</li>)}
+          </ul>
+        </div>
+      </details>
       {
         services.length > 0 && (
           <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
