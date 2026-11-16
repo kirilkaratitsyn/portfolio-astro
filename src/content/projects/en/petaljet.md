@@ -2,7 +2,7 @@
 order: 9
 title: Petaljet
 seoTitle: "Petaljet: Shopify Box Builders and Search for Wholesale"
-summary: "Ongoing Shopify work for Petaljet, a wholesale flower supplier: box builders with a delivery date inside, a site search that finds partial words and synonyms, prices hidden from logged-out visitors, and technical SEO fixes."
+summary: "Ongoing Shopify work for Petaljet, a wholesale flower supplier: the store search now finds what florists type, boxes with a delivery date go into the cart in one step, and only customers with an account see prices."
 brandSummary: Petaljet is a wholesale flower supplier for florists and professional designers, shipping farm-direct blooms across the U.S. for weddings, events, and everyday floral programs.
 brandDescription: Petaljet is built for B2B flower buying, serving florists, event designers, and other professional buyers with farm-direct wholesale flowers. The brand emphasizes dependable supply, broad category depth, and a workflow that supports recurring orders, large events, and everyday floral operations with less friction.
 image: /source/desktop/petaljet-desktop.webp
@@ -27,9 +27,9 @@ solution:
   - "Closed a price leak: predictive search and the search JSON view showed prices to logged-out visitors, and both now hide them."
   - "Fixed technical SEO from a checklist: noindex for URLs with parameters, own JSON-LD snippets for home, collection, article and product, robots.txt rules, and meta and H1 templates for collections. For speed, worked on the review widget’s images, a hero preload and inline critical CSS."
 outcome:
-  - "On the live store the search results page found “carna” 63 times where it found 0, “christmas” 157 where it found 0, and “premium roses” 269 where it found 5 (checked 30–31 October 2026)."
-  - "Logged-out visitors no longer see prices through search."
-  - "A box goes into the cart in one call and shows up there as one box."
+  - "Searching “christmas” now finds 157 products instead of 0, “premium roses” 269 instead of 5 and “carna” 63 instead of 0 (checked 30–31 October 2026)."
+  - "Only logged-in customers see wholesale prices, in search too."
+  - "A box goes into the cart in one step and shows up there as one line."
 stack:
   - "Shopify"
   - "Turbo theme"
@@ -41,4 +41,20 @@ screenshotCaptions:
   - "The storefront on the Turbo theme."
   - "A box builder that lets florists compose an order from the catalogue."
   - "Site search on the live store."
+industry: "Wholesale flowers"
+period: "Ongoing support"
+highlights:
+  - value: "157"
+    label: "results for “christmas”, was 0"
+  - value: "269"
+    label: "results for “premium roses”, was 5"
+  - value: "1"
+    label: "step until the box is in the cart"
+needs:
+  - need: "Boxes that florists build from the catalogue with a delivery date."
+    answer: "Box builders with a delivery date: the box goes into the cart in one step and shows up there as one line."
+  - need: "A search that finds what buyers actually type."
+    answer: "The search finds partial words and synonyms: “carna” 63 results instead of 0, “christmas” 157 instead of 0."
+  - need: "Prices only for buyers with an account."
+    answer: "Logged-out visitors see no prices, not even through search."
 ---

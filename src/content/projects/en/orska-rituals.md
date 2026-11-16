@@ -2,7 +2,7 @@
 order: 1
 title: Orska Rituals
 seoTitle: "Orska Rituals: Shopify B2B Store, Workers and Dropship"
-summary: "A Shopify store for a professional skincare brand, built from the client’s HTML prototype: access tiers for approved estheticians, a members-only Pro Vault, Quick Order, a Cloudflare Worker that turns an approved professional into a B2B company, cart validation Functions and a dropship backend."
+summary: "A Shopify store for a professional skincare brand that serves guests and skincare professionals in one store: prices per tier, a members’ area, quick order, and approved professionals order wholesale without the team setting anything up by hand."
 brandSummary: Orska Rituals is a professional skincare brand for estheticians and spas, with customizable protocols and treatment products, a retail line and a wholesale partner program.
 brandDescription: Orska Rituals pairs intelligent skin correction with customizable protocols for professional estheticians. The brand serves treatment rooms as well as hotels and resorts, sells to professionals through a partner program and keeps retail access open for everyone else.
 image: /source/desktop/orska-rituals-desktop.webp
@@ -28,10 +28,10 @@ solution:
   - "Built the dropship backend as a second Worker behind an App Proxy: a signed request, identity only from the logged-in customer, a client book in a customer metafield, and an order created as a draft to the partner’s client with prices and shipping from draftOrderCalculate, so the invoice matches the panel. Currency is fixed to USD."
   - "Switched off “ship to any address” on the B2B locations of partners below the committed tier, with the old values saved for rollback."
 outcome:
-  - "Guests, approved professionals and higher tiers get different prices and tools on one storefront."
-  - "A newly approved professional becomes a B2B company without manual setup: the location the worker creates gets 2 markets, 1 catalogue and ordering approved."
-  - "The Discovery Kit limit is enforced by a Function in the cart, and the theme agrees with it."
-  - "Dropship orders carry the dropship tag on real orders since 26 October 2026."
+  - "One store instead of two: guests, approved professionals and higher tiers each see their own prices and tools."
+  - "Once a professional is approved, they can order at B2B terms without the team setting anything up by hand."
+  - "The Discovery Kit limit holds in the cart, so customers can’t get around it."
+  - "Since 26 October 2026, dropship orders are marked as such in the real orders."
 stack:
   - "Shopify"
   - "Horizon theme"
@@ -48,4 +48,19 @@ screenshotCaptions:
 review:
   quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
   rating: 5
+industry: "Professional skincare"
+highlights:
+  - value: "1"
+    label: "store for guests and skincare professionals"
+  - value: "4"
+    label: "tiers, each with its own prices and tools"
+  - value: "0"
+    label: "manual steps when a professional is approved"
+needs:
+  - need: "Guests, approved professionals and partners need different prices, tools and content."
+    answer: "One store with access tiers: each tier sees its prices, and professionals get a members’ area and quick order."
+  - need: "Approved professionals should be able to order wholesale without manual work by the team."
+    answer: "On approval, the B2B company account is created on its own, with markets, a catalogue and ordering approved."
+  - need: "The rules of each tier must hold in the cart and at checkout, not just in the interface."
+    answer: "The Discovery Kit limit holds in the cart, so customers can’t get around it."
 ---

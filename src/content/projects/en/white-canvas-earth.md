@@ -2,7 +2,7 @@
 order: 15
 title: "White Canvas Earth"
 seoTitle: "White Canvas Earth: Shopify B2B Wholesale Section and Shipping"
-summary: "Shopify work for an artisan clothing brand: a native B2B wholesale section where an application becomes a company for approval, a B2B-only catalogue with working filters, a minimum-order panel and per-piece wholesale shipping on a Basic plan."
+summary: "Wholesale from the same Shopify store for a handmade clothing brand, with no wholesale app and on the Basic plan: retailers apply for access, the team approves them, and the minimum order and per-piece shipping run on their own."
 brandSummary: "White Canvas Earth is an artisan women’s clothing brand based in Indore, India, selling through its own Shopify store."
 brandDescription: "White Canvas Earth is a women’s clothing brand. The store runs on the Atelier theme, with a retail storefront and, since 2026, a wholesale section for boutiques, multi-brand stores and distributors."
 image: "/source/desktop/white-canvas-earth-desktop.webp"
@@ -29,10 +29,10 @@ solution:
   - "Reworked the redesign pages and the catalogue: About and Craft, Contact, Wholesale, a related-products carousel, size sorting in the picker and quick add, filter mapping, and the upsell block that picks products by name and collection."
   - "Fixed technical SEO: canonical URLs by request path that keep the language, noindex on paginated collection pages, meta tags for variant pages and a rule in robots.txt against .atom feeds. For speed, deferred the styles from the Shopify header and fixed the slideshow and background video; no measurements were taken."
 outcome:
-  - "A wholesale application now becomes a company waiting for approval in Shopify, with the right country and address."
-  - "Applications from the UK, Australia and Canada are no longer refused."
-  - "The checkout stays closed below the minimum order, and the cart shows how far the buyer is."
-  - "Wholesale delivery is counted by weight tiers on a Basic plan, with no extra shipping app."
+  - "Retailers from the UK, Australia and Canada can now apply for wholesale; before, their applications were refused."
+  - "Every application lands in Shopify as a company waiting for approval, with the right country and address."
+  - "Below the minimum order the checkout stays closed, and the cart shows how much is missing."
+  - "Wholesale shipping is charged by weight, with no extra shipping app."
 stack:
   - "Shopify"
   - "Atelier theme"
@@ -41,4 +41,19 @@ stack:
   - "Shopify B2B"
   - "Shopify Forms"
   - "Admin API"
+industry: "Handmade clothing"
+highlights:
+  - value: "3"
+    label: "new countries for wholesale applications: UK, Australia, Canada"
+  - value: "0"
+    label: "extra apps for wholesale and shipping"
+  - value: "Basic"
+    label: "Shopify plan the wholesale runs on"
+needs:
+  - need: "Wholesale from the same store, with no wholesale app."
+    answer: "Native B2B: an application becomes a company in Shopify waiting for approval, with the right country and address."
+  - need: "Approved buyers see wholesale prices and a minimum order."
+    answer: "A B2B-only catalogue with filters; below the minimum order the checkout stays closed, and the cart shows how much is missing."
+  - need: "Per-piece shipping on the Basic plan, where custom shipping logic is locked."
+    answer: "Wholesale shipping is charged by weight tiers, with no extra shipping app."
 ---
