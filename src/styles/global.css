@@ -846,3 +846,9 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .pipe-step { display: grid; grid-template-columns: 44px 1fr; align-items: baseline; padding: 14px 0; border-top: 1px solid rgba(58, 46, 36, 0.18); font-size: 18px; }
 .pipe-step span { font: italic 400 22px/1 var(--serif); color: var(--accent); }
 @media (max-width: 767px) { .tiers li { font-size: 10px; letter-spacing: 0.08em; } }
+/* Case page parts in the trade style (stats panel, cards, bars, quote). */
+.case--ritual .case-stat-num, .case--ritual .case-quote blockquote { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; color: #3a2e24; }
+.case--ritual .case-card, .case--ritual .case-stats { background: #f5f0e8; }
+.case--ritual .case-bar.bg-blue, .case--ritual .bg-blue.size-7 { background: var(--accent); }
+.case--ritual .case-quote .text-blue { color: var(--accent); }
+.case--film .case-stat-num, .case--film .case-quote .text-blue { color: var(--accent); }

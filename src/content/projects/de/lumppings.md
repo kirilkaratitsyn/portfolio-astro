@@ -41,4 +41,19 @@ screenshotCaptions:
 review:
   quote: "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs"
   rating: 5
+industry: "Videoproduktion und Schnitt-Assets"
+highlights:
+  - value: "1"
+    label: "Website für Portfolio, Shop und Gratis-Drops"
+  - value: "0"
+    label: "Entwickler nötig, um Texte, Bilder und Links zu ändern"
+  - value: "5,0"
+    label: "Bewertung des Kunden auf Upwork"
+needs:
+  - need: "Ein Video-Portfolio, ein Shop für digitale Packs und Gratis-Assets, alles an einem Ort."
+    answer: "Portfolio, Shop und Gratis-Drops laufen auf einer Shopify-Website, lumppings.com."
+  - need: "Der Inhaber ist kein Webdesigner und will die Seite selbst ändern."
+    answer: "Jeder Text, jedes Bild und jeder Link ist im Theme-Editor änderbar, ohne Entwickler."
+  - need: "Gratis-Assets sollen nur für begrenzte Zeit verfügbar sein."
+    answer: "Drops mit Countdown enden von selbst an dem Datum, das der Inhaber setzt, und der Download braucht keine E-Mail."
 ---

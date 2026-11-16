@@ -41,4 +41,20 @@ screenshotCaptions:
   - "Der Storefront auf dem Turbo-Theme."
   - "Ein Box-Builder, mit dem Floristen eine Bestellung aus dem Katalog zusammenstellen."
   - "Die Shop-Suche im Live-Shop."
+industry: "Blumen-Großhandel"
+period: "Laufende Betreuung"
+highlights:
+  - value: "157"
+    label: "Treffer für „christmas“, vorher 0"
+  - value: "269"
+    label: "Treffer für „premium roses“, vorher 5"
+  - value: "1"
+    label: "Schritt, bis die Box im Warenkorb liegt"
+needs:
+  - need: "Boxen, die Floristen aus dem Katalog mit Lieferdatum zusammenstellen."
+    answer: "Box-Builder mit Lieferdatum: Die Box geht in einem Schritt in den Warenkorb und erscheint dort als eine Position."
+  - need: "Eine Suche, die findet, was Käufer wirklich eintippen."
+    answer: "Die Suche findet Wortteile und Synonyme: „carna“ 63 Treffer statt 0, „christmas“ 157 statt 0."
+  - need: "Preise nur für Käufer mit Konto."
+    answer: "Nicht angemeldete Besucher sehen keine Preise, auch nicht über die Suche."
 ---

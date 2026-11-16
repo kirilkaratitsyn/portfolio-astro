@@ -41,4 +41,21 @@ screenshotCaptions:
   - "Die Startseite auf dem Enterprise-Theme."
   - "Datentabellen auf Produktseiten, aus Metafeldern."
   - "Auf einem Vorschau-Theme gebaut, nach Freigabe veröffentlicht."
+industry: "Schädlingsbekämpfung"
+highlights:
+  - value: "1,5 s"
+    label: "bis echte Besucher den Hauptinhalt sehen, vorher 3,0 s"
+  - value: "82"
+    label: "Mobile-PageSpeed der Startseite, vorher 57"
+  - value: "436"
+    label: "mobile Seiten von Google als gut eingestuft"
+needs:
+  - need: "Ein neues Theme, ohne den Live-Shop anzurühren, bis der Wechsel freigegeben ist."
+    answer: "Das neue Theme ging erst nach schriftlicher Freigabe live und läuft jetzt auf pedchem.com."
+  - need: "Schnellere Seiten auf dem Handy."
+    answer: "Echte Besucher sehen den Hauptinhalt nach 1,5 statt 3,0 Sekunden, ohne neue Apps."
+  - need: "Produktdaten in Metafeldern."
+    answer: "Die Datentabellen von 323 Produkten kommen aus gepflegten Metafeldern."
+  - need: "Fehler in der Search Console beheben."
+    answer: "Alle 33 alten Adressen leiten dauerhaft weiter, und Google stuft 436 mobile Seiten als gut ein."
 ---

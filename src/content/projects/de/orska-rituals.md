@@ -48,4 +48,19 @@ screenshotCaptions:
 review:
   quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
   rating: 5
+industry: "Professionelle Hautpflege"
+highlights:
+  - value: "1"
+    label: "Shop für Gäste und Kosmetik-Profis"
+  - value: "4"
+    label: "Stufen mit eigenen Preisen und Werkzeugen"
+  - value: "0"
+    label: "Handgriffe, wenn ein Profi freigegeben wird"
+needs:
+  - need: "Gäste, freigegebene Profis und Partner brauchen andere Preise, Werkzeuge und Inhalte."
+    answer: "Ein Shop mit Zugriffsstufen: Jede Stufe sieht ihre Preise, Profis bekommen einen Mitgliederbereich und Schnellbestellung."
+  - need: "Freigegebene Profis sollen im Großhandel bestellen können, ohne Handarbeit im Team."
+    answer: "Bei der Freigabe entsteht das B2B-Firmenkonto von selbst, mit Märkten, Katalog und Bestellfreigabe."
+  - need: "Die Regeln jeder Stufe müssen in Warenkorb und Checkout gelten, nicht nur in der Oberfläche."
+    answer: "Das Limit für das Discovery Kit greift im Warenkorb, Kunden können es nicht umgehen."
 ---

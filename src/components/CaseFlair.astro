@@ -49,16 +49,7 @@ const roman = ['I', 'II', 'III'];
 {
   theme === 'film' && (
     <section class="mt-14 md:mt-20">
-      <ul class="grid grid-cols-3 gap-3 md:gap-5">
-        {film.stats.map(([value, caption]) => (
-          <li class="flair-card">
-            <b class="flair-num">{value}</b>
-            <span class="flair-cap">{caption}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div class="mt-3 grid gap-3 md:mt-5 md:grid-cols-[1.5fr_1fr] md:gap-5">
+      <div class="grid gap-3 md:grid-cols-[1.5fr_1fr] md:gap-5">
         <div class="flair-card">
           <p class="flair-label">{film.timeline}</p>
           <div class="tl" aria-hidden="true">
@@ -101,16 +92,7 @@ const roman = ['I', 'II', 'III'];
 {
   theme === 'ritual' && (
     <section class="mt-14 md:mt-20">
-      <ul class="grid grid-cols-3 gap-3 md:gap-5">
-        {ritual.stats.map(([value, caption]) => (
-          <li class="flair-card">
-            <b class="flair-num">{value}</b>
-            <span class="flair-cap">{caption}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div class="mt-3 grid gap-3 md:mt-5 md:grid-cols-[1fr_1.3fr] md:gap-5">
+      <div class="grid gap-3 md:grid-cols-[1fr_1.3fr] md:gap-5">
         <div class="flair-card">
           <p class="flair-label">{ritual.tiers}</p>
           <ol class="tiers mt-10">

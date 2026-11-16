@@ -29,6 +29,14 @@ const projects = defineCollection({
     screenshotCaptions: z.array(z.string()).optional(),
     /** The client's Upwork review, word for word and unnamed (shown in English on every locale). */
     review: z.object({ quote: z.string(), rating: z.number().min(1).max(5) }).optional(),
+    /** The client's trade in a few words, for the fact bar under the hero (e.g. "Professionelle Hautpflege"). */
+    industry: z.string().optional(),
+    /** When the work ran, only where it is known (e.g. "Januar bis Juli 2026", "seit Ende 2025"). */
+    period: z.string().optional(),
+    /** Up to 3 big numbers on the hero for store owners, each a fact already in the outcome. */
+    highlights: z.array(z.object({ value: z.string(), label: z.string() })).max(3).optional(),
+    /** What the store needed, and what was done about it, in the owner's words. */
+    needs: z.array(z.object({ need: z.string(), answer: z.string() })).optional(),
   }),
 });
 

@@ -41,4 +41,19 @@ stack:
   - "Shopify B2B"
   - "Shopify Forms"
   - "Admin-API"
+industry: "Handgemachte Kleidung"
+highlights:
+  - value: "3"
+    label: "neue Länder für Großhandelsanträge: Großbritannien, Australien, Kanada"
+  - value: "0"
+    label: "zusätzliche Apps für Großhandel und Versand"
+  - value: "Basic"
+    label: "Shopify-Tarif, auf dem der Großhandel läuft"
+needs:
+  - need: "Großhandel aus demselben Shop, ohne Großhandels-App."
+    answer: "Natives B2B: Ein Antrag wird in Shopify zur Firma, die auf Freigabe wartet, mit dem richtigen Land und der richtigen Adresse."
+  - need: "Freigegebene Käufer sehen Großhandelspreise und eine Mindestbestellung."
+    answer: "Ein reiner B2B-Katalog mit Filtern; unter dem Mindestbestellwert bleibt der Checkout gesperrt, und der Warenkorb zeigt, wie viel fehlt."
+  - need: "Versandkosten pro Stück im Basic-Tarif, in dem eigene Versandlogik gesperrt ist."
+    answer: "Der Großhandelsversand wird nach Gewichtsstufen berechnet, ohne zusätzliche Versand-App."
 ---
