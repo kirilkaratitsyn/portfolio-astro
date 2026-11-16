@@ -116,6 +116,6 @@ Google радить перед наймом поставити, зокрема, 
 
 Надішліть адресу магазину для [безкоштовного Shop-Check](#contact). Я перевірю заголовки, структуровані дані, sitemap і швидкість і скажу, що тут технічне, а що ви можете зробити самі. Робота зазвичай іде в межах послуги [Пришвидшення магазину Shopify](/uk/services/shopify-speed), де помилки Search Console і редиректи входять в обсяг.
 
-**Читайте також:** [Магазин Shopify не знаходиться в Google](/uk/blog/shopify-shop-bei-google-nicht-gefunden) · [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Shopify-фрилансер чи агенція](/uk/blog/shopify-freelancer-oder-agentur) · [Багатомовний магазин Shopify](/uk/blog/shopify-mehrsprachig-uebersetzen)
+**Читайте також:** [Магазин Shopify не знаходиться в Google](/uk/blog/shopify-shop-bei-google-nicht-gefunden) · [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Shopify-фрилансер чи агенція](/uk/blog/shopify-freelancer-oder-agentur) · [Багатомовний магазин Shopify](/uk/blog/shopify-mehrsprachig-uebersetzen) · [Shopify і Google Shopping](/uk/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/uk/about), розробник Shopify у Німеччині*

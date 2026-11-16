@@ -82,6 +82,6 @@ Who handles what is explained in [Shopify help](/blog/shopify-help). The shippin
 
 Send me your store's address for the [free store check](#contact). I only check what is publicly visible, such as load time, apps in the page source and page structure, and tell you what stands out. What I do for stores is under [Services](/services) and [store rebuild and redesign](/services/shopify-redesign).
 
-**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten)
+**Further reading:** [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten) · [Connecting Shopify to Google Shopping](/blog/shopify-google-shopping-merchant-center)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
