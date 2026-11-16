@@ -2,7 +2,7 @@
 order: 11
 title: "Lumppings"
 seoTitle: "Lumppings: Shopify-Theme mit zeitlich begrenzten Gratis-Downloads"
-summary: "Ein Shopify-Theme für Lumppings, einen Videoproduzenten und Cutter, der Assets für den Schnitt verkauft: ein Prototyp, umgebaut zu 33 Sections und 89 Blöcken auf dem Horizon-Theme, die der Inhaber im Theme-Editor pflegt, mit Gratis-Drops im Countdown."
+summary: "Eine eigene Shopify-Website für Lumppings, einen Videoproduzenten und Cutter: Portfolio, Shop für Schnitt-Assets und Gratis-Drops an einem Ort, und der Inhaber pflegt alles selbst, ohne Entwickler."
 brandSummary: "Lumppings ist Produzent, Autor und Cutter aus Vancouver, Kanada, erzählt Geschichten für Marken und Creator und verkauft Assets für den Schnitt wie Papier- und Staub-Texturpakete."
 brandDescription: "Lumppings dreht Videos für Marken und Creator und verkauft Assets für andere Cutter: Papier- und Staub-Texturpakete, dazu einen Gratis-Drop mit Soundeffekten oder Texturen, den jeder für begrenzte Zeit herunterladen kann."
 image: /source/desktop/lumppings-desktop.webp
@@ -24,9 +24,9 @@ solution:
   - "Den Shop eingerichtet: eine Produktseite aus eigenen Sections, ein Bundle und ein Sample auf der Shop-Seite und eine Warenkorb-Meldung, die die Höhe der Kopfzeile berücksichtigt."
   - "Die Portfolio-Sections Selected und Shorts mit modalem Videoplayer, Ton-Button und einem Fenster gebaut, das sich an Hoch- und Querformat anpasst."
 outcome:
-  - "Die neue Website läuft auf lumppings.com, mit Portfolio, Shop und Gratis-Drops an einem Ort."
-  - "Der Inhaber pflegt Texte, Bilder und Links im Theme-Editor, verteilt auf 33 Sections und 89 Blöcke."
-  - "Gratis-Drops enden von selbst zu dem Datum, das der Inhaber setzt, und der Download braucht keine E-Mail."
+  - "Portfolio, Shop und Gratis-Drops laufen an einem Ort, auf lumppings.com."
+  - "Der Inhaber ändert Texte, Bilder und Links selbst im Theme-Editor, ohne Entwickler."
+  - "Gratis-Drops enden von selbst an dem Datum, das der Inhaber setzt, und der Download braucht keine E-Mail."
   - "Vom Kunden auf Upwork mit 5,0 bewertet."
 stack:
   - "Shopify"

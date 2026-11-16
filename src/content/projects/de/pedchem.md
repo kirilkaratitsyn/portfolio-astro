@@ -2,7 +2,7 @@
 order: 6
 title: "Pedchem"
 seoTitle: "Pedchem: Shopify-Theme-Wechsel, Mobile-Speed 57 auf 82"
-summary: "Theme-Wechsel und Aufräumen für Pedchem, den Shop für Schädlingsbekämpfung von Phoenix Environmental Design: von Flex auf das Enterprise-Theme, Mobile-PageSpeed live von 57 auf 82, typisierte Metafelder hinter den Datentabellen von 323 Produkten und Weiterleitungen auf Basis der Search Console."
+summary: "Neues Theme für Pedchem, den Shop für Schädlingsbekämpfung von Phoenix Environmental Design: Echte Besucher sehen den Hauptinhalt auf dem Handy nach 1,5 statt 3,0 Sekunden, die Daten von 323 Produkten sind sauber gepflegt, und alte Links führen auf die neuen Seiten."
 brandSummary: "Pedchem ist der Onlineshop von Phoenix Environmental Design Inc. in West Richland, Washington, mit Pestiziden, Herbiziden und weiteren Produkten zur Schädlingsbekämpfung."
 brandDescription: "Pedchem führt die Produkte zur Schädlingsbekämpfung, die Profis verwenden, von Granulat-Herbiziden über Aerosol-Pestizide bis zu Lebendfallen, von bewährten Marken, für Rasenpflege, Schädlingsbekämpfung und Behördenaufträge."
 image: /source/desktop/pedchem-desktop.webp
@@ -26,10 +26,10 @@ solution:
   - "33 Weiterleitungen eingerichtet, 24 davon aus den von der Search Console gemeldeten URLs, und leere Kollektionsseiten, die als 34 Soft-404 gezählt wurden, auf noindex gesetzt."
   - "Alles auf einem Vorschau-Theme gebaut und geprüft, während das alte Theme weiter verkaufte, und nach schriftlicher Freigabe nach Ablaufplan veröffentlicht; das alte Theme blieb unveröffentlicht als Rückweg."
 outcome:
-  - "Das neue Theme ist auf pedchem.com live."
-  - "Mobile-PageSpeed der Startseite live von 57 auf 82 (Median aus drei Messungen), LCP von 12,0 auf 4,2 Sekunden, Barrierefreiheit von 78 auf 100."
-  - "Felddaten am Tag 28: LCP im 75. Perzentil von 3,0 auf 1,5 Sekunden, und im Core-Web-Vitals-Bericht der Search Console für Mobilgeräte von 460 URLs mit Verbesserungsbedarf auf 436 gute."
-  - "Alle 33 Weiterleitungen antworten am Tag 28 mit 301."
+  - "Echte Besucher sehen den Hauptinhalt nach 1,5 statt 3,0 Sekunden (Google-Felddaten, 75. Perzentil, Tag 28)."
+  - "Google stuft 436 mobile Seiten als gut ein; vorher standen 460 auf „Verbesserung erforderlich“."
+  - "Mobile-PageSpeed der Startseite von 57 auf 82 (Median aus drei Messungen), ohne neue Apps."
+  - "Alle 33 alten Adressen leiten dauerhaft (301) auf die neuen Seiten weiter."
 stack:
   - "Shopify"
   - "Enterprise-Theme"

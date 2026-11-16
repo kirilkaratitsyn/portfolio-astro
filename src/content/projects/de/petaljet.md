@@ -2,7 +2,7 @@
 order: 9
 title: Petaljet
 seoTitle: "Petaljet: Shopify-Box-Builder und Suche für den Großhandel"
-summary: "Laufende Shopify-Arbeit für Petaljet, einen Blumen-Großhändler: Box-Builder mit Lieferdatum, eine Shop-Suche, die Wortteile und Synonyme findet, Preise, die für nicht angemeldete Besucher verborgen sind, und technische SEO-Korrekturen."
+summary: "Laufende Shopify-Arbeit für Petaljet, einen Blumen-Großhändler: Die Shop-Suche findet jetzt, was Floristen eintippen, Boxen mit Lieferdatum gehen in einem Schritt in den Warenkorb, und Preise sehen nur Kunden mit Konto."
 brandSummary: Petaljet ist ein Großhandelsanbieter für Blumen für Floristen und professionelle Designer und liefert farm-direct Blüten in den gesamten USA für Hochzeiten, Events und laufende Floral-Programme.
 brandDescription: Petaljet ist auf den B2B-Einkauf von Blumen ausgerichtet und bedient Floristen, Event-Designer und andere professionelle Käufer. Die Marke betont verlässliche Versorgung, Sortimentstiefe und einen Workflow, der wiederkehrende Bestellungen, große Events und tägliche Floral-Operations mit weniger Reibung unterstützt.
 image: /source/desktop/petaljet-desktop.webp
@@ -27,9 +27,9 @@ solution:
   - "Ein Preisleck geschlossen: Die Vorschlagssuche und die JSON-Ansicht der Suche zeigten nicht angemeldeten Besuchern Preise, beide verbergen sie jetzt."
   - "Technische SEO nach einer Checkliste korrigiert: noindex für URLs mit Parametern, eigene JSON-LD-Snippets für Startseite, Kollektion, Artikel und Produkt, robots.txt-Regeln sowie Meta- und H1-Vorlagen für Kollektionen. Für die Geschwindigkeit an den Bildern des Bewertungs-Widgets gearbeitet, dazu ein Hero-Preload und Critical CSS inline."
 outcome:
-  - "Im Live-Shop fand die Ergebnisseite der Suche „carna“ 63-mal, wo sie 0 fand, „christmas“ 157-mal statt 0 und „premium roses“ 269-mal statt 5 (geprüft am 30. und 31. Oktober 2026)."
-  - "Nicht angemeldete Besucher sehen über die Suche keine Preise mehr."
-  - "Eine Box geht mit einem Aufruf in den Warenkorb und erscheint dort als eine Box."
+  - "Wer „christmas“ sucht, findet jetzt 157 Produkte statt 0, bei „premium roses“ 269 statt 5 und bei „carna“ 63 statt 0 (geprüft am 30. und 31. Oktober 2026)."
+  - "Großhandelspreise sehen nur angemeldete Kunden, auch über die Suche."
+  - "Eine Box geht in einem Schritt in den Warenkorb und erscheint dort als eine Position."
 stack:
   - "Shopify"
   - "Turbo-Theme"

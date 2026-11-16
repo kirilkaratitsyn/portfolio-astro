@@ -2,7 +2,7 @@
 order: 15
 title: "White Canvas Earth"
 seoTitle: "White Canvas Earth: Shopify-B2B-Großhandel und Versand"
-summary: "Shopify-Arbeit für eine Marke für handgemachte Kleidung: ein natives B2B-Großhandelsbereich, in dem aus einem Antrag ein Unternehmen zur Freigabe wird, ein reiner B2B-Katalog mit funktionierenden Filtern, ein Mindestbestellwert-Panel und Großhandelsversand pro Stück im Basic-Tarif."
+summary: "Großhandel aus demselben Shopify-Shop für eine Marke handgemachter Kleidung, ohne Großhandels-App und im Basic-Tarif: Händler beantragen Zugang, das Team gibt frei, und Mindestbestellung und Versand pro Stück laufen automatisch."
 brandSummary: "White Canvas Earth ist eine Marke für handgemachte Damenkleidung aus Indore, Indien, und verkauft über einen eigenen Shopify-Shop."
 brandDescription: "White Canvas Earth ist eine Marke für Damenkleidung. Der Shop läuft auf dem Atelier-Theme, mit einer Storefront für Endkunden und seit 2026 einem Großhandelsbereich für Boutiquen, Multibrand-Shops und Distributoren."
 image: "/source/desktop/white-canvas-earth-desktop.webp"
@@ -29,10 +29,10 @@ solution:
   - "Die Redesign-Seiten und den Katalog überarbeitet: About und Craft, Contact, Wholesale, ein Karussell mit ähnlichen Produkten, Größensortierung im Picker und im Quick Add, die Zuordnung der Filter und den Upsell-Block, der Produkte nach Name und Kollektion auswählt."
   - "Technische SEO korrigiert: Canonical-URLs nach Request-Pfad mit Erhalt der Sprache, noindex auf paginierten Kollektionsseiten, Meta-Tags für Variantenseiten und eine Regel in der robots.txt gegen .atom-Feeds. Für die Geschwindigkeit die Styles aus dem Shopify-Header verzögert geladen und Slideshow und Hintergrundvideo korrigiert; gemessen wurde nicht."
 outcome:
-  - "Ein Großhandelsantrag wird jetzt in Shopify zu einem Unternehmen, das auf Freigabe wartet, mit dem richtigen Land und der richtigen Adresse."
-  - "Anträge aus Großbritannien, Australien und Kanada werden nicht mehr abgelehnt."
-  - "Der Checkout bleibt unter der Mindestbestellung gesperrt, und der Warenkorb zeigt, wie weit der Käufer ist."
-  - "Der Großhandelsversand wird im Basic-Tarif über Gewichtsstufen gezählt, ohne zusätzliche Versand-App."
+  - "Händler aus Großbritannien, Australien und Kanada können jetzt Großhandel beantragen; vorher wurden ihre Anträge abgelehnt."
+  - "Jeder Antrag landet in Shopify als Firma zur Freigabe, mit dem richtigen Land und der richtigen Adresse."
+  - "Unter dem Mindestbestellwert bleibt der Checkout gesperrt, und der Warenkorb zeigt, wie viel noch fehlt."
+  - "Der Großhandelsversand wird nach Gewicht berechnet, ohne zusätzliche Versand-App."
 stack:
   - "Shopify"
   - "Atelier-Theme"

@@ -2,7 +2,7 @@
 order: 1
 title: Orska Rituals
 seoTitle: "Orska Rituals: Shopify-B2B-Shop, Worker und Dropship"
-summary: "Ein Shopify-Shop für eine professionelle Hautpflegemarke, nach dem HTML-Prototyp des Kunden gebaut: Zugriffsstufen für freigegebene Kosmetikerinnen und Kosmetiker, ein Pro Vault nur für Mitglieder, Quick Order, ein Cloudflare Worker, der aus einem freigegebenen Profi ein B2B-Unternehmen macht, Warenkorb-Validierungs-Functions und ein Dropship-Backend."
+summary: "Ein Shopify-Shop für eine professionelle Hautpflegemarke, der Gäste und Kosmetik-Profis in einem Shop bedient: eigene Preise je Stufe, ein Mitgliederbereich, Schnellbestellung, und freigegebene Profis bestellen im Großhandel, ohne dass das Team etwas von Hand einrichtet."
 brandSummary: Orska Rituals ist eine professionelle Hautpflegemarke für Kosmetikstudios und Spas mit anpassbaren Protokollen und Behandlungsprodukten, einer Retail-Linie und einem Partnerprogramm für den Großhandel.
 brandDescription: Orska Rituals verbindet intelligente Hautkorrektur mit anpassbaren Protokollen für professionelle Kosmetikerinnen und Kosmetiker. Die Marke bedient Behandlungsräume sowie Hotels und Resorts, verkauft über ein Partnerprogramm an Profis und lässt allen anderen den Retail-Zugang offen.
 image: /source/desktop/orska-rituals-desktop.webp
@@ -28,10 +28,10 @@ solution:
   - "Das Dropship-Backend als zweiten Worker hinter einem App Proxy gebaut: signierte Anfrage, Identität nur vom angemeldeten Kunden, ein Kundenbuch in einem Kunden-Metafeld und eine Bestellung als Entwurf an den Kunden des Partners, mit Preisen und Versand aus draftOrderCalculate, sodass die Rechnung zum Panel passt. Die Währung ist auf USD festgelegt."
   - "„Ship to any address“ bei den B2B-Standorten von Partnern unterhalb der Stufe committed abgeschaltet, mit den alten Werten für einen Rollback."
 outcome:
-  - "Gäste, freigegebene Profis und höhere Stufen sehen im selben Shop andere Preise und Werkzeuge."
-  - "Ein frisch freigegebener Profi wird ohne manuelle Einrichtung zum B2B-Unternehmen: Der vom Worker angelegte Standort bekommt 2 Märkte, 1 Katalog und „Bestellen genehmigt“."
-  - "Das Discovery-Kit-Limit setzt eine Function im Warenkorb durch, und das Theme stimmt damit überein."
-  - "Dropship-Bestellungen tragen das Tag dropship auf echten Bestellungen, seit dem 26. Oktober 2026."
+  - "Ein Shop statt zwei: Gäste, freigegebene Profis und höhere Stufen sehen jeweils ihre eigenen Preise und Werkzeuge."
+  - "Wird ein Profi freigegeben, kann er zu B2B-Konditionen bestellen, ohne dass das Team etwas von Hand einrichtet."
+  - "Das Limit für das Discovery Kit greift im Warenkorb, Kunden können es nicht umgehen."
+  - "Dropship-Bestellungen sind seit dem 26. Oktober 2026 in den echten Bestellungen als solche markiert."
 stack:
   - "Shopify"
   - "Horizon-Theme"
