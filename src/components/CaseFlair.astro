@@ -10,30 +10,31 @@ interface Props {
 
 const { theme, locale } = Astro.props;
 
+// Owner benefits first: what the store gained, not how many parts were built.
 const film = {
-  en: { stats: ['sections', 'blocks', 'rating on Upwork'], timeline: 'What was built, laid out as an edit timeline', demo: 'Demo of the drop timer built for the store' },
-  de: { stats: ['Sections', 'Blöcke', 'Bewertung auf Upwork'], timeline: 'Was gebaut wurde, als Schnitt-Timeline', demo: 'Demo des Drop-Timers aus dem Shop' },
-  uk: { stats: ['секції', 'блоків', 'оцінка на Upwork'], timeline: 'Що зроблено, як монтажна стрічка', demo: 'Демо таймера дропу з магазину' },
+  en: { stats: [['1', 'site for the portfolio, the shop and the free drops'], ['0', 'developers needed to change texts, images and links'], ['5.0', 'client rating on Upwork']], timeline: 'What is on the site, laid out as an edit timeline', demo: 'The drop timer from the store: drops end on their own' },
+  de: { stats: [['1', 'Website für Portfolio, Shop und Gratis-Drops'], ['0', 'Entwickler nötig, um Texte, Bilder und Links zu ändern'], ['5,0', 'Bewertung des Kunden auf Upwork']], timeline: 'Was auf der Website steht, als Schnitt-Timeline', demo: 'Der Drop-Timer aus dem Shop: Drops enden von selbst' },
+  uk: { stats: [['1', 'сайт для портфоліо, магазину і безкоштовних дропів'], ['0', 'розробників потрібно, щоб змінити тексти, фото і посилання'], ['5,0', 'оцінка клієнта на Upwork']], timeline: 'Що є на сайті, як монтажна стрічка', demo: 'Таймер дропу з магазину: дропи завершуються самі' },
 }[locale];
 
 const ritual = {
   en: {
-    stats: ['sections', 'blocks', 'templates', 'Cloudflare Workers', 'cart Functions'],
-    tiers: 'Access tiers, read from customer tags',
-    pipe: 'From approval to a B2B company, without manual setup',
-    steps: ['Professional approved', 'Webhook verified', 'Customer read through the Admin API', 'Company and contact created', 'Location admin role assigned', '2 markets, 1 catalogue, ordering approved'],
+    stats: [['1', 'store for guests and skincare professionals'], ['4', 'tiers, each with its own prices and tools'], ['0', 'manual steps when a professional is approved']],
+    tiers: 'Every tier sees its own prices',
+    pipe: 'From approval to wholesale orders, without manual setup',
+    steps: ['The team approves a professional', 'The B2B company account is created on its own', 'The professional orders at B2B terms'],
   },
   de: {
-    stats: ['Sections', 'Blöcke', 'Templates', 'Cloudflare Workers', 'Cart-Functions'],
-    tiers: 'Zugriffsstufen, gelesen aus Kunden-Tags',
-    pipe: 'Von der Freigabe zur B2B-Firma, ohne Handarbeit',
-    steps: ['Profi freigegeben', 'Webhook geprüft', 'Kunde über die Admin API gelesen', 'Firma und Kontakt angelegt', 'Rolle Location admin vergeben', '2 Märkte, 1 Katalog, Bestellen freigegeben'],
+    stats: [['1', 'Shop für Gäste und Kosmetik-Profis'], ['4', 'Stufen mit eigenen Preisen und Werkzeugen'], ['0', 'Handgriffe, wenn ein Profi freigegeben wird']],
+    tiers: 'Jede Stufe sieht ihre eigenen Preise',
+    pipe: 'Von der Freigabe zur Großhandelsbestellung, ohne Handarbeit',
+    steps: ['Das Team gibt einen Profi frei', 'Das B2B-Firmenkonto entsteht von selbst', 'Der Profi bestellt zu B2B-Konditionen'],
   },
   uk: {
-    stats: ['секція', 'блоків', 'шаблонів', 'Cloudflare Workers', 'Functions кошика'],
-    tiers: 'Рівні доступу, прочитані з тегів клієнта',
-    pipe: 'Від схвалення до B2B-компанії без ручної роботи',
-    steps: ['Професіонала схвалено', 'Вебхук перевірено', 'Клієнта прочитано через Admin API', 'Створено компанію і контакт', 'Призначено роль Location admin', '2 ринки, 1 каталог, замовлення дозволено'],
+    stats: [['1', 'магазин для гостей і косметологів'], ['4', 'рівні, кожен зі своїми цінами й інструментами'], ['0', 'ручних кроків, коли професіонала схвалено']],
+    tiers: 'Кожен рівень бачить свої ціни',
+    pipe: 'Від схвалення до оптового замовлення без ручної роботи',
+    steps: ['Команда схвалює професіонала', 'B2B-акаунт компанії створюється сам', 'Професіонал замовляє на B2B-умовах'],
   },
 }[locale];
 
@@ -42,17 +43,17 @@ const tracks = [
   { name: 'V2', offset: 18, clips: [{ label: 'Free Downloads', w: 40 }, { label: 'FAQ', w: 18 }] },
   { name: 'A1', offset: 34, clips: [{ label: 'Selected', w: 24 }, { label: 'Shorts', w: 24 }] },
 ];
-const roman = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+const roman = ['I', 'II', 'III'];
 ---
 
 {
   theme === 'film' && (
     <section class="mt-14 md:mt-20">
       <ul class="grid grid-cols-3 gap-3 md:gap-5">
-        {['33', '89', '5.0'].map((value, i) => (
+        {film.stats.map(([value, caption]) => (
           <li class="flair-card">
             <b class="flair-num">{value}</b>
-            <span class="flair-cap">{film.stats[i]}</span>
+            <span class="flair-cap">{caption}</span>
           </li>
         ))}
       </ul>
@@ -100,11 +101,11 @@ const roman = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 {
   theme === 'ritual' && (
     <section class="mt-14 md:mt-20">
-      <ul class="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-5">
-        {['71', '167', '14', '2', '2'].map((value, i) => (
-          <li class={`flair-card ${i === 4 ? 'col-span-2 md:col-span-1' : ''}`}>
+      <ul class="grid grid-cols-3 gap-3 md:gap-5">
+        {ritual.stats.map(([value, caption]) => (
+          <li class="flair-card">
             <b class="flair-num">{value}</b>
-            <span class="flair-cap">{ritual.stats[i]}</span>
+            <span class="flair-cap">{caption}</span>
           </li>
         ))}
       </ul>
