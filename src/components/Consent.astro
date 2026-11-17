@@ -102,10 +102,15 @@ const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
 
   function loadClarity(id: string) {
     const w = window as any;
+    // Only the live site: localhost and Vercel preview URLs would mix test visits into the stats.
+    if (location.hostname !== 'www.karatitsyn.com') return;
     if (w.clarity) return;
     w.clarity = function () {
       (w.clarity.q = w.clarity.q || []).push(arguments);
     };
+    // Pass the visitor's opt-in to Clarity. Without this signal Clarity runs cookieless for EU
+    // visitors and counts every page view as a new user. Analytics only; no ad storage.
+    w.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
     const s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.clarity.ms/tag/' + id;
