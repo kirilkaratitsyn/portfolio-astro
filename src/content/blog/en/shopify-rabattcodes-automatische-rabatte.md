@@ -4,7 +4,7 @@ title: "Shopify discount code or automatic discount: which fits, and why a code 
 date: 23 October 2026
 readingTime: 9 min
 excerpt: "Discount code or automatic discount in Shopify: differences, limits, minimum purchase, typical checkout messages and when a developer helps."
-image: /og/projects/elanora-skin.jpg
+image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
   - Shopify
@@ -103,7 +103,7 @@ The help does not say **how high a discount should be**, whether codes or automa
 
 ## Examples from practice
 
-For [Elanora Skin](/projects/elanora-skin), a skincare brand selling in 15 markets in two languages, I built an offer logic by market and language as part of ongoing support, including free gifts in the cart with a crossed-out price. That included making sure the discount labels at checkout display correctly in both languages.
+For [Silk Tallow](/projects/silk-tallow), a natural skincare brand, I built Mystery Gift and Free Gift logic for the storefront. The gifts update in the cart without page reloads, and the logic handles the cart rules and edge cases of the promotion.
 
 ## Before you start: a checklist
 

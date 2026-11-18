@@ -63,7 +63,7 @@ Entwicklung und Marketing müssen nicht beim selben Anbieter liegen. Gängig ist
 
 ## Ein Beispiel aus meiner Arbeit
 
-[Elanora Skin](/de/projects/elanora-skin), eine Hautpflege-Marke aus Breda, betreue ich seit Ende 2025 laufend. Dazu gehören getestete Angebote, Geschenk-Logik im Warenkorb und die Logik der Storefront für fünfzehn Märkte in zwei Sprachen. Das passt zu einem Freelancer, weil der Umfang laufend wächst und Wissen über den Shop zählt. Ein Relaunch mit Fotoproduktion, Kampagne und ERP-Anbindung zum Stichtag wäre ein Fall für ein Team.
+[Elanora Skin](/de/projects/elanora-skin), eine Hautpflege-Marke aus Breda, betreue ich seit Ende 2025 laufend. Dazu gehören die Arbeit am Theme, eigene Checkout-Erweiterungen und ein Hautpflege-Quiz. Das passt zu einem Freelancer, weil der Umfang laufend wächst und Wissen über den Shop zählt. Ein Relaunch mit Fotoproduktion, Kampagne und ERP-Anbindung zum Stichtag wäre ein Fall für ein Team.
 
 ## Häufige Fragen
 

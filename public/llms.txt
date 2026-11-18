@@ -22,7 +22,7 @@ Important notes:
 - [Jula Bloom](https://www.karatitsyn.com/projects/jula-bloom): WooCommerce to Shopify migration for a premium silk-flower brand, with a full type system and a redirect map.
 - [Reserve Kava](https://www.karatitsyn.com/projects/reserve-kava): Product pages, bundles and templates for an instant-kava brand, built from a design handoff.
 - [Bazar Bizar](https://www.karatitsyn.com/projects/bazar-bizar): Shopify case study for a premium ecommerce storefront.
-- [Elanora Skin](https://www.karatitsyn.com/projects/elanora-skin): Ongoing Shopify partnership: tested offers, a cart gift engine, checkout blocks and multi-market logic.
+- [Elanora Skin](https://www.karatitsyn.com/projects/elanora-skin): Ongoing Shopify support for a skincare brand: work on the theme, custom checkout extensions and a skincare quiz.
 - [Petaljet](https://www.karatitsyn.com/projects/petaljet): SEO audit, performance work and a custom box builder for wholesale flower buyers.
 - [Nimfa](https://www.karatitsyn.com/projects/nimfa): Figma to custom Shopify theme implementation.
 - [Silk Tallow](https://www.karatitsyn.com/projects/silk-tallow): Shopify case study with brand-focused storefront execution.

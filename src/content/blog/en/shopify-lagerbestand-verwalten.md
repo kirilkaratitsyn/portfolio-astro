@@ -116,7 +116,7 @@ On the legal side of delivery times and availability statements, ask a lawyer. O
 
 ## Examples from practice
 
-Among my published projects there is no case where I set up a store's inventory management. The closest is [Elanora Skin](/projects/elanora-skin): as part of ongoing support I added a custom back-in-stock logic through the Klaviyo API. That concerns customer retention, not stock handling in the admin.
+Among my published projects there is no case where I set up a store's inventory management.
 
 ## When a developer helps
 

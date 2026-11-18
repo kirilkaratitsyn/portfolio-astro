@@ -19,7 +19,7 @@ Ihr Shop verkauft in Deutschland, und es kommen Bestellungen aus Österreich ode
 
 Alle Angaben zu Funktionen und Bedingungen stammen aus der Shopify-Hilfe, Stand Oktober 2026. Shopify ändert Pläne und Funktionen, prüfen Sie wichtige Punkte deshalb in Ihrem Konto. Preise für Pläne nenne ich nicht.
 
-Aus eigener Arbeit: Seit Ende 2025 arbeite ich mit einer Marke zusammen, die in fünfzehn Märkten und zwei Sprachen verkauft ([Elanora Skin](/de/projects/elanora-skin)). Dort ging es um Angebote, Geschenk-Logik im Warenkorb und Rabatt-Hinweise, die zu Markt und Sprache passen. Den Aufbau der Märkte selbst, also Domains, Währungen und Steuern, stelle ich nicht als eigenen Fall dar.
+Aus eigener Arbeit: Seit Ende 2025 betreue ich eine Hautpflegemarke, die in mehreren Märkten und zwei Sprachen verkauft ([Elanora Skin](/de/projects/elanora-skin)), mit Arbeit am Theme und eigenen Checkout-Erweiterungen. Den Aufbau der Märkte selbst, also Domains, Währungen und Steuern, stelle ich nicht als eigenen Fall dar.
 
 ## Was ein Market ist
 

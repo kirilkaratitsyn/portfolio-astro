@@ -93,7 +93,7 @@ The help pages do not say **which customisation raises your completion rate**, w
 
 ## Examples from practice
 
-For [Elanora Skin](/projects/elanora-skin), a skincare brand selling in 15 markets in two languages, I added checkout blocks as part of the ongoing support, including a removable shipping protection line and a review block. The discount labels display correctly in both languages.
+For [Elanora Skin](/projects/elanora-skin), a skincare brand I support on an ongoing basis, I build custom checkout extensions that fit the store's design and its markets.
 
 ## Before you start: a checklist
 

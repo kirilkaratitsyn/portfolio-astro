@@ -74,11 +74,7 @@ Per the Help Center, a deleted custom app can't be recovered. To deactivate it, 
 
 ## An example from practice
 
-For [Elanora Skin](/projects/elanora-skin) I built three things:
-
-- a gift engine in the cart that adds free products as real line items,
-- a checkout app with seven extensions: two cart validation Functions and five checkout blocks, including a removable shipping protection line and a reviews block,
-- a custom back-in-stock flow via the Klaviyo API.
+For [Elanora Skin](/projects/elanora-skin), a skincare brand I support on an ongoing basis, I built a custom checkout app whose extensions run in the checkout and fit the store's design.
 
 The app was built for this one store only and is not in the App Store. I also publish my own app in the Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
 

@@ -19,7 +19,7 @@ Your store sells in Germany, and orders arrive from Austria or Switzerland. Do y
 
 All statements about features and conditions come from the Shopify Help Center, as of October 2026. Shopify changes plans and features, so check important points in your own account. I do not quote plan prices.
 
-From my own work: since the end of 2025 I have worked with a brand that sells in fifteen markets and two languages ([Elanora Skin](/projects/elanora-skin)). That work was about offers, gift logic in the cart and discount labels that fit the market and the language. I do not present the setup of the markets themselves, meaning domains, currencies and taxes, as a case of my own.
+From my own work: since the end of 2025 I have supported a skincare brand that sells in several markets and two languages ([Elanora Skin](/projects/elanora-skin)), with work on the theme and custom checkout extensions. I do not present the setup of the markets themselves, meaning domains, currencies and taxes, as a case of my own.
 
 ## What a market is
 

@@ -4,7 +4,7 @@ title: "Gratisartikel ab Bestellwert in Shopify: Rabatt, automatischer Rabatt od
 date: 23. Oktober 2026
 readingTime: 6 Min
 excerpt: "Gratisartikel ab Bestellwert in Shopify: was „Kaufe X, erhalte Y“ kann, warum das Geschenk nicht selbst im Warenkorb landet und wann eigene Logik nötig ist."
-image: /og/projects/elanora-skin.jpg
+image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
   - Shopify
@@ -81,7 +81,7 @@ Ob sich ein Geschenk damit automatisch einlegen lässt, sagen diese Seiten nicht
 
 ## Ein Beispiel aus der Praxis
 
-Für Elanora Skin habe ich eine Geschenk-Engine für den Warenkorb gebaut. Sie fügt Gratisprodukte als echte Positionen mit eigenem Titel, Bild und durchgestrichenem Preis hinzu. Sie sendet sie in einem einzigen Warenkorb-Update, damit der Warenkorb schnell bleibt. Der Shop verkauft in 15 Märkten und zwei Sprachen, die Angebotslogik richtet sich nach Markt und Sprache. Mehr dazu im [Projekt](/de/projects/elanora-skin).
+Für Silk Tallow, eine natürliche Hautpflegemarke, habe ich eine Mystery-Gift- und Free-Gift-Logik für den Warenkorb gebaut. Die Geschenke aktualisieren sich ohne Neuladen der Seite, die Logik sitzt im bestehenden Design der Storefront und deckt die Warenkorb-Regeln und Sonderfälle jeder Aktion ab. Mehr dazu im [Projekt](/de/projects/silk-tallow).
 
 ## So testen Sie die Aktion
 

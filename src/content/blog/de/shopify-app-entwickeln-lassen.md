@@ -74,11 +74,7 @@ Eine gelöschte Custom App lässt sich laut Hilfe nicht wiederherstellen. Zum De
 
 ## Ein Beispiel aus der Praxis
 
-Bei [Elanora Skin](/de/projects/elanora-skin) habe ich drei Dinge gebaut:
-
-- eine Geschenk-Engine im Warenkorb, die Gratisprodukte als echte Positionen hinzufügt,
-- eine Checkout-App mit sieben Erweiterungen: zwei Warenkorb-Validierungs-Functions und fünf Checkout-Blöcke, darunter eine entfernbare Versandschutz-Zeile und ein Bewertungsblock,
-- einen eigenen Back-in-Stock-Flow über die Klaviyo API.
+Für [Elanora Skin](/de/projects/elanora-skin), eine Hautpflegemarke, die ich laufend betreue, habe ich eine eigene Checkout-App gebaut, deren Erweiterungen im Checkout laufen und zum Design des Shops passen.
 
 Die App ist nur für diesen Shop gebaut und steht nicht im App Store. Außerdem veröffentliche ich eine eigene App im Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
 

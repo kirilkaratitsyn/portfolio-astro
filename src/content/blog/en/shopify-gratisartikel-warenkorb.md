@@ -4,7 +4,7 @@ title: "Free gift over a minimum order value in Shopify: discount, automatic dis
 date: 23 October 2026
 readingTime: 7 min
 excerpt: "Free gift over a minimum order value in Shopify: what Buy X get Y can do, why the gift does not add itself to the cart and when you need custom logic."
-image: /og/projects/elanora-skin.jpg
+image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
   - Shopify
@@ -81,7 +81,7 @@ These pages do not say whether a gift can be added automatically this way. That 
 
 ## An example from practice
 
-For Elanora Skin I built a gift engine for the cart. It adds free products as real lines with their own title, image and struck-through price. It sends them in a single cart update so the cart stays fast. The store sells in 15 markets and two languages, and the promotion logic follows market and language. More in the [project](/projects/elanora-skin).
+For Silk Tallow, a natural skincare brand, I built Mystery Gift and Free Gift logic for the cart. The gifts update without page reloads, the logic sits inside the existing storefront design, and it handles the cart rules and edge cases of each promotion. More in the [project](/projects/silk-tallow).
 
 ## How to test the promotion
 

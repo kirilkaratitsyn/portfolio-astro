@@ -101,10 +101,7 @@ Sie ist laut Hilfe für E-Mails an das **eigene Team** gedacht. Für Kunden verw
 
 ## Beispiele aus der Praxis
 
-Keines meiner veröffentlichten Projekte beschreibt einen Shopify-Flow-Workflow. Verwandte Automatisierungen:
-
-- Bei [Orska Rituals](/de/projects/orska-rituals) wird nach der Freigabe eines Profis automatisch ein B2B-Unternehmen angelegt.
-- Bei [Elanora Skin](/de/projects/elanora-skin) habe ich eine Benachrichtigung bei wieder verfügbaren Produkten über die Klaviyo-API erweitert.
+Keines meiner veröffentlichten Projekte beschreibt einen Shopify-Flow-Workflow. Am nächsten kommt eine verwandte Automatisierung bei [Orska Rituals](/de/projects/orska-rituals): Nach der Freigabe eines Profis wird automatisch ein B2B-Unternehmen angelegt.
 
 ## Wann ein Entwickler hilft
 

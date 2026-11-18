@@ -101,10 +101,7 @@ According to the Help Center, it's meant for emails to **your own team**. For cu
 
 ## Examples from practice
 
-None of my published projects describes a Shopify Flow workflow. Related automation:
-
-- At [Orska Rituals](/projects/orska-rituals), a B2B company is created automatically once a professional is approved.
-- At [Elanora Skin](/projects/elanora-skin), I extended a back-in-stock flow through the Klaviyo API.
+None of my published projects describes a Shopify Flow workflow. The closest related automation is at [Orska Rituals](/projects/orska-rituals): a B2B company is created automatically once a professional is approved.
 
 ## When a developer helps
 

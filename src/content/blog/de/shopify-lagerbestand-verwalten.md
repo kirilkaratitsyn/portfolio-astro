@@ -116,7 +116,7 @@ Zur Rechtslage bei Lieferzeiten und Verfügbarkeitsangaben fragen Sie einen Anwa
 
 ## Beispiele aus der Praxis
 
-Unter meinen veröffentlichten Projekten gibt es keinen Fall, in dem ich die Lagerverwaltung eines Shops eingerichtet habe. Am nächsten kommt [Elanora Skin](/de/projects/elanora-skin): Dort habe ich in der laufenden Betreuung eine eigene Back-in-stock-Logik über die Klaviyo-API ergänzt. Das betrifft die Kundenbindung, nicht die Bestandsführung im Admin.
+Unter meinen veröffentlichten Projekten gibt es keinen Fall, in dem ich die Lagerverwaltung eines Shops eingerichtet habe.
 
 ## Wann ein Entwickler hilft
 

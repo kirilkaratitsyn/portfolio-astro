@@ -63,7 +63,7 @@ Development and marketing do not have to sit with the same provider. A common sp
 
 ## An example from my work
 
-I have looked after [Elanora Skin](/projects/elanora-skin), a skincare brand from Breda, continuously since late 2025. That covers tested offers, gift logic in the cart and the storefront logic for fifteen markets in two languages. That suits a freelancer, because the scope keeps growing and knowing the store counts. A relaunch with a photo shoot, a campaign and an ERP connection by a fixed date would be a case for a team.
+I have looked after [Elanora Skin](/projects/elanora-skin), a skincare brand from Breda, continuously since late 2025. That covers work on the theme, custom checkout extensions and a skincare quiz. That suits a freelancer, because the scope keeps growing and knowing the store counts. A relaunch with a photo shoot, a campaign and an ERP connection by a fixed date would be a case for a team.
 
 ## Frequently asked questions
 

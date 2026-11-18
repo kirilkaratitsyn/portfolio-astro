@@ -93,7 +93,7 @@ Die Hilfeseiten sagen nicht, **welche Anpassung die Abschlussrate erhöht**, wel
 
 ## Beispiele aus der Praxis
 
-Für [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke mit 15 Märkten in zwei Sprachen, habe ich im Rahmen der laufenden Betreuung Checkout-Blöcke ergänzt, darunter eine entfernbare Versandschutz-Zeile und einen Bewertungsblock. Die Rabatt-Labels werden in beiden Sprachen korrekt angezeigt.
+Für [Elanora Skin](/de/projects/elanora-skin), eine Skincare-Marke, die ich laufend betreue, baue ich eigene Checkout-Erweiterungen, die zum Design des Shops und zu seinen Märkten passen.
 
 ## Vor dem Start: eine Checkliste
 

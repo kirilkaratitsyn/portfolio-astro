@@ -107,7 +107,7 @@ Mehrere Länder allein sind kein Grund für mehrere Shops. Sprachen, Währungen 
 
 ## Aus der Praxis
 
-Bei [Orska Rituals](/de/projects/orska-rituals) kaufen Endkunden und freigegebene Profis im selben Shop. Mindestmengen und Kaufbeschränkungen laufen über Shopify Functions, damit sie auch gelten, wenn jemand das Interface umgeht. Bei [Elanora Skin](/de/projects/elanora-skin) habe ich eine Checkout-App mit fünf Checkout-Blöcken und zwei Functions gebaut, die den Warenkorb prüfen, für einen Shop mit vielen Märkten und zwei Sprachen. In solchen Projekten gehört die Tariffrage vor das Angebot.
+Bei [Orska Rituals](/de/projects/orska-rituals) kaufen Endkunden und freigegebene Profis im selben Shop. Mindestmengen und Kaufbeschränkungen laufen über Shopify Functions, damit sie auch gelten, wenn jemand das Interface umgeht. In solchen Projekten gehört die Tariffrage vor das Angebot.
 
 Ich bin Entwickler und verkaufe keine Tarife. Am Wechsel zu Plus verdiene ich nichts. Zu Preisen und Vertragsbedingungen kann nur Shopify verbindlich etwas sagen.
 

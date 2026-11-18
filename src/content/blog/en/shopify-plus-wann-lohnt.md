@@ -107,7 +107,7 @@ Several countries alone are not a reason for several stores. [Shopify Markets](/
 
 ## From practice
 
-At [Orska Rituals](/projects/orska-rituals), retail customers and approved professionals buy in the same store. Minimum order and purchase limits run through Shopify Functions, so they hold even if someone bypasses the interface. For [Elanora Skin](/projects/elanora-skin) I built a checkout app with five checkout blocks and two Functions that validate the cart, for a store with many markets and two languages. In projects like these the plan question belongs before the quote.
+At [Orska Rituals](/projects/orska-rituals), retail customers and approved professionals buy in the same store. Minimum order and purchase limits run through Shopify Functions, so they hold even if someone bypasses the interface. In projects like these the plan question belongs before the quote.
 
 I am a developer and do not sell plans. I earn nothing from a switch to Plus. Only Shopify can say anything binding about prices and contract terms.
 

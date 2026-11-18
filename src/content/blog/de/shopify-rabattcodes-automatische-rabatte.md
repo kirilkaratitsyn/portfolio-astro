@@ -4,7 +4,7 @@ title: "Shopify Rabattcode oder automatischer Rabatt: Was passt, und warum ein C
 date: 23. Oktober 2026
 readingTime: 8 Min
 excerpt: "Rabattcode oder automatischer Rabatt in Shopify: Unterschiede, Grenzen, Mindestbestellwert, typische Fehlermeldungen an der Kasse und wann ein Entwickler hilft."
-image: /og/projects/elanora-skin.jpg
+image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
   - Shopify
@@ -103,7 +103,7 @@ Die Hilfe sagt nicht, **wie hoch ein Rabatt sein sollte**, ob Codes oder automat
 
 ## Beispiele aus der Praxis
 
-Für [Elanora Skin](/de/projects/elanora-skin), eine Hautpflegemarke, die in 15 Märkten in zwei Sprachen verkauft, habe ich im Rahmen der laufenden Betreuung eine Angebotslogik nach Markt und Sprache gebaut, darunter Gratisgeschenke im Warenkorb mit durchgestrichenem Preis. Dazu gehörte, dass die Rabatt-Labels an der Kasse in beiden Sprachen korrekt angezeigt werden.
+Für [Silk Tallow](/de/projects/silk-tallow), eine natürliche Hautpflegemarke, habe ich eine Mystery-Gift- und Free-Gift-Logik für die Storefront gebaut. Die Geschenke aktualisieren sich im Warenkorb ohne Neuladen der Seite, und die Logik deckt die Warenkorb-Regeln und Sonderfälle der Aktion ab.
 
 ## Vor dem Start: eine Checkliste
 

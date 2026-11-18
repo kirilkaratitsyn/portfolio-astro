@@ -62,9 +62,9 @@
   image: /source/desktop/elanora-skin-desktop.webp
   caseStudySlug: elanora-skin
   tech:
-    en: "An ongoing Shopify partnership since the end of 2025: a checkout app with two Functions and five checkout blocks, a gift engine in the cart, A/B tests counted per order, and storefront logic for markets in nine currencies and two languages."
-    de: "Eine laufende Shopify-Partnerschaft seit Ende 2025: eine Checkout-App mit zwei Functions und fünf Checkout-Blöcken, eine Geschenk-Engine im Warenkorb, A/B-Tests pro Bestellung gezählt und Storefront-Logik für Märkte in neun Währungen und zwei Sprachen."
-    uk: "Постійна Shopify-співпраця з кінця 2025 року: застосунок для checkout із двома Functions і п’ятьма блоками checkout, движок подарунків у кошику, A/B-тести по замовленнях і storefront-логіка для ринків у дев’яти валютах двома мовами."
+    en: "Ongoing Shopify support since the end of 2025: work on the theme, custom checkout extensions and a skincare quiz."
+    de: "Laufende Shopify-Betreuung seit Ende 2025: Arbeit am Theme, eigene Checkout-Erweiterungen und ein Hautpflege-Quiz."
+    uk: "Постійна підтримка Shopify з кінця 2025 року: робота з темою, власні розширення checkout і квіз із догляду за шкірою."
   accent: "#a1303c"
   accentLocked: true
 - id: petaljet
