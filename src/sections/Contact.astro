@@ -74,8 +74,27 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
   import { track } from '../lib/track';
 
   // Sends the form without leaving the page, and says how it went. The page and the utm_* of its address go along,
-  // so the email shows where the visitor came from.
+  // so the email shows where the visitor came from. When the visitor first touches the form, a signed token comes
+  // from the same address (api/contact.js): no message goes out without one, and not within seconds of it.
+  const DAY_HALF = 12 * 60 * 60 * 1000;
   for (const form of document.querySelectorAll<HTMLFormElement>('[data-contact-form]')) {
+    let token: Promise<string> | null = null;
+    let tokenAt = 0;
+    const getToken = () => {
+      if (!token || Date.now() - tokenAt > DAY_HALF) {
+        tokenAt = Date.now();
+        token = fetch(form.action, { headers: { accept: 'application/json' }, cache: 'no-store' })
+          .then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+          .then((data: { token?: string }) => data.token || '')
+          .catch(() => {
+            token = null;
+            return '';
+          });
+      }
+      return token;
+    };
+    form.addEventListener('focusin', getToken);
+    form.addEventListener('input', getToken);
     const status = form.querySelector<HTMLElement>('[data-form-status]')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const say = (selector: string) => {
@@ -91,12 +110,17 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
       button.textContent = button.dataset.sending!;
       status.hidden = true;
       try {
+        // A tab left open for half a day gets a new token, and then waits the few seconds the server asks for.
+        const stale = token !== null && Date.now() - tokenAt > DAY_HALF;
+        const t = await getToken();
+        if (stale) await new Promise((resolve) => setTimeout(resolve, 3500));
         const response = await fetch(form.action, {
           method: 'POST',
           headers: { accept: 'application/json', 'content-type': 'application/json' },
-          body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+          body: JSON.stringify({ ...Object.fromEntries(new FormData(form).entries()), t }),
         });
         if (!response.ok) throw new Error(String(response.status));
+        token = null;
         form.reset();
         say('[data-form-sent]');
         track('form_sent');
