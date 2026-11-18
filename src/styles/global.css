@@ -872,3 +872,11 @@ html.is-grabbing, html.is-grabbing * { cursor: grabbing !important; user-select:
 .case--mono .case-bar.bg-ink { background: #000; }
 .case--mono .case-fact-icon { border-radius: 6px; background: #ede6e7; color: #121212; }
 .case--mono .rounded-\[28px\].case-stage { border-radius: 12px; }
+
+/* Mid-page store-check card (components/ShopCheckCta.astro): inside a post it keeps its own type, not the article's. */
+.post .scc { margin-top: 40px; margin-bottom: 8px; }
+.post .scc + * { margin-top: 40px; }
+.post .scc a { color: #213554; text-decoration: none; }
+.post .scc p { margin: 0; }
+.post .scc p + p { margin-top: 12px; }
+.post .scc a.scc-btn { margin-top: 24px; }

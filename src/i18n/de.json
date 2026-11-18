@@ -245,7 +245,10 @@
     "sendMessage": "Nachricht senden",
     "shopCheck": {
       "title": "Kostenloser Shop-Check",
-      "text": "Innerhalb von zwei Werktagen erhalten Sie eine kurze Liste zu Ihrem Shopify-Shop: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch."
+      "text": "Innerhalb von zwei Werktagen erhalten Sie eine kurze Liste zu Ihrem Shopify-Shop: was bremst, was Umsatz kostet und was ich zuerst angehen würde. Unverbindlich, ohne Verkaufsgespräch.",
+      "cta": "Kostenloser Shop-Check",
+      "hook": "Wie steht es um Ihren Shop?",
+      "button": "Shop-Check anfordern"
     },
     "form": {
       "check": "Kostenloser Shop-Check",

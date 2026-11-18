@@ -8,6 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../sections/Contact.astro';
 import Pebble from '../components/Pebble.astro';
 import CaseStudyMoreProjects from '../components/CaseStudyMoreProjects.astro';
+import ShopCheckCta from '../components/ShopCheckCta.astro';
 import { DEFAULT_LOCALE, localizePath, useTranslations, type Locale } from '../i18n';
 import { shotSrcset, thumb } from '../lib/thumbs';
 import { getServices, type CaseStudy } from '../lib/content';
@@ -207,6 +208,8 @@ const facts = [
       </ul>
       {caseStudy.archived && <p class="mt-6 text-sm leading-relaxed text-mute">{copy.archivedNote}</p>}
     </section>
+
+    <ShopCheckCta locale={locale} class="mt-12 max-w-3xl md:mt-16" />
 
     {
       caseStudy.review && (

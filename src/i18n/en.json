@@ -245,7 +245,10 @@
     "sendMessage": "Send Message",
     "shopCheck": {
       "title": "Free store check",
-      "text": "Within two working days you get a short list for your Shopify store: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call."
+      "text": "Within two working days you get a short list for your Shopify store: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call.",
+      "cta": "Free store check",
+      "hook": "How is your store doing?",
+      "button": "Request a store check"
     },
     "form": {
       "check": "Free store check",

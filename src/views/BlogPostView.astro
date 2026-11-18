@@ -6,6 +6,7 @@ import Contact from '../sections/Contact.astro';
 import { interpolate, localizePath, useTranslations, type Locale } from '../i18n';
 import Icon from '../components/Icon.astro';
 import PostCard from '../components/PostCard.astro';
+import ShopCheckCta from '../components/ShopCheckCta.astro';
 import { getPosts, type BlogPost } from '../lib/content';
 import { TOPIC_ICONS } from '../lib/blog-topics';
 import { ogThumb } from '../lib/thumbs';
@@ -76,8 +77,9 @@ const structuredData = {
     <h1 class="intro-lift mt-4 max-w-4xl font-head text-[38px] font-bold leading-[1] tracking-[-0.03em] md:text-[72px]">{post.title}</h1>
     <TopRated locale={locale} class="mt-8" />
     <img src={ogThumb(post.image, '1200')} alt="" width="1200" height="630" fetchpriority="high" decoding="async" class="mt-10 aspect-[1200/630] w-full max-w-4xl rounded-2xl border border-line object-cover md:mt-14" />
-    <div class="post mt-10 max-w-2xl md:mt-14">
+    <div class="post mt-10 max-w-2xl md:mt-14" data-post>
       <Content />
+      <ShopCheckCta locale={locale} />
     </div>
   </article>
   {
@@ -92,3 +94,12 @@ const structuredData = {
   }
   <Contact locale={locale} />
 </BaseLayout>
+
+<script>
+  // The store-check card is rendered after the article (the place it keeps without scripts); here it moves up to the
+  // middle of the text, just before the middle h2, so it meets the reader halfway instead of at the very end.
+  const post = document.querySelector<HTMLElement>('[data-post]');
+  const card = post?.querySelector<HTMLElement>('[data-shop-check-cta]');
+  const heads = post ? [...post.querySelectorAll(':scope > h2')] : [];
+  if (post && card && heads.length >= 3) post.insertBefore(card, heads[Math.floor(heads.length / 2)]);
+</script>

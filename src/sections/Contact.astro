@@ -25,7 +25,7 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
     </div>
     <!-- A second door for those not ready for a call: the store check or a project enquiry, sent to Kiril by email
          through api/contact.js. Works without scripts too (a plain post and a thank-you page). -->
-    <div class="relative z-[2] mt-10 max-w-[720px] border-t border-white/25 pt-8 md:mt-14 md:pt-10">
+    <div id="shop-check" class="relative z-[2] mt-10 max-w-[720px] scroll-mt-24 border-t border-white/25 pt-8 md:mt-14 md:pt-10">
       <h3 class="font-head text-[24px] font-bold leading-tight md:text-[30px]">{t.contact.shopCheck.title}</h3>
       <p class="mt-3 text-[17px] leading-relaxed text-white/85 md:text-lg">{t.contact.shopCheck.text}</p>
       <form data-contact-form action="/api/contact" method="post" class="mt-7 grid gap-5 md:grid-cols-2">
@@ -69,6 +69,46 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
     <Pebble name="black" class="pointer-events-none absolute -top-8 right-[120px] w-[84px] md:bottom-[90px] md:right-[30px] md:top-auto md:w-[170px]" />
   </div>
 </section>
+
+<!-- Phones: the store check stays one tap away while reading, until the form itself is on screen. -->
+<a href="#shop-check" data-sticky-check class="sticky-check fixed inset-x-4 bottom-4 z-50 flex justify-center rounded-full bg-blue px-6 py-[15px] text-[16px] font-semibold text-white shadow-[0_10px_30px_rgba(14,16,24,0.25)] md:hidden" aria-hidden="true" tabindex="-1">{t.contact.shopCheck.cta}</a>
+
+<style>
+  .sticky-check {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .sticky-check.is-on {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-check { transition: none; }
+  }
+</style>
+
+<script>
+  // The sticky button shows after the first screen, and hides once the contact block comes on screen (and below it, in
+  // the footer), and while the cookie banner is up.
+  const sticky = document.querySelector<HTMLElement>('[data-sticky-check]');
+  const contact = document.getElementById('contact');
+  if (sticky && contact) {
+    const update = () => {
+      const consent = document.getElementById('consent');
+      const reached = contact.getBoundingClientRect().top < innerHeight;
+      const on = window.scrollY > 500 && !reached && !(consent && !consent.hidden);
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      sticky.tabIndex = on ? 0 : -1;
+    };
+    addEventListener('scroll', update, { passive: true });
+    document.addEventListener('click', () => setTimeout(update, 50));
+    update();
+  }
+</script>
 
 <script>
   import { track } from '../lib/track';
