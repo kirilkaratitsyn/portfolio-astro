@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-12
+updatedAt: 2026-11-18
 title: "Shopify-Shop erstellen lassen: Wovon die Kosten abhängen und wie Sie ein Festpreis-Angebot bekommen"
 seoTitle: "Shopify-Shop erstellen lassen: Kosten 2026 & Festpreis"
 date: 22. Oktober 2026
@@ -14,7 +14,7 @@ tags:
   - Angebot
 ---
 
-Was es kostet, einen Shopify-Shop erstellen zu lassen, hängt vom Umfang ab. Deshalb liegen Angebote so weit auseinander. Ab-Preise stehen weiter unten, den genauen Preis nennt das Angebot nach dem Briefing.
+Was es kostet, einen Shopify-Shop erstellen zu lassen, hängt vom Umfang ab. Deshalb liegen Angebote so weit auseinander. Ab-Preise stehen weiter unten, den genauen Preis nennt das Angebot nach dem Briefing. Was im Aufbau enthalten ist und wie er abläuft, steht auf der Leistungsseite [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen).
 
 **Kurz gesagt:**
 

@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-18
 title: "Hiring someone to customize your Shopify theme: what a developer takes on and how to hand over the job safely"
 date: 22 October 2026
 readingTime: 6 min
@@ -103,7 +103,7 @@ When the wish list gets long, the old theme may no longer be the right foundatio
 
 ## Want me to look at your theme?
 
-Send me your store's address and a sentence or two on what bothers you for the [free store check](#contact). I tell you what the editor can do and what needs code. If you want, I customize the theme or rebuild it in a [Shopify redesign](/services/shopify-redesign), at a fixed price after the briefing.
+Send me your store's address and a sentence or two on what bothers you for the [free store check](#contact). I tell you what the editor can do and what needs code. If you want, I customize the theme or rebuild it in a [Shopify redesign](/services/shopify-redesign), at a fixed price after the briefing. If you need a whole new store, the process is on [Have your Shopify store built](/services/shopify-shop-erstellen-lassen).
 
 **Further reading:** [Hiring someone to optimize your Shopify store](/blog/shopify-shop-optimieren-lassen) · [Shopify help: when the Help Center is enough](/blog/shopify-help) · [Free gift over a minimum order value in Shopify](/blog/shopify-gratisartikel-warenkorb) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel) · [Switching your Shopify developer](/blog/shopify-entwickler-wechseln)
 

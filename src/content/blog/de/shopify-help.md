@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-18
 title: "Shopify Hilfe: Wann das Help Center reicht und wann Sie einen Entwickler brauchen"
 date: 22. Oktober 2026
 readingTime: 4 Min
@@ -70,7 +71,7 @@ Mehr dazu in [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung)
 
 ## Nicht sicher, wer zuständig ist?
 
-Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Ist es ein Fall für einen Entwickler, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Freelancer oder Agentur? Siehe [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
+Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze zum Problem für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo das Problem liegt und wer es beheben kann, auch wenn das nicht ich bin. Ist es ein Fall für einen Entwickler, bekommen Sie nach dem Briefing ein Festpreis-Angebot, zum Beispiel für ein [Redesign oder eine Theme-Anpassung](/de/services/shopify-redesign). Freelancer oder Agentur? Siehe [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur). Haben Sie noch gar keinen Shop, geht es hier weiter: [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen).
 
 **Weiterlesen:** [Shopify B2B: Händlerpreise und Quick Order](/de/blog/shopify-b2b-wholesale) · [Shopify Wartung: Was die Plattform übernimmt](/de/blog/shopify-wartung-betreuung) · [Shopify Beratung: Wann sie sich lohnt](/de/blog/shopify-beratung)
 

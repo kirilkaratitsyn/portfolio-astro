@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-18
 title: "Shopify-Theme anpassen lassen: Was ein Entwickler übernimmt und wie Sie den Auftrag sicher vergeben"
 date: 22. Oktober 2026
 readingTime: 5 Min
@@ -103,7 +103,7 @@ Wird die Wunschliste lang, ist das alte Theme vielleicht nicht mehr die richtige
 
 ## Soll ich mir Ihr Theme ansehen?
 
-Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze dazu, was Sie stört, für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, was im Editor geht und wofür es Code braucht. Auf Wunsch passe ich das Theme an oder baue es im [Shopify-Redesign](/de/services/shopify-redesign) neu auf, zum Festpreis nach dem Briefing.
+Schicken Sie mir die Adresse Ihres Shops und ein, zwei Sätze dazu, was Sie stört, für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, was im Editor geht und wofür es Code braucht. Auf Wunsch passe ich das Theme an oder baue es im [Shopify-Redesign](/de/services/shopify-redesign) neu auf, zum Festpreis nach dem Briefing. Soll ein ganz neuer Shop entstehen, steht der Ablauf auf [Shopify-Shop erstellen lassen](/de/services/shopify-shop-erstellen-lassen).
 
 **Weiterlesen:** [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Bundles erstellen](/de/blog/shopify-bundles-erstellen) · [Shopify E-Mail-Benachrichtigungen anpassen](/de/blog/shopify-email-benachrichtigungen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln)
 

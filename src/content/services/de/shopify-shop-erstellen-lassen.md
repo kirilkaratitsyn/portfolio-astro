@@ -55,4 +55,8 @@ faq:
     a: "Ihre Produkte mit Bildern, Beschreibungen und Preisen (eine Tabelle genügt), Logo, Markenfarben und Texte für Über uns und FAQ. Was fehlt, klären wir im Briefing."
   - q: "Ich habe schon einen Shop auf WooCommerce. Ist das hier richtig?"
     a: "Für den Umzug mit Produkten, Kunden, Bestellungen und Weiterleitungen gibt es eine eigene Seite: Umzug von WooCommerce zu Shopify. Gehört beides zusammen, bekommen Sie ein Angebot für den ganzen Weg."
+  - q: "Arbeiten Sie auch mit Shops außerhalb der Region?"
+    a: "Ja. Ich sitze in Bad Bentheim und arbeite meist remote per Videocall und E-Mail, auf Deutsch, Englisch oder Ukrainisch. Unter meinen Projekten sind Marken aus Australien und den USA, etwa Minbie und Jula Bloom. Ein Treffen in Bad Bentheim ist nach Absprache möglich."
+  - q: "Brauche ich nach dem Go-live weiter einen Entwickler?"
+    a: "Für Texte, Bilder, Produkte, Rabatte und Aktionen nicht: Das ändern Sie nach der Einweisung selbst im Shopify-Admin und im Theme-Editor. Einen Entwickler brauchen Sie für Änderungen am Theme-Code, neue Funktionen oder Fehler nach App- und Theme-Updates. Dafür gibt es die Seite Shopify-Betreuung."
 ---

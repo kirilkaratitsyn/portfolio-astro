@@ -1,5 +1,6 @@
 ---
 publishedAt: 2026-10-22
+updatedAt: 2026-11-18
 title: "Shopify help: when the Help Center is enough and when you need a developer"
 date: 22 October 2026
 readingTime: 4 min
@@ -70,7 +71,7 @@ More in [Shopify maintenance and support](/blog/shopify-wartung-betreuung). One 
 
 ## Not sure who is responsible?
 
-Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign). Freelancer or agency? See [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur).
+Send me your store's address and a sentence or two about the problem for the [free store check](#contact). I tell you where the problem is and who can fix it, even if that is not me. If it is a case for a developer, you get a fixed-price offer after the briefing, for example for a [redesign or theme customization](/services/shopify-redesign). Freelancer or agency? See [Shopify freelancer or agency](/blog/shopify-freelancer-oder-agentur). If you do not have a store yet, start here: [Have your Shopify store built](/services/shopify-shop-erstellen-lassen).
 
 **Further reading:** [Shopify B2B: trade prices and Quick Order](/blog/shopify-b2b-wholesale) · [Shopify maintenance: what the platform handles](/blog/shopify-wartung-betreuung) · [Shopify consulting: when it is worth it](/blog/shopify-beratung)
 

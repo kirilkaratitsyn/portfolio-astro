@@ -55,4 +55,8 @@ faq:
     a: "Your products with images, descriptions and prices (a spreadsheet is enough), your logo, brand colours and texts for About and FAQ. Whatever is missing we settle in the briefing."
   - q: "I already have a WooCommerce store. Is this the right page?"
     a: "Moving products, customers, orders and redirects has its own page: WooCommerce to Shopify migration. If the two go together, you get one quote for the whole way."
+  - q: "Do you work with stores outside your region?"
+    a: "Yes. I am based in Bad Bentheim and work mostly remotely by video call and email, in German, English or Ukrainian. My projects include brands from Australia and the US, such as Minbie and Jula Bloom. A meeting in Bad Bentheim is possible by arrangement."
+  - q: "Will I still need a developer after go-live?"
+    a: "Not for texts, images, products, discounts and campaigns: after the walkthrough you change those yourself in the Shopify admin and the theme editor. You need a developer for changes to the theme code, new features or errors after app and theme updates. That is what the Shopify support and maintenance page covers."
 ---

@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-18
 title: "Замовити доробку теми Shopify: що бере на себе розробник і як безпечно віддати завдання"
 date: 22 жовтня 2026
 readingTime: 5 хв
@@ -103,7 +103,7 @@ tags:
 
 ## Подивитися вашу тему?
 
-Надішліть мені адресу магазину й одне-два речення про те, що заважає, на [безкоштовну перевірку](#contact). Я скажу, що можна зробити в редакторі, а для чого потрібен код. За бажання я дороблю тему або перебудую її в межах [редизайну Shopify](/uk/services/shopify-redesign) за фіксованою ціною після брифінгу.
+Надішліть мені адресу магазину й одне-два речення про те, що заважає, на [безкоштовну перевірку](#contact). Я скажу, що можна зробити в редакторі, а для чого потрібен код. За бажання я дороблю тему або перебудую її в межах [редизайну Shopify](/uk/services/shopify-redesign) за фіксованою ціною після брифінгу. Якщо потрібен зовсім новий магазин, як це відбувається, описано на сторінці [Створення Shopify-магазину на замовлення](/uk/services/shopify-shop-erstellen-lassen).
 
 **Читайте також:** [Замовити оптимізацію магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Допомога з Shopify: коли вистачає Help Center](/uk/blog/shopify-help) · [Безкоштовний подарунок від суми замовлення в Shopify](/uk/blog/shopify-gratisartikel-warenkorb) · [Бандли Shopify](/uk/blog/shopify-bundles-erstellen) · [Email-сповіщення в Shopify](/uk/blog/shopify-email-benachrichtigungen) · [Замовити релонч магазину Shopify](/uk/blog/shopify-relaunch-theme-wechsel) · [Зміна розробника Shopify](/uk/blog/shopify-entwickler-wechseln)
 

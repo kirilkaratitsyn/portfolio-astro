@@ -1,6 +1,6 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-12
+updatedAt: 2026-11-18
 title: "Having a Shopify store built: what the cost depends on and how to get a fixed-price quote"
 seoTitle: "Having a Shopify Store Built: Cost 2026 & Fixed Price"
 date: 22 October 2026
@@ -14,7 +14,7 @@ tags:
   - Quote
 ---
 
-What it costs to have a Shopify store built depends on the scope. That is why quotes are so far apart. Starting prices are further down, the exact price comes in the quote after the briefing.
+What it costs to have a Shopify store built depends on the scope. That is why quotes are so far apart. Starting prices are further down, the exact price comes in the quote after the briefing. What the build includes and how it runs is on the service page [Have your Shopify store built](/services/shopify-shop-erstellen-lassen).
 
 **In short:**
 
