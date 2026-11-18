@@ -55,10 +55,10 @@
   url: https://elanoraskin.com/
   theme: Shrine
   work: [features, support]
-  country: US
-  city: "Los Angeles"
-  lat: 34.05
-  lng: -118.24
+  country: NL
+  city: "Breda"
+  lat: 51.59
+  lng: 4.78
   image: /source/desktop/elanora-skin-desktop.webp
   caseStudySlug: elanora-skin
   tech:
