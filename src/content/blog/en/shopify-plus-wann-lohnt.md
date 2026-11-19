@@ -47,7 +47,7 @@ With **Shopify Functions**, custom logic runs on Shopify's servers, for example 
 - **Public apps** from the App Store with Functions run from Basic.
 - **Custom apps with Functions**, meaning logic only for your store, are listed as a Plus feature.
 
-Before you change plans, check whether a public app already covers your special rule. More: [Having a Shopify app developed](/blog/shopify-app-entwickeln-lassen).
+Before you change plans, check whether a public app already covers your special rule. More: [Shopify custom app development](/blog/shopify-app-entwickeln-lassen).
 
 ## B2B: works without Plus too
 

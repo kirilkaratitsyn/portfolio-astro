@@ -1,11 +1,11 @@
 ---
 publishedAt: 2026-11-08
-updatedAt: 2026-11-11
+updatedAt: 2026-11-19
 title: "Having a Shopify App Built: When a Custom App Makes Sense and When a Ready-Made App Is Enough"
-seoTitle: "Shopify Custom App or Ready-Made App? How to Decide"
+seoTitle: "Shopify Custom App Development or a Ready-Made App? How to Decide"
 date: November 8, 2026
 readingTime: 6 min
-excerpt: "Shopify custom app or ready-made app? Three routes to a missing feature, access and upkeep for custom apps, and how to spot a good offer."
+excerpt: "Shopify custom app development or a ready-made app? Three routes to a missing feature, how a custom app project runs, access, upkeep and how to spot a good offer."
 image: /og/projects/elanora-skin.jpg
 topic: build
 tags:
@@ -14,7 +14,7 @@ tags:
   - Custom App
 ---
 
-Your store needs something Shopify doesn't include: a link to your inventory system, a special discount logic, an extra field at checkout. Do you need a Shopify custom app for that, or is a ready-made app enough? Often you don't need a custom one.
+Your store needs something Shopify doesn't include: a link to your inventory system, a special discount logic, an extra field at checkout. Do you need Shopify custom app development for that, or is a ready-made app enough? Often you don't need a custom one.
 
 ## Three routes to a feature
 
@@ -48,6 +48,18 @@ Per the Help Center, Shopify Scripts and the Script Editor were retired on June 
 **A custom app fits better when** your process is unique, you must move data between the store and a system of your own, or a ready-made app solves several things only halfway. You pay once for the build and carry the upkeep afterwards.
 
 Fees of a ready-made app: most go through your Shopify bill, some third-party apps charge you directly and separately. Check this before installing.
+
+## How Shopify custom app development runs, step by step
+
+This is the order I keep for custom app projects. It turns the points above into a plan you can check.
+
+1. **Briefing:** what should happen, for whom, with which data. In the same conversation: would a ready-made app or a theme change be enough?
+2. **Written scope:** what the app does and what it doesn't, which API scopes it will request and how you will accept it.
+3. **Building outside your live store:** first on a development store, in small steps you can test one by one.
+4. **Your acceptance:** you check the agreed cases before anything reaches the live store.
+5. **Installation:** via the install link for your store. The install screen shows which data the app can access.
+6. **Handover:** where the code lives, the documentation, and who owns the developer account.
+7. **Upkeep:** agreed in advance, as ongoing support or on request.
 
 ## Access and data protection with custom apps
 

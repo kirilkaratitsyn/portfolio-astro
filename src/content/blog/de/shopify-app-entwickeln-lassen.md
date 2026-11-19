@@ -1,10 +1,10 @@
 ---
 publishedAt: 2026-11-08
-updatedAt: 2026-11-11
+updatedAt: 2026-11-19
 title: "Shopify-App entwickeln lassen: Wann eine Custom App sinnvoll ist und wann eine fertige App reicht"
 seoTitle: "Shopify-App entwickeln lassen: Custom App oder fertige App?"
 date: 8. November 2026
-readingTime: 5 Min
+readingTime: 6 Min
 excerpt: "Shopify-App entwickeln lassen oder fertige App nutzen? Drei Wege zur fehlenden Funktion, Zugriff und Pflege bei Custom Apps, Merkmale eines guten Angebots."
 image: /og/projects/elanora-skin.jpg
 topic: build
@@ -48,6 +48,18 @@ Laut Hilfe wurden Shopify Scripts und der Script Editor am 30. Juni 2026 eingest
 **Eine Custom App passt eher, wenn** Ihr Ablauf einzigartig ist, Sie Daten zwischen Shop und einem eigenen System bewegen müssen oder eine fertige App mehrere Dinge nur halb löst. Sie zahlen einmal für den Bau und tragen danach die Pflege.
 
 Kosten einer fertigen App: Die meisten laufen über die Shopify-Rechnung, manche Drittanbieter berechnen direkt und getrennt davon. Prüfen Sie das vor der Installation.
+
+## So läuft die Entwicklung einer Custom App ab
+
+Diese Reihenfolge halte ich bei Custom-App-Projekten ein. Sie macht aus den Punkten oben einen Plan, den Sie prüfen können.
+
+1. **Briefing:** Was soll passieren, für wen, mit welchen Daten? Im selben Gespräch: Reicht eine fertige App oder eine Theme-Anpassung?
+2. **Schriftlicher Umfang:** was die App tut und was nicht, welche API-Berechtigungen sie anfragt und wie Sie abnehmen.
+3. **Entwicklung außerhalb des Live-Shops:** zuerst in einem Entwicklungsshop, in kleinen Schritten, die sich einzeln testen lassen.
+4. **Ihre Abnahme:** Sie prüfen die vereinbarten Fälle, bevor etwas in den Live-Shop kommt.
+5. **Installation:** über den Installationslink für Ihren Shop. Die Installationsseite zeigt, auf welche Daten die App zugreift.
+6. **Übergabe:** wo der Code liegt, Dokumentation und wem das Entwicklerkonto gehört.
+7. **Pflege:** vorab vereinbart, als laufende Betreuung oder nach Bedarf.
 
 ## Zugang und Datenschutz bei Custom Apps
 

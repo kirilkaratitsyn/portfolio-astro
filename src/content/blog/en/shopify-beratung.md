@@ -23,7 +23,7 @@ Mostly **before a decision** that is expensive to undo later:
 - **Changing platforms.** What comes along from WooCommerce, Wix, Shopware or Magento, and what has to be rebuilt? More in [Moving from WooCommerce to Shopify](/blog/woocommerce-to-shopify).
 - **Relaunch or theme change.** A new theme, or adjust the current one? See [Hiring someone for a Shopify relaunch](/blog/shopify-relaunch-theme-wechsel).
 - **New markets or trade customers.** Several countries, languages and currencies, or trade prices, change how the store is built. See [Shopify Markets](/blog/shopify-markets-mehrere-laender) and [Shopify B2B](/blog/shopify-b2b-wholesale).
-- **App or customization.** Often an app is enough, sometimes a change in the theme is cleaner, rarely you need a custom app. See [Having a Shopify app built](/blog/shopify-app-entwickeln-lassen).
+- **App or customization.** Often an app is enough, sometimes a change in the theme is cleaner, rarely you need a custom app. See [Shopify custom app development: when it makes sense](/blog/shopify-app-entwickeln-lassen).
 - **Quotes you cannot compare.** Each one describes something different. A second opinion on the scope often saves more than it costs.
 - **A problem that has been there for weeks.** The store is slow or a feature does not work, and nobody feels responsible.
 
