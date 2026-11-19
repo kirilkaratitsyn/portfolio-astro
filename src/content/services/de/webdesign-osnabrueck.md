@@ -3,7 +3,7 @@ order: 105
 title: "Webdesign für Osnabrück"
 seoTitle: "Webdesign Osnabrück: Website erstellen lassen, ohne Agentur"
 description: "Webdesign Osnabrück: Website oder Onlineshop erstellen lassen bei einem Freelancer statt einer Agentur. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "In Osnabrück gibt es viele Agenturen. Ich bin die Alternative für Betriebe, die eine Person wollen, die Website oder Shop vom Erstgespräch bis zum Go-live selbst baut. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "In Osnabrück gibt es viele Agenturen. Ich bin die Alternative für Betriebe, die eine Person wollen, die Website oder Shop vom Erstgespräch bis zum Go-live selbst baut. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Osnabrück"
   nearby:

@@ -3,7 +3,7 @@ order: 103
 title: "Webdesign für Rheine"
 seoTitle: "Webdesign Rheine: Website erstellen lassen"
 description: "Webdesign Rheine: neue Website erstellen lassen oder die alte erneuern, für Betriebe aus dem Kreis Steinfurt. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Für Betriebe aus Rheine und dem Kreis Steinfurt baue ich neue Websites und erneuere ältere, die auf dem Smartphone nicht mehr gut funktionieren. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Für Betriebe aus Rheine und dem Kreis Steinfurt baue ich neue Websites und erneuere ältere, die auf dem Smartphone nicht mehr gut funktionieren. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Rheine"
   nearby:

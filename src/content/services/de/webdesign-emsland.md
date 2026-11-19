@@ -3,7 +3,7 @@ order: 106
 title: "Webdesign für das Emsland"
 seoTitle: "Webdesign Emsland: Website erstellen lassen"
 description: "Webdesign Emsland: Website, Produktseiten oder Onlineshop erstellen lassen, für Betriebe von Lingen bis Papenburg. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Das Emsland ist groß, von Lingen bis Papenburg. Ich baue Websites und Onlineshops für Betriebe aus dem ganzen Landkreis, die Zusammenarbeit läuft per Videocall und E-Mail. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Das Emsland ist groß, von Lingen bis Papenburg. Ich baue Websites und Onlineshops für Betriebe aus dem ganzen Landkreis, die Zusammenarbeit läuft per Videocall und E-Mail. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Emsland"
   nearby:

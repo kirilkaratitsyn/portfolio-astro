@@ -3,7 +3,7 @@ order: 102
 title: "Webdesign für Lingen"
 seoTitle: "Webdesign Lingen: Website erstellen lassen"
 description: "Webdesign Lingen (Ems): Firmenwebsite, Karriereseite oder Onlineshop erstellen lassen, vom Freelancer aus Bad Bentheim. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Für Betriebe aus Lingen und dem südlichen Emsland baue ich Firmenwebsites, Karriereseiten und Onlineshops. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Für Betriebe aus Lingen und dem südlichen Emsland baue ich Firmenwebsites, Karriereseiten und Onlineshops. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Lingen (Ems)"
   nearby:

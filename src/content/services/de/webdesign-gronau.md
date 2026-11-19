@@ -3,7 +3,7 @@ order: 104
 title: "Webdesign für Gronau"
 seoTitle: "Webdesign Gronau: Website erstellen lassen, auch auf Niederländisch"
 description: "Webdesign Gronau (Westf.): Website oder Onlineshop erstellen lassen, auf Wunsch auf Deutsch und Niederländisch. Ein Ansprechpartner, Festpreis nach Briefing."
-lead: "Gronau liegt direkt an der Grenze zu Enschede. Für Betriebe von hier baue ich Websites und Onlineshops, auf Wunsch mit niederländischer Sprachversion. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Gronau liegt direkt an der Grenze zu Enschede. Für Betriebe von hier baue ich Websites und Onlineshops, auf Wunsch mit niederländischer Sprachversion. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Gronau (Westf.)"
   nearby:

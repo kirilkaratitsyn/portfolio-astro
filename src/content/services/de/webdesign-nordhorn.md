@@ -3,7 +3,7 @@ order: 101
 title: "Webdesign für Nordhorn"
 seoTitle: "Webdesign Nordhorn: Website erstellen lassen"
 description: "Webdesign Nordhorn: Website erstellen lassen für Betriebe aus der Kreisstadt und der Grafschaft Bentheim. Firmenwebsite, Karriereseite, Onlineshop, Festpreis nach Briefing."
-lead: "Für Betriebe aus Nordhorn und der Grafschaft Bentheim baue ich Websites und Onlineshops; in Nordhorn selbst arbeite ich als Frontend-Entwickler bei der Funduino GmbH. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Für Betriebe aus Nordhorn und der Grafschaft Bentheim baue ich Websites und Onlineshops; in Nordhorn selbst arbeite ich als Frontend-Entwickler bei der Funduino GmbH. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Nordhorn"
   nearby:

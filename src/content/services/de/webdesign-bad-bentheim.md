@@ -3,7 +3,7 @@ order: 107
 title: "Webdesign in Bad Bentheim"
 seoTitle: "Webdesign Bad Bentheim: Website erstellen lassen"
 description: "Webdesign Bad Bentheim: Website erstellen lassen beim Webdesigner vor Ort. Firmenwebsite, Seiten für Gastgeber oder Onlineshop, Festpreis nach Briefing."
-lead: "Ich arbeite selbst in Bad Bentheim und baue Websites und Onlineshops für Betriebe aus der Stadt und der Grafschaft: Gastgeber, Handwerk, Praxen und Läden. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Ich arbeite selbst in Bad Bentheim und baue Websites und Onlineshops für Betriebe aus der Stadt und der Grafschaft: Gastgeber, Handwerk, Praxen und Läden. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 area:
   place: "Bad Bentheim"
   nearby:

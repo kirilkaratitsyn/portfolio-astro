@@ -3,7 +3,7 @@ order: 94
 title: "Shopify-Entwickler für Gronau"
 seoTitle: "Shopify-Entwickler Gronau: B2B-Shop und Verkauf nach NL"
 description: "Shopify-Entwickler für Gronau (Westf.): Großhandel und Endkunden in einem Shop, B2B-Preise, niederländische Sprachversion, neuer Shop oder Umzug."
-lead: "Für Betriebe in Gronau baue ich Shopify-Shops, in denen Händler und Endkunden im selben Shop kaufen, auf Wunsch auch auf Niederländisch. Bisher sind es 35+ ausgelieferte Stores, auf Upwork bin ich Top Rated mit 96 % Job Success."
+lead: "Für Betriebe in Gronau baue ich Shopify-Shops, in denen Händler und Endkunden im selben Shop kaufen, auf Wunsch auch auf Niederländisch. Bisher sind es 35+ ausgelieferte Stores, auf Upwork bin ich Top Rated mit 100 % Job Success."
 area:
   place: "Gronau (Westf.)"
   nearby:

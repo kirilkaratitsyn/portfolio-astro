@@ -3,7 +3,7 @@ order: 96
 title: "Shopify-Entwickler für das Emsland"
 seoTitle: "Shopify-Entwickler Emsland: Onlineshop, Umzug, Betreuung"
 description: "Shopify-Entwickler für das Emsland: Onlineshop aufbauen, Webshop zu Shopify umziehen, laufende Betreuung. Remote aus Bad Bentheim, Festpreis nach Briefing."
-lead: "Ich baue Shopify-Shops für Betriebe im Emsland, von Meppen und Haren bis Papenburg, ziehe bestehende Webshops um und betreue sie nach dem Start. Bisher sind es 35+ ausgelieferte Stores und 48 Jobs auf Upwork, Top Rated mit 96 % Job Success."
+lead: "Ich baue Shopify-Shops für Betriebe im Emsland, von Meppen und Haren bis Papenburg, ziehe bestehende Webshops um und betreue sie nach dem Start. Bisher sind es 35+ ausgelieferte Stores und 50+ Jobs auf Upwork, Top Rated mit 100 % Job Success."
 area:
   place: "Emsland"
   nearby:

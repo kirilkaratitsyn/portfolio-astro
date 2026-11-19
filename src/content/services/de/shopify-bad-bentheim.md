@@ -3,7 +3,7 @@ order: 90
 title: "Shopify-Entwickler in Bad Bentheim"
 seoTitle: "Shopify-Entwickler Bad Bentheim: Shops, Themes, Umzug"
 description: "Shopify-Entwickler in Bad Bentheim: neuer Shop, Umzug von WooCommerce, Redesign, schnellere Shops, laufende Betreuung. Festpreis nach Briefing."
-lead: "Ich bin Shopify-Entwickler in Bad Bentheim und baue, überarbeite und betreue Shops für Händler aus der Region und aus ganz Deutschland. Bisher: 35+ ausgelieferte Stores, 48 Jobs auf Upwork, Top Rated mit 96 % Job Success."
+lead: "Ich bin Shopify-Entwickler in Bad Bentheim und baue, überarbeite und betreue Shops für Händler aus der Region und aus ganz Deutschland. Bisher: 35+ ausgelieferte Stores, 50+ Jobs auf Upwork, Top Rated mit 100 % Job Success."
 area:
   place: "Bad Bentheim"
   nearby:

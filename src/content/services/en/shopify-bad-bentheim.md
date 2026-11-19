@@ -3,7 +3,7 @@ order: 90
 title: "Shopify developer in Bad Bentheim"
 seoTitle: "Shopify developer Bad Bentheim, Germany: stores, themes, migration"
 description: "Shopify developer in Bad Bentheim, Germany: new stores, WooCommerce migration, redesign, faster stores, ongoing support. Fixed price after the briefing."
-lead: "I am a Shopify developer in Bad Bentheim and I build, rework and look after stores for merchants in the region and all over Germany. So far: 35+ stores delivered, 48 jobs on Upwork, Top Rated with a 96% Job Success Score."
+lead: "I am a Shopify developer in Bad Bentheim and I build, rework and look after stores for merchants in the region and all over Germany. So far: 35+ stores delivered, 50+ jobs on Upwork, Top Rated with a 100% Job Success Score."
 area:
   place: "Bad Bentheim"
   nearby:

@@ -3,7 +3,7 @@ order: 8
 title: "Website erstellen lassen"
 seoTitle: "Website erstellen lassen: Webdesign vom Freelancer"
 description: "Website erstellen lassen vom Freelancer: Firmenwebsite oder Onlineshop, Umsetzung nach Ihrem Design, ein Ansprechpartner. Festpreis nach Briefing."
-lead: "Ich baue Websites und Onlineshops für Betriebe in Deutschland, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 96 % Job Success."
+lead: "Ich baue Websites und Onlineshops für Betriebe in Deutschland, von der Firmenseite bis zum Shop mit Zahlung und Versand. Bisher: 35+ ausgelieferte Onlineshops, Top Rated auf Upwork mit 100 % Job Success."
 audience:
   - "Handwerksbetriebe, Praxen und Dienstleister, die eine neue Website brauchen."
   - "Betriebe mit einer älteren Website, die auf dem Smartphone schlecht lesbar ist."
