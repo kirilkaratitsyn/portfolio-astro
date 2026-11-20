@@ -132,7 +132,7 @@ You create a gift card product yourself. Help is worthwhile in these cases:
 - Cards must run across **several markets and currencies**.
 - Redemption should be restricted under conditions.
 
-For issuing cards automatically after an order the help recommends [Shopify Flow](/blog/shopify-flow-automatisierung). After that the setup belongs in the ongoing upkeep, see [Shopify maintenance](/blog/shopify-wartung-betreuung).
+For issuing cards automatically after an order the help recommends [Shopify workflow automation with Flow](/blog/shopify-flow-automatisierung). After that the setup belongs in the ongoing upkeep, see [Shopify maintenance](/blog/shopify-wartung-betreuung).
 
 ## Frequently asked questions
 

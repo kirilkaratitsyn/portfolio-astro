@@ -1,8 +1,9 @@
 ---
 publishedAt: 2026-10-25
+updatedAt: 2026-11-20
 title: "Shopify Flow: Abläufe im Shop automatisieren, ohne Code"
 date: 25. Oktober 2026
-readingTime: 6 Min
+readingTime: 7 Min
 excerpt: "Shopify Flow für Händler ohne Technik: Trigger, Bedingungen, Aktionen, Vorlagen, Testen und Fehler. Was die kostenlose App kann und wo ihre Grenzen liegen."
 image: /og/projects/orska-rituals.jpg
 topic: support
@@ -98,6 +99,19 @@ Mit **Wait** hält ein Workflow an, etwa um eine Bestellung erst später zu prü
 ## Die Aktion „Send internal email"
 
 Sie ist laut Hilfe für E-Mails an das **eigene Team** gedacht. Für Kunden verweist die Hilfe auf Marketing-Automatisierungen. Die Empfängeradresse ist fest eingetragen, Variablen gehen nicht. Mehrere Empfänger trennen Sie mit Komma. Was Shopify selbst an Kunden schickt: [Shopify E-Mail-Benachrichtigungen](/de/blog/shopify-email-benachrichtigungen).
+
+## Schritt für Schritt: von der Routine zum laufenden Workflow
+
+So würde ich einen ersten Workflow angehen. Dabei kommen nur die Werkzeuge vor, die oben beschrieben sind.
+
+1. **Die Routine in einem Satz aufschreiben:** „Wenn X passiert und Y zutrifft, mache Z." Zum Beispiel: „Wenn eine Bestellung mit Geschenkkarte bezahlt wird, Bestell-Tag setzen." Fällt der Satz schwer, ist der Workflow noch nicht klar.
+2. **Den genauesten Trigger wählen,** der die Routine wirklich auslöst, nicht einfach **Order created**, wenn es einen engeren Trigger gibt.
+3. **Die Bedingung ausformulieren:** UND oder ODER, und was passieren soll, wenn Daten fehlen (siehe Abschnitt Bedingungen).
+4. **Vorlagen prüfen** unter **Browse templates**. Alle Platzhalter ersetzen und prüfen, ob die Vorlage eine Connector-App braucht.
+5. **Mit Aktionen beginnen, die sich leicht rückgängig machen lassen,** etwa Tags oder eine interne E-Mail, bevor Workflows Bestellungen stornieren oder den Versand anhalten. Das ist mein Rat, keine Regel aus dem Help Center.
+6. **Testen** mit **Test your workflow** am Trigger, dann **Turn on workflow**.
+7. **In den ersten Tagen Recent runs ansehen** und den Trigger **Workflow error occurred** einrichten, damit Fehler bei Ihnen ankommen.
+8. **Notieren, was jeder Workflow tut und warum.** Wer den Shop später betreut, weiß dann, woher Tags und E-Mails kommen.
 
 ## Beispiele aus der Praxis
 

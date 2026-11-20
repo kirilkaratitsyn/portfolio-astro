@@ -1,9 +1,11 @@
 ---
 publishedAt: 2026-10-25
+updatedAt: 2026-11-20
 title: "Shopify Flow: automate store tasks without code"
+seoTitle: "Shopify Workflow Automation with Flow: A Guide Without Code"
 date: 25 October 2026
-readingTime: 7 min
-excerpt: "Shopify Flow for merchants without a technical background: triggers, conditions, actions, templates, testing and errors. What the free app can and can't do."
+readingTime: 8 min
+excerpt: "Shopify workflow automation with the free Flow app: triggers, conditions, actions, templates, a step-by-step plan for your first workflow, testing and errors."
 image: /og/projects/orska-rituals.jpg
 topic: support
 tags:
@@ -13,7 +15,7 @@ tags:
   - Store management
 ---
 
-"Every morning I go through the same orders, tag customers by hand and check what's sold out." Shopify Flow can take over routines like these. The app watches for events in your store and then runs the steps you've set, without code.
+"Every morning I go through the same orders, tag customers by hand and check what's sold out." Shopify Flow can take over routines like these. The app watches for events in your store and then runs the steps you've set. That is Shopify workflow automation without code.
 
 ## A note before we start
 
@@ -98,6 +100,19 @@ You test a workflow before turning it on via **Test your workflow** at the trigg
 ## The "Send internal email" action
 
 According to the Help Center, it's meant for emails to **your own team**. For customers, the Help Center points to marketing automations. The recipient address is fixed and can't use variables. Separate several recipients with a comma. What Shopify itself sends to customers: [Shopify email notifications](/blog/shopify-email-benachrichtigungen).
+
+## Shopify workflow automation step by step: from routine to running workflow
+
+This is how I would approach a first workflow. It only uses the tools described above.
+
+1. **Write the routine down in one sentence:** "When X happens and Y is true, do Z." For example: "When an order is paid with a gift card, add an order tag." If the sentence doesn't come easily, the workflow isn't clear yet.
+2. **Pick the most specific trigger** that really starts the routine, not just **Order created** when a narrower trigger exists.
+3. **Spell out the condition:** AND or OR, and what should happen when data is missing (see the conditions section).
+4. **Check the templates** under **Browse templates**. Replace every placeholder and check whether the template needs a connector app.
+5. **Start with actions that are easy to undo,** such as tags or an internal email, before workflows that cancel orders or hold fulfillment. That's my advice, not a Help Center rule.
+6. **Test** with **Test your workflow** at the trigger, then **Turn on workflow**.
+7. **Watch Recent runs for the first few days** and set up the **Workflow error occurred** trigger so failures reach you.
+8. **Note what each workflow does and why.** Whoever looks after the store later will then know where tags and emails come from.
 
 ## Examples from practice
 

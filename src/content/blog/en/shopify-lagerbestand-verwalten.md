@@ -140,7 +140,7 @@ Related: [Customizing a Shopify theme](/blog/shopify-theme-customization) and [C
 
 **How long can I see the history of changes?** In the admin the last 180 days per product or variant. For older data there is the Inventory adjustment changes report.
 
-**Can I hide sold-out products?** Yes, through collection conditions, apps or Shopify Flow. Tracking has to be on.
+**Can I hide sold-out products?** Yes, through collection conditions, apps or [Shopify workflow automation with Flow](/blog/shopify-flow-automatisierung). Tracking has to be on.
 
 **What does the setup cost?** That depends on the scope. I do not name amounts here.
 
