@@ -144,6 +144,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я перевіряю лише публічно доступні дані, наприклад чи є посилання на політики у футері, без доступу до вашого акаунта. Юридичну перевірку це не замінює. Більше в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Рахунки в Shopify: документи замовлення](/uk/blog/shopify-rechnung-bestelldokumente) · [Подарункові картки в Shopify](/uk/blog/shopify-geschenkkarten-gutscheine) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten)
+**Читайте також:** [Рахунки в Shopify: документи замовлення](/uk/blog/shopify-rechnung-bestelldokumente) · [Подарункові картки в Shopify](/uk/blog/shopify-geschenkkarten-gutscheine) · [Податки й ПДВ у Shopify](/uk/blog/shopify-steuern-mwst-einrichten) · [Повернення в Shopify](/uk/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

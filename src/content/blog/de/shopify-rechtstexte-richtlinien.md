@@ -144,6 +144,6 @@ Dazu kommt laufende Pflege: Texte veralten, sobald sich Versand, Märkte oder R�
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich prüfe nur öffentlich sichtbare Daten, etwa ob Richtlinien im Footer verlinkt sind, ohne Zugang zu Ihrem Konto. Eine rechtliche Prüfung ersetzt das nicht. Mehr unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Rechnung erstellen: Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten)
+**Weiterlesen:** [Shopify Rechnung erstellen: Bestelldokumente](/de/blog/shopify-rechnung-bestelldokumente) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine) · [Shopify Steuern und MwSt. einrichten](/de/blog/shopify-steuern-mwst-einrichten) · [Shopify Retouren einrichten](/de/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

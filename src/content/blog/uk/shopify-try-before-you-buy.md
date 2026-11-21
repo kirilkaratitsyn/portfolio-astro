@@ -110,6 +110,6 @@ Shopify знає три опції купівлі поза «купити, за�
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я перевіряю лише публічно видимі дані: швидкість завантаження, застосунки в коді сторінок і побудову сторінок, без доступу до вашого облікового запису. Більше в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland)
+**Читайте також:** [Передзамовлення в Shopify](/uk/blog/shopify-vorbestellung-preorder) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Способи оплати Shopify у Німеччині](/uk/blog/shopify-zahlungsarten-deutschland) · [Повернення в Shopify](/uk/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*
