@@ -24,10 +24,10 @@
       "Virtuoso",
       "Maestro"
     ],
-    "claim": "Fast, clear Shopify stores that are easy to run.",
+    "claim": "Shopify stores that sell across Europe.",
     "seoTitle": "Kiril Karatitsyn | Shopify Freelancer and Developer in Germany",
     "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects.",
-    "sub": "Freelance Shopify developer in Germany: custom themes, Markets, migrations and performance."
+    "sub": "E-commerce Solutions Expert in Germany: speed, conversion and automation for Shopify stores."
   },
   "clients": {
     "label": "Selected Shopify stores I've worked on"
@@ -44,7 +44,7 @@
   "services": {
     "eyebrow": "Services",
     "title": "Shopify Services",
-    "subtitle": "Focused Shopify support for launches, growth, and custom storefront work.",
+    "subtitle": "Shopify work for stores that sell across Europe: speed, conversion and automation, from the first build to ongoing support.",
     "related": "Related projects",
     "items": [
       {
@@ -451,7 +451,7 @@
   },
   "bio": {
     "title": "Hi, I'm Kiril.",
-    "p1": "I'm a freelance Shopify developer in Germany. I build themes, set up Markets, move stores to Shopify and speed up slow ones. One person owns the whole task.",
+    "p1": "I help e-commerce brands sell more online: the store, the checkout and the automation behind it. Most of my work is on Shopify stores that sell across Europe. One person owns the whole task.",
     "p2": "You get scope, timeline and price in writing first. I build on a preview theme so your live store keeps selling, and I stay on for fixes after launch.",
     "facts": [
       {
@@ -874,7 +874,7 @@
     },
     "local": {
       "title": "Looking for a Shopify developer near you?",
-      "text": "I work remotely for stores in Germany and beyond, and meet in person near Bad Bentheim by arrangement."
+      "text": "I work remotely for stores across Europe, and meet in person near Bad Bentheim by arrangement."
     },
     "cta": {
       "title": "Not sure which service fits?",
@@ -903,7 +903,7 @@
     "seoTitle": "About Kiril Karatitsyn: Shopify Freelancer in Bad Bentheim, Germany",
     "seoDescription": "Who builds your Shopify store: Kiril Karatitsyn, freelance Shopify developer in Bad Bentheim, Germany. How I work, my background, languages and where to find me.",
     "title": "About Kiril Karatitsyn",
-    "lead": "I am a freelance Shopify developer based in Bad Bentheim, Germany. I work mostly remote for brands and merchants in Germany and beyond.",
+    "lead": "I am an e-commerce solutions expert based in Bad Bentheim, Germany. I help Shopify stores that sell across Europe with speed, conversion and automation, mostly remote.",
     "facts": [
       {
         "label": "Based in",
@@ -919,7 +919,7 @@
       }
     ],
     "whatTitle": "What I do",
-    "whatText": "I build custom Shopify themes, set up Markets for new countries, move stores to Shopify from WooCommerce and other systems, and make slow stores faster. I own the whole task, from the first look at the store to the fixes after launch.",
+    "whatText": "I make slow stores faster, find where visitors drop off before they buy, and automate what the team still does by hand. I build custom Shopify themes, set up Markets for new countries and move stores to Shopify from WooCommerce and other systems. I own the whole task, from the first look at the store to the fixes after launch. I also host E-commerce Coffee Meetings, small meetups for people who sell online.",
     "whatLink": "All services",
     "whatLink2": "Working with a Shopify freelancer: how it goes",
     "howTitle": "How I work",
@@ -943,7 +943,7 @@
         "when": "2026 to today",
         "role": "Frontend Developer",
         "place": "Funduino GmbH, Nordhorn",
-        "text": "Interface and storefront work at an Arduino learning platform, inside a live company."
+        "text": "Helped with the migration and worked on the interface and storefront of an Arduino learning platform."
       },
       {
         "when": "2024 to 2025",
