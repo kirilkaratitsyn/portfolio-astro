@@ -144,6 +144,6 @@ Ongoing upkeep belongs here too: texts go stale as soon as shipping, markets or 
 
 Send me your store's address for the [free store check](#contact). I only check publicly visible data, such as whether policies are linked in the footer, without access to your account. That does not replace a legal review. More under [Services](/services).
 
-**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Setting up Shopify gift cards](/blog/shopify-geschenkkarten-gutscheine) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten)
+**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Setting up Shopify gift cards](/blog/shopify-geschenkkarten-gutscheine) · [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Setting up Shopify returns](/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

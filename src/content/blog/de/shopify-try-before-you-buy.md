@@ -110,6 +110,6 @@ Verwandt: [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization),
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich prüfe nur öffentlich sichtbare Daten wie Ladezeit, Apps im Quelltext und Seitenaufbau, ohne Zugriff auf Ihr Konto. Mehr unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland)
+**Weiterlesen:** [Shopify Vorbestellung einrichten](/de/blog/shopify-vorbestellung-preorder) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Zahlungsarten in Deutschland](/de/blog/shopify-zahlungsarten-deutschland) · [Shopify Retouren einrichten](/de/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

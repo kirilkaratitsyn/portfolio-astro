@@ -110,6 +110,6 @@ Related: [Customizing a Shopify theme](/blog/shopify-theme-customization), [Cust
 
 Send me your store's address for the [free store check](#contact). I only check publicly visible data such as load time, apps in the source code and page structure, without access to your account. More under [Services](/services).
 
-**Further reading:** [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland)
+**Further reading:** [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Setting up Shopify returns](/blog/shopify-retouren-ruecksendungen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

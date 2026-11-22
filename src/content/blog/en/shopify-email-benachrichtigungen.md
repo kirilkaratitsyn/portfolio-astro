@@ -144,6 +144,6 @@ Related topics: [Customizing a Shopify theme](/blog/shopify-theme-customization)
 
 Send me your store's address for the [free store check](#contact). I look only at publicly visible data, without access to your account, and tell you what stands out. More under [Services](/services).
 
-**Further reading:** [Invoices and order documents in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy) · [Connecting a domain to Shopify](/blog/shopify-domain-verbinden) · [A multilingual Shopify store](/blog/shopify-mehrsprachig-uebersetzen)
+**Further reading:** [Invoices and order documents in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy) · [Connecting a domain to Shopify](/blog/shopify-domain-verbinden) · [A multilingual Shopify store](/blog/shopify-mehrsprachig-uebersetzen) · [Shopify abandoned checkout recovery](/blog/shopify-abgebrochene-checkouts)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
