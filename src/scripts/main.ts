@@ -1,8 +1,10 @@
 // Entry point: tiny on purpose. The heavy parts load after the page has finished loading, so the poster
 // images paint first and the Lighthouse numbers hold.
 import { trackClicks } from '../lib/track';
+import { trackSource } from '../lib/source';
 
 trackClicks();
+trackSource();
 
 const root = document.documentElement;
 

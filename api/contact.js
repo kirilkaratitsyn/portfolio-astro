@@ -13,7 +13,7 @@ import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
 
 const TO = process.env.CONTACT_TO || 'kiril@karatitsyn.com';
 const FROM = process.env.CONTACT_FROM || 'karatitsyn.com <website@updates.karatitsyn.com>';
-const LIMITS = { topic: 20, name: 120, email: 200, shop: 300, message: 4000, source: 60, page: 300, utm: 300, lang: 5 };
+const LIMITS = { topic: 20, name: 120, email: 200, shop: 300, message: 4000, source: 60, page: 300, utm: 300, ref: 200, land: 300, lang: 5 };
 
 /** What a visitor sees when the form was sent without scripts (a plain HTML post). */
 const PAGES = {
@@ -182,7 +182,13 @@ export default {
     if (overLimit(ip)) return drop(request, 'rate', lang);
 
     const check = field.topic === 'check';
-    const source = new URLSearchParams(field.utm).get('utm_source');
+    let refHost = '';
+    try {
+      refHost = field.ref ? new URL(field.ref).host.replace(/^www\./, '') : '';
+    } catch {
+      refHost = '';
+    }
+    const source = new URLSearchParams(field.utm).get('utm_source') || refHost;
     const subject = `${check ? 'Shop-Check' : 'Anfrage'}: ${field.shop || field.name || field.email}${source ? ` (via ${source})` : ''}`;
     const text = [
       check ? 'Kostenloser Shop-Check' : 'Projektanfrage',
@@ -196,6 +202,8 @@ export default {
       '',
       `Seite: ${field.page || '–'} (${lang})`,
       field.utm ? `UTM: ${field.utm}` : '',
+      field.ref ? `Referrer: ${field.ref}` : '',
+      field.land && field.land !== field.page ? `Einstieg: ${field.land}` : '',
     ]
       .filter((line, i, lines) => line || lines[i - 1])
       .join('\n');
