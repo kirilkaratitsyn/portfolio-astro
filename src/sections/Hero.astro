@@ -1,5 +1,4 @@
 ---
-import TopRated from '../components/TopRated.astro';
 import CalButton from '../components/CalButton.astro';
 import { useTranslations, type Locale } from '../i18n';
 
@@ -9,9 +8,11 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const f = t.contact.form;
-const privacyHref = locale === 'de' ? '/de/datenschutz' : '/privacy';
-const input = 'mt-1.5 block w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-[16px] font-normal text-ink placeholder:text-[#8a8fa3] focus:border-ink';
+const c = t.hero.check;
+const jss = t.stats.items[3].value;
+const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
+const primary = 'inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white';
+const outline = 'inline-flex rounded-full border border-ink/25 px-6 py-[14px] font-medium text-ink transition-colors hover:border-ink';
 // Words ride up one by one on load (CSS only, see global.css); the heading text itself is unchanged.
 const words = t.hero.claim.split(' ');
 ---
@@ -25,37 +26,73 @@ const words = t.hero.claim.split(' ');
          the longest heading ends (the German one runs to the full 600px), and the words always above it. -->
     <div class="relative mt-8 lg:mt-0">
       <div class="relative z-[4] lg:absolute lg:left-0 lg:top-[56px] lg:max-w-[600px]">
+        <!-- PREVIEW ONLY: three first screens to choose from, switched with ?hero=a|b|c (a by default). Both accents in
+             each: the Upwork record and the free store check. The one that is picked stays, the rest goes. -->
+        <script is:inline>document.documentElement.dataset.hero = (new URLSearchParams(location.search).get('hero') || 'a').toLowerCase();</script>
+
+        <!-- A: proof chip above the heading. -->
+        <a data-hv="a" href={PROFILE} target="_blank" rel="noopener noreferrer" class="hero-sub mb-5 inline-flex w-fit items-center gap-2.5 rounded-full bg-white py-1.5 pl-1.5 pr-5 text-[14px] font-medium">
+          <img src="/source/logos/upwork-top-rated.svg" alt="" width="36" height="36" class="size-9 sm:size-7" />
+          <span class="flex flex-col leading-tight sm:flex-row sm:gap-2.5"><span>{t.reviews.badge}</span><span class="text-mute">{t.reviews.summary}</span></span>
+        </a>
+        <!-- C: the offer as a banner above the heading. -->
+        <a data-hv="c" href="#shop-check" class="hero-sub mb-5 inline-flex w-fit items-center gap-2.5 rounded-full bg-blue-deep py-2 pl-3.5 pr-4 text-[14px] font-medium text-white">
+          <span class="dot dot--white" aria-hidden="true"></span>{c.available}<span aria-hidden="true">→</span>
+        </a>
         <h1 class="max-w-[600px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:text-[46px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
         <p class="hero-sub mt-5 max-w-[460px] text-[17px] leading-snug text-mute">{t.hero.sub}</p>
-        <!-- The free store check is the first thing to do here: two fields, sent to api/contact.js like the full form at the
-             bottom (Contact.astro wires every [data-contact-form]); the call is the second door. -->
-        <form id="hero-check" data-contact-form action="/api/contact" method="post" class="hero-cta mt-8 max-w-[560px] scroll-mt-28">
+
+        <!-- A: the check is the main button, with one line on what it is. -->
+        <div data-hv="a" class="hero-cta mt-8 max-w-[560px]">
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#shop-check" class={primary}>{c.button}</a>
+            <CalButton class={outline}>{t.header.bookCall}</CalButton>
+          </div>
+          <p class="mt-5 flex items-start gap-2.5 text-[15px] leading-snug text-mute">
+            <span class="dot mt-[5px]" aria-hidden="true"></span>
+            <span><span class="font-medium text-ink">{c.available}.</span> {c.line}</span>
+          </p>
+        </div>
+
+        <!-- B: two cards side by side, the record and the offer. -->
+        <div data-hv="b" class="hero-cta mt-8 max-w-[600px]">
           <div class="grid gap-3 sm:grid-cols-2">
-            <label class="text-[14px] font-medium">{f.shop}<input type="text" name="shop" required inputmode="url" autocomplete="url" placeholder="https://" class={input} /></label>
-            <label class="text-[14px] font-medium">{f.email}<input type="email" name="email" required autocomplete="email" class={input} /></label>
+            <a href={PROFILE} target="_blank" rel="noopener noreferrer" title={t.reviews.openProfile} class="group flex flex-col rounded-[22px] bg-white p-5 transition-colors hover:bg-ink hover:text-white">
+              <span class="flex items-center justify-between">
+                <img src="/source/logos/upwork-top-rated.svg" alt="" width="44" height="44" class="size-11" />
+                <span class="text-xl text-mute group-hover:text-white/80" aria-hidden="true">↗</span>
+              </span>
+              <span class="mt-auto pt-5 font-head text-[60px] font-bold leading-[0.85] tracking-[-0.04em] [font-variant-numeric:tabular-nums]">{jss}</span>
+              <span class="mt-3 text-[15px] font-medium">{c.jss}</span>
+              <span class="text-[14px] text-mute group-hover:text-white/80">{t.reviews.badge} · {c.reviews}</span>
+            </a>
+            <a href="#shop-check" class="on-blue flex flex-col rounded-[22px] bg-blue-deep p-5 text-white">
+              <span class="flex items-center gap-2 text-[14px] font-medium"><span class="dot dot--white" aria-hidden="true"></span>{c.open}</span>
+              <span class="mt-5 font-head text-[26px] font-bold leading-[1.05] tracking-[-0.01em]">{t.contact.shopCheck.title}</span>
+              <span class="mt-2 text-[14px] leading-snug text-white/85">{c.line}</span>
+              <span class="mt-auto pt-4"><span class="inline-flex rounded-full bg-white px-4 py-2 text-[14px] font-semibold text-blue-deep">{t.contact.shopCheck.button} →</span></span>
+            </a>
           </div>
-          <!-- Only bots fill this in. -->
-          <label class="cf-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-          <input type="hidden" name="topic" value="check" />
-          <input type="hidden" name="form" value="hero" />
-          <input type="hidden" name="lang" value={locale} />
-          <input type="hidden" name="page" value="" />
-          <input type="hidden" name="utm" value="" />
-          <input type="hidden" name="ref" value="" />
-          <input type="hidden" name="land" value="" />
-          <div class="mt-4 flex flex-wrap items-center gap-3">
-            <button type="submit" data-label={t.hero.check.button} data-sending={f.sending} class="inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white transition-opacity disabled:opacity-60">{t.hero.check.button}</button>
-            <CalButton class="inline-flex rounded-full border border-ink/25 px-6 py-[14px] font-medium text-ink transition-colors hover:border-ink">{t.header.bookCall}</CalButton>
+          <div class="mt-4"><CalButton class={outline}>{t.header.bookCall}</CalButton></div>
+        </div>
+
+        <!-- C: the call and the check as buttons, the record as one big figure under them. -->
+        <div data-hv="c" class="hero-cta mt-8 max-w-[560px]">
+          <div class="flex flex-wrap items-center gap-3">
+            <CalButton class={primary}>{t.header.bookCall}</CalButton>
+            <a href="#shop-check" class={outline}>{c.button}</a>
           </div>
-          <p class="mt-4 text-[15px] leading-snug text-mute"><span class="font-medium text-ink">{t.hero.check.note}</span> {t.contact.shopCheck.text}</p>
-          <p class="mt-2 text-[13px] leading-snug text-mute">{f.privacy} <a href={privacyHref} class="underline underline-offset-2 hover:text-ink">{f.privacyLink}</a>.</p>
-          <p data-form-status role="status" aria-live="polite" class="mt-3 text-[16px] font-medium text-ink" hidden></p>
-          <p data-form-sent hidden>{f.sent}</p>
-          <p data-form-failed hidden>{f.failed}</p>
-          <div class="mt-5"><TopRated locale={locale} /></div>
-        </form>
+          <a href={PROFILE} target="_blank" rel="noopener noreferrer" title={t.reviews.openProfile} class="mt-7 flex items-center gap-4 border-t border-line pt-6">
+            <span class="font-head text-[52px] font-bold leading-[0.85] tracking-[-0.04em] [font-variant-numeric:tabular-nums] sm:text-[72px]">{jss}</span>
+            <span class="leading-snug">
+              <span class="block font-head text-base font-bold sm:text-lg">{c.jss}</span>
+              <span class="block text-[14px] text-mute sm:text-[15px]">{t.reviews.badge} · {c.reviews}</span>
+            </span>
+            <img src="/source/logos/upwork-top-rated.svg" alt="" width="56" height="56" class="ml-auto hidden size-14 sm:block" />
+          </a>
+        </div>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
            the live cube that turns, twists its layers and can be dragged. -->
@@ -81,3 +118,14 @@ const words = t.hero.claim.split(' ');
     <path d="M-40 120 C 260 70, 520 140, 760 160 S 1240 190, 1500 40" fill="none" stroke="#5b8fe0" stroke-width="18" stroke-linecap="round" vector-effect="non-scaling-stroke" />
   </svg>
 </section>
+
+<style is:global>
+  [data-hv] { display: none !important; }
+  html[data-hero='a'] [data-hv='a'], html:not([data-hero]) [data-hv='a'], html[data-hero='b'] [data-hv='b'], html[data-hero='c'] [data-hv='c'] { display: revert !important; }
+  html[data-hero='a'] a[data-hv='a'], html:not([data-hero]) a[data-hv='a'], html[data-hero='c'] a[data-hv='c'] { display: inline-flex !important; }
+  .dot { position: relative; display: inline-block; flex: none; width: 9px; height: 9px; border-radius: 999px; background: #3072d8; }
+  .dot--white { background: #fff; }
+  .dot::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: dot-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  @keyframes dot-ping { 70%, 100% { transform: scale(2.6); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .dot::after { animation: none; } }
+</style>

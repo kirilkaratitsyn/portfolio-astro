@@ -32,7 +32,11 @@
     "ogDescription": "Shopify-Shops, die in ganz Europa verkaufen: Ladezeit, Conversion und Automatisierung. 50+ Projekte, Top Rated auf Upwork mit 100 % Job Success.",
     "check": {
       "button": "Kostenlosen Shop-Check anfordern",
-      "note": "Schicken Sie Ihre Shop-URL."
+      "available": "Kostenloser Shop-Check verfügbar",
+      "open": "Jetzt verfügbar",
+      "line": "Eine kurze Liste zu Ihrem Shop innerhalb von zwei Werktagen. Unverbindlich, ohne Verkaufsgespräch.",
+      "jss": "Job Success Score",
+      "reviews": "26 Bewertungen"
     }
   },
   "clients": {

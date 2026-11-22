@@ -32,7 +32,11 @@
     "ogDescription": "Shopify stores that sell across Europe: speed, conversion and automation. 50+ projects, Top Rated on Upwork with 100% Job Success.",
     "check": {
       "button": "Get a free store check",
-      "note": "Send your store URL."
+      "available": "Free store check available",
+      "open": "Available now",
+      "line": "A short list for your store within two working days. No obligation, no sales call.",
+      "jss": "Job Success Score",
+      "reviews": "26 reviews"
     }
   },
   "clients": {
