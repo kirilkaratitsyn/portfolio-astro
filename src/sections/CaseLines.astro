@@ -1,0 +1,28 @@
+---
+// Three cases, one line each, right under the numbers: the second half of the proof strip. Only cases published on
+// the site, and only figures that stand on the case page itself.
+import { localizePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section class="border-b border-line">
+  <ul class="mx-auto max-w-[1440px]">
+    {
+      t.hero.check.cases.map((item) => (
+        <li class="border-line [&:not(:first-child)]:border-t">
+          <a href={localizePath(locale, `/projects/${item.slug}`)} class="group grid gap-1 px-5 py-5 md:grid-cols-[260px_1fr_auto] md:items-baseline md:gap-8 md:px-10 md:py-6">
+            <span class="font-head text-[22px] font-bold leading-tight md:text-[26px]">{item.name}</span>
+            <span class="text-[17px] leading-snug text-mute md:text-[20px]">{item.text}</span>
+            <span class="hidden text-xl text-blue-dark transition-transform group-hover:translate-x-1 md:block" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

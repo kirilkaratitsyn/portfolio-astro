@@ -32,11 +32,28 @@
     "ogDescription": "Shopify stores that sell across Europe: speed, conversion and automation. 50+ projects, Top Rated on Upwork with 100% Job Success.",
     "check": {
       "button": "Get a free store check",
-      "available": "Free store check available",
-      "open": "Available now",
-      "line": "A short list for your store within two working days. No obligation, no sales call.",
-      "jss": "Job Success Score",
-      "reviews": "26 reviews"
+      "trust": "Top Rated on Upwork · 100% Job Success",
+      "facts": "50+ projects delivered. 5 years building online stores. German and English.",
+      "orCall": "or book a call",
+      "caption": "Kiril Karatitsyn · Germany",
+      "photoAlt": "Kiril Karatitsyn, Shopify developer in Germany",
+      "cases": [
+        {
+          "slug": "pedchem",
+          "name": "Pedchem",
+          "text": "Mobile speed 57 to 82 live, main content on phones after 1.5 instead of 3.0 seconds."
+        },
+        {
+          "slug": "bazar-bizar",
+          "name": "Bazar Bizar",
+          "text": "One store in 6 languages and 53 countries."
+        },
+        {
+          "slug": "orska-rituals",
+          "name": "Orska Rituals",
+          "text": "Retail and wholesale in one store instead of two."
+        }
+      ]
     }
   },
   "clients": {

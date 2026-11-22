@@ -32,11 +32,28 @@
     "ogDescription": "Shopify-Shops, die in ganz Europa verkaufen: Ladezeit, Conversion und Automatisierung. 50+ Projekte, Top Rated auf Upwork mit 100 % Job Success.",
     "check": {
       "button": "Kostenlosen Shop-Check anfordern",
-      "available": "Kostenloser Shop-Check verfügbar",
-      "open": "Jetzt verfügbar",
-      "line": "Eine kurze Liste zu Ihrem Shop innerhalb von zwei Werktagen. Unverbindlich, ohne Verkaufsgespräch.",
-      "jss": "Job Success Score",
-      "reviews": "26 Bewertungen"
+      "trust": "Top Rated auf Upwork · 100 % Job Success",
+      "facts": "50+ umgesetzte Projekte. 5 Jahre Onlineshop-Entwicklung. Deutsch und Englisch.",
+      "orCall": "oder Termin vereinbaren",
+      "caption": "Kiril Karatitsyn · Deutschland",
+      "photoAlt": "Kiril Karatitsyn, Shopify-Entwickler in Deutschland",
+      "cases": [
+        {
+          "slug": "pedchem",
+          "name": "Pedchem",
+          "text": "Mobile-Speed von 57 auf 82 live, Hauptinhalt auf dem Handy nach 1,5 statt 3,0 Sekunden."
+        },
+        {
+          "slug": "bazar-bizar",
+          "name": "Bazar Bizar",
+          "text": "Ein Shop in 6 Sprachen und 53 Ländern."
+        },
+        {
+          "slug": "orska-rituals",
+          "name": "Orska Rituals",
+          "text": "Endkunden und Großhandel in einem Shop statt zwei."
+        }
+      ]
     }
   },
   "clients": {

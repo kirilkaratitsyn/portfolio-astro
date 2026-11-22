@@ -1,5 +1,7 @@
 ---
-import CalButton from '../components/CalButton.astro';
+// First screen of the home page, kept light: who I am and why to trust me. A small real photo with the Upwork record,
+// the heading, one line of facts and one button. The offer itself, the free store check, is the next section
+// (ShopCheckWhat), so the two thoughts do not crowd each other.
 import { useTranslations, type Locale } from '../i18n';
 
 interface Props {
@@ -9,99 +11,58 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const c = t.hero.check;
-const jss = t.stats.items[3].value;
 const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
-const primary = 'inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white';
-const outline = 'inline-flex rounded-full border border-ink/25 px-6 py-[14px] font-medium text-ink transition-colors hover:border-ink';
 // Words ride up one by one on load (CSS only, see global.css); the heading text itself is unchanged.
 const words = t.hero.claim.split(' ');
 ---
 
-<section data-hero class="relative lg:h-[1000px]">
+<section data-hero class="relative lg:pb-16">
   <div class="relative z-[2] mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
-    <!-- The surname is decoration; the h1 below carries the page's meaning. -->
-    <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
+    <!-- PREVIEW ONLY: the big surname is shown with ?hero=wm and taken out otherwise, to compare the two. The surname
+         is decoration; the h1 below carries the page's meaning. -->
+    <div data-hero-word class="wm-wrap hero-wm mb-8 lg:mb-2" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
+    <script is:inline>
+      if (new URLSearchParams(location.search).get('hero') !== 'wm') {
+        document.querySelector('[data-hero-word]').remove();
+        document.documentElement.removeAttribute('data-fly-logo');
+      }
+    </script>
 
-    <!-- Phones and tablets: the words, then the cube under them. From 1024px: the cube to the right, sized to start where
-         the longest heading ends (the German one runs to the full 600px), and the words always above it. -->
-    <div class="relative mt-8 lg:mt-0">
-      <div class="relative z-[4] lg:absolute lg:left-0 lg:top-[56px] lg:max-w-[600px]">
-        <!-- PREVIEW ONLY: three first screens to choose from, switched with ?hero=a|b|c (a by default). Both accents in
-             each: the Upwork record and the free store check. The one that is picked stays, the rest goes. -->
-        <script is:inline>document.documentElement.dataset.hero = (new URLSearchParams(location.search).get('hero') || 'a').toLowerCase();</script>
-
-        <!-- A: proof chip above the heading. -->
-        <a data-hv="a" href={PROFILE} target="_blank" rel="noopener noreferrer" class="hero-sub mb-5 inline-flex w-fit items-center gap-2.5 rounded-full bg-white py-1.5 pl-1.5 pr-5 text-[14px] font-medium">
-          <img src="/source/logos/upwork-top-rated.svg" alt="" width="36" height="36" class="size-9 sm:size-7" />
-          <span class="flex flex-col leading-tight sm:flex-row sm:gap-2.5"><span>{t.reviews.badge}</span><span class="text-mute">{t.reviews.summary}</span></span>
-        </a>
-        <!-- C: the offer as a banner above the heading. -->
-        <a data-hv="c" href="#shop-check" class="hero-sub mb-5 inline-flex w-fit items-center gap-2.5 rounded-full bg-blue-deep py-2 pl-3.5 pr-4 text-[14px] font-medium text-white">
-          <span class="dot dot--white" aria-hidden="true"></span>{c.available}<span aria-hidden="true">→</span>
-        </a>
-        <h1 class="max-w-[600px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:text-[46px]">
+    <!-- Phones and tablets: the words, then the cube under them. From 1024px: the cube to the right. -->
+    <div class="lg:grid lg:grid-cols-[minmax(0,600px)_minmax(0,1fr)] lg:items-center lg:gap-10">
+      <div class="relative z-[4]">
+        <div class="hero-sub flex items-center gap-3.5">
+          <img
+            src="/source/kiril/avatar-192.webp"
+            srcset="/source/kiril/avatar-96.webp 96w, /source/kiril/avatar-192.webp 192w, /source/kiril/avatar-288.webp 288w"
+            sizes="(min-width: 768px) 84px, 68px"
+            width="192"
+            height="192"
+            alt={c.photoAlt}
+            decoding="async"
+            class="size-[68px] shrink-0 rounded-[20px] bg-[#2a4467] object-cover md:size-[84px] md:rounded-[24px]"
+          />
+          <div class="leading-snug">
+            <p class="font-head text-[17px] font-bold md:text-[19px]">{c.caption}</p>
+            <a href={PROFILE} target="_blank" rel="noopener noreferrer" title={t.reviews.openProfile} class="mt-1 flex items-start gap-1.5 text-[14px] font-medium text-mute hover:text-ink md:text-[16px]">
+              <img src="/source/logos/upwork-top-rated.svg" alt="" width="20" height="20" class="mt-px size-5 shrink-0" />
+              <span>{c.trust}</span>
+            </a>
+          </div>
+        </div>
+        <h1 class="mt-6 max-w-[600px] font-head text-[36px] font-bold leading-[1.05] tracking-[-0.025em] md:mt-7 md:text-[54px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
-        <p class="hero-sub mt-5 max-w-[460px] text-[17px] leading-snug text-mute">{t.hero.sub}</p>
-
-        <!-- A: the check is the main button, with one line on what it is. -->
-        <div data-hv="a" class="hero-cta mt-8 max-w-[560px]">
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="#shop-check" class={primary}>{c.button}</a>
-            <CalButton class={outline}>{t.header.bookCall}</CalButton>
-          </div>
-          <p class="mt-5 flex items-start gap-2.5 text-[15px] leading-snug text-mute">
-            <span class="dot mt-[5px]" aria-hidden="true"></span>
-            <span><span class="font-medium text-ink">{c.available}.</span> {c.line}</span>
-          </p>
-        </div>
-
-        <!-- B: two cards side by side, the record and the offer. -->
-        <div data-hv="b" class="hero-cta mt-8 max-w-[600px]">
-          <div class="grid gap-3 sm:grid-cols-[5fr_7fr]">
-            <a href={PROFILE} target="_blank" rel="noopener noreferrer" title={t.reviews.openProfile} class="group hidden flex-col rounded-[22px] bg-white p-5 transition-colors hover:bg-ink hover:text-white sm:flex">
-              <span class="flex items-center justify-between">
-                <img src="/source/logos/upwork-top-rated.svg" alt="" width="44" height="44" class="size-11" />
-                <span class="text-xl text-mute group-hover:text-white/80" aria-hidden="true">↗</span>
-              </span>
-              <span class="mt-auto pt-5 font-head text-[60px] font-bold leading-[0.85] tracking-[-0.04em] [font-variant-numeric:tabular-nums]">{jss}</span>
-              <span class="mt-3 text-[15px] font-medium">{c.jss}</span>
-              <span class="text-[14px] text-mute group-hover:text-white/80">{t.reviews.badge} · {c.reviews}</span>
-            </a>
-            <a href="#shop-check" class="on-blue flex flex-col rounded-[22px] bg-blue-deep p-5 text-white">
-              <span class="flex items-center gap-2 text-[14px] font-medium"><span class="dot dot--white" aria-hidden="true"></span>{c.open}</span>
-              <span class="mt-5 font-head text-[26px] font-bold leading-[1.05] tracking-[-0.01em]">{t.contact.shopCheck.title}</span>
-              <span class="mt-2 text-[14px] leading-snug text-white/85">{c.line}</span>
-              <span class="mt-auto pt-4"><span class="inline-flex rounded-full bg-white px-4 py-2 text-[14px] font-semibold text-blue-deep">{c.button} →</span></span>
-            </a>
-          </div>
-          <!-- Phones: the offer card comes first, the record is one line under it. -->
-          <a href={PROFILE} target="_blank" rel="noopener noreferrer" class="mt-3 flex w-fit items-center gap-2.5 rounded-full bg-white py-1.5 pl-1.5 pr-5 text-[14px] font-medium sm:hidden">
-            <img src="/source/logos/upwork-top-rated.svg" alt="" width="36" height="36" class="size-9" />
-            <span class="flex flex-col leading-tight"><span>{t.reviews.badge}</span><span class="text-mute">{t.reviews.summary}</span></span>
-          </a>
-          <div class="mt-4"><CalButton class={outline}>{t.header.bookCall}</CalButton></div>
-        </div>
-
-        <!-- C: the call and the check as buttons, the record as one big figure under them. -->
-        <div data-hv="c" class="hero-cta mt-8 max-w-[560px]">
-          <div class="flex flex-wrap items-center gap-3">
-            <CalButton class={primary}>{t.header.bookCall}</CalButton>
-            <a href="#shop-check" class={outline}>{c.button}</a>
-          </div>
-          <a href={PROFILE} target="_blank" rel="noopener noreferrer" title={t.reviews.openProfile} class="mt-7 flex items-center gap-4 border-t border-line pt-6">
-            <span class="font-head text-[52px] font-bold leading-[0.85] tracking-[-0.04em] [font-variant-numeric:tabular-nums] sm:text-[72px]">{jss}</span>
-            <span class="leading-snug">
-              <span class="block font-head text-base font-bold sm:text-lg">{c.jss}</span>
-              <span class="block text-[14px] text-mute sm:text-[15px]">{t.reviews.badge} · {c.reviews}</span>
-            </span>
-            <img src="/source/logos/upwork-top-rated.svg" alt="" width="56" height="56" class="ml-auto hidden size-14 sm:block" />
+        <p class="hero-sub mt-5 max-w-[520px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>
+        <div class="hero-cta mt-7 md:mt-8">
+          <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
+            {c.button}<span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
            the live cube that turns, twists its layers and can be dragged. -->
-      <span data-pebble="cube" class="pebble relative z-[3] mx-auto mb-4 mt-10 block w-[min(420px,88vw)] md:mb-10 lg:absolute lg:right-0 lg:top-[10px] lg:m-0 lg:w-[min(540px,calc(100%-600px))] xl:right-[4%]">
+      <span data-pebble="cube" class="pebble relative z-[3] mx-auto mb-4 mt-10 block w-[min(420px,88vw)] md:mb-10 lg:m-0 lg:ml-auto lg:w-[min(540px,100%)] xl:mr-[4%]">
         <img
           src="/source/3d/cube-1120.webp"
           srcset="/source/3d/cube-560.webp 560w, /source/3d/cube-640.webp 640w, /source/3d/cube-840.webp 840w, /source/3d/cube-1120.webp 1120w"
@@ -117,20 +78,4 @@ const words = t.hero.claim.split(' ');
       </span>
     </div>
   </div>
-
-  <!-- Ribbon: one flat cobalt stroke that carries the eye from the hero into the work list. -->
-  <svg class="hero-ribbon pointer-events-none absolute inset-x-0 -bottom-[70px] z-[4] hidden h-[200px] w-full lg:block" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-40 120 C 260 70, 520 140, 760 160 S 1240 190, 1500 40" fill="none" stroke="#5b8fe0" stroke-width="18" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-  </svg>
 </section>
-
-<style is:global>
-  [data-hv] { display: none !important; }
-  html[data-hero='a'] [data-hv='a'], html:not([data-hero]) [data-hv='a'], html[data-hero='b'] [data-hv='b'], html[data-hero='c'] [data-hv='c'] { display: revert !important; }
-  html[data-hero='a'] a[data-hv='a'], html:not([data-hero]) a[data-hv='a'], html[data-hero='c'] a[data-hv='c'] { display: inline-flex !important; }
-  .dot { position: relative; display: inline-block; flex: none; width: 9px; height: 9px; border-radius: 999px; background: #3072d8; }
-  .dot--white { background: #fff; }
-  .dot::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: dot-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
-  @keyframes dot-ping { 70%, 100% { transform: scale(2.6); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .dot::after { animation: none; } }
-</style>
