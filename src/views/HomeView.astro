@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../sections/Hero.astro';
 import WorkList from '../sections/WorkList.astro';
 import Numbers from '../sections/Numbers.astro';
+import ShopCheckWhat from '../sections/ShopCheckWhat.astro';
 import ClientStrip from '../sections/ClientStrip.astro';
 import Services from '../sections/Services.astro';
 import About from '../sections/About.astro';
@@ -58,9 +59,10 @@ const structuredData = {
 ---
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData} flyLogo>
-  {/* Order for a client who lands here cold: proof, what I do, the work, clients' words, how it goes, who I am. */}
+  {/* Order for a client who lands here cold: the free check, proof and what the check gives, what I do, the work, clients' words, how it goes, who I am. */}
   <Hero locale={locale} />
   <Numbers locale={locale} />
+  <ShopCheckWhat locale={locale} />
   <ClientStrip locale={locale} works={works} />
   <Services locale={locale} works={works} />
   <WorkList locale={locale} caseStudies={caseStudies} />

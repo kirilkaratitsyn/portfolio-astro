@@ -46,6 +46,7 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
         </label>
         <!-- Only bots fill this in. -->
         <label class="cf-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        <input type="hidden" name="form" value="bottom" />
         <input type="hidden" name="lang" value={locale} />
         <input type="hidden" name="page" value="" />
         <input type="hidden" name="utm" value="" />
@@ -98,6 +99,8 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
   const sticky = document.querySelector<HTMLElement>('[data-sticky-check]');
   const contact = document.getElementById('contact');
   if (sticky && contact) {
+    // On the home page the short form in the first screen is the nearer one.
+    if (document.getElementById('hero-check')) sticky.setAttribute('href', '#hero-check');
     const update = () => {
       const consent = document.getElementById('consent');
       const reached = contact.getBoundingClientRect().top < innerHeight;
@@ -175,6 +178,7 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
         form.reset();
         say('[data-form-sent]');
         track('form_sent');
+        if (form.id === 'hero-check') track('form_sent_hero');
       } catch {
         say('[data-form-failed]');
       } finally {

@@ -29,7 +29,11 @@
     "seoDescription": "Shopify-Entwickler in Deutschland: Shopify-Shop erstellen lassen, Umzug von WooCommerce, individuelle Themes und schnellere Shops für Marken in DACH. Direkt mit dem Entwickler, Festpreis nach dem Briefing.",
     "sub": "E-Commerce Solutions Expert in Deutschland: Ladezeit, Conversion und Automatisierung für Shopify-Shops.",
     "ogTitle": "Kiril Karatitsyn | E-Commerce Solutions Expert",
-    "ogDescription": "Shopify-Shops, die in ganz Europa verkaufen: Ladezeit, Conversion und Automatisierung. 50+ Projekte, Top Rated auf Upwork mit 100 % Job Success."
+    "ogDescription": "Shopify-Shops, die in ganz Europa verkaufen: Ladezeit, Conversion und Automatisierung. 50+ Projekte, Top Rated auf Upwork mit 100 % Job Success.",
+    "check": {
+      "button": "Kostenlosen Shop-Check anfordern",
+      "note": "Schicken Sie Ihre Shop-URL."
+    }
   },
   "clients": {
     "label": "Ausgewählte Shopify-Stores, an denen ich gearbeitet habe"
@@ -964,5 +968,25 @@
       "title": "Passen wir zusammen?",
       "text": "Schicken Sie mir die Adresse Ihres Shops. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
     }
+  },
+  "shopCheckWhat": {
+    "title": "Was Sie im kostenlosen Shop-Check bekommen",
+    "items": [
+      {
+        "title": "Was bremst",
+        "text": "Seiten, Apps und Skripte, die Ihren Shop langsam machen, geprüft am Handy und am Rechner."
+      },
+      {
+        "title": "Was Umsatz kostet",
+        "text": "Wo Kunden auf dem Weg von der Produktseite zur Kasse zögern."
+      },
+      {
+        "title": "Was ich zuerst angehen würde",
+        "text": "Die ersten Änderungen in der richtigen Reihenfolge, damit Sie wissen, wo Sie anfangen."
+      }
+    ],
+    "terms": "Innerhalb von zwei Werktagen. Eine kurze schriftliche Liste. Unverbindlich, ohne Verkaufsgespräch.",
+    "caption": "Beispiel: die erste Seite eines Shop-Checks für einen erfundenen Shop.",
+    "alt": "Erste Seite eines Beispiel-Shop-Checks für einen erfundenen Shop, ihr-shop.de, mit einer kurzen Übersicht zu Geschwindigkeit, Kasse und ersten Schritten."
   }
 }

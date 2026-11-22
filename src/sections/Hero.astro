@@ -7,12 +7,15 @@ interface Props {
   locale: Locale;
 }
 
-const t = useTranslations(Astro.props.locale);
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const f = t.contact.form;
+const input = 'mt-1.5 block w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-[16px] font-normal text-ink placeholder:text-[#8a8fa3] focus:border-ink';
 // Words ride up one by one on load (CSS only, see global.css); the heading text itself is unchanged.
 const words = t.hero.claim.split(' ');
 ---
 
-<section data-hero class="relative lg:h-[860px]">
+<section data-hero class="relative lg:h-[1000px]">
   <div class="relative z-[2] mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
     <!-- The surname is decoration; the h1 below carries the page's meaning. -->
     <div class="wm-wrap hero-wm" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
@@ -20,18 +23,37 @@ const words = t.hero.claim.split(' ');
     <!-- Phones and tablets: the words, then the cube under them. From 1024px: the cube to the right, sized to start where
          the longest heading ends (the German one runs to the full 600px), and the words always above it. -->
     <div class="relative mt-8 lg:mt-0">
-      <div class="relative z-[4] lg:absolute lg:left-0 lg:top-[96px] lg:max-w-[600px]">
+      <div class="relative z-[4] lg:absolute lg:left-0 lg:top-[56px] lg:max-w-[600px]">
         <h1 class="max-w-[600px] font-head text-[34px] font-medium leading-[1.1] tracking-[-0.02em] md:text-[46px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
         <p class="hero-sub mt-5 max-w-[460px] text-[17px] leading-snug text-mute">{t.hero.sub}</p>
-        <div class="hero-cta mt-8 flex flex-wrap items-center gap-4">
-          <CalButton class="inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white">
-            {t.header.bookCall}
-          </CalButton>
-          <a href="#shop-check" class="inline-flex rounded-full border border-ink/25 px-6 py-[14px] font-medium text-ink transition-colors hover:border-ink">{t.contact.shopCheck.cta}</a>
-          <TopRated locale={Astro.props.locale} />
-        </div>
+        <!-- The free store check is the first thing to do here: two fields, sent to api/contact.js like the full form at the
+             bottom (Contact.astro wires every [data-contact-form]); the call is the second door. -->
+        <form id="hero-check" data-contact-form action="/api/contact" method="post" class="hero-cta mt-8 max-w-[560px] scroll-mt-28">
+          <div class="grid gap-3 sm:grid-cols-2">
+            <label class="text-[14px] font-medium">{f.shop}<input type="text" name="shop" required inputmode="url" autocomplete="url" placeholder="https://" class={input} /></label>
+            <label class="text-[14px] font-medium">{f.email}<input type="email" name="email" required autocomplete="email" class={input} /></label>
+          </div>
+          <!-- Only bots fill this in. -->
+          <label class="cf-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          <input type="hidden" name="topic" value="check" />
+          <input type="hidden" name="form" value="hero" />
+          <input type="hidden" name="lang" value={locale} />
+          <input type="hidden" name="page" value="" />
+          <input type="hidden" name="utm" value="" />
+          <input type="hidden" name="ref" value="" />
+          <input type="hidden" name="land" value="" />
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <button type="submit" data-label={t.hero.check.button} data-sending={f.sending} class="inline-flex rounded-full bg-ink px-6 py-[15px] font-medium text-white transition-opacity disabled:opacity-60">{t.hero.check.button}</button>
+            <CalButton class="inline-flex rounded-full border border-ink/25 px-6 py-[14px] font-medium text-ink transition-colors hover:border-ink">{t.header.bookCall}</CalButton>
+          </div>
+          <p class="mt-4 text-[15px] leading-snug text-mute"><span class="font-medium text-ink">{t.hero.check.note}</span> {t.contact.shopCheck.text}</p>
+          <p data-form-status role="status" aria-live="polite" class="mt-3 text-[16px] font-medium text-ink" hidden></p>
+          <p data-form-sent hidden>{f.sent}</p>
+          <p data-form-failed hidden>{f.failed}</p>
+          <div class="mt-5"><TopRated locale={locale} /></div>
+        </form>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
            the live cube that turns, twists its layers and can be dragged. -->

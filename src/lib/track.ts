@@ -19,6 +19,6 @@ export function trackClicks() {
     if (!target) return;
     if (target.closest('[data-cal-link]')) return track('book_call');
     if (target.closest('a[href^="mailto:"]')) return track('email_click');
-    if (target.closest('a[href$="#contact"], a[href$="#shop-check"]')) track('cta_shop_check');
+    if (target.closest('a[href$="#contact"], a[href$="#shop-check"], a[href$="#hero-check"]')) track('cta_shop_check');
   });
 }

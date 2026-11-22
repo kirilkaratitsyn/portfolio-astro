@@ -29,7 +29,11 @@
     "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects.",
     "sub": "E-commerce Solutions Expert in Germany: speed, conversion and automation for Shopify stores.",
     "ogTitle": "Kiril Karatitsyn | E-commerce Solutions Expert",
-    "ogDescription": "Shopify stores that sell across Europe: speed, conversion and automation. 50+ projects, Top Rated on Upwork with 100% Job Success."
+    "ogDescription": "Shopify stores that sell across Europe: speed, conversion and automation. 50+ projects, Top Rated on Upwork with 100% Job Success.",
+    "check": {
+      "button": "Get a free store check",
+      "note": "Send your store URL."
+    }
   },
   "clients": {
     "label": "Selected Shopify stores I've worked on"
@@ -964,5 +968,25 @@
       "title": "Want to know if we fit?",
       "text": "Send me your store address. The free store check shows what I would do first."
     }
+  },
+  "shopCheckWhat": {
+    "title": "What you get in the free check",
+    "items": [
+      {
+        "title": "What slows it down",
+        "text": "Pages, apps and scripts that make your store slow, checked on a phone and on a computer."
+      },
+      {
+        "title": "What costs you sales",
+        "text": "Where customers hesitate on the way from the product page to the checkout."
+      },
+      {
+        "title": "What I would fix first",
+        "text": "The first changes I would make, in order, so you know where to start."
+      }
+    ],
+    "terms": "Within two working days. A short written list. No obligation, no sales call.",
+    "caption": "Example: the first page of a store check for a made-up store.",
+    "alt": "First page of an example store check for a made-up store, yourstore.com, with a short summary on speed, checkout and first fixes."
   }
 }
