@@ -3,13 +3,17 @@ import { DEFAULT_LOCALE, LOCALES, OG_LOCALES, localizePath, type Locale } from '
 
 export const SITE_NAME = 'Kiril Karatitsyn';
 // 1200x630 social preview (regenerate if the name, title or photo changes).
-const DEFAULT_IMAGE = '/og-image.jpg';
+// A new file name per redesign, so LinkedIn and others fetch it again instead of showing their cached copy.
+const DEFAULT_IMAGE = '/og-image-2026-11.jpg';
 const DEFAULT_IMAGE_SIZE = { width: 1200, height: 630 };
-const DEFAULT_IMAGE_ALT = 'Kiril Karatitsyn, Shopify Developer';
+const DEFAULT_IMAGE_ALT = 'Kiril Karatitsyn, E-commerce Solutions Expert: Shopify stores that sell across Europe';
 
 export interface SeoProps {
   title: string;
   description: string;
+  /** Title and description for link previews (LinkedIn, Slack...) when they should differ from the search snippet. */
+  ogTitle?: string;
+  ogDescription?: string;
   /** Unlocalized path, e.g. "/projects/nimfa". */
   path: string;
   locale: Locale;
@@ -28,6 +32,8 @@ type Props = SeoProps;
 const {
   title,
   description,
+  ogTitle,
+  ogDescription,
   path,
   locale,
   type = 'website',
@@ -65,8 +71,8 @@ const defaultAlternate = alternateLinks.find((link) => link.hreflang === DEFAULT
 {alternateLinks.map((link) => <link rel="alternate" hreflang={link.hreflang} href={link.href} />)}
 {defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />}
 
-<meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={ogTitle ?? fullTitle} />
+<meta property="og:description" content={ogDescription ?? description} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={imageUrl} />
@@ -83,8 +89,8 @@ const defaultAlternate = alternateLinks.find((link) => link.hreflang === DEFAULT
 <meta property="og:locale" content={OG_LOCALES[locale]} />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={fullTitle} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:title" content={ogTitle ?? fullTitle} />
+<meta name="twitter:description" content={ogDescription ?? description} />
 <meta name="twitter:image" content={imageUrl} />
 <meta name="twitter:image:alt" content={image === DEFAULT_IMAGE ? DEFAULT_IMAGE_ALT : title} />
 
