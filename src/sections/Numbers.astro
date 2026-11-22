@@ -8,15 +8,17 @@ interface Props {
 
 const t = useTranslations(Astro.props.locale);
 const pebbles = ['cobalt', 'white', 'black', 'cobalt2'] as const;
+// The figure is sized from its own cell (container units), so the widest one, "100%", always fits inside the cell
+// and stays clear of the small cube in the corner, which is sized the same way.
 ---
 
 <section class="mt-14 border-y border-line md:mt-20">
   <ul class="mx-auto grid max-w-[1440px] grid-cols-2 md:grid-cols-4">
     {
       t.stats.items.map((item, index) => (
-        <li data-reveal class="relative border-line px-5 pb-8 pt-9 md:px-10 md:pb-9 [&:nth-child(odd)]:border-r md:[&:not(:last-child)]:border-r [&:nth-child(n+3)]:border-t md:[&:nth-child(n+3)]:border-t-0">
-          <Pebble name={pebbles[index]} small sizes="(min-width: 768px) 54px, 40px" class="absolute right-4 top-5 w-10 md:right-6 md:top-6 md:w-[54px]" />
-          <p data-stat class="font-head text-[64px] font-bold leading-[0.9] tracking-[-0.04em] [font-variant-numeric:tabular-nums] md:text-[clamp(88px,9.4vw,136px)]">{item.value}</p>
+        <li data-reveal class="relative border-line px-5 pb-8 pt-9 [container-type:inline-size] md:px-6 md:pb-9 lg:px-10 [&:nth-child(odd)]:border-r md:[&:not(:last-child)]:border-r [&:nth-child(n+3)]:border-t md:[&:nth-child(n+3)]:border-t-0">
+          <Pebble name={pebbles[index]} small sizes="(min-width: 768px) 54px, 40px" class="absolute right-3 top-4 w-[18cqw] md:top-5 lg:right-5" />
+          <p data-stat class="font-head text-[length:28cqw] font-bold leading-[0.9] tracking-[-0.04em] [font-variant-numeric:tabular-nums]">{item.value}</p>
           <p class="mt-4 max-w-[230px] text-[15px] text-mute md:mt-[18px] md:text-[17px]">{item.label}</p>
         </li>
       ))

@@ -16,29 +16,29 @@ const c = t.hero.check;
 ---
 
 <section id="what-you-get" class="mx-auto mt-12 max-w-[1440px] scroll-mt-24 px-3 md:mt-16 md:px-6">
-  <div class="on-blue rounded-[28px] bg-blue-deep px-5 py-8 text-white md:rounded-[36px] md:px-12 md:py-12">
-    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
-      <h2 data-split class="max-w-[560px] font-head text-[30px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[44px]">{w.title}</h2>
+  <div class="on-blue rounded-[28px] bg-blue-deep px-5 py-7 text-white md:rounded-[32px] md:px-12 md:py-9">
+    <div class="flex flex-wrap items-center justify-between gap-x-10 gap-y-5">
+      <h2 data-split class="font-head text-[28px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[36px]">{w.title}</h2>
       <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-        <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-white px-7 py-[17px] text-[17px] font-semibold text-blue-deep transition-colors hover:bg-ink hover:text-white">
+        <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-white px-6 py-[14px] text-[16px] font-semibold text-blue-deep transition-colors hover:bg-ink hover:text-white">
           {c.button}<span aria-hidden="true">→</span>
         </a>
-        <CalButton class="font-semibold text-white underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
+        <CalButton class="inline-flex items-center gap-1.5 font-semibold text-white underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
       </div>
     </div>
-    <ol class="mt-7 grid gap-x-8 md:mt-10 md:grid-cols-3">
+    <ol class="mt-6 grid gap-x-8 md:mt-7 md:grid-cols-3">
       {
         w.items.map((item, i) => (
-          <li data-reveal class="grid grid-cols-[30px_1fr] gap-2 border-t border-white/25 py-3.5 md:py-5">
+          <li data-reveal class="grid grid-cols-[30px_1fr] gap-2 border-t border-white/25 py-3 md:py-4">
             <span class="font-head text-[20px] font-bold leading-tight [font-variant-numeric:tabular-nums] md:text-[22px]">{i + 1}</span>
             <div>
-              <h3 class="font-head text-[19px] font-bold leading-tight md:text-[22px]">{item.title}</h3>
-              <p class="mt-1.5 hidden text-[16px] leading-snug text-white/85 md:block">{item.text}</p>
+              <h3 class="font-head text-[19px] font-bold leading-tight md:text-[20px]">{item.title}</h3>
+              <p class="mt-1 hidden text-[15px] leading-snug text-white/85 md:block">{item.text}</p>
             </div>
           </li>
         ))
       }
     </ol>
-    <p class="border-t border-white/25 pt-4 text-[15px] leading-snug text-white/85 md:pt-5">{w.terms}</p>
+    <p class="border-t border-white/25 pt-3.5 text-[14px] leading-snug text-white/85 md:pt-4">{w.terms}</p>
   </div>
 </section>
