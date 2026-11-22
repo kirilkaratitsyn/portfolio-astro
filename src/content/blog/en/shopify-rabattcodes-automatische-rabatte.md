@@ -143,6 +143,6 @@ How customisations stay maintainable is in [Customizing a Shopify theme](/blog/s
 
 Send me your store's address for the [free store check](#contact). I only check what is publicly visible, such as load time, apps in the source code and page structure, and tell you what stands out. Other work I do for stores is under [Services](/services).
 
-**Further reading:** [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up Shopify gift cards](/blog/shopify-geschenkkarten-gutscheine)
+**Further reading:** [Free items in the Shopify cart](/blog/shopify-gratisartikel-warenkorb) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up Shopify gift cards](/blog/shopify-geschenkkarten-gutscheine) · [Shopify abandoned checkout recovery](/blog/shopify-abgebrochene-checkouts)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

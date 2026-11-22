@@ -143,6 +143,6 @@ tags:
 
 Надішліть мені адресу вашого магазину для [безкоштовної перевірки](#contact). Я перевіряю лише те, що видно публічно, наприклад час завантаження, додатки в коді та побудову сторінок, і кажу, що впадає в око. Інші роботи для магазинів дивіться в розділі [Послуги](/uk/services).
 
-**Читайте також:** [Безкоштовні товари в кошику Shopify](/uk/blog/shopify-gratisartikel-warenkorb) · [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Подарункові картки в Shopify](/uk/blog/shopify-geschenkkarten-gutscheine)
+**Читайте також:** [Безкоштовні товари в кошику Shopify](/uk/blog/shopify-gratisartikel-warenkorb) · [Налаштування чекауту Shopify](/uk/blog/shopify-checkout-anpassen) · [Підписки Shopify](/uk/blog/shopify-abos-subscriptions) · [Подарункові картки в Shopify](/uk/blog/shopify-geschenkkarten-gutscheine) · [Покинуті чекаути в Shopify](/uk/blog/shopify-abgebrochene-checkouts)
 
 *[Kiril Karatitsyn](/uk/about), Shopify-розробник у Німеччині*

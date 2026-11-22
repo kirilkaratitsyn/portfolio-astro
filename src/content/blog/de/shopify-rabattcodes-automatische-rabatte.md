@@ -143,6 +143,6 @@ Wie Anpassungen wartbar bleiben, steht in [Shopify-Theme anpassen lassen](/de/bl
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich prüfe nur öffentlich Sichtbares, etwa Ladezeit, Apps im Quellcode und Seitenaufbau, und sage Ihnen, was auffällt. Weitere Arbeiten für Shops stehen unter [Leistungen](/de/services).
 
-**Weiterlesen:** [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine)
+**Weiterlesen:** [Gratisartikel ab Bestellwert in Shopify](/de/blog/shopify-gratisartikel-warenkorb) · [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify Abos einrichten](/de/blog/shopify-abos-subscriptions) · [Shopify Geschenkkarten einrichten](/de/blog/shopify-geschenkkarten-gutscheine) · [Shopify abgebrochene Checkouts zurückholen](/de/blog/shopify-abgebrochene-checkouts)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
