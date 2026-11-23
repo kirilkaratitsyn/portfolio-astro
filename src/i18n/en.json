@@ -24,7 +24,7 @@
       "Virtuoso",
       "Maestro"
     ],
-    "claim": "Shopify stores that sell across Europe.",
+    "claim": "I find what costs your store sales, fix it, and prove it before you pay",
     "seoTitle": "Kiril Karatitsyn | Shopify Freelancer and Developer in Germany",
     "seoDescription": "Shopify developer in Germany (DE/EN): custom themes, Shopify Markets setups and performance work for brands selling into DACH. Monthly retainers or projects.",
     "sub": "E-commerce Solutions Expert in Germany: speed, conversion and automation for Shopify stores.",
@@ -32,8 +32,8 @@
     "ogDescription": "Shopify stores that sell across Europe: speed, conversion and automation. 50+ projects, Top Rated on Upwork with 100% Job Success.",
     "check": {
       "button": "Get a free store check",
-      "trust": "Top Rated on Upwork · 100% Job Success on 50+ projects",
-      "facts": "",
+      "trust": "Top Rated on Upwork · 100% Job Success",
+      "facts": "I'm Kiril, an e-commerce solutions expert in Germany: 5 years building online stores, 50+ projects delivered. You pay stage by stage, and only for results you've checked.",
       "note": "Send your store URL. Within two working days you get what slows it down and what costs you sales. No call, no store access needed.",
       "orCall": "or book a call",
       "caption": "Kiril Karatitsyn · Germany",
@@ -273,7 +273,7 @@
     "sendMessage": "Send Message",
     "shopCheck": {
       "title": "Free store check",
-      "text": "Within two working days you get a short list for your Shopify store: what slows it down, what costs you sales and what I would fix first. No obligation, no sales call.",
+      "text": "Send your store URL. Within two working days you get a short written list: what slows your store down, what costs you sales and what I would fix first. No call, no obligation, no store access needed.",
       "cta": "Free store check",
       "hook": "How is your store doing?",
       "button": "Request a store check"
@@ -479,8 +479,8 @@
   },
   "bio": {
     "title": "Hi, I'm Kiril.",
-    "p1": "I help e-commerce brands sell more online: the store, the checkout and the automation behind it. Most of my work is on Shopify stores that sell across Europe. One person owns the whole task.",
-    "p2": "You get scope, timeline and price in writing first. I build on a preview theme so your live store keeps selling, and I stay on for fixes after launch.",
+    "p1": "I find what slows your store down and what costs it sales, and I fix it myself. Most of my work is on Shopify stores that sell across Europe. You talk to the person who writes the code.",
+    "p2": "You get scope, timeline and price in writing first. I build on a preview theme, so your live store keeps selling. You pay stage by stage, and only for results you've checked.",
     "facts": [
       {
         "label": "Based in",
@@ -944,6 +944,10 @@
       {
         "label": "On Upwork",
         "value": "Top Rated, 100% Job Success"
+      },
+      {
+        "label": "Experience",
+        "value": "5 years building online stores"
       }
     ],
     "whatTitle": "What I do",
