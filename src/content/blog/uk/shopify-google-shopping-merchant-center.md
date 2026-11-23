@@ -128,6 +128,6 @@ Google Ads і Google Analytics 4 підключаються в тому само
 
 Надішліть мені адресу магазину для [безкоштовного Shop-Check](#contact): я скажу, яких вимог бракує ззовні, наприклад політик у футері, контактів чи вартості доставки. Постійна робота з даними товарів і темою підходить до [супроводу Shopify](/uk/services/shopify-betreuung).
 
-**Читайте також:** [Замовити SEO для Shopify](/uk/blog/shopify-seo-optimieren-lassen) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects)
+**Читайте також:** [Замовити SEO для Shopify](/uk/blog/shopify-seo-optimieren-lassen) · [Імпорт товарів у Shopify через CSV](/uk/blog/shopify-produkte-importieren-csv) · [Метаполя й метаоб'єкти Shopify](/uk/blog/shopify-metafelder-metaobjects) · [Відгуки про товари в Shopify](/uk/blog/shopify-produktbewertungen)
 
 *[Kiril Karatitsyn](/uk/about), розробник Shopify у Німеччині*

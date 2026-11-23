@@ -128,6 +128,6 @@ I do not have a Google Shopping case with documented results in my portfolio, an
 
 Send me your store address for the [free Shop-Check](#contact): I tell you which requirements are missing from outside, such as policies in the footer, contact details or shipping costs. Ongoing work on product data and the theme fits [Shopify support and maintenance](/services/shopify-betreuung).
 
-**Further reading:** [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects)
+**Further reading:** [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen) · [Importing products into Shopify with a CSV file](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Shopify product reviews](/blog/shopify-produktbewertungen)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
