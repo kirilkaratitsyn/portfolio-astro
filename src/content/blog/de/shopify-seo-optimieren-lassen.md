@@ -116,6 +116,6 @@ Einen Fall mit belegten Rankings kann ich nicht zeigen, darum nenne ich keine Za
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich prüfe Titel, Überschriften, strukturierte Daten, Sitemap und Ladezeit und sage Ihnen, was technisch ist und was Sie selbst erledigen können. Die Arbeit läuft meist über [Shopify schneller machen](/de/services/shopify-speed), Search-Console-Fehler und Weiterleitungen gehören dort zum Umfang.
 
-**Weiterlesen:** [Shopify-Shop wird bei Google nicht gefunden](/de/blog/shopify-shop-bei-google-nicht-gefunden) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur) · [Shopify mehrsprachig: Shop übersetzen](/de/blog/shopify-mehrsprachig-uebersetzen) · [Shopify mit Google Shopping verbinden](/de/blog/shopify-google-shopping-merchant-center)
+**Weiterlesen:** [Shopify-Shop wird bei Google nicht gefunden](/de/blog/shopify-shop-bei-google-nicht-gefunden) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur) · [Shopify mehrsprachig: Shop übersetzen](/de/blog/shopify-mehrsprachig-uebersetzen) · [Shopify mit Google Shopping verbinden](/de/blog/shopify-google-shopping-merchant-center) · [Shopify Produktbewertungen einrichten](/de/blog/shopify-produktbewertungen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

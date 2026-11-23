@@ -128,6 +128,6 @@ Einen Google-Shopping-Fall mit dokumentierten Ergebnissen habe ich nicht in mein
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact): Ich sage Ihnen, welche Voraussetzungen von außen fehlen, etwa Richtlinien im Footer, Kontaktdaten oder Versandkosten. Die laufende Arbeit an Produktdaten und Theme passt zur [Shopify Betreuung](/de/services/shopify-betreuung).
 
-**Weiterlesen:** [Shopify SEO optimieren lassen](/de/blog/shopify-seo-optimieren-lassen) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects)
+**Weiterlesen:** [Shopify SEO optimieren lassen](/de/blog/shopify-seo-optimieren-lassen) · [Shopify Produkte per CSV importieren](/de/blog/shopify-produkte-importieren-csv) · [Shopify Metafelder und Metaobjekte](/de/blog/shopify-metafelder-metaobjects) · [Shopify Produktbewertungen einrichten](/de/blog/shopify-produktbewertungen)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*
