@@ -15,8 +15,9 @@ const c = t.hero.check;
 const PROFILE = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
 // Words ride up one by one on load (CSS only, see global.css); the heading text itself is unchanged.
 const words = t.hero.claim.split(' ');
-// A long heading gets a smaller size, so it stays at three lines on a desktop.
-const h1Size = words.length > 9 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md:text-[54px]';
+// A long heading gets a smaller size, so it stays at three or four lines (the Ukrainian and German texts run longer).
+const len = t.hero.claim.length;
+const h1Size = len > 75 ? 'text-[30px] md:text-[42px]' : len > 50 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md:text-[54px]';
 ---
 
 <section data-hero class="relative lg:pb-16">
@@ -62,13 +63,7 @@ const h1Size = words.length > 9 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
             {c.button}<span aria-hidden="true">→</span>
           </a>
-          {
-            // The call link comes with the rewritten English text. German and Ukrainian keep the earlier first screen
-            // until their own texts are written.
-            locale === 'en' && (
-              <CalButton class="inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
-            )
-          }
+          <CalButton class="inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
         </div>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
