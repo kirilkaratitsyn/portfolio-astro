@@ -2,6 +2,7 @@
 // First screen of the home page, kept light: who I am and why to trust me. A small real photo with the Upwork record,
 // the heading, one line of facts and one button. The offer itself, the free store check, is the next section
 // (ShopCheckWhat), so the two thoughts do not crowd each other.
+import CalButton from '../components/CalButton.astro';
 import { useTranslations, type Locale } from '../i18n';
 
 interface Props {
@@ -53,11 +54,21 @@ const words = t.hero.claim.split(' ');
         <h1 class="mt-6 max-w-[600px] font-head text-[36px] font-bold leading-[1.05] tracking-[-0.025em] md:mt-7 md:text-[54px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
-        <p class="hero-sub mt-5 max-w-[520px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>
+        <p class="hero-sub mt-5 max-w-[560px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>
         <div class="hero-cta mt-7 md:mt-8">
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
             {c.button}<span aria-hidden="true">→</span>
           </a>
+          {
+            // The small print and the call link come with the rewritten English text. German and Ukrainian keep the
+            // earlier first screen until their own texts are written, so their note is empty.
+            c.note && (
+              <>
+                <p class="mt-4 max-w-[460px] text-[15px] leading-snug text-mute">{c.note}</p>
+                <CalButton class="mt-3 inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
+              </>
+            )
+          }
         </div>
       </div>
       <!-- The puzzle cube (src/lib/cube.ts): the poster is the first paint and the fallback, scripts/stage.ts swaps in
