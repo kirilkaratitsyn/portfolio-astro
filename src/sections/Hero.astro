@@ -63,13 +63,10 @@ const h1Size = words.length > 9 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md
             {c.button}<span aria-hidden="true">→</span>
           </a>
           {
-            // The small print and the call link come with the rewritten English text. German and Ukrainian keep the
-            // earlier first screen until their own texts are written, so their note is empty.
-            c.note && (
-              <>
-                <p class="mt-4 max-w-[460px] text-[15px] leading-snug text-mute">{c.note}</p>
-                <CalButton class="mt-3 inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
-              </>
+            // The call link comes with the rewritten English text. German and Ukrainian keep the earlier first screen
+            // until their own texts are written.
+            locale === 'en' && (
+              <CalButton class="mt-4 inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
             )
           }
         </div>
