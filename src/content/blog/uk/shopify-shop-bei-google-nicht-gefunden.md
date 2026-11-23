@@ -4,7 +4,7 @@ title: "Магазин Shopify не знаходиться в Google: 7 прич
 date: 22 жовтня 2026
 readingTime: 4 хв
 excerpt: "Ваш магазин Shopify не знаходиться в Google? Сім типових причин і десятихвилинна перевірка, яку можна зробити без розробника."
-image: /og/projects/nimfa.jpg
+image: /og/blog/uk/shopify-shop-bei-google-nicht-gefunden.jpg
 topic: speed
 tags:
   - Shopify

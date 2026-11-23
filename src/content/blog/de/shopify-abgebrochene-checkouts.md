@@ -5,7 +5,7 @@ seoTitle: "Shopify abgebrochene Checkouts zurückholen"
 date: 22. November 2026
 readingTime: 6 Min
 excerpt: "Abgebrochene Checkouts in Shopify: wo Sie sie finden, wie die automatische Erinnerungs-E-Mail eingerichtet wird, Wartezeit, Rabattcode, Einwilligung in Deutschland und Auswertung."
-image: /og/projects/nimfa.jpg
+image: /og/blog/de/shopify-abgebrochene-checkouts.jpg
 topic: build
 tags:
   - Shopify

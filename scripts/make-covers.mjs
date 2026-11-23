@@ -96,6 +96,12 @@ const COVERS = {
     de: { h: 'Shopify-Shop|langsam?', chips: ['Apps', 'Theme', 'Bilder'] },
     uk: { h: 'Повільний|магазин Shopify?', chips: ['Додатки', 'Тема', 'Зображення'] },
   },
+  'shopify-abgebrochene-checkouts': {
+    topic: 'build',
+    en: { h: 'Abandoned|checkouts', chips: ['Recovery email', 'Wait time', 'Consent'] },
+    de: { h: 'Abgebrochene|Checkouts', chips: ['Erinnerungsmail', 'Wartezeit', 'Einwilligung'] },
+    uk: { h: 'Покинуті|чекаути', chips: ['Лист-нагадування', 'Час очікування', 'Згода'] },
+  },
   'shopify-shop-bei-google-nicht-gefunden': {
     topic: 'speed',
     en: { h: 'Not found|on Google', chips: ['Indexing', 'Sitemap', 'Search Console'] },

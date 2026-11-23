@@ -5,7 +5,7 @@ seoTitle: "Покинуті чекаути Shopify: лист-нагадуван�
 date: 22 листопада 2026
 readingTime: 6 хв
 excerpt: "Покинуті чекаути в Shopify: де їх знайти, як налаштувати автоматичний лист-нагадування, час очікування, код знижки, згода в Німеччині та звіти."
-image: /og/projects/nimfa.jpg
+image: /og/blog/uk/shopify-abgebrochene-checkouts.jpg
 topic: build
 tags:
   - Shopify

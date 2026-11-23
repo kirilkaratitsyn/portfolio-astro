@@ -41,14 +41,14 @@ const pill = 'rounded-full bg-white/95';
 <header data-header class="pointer-events-none fixed inset-x-0 top-0 z-50">
   <div class="relative mx-auto flex max-w-[1440px] items-center justify-between gap-2 px-5 pt-5 md:gap-3 md:px-10 md:pt-6">
     <a href={localizePath(locale, '/')} class="pointer-events-auto flex items-center rounded-full bg-ink py-1 pl-1.5 pr-1.5 font-head font-bold text-white">
-      <span data-pebble="logo-disc" data-grab class="pebble relative block size-9 shrink-0 md:size-[54px]">
+      <span data-pebble="logo-disc" data-grab class="pebble relative block size-9 shrink-0 md:size-10">
         <Image src={markDisc} alt="" width={108} height={108} class="size-full object-contain" loading="eager" />
       </span>
       <!-- On the home page the surname arrives here from the hero while you scroll (see .brand-name in global.css). -->
       <span class="brand-name" data-brand-name><span class="brand-text" data-brand-text>Karatitsyn</span></span>
     </a>
 
-    <nav class={`pointer-events-auto hidden items-center gap-7 px-7 py-3 text-[15px] font-medium md:flex ${pill}`} aria-label="Main">
+    <nav class={`pointer-events-auto hidden items-center gap-7 px-7 py-3 text-[15px] font-medium md:flex md:h-12 md:py-0 ${pill}`} aria-label="Main">
       {
         links.map((link) =>
           link.mega ? (
@@ -86,7 +86,7 @@ const pill = 'rounded-full bg-white/95';
     <MegaMenu locale={locale} />
 
     <div class="pointer-events-auto flex items-center gap-1.5 md:gap-2">
-      <CalButton class="whitespace-nowrap rounded-full bg-blue-deep px-3.5 py-3 text-sm font-medium text-white md:px-[22px] md:text-[15px]">
+      <CalButton class="whitespace-nowrap rounded-full bg-blue-deep px-3.5 py-3 text-sm font-medium text-white md:inline-flex md:h-12 md:items-center md:gap-1.5 md:px-[22px] md:py-0 md:text-[15px]">
         {t.header.bookCall}<span class="hidden md:inline" aria-hidden="true"> ↗</span>
       </CalButton>
       <button

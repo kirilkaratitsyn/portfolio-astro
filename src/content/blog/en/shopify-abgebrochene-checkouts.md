@@ -5,7 +5,7 @@ seoTitle: "Shopify abandoned checkout recovery: setup guide"
 date: 22 November 2026
 readingTime: 6 min
 excerpt: "Shopify abandoned checkout recovery: where to find abandoned checkouts, how to set up the automatic email, wait time, discount code, consent in Germany and reporting."
-image: /og/projects/nimfa.jpg
+image: /og/blog/en/shopify-abgebrochene-checkouts.jpg
 topic: build
 tags:
   - Shopify

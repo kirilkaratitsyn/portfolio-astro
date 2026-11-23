@@ -4,7 +4,7 @@ title: "Shopify-Shop wird bei Google nicht gefunden: 7 Ursachen und was Sie prü
 date: 22. Oktober 2026
 readingTime: 4 Min
 excerpt: "Ihr Shopify-Shop wird bei Google nicht gefunden? Sieben typische Ursachen und ein Zehn-Minuten-Check, den Sie ohne Entwickler machen können."
-image: /og/projects/nimfa.jpg
+image: /og/blog/de/shopify-shop-bei-google-nicht-gefunden.jpg
 topic: speed
 tags:
   - Shopify
