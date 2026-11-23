@@ -17,7 +17,7 @@ const t = useTranslations(locale);
     {
       caseStudies
         .filter((item) => !item.archived)
-        .slice(0, 5)
+        .slice(5, 10)
         .map((item) => (
         <li class="border-b border-line" data-row>
           <ProjectRow href={localizePath(locale, `/projects/${item.slug}`)} title={item.title} image={item.image} mobileImage={item.mobileImage} />

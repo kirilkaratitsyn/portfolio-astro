@@ -5,7 +5,7 @@ import WorkList from '../sections/WorkList.astro';
 import Numbers from '../sections/Numbers.astro';
 import CaseLines from '../sections/CaseLines.astro';
 import ShopCheckWhat from '../sections/ShopCheckWhat.astro';
-import ClientStrip from '../sections/ClientStrip.astro';
+import Feature from '../sections/Feature.astro';
 import Services from '../sections/Services.astro';
 import About from '../sections/About.astro';
 import Anatomy from '../sections/Anatomy.astro';
@@ -60,17 +60,17 @@ const structuredData = {
 ---
 
 <BaseLayout {...seo} path="/" locale={locale} structuredData={structuredData} flyLogo>
-  {/* Order for a client who lands here cold: who I am (trust), the free check (the offer), proof in numbers and cases, what I do, the work, clients' words, how it goes, more about me. */}
+  {/* Order for a client who lands here cold: the offer, who I am, the free check, proof in numbers and cases, the case slider, clients' words, what I do, how it goes, more work. The logo strip (sections/ClientStrip.astro) is off for now. */}
   <Hero locale={locale} />
+  <About locale={locale} />
   <ShopCheckWhat locale={locale} />
   <Numbers locale={locale} />
   <CaseLines locale={locale} />
-  <ClientStrip locale={locale} works={works} />
-  <WorkList locale={locale} caseStudies={caseStudies} />
+  <Feature locale={locale} caseStudies={caseStudies} works={works} />
   <Reviews locale={locale} />
   <Services locale={locale} works={works} />
   <Anatomy locale={locale} />
-  <About locale={locale} />
+  <WorkList locale={locale} caseStudies={caseStudies} />
   <Editor locale={locale} />
   <FAQ locale={locale} />
   <Contact locale={locale} />
