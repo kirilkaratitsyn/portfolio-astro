@@ -33,7 +33,7 @@
     "check": {
       "button": "Kostenlosen Shop-Check anfordern",
       "trust": "Top Rated auf Upwork · 100 % Job Success",
-      "facts": "Ich bin Kiril, E-Commerce-Solutions-Experte in Deutschland: 5 Jahre Onlineshop-Entwicklung, 50+ umgesetzte Projekte. Sie zahlen Etappe für Etappe, und nur für Ergebnisse, die Sie geprüft haben.",
+      "facts": "Ich bin Kiril, E-Commerce-Solutions-Experte in Deutschland: Onlineshops seit 2022, 50+ umgesetzte Projekte. Sie zahlen Etappe für Etappe, und nur für Ergebnisse, die Sie geprüft haben.",
       "factsShort": "Ich bin Kiril, E-Commerce-Solutions-Experte in Deutschland. Sie zahlen Etappe für Etappe, nur für geprüfte Ergebnisse.",
       "orCall": "oder Termin vereinbaren",
       "caption": "Kiril Karatitsyn · Deutschland",
@@ -947,7 +947,7 @@
       },
       {
         "label": "Erfahrung",
-        "value": "5 Jahre Onlineshop-Entwicklung"
+        "value": "Onlineshops seit 2022"
       }
     ],
     "whatTitle": "Was ich mache",
@@ -978,10 +978,22 @@
         "text": "Mithilfe bei der Migration und Arbeit an Oberfläche und Shop einer Arduino-Lernplattform."
       },
       {
-        "when": "2024 bis 2025",
+        "when": "2023 bis 2025",
         "role": "Shopify-Entwickler",
         "place": "Collab IT und Great Dev, remote",
         "text": "Shopify-Entwicklung für Kundenprojekte in zwei Remote-Teams."
+      },
+      {
+        "when": "2023",
+        "role": "Shopify-Shop-Admin",
+        "place": "Ein Netz von Dropshipping-Shops, remote",
+        "text": "Produktseiten und neue Sections gebaut, Seiten gestaltet, Produkte und Produktfotos aktuell gehalten."
+      },
+      {
+        "when": "2022 bis 2023",
+        "role": "Eigener Shop, dann Shops für Kunden",
+        "place": "Freiberuflich",
+        "text": "Im Herbst 2022 habe ich mit meinem eigenen Shopify-Shop angefangen. Ab Frühjahr 2023 habe ich Dropshipping-Shops für Kunden gebaut."
       }
     ],
     "workTitle": "Arbeiten zum Ansehen",

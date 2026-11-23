@@ -33,7 +33,7 @@
     "check": {
       "button": "Get a free store check",
       "trust": "Top Rated on Upwork · 100% Job Success",
-      "facts": "I'm Kiril, an e-commerce solutions expert in Germany: 5 years building online stores, 50+ projects delivered. You pay stage by stage, and only for results you've checked.",
+      "facts": "I'm Kiril, an e-commerce solutions expert in Germany: building online stores since 2022, 50+ projects delivered. You pay stage by stage, and only for results you've checked.",
       "factsShort": "I'm Kiril, an e-commerce solutions expert in Germany. You pay stage by stage, and only for results you've checked.",
       "orCall": "or book a call",
       "caption": "Kiril Karatitsyn · Germany",
@@ -947,7 +947,7 @@
       },
       {
         "label": "Experience",
-        "value": "5 years building online stores"
+        "value": "Building online stores since 2022"
       }
     ],
     "whatTitle": "What I do",
@@ -978,10 +978,22 @@
         "text": "Helped with the migration and worked on the interface and storefront of an Arduino learning platform."
       },
       {
-        "when": "2024 to 2025",
+        "when": "2023 to 2025",
         "role": "Shopify Developer",
         "place": "Collab IT and Great Dev, remote",
         "text": "Shopify development for client projects in two remote teams."
+      },
+      {
+        "when": "2023",
+        "role": "Shopify store admin",
+        "place": "A network of dropshipping stores, remote",
+        "text": "Built product pages and new sections, laid out pages, and kept products and product photos up to date."
+      },
+      {
+        "when": "2022 to 2023",
+        "role": "My own store, then stores for clients",
+        "place": "Freelance",
+        "text": "In autumn 2022 I started building my own Shopify store. From spring 2023 I built dropshipping stores for clients."
       }
     ],
     "workTitle": "Work you can look at",
