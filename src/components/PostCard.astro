@@ -5,6 +5,7 @@ import { interpolate, localizePath, useTranslations, type Locale } from '../i18n
 import type { BlogPost } from '../lib/content';
 import { TOPIC_ICONS } from '../lib/blog-topics';
 import { ogSrcset, ogThumb } from '../lib/thumbs';
+import { coverColor } from '../lib/cover-color';
 
 interface Props {
   locale: Locale;
@@ -19,11 +20,13 @@ const t = useTranslations(locale);
 const href = localizePath(locale, `/blog/${post.slug}`);
 const topic = post.topic;
 const search = [post.title, post.excerpt, ...(post.tags ?? [])].join(' ').toLowerCase();
+// The wide card stretches the photo to the height of the text: a type cover sits on its own colour, a screenshot fills it.
+const bg = featured ? await coverColor(post.image) : undefined;
 ---
 
 <li class:list={['post-card', featured && 'post-card--featured']} data-post data-topic={topic ?? ''} data-search={search}>
   <a href={href} class="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(14,16,24,0.12)]">
-    <span class="post-card__photo block overflow-hidden bg-bg">
+    <span class:list={['post-card__photo block overflow-hidden bg-bg', featured && !bg && 'post-card__photo--fill']} style={bg ? `background:${bg}` : undefined}>
       <img
         src={ogThumb(post.image, featured ? '1200' : '800')}
         srcset={featured ? undefined : ogSrcset(post.image)}

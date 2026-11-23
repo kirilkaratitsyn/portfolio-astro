@@ -13,7 +13,10 @@ const t = useTranslations(locale);
 ---
 
 <aside data-shop-check-cta class:list={['scc on-blue rounded-[24px] bg-blue p-7 text-white md:p-9', className]} aria-label={t.contact.shopCheck.cta}>
-  <p class="font-head text-[22px] font-bold leading-tight tracking-[-0.01em] md:text-[26px]">{t.contact.shopCheck.hook}</p>
+  <div class="flex items-center gap-4">
+    <img src="/source/kiril/laptop-sq-112.webp" srcset="/source/kiril/laptop-sq-112.webp 112w, /source/kiril/laptop-sq-224.webp 224w" sizes="56px" width="112" height="112" alt={t.hero.check.photoAlt} loading="lazy" decoding="async" class="size-14 shrink-0 rounded-2xl bg-[#2a4467] object-cover" />
+    <p class="font-head text-[22px] font-bold leading-tight tracking-[-0.01em] md:text-[26px]">{t.contact.shopCheck.hook}</p>
+  </div>
   <p class="mt-3 text-[16px] leading-relaxed text-white/85 md:text-[17px]">{t.contact.shopCheck.text}</p>
   <a href="#shop-check" class="scc-btn mt-6 inline-flex rounded-full bg-white px-6 py-[14px] text-[16px] font-semibold text-blue-deep">{t.contact.shopCheck.button}</a>
 </aside>
