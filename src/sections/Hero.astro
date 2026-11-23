@@ -54,7 +54,8 @@ const words = t.hero.claim.split(' ');
         <h1 class="mt-6 max-w-[600px] font-head text-[36px] font-bold leading-[1.05] tracking-[-0.025em] md:mt-7 md:text-[54px]">
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
-        <p class="hero-sub mt-5 max-w-[560px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>
+        {/* English has no subhead until its new text is approved; the line is skipped while it is empty. */}
+        {c.facts && <p class="hero-sub mt-5 max-w-[560px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>}
         <div class="hero-cta mt-7 md:mt-8">
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
             {c.button}<span aria-hidden="true">→</span>
