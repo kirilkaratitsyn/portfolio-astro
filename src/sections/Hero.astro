@@ -58,7 +58,7 @@ const h1Size = words.length > 9 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md
         </h1>
         {/* English has no subhead until its new text is approved; the line is skipped while it is empty. */}
         {c.facts && <p class="hero-sub mt-5 max-w-[560px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>}
-        <div class="hero-cta mt-7 md:mt-8">
+        <div class="hero-cta mt-7 flex flex-wrap items-center gap-x-7 gap-y-4 md:mt-8">
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
             {c.button}<span aria-hidden="true">→</span>
           </a>
@@ -66,7 +66,7 @@ const h1Size = words.length > 9 ? 'text-[34px] md:text-[46px]' : 'text-[36px] md
             // The call link comes with the rewritten English text. German and Ukrainian keep the earlier first screen
             // until their own texts are written.
             locale === 'en' && (
-              <CalButton class="mt-4 inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
+              <CalButton class="inline-flex items-center gap-1.5 text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall} <span aria-hidden="true">→</span></CalButton>
             )
           }
         </div>
