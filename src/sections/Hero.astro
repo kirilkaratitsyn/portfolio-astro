@@ -58,7 +58,9 @@ const h1Size = len > 75 ? 'text-[30px] md:text-[42px]' : len > 50 ? 'text-[34px]
           {words.map((word, i) => (<><span class="hw"><span class="hw-i" style={`--i:${i}`}>{word}</span></span>{i < words.length - 1 ? ' ' : ''}</>))}
         </h1>
         {/* English has no subhead until its new text is approved; the line is skipped while it is empty. */}
-        {c.facts && <p class="hero-sub mt-5 max-w-[560px] text-[18px] leading-snug text-mute md:text-[20px]">{c.facts}</p>}
+        {/* Phones get the shorter line, so the button stays near the top of the screen. */}
+        <p class="hero-sub mt-4 max-w-[560px] text-[17px] leading-snug text-mute md:hidden">{c.factsShort}</p>
+        <p class="hero-sub mt-5 hidden max-w-[560px] text-[20px] leading-snug text-mute md:block">{c.facts}</p>
         <div class="hero-cta mt-7 flex flex-wrap items-center gap-x-7 gap-y-4 md:mt-8">
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
             {c.button}<span aria-hidden="true">→</span>

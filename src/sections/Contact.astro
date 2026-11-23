@@ -94,14 +94,15 @@ const input = 'mt-2 block w-full rounded-xl border-0 bg-white px-4 py-3 text-[16
 
 <script>
   // The sticky button shows after the first screen, and hides once the contact block comes on screen (and below it, in
-  // the footer), and while the cookie banner is up.
+  // the footer), while the cookie banner is up and while the phone menu is open.
   const sticky = document.querySelector<HTMLElement>('[data-sticky-check]');
   const contact = document.getElementById('contact');
   if (sticky && contact) {
     const update = () => {
       const consent = document.getElementById('consent');
       const reached = contact.getBoundingClientRect().top < innerHeight;
-      const on = window.scrollY > 500 && !reached && !(consent && !consent.hidden);
+      const menuOpen = document.querySelector('[data-menu]')?.classList.contains('is-open');
+      const on = window.scrollY > 500 && !reached && !menuOpen && !(consent && !consent.hidden);
       sticky.classList.toggle('is-on', on);
       sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
       sticky.tabIndex = on ? 0 : -1;
