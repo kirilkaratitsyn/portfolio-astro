@@ -4,6 +4,7 @@
 humphrey-hu:
   order: 2
   name: Humphrey Hu
+  role: Owner
   project: Lumppings
   caseSlug: lumppings
   rating: 5
