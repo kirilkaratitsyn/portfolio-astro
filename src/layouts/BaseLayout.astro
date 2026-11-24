@@ -8,20 +8,18 @@ import Consent from '../components/Consent.astro';
 import type { Locale } from '../i18n';
 
 type Props = SeoProps & {
-  /** Home only: the big surname in the hero flies into the header logo on scroll (scripts/motion.ts, flyLogo). */
-  flyLogo?: boolean;
   /** Where the language switcher leads, when the page has no versions in other languages (the 404 page: home). */
   switchTo?: string;
   /** Where the language switcher leads per language, when the versions have different paths (the legal pages). */
   switchLinks?: Partial<Record<Locale, string>>;
 };
 
-const { flyLogo = false, switchTo, switchLinks, ...seo } = Astro.props;
+const { switchTo, switchLinks, ...seo } = Astro.props;
 const { locale, path } = seo;
 ---
 
 <!doctype html>
-<html lang={locale} data-fly-logo={flyLogo ? '' : undefined}>
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

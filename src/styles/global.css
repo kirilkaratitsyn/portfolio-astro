@@ -50,13 +50,10 @@ h1, h2, h3, h4 { font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest'
   white-space: nowrap;
 }
 
-/* Header name. Always visible, except on the home page while scripts are on: there the surname flies in from the hero
-   (motion.ts flyLogo drives max-width/opacity; the rules below are only the start state). */
+/* Header name next to the logo disc. */
 .brand-name { display: block; overflow: hidden; }
 .brand-text { display: inline-block; padding: 0 8px 0 8px; font-size: 15px; font-weight: 700; line-height: 0.82; letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap; }
 @media (max-width: 767px) { .brand-text { font-size: 12px; padding: 0 4px 0 8px; } }
-.motion[data-fly-logo] .brand-name { max-width: 0; opacity: 0; }
-.wm-fly { position: fixed; left: 0; top: 0; z-index: 60; display: block; margin: 0; padding: 0; pointer-events: none; opacity: 0; white-space: nowrap; text-transform: uppercase; font-family: 'e-UkraineHead', 'e-UkraineHead Fallback', 'Onest', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; transform-origin: 0 0; will-change: transform; }
 
 /* iPhone mockup (components/Phone.astro). Everything is in cqi of the phone's own width, so it scales as one piece.
    Screen = 100 - 2 x 3.4 = 93.2cqi wide; 1 pt of the real 393 pt screen = 0.2372cqi. */
@@ -663,8 +660,6 @@ button.ed-icon:hover { background: #f1f1f1; }
 .hw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
 .hw-i { display: inline-block; }
 /* Clip only the bottom edge (letters rise from and sink into it); tilted or lifted letters may poke out at the top. */
-.motion .hero-wm { clip-path: inset(-80px 0 0 0); }
-.motion .hero-wm .wm { animation: rise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .motion .hw-i { animation: rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.35s + var(--i) * 0.07s); }
 .motion .hero-sub { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both; }
 .motion .hero-cta { animation: lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }

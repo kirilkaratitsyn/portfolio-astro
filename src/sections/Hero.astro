@@ -22,16 +22,6 @@ const h1Size = len > 75 ? 'text-[30px] md:text-[42px]' : len > 50 ? 'text-[34px]
 
 <section data-hero class="relative lg:pb-16">
   <div class="relative z-[2] mx-auto max-w-[1440px] px-5 pt-28 md:px-10 md:pt-32">
-    <!-- PREVIEW ONLY: the big surname is shown with ?hero=wm and taken out otherwise, to compare the two. The surname
-         is decoration; the h1 below carries the page's meaning. -->
-    <div data-hero-word class="wm-wrap hero-wm mb-8 lg:mb-2" aria-hidden="true"><span class="wm" data-hero-wm>Karatitsyn</span></div>
-    <script is:inline>
-      if (new URLSearchParams(location.search).get('hero') !== 'wm') {
-        document.querySelector('[data-hero-word]').remove();
-        document.documentElement.removeAttribute('data-fly-logo');
-      }
-    </script>
-
     <!-- Phones and tablets: the words, then the cube under them. From 1024px: the cube to the right. -->
     <div class="lg:grid lg:grid-cols-[minmax(0,600px)_minmax(0,1fr)] lg:items-center lg:gap-10">
       <div class="relative z-[4]">
