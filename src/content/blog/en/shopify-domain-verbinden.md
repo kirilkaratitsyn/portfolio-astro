@@ -1,10 +1,10 @@
 ---
 publishedAt: 2026-11-13
 title: "Connecting a domain to Shopify: set up your own address without breaking email or the store"
-seoTitle: "Connect a domain to Shopify: steps, DNS and common errors"
+seoTitle: "Shopify DNS settings: connect your domain to Shopify step by step"
 date: 13 November 2026
 readingTime: 8 min
-excerpt: "Connect a domain to Shopify: which route fits, which DNS records Shopify needs, what applies to .de domains and email, and what usually goes wrong."
+excerpt: "Connect a domain to Shopify: the DNS settings Shopify needs (A, AAAA and www CNAME records), what applies to .de domains and email, and the most common errors."
 image: /og/projects/reserve-kava.jpg
 topic: build
 tags:
@@ -13,7 +13,7 @@ tags:
   - Setup
 ---
 
-Your store starts out under `your-shop.myshopify.com`. You connect a domain to Shopify, for example `www.your-shop.com`, with three DNS records at your domain provider. One wrong line there and the store cannot be reached at that address. The source is the Shopify Help Center, as of November 2026.
+Your store starts out under `your-shop.myshopify.com`. To connect your domain to Shopify, for example `www.your-shop.com`, you set three DNS records at your domain provider: an A record and an AAAA record for the domain itself and a CNAME for `www` that points to `shops.myshopify.com`. One wrong line there and the store cannot be reached at that address. The source is the Shopify Help Center, as of November 2026.
 
 ## Three routes to your own domain
 
@@ -117,6 +117,10 @@ I cannot show a dedicated domain case from my projects as proof. The process com
 In a build or migration we clarify in the briefing where the domain is, which services (email) are tied to it, and when it should point to the new store. I do not need your password at the domain provider: I name the records, you or your provider enter them, and I check that the store can be reached. In the Shopify admin I work through a collaborator account with limited rights, not with your owner login.
 
 ## Frequently asked questions
+
+**Which DNS settings does Shopify need?** According to the Shopify help (November 2026): one A record `23.227.38.65`, one AAAA record `2620:0127:f00f:5::` and a CNAME for `www` with the value `shops.myshopify.com.`. Old A and AAAA records have to go.
+
+**How long until the domain works?** Shopify usually names up to two hours, in some cases up to 48 hours. Do not change the records again during that time.
 
 **Can I transfer my .de domain to Shopify?** No. According to the Shopify help, `.de` cannot be transferred. You connect the domain.
 

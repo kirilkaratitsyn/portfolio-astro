@@ -1,9 +1,10 @@
 ---
 publishedAt: 2026-10-22
 title: "Shopify Markets: selling to several countries without running several stores"
+seoTitle: "Shopify Markets: sell internationally in multiple countries"
 date: October 22, 2026
 readingTime: 7 min
-excerpt: "Shopify Markets: one store for several countries. Currencies, languages, URL structure, hreflang and import duties. And what to settle first."
+excerpt: "Is Shopify international? Yes: with Shopify Markets one store sells to multiple countries, each with its own currency, language and domain. What to settle first."
 image: /og/projects/elanora-skin.jpg
 topic: build
 tags:
@@ -13,7 +14,7 @@ tags:
   - SEO
 ---
 
-Your store sells in Germany, and orders arrive from Austria or Switzerland. Do you need a second store for that? Usually you don't. With **Shopify Markets** you sell to several countries from one store. Each market has its own currency, language and address.
+Your store sells in Germany, and orders arrive from Austria or Switzerland. Do you need a second store for that? Usually you don't. **Shopify Markets** is the part of Shopify built for selling internationally: one store sells to multiple countries, and each market gets its own currency, language and address.
 
 ## A note first
 
@@ -105,6 +106,10 @@ This is an assessment from practice, not a Shopify requirement:
 On shipping per country: [Setting up Shopify shipping](/blog/shopify-versand-einrichten).
 
 ## Frequently asked questions
+
+**Is Shopify international?** Yes. One Shopify store can sell to customers in other countries. You set this up under Markets, one market per country or region.
+
+**How many countries can one store sell to?** According to the Help Center the number of country markets is not limited. A market can only be activated for countries where you have set up shipping rates.
 
 **Do I need a separate store for Austria or Switzerland?** No, as a rule one store with several markets is enough.
 

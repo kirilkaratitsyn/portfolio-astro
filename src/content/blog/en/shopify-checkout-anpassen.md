@@ -2,9 +2,10 @@
 publishedAt: 2026-10-23
 updatedAt: 2026-11-11
 title: "Customizing the Shopify checkout: what works without Plus, what apps do and where code is needed"
+seoTitle: "Shopify checkout customization: Plus vs. other plans, checkout.liquid"
 date: 23 October 2026
 readingTime: 8 min
-excerpt: "Customizing the Shopify checkout: what the checkout editor does, what depends on your plan, what apps add and what happened to checkout.liquid."
+excerpt: "Shopify checkout customization: what every plan can change, what a Shopify Plus custom checkout adds, what apps do and what replaced checkout.liquid."
 image: /og/projects/elanora-skin.jpg
 topic: build
 tags:
@@ -14,7 +15,7 @@ tags:
   - Apps
 ---
 
-You can customize the Shopify checkout, but not everything and not on every plan. Shopify itself is most responsible for the checkout, so it follows its own rules.
+You can customize the Shopify checkout, but not everything and not on every plan. In short: logo, colours, font and apps on the thank-you and order status pages work from Basic. Apps in the Information, Shipping and Payment steps need Shopify Plus. And `checkout.liquid` has been replaced by checkout extensions. Shopify itself is most responsible for the checkout, so it follows its own rules.
 
 ## A note on scope
 
@@ -122,6 +123,10 @@ More on this: [Customizing a Shopify theme](/blog/shopify-theme-customization) a
 **Can I customise the checkout without Plus?** Yes, within limits. According to the help, logo, colours, font and apps for the thank-you and order status pages work from Basic. Apps for Information, Shipping and Payment are available only with Plus.
 
 **Can I set a background image in the checkout?** Not any more, according to the help: since 5 February 2026 no new background image can be added to the header and the main area. For the order summary the help still names a background image or colour.
+
+**What does Shopify Plus add to checkout customization?** According to the help, apps in the Information, Shipping and Payment steps and styling through the Checkout Branding API. More in [Shopify Plus: what it unlocks](/blog/shopify-plus-wann-lohnt).
+
+**What replaced checkout.liquid?** Checkout extensions. According to shopify.dev, shops still using `checkout.liquid` have to move to Shopify Extensions in Checkout, through a public app, a custom app or a service partner.
 
 **Does my old checkout.liquid still work?** For Information, Shipping and Payment it is no longer supported, according to shopify.dev. For the thank-you and order status pages it was sunset on 28 August 2025.
 

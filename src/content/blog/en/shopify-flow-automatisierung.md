@@ -2,10 +2,10 @@
 publishedAt: 2026-10-25
 updatedAt: 2026-11-20
 title: "Shopify Flow: automate store tasks without code"
-seoTitle: "Shopify Workflow Automation with Flow: A Guide Without Code"
+seoTitle: "Shopify Flow: workflow automation, templates and examples"
 date: 25 October 2026
 readingTime: 8 min
-excerpt: "Shopify workflow automation with the free Flow app: triggers, conditions, actions, templates, a step-by-step plan for your first workflow, testing and errors."
+excerpt: "Shopify Flow is the free workflow automation app for Shopify: triggers, conditions, actions, templates, examples, your first workflow step by step, testing and errors."
 image: /og/projects/orska-rituals.jpg
 topic: support
 tags:
@@ -15,7 +15,7 @@ tags:
   - Store management
 ---
 
-"Every morning I go through the same orders, tag customers by hand and check what's sold out." Shopify Flow can take over routines like these. The app watches for events in your store and then runs the steps you've set. That is Shopify workflow automation without code.
+"Every morning I go through the same orders, tag customers by hand and check what's sold out." Shopify Flow can take over routines like these. The app watches for events in your store and then runs the steps you've set. That is Shopify workflow automation without code. According to the Help Center, Flow is a free app on the Basic, Grow, Advanced and Plus plans.
 
 ## A note before we start
 
@@ -132,6 +132,10 @@ After that, the workflows belong to ongoing care, see [Shopify maintenance and s
 ## Frequently asked questions
 
 **Does Shopify Flow cost anything?** According to the Help Center, Flow is a free app on the Basic, Grow, Advanced and Plus plans.
+
+**Where do I find Shopify Flow templates?** In Flow under **Create workflow > Browse templates**. Replace the placeholders before you turn a template on.
+
+**Which small tasks can Flow take over?** Examples from the Help Center: tag orders or customers, hide sold-out products, get notified when stock is low, hold fulfillments, send a payment reminder.
 
 **Can Flow send emails to customers?** Send internal email is meant for your own team. For customers, the Help Center points to marketing automations.
 

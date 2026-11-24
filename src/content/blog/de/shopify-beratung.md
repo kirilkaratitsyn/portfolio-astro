@@ -14,7 +14,7 @@ tags:
   - Support
 ---
 
-„Shopify Beratung“ kann vieles heißen: ein kostenloses Erstgespräch, eine schriftliche Prüfung Ihres Shops, ein bezahlter Termin zu einer konkreten Frage oder ein fester Ansprechpartner über Monate. Wer vorher weiß, was er braucht, bekommt aus dem Gespräch mehr heraus.
+„Shopify Beratung“ kann vieles heißen: ein kostenloses Erstgespräch, eine schriftliche Prüfung Ihres Shops, ein bezahlter Termin zu einer konkreten Frage oder ein fester Ansprechpartner über Monate. Kurz: Eine Shopify Beratung lohnt sich vor Entscheidungen, die später teuer zu korrigieren sind, etwa vor einem Plattformwechsel, einem Relaunch oder neuen Märkten. Wer vorher weiß, was er braucht, bekommt aus dem Gespräch mehr heraus.
 
 ## Wann sich eine Beratung lohnt
 
@@ -89,6 +89,10 @@ Notieren Sie vorab:
 Ich bin Shopify-Entwickler, kein Marketing-, Steuer- oder Rechtsberater. Am Anfang steht der [kostenlose Shop-Check](#contact): Ich schaue mir an, was von außen sichtbar ist, ohne Zugriff auf Ihr Konto, und schreibe Ihnen, was auffällt. Über „Termin vereinbaren“ buchen Sie ein kostenloses Erstgespräch, gern auf Deutsch. Passt die Arbeit zu mir, bekommen Sie nach dem Briefing ein Angebot zum Festpreis.
 
 ## Häufige Fragen
+
+**Was ist der Unterschied zwischen Shopify Beratung und Betreuung?** Eine Beratung klärt eine Frage oder Entscheidung. Bei der Betreuung haben Sie einen festen Ansprechpartner, der Ihren Shop kennt und laufend Änderungen umsetzt. Mehr in [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung).
+
+**Wann brauche ich keine Shopify Beratung?** Wenn Sie eine Einstellung suchen oder eine Funktion nicht verstehen: Dafür reicht das Shopify Help Center. Bei Fehlern einer App hilft zuerst deren Hersteller.
 
 **Ist das Erstgespräch wirklich kostenlos?** Bei mir ja.
 
