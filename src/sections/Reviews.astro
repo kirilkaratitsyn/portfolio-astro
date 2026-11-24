@@ -73,7 +73,7 @@ const cards = t.cards
 
   {
     people.length > 0 && (
-      <ul class={`mx-auto mt-10 grid max-w-[1440px] gap-5 px-5 md:px-10 ${people.length === 1 ? '' : people.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 xl:grid-cols-3'}`}>
+      <ul class={`mx-auto mt-10 grid max-w-[1440px] gap-5 px-5 md:px-10 ${people.length === 1 ? '' : people.length === 2 || people.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-2 xl:grid-cols-3'}`}>
         {people.map((person) => (
           <li data-reveal class={`flex flex-col gap-8 rounded-[32px] bg-white p-7 md:p-10 ${people.length === 1 ? 'md:flex-row md:items-center md:gap-12' : ''}`}>
             <div class={`flex shrink-0 items-center gap-4 md:gap-5 ${people.length === 1 ? 'md:w-[300px] md:flex-col md:items-start' : ''}`}>

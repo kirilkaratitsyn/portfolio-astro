@@ -2,7 +2,7 @@
 # One entry per client. `quote` is the client's wording (English), never edited or translated here.
 # `caseSlug` is the case study in src/content/projects. `photo` is a square image in public/source/testimonials.
 humphrey-hu:
-  order: 1
+  order: 2
   name: Humphrey Hu
   project: Lumppings
   caseSlug: lumppings
@@ -11,7 +11,7 @@ humphrey-hu:
   photo: /source/testimonials/humphrey-hu.jpg
   quote: "Kiril is a professional that helped redesign my entire website from the ground up. I gave him a vague idea of what i wanted and he guided me through the entire process, as I don't know much about website design. He made my website look modern and sleek, for the customer base that I was catering towards. He is easy to work with, and was very patient with me. I would gladly continue working with him for my Shopify related needs"
 scott-nelles:
-  order: 2
+  order: 3
   name: Scott Nelles
   role: Co-Founder
   project: Orska Rituals
@@ -21,7 +21,7 @@ scott-nelles:
   photo: /source/testimonials/scott-nelles.jpg
   quote: "Kiril did an amazing job building our custom shopify. We used Claude to design the site and Kiril implemented the design perfectly. We did have a lot of complexities. We are a B2B skincare product website with some custom javascript and also have workers running off site on Cloudflare that help our shopify store run the way we want. I will continue to work with him. Great job!"
 sam-van-wieren:
-  order: 3
+  order: 4
   name: Sam van Wieren
   role: Co-founder
   project: Elanora Skin
@@ -29,3 +29,11 @@ sam-van-wieren:
   rating: 5
   photo: /source/testimonials/sam-van-wieren.jpg
   quote: "Kiril is reliable and consistently delivers on what he promises. What really sets him apart is that he doesn't just execute tasks, but proactively identifies opportunities and implements improvements we hadn't even thought of ourselves. He's increasingly taking full ownership of key areas within our business, which makes him a very valuable part of our team."
+chad-gill:
+  order: 1
+  name: C. Chad Gill
+  role: Owner
+  project: Pedchem
+  caseSlug: pedchem
+  photo: /source/testimonials/chad-gill.jpg
+  quote: "It had been over seven years since I last updated my site. It was old and tired, and I was missing sales because it was outdated. Kiril Karatitsyn came in with a game plan and specific milestones to get the site up and running. Look at my stats before Kiril and after he worked on the site. The numbers don't lie."
