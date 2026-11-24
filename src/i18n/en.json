@@ -980,8 +980,14 @@
       {
         "when": "2025",
         "role": "Shopify Developer",
-        "place": "Collab IT and Great Dev, remote",
-        "text": "Shopify development for client projects in two remote teams."
+        "place": "Collab IT, remote",
+        "text": "Shopify development for client projects in a remote team."
+      },
+      {
+        "when": "2025",
+        "role": "Shopify Developer",
+        "place": "Great Dev, remote",
+        "text": "Shopify development for client projects in a remote team."
       },
       {
         "when": "2024 to 2025",
