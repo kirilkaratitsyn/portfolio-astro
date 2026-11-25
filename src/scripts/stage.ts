@@ -165,7 +165,26 @@ class PebbleView extends View {
     this.distance = (this.object.userData.distance as number | undefined) ?? PEBBLE_CAMERA.distance;
     this.camera.position.set(0, (PEBBLE_CAMERA.y * this.distance) / PEBBLE_CAMERA.distance, this.distance);
     this.camera.lookAt(0, 0, 0);
+    // The header logo (data-nudge) gives itself a spin a few times, so visitors see that it can be turned. It stops
+    // after three spins, or for good once someone has hovered or grabbed it.
+    if (host.hasAttribute('data-nudge')) {
+      let left = 3;
+      const nudge = () => {
+        if (this.touched || left <= 0) return;
+        if (this.visible && !this.hovering && !this.grabbed && document.visibilityState === 'visible') {
+          this.w.y += 9;
+          this.lift = 1;
+          left -= 1;
+          stage.wake();
+        }
+        window.setTimeout(nudge, 9000);
+      };
+      window.setTimeout(nudge, 2500);
+    }
   }
+
+  /** Someone has hovered or grabbed it: the header logo stops nudging. */
+  private touched = false;
 
   showLive() {
     this.img.style.opacity = '0';
@@ -198,6 +217,7 @@ class PebbleView extends View {
   hover(p: Pointer) {
     const was = this.hovering;
     this.hovering = p.type !== 'touch' && this.pick(p.x, p.y);
+    if (this.hovering) this.touched = true;
     this.pointer = this.hovering ? p : null;
     return this.hovering || was;
   }
@@ -219,6 +239,7 @@ class PebbleView extends View {
 
   grab(p: Pointer) {
     this.grabbed = true;
+    this.touched = true;
     this.pointer = p;
     this.onSphere(p, this.arcFrom);
   }
