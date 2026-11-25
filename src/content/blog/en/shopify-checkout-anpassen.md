@@ -134,9 +134,9 @@ More on this: [Customizing a Shopify theme](/blog/shopify-theme-customization) a
 
 **What does the customisation cost?** That depends on the scope. I do not name amounts here.
 
-## What about your store?
+## Not sure what your checkout can do on your plan?
 
-Send me your store's address for the [free store check](#contact). I only check publicly visible data such as load time, apps in the source code and page structure, without access to your account. What I do for stores is under [Services](/services).
+Send me your store's address and one sentence about what you want in the checkout, for the [free store check](#contact). I tell you what works on your plan. I only check publicly visible data, without access to your account. What I do for stores is under [Services](/services).
 
 **Further reading:** [Shopify payment methods in Germany](/blog/shopify-zahlungsarten-deutschland) · [Setting up shipping in Shopify](/blog/shopify-versand-einrichten) · [Creating Shopify bundles](/blog/shopify-bundles-erstellen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Discount code or automatic discount in Shopify](/blog/shopify-rabattcodes-automatische-rabatte) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy) · [Having a Shopify app built](/blog/shopify-app-entwickeln-lassen) · [Shopify Plus: what the plan unlocks](/blog/shopify-plus-wann-lohnt)
 

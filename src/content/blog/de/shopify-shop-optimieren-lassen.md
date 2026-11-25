@@ -112,6 +112,6 @@ Google empfiehlt auf Search Central gute Core Web Vitals für den Erfolg in der 
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, welcher der vier Bereiche bei Ihnen am meisten bringt, auch wenn Sie es danach selbst umsetzen. Oder Sie geben es ab: Ich [mache Ihren Shopify-Shop schneller](/de/services/shopify-speed), zum Festpreis nach dem Briefing.
 
-**Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify SEO optimieren lassen](/de/blog/shopify-seo-optimieren-lassen)
+**Weiterlesen:** [Shopify Hilfe: Wann das Help Center reicht](/de/blog/shopify-help) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify SEO optimieren lassen](/de/blog/shopify-seo-optimieren-lassen) · [Shopify Beratung: wann sie sich lohnt](/de/blog/shopify-beratung)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

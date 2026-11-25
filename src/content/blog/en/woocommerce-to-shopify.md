@@ -52,7 +52,7 @@ Build the new theme as an unpublished theme. The old store keeps selling until e
 
 ## Launch checklist
 
-- Point the domain to Shopify and check SSL.
+- Point the domain to Shopify and check SSL ([Shopify DNS settings](/blog/shopify-domain-verbinden)).
 - Test the redirects, at least the 20 most important old URLs.
 - Submit the new sitemap in Google Search Console.
 - Gift cards carried over and redeemable?

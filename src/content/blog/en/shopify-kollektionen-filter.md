@@ -148,6 +148,6 @@ That's often part of a [Shopify redesign](/services/shopify-redesign). Related: 
 
 Send me your store's address for the [free store check](#contact). I only work with publicly visible data, without access to your account. More on the [Shopify redesign](/services/shopify-redesign).
 
-**Further reading:** [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen)
+**Further reading:** [Hiring someone for Shopify SEO](/blog/shopify-seo-optimieren-lassen) · [Shopify Flow: workflow automation without code](/blog/shopify-flow-automatisierung)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

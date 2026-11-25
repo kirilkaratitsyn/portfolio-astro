@@ -102,6 +102,6 @@ How customisations stay maintainable is in [Customizing a Shopify theme](/blog/s
 
 Send me your store's address for the [free store check](#contact). I only check publicly visible data, without access to your account, and tell you what stands out. It does not check anything for tax purposes. What I do for stores is under [Services](/services).
 
-**Further reading:** [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen)
+**Further reading:** [Setting up taxes and VAT in Shopify](/blog/shopify-steuern-mwst-einrichten) · [Customizing Shopify email notifications](/blog/shopify-email-benachrichtigungen) · [Shopify Flow: workflow automation without code](/blog/shopify-flow-automatisierung)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

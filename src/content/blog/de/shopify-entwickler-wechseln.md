@@ -107,6 +107,6 @@ Der Kunde hat das Projekt auf Upwork mit 5,0 bewertet, die Zusammenarbeit läuft
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, wo bei einer Übergabe die Risiken liegen. Für die laufende Betreuung: [Shopify-Betreuung](/de/services/shopify-betreuung) mit klarem Umfang und Festpreis nach dem Briefing.
 
-**Weiterlesen:** [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify-App entwickeln lassen](/de/blog/shopify-app-entwickeln-lassen)
+**Weiterlesen:** [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify-Relaunch lassen](/de/blog/shopify-relaunch-theme-wechsel) · [Shopify-App entwickeln lassen](/de/blog/shopify-app-entwickeln-lassen) · [Shopify Beratung: wann sie sich lohnt](/de/blog/shopify-beratung)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -124,10 +124,10 @@ Who is responsible for what is explained in [Shopify help: when the Help Center 
 
 Related: [Setting up Shopify shipping](/blog/shopify-versand-einrichten).
 
-## How is your store doing?
+## Payment methods set up, but buyers still drop off?
 
-Send me your store's address for the [free store check](#contact). I only check publicly visible data, such as load time, apps in the page source and page structure, without access to your account. More under [Services](/services).
+Send me your store's address for the [free store check](#contact). I look at what a buyer sees from outside, such as the payment options shown in the store, load time and apps in the page source, without access to your account, and tell you what stands out. More under [Services](/services).
 
-**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy)
+**Further reading:** [Creating invoices in Shopify](/blog/shopify-rechnung-bestelldokumente) · [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) · [Setting up Shopify subscriptions](/blog/shopify-abos-subscriptions) · [Setting up pre-orders in Shopify](/blog/shopify-vorbestellung-preorder) · [Shopify try before you buy](/blog/shopify-try-before-you-buy) · [Shopify Plus plan: features and when it is worth it](/blog/shopify-plus-wann-lohnt)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

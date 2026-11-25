@@ -98,7 +98,7 @@ More on this: [Moving to Shopify and SEO: Set Up Redirects, Protect Your Ranking
 
 The path depends on where the domain is registered.
 
-- **Connect the domain.** The domain stays at its registrar, you only change where it points.
+- **Connect the domain.** The domain stays at its registrar, you only change where it points. Which records Shopify needs: [Shopify DNS settings: connect your domain](/blog/shopify-domain-verbinden).
 - **Transfer the domain from Wix to Shopify.** According to the Wix help the domain must be unlocked. A transfer is not possible if the domain is younger than 60 days, if the registrant details were just changed or if it was transferred recently (ICANN rule). Wix sends an authorization code by email, the transfer usually takes up to 7 days, and the Wix site is disconnected from the domain. Shopify advises disconnecting the domain from the old platform beforehand, otherwise SSL certificate errors may follow.
 - **The domain stays at Wix, DNS is managed elsewhere.** According to Wix the way leads through custom nameservers.
 

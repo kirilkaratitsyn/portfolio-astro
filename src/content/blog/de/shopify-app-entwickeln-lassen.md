@@ -104,6 +104,6 @@ Die App ist nur für diesen Shop gebaut und steht nicht im App Store. Außerdem 
 
 Schicken Sie mir Ihre Shop-Adresse für den [kostenlosen Shop-Check](#contact). Ich sage Ihnen, ob eine fertige App, eine Theme-Anpassung oder etwas Eigenes sinnvoll ist. Für laufende Unterstützung: [Shopify-Betreuung](/de/services/shopify-betreuung) mit klarem Umfang.
 
-**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln) · [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Plus: Was der Tarif freischaltet](/de/blog/shopify-plus-wann-lohnt)
+**Weiterlesen:** [Shopify Checkout anpassen](/de/blog/shopify-checkout-anpassen) · [Shopify-Entwickler wechseln](/de/blog/shopify-entwickler-wechseln) · [Shopify-Theme anpassen lassen](/de/blog/shopify-theme-customization) · [Shopify-Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Plus: Was der Tarif freischaltet](/de/blog/shopify-plus-wann-lohnt) · [Shopify Beratung: wann sie sich lohnt](/de/blog/shopify-beratung)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

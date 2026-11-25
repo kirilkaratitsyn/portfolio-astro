@@ -69,6 +69,6 @@ Not necessarily. According to the Shopify Help Center, Shopify B2B is available 
 
 I set up [B2B and wholesale in Shopify](/services/shopify-b2b), at a fixed price after the briefing. Request the free store check or book an intro call.
 
-**Further reading:** [Shopify Markets](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: cost](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods](/blog/shopify-zahlungsarten-deutschland) · [Importing products with CSV](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Shopify taxes and VAT](/blog/shopify-steuern-mwst-einrichten)
+**Further reading:** [Shopify Markets](/blog/shopify-markets-mehrere-laender) · [Having a Shopify store built: cost](/blog/shopify-shop-erstellen-lassen-kosten) · [Shopify payment methods](/blog/shopify-zahlungsarten-deutschland) · [Importing products with CSV](/blog/shopify-produkte-importieren-csv) · [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Shopify taxes and VAT](/blog/shopify-steuern-mwst-einrichten) · [Shopify Flow: workflow automation without code](/blog/shopify-flow-automatisierung)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*

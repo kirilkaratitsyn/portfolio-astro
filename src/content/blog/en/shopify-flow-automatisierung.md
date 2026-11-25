@@ -147,9 +147,9 @@ After that, the workflows belong to ongoing care, see [Shopify maintenance and s
 
 **What does the setup cost?** That depends on the scope. I don't quote amounts here.
 
-## How is your store doing?
+## Which tasks in your store could run by themselves?
 
-Send me your store's address for the [free store check](#contact). I only look at publicly visible data, without access to your account, and tell you what stands out. For wholesale stores: [Shopify B2B and wholesale](/services/shopify-b2b).
+Send me your store's address and the routine that costs you the most time, for the [free store check](#contact). I tell you whether Flow or an app can take it over. I only look at publicly visible data, without access to your account. For wholesale stores: [Shopify B2B and wholesale](/services/shopify-b2b).
 
 **Read next:** [Managing Shopify inventory](/blog/shopify-lagerbestand-verwalten) · [Shopify collections and filters](/blog/shopify-kollektionen-filter) · [Shopify help](/blog/shopify-help)
 

@@ -126,9 +126,9 @@ Who is responsible for what is explained in [Shopify help: when the Help Center 
 
 **What does a product import by a developer cost?** That depends on the scope and the state of the data. I do not name specific amounts here.
 
-## What about your store?
+## Import done, but the products do not look right?
 
-Send me your store's address for the [free store check](#contact). I only work with publicly visible data, without access to your account. I also take care of the [move from WooCommerce to Shopify](/services/woocommerce-to-shopify), and everything else is under [Services](/services).
+Send me your store's address for the [free store check](#contact). I look at your product pages from outside, without access to your account, and tell you what stands out, such as missing variants or images. I also take care of the [move from WooCommerce to Shopify](/services/woocommerce-to-shopify), and everything else is under [Services](/services).
 
 **Further reading:** [Shopify metafields and metaobjects](/blog/shopify-metafelder-metaobjects) · [Moving from Wix to Shopify](/blog/wix-zu-shopify-umzug) · [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten) · [Setting up Shopify product variants](/blog/shopify-produktvarianten-optionen)
 

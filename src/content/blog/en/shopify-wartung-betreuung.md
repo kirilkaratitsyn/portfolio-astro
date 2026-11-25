@@ -101,6 +101,6 @@ Individual or team: [Shopify freelancer or agency](/blog/shopify-freelancer-oder
 
 Send me your store's address for the [free store check](#contact). I only check publicly visible data such as load time, apps in the page source and page structure, without access to your account. More under [Shopify support and maintenance](/services/shopify-betreuung) and [Services](/services).
 
-**Further reading:** [Cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz) · [Customizing the checkout](/blog/shopify-checkout-anpassen) · [Setting up subscriptions](/blog/shopify-abos-subscriptions) · [Relaunch](/blog/shopify-relaunch-theme-wechsel) · [Switching developers](/blog/shopify-entwickler-wechseln) · [Shopify consulting](/blog/shopify-beratung)
+**Further reading:** [Cookie banner and privacy policy](/blog/shopify-cookie-banner-datenschutz) · [Customizing the checkout](/blog/shopify-checkout-anpassen) · [Setting up subscriptions](/blog/shopify-abos-subscriptions) · [Relaunch](/blog/shopify-relaunch-theme-wechsel) · [Switching developers](/blog/shopify-entwickler-wechseln) · [Shopify consulting](/blog/shopify-beratung) · [Shopify Flow: workflow automation without code](/blog/shopify-flow-automatisierung)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
