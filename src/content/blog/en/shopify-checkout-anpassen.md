@@ -57,7 +57,7 @@ According to the help:
 - **Checkout Blocks**, a free Shopify app for customisations with UI extensions and Functions: from Basic with limited features, on Plus without those limits.
 - **Customisation for individual markets** (for example a notice for one market only): only on the Advanced or Plus plan.
 
-So changes to address, shipping and payment are reserved for Plus, apart from the limited scope of Checkout Blocks.
+So changes to address, shipping and payment are reserved for Plus, apart from the limited scope of Checkout Blocks. All Shopify Plus features compared with the smaller plans: [What Shopify Plus unlocks](/blog/shopify-plus-wann-lohnt).
 
 ## One page or three
 
@@ -124,7 +124,7 @@ More on this: [Customizing a Shopify theme](/blog/shopify-theme-customization) a
 
 **Can I set a background image in the checkout?** Not any more, according to the help: since 5 February 2026 no new background image can be added to the header and the main area. For the order summary the help still names a background image or colour.
 
-**What does Shopify Plus add to checkout customization?** According to the help, apps in the Information, Shipping and Payment steps and styling through the Checkout Branding API. More in [Shopify Plus: what it unlocks](/blog/shopify-plus-wann-lohnt).
+**What does Shopify Plus add to checkout customization?** According to the help, apps in the Information, Shipping and Payment steps and styling through the Checkout Branding API. More in [Shopify Plus features and when the plan is worth it](/blog/shopify-plus-wann-lohnt).
 
 **What replaced checkout.liquid?** Checkout extensions. According to shopify.dev, shops still using `checkout.liquid` have to move to Shopify Extensions in Checkout, through a public app, a custom app or a service partner.
 

@@ -115,7 +115,7 @@ Wie Anpassungen wartbar bleiben, steht in [Shopify Theme anpassen](/de/blog/shop
 
 **Brauche ich eine App für Bundles?** Ja. Für feste Bundles und Multipacks gibt es die kostenlose App Shopify Bundles.
 
-**Gibt es Bundles auch im Basic-Tarif?** Ja, die App Shopify Bundles ist laut Hilfe in allen Tarifen verfügbar. Eigene Bundle-Angebote über die APIs sind dem Tarif Plus vorbehalten.
+**Gibt es Bundles auch im Basic-Tarif?** Ja, die App Shopify Bundles ist laut Hilfe in allen Tarifen verfügbar. Eigene Bundle-Angebote über die APIs sind dem Tarif [Shopify Plus](/de/blog/shopify-plus-wann-lohnt) vorbehalten.
 
 **Kann der Kunde sein Bundle selbst zusammenstellen?** Das ist Mix-and-match. Die App Shopify Bundles kann es nicht, Drittanbieter-Apps schon.
 

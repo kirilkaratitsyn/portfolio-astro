@@ -1,11 +1,11 @@
 ---
 publishedAt: 2026-11-14
-updatedAt: 2026-11-14
+updatedAt: 2026-11-25
 title: "Shopify Plus: what the plan really unlocks and when you do not need it"
 seoTitle: "Shopify Plus plan: features, benefits and when it is worth it"
 date: 14 November 2026
-readingTime: 6 min
-excerpt: "What is Shopify Plus? The plan for high-volume merchants. Which features are Plus only, what the smaller plans already include, and when Plus is worth it."
+readingTime: 7 min
+excerpt: "What is Shopify Plus? The plan for high-volume merchants. Shopify Plus features compared with Basic, Grow and Advanced, and when Plus is worth it."
 image: /og/projects/orska-rituals.jpg
 topic: build
 tags:
@@ -28,7 +28,24 @@ The Help Center describes Plus as the plan for merchants selling in high volume.
 
 If none of that applies, you very likely do not need Plus.
 
-## Checkout: the most common reason
+## Shopify Plus features compared with the smaller plans
+
+An overview of the Shopify Plus features from the Help Center, without prices. "Smaller plans" here means Basic, Grow and Advanced. The details follow in the sections below.
+
+- **Checkout look** (logo, colours, font): smaller plans yes. Plus also allows styling through code with the Checkout Branding API.
+- **Apps in the checkout steps** Information, Shipping and Payment: Plus only.
+- **Checkout Blocks** app from Shopify: smaller plans with limited features, Plus without those limits.
+- **Checkout for a single market**, for example a notice for one country only: Advanced and Plus.
+- **Checkout drafts**: up to 20 on the smaller plans, up to 99 on Plus.
+- **Shopify Functions**: smaller plans through public apps. Plus also through custom apps written only for your store.
+- **B2B**: smaller plans with company accounts, their own prices and catalogs. Plus adds unlimited catalogs, deposits and partial payments.
+- **Several stores**: Plus includes 9 expansion stores and unlimited staging stores. Without Plus, Shopify Markets handles several countries inside one store.
+- **Team**: Plus has unlimited staff accounts and custom user groups for permissions.
+- **Redirects**: up to 100,000, on Plus up to 20,000,000.
+- **Plus-only apps**: Launchpad, Shopify Audiences and Combined Listings.
+- **Support**: Plus has priority support by phone and chat around the clock.
+
+## Shopify Plus checkout: the most common reason
 
 According to the Help Center:
 
@@ -118,6 +135,8 @@ I am a developer and do not sell plans. I earn nothing from a switch to Plus. On
 **Is Shopify Plus worth it?** Only when you need one of those features, for example a field or offer in the middle of the checkout or several stores. If none applies, the smaller plans very likely cover you.
 
 **Do I need Shopify Plus for B2B?** No. According to the Help Center, Shopify B2B is available from Basic. Plus adds, among other things, unlimited catalogs, deposits and partial payments.
+
+**What does Shopify Plus add to the checkout?** Per the Help Center: apps in the Information, Shipping and Payment steps, styling through the Checkout Branding API, Checkout Blocks without limits and up to 99 checkout drafts instead of 20.
 
 **Can I customize the checkout without Plus?** Yes, within limits: logo, colours, font and apps for the Thank you and Order status pages. Apps in the Information, Shipping and Payment steps are Plus only.
 

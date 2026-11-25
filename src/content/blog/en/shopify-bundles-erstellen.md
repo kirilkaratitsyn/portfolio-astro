@@ -115,7 +115,7 @@ How customisations stay maintainable is in [Customizing a Shopify theme](/blog/s
 
 **Do I need an app for bundles?** Yes. For fixed bundles and multipacks there is the free Shopify Bundles app.
 
-**Are bundles available on the Basic plan?** Yes, the Shopify Bundles app is available on all plans according to the help. Custom bundle offerings through the APIs are reserved for Plus.
+**Are bundles available on the Basic plan?** Yes, the Shopify Bundles app is available on all plans according to the help. Custom bundle offerings through the APIs are reserved for [Shopify Plus](/blog/shopify-plus-wann-lohnt).
 
 **Can customers put their own bundle together?** That is mix-and-match. The Shopify Bundles app cannot do it, third-party apps can.
 

@@ -1,10 +1,10 @@
 ---
 publishedAt: 2026-11-14
-updatedAt: 2026-11-14
+updatedAt: 2026-11-25
 title: "Shopify Plus: Was der Tarif wirklich freischaltet und wann Sie ihn nicht brauchen"
 seoTitle: "Shopify Plus: Was der Tarif freischaltet und wann er sich lohnt"
 date: 14. November 2026
-readingTime: 6 Min
+readingTime: 7 Min
 excerpt: "Shopify Plus: Was laut Shopify-Hilfe nur mit Plus geht, was die kleineren Tarife schon können und was Sie vor dem Wechsel klären sollten."
 image: /og/projects/orska-rituals.jpg
 topic: build
@@ -27,6 +27,23 @@ Die Hilfe beschreibt Plus als Tarif für Händler, die in hohem Volumen verkaufe
 - ein **Team**, das größer ist, als die kleineren Tarife vorsehen
 
 Trifft nichts davon zu, kommen Sie sehr wahrscheinlich ohne Plus aus.
+
+## Shopify-Plus-Funktionen im Vergleich mit den kleineren Tarifen
+
+Ein Überblick der Plus-Funktionen laut Shopify-Hilfe, ohne Preise. „Kleinere Tarife“ heißt hier Basic, Grow und Advanced. Die Einzelheiten folgen in den Abschnitten darunter.
+
+- **Aussehen des Checkouts** (Logo, Farben, Schrift): in den kleineren Tarifen ja. Plus erlaubt zusätzlich Gestaltung per Code mit der Checkout Branding API.
+- **Apps in den Kassenschritten** Information, Shipping und Payment: nur mit Plus.
+- **Checkout Blocks**, die App von Shopify: in den kleineren Tarifen eingeschränkt, mit Plus ohne diese Einschränkungen.
+- **Checkout für einen einzelnen Markt**, etwa ein Hinweis nur für ein Land: ab Advanced und mit Plus.
+- **Checkout-Entwürfe**: bis zu 20 in den kleineren Tarifen, bis zu 99 mit Plus.
+- **Shopify Functions**: in den kleineren Tarifen über öffentliche Apps. Mit Plus auch über eigene Apps nur für Ihren Shop.
+- **B2B**: in den kleineren Tarifen mit Firmenkonten, eigenen Preisen und Katalogen. Plus ergänzt unbegrenzt viele Kataloge, Anzahlungen und Teilzahlungen.
+- **Mehrere Shops**: Plus enthält 9 Expansion Stores und unbegrenzt viele Staging-Shops. Ohne Plus deckt Shopify Markets mehrere Länder in einem Shop ab.
+- **Team**: Plus hat unbegrenzt viele Mitarbeiterkonten und eigene Benutzergruppen für Berechtigungen.
+- **Weiterleitungen**: bis zu 100.000, mit Plus bis zu 20.000.000.
+- **Apps nur für Plus**: Launchpad, Shopify Audiences und Combined Listings.
+- **Support**: Plus hat bevorzugten Support per Telefon und Chat rund um die Uhr.
 
 ## Checkout: der häufigste Grund
 
@@ -114,6 +131,8 @@ Ich bin Entwickler und verkaufe keine Tarife. Am Wechsel zu Plus verdiene ich ni
 ## Häufige Fragen
 
 **Brauche ich Shopify Plus für B2B?** Nein. Laut Hilfe gibt es Shopify B2B ab Basic. Plus ergänzt unter anderem unbegrenzt viele Kataloge, Anzahlungen und Teilzahlungen.
+
+**Was bringt Shopify Plus für den Checkout?** Laut Hilfe: Apps in den Schritten Information, Shipping und Payment, Gestaltung per Checkout Branding API, Checkout Blocks ohne Einschränkungen und bis zu 99 statt 20 Checkout-Entwürfe.
 
 **Kann ich den Checkout ohne Plus anpassen?** Ja, in Grenzen: Logo, Farben, Schrift und Apps für Danke- und Bestellstatus-Seite. Apps in den Schritten Information, Shipping und Payment gibt es nur mit Plus.
 

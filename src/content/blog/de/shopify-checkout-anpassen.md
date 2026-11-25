@@ -56,7 +56,7 @@ Laut Hilfe gilt:
 - **Checkout Blocks**, eine kostenlose App von Shopify für Anpassungen per UI-Extensions und Functions: ab Basic mit eingeschränktem Funktionsumfang, mit Plus ohne diese Einschränkungen.
 - **Anpassungen für einzelne Märkte** (zum Beispiel ein Hinweis nur für einen Markt): nur ab dem Tarif Advanced oder Plus.
 
-Eingriffe in Adresse, Versand und Zahlung bleiben also Plus vorbehalten, abgesehen vom eingeschränkten Umfang von Checkout Blocks.
+Eingriffe in Adresse, Versand und Zahlung bleiben also Plus vorbehalten, abgesehen vom eingeschränkten Umfang von Checkout Blocks. Alle Plus-Funktionen im Vergleich mit den kleineren Tarifen: [Was Shopify Plus freischaltet](/de/blog/shopify-plus-wann-lohnt).
 
 ## Ein oder drei Seiten
 
