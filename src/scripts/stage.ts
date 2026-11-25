@@ -165,7 +165,13 @@ class PebbleView extends View {
     this.distance = (this.object.userData.distance as number | undefined) ?? PEBBLE_CAMERA.distance;
     this.camera.position.set(0, (PEBBLE_CAMERA.y * this.distance) / PEBBLE_CAMERA.distance, this.distance);
     this.camera.lookAt(0, 0, 0);
+    this.sway = host.hasAttribute('data-sway');
   }
+
+  /** The header logo (data-sway) rocks gently from side to side on its own, so it reads as something you can turn. */
+  private sway = false;
+  private swayTime = 0;
+  private swayRest = new Quaternion();
 
   showLive() {
     this.img.style.opacity = '0';
@@ -265,8 +271,15 @@ class PebbleView extends View {
         w.x += p.vy * 0.00012;
       }
       spin(this.object, w.x, w.y, w.z, dt);
-      // Every object drifts back to its resting pose.
-      this.object.quaternion.slerp(this.rest, 1 - Math.exp(-1.5 * dt));
+      // Every object drifts back to its resting pose; a swaying one to a pose that rocks about the vertical axis.
+      let rest = this.rest;
+      if (this.sway) {
+        this.swayTime += dt;
+        tmpAxis.set(0, 1, 0);
+        tmpQuat.setFromAxisAngle(tmpAxis, Math.sin(this.swayTime * 1.3) * 0.45);
+        rest = this.swayRest.copy(this.rest).premultiply(tmpQuat);
+      }
+      this.object.quaternion.slerp(rest, 1 - Math.exp(-1.5 * dt));
     }
 
     // Lean toward the cursor and grow a little when it is over the object.
@@ -284,7 +297,7 @@ class PebbleView extends View {
       Math.abs(this.tiltY - targetY) < 0.002 && Math.abs(this.lift - (this.hovering ? 1 : 0)) < 0.002;
     // Scrolling alone does not redraw a pebble: its canvas moves with the page, and redrawing a dozen of them on
     // every scroll frame was what made scrolling heavy.
-    return busy || !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
+    return busy || this.sway || !settled || this.grabbed || (this.hovering && !!p && Math.hypot(p.vx, p.vy) > 20);
   }
 
   sync() {
