@@ -1,11 +1,10 @@
-// Conversion events. Names only, no personal data: the event goes to Vercel Web Analytics (cookieless) and, only when the
-// visitor has accepted it, to Microsoft Clarity (window.clarity exists only after consent, see components/Consent.astro).
+// Conversion events. Names only, no personal data: the event goes to Microsoft Clarity, and only when the visitor has
+// accepted it (window.clarity exists only after consent, see components/Consent.astro).
 type Tracker = (command: string, payload?: unknown) => void;
 
 export function track(name: string) {
-  const w = window as unknown as { va?: Tracker; clarity?: Tracker };
+  const w = window as unknown as { clarity?: Tracker };
   try {
-    w.va?.('event', { name });
     w.clarity?.('event', name);
   } catch {
     // analytics must never break the page

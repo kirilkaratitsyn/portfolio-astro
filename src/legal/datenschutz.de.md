@@ -7,9 +7,9 @@ E-Mail: kiril@karatitsyn.com
 
 ## 2. Hosting
 
-Diese Website wird bei Vercel Inc., USA, gehostet. Beim Aufruf jeder Seite verarbeitet Vercel automatisch Daten, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Referrer-URL, Browser und Betriebssystem. Das ist nötig, um die Website auszuliefern und vor Missbrauch zu schützen.
+Diese Website wird bei Railway Corporation, 548 Market St PMB 68956, San Francisco, CA 94104, USA, gehostet. Der Server steht in der Region EU West (Amsterdam, Niederlande). Beim Aufruf jeder Seite verarbeitet Railway automatisch Daten, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Referrer-URL, Browser und Betriebssystem. Das ist nötig, um die Website auszuliefern und vor Missbrauch zu schützen.
 
-Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse an einer sicheren und funktionierenden Website. Vercel verarbeitet die Daten in meinem Auftrag. Vercel ist unter dem EU-US Data Privacy Framework zertifiziert; darauf stützt sich die Übermittlung in die USA (Art. 45 DSGVO). Vercel speichert diese Protokolldaten für dieses Projekt höchstens einen Tag. Details: https://vercel.com/legal/privacy-policy
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse an einer sicheren und funktionierenden Website. Railway verarbeitet die Daten in meinem Auftrag; mit Railway besteht ein Vertrag zur Auftragsverarbeitung. Soweit Daten in die USA übermittelt werden, stützt sich das auf die EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Details: https://railway.com/legal/privacy
 
 ## 3. Kontakt per E-Mail und Kontaktformular
 
@@ -27,9 +27,7 @@ Die Schriftarten liegen auf dem Server dieser Website. Beim Laden der Seite wird
 
 ## 6. Cookies und Analyse
 
-Ohne Ihre Zustimmung setzt diese Website selbst keine Cookies und legt nichts auf Ihrem Gerät ab. Um zu verstehen, welche Seiten gelesen werden und woher Besucher kommen, nutze ich Vercel Web Analytics (Vercel Inc., USA). Der Dienst arbeitet ohne Cookies. Er erfasst pro Seitenaufruf die aufgerufene Seite, die Referrer-Seite, das Land bzw. die Region, Browser und Betriebssystem sowie den Gerätetyp. Besucher werden nicht über Websites hinweg verfolgt; eine Sitzung wird aus den Anfragedaten abgeleitet und nach 24 Stunden verworfen. Zusätzlich zähle ich, wie oft drei Aktionen vorkommen: das Absenden des Kontaktformulars, ein Klick auf die E-Mail-Adresse und das Öffnen der Terminbuchung. Dabei wird nur der Name der Aktion übermittelt, keine Eingaben aus dem Formular. Ich sehe nur zusammengefasste Statistiken.
-
-Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, mein berechtigtes Interesse, die Website zu verbessern und ihre Reichweite zu verstehen. Vercel verarbeitet die Daten in meinem Auftrag; zur Übermittlung in die USA siehe Abschnitt 2. Details: https://vercel.com/docs/analytics/privacy-policy
+Ohne Ihre Zustimmung setzt diese Website selbst keine Cookies und legt nichts auf Ihrem Gerät ab.
 
 **Microsoft Clarity (nur mit Ihrer Einwilligung).** Beim ersten Besuch frage ich in einem Hinweisfenster, ob ich Microsoft Clarity einsetzen darf. Erst wenn Sie „Akzeptieren“ wählen, wird das Skript von Microsoft (Microsoft Corporation, USA) geladen; bei „Ablehnen“ oder ohne Auswahl wird nichts geladen und nichts gesetzt. Clarity erstellt Heatmaps (wo Besucher klicken und scrollen) und Aufzeichnungen von Besuchen (Mausbewegungen, Klicks, Scrollen). Dabei setzt es die Cookies `_clck` und `_clsk` und verarbeitet Angaben wie Gerät, Browser, Land, besuchte Seiten und Interaktionen. Meine Auswahl speichere ich in Ihrem Browser (Local Storage, Eintrag `consent-analytics`), damit ich nicht bei jedem Besuch erneut frage. Mit Ihrer Einwilligung merkt sich die Website außerdem für die Dauer des Besuchs (Session Storage, Eintrag `first-touch`, gelöscht beim Schließen des Tabs), über welche Kampagne (utm-Parameter) oder von welcher Website Sie gekommen sind und welche Seite Sie zuerst aufgerufen haben. Diese Angaben gehen nur mit einer Formularnachricht oder einer Terminbuchung an mich.
 
@@ -61,4 +59,4 @@ Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Lösch
 
 Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der für mich zuständigen: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, https://www.lfd.niedersachsen.de
 
-Stand: 27.10.2026
+Stand: 26.11.2026

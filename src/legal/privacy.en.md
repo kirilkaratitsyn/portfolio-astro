@@ -7,9 +7,9 @@ Email: kiril@karatitsyn.com
 
 ## 2. Hosting
 
-This website is hosted by Vercel Inc., USA. Each time a page is requested, Vercel automatically processes data your browser sends: IP address, date and time, the page requested, referrer URL, browser and operating system. This is needed to deliver the website and protect it against abuse.
+This website is hosted by Railway Corporation, 548 Market St PMB 68956, San Francisco, CA 94104, USA. The server is in the EU West region (Amsterdam, Netherlands). Each time a page is requested, Railway automatically processes data your browser sends: IP address, date and time, the page requested, referrer URL, browser and operating system. This is needed to deliver the website and protect it against abuse.
 
-The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in a secure, working website. Vercel processes the data on my behalf. Vercel is certified under the EU-U.S. Data Privacy Framework, which is the basis for the transfer to the USA (Art. 45 GDPR). Vercel keeps these logs for this project for at most one day. Details: https://vercel.com/legal/privacy-policy
+The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in a secure, working website. Railway processes the data on my behalf under a data processing agreement. Where data is transferred to the USA, this is based on the EU Standard Contractual Clauses (Art. 46(2)(c) GDPR). Details: https://railway.com/legal/privacy
 
 ## 3. Contact by email and contact form
 
@@ -27,9 +27,7 @@ The fonts are stored on this website's own server. No connection to Google or ot
 
 ## 6. Cookies and analytics
 
-Without your consent, this website sets no cookies of its own and stores nothing on your device. To understand which pages are read and where visitors come from, I use Vercel Web Analytics (Vercel Inc., USA). The service works without cookies. For each page view it records the page, the referring page, the country or region, browser and operating system, and the device type. Visitors are not tracked across websites; a session is derived from the request data and discarded after 24 hours. In addition I count how often three actions happen: sending the contact form, clicking the email address and opening the booking calendar. Only the name of the action is sent, never anything you typed into the form. I only see aggregated statistics.
-
-The legal basis is Art. 6(1)(f) GDPR, my legitimate interest in improving the website and understanding its reach. Vercel processes the data on my behalf; for the transfer to the USA see section 2. Details: https://vercel.com/docs/analytics/privacy-policy
+Without your consent, this website sets no cookies of its own and stores nothing on your device.
 
 **Microsoft Clarity (only with your consent).** On your first visit I ask in a notice whether I may use Microsoft Clarity. Only if you choose "Accept" is the script from Microsoft (Microsoft Corporation, USA) loaded; if you choose "Decline" or make no choice, nothing is loaded and nothing is set. Clarity creates heatmaps (where visitors click and scroll) and recordings of visits (mouse movements, clicks, scrolling). It sets the cookies `_clck` and `_clsk` and processes details such as device, browser, country, pages visited and interactions. I store your choice in your browser (local storage, entry `consent-analytics`) so that I do not have to ask on every visit. With your consent the website also remembers for the length of the visit (session storage, entry `first-touch`, deleted when the tab is closed) which campaign (utm parameters) or website brought you here and which page you opened first. This only reaches me with a form message or a booking.
 
@@ -61,4 +59,4 @@ You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (A
 
 You may also lodge a complaint with a data protection supervisory authority, for example the one responsible for me: Die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, Germany, https://www.lfd.niedersachsen.de
 
-Last updated: 27 October 2026
+Last updated: 26 November 2026
