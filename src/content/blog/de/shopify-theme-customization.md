@@ -97,6 +97,10 @@ Wird die Wunschliste lang, ist das alte Theme vielleicht nicht mehr die richtige
 
 **Verkauft mein Shop weiter, während daran gearbeitet wird?** Ja. Die Kopie geht erst nach Ihrer Freigabe live.
 
+**Kann ich den Code meines Shopify-Themes selbst bearbeiten?** Technisch ja, im Code-Editor des Themes. Arbeiten Sie dann immer in einer unveröffentlichten Kopie: Jeder Fehler im Live-Theme ist sofort für Kunden sichtbar.
+
+**Eigenes Theme entwickeln oder das bestehende anpassen?** Meist reicht Anpassen. Wird die Wunschliste lang, ist ein neueres Theme oft die bessere Grundlage, siehe [Shopify-Redesign](/de/services/shopify-redesign).
+
 **Was passiert bei einem Theme-Update?** Einstellungen und Inhalte bleiben, Code-Änderungen müssen neu eingebaut werden.
 
 **Was kostet eine Anpassung?** Das hängt vom Umfang ab. Nach einem kurzen Briefing bekommen Sie einen Festpreis, bevor ich anfange.

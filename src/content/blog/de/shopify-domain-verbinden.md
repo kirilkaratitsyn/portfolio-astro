@@ -126,6 +126,10 @@ Bei Aufbau oder Umzug klären wir im Briefing, wo die Domain liegt, welche Diens
 
 **Kann ich mehrere Domains auf einen Shop legen?** Ja, bis zu 20 zusätzlich zur myshopify-Adresse.
 
+**Wie ändere ich die Domain meines Shopify-Shops?** Neue Domain verbinden oder kaufen, warten, bis sie im Admin als **Verbunden** gilt, und sie dann als primäre Domain festlegen. Weitere verbundene Domains leiten auf die primäre um.
+
+**Kann ich eine Domain direkt bei Shopify kaufen?** Ja, dann verwalten Sie alles im Shopify-Admin. Haben Sie schon eine Domain, ist Verbinden meist der bessere Start.
+
 **Muss ich die myshopify-Adresse ändern?** Nein. Sie können sie nur ein einziges Mal ändern, und sie leitet auf Ihre primäre Domain um.
 
 ## Domain steht, aber der Shop noch nicht?

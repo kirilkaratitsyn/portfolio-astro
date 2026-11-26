@@ -1,6 +1,7 @@
 ---
 publishedAt: 2026-10-23
 title: "Shopify cookie banner and privacy policy: what the settings do and what you have to check yourself"
+seoTitle: "Shopify cookie banner: consent settings and privacy policy"
 date: 23 October 2026
 readingTime: 8 min
 excerpt: "Shopify cookie banner and privacy policy: where to set them, what the automated settings cover and when you need a third-party banner."
@@ -14,6 +15,8 @@ tags:
 ---
 
 Shopify ships its own settings for the cookie banner and the privacy policy, and on new stores they are already switched on. What stays open is what these settings cover and what you have to check yourself once apps, pixels or tracking tools are involved.
+
+Short answer: the cookie banner sits under Settings > Customer privacy. With active markets in the EEA or the United Kingdom, Shopify configures it automatically, but it only governs Shopify's own tools.
 
 ## A note on scope
 
@@ -109,6 +112,8 @@ Any merchant can handle the admin settings alone. Help is worthwhile in these ca
 Every additional app and every script in the page source also costs load time, more in [Hiring Someone to Optimize Your Shopify Store](/blog/shopify-shop-optimieren-lassen).
 
 ## Frequently asked questions
+
+**How do I turn on the cookie banner in Shopify?** Under Settings > Customer privacy. Publish the privacy policy first: per the help, the banner can only be switched on after that. Regions, texts, colors and position can be adjusted, with a preview.
 
 **Do I need a cookie banner?** According to the Shopify help, the banner is meant for regions that require consent before data is collected: the EEA countries and the United Kingdom. In the United States it is off by default, the help says. Whether your store needs one is a legal question.
 

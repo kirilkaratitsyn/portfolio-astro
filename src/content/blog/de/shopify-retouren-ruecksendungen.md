@@ -4,7 +4,7 @@ title: "Shopify Retouren einrichten: Rückgaberegeln, Rücksendungen und Erstatt
 seoTitle: "Shopify Retouren einrichten: Regeln und Erstattung"
 date: 21. November 2026
 readingTime: 7 Min
-excerpt: "Shopify Retouren einrichten: Rückgaberegeln mit 14-Tage-Frist, Rücksendungen durch Kunden, Retourenlabel in Deutschland, Erstattung und Gutschrift, Umtausch."
+excerpt: "Shopify Retouren einrichten: Rückgaberegeln mit 14-Tage-Frist, Rücksendeanfragen im Kundenkonto, Retourenlabel in Deutschland, Erstattung und Gutschrift, Umtausch."
 image: /og/projects/orska-rituals.jpg
 topic: build
 tags:
@@ -91,7 +91,9 @@ Einen Retouren-Fall mit dokumentierten Zahlen habe ich nicht in meinem Portfolio
 
 ## Häufige Fragen
 
-**Brauche ich eine Retouren-App?** Für einfache Fälle nicht: Regeln, Anfragen, Rücksendungen und Erstattungen kann Shopify selbst. Eine App lohnt sich vor allem für Retourenlabel in Deutschland und bei vielen Retouren.
+**Reicht das eingebaute Retourenmodul von Shopify, oder brauche ich eine App?** Für einfache Fälle reicht es: Regeln, Anfragen, Rücksendungen und Erstattungen kann Shopify selbst. Eine App lohnt sich vor allem für Retourenlabel in Deutschland und bei vielen Retouren.
+
+**Gibt es in Shopify ein Retourenportal für Kunden?** Ja, im neuen Kundenkonto. Kunden fragen die Rücksendung dort selbst an, wenn die Option unter Settings > Customer accounts eingeschaltet ist.
 
 **Warum sehen Kunden keinen Rückgabe-Button?** Meist laufen noch die alten Kundenkonten, oder die Option ist unter Customer accounts nicht eingeschaltet.
 

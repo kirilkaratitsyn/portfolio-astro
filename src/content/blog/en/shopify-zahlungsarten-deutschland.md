@@ -1,9 +1,10 @@
 ---
 publishedAt: 2026-10-23
 title: "Shopify payment methods in Germany: Shopify Payments, PayPal, Klarna and what to settle first"
+seoTitle: "Shopify Payments Germany: payment methods, PayPal and Klarna"
 date: 23 October 2026
 readingTime: 6 min
-excerpt: "Shopify payment methods in Germany: what Shopify Payments includes, how PayPal, Klarna and bank transfer fit in, and what to settle before launch."
+excerpt: "Shopify Payments in Germany: which cards, Apple Pay, Google Pay and Klarna it covers, how PayPal and bank transfer fit in, and what to settle before launch."
 image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
@@ -13,7 +14,7 @@ tags:
   - Klarna
 ---
 
-In Germany you switch on Shopify payment methods in the settings, usually without code. There are three routes, and they cannot be mixed freely.
+In Germany you switch on Shopify payment methods in the settings, usually without code. Short answer: Shopify Payments is available in Germany and covers cards, Apple Pay, Google Pay and Shop Pay. Klarna you activate yourself, and PayPal runs as a payment method of its own. There are three routes, and they cannot be mixed freely.
 
 ## A note first
 
@@ -113,6 +114,10 @@ To switch on payment methods you usually need none. Help pays off in three cases
 Who is responsible for what is explained in [Shopify help: when the Help Center is enough](/blog/shopify-help).
 
 ## Frequently asked questions
+
+**Is Shopify Payments available in Germany?** Yes. Per the Help Center, cards, Apple Pay, Google Pay and Shop Pay are active automatically once you switch it on. Local payment methods such as Klarna you activate under Settings > Payments.
+
+**Does Shopify Payments support Klarna?** Yes, as a local payment method. Customers pay immediately, by invoice or in installments, and the money arrives with your next Shopify Payments payout.
 
 **Do I have to use Shopify Payments?** No. Per the Shopify Help Center you can also use third-party providers. Third-party transaction fees then apply.
 

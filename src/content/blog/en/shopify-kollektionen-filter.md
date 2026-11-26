@@ -2,9 +2,10 @@
 publishedAt: 2026-10-24
 updatedAt: 2026-11-11
 title: "Setting up Shopify collections and filters: conditions, sorting and Search & Discovery"
+seoTitle: "Shopify collections and filters: conditions, sorting, search"
 date: 24 October 2026
 readingTime: 9 min
-excerpt: "Setting up Shopify collections and filters: manual and automated collections, conditions, sorting, SEO fields and Search & Discovery with its limits."
+excerpt: "Shopify collections and filters: smart collection conditions, sorting, filters by price or vendor with Search & Discovery, and search within a collection."
 image: /og/projects/lineargent.jpg
 topic: build
 tags:
@@ -14,7 +15,7 @@ tags:
   - Navigation
 ---
 
-"Customers can't find anything in my store, even though it's all there." Often the cause is how the collections are built, or filters that don't fit the range. You can set up Shopify collections and filters without code, but there are rules.
+"Customers can't find anything in my store, even though it's all there." Often the cause is how the collections are built, or filters that don't fit the range. You can set up Shopify collections and filters without code, but there are rules. In short: collections group products, conditions fill them automatically, and the free Search & Discovery app adds filters to collection pages.
 
 ## A note before we start
 
@@ -131,6 +132,12 @@ You can set up collections and standard filters yourself. Help is worth it when:
 That's often part of a [Shopify redesign](/services/shopify-redesign). Related: [Shopify theme customization](/blog/shopify-theme-customization).
 
 ## Frequently asked questions
+
+**Can customers search within a single collection?** Not with the standard store search, which looks through the whole store. On a collection page, filters from Search & Discovery do the narrowing, for example by price, vendor or availability. A search box limited to one collection needs theme code or an app.
+
+**Which conditions can an automated collection use?** Title, type, vendor, product category, tags, status, price, compare-at price, weight, inventory and metafields, at most 60 per collection.
+
+**Can I filter a collection by price or vendor?** Yes, both are standard filters in Search & Discovery. The price filter appears only in the store's default currency.
 
 **Can I turn an automated collection into a manual one?** Not in the old model.
 

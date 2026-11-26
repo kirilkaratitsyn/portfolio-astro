@@ -1,10 +1,10 @@
 ---
 publishedAt: 2026-11-21
 title: "Setting up Shopify returns: return rules, return requests and refunds without the chaos"
-seoTitle: "Shopify returns setup: return rules and refunds"
+seoTitle: "Shopify returns and refund policy: return rules and refunds"
 date: 21 November 2026
 readingTime: 7 min
-excerpt: "Setting up Shopify returns: return rules with a 14-day window, self-serve return requests, return labels in Germany, refunds and store credit, exchanges."
+excerpt: "Setting up Shopify returns: return rules and refund policy under Settings > Policies, a 14-day window, self-serve return requests, refunds, store credit and exchanges."
 image: /og/projects/orska-rituals.jpg
 topic: build
 tags:
@@ -90,6 +90,8 @@ You create an **exchange** in the admin, inside the return: in the **Exchange it
 I do not have a returns case with documented figures in my portfolio. My part is the setup in the store: return rules and policies, new customer accounts, German texts for the return emails, final sale collections and, where needed, choosing and connecting a returns app. I do not write legal texts; those come from your provider or lawyer. In the admin I work through a collaborator account with limited permissions.
 
 ## Frequently asked questions
+
+**Where is the refund policy in Shopify?** Under Settings > Policies, the same place as the return rules. The return rules, your withdrawal notice and the refund policy should say the same thing: window, return shipping costs and exceptions.
 
 **Do I need a returns app?** Not for simple cases: Shopify handles rules, requests, returns and refunds itself. An app mainly pays off for return labels in Germany and for high return volumes.
 

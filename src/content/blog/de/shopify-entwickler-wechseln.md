@@ -2,10 +2,10 @@
 publishedAt: 2026-11-07
 updatedAt: 2026-11-11
 title: "Shopify-Entwickler wechseln: So übernimmt ein neuer Entwickler Ihren Shop, ohne dass etwas verloren geht"
-seoTitle: "Shopify-Entwickler wechseln: Übergabe, Zugänge, Audit"
+seoTitle: "Shopify-Entwickler oder Agentur wechseln: Übergabe, Zugang"
 date: 7. November 2026
 readingTime: 6 Min
-excerpt: "Shopify-Entwickler wechseln: was Sie vor der Übergabe sichern, wie der neue Zugang sicher läuft und wie Sie den alten Zugang beenden."
+excerpt: "Shopify-Entwickler oder Agentur wechseln: was Sie vor der Übergabe sichern, wie der Entwickler-Zugang sicher läuft und wie Sie den alten Zugang beenden."
 image: /og/projects/lineargent.jpg
 topic: support
 tags:
@@ -94,6 +94,12 @@ Der Kunde hat das Projekt auf Upwork mit 5,0 bewertet, die Zusammenarbeit läuft
 ## Häufige Fragen
 
 **Muss ich meinen alten Entwickler um Erlaubnis fragen?** Nein. Der Shop gehört Ihnen, Sie entscheiden, wer Zugang hat. Ein Gespräch lohnt trotzdem, wegen Zugangsdaten außerhalb von Shopify und offener Fragen zum Code. Rechtliche Fragen, etwa zu Nutzungsrechten am Code, klären Sie mit einer Rechtsberatung und dem Vertrag.
+
+**Gilt das auch, wenn ich die Agentur wechsle?** Ja. Agenturen arbeiten in der Regel ebenfalls über Collaborator-Konten, die Schritte sind dieselben.
+
+**Wie bekommt der neue Shopify-Entwickler Zugang?** Über eine Zugriffsanfrage aus seinem Partner-Konto, mit dem Anfragecode, den Sie ihm geben. Ihr Passwort braucht er nicht.
+
+**Wie finde ich einen neuen Shopify-Entwickler?** Über das Shopify Partner Directory, Empfehlungen oder Freelancer-Plattformen. Welche Fragen Sie jedem Anbieter stellen: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
 **Kann der neue Entwickler mit meinem Shop-Login arbeiten?** Technisch ja, empfohlen ist es nicht. Der Collaborator-Zugang ist begrenzt, nachvollziehbar und jederzeit entfernbar.
 

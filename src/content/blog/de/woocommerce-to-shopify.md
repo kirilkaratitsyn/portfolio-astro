@@ -1,9 +1,10 @@
 ---
 publishedAt: 2026-10-15
 title: Von WooCommerce zu Shopify umziehen, ohne Rankings zu verlieren
+seoTitle: "Von WooCommerce zu Shopify wechseln: Umzug ohne Rankingverlust"
 date: 15. Oktober 2026
 readingTime: 4 Min
-excerpt: "Von WooCommerce zu Shopify umziehen: Daten, Redirect-Map, Theme und Launch-Checkliste aus einem echten Umzug, damit Rankings erhalten bleiben."
+excerpt: "WooCommerce zu Shopify migrieren: Daten, Redirect-Map, Theme und Launch-Checkliste aus einem echten Umzug, damit beim Wechsel zu Shopify die Rankings bleiben."
 image: /og/projects/jula-bloom.jpg
 updatedAt: 2026-11-01
 topic: migration
@@ -14,6 +15,8 @@ tags:
 ---
 
 Ein Umzug von WooCommerce zu Shopify scheitert selten an der Technik. Er scheitert an alten Links, die ins Leere führen, an Kundenkonten und am Design. Diese Checkliste stammt aus dem Umzug von [Jula Bloom](/de/projects/jula-bloom) aus Seattle, live auf Shopify seit September 2026.
+
+Kurz: Produkte und Kunden ziehen per CSV um, die Bestellhistorie per App oder API, und jede alte URL bekommt eine Weiterleitung. Dann bleiben die Rankings.
 
 ## Wann sich der Umzug lohnt und wann nicht
 
@@ -66,6 +69,10 @@ Bauen Sie das neue Theme als unveröffentlichtes Theme auf. Der alte Shop verkau
 In den ersten Wochen zeigt die Search Console Seiten, die Google nicht mehr findet („Nicht gefunden (404)“). Jede davon ist eine fehlende Weiterleitung. Tragen Sie sie nach, und der Fehler verschwindet beim nächsten Crawl. Planen Sie dafür in den ersten vier Wochen jede Woche ein paar Minuten ein.
 
 ## Häufige Fragen
+
+**Was zieht von WooCommerce zu Shopify um?** Produkte, Kunden, Bestellhistorie, Geschenkgutscheine, Blogartikel und Seiten. Kundenpasswörter nicht.
+
+**Kann ich WooCommerce zu Shopify migrieren lassen?** Ja. Ein Umzugsservice übernimmt Datenimport, Redirect-Map, Theme und Launch. Wie das bei mir läuft, steht auf [WooCommerce zu Shopify migrieren lassen](/de/services/woocommerce-to-shopify).
 
 **Wie lange dauert der Umzug?** Je nach Umfang 2 bis 4 Wochen.
 

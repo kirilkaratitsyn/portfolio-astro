@@ -1,6 +1,7 @@
 ---
 publishedAt: 2026-10-22
 title: "Shopify-Shop wird bei Google nicht gefunden: 7 Ursachen und was Sie prüfen können"
+seoTitle: "Shopify-Shop bei Google nicht gefunden: 7 Ursachen und Check"
 date: 22. Oktober 2026
 readingTime: 4 Min
 excerpt: "Ihr Shopify-Shop wird bei Google nicht gefunden? Sieben typische Ursachen und ein Zehn-Minuten-Check, den Sie ohne Entwickler machen können."
@@ -13,6 +14,8 @@ tags:
 ---
 
 Ihr Shopify-Shop wird bei Google nicht gefunden, oder Ihre Produkte tauchen nirgends auf? Prüfen Sie die Ursache, bevor Sie eine SEO-App kaufen oder eine Agentur beauftragen. Oft ist es eine Kleinigkeit, die sich in wenigen Minuten beheben lässt.
+
+Kurz: Damit Ihr Onlineshop bei Google gefunden wird, muss er ohne Passwort erreichbar sein, die Sitemap muss in der Google Search Console eingereicht sein, und jede wichtige Seite braucht eigenen Text.
 
 ## Zuerst klären: nicht im Index oder nur schlecht platziert?
 
@@ -66,6 +69,8 @@ Google bewertet vor allem die Smartphone-Version. Ein sehr langsamer Shop wird s
 - **Geduld haben.** Ein neuer Shop braucht Wochen. Zu oft ändern hilft nicht.
 
 ## Häufige Fragen
+
+**Wie wird mein Onlineshop bei Google gefunden?** Passwortschutz aus, Produkte im Kanal „Onlineshop“ veröffentlicht, Domain in der Google Search Console angelegt und `/sitemap.xml` eingereicht. Wie weit vorne die Seiten dann stehen, entscheiden eigene Texte, Titel und Beschreibungen.
 
 **Wie lange dauert es, bis ein neuer Shop bei Google auftaucht?** Tage bis mehrere Wochen. Die Sitemap einzureichen hilft, eine Garantie gibt es nicht.
 
