@@ -133,7 +133,7 @@ That's often part of a [Shopify redesign](/services/shopify-redesign). Related: 
 
 ## Frequently asked questions
 
-**Can customers search within a single collection?** Not with the standard store search, which looks through the whole store. On a collection page, filters from Search & Discovery do the narrowing, for example by price, vendor or availability. A search box limited to one collection needs theme code or an app.
+**Can customers search within a single collection?** Not with the standard store search. On a collection page, filters from Search & Discovery do the narrowing, for example by price, vendor or availability. The standard search covers the whole store.
 
 **Which conditions can an automated collection use?** Title, type, vendor, product category, tags, status, price, compare-at price, weight, inventory and metafields, at most 60 per collection.
 

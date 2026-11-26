@@ -1,10 +1,9 @@
 ---
 publishedAt: 2026-10-23
 title: "Shopify payment methods in Germany: Shopify Payments, PayPal, Klarna and what to settle first"
-seoTitle: "Shopify Payments Germany: payment methods, PayPal and Klarna"
 date: 23 October 2026
 readingTime: 6 min
-excerpt: "Shopify Payments in Germany: which cards, Apple Pay, Google Pay and Klarna it covers, how PayPal and bank transfer fit in, and what to settle before launch."
+excerpt: "Shopify payment methods in Germany: what Shopify Payments includes, how PayPal, Klarna and bank transfer fit in, and what to settle before launch."
 image: /og/projects/silk-tallow.jpg
 topic: build
 tags:
