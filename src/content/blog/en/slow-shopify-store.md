@@ -1,10 +1,11 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-11
+updatedAt: 2026-11-26
 title: "Slow Shopify store? 7 causes and what you can check yourself"
+seoTitle: "Why is my Shopify store slow? 7 causes you can check"
 date: 22 October 2026
 readingTime: 4 min
-excerpt: "Why a Shopify store loads slowly, how to measure it yourself in ten minutes and which causes you can fix without a developer. With a real example."
+excerpt: "Why is my Shopify store so slow? How to measure it yourself in ten minutes and which causes you can fix without a developer. With a real example."
 image: /og/projects/pedchem.jpg
 topic: speed
 tags:
@@ -71,6 +72,10 @@ If the store is still slow after that, the cause is usually in the code: app lef
 [Pedchem](/projects/pedchem), a pest control store with 323 products, ran on the Flex theme. I rebuilt it on the Enterprise theme without adding any apps, gave the product data in metafields proper types and moved the tracking into a custom pixel. Live mobile PageSpeed on the home page went from 57 to 82, LCP from 12.0 to 4.2 seconds. The live store kept selling, and the switch happened only after written approval.
 
 ## Frequently asked questions
+
+**Why is my Shopify store so slow?** Almost never because of the server. The usual causes are too many apps, leftover app code, large images and videos, an old theme, tracking scripts, too many fonts and overloaded pages.
+
+**Is Shopify itself slow?** Shopify runs the hosting and the checkout itself. What slows a store down sits in the theme: apps, images, scripts and sections.
 
 **Is it my Shopify plan?** No. Load time depends on the theme and what it loads.
 

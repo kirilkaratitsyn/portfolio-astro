@@ -1,10 +1,11 @@
 ---
 publishedAt: 2026-10-23
-updatedAt: 2026-11-11
+updatedAt: 2026-11-26
 title: "Setting up Shopify product variants: options, limits, prices, images and what to know first"
+seoTitle: "Shopify product variants: options, limits, prices and images"
 date: 23 October 2026
 readingTime: 7 min
-excerpt: "Setting up Shopify product variants: options and values, limits, price, stock and image per variant, and hiding variants instead of deleting them."
+excerpt: "Shopify product variants explained: options and values, limits, price, stock and image per variant, and hiding variants instead of deleting them."
 image: /og/projects/reserve-kava.jpg
 topic: build
 tags:
@@ -116,6 +117,8 @@ You set up the basics yourself. Help is worthwhile in these cases:
 Related: [Customizing a Shopify theme](/blog/shopify-theme-customization) and [Managing inventory in Shopify](/blog/shopify-lagerbestand-verwalten). For ongoing upkeep: [Shopify maintenance](/blog/shopify-wartung-betreuung).
 
 ## Frequently asked questions
+
+**Separate products or variants?** For one item in several sizes or colors, use variants: one product with options instead of a separate product per combination.
 
 **How many variants can a product have?** According to the help, up to 2,048, with up to three options.
 

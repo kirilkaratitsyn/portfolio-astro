@@ -1,9 +1,11 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-26
 title: "Setting up taxes and VAT in Shopify: price display, EU rules, OSS and what to clarify first"
+seoTitle: "Shopify VAT and OSS: setting up taxes for EU sales"
 date: 23 October 2026
 readingTime: 8 min
-excerpt: "Setting up taxes and VAT in Shopify: prices with or without tax, tax service, EU sales with OSS, overrides, shipping tax, VAT numbers and invoices."
+excerpt: "Shopify VAT setup: prices with or without tax, tax service, EU sales with OSS, overrides, shipping tax, VAT numbers and invoices."
 image: /og/projects/lineargent.jpg
 topic: build
 tags:
@@ -13,7 +15,7 @@ tags:
   - OSS
 ---
 
-"Does my store show prices with or without VAT, and what happens when I sell to France?" That is often the first question when merchants start setting up taxes and VAT in Shopify.
+"Does my store show prices with or without VAT, and what happens when I sell to France?" That is often the first question when merchants start setting up taxes and VAT in Shopify. The short answer: by default Shopify shows prices without VAT and adds tax at checkout, and for sales to other EU countries the help names a shared €10,000 limit, above which the customer's country rate applies, through OSS or a registration there.
 
 ## A note on scope
 
@@ -130,6 +132,8 @@ You set the basic settings yourself. Help is worthwhile here:
 See also [Customizing the Shopify checkout](/blog/shopify-checkout-anpassen) and [Shopify maintenance](/blog/shopify-wartung-betreuung).
 
 ## Frequently asked questions
+
+**Does Shopify support OSS?** Yes. According to the help, OSS is available in Shopify only with Shopify Tax or Basic Tax. You choose it under Settings > Taxes and duties > Regional settings > European Union.
 
 **Does Shopify show prices with VAT by default?** No, tax is added at checkout. Tax-inclusive pricing changes only the display.
 

@@ -1,11 +1,11 @@
 ---
 publishedAt: 2026-11-08
-updatedAt: 2026-11-19
+updatedAt: 2026-11-26
 title: "Shopify-App entwickeln lassen: Wann eine Custom App sinnvoll ist und wann eine fertige App reicht"
-seoTitle: "Shopify-App entwickeln lassen: Custom App oder fertige App?"
+seoTitle: "Shopify App Entwicklung: Custom App oder fertige App?"
 date: 8. November 2026
 readingTime: 6 Min
-excerpt: "Shopify-App entwickeln lassen oder fertige App nutzen? Drei Wege zur fehlenden Funktion, Zugriff und Pflege bei Custom Apps, Merkmale eines guten Angebots."
+excerpt: "Shopify App Entwicklung: App entwickeln lassen oder fertige App nutzen? Drei Wege zur fehlenden Funktion, Zugriff, Pflege und Merkmale eines guten Angebots."
 image: /og/projects/elanora-skin.jpg
 topic: build
 tags:
@@ -14,7 +14,7 @@ tags:
   - Custom App
 ---
 
-Ihr Shop braucht eine Funktion, die Shopify nicht mitbringt: eine Verbindung zur Warenwirtschaft, eine eigene Rabattlogik, ein Zusatzfeld an der Kasse. Müssen Sie dafür eine Shopify-App entwickeln lassen? Oft nicht.
+Ihr Shop braucht eine Funktion, die Shopify nicht mitbringt: eine Verbindung zur Warenwirtschaft, eine eigene Rabattlogik, ein Zusatzfeld an der Kasse. Müssen Sie dafür eine Shopify-App entwickeln lassen? Oft nicht. Eine eigene Shopify-App-Entwicklung lohnt sich erst, wenn Bordmittel, Theme-Anpassung und fertige Apps nicht reichen.
 
 ## Drei Wege, eine Funktion zu bekommen
 
@@ -49,7 +49,7 @@ Laut Hilfe wurden Shopify Scripts und der Script Editor am 30. Juni 2026 eingest
 
 Kosten einer fertigen App: Die meisten laufen über die Shopify-Rechnung, manche Drittanbieter berechnen direkt und getrennt davon. Prüfen Sie das vor der Installation.
 
-## So läuft die Entwicklung einer Custom App ab
+## Shopify-App-Entwicklung: So läuft ein Custom-App-Projekt ab
 
 Diese Reihenfolge halte ich bei Custom-App-Projekten ein. Sie macht aus den Punkten oben einen Plan, den Sie prüfen können.
 
@@ -91,6 +91,10 @@ Für [Elanora Skin](/de/projects/elanora-skin), eine Hautpflegemarke, die ich la
 Die App ist nur für diesen Shop gebaut und steht nicht im App Store. Außerdem veröffentliche ich eine eigene App im Shopify App Store, [Reviews Core](https://apps.shopify.com/reviews-core).
 
 ## Häufige Fragen
+
+**Wie läuft die Entwicklung einer Shopify-App ab?** Briefing, schriftlicher Umfang mit API-Berechtigungen, Entwicklung in einem Entwicklungsshop, Ihre Abnahme, Installation per Link, Übergabe von Code und Dokumentation, danach Pflege.
+
+**Kann Custom Code im Theme eine App ersetzen?** Oft ja, wenn die Funktion nur etwas anzeigt: ein Abschnitt, ein Hinweis, ein Layout. Eigene Logik bei Rabatten, Versand oder Zahlungsarten läuft laut Shopify über Apps mit Functions.
 
 **Brauche ich für jede Zusatzfunktion eine App?** Nein. Prüfen Sie zuerst Shopify-Bordmittel, Theme-Anpassung und fertige Apps.
 

@@ -1,10 +1,11 @@
 ---
 publishedAt: 2026-11-15
+updatedAt: 2026-11-26
 title: "Shopify mehrsprachig: Shop übersetzen, ohne dass eine halbfertige Sprache live geht"
 seoTitle: "Shopify mehrsprachig: Shop übersetzen mit Translate & Adapt"
 date: 15. November 2026
 readingTime: 7 Min
-excerpt: "Shopify mehrsprachig einrichten: Voraussetzungen, Translate & Adapt, automatische Übersetzung, URLs und hreflang, und was sich nicht übersetzen lässt."
+excerpt: "Shopify mehrsprachig einrichten und den Shop übersetzen: Voraussetzungen, Translate & Adapt, automatische Übersetzung, URLs und hreflang, Grenzen."
 image: /og/projects/bazar-bizar.jpg
 topic: build
 tags:
@@ -132,6 +133,10 @@ Bei [Lineargent](/de/projects/lineargent) habe ich 1.773 interne Links in den SE
 Ich bin Entwickler, kein Übersetzer. Die Texte liefern Sie, ein Übersetzungsbüro oder die automatische Übersetzung. Ich prüfe, ob das Theme für mehrere Sprachen gebaut ist, richte Sprachumschalter und Weiterleitung ein, finde die Stellen, die in der neuen Sprache unübersetzt bleiben (feste Texte im Theme, Apps, Filter), und teste den Weg vom Produkt bis zur Bestellmail. Im Admin arbeite ich über ein Collaborator-Konto mit begrenzten Rechten.
 
 ## Häufige Fragen
+
+**Wie übersetze ich meinen Shopify-Shop?** Sprache unter Settings > Languages hinzufügen, Inhalte in Translate & Adapt von Hand oder automatisch übersetzen und erst danach auf Publish klicken.
+
+**Übersetzt Shopify automatisch?** Ja, mit KI über Translate & Adapt. Shops in Deutschland, Österreich und der Schweiz übersetzen laut Hilfe bis zu 8 Sprachen automatisch. Rechtstexte sind ausgenommen.
 
 **Brauche ich für jede Sprache einen eigenen Shop?** Nein. Ein Shop trägt je nach Plan bis zu 20 oder 30 Sprachen.
 

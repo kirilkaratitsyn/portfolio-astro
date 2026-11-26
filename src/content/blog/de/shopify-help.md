@@ -1,7 +1,8 @@
 ---
 publishedAt: 2026-10-22
-updatedAt: 2026-11-18
+updatedAt: 2026-11-26
 title: "Shopify Hilfe: Wann das Help Center reicht und wann Sie einen Entwickler brauchen"
+seoTitle: "Shopify Hilfe und Support: Wer bei welchem Problem zuständig ist"
 date: 22. Oktober 2026
 readingTime: 4 Min
 excerpt: "Shopify Hilfe: Support, Help Center, App-Hersteller oder Entwickler. An wen Sie sich bei welchem Problem wenden, damit Sie keine Tage verlieren."
@@ -60,6 +61,10 @@ Manche Shops brauchen nur gelegentlich einen Handgriff. Andere ändern ständig 
 Mehr dazu in [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung). Ein laufendes Beispiel aus meiner Arbeit ist [Elanora Skin](/de/projects/elanora-skin), seit Ende 2025.
 
 ## Häufige Fragen
+
+**Wer hilft bei Problemen im Shopify-Shop?** Vier Stellen: Help Center und Shopify-Support bei der Plattform, der App-Hersteller bei einer App, der Theme-Hersteller beim Theme und ein Entwickler bei allem Individuellen.
+
+**Einmalige Hilfe oder laufende Shopify-Betreuung?** Wer nur gelegentlich einen Handgriff braucht, kommt mit einmaliger Hilfe aus. Wer ständig Aktionen, Märkte oder Funktionen ändert, fährt mit einem festen technischen Ansprechpartner besser: [Shopify Wartung und Betreuung](/de/blog/shopify-wartung-betreuung).
 
 **Hilft mir der Shopify-Support bei Code-Problemen im Theme?** In der Regel nicht. Shopify betreut die Plattform, nicht Ihre individuellen Anpassungen.
 

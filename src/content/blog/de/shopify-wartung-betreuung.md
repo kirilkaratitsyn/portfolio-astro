@@ -1,9 +1,11 @@
 ---
 publishedAt: 2026-10-23
+updatedAt: 2026-11-26
 title: "Shopify Wartung und Betreuung: Was die Plattform übernimmt und was in Ihrem Shop liegen bleibt"
+seoTitle: "Shopify Wartung und Support: Was bei Ihnen bleibt"
 date: 23. Oktober 2026
 readingTime: 5 Min
-excerpt: "Shopify Wartung und Betreuung: Was die Plattform übernimmt, was bei Ihnen bleibt und was Sie vor einem Betreuungsvertrag klären sollten."
+excerpt: "Shopify Wartung, Support und Betreuung: Was die Plattform übernimmt, was bei Ihnen bleibt und was Sie vor einem Betreuungsvertrag klären sollten."
 image: /og/projects/elanora-skin.jpg
 topic: support
 tags:
@@ -12,7 +14,7 @@ tags:
   - Betreuung
 ---
 
-„Bei Shopify muss man nichts warten“ stimmt zur Hälfte. Shopify ist gehostet: Server, Plattform-Updates und Checkout übernimmt die Plattform. Wartung und Betreuung von Theme, Apps, Zugängen und Inhalten bleiben bei Ihnen.
+„Bei Shopify muss man nichts warten“ stimmt zur Hälfte. Shopify ist gehostet: Server, Plattform-Updates und Checkout übernimmt die Plattform. Wartung und Betreuung von Theme, Apps, Zugängen und Inhalten bleiben bei Ihnen. Kurz gesagt gehören zur Shopify-Wartung fünf Dinge: Zugänge, Apps, Theme-Updates, Kopien wichtiger Daten und ein Test nach jeder Änderung.
 
 ## Was Shopify abnimmt
 
@@ -88,6 +90,10 @@ Fragen Sie Freelancer wie Agentur:
 Einzelperson oder Team: [Shopify-Freelancer oder Agentur](/de/blog/shopify-freelancer-oder-agentur).
 
 ## Häufige Fragen
+
+**Was gehört zur Shopify-Wartung?** Zugänge und Rechte, installierte Apps, Theme-Updates, Kopien wichtiger Daten und ein Test nach jeder Änderung. Server und Plattform-Updates übernimmt Shopify.
+
+**Wer leistet Support, wenn im Shop etwas nicht funktioniert?** Bei der Plattform Help Center und Shopify-Support, bei angepasstem Code ein Entwickler. Die Aufteilung steht in [Shopify Hilfe](/de/blog/shopify-help).
 
 **Muss ich bei Shopify Sicherheits-Updates einspielen?** Für die Plattform nicht. Für Theme, Apps und Zugänge schon.
 

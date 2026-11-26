@@ -1,10 +1,11 @@
 ---
 publishedAt: 2026-11-15
+updatedAt: 2026-11-26
 title: "A multilingual Shopify store: translate it without a half-finished language going live"
-seoTitle: "Multilingual Shopify store: translating with Translate & Adapt"
+seoTitle: "Shopify multi-language store: translation with Translate & Adapt"
 date: 15 November 2026
 readingTime: 7 min
-excerpt: "Setting up a multilingual Shopify store: requirements, Translate & Adapt, automatic translation, URLs and hreflang, and what cannot be translated."
+excerpt: "Shopify multi-language setup: requirements, translation with Translate & Adapt, automatic translation, URLs and hreflang, and what cannot be translated."
 image: /og/projects/bazar-bizar.jpg
 topic: build
 tags:
@@ -13,7 +14,7 @@ tags:
   - International
 ---
 
-Making a Shopify store multilingual does not take a second store: you add a language, translate the content and publish it. Each language gets its own URLs, for example `your-store.com/de`. The work is in the translations and in the places Shopify does not translate. The source is the Shopify Help Center, as of November 2026.
+Shopify handles multiple languages in one store, so making a Shopify store multilingual does not take a second store: you add a language, translate the content and publish it. Each language gets its own URLs, for example `your-store.com/de`. The work is in the translations and in the places Shopify does not translate. The source is the Shopify Help Center, as of November 2026.
 
 ## What your store needs
 
@@ -132,6 +133,10 @@ For [Lineargent](/projects/lineargent) I rewrote 1,773 internal links in the SEO
 I am a developer, not a translator. The texts come from you, a translation agency or automatic translation. I check whether the theme is built for multiple languages, set up the language selector and redirection, find the places that stay untranslated in the new language (fixed texts in the theme, apps, filters) and test the path from product to order email. In the admin I work through a collaborator account with limited permissions.
 
 ## Frequently asked questions
+
+**Does Shopify support multiple languages?** Yes. On Basic, Grow and Advanced you sell in up to 20 languages, on Shopify Plus in up to 30, all in one store.
+
+**How do I translate my Shopify store?** Add the language under Settings > Languages, translate the content in Translate & Adapt by hand or automatically, and click Publish only once the translation is ready.
 
 **Do I need a separate store for each language?** No. One store carries up to 20 or 30 languages, depending on the plan.
 
