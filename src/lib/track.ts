@@ -1,11 +1,15 @@
-// Conversion events. Names only, no personal data: the event goes to Microsoft Clarity, and only when the visitor has
-// accepted it (window.clarity exists only after consent, see components/Consent.astro).
-type Tracker = (command: string, payload?: unknown) => void;
+// Conversion events. Names only, no personal data: the event goes to Microsoft Clarity and, for a sent form, to Google Ads,
+// and only when the visitor has accepted it (window.clarity and window.gtag exist only after consent, see
+// components/Consent.astro).
+import { ADS_FORM_SENT } from './analytics';
+
+type Tracker = (command: string, ...args: unknown[]) => void;
 
 export function track(name: string) {
-  const w = window as unknown as { clarity?: Tracker };
+  const w = window as unknown as { clarity?: Tracker; gtag?: Tracker };
   try {
     w.clarity?.('event', name);
+    if (name === 'form_sent') w.gtag?.('event', 'conversion', { send_to: ADS_FORM_SENT });
   } catch {
     // analytics must never break the page
   }

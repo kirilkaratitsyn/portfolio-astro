@@ -396,7 +396,7 @@
   },
   "consent": {
     "label": "Cookie settings",
-    "text": "May I use Microsoft Clarity to see how visitors use this site (heatmaps and recordings of visits)? It sets cookies. Without your OK, nothing is loaded.",
+    "text": "May I use Microsoft Clarity (heatmaps and recordings of visits) and Google Ads conversion tracking (measures whether an ad led to an enquiry)? They set cookies. Without your OK, nothing is loaded.",
     "accept": "Accept",
     "decline": "Decline",
     "more": "Privacy policy",

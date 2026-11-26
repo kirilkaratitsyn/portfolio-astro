@@ -1,6 +1,6 @@
 ---
 import { useTranslations, type Locale } from '../i18n';
-import { CLARITY_ID } from '../lib/analytics';
+import { ADS_ID, CLARITY_ID } from '../lib/analytics';
 
 interface Props {
   locale: Locale;
@@ -13,7 +13,7 @@ const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
 
 {
   CLARITY_ID && (
-    <div id="consent" role="region" aria-label={t.consent.label} data-clarity={CLARITY_ID} hidden>
+    <div id="consent" role="region" aria-label={t.consent.label} data-clarity={CLARITY_ID} data-ads={ADS_ID} hidden>
       <p>{t.consent.text}</p>
       <div class="consent-actions">
         <button type="button" data-consent="granted">{t.consent.accept}</button>
@@ -81,7 +81,10 @@ const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
 </style>
 
 <script>
+  // 'granted-ads': Clarity and Google Ads. 'granted' is the older answer that covered Clarity only: Clarity keeps
+  // running and the banner asks again, because Google Ads was not part of that question.
   const KEY = 'consent-analytics';
+  const GRANTED = 'granted-ads';
   const box = document.getElementById('consent');
 
   function read(): string | null {
@@ -117,22 +120,53 @@ const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
     document.head.appendChild(s);
   }
 
+  function loadAds(id: string) {
+    const w = window as any;
+    if (location.hostname !== 'www.karatitsyn.com' || !id) return;
+    if (w.gtag) return;
+    w.dataLayer = w.dataLayer || [];
+    w.gtag = function () {
+      w.dataLayer.push(arguments);
+    };
+    // Conversion measurement only: no remarketing lists, no Google Analytics.
+    w.gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+    });
+    w.gtag('js', new Date());
+    w.gtag('config', id, { allow_enhanced_conversions: false });
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
+  }
+
   if (box) {
     const id = box.dataset.clarity!;
+    const ads = box.dataset.ads || '';
+    const choice = read();
 
-    if (read() === 'granted') loadClarity(id);
-    else if (read() === null) box.hidden = false;
+    if (choice === GRANTED) {
+      loadClarity(id);
+      loadAds(ads);
+    } else if (choice === 'granted') {
+      loadClarity(id);
+      box.hidden = false;
+    } else if (choice === null) box.hidden = false;
 
     box.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach((button) => {
       button.addEventListener('click', () => {
         const granted = button.dataset.consent === 'granted';
         const before = read();
-        write(granted ? 'granted' : 'denied');
+        write(granted ? GRANTED : 'denied');
         box.hidden = true;
         if (granted) {
           loadClarity(id);
-        } else if (before === 'granted') {
-          // Withdrawn after it was on: tell Clarity, then reload so its script and cookies are gone.
+          loadAds(ads);
+        } else if (before === 'granted' || before === GRANTED) {
+          // Withdrawn after it was on: tell Clarity, then reload so the scripts are gone.
           try {
             (window as any).clarity?.('consent', false);
           } catch {
