@@ -166,12 +166,21 @@ const privacy = locale === 'de' ? '/de/datenschutz' : '/privacy';
           loadClarity(id);
           loadAds(ads);
         } else if (before === 'granted' || before === GRANTED) {
-          // Withdrawn after it was on: tell Clarity, then reload so the scripts are gone.
+          // Withdrawn after it was on: tell Clarity, delete the Google Ads cookies, then reload so the scripts are gone.
           try {
             (window as any).clarity?.('consent', false);
           } catch {
             // Reloading is the fallback.
           }
+          document.cookie
+            .split('; ')
+            .map((pair) => pair.split('=')[0])
+            .filter((name) => name.startsWith('_gcl_'))
+            .forEach((name) => {
+              for (const domain of ['', '; domain=.karatitsyn.com']) {
+                document.cookie = `${name}=; max-age=0; path=/${domain}`;
+              }
+            });
           location.reload();
         }
       });
