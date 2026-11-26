@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "start": "node server.mjs",
     "preview": "npx serve@14 -c serve.json -l 4321",
     "check": "astro check && node scripts/check-i18n.mjs",
     "astro": "astro"
