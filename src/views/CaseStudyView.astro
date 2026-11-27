@@ -264,11 +264,12 @@ const facts = [
         services.length > 0 && (
           <div class="case-row grid gap-5 border-t border-line py-10 md:grid-cols-[260px_1fr] md:gap-10 md:py-14">
             <h2 class="font-head text-2xl font-bold">{t.servicePage.more}</h2>
-            <ul class="flex flex-wrap content-start items-start gap-3">
+            {/* Phones: a list of links, since the longer service names do not fit a one-line pill. */}
+            <ul class="grid border-t border-line md:flex md:flex-wrap md:content-start md:items-start md:gap-3 md:border-0">
               {services.map((service) => (
                 <li>
-                  <a href={localizePath(locale, `/services/${service.slug}`)} class="inline-flex rounded-full bg-ink px-5 py-3 font-semibold text-white transition-colors duration-300 hover:bg-blue-deep">
-                    {service.title} →
+                  <a href={localizePath(locale, `/services/${service.slug}`)} class="flex items-center justify-between gap-4 border-b border-line py-4 font-semibold transition-colors duration-300 md:inline-flex md:rounded-full md:border-0 md:bg-ink md:px-5 md:py-3 md:text-white md:hover:bg-blue-deep">
+                    {service.title} <span aria-hidden="true">→</span>
                   </a>
                 </li>
               ))}

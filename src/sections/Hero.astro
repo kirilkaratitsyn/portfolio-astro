@@ -53,7 +53,7 @@ const h1Size = len > 75 ? 'text-[30px] md:text-[42px]' : len > 50 ? 'text-[34px]
         <p class="hero-sub mt-5 hidden max-w-[560px] text-[20px] leading-snug text-mute md:block">{c.facts}</p>
         <div class="hero-cta mt-7 flex flex-wrap items-center gap-x-7 gap-y-4 md:mt-8">
           <a href="#shop-check" class="inline-flex items-center gap-3 rounded-full bg-blue-deep px-7 py-[17px] text-[17px] font-semibold text-white transition-colors hover:bg-ink">
-            {c.button}<span aria-hidden="true">→</span>
+            <span class="sm:hidden">{t.contact.shopCheck.cta}</span><span class="hidden sm:inline">{c.button}</span><span aria-hidden="true">→</span>
           </a>
           <CalButton class="inline-block text-[16px] font-semibold text-blue-dark underline-offset-4 hover:underline">{c.orCall}&nbsp;<span aria-hidden="true">→</span></CalButton>
         </div>
