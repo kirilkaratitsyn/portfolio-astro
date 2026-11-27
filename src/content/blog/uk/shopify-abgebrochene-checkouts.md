@@ -98,6 +98,6 @@ tags:
 
 Надішліть адресу магазину на [безкоштовний Shop-Check](#contact): я пройду шлях до чекауту як клієнт і скажу, де заїдає. Налаштування і регулярний догляд підходять до [Підтримки Shopify](/uk/services/shopify-betreuung).
 
-**Читати далі:** [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Налаштування доставки Shopify](/uk/blog/shopify-versand-einrichten) · [Повернення в Shopify](/uk/blog/shopify-retouren-ruecksendungen)
+**Читати далі:** [Оптимізація магазину Shopify](/uk/blog/shopify-shop-optimieren-lassen) · [Налаштування доставки Shopify](/uk/blog/shopify-versand-einrichten) · [Повернення в Shopify](/uk/blog/shopify-retouren-ruecksendungen) · [Розсилка в Shopify і double opt-in](/uk/blog/shopify-newsletter-double-opt-in)
 
 *[Kiril Karatitsyn](/uk/about), розробник Shopify у Німеччині*
