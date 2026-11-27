@@ -1017,6 +1017,12 @@
     "cta": {
       "title": "Passen wir zusammen?",
       "text": "Schicken Sie mir die Adresse Ihres Shops. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
+    },
+    "place": {
+      "title": "Bad Bentheim",
+      "text": "Bad Bentheim liegt in Niedersachsen, an der Grenze zu den Niederlanden. Von hier arbeite ich für Shopify-Shops in ganz Europa, meist remote.",
+      "alt": "Burg Bentheim über der Altstadt von Bad Bentheim, Luftaufnahme",
+      "credit": "Foto: Dietmar Rabich, Wikimedia Commons"
     }
   },
   "shopCheckWhat": {

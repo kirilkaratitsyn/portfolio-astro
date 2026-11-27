@@ -1017,6 +1017,12 @@
     "cta": {
       "title": "Want to know if we fit?",
       "text": "Send me your store address. The free store check shows what I would do first."
+    },
+    "place": {
+      "title": "Bad Bentheim",
+      "text": "Bad Bentheim is in Lower Saxony, on the Dutch border. From here I work for Shopify stores across Europe, mostly remotely.",
+      "alt": "Bentheim Castle above the old town of Bad Bentheim, aerial photo",
+      "credit": "Photo: Dietmar Rabich, Wikimedia Commons"
     }
   },
   "shopCheckWhat": {
