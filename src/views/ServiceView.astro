@@ -273,7 +273,7 @@ const scopeIcons = ['rocket', 'migrate', 'puzzle', 'chart', 'layers', 'lifebuoy'
         <ul class="mt-8 flex flex-wrap gap-3 md:mt-10">
           {places.map((item) => (
             <li data-reveal>
-              <a href={localizePath(locale, `/services/${item.slug}`)} class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-3.5 text-[15px] font-semibold md:px-6 md:py-4 md:text-lg transition-colors duration-300 hover:bg-blue-deep hover:text-white">
+              <a href={localizePath(locale, `/services/${item.slug}`)} class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-3.5 text-[15px] font-semibold max-[359px]:px-3.5 max-[359px]:text-[13px] md:px-6 md:py-4 md:text-lg transition-colors duration-300 hover:bg-blue-deep hover:text-white">
                 {item.title} →
               </a>
             </li>

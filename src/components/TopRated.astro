@@ -23,7 +23,7 @@ const lg = size === 'lg';
   rel="noopener noreferrer"
   title={t.openProfile}
   class:list={[
-    'group inline-flex w-fit items-center rounded-full transition-colors duration-300',
+    'group inline-flex w-fit items-center rounded-full transition-colors duration-300 max-[359px]:gap-1.5 max-[359px]:pl-1.5 max-[359px]:pr-2.5',
     lg ? 'gap-3 py-3 pl-3 pr-4 sm:gap-4 sm:pr-3 md:gap-5 md:py-4 md:pl-4 md:pr-4' : 'gap-3 py-2.5 pl-2.5 pr-4 md:gap-4 md:pr-6',
     tone === 'onBlue' ? 'bg-white text-ink hover:bg-ink hover:text-white' : 'bg-white text-ink hover:bg-ink hover:text-white',
     className,
@@ -34,11 +34,11 @@ const lg = size === 'lg';
     alt=""
     width="80"
     height="80"
-    class:list={['shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110', lg ? 'size-12 sm:size-14 md:size-20' : 'size-12 md:size-14']}
+    class:list={['shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110', lg ? 'size-12 max-[359px]:size-9 sm:size-14 md:size-20' : 'size-12 max-[359px]:size-9 md:size-14']}
   />
   <span class="leading-snug">
     <span class:list={['block font-head font-bold tracking-[-0.01em]', lg ? 'text-lg sm:text-xl md:text-[28px]' : 'text-lg md:text-xl']}>{t.badge}</span>
-    <span class:list={['block text-mute group-hover:text-white/80', lg ? 'text-[13px] sm:text-sm md:text-base' : 'text-[13px] md:text-sm']}>{t.summary}</span>
+    <span class:list={['block text-mute group-hover:text-white/80', lg ? 'text-[13px] max-[359px]:text-[12px] sm:text-sm md:text-base' : 'text-[13px] max-[359px]:text-[12px] md:text-sm']}>{t.summary}</span>
   </span>
   {lg && <span class="hidden size-12 shrink-0 items-center justify-center rounded-full bg-blue text-xl text-white sm:flex md:size-14" aria-hidden="true">↗</span>}
 </a>

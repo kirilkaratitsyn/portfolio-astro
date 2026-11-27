@@ -122,8 +122,8 @@ const pill = 'rounded-full bg-white/95';
             <ul class="-mt-1 flex flex-wrap gap-2 pb-4">
               {serviceRows.map((row) => (
                 <li>
-                  <a href={row.page ? localizePath(locale, `/services/${row.page.slug}`) : row.href} class="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-1.5 pr-3.5 text-[14px] font-medium" data-menu-close>
-                    <img src={`/source/3d/icon-${row.icon}-160.webp`} alt="" width="28" height="28" loading="lazy" class="size-7 rounded-full" />
+                  <a href={row.page ? localizePath(locale, `/services/${row.page.slug}`) : row.href} class="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-1.5 pr-3.5 text-[14px] font-medium max-[359px]:gap-1 max-[359px]:pl-1 max-[359px]:pr-2 max-[359px]:text-[13px]" data-menu-close>
+                    <img src={`/source/3d/icon-${row.icon}-160.webp`} alt="" width="28" height="28" loading="lazy" class="size-7 rounded-full max-[359px]:size-6" />
                     {row.title}
                   </a>
                 </li>
