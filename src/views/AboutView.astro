@@ -1,15 +1,19 @@
 ---
 import TopRated from '../components/TopRated.astro';
 // /about: who is behind the site. The "Who" of Google's helpful-content guidance (articles link their signature here):
-// short bio, how the work runs, background, three case studies, links to the profiles. Facts only from the site's own
-// copy (bio, services, experience) and the public profiles.
+// a grid of cards with one fact each (place, languages, numbers, tools, a client's words), then the background and
+// three case studies. Facts only from the site's own copy (bio, stats, stack, testimonials) and the public profiles.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CalButton from '../components/CalButton.astro';
 import Icon from '../components/Icon.astro';
+import Icon3D from '../components/Icon3D.astro';
 import Pebble from '../components/Pebble.astro';
 import Contact from '../sections/Contact.astro';
 import { localizePath, useTranslations, type Locale } from '../i18n';
-import { getCaseStudies } from '../lib/content';
+import { getCollection } from 'astro:content';
+import path from 'node:path';
+import sharp from 'sharp';
+import { getCaseStudies, getWorks } from '../lib/content';
 import { PERSON } from '../lib/person';
 
 interface Props {
@@ -31,8 +35,31 @@ const LOGOS: Record<string, string> = {
 };
 const logoFor = (place: string) => Object.entries(LOGOS).find(([name]) => place.startsWith(name))?.[1];
 
+// Countries of the client stores, counted the way the globe on the home page counts them.
+const works = await getWorks(locale);
+const placed = works.filter((w) => !w.archived && !w.noLiveLink && w.country && w.lat !== undefined && w.lng !== undefined);
+const countryCodes = [...new Set(placed.map((w) => w.country!))];
+const [globeBefore, globeAfter] = t.globe.title.split('{n}');
+
+// The same brands as the logo strip on the home page.
+const BRANDS = ['juniors-cheesecake.svg', 'orska-rituals.webp', 'lerros.svg', 'elanora-skin.webp', 'jula-bloom.webp', 'minbie.webp', 'petaljet.webp', 'onlyphila.webp'];
+const brands = await Promise.all(
+  BRANDS.map(async (file) => {
+    const { width = 300, height = 100 } = await sharp(path.join(process.cwd(), 'public/source/logos/clients', file)).metadata();
+    const id = file.replace(/\.(svg|webp)$/, '');
+    return { src: `/source/logos/clients/${file}`, width, height, title: works.find((w) => w.id === id)?.title ?? id };
+  }),
+);
+
+// One client's own words, as on the home page (src/content/testimonials.yaml, shown with consent, never translated).
+const voice = (await getCollection('testimonials')).map((entry) => entry.data).sort((a, b) => a.order - b.order)[0];
+const [stores, jobs, hours, score] = t.stats.items;
+// Flags in the order the sentence names the languages.
+const LANGS = locale === 'de' ? ['de', 'gb', 'ua'] : ['gb', 'de', 'ua'];
+const UPWORK = 'https://www.upwork.com/freelancers/~0165dda3529105e6f3';
+
 const PROFILES = [
-  { name: 'Upwork', href: 'https://www.upwork.com/freelancers/~0165dda3529105e6f3' },
+  { name: 'Upwork', href: UPWORK },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kirilkaratitsyn/' },
   { name: 'Malt', href: 'https://www.malt.com/de-de/profile/kirilkaratitsyn' },
   { name: 'GitHub', href: 'https://github.com/kirilkaratitsyn' },
@@ -70,16 +97,6 @@ const structuredData = {
       <div class="md:col-span-7">
         <h1 id="about-page-title" class="intro-lift font-head text-[clamp(38px,10vw,52px)] font-bold leading-[0.98] tracking-[-0.03em] md:text-[84px]">{copy.title}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-relaxed md:mt-8 md:text-xl">{copy.lead}</p>
-        <dl class="mt-9 grid max-w-[720px] gap-px overflow-hidden rounded-2xl bg-line sm:grid-cols-2">
-          {
-            copy.facts.map((fact) => (
-              <div class="bg-bg px-5 py-4">
-                <dt class="text-[13px] text-mute">{fact.label}</dt>
-                <dd class="mt-1 font-head text-[17px] font-bold leading-snug">{fact.value}</dd>
-              </div>
-            ))
-          }
-        </dl>
         <div class="mt-9 flex flex-wrap items-center gap-4">
           <CalButton class="inline-flex rounded-full bg-blue-deep px-7 py-[15px] text-[16px] font-semibold text-white">{t.header.bookCall}</CalButton>
           <a href="#contact" class="text-[16px] font-semibold text-blue-dark hover:underline">{t.contact.shopCheck.title} →</a>
@@ -108,26 +125,58 @@ const structuredData = {
     </div>
   </section>
 
-  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="what-title">
-    <div class="grid items-center gap-10 md:grid-cols-12 md:gap-8">
-      <figure class="relative order-2 md:order-1 md:col-span-5">
+  <!-- One fact per card. Phones: one column in reading order; from md a six-column grid. -->
+  <section class="mx-auto mt-16 max-w-[1440px] px-5 md:mt-28 md:px-10" aria-labelledby="cards-title">
+    <h2 id="cards-title" class="sr-only">{copy.cards.gridTitle}</h2>
+    <div class="grid gap-4 md:grid-cols-6 md:gap-5">
+      <article class="bento overflow-hidden md:col-span-4 md:row-span-2">
+        <picture class="block min-h-0 flex-1">
+          <source media="(min-width: 768px)" srcset="/source/places/burg-bentheim-1200.webp 1200w, /source/places/burg-bentheim-2400.webp 2400w" sizes="(min-width: 1440px) 900px, 64vw" />
+          <img src="/source/places/burg-bentheim-m900.webp" width="900" height="675" alt={copy.place.alt} loading="lazy" decoding="async" class="block aspect-[4/3] h-full w-full bg-[#5d6b4f] object-cover md:aspect-auto md:min-h-[300px]" />
+        </picture>
+        <div class="p-6 md:p-8">
+          <h3 class="font-head bento-title">{copy.place.title}</h3>
+          <p class="bento-text">{copy.place.text}</p>
+          <p class="mt-3 text-[12px] text-mute">
+            <a href="https://commons.wikimedia.org/wiki/File:Bad_Bentheim,_Burg_Bentheim_--_2014_--_9519_--_Ausschnitt.jpg" target="_blank" rel="noopener noreferrer" class="hover:underline">{copy.place.credit}</a>
+            {' · '}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license" class="hover:underline">CC BY-SA 4.0</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="bento p-6 md:col-span-2 md:p-8">
+        <ul class="flex gap-2" aria-hidden="true">
+          {LANGS.map((code) => <li><img src={`/source/flags/${code}.webp`} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 rounded-full border border-line" /></li>)}
+        </ul>
+        <h3 class="font-head bento-title mt-auto pt-6">{copy.cards.languagesTitle}</h3>
+        <p class="bento-text">{copy.cards.languagesText}</p>
+      </article>
+
+      <article class="bento bento-tint relative overflow-hidden p-6 md:col-span-2 md:p-8">
+        <Icon3D name="rocket" sizes="120px" class="bento-icon absolute -right-2 -top-2 w-[120px] md:w-[130px]" />
+        <p class="mt-auto pt-20 font-head text-[34px] font-bold leading-none tracking-[-0.02em] text-blue-dark md:text-[40px]">{copy.cards.startWhen}</p>
+        <p class="mt-3 text-[17px] leading-snug text-blue-dark">{copy.cards.startText}</p>
+      </article>
+
+      <figure class="bento overflow-hidden bg-[#2a4467] md:col-span-2 md:row-span-2">
         <img
           src="/source/kiril/laptop-1080.webp"
           srcset="/source/kiril/laptop-540.webp 540w, /source/kiril/laptop-1080.webp 1080w"
-          sizes="(min-width: 768px) 520px, 90vw"
+          sizes="(min-width: 768px) 440px, 90vw"
           width="1080"
           height="1350"
           alt={t.hero.check.photoAlt}
           loading="lazy"
           decoding="async"
-          class="block aspect-[4/5] w-full rounded-[28px] bg-[#2a4467] object-cover"
+          class="block aspect-[4/5] h-full w-full object-cover md:aspect-auto"
         />
-        <Pebble name="black" class="absolute -bottom-5 -right-3 z-[2] w-[16%] md:-right-5" />
       </figure>
-      <div class="order-1 md:order-2 md:col-span-6 md:col-start-7">
-        <h2 id="what-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:text-[56px] md:leading-[1.02]">{copy.whatTitle}</h2>
-        <p class="mt-6 text-lg leading-relaxed md:text-xl">{copy.whatText}</p>
-        <div class="mt-6 flex flex-col items-start gap-3">
+
+      <article class="bento p-6 md:col-span-4 md:p-10">
+        <h3 class="font-head text-[30px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[44px]">{copy.whatTitle}</h3>
+        <p class="mt-4 text-[17px] leading-relaxed md:text-lg">{copy.whatText}</p>
+        <div class="mt-5 flex flex-col items-start gap-2.5">
           <a href={localizePath(locale, '/services')} class="svc-link">
             {copy.whatLink}
             <Icon name="arrow" size={18} />
@@ -137,23 +186,133 @@ const structuredData = {
             <Icon name="arrow" size={18} />
           </a>
         </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="how-title">
-    <h2 id="how-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:text-[56px]">{copy.howTitle}</h2>
-    <ol class="mt-8 grid border-t border-line md:mt-10 md:grid-cols-3">
+      <article class="bento relative overflow-hidden p-6 md:col-span-2 md:p-8">
+        <Icon3D name="chat" sizes="110px" class="bento-icon absolute -right-2 -top-2 w-[110px]" />
+        <h3 class="font-head bento-title mt-auto max-w-[75%] pt-20">{copy.cards.coffeeTitle}</h3>
+        <p class="bento-text">{copy.cards.coffeeText}</p>
+      </article>
+
+      <article class="bento relative overflow-hidden p-6 md:col-span-2 md:p-8">
+        <Icon3D name="puzzle" sizes="110px" class="bento-icon absolute -right-2 -top-2 w-[110px]" />
+        <h3 class="font-head bento-title mt-auto max-w-[75%] pt-20">{copy.appTitle}</h3>
+        <p class="bento-text">{copy.appText}</p>
+        <a href="https://apps.shopify.com/reviews-core" target="_blank" rel="noopener noreferrer" class="svc-link mt-4 !text-[15px]">
+          {copy.appLink}
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+      </article>
+
+      <article class="bento relative overflow-hidden p-6 md:col-span-3 md:p-8">
+        <img src="/source/3d/globe-640.webp" alt="" width="640" height="640" loading="lazy" decoding="async" class="bento-icon pointer-events-none absolute -bottom-16 -right-14 w-[230px] md:-bottom-24 md:-right-16 md:w-[330px]" />
+        <h3 class="relative font-head text-[30px] font-bold leading-[1.02] tracking-[-0.02em] md:text-[44px]">
+          {globeBefore}<span class="text-blue-deep">{countryCodes.length}</span>{globeAfter}
+        </h3>
+        <p class="bento-text relative max-w-[340px]">{t.globe.lead}</p>
+        <ul class="relative mt-5 flex max-w-[170px] flex-wrap gap-1.5 md:max-w-[300px]" aria-hidden="true">
+          {countryCodes.map((code) => <li><img src={`/source/flags/${code.toLowerCase()}.webp`} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-7 rounded-full border border-line" /></li>)}
+        </ul>
+        <a href={`${localizePath(locale, '/')}#worldwide`} class="svc-link relative mt-auto pt-6 !text-[15px]">
+          {copy.cards.globeLink}
+          <Icon name="arrow" size={16} />
+        </a>
+      </article>
+
+      <article class="bento bg-ink p-6 text-white md:col-span-3 md:p-8">
+        <div class="flex items-center gap-4">
+          <img src="/source/logos/upwork-top-rated.svg" alt="" width="80" height="80" loading="lazy" decoding="async" class="size-14 shrink-0 md:size-16" />
+          <div>
+            <h3 class="font-head text-[24px] font-bold leading-tight tracking-[-0.01em] md:text-[28px]">{t.reviews.badge}</h3>
+            <p class="mt-0.5 text-[15px] text-white/70">{t.reviews.summary}</p>
+          </div>
+        </div>
+        <dl class="mt-8 grid gap-4 border-t border-white/15 pt-6 md:grid-cols-3">
+          {[jobs, hours, score].map((item) => (
+            <div class="flex flex-row-reverse items-baseline justify-end gap-3 md:flex-col-reverse md:items-stretch md:gap-0">
+              <dt class="text-[15px] leading-snug text-white/70 md:mt-1.5 md:text-[14px]">{item.label}</dt>
+              <dd class="w-[92px] shrink-0 font-head text-[30px] font-bold leading-none tracking-[-0.02em] md:w-auto md:text-[44px]">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <a href={UPWORK} target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 pt-7 text-[15px] font-semibold text-white hover:underline">
+          {t.reviews.openProfile}
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+      </article>
+
+      <article class="bento p-6 md:col-span-4 md:p-10">
+        <div class="flex flex-wrap items-end gap-x-5 gap-y-1">
+          <p class="font-head text-[72px] font-bold leading-[0.9] tracking-[-0.04em] text-blue-deep md:text-[120px]">{stores.value}</p>
+          <h3 class="pb-1 font-head text-[22px] font-bold leading-tight md:pb-3 md:text-[30px]">{stores.label}</h3>
+        </div>
+        <p class="bento-text">{copy.cards.storesText}</p>
+        <ul class="mt-6 grid grid-cols-4 items-center gap-x-5 gap-y-6 md:mt-auto md:grid-cols-8 md:gap-x-6 md:pt-8">
+          {brands.map((brand) => (
+            <li class="flex justify-center">
+              <img src={brand.src} alt={brand.title} width={brand.width} height={brand.height} loading="lazy" decoding="async" class="h-7 w-auto max-w-full object-contain opacity-80 brightness-0 md:h-9" />
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      <article class="bento p-6 md:col-span-2 md:p-8">
+        <h3 class="font-head bento-title">{t.stack.title}</h3>
+        <ul class="mt-5 flex flex-wrap gap-1.5">
+          {t.stack.items.map((item) => <li class="rounded-full bg-bg px-3 py-1.5 text-[13px] font-medium leading-none md:text-[14px]">{item.name}</li>)}
+        </ul>
+      </article>
+
       {
         copy.how.map((step, index) => (
-          <li class="border-b border-line py-7 md:border-b-0 md:py-8 md:pr-8 [&:not(:first-child)]:md:border-l [&:not(:first-child)]:md:pl-8">
+          <article class="bento p-6 md:col-span-2 md:p-8">
             <span class="font-head text-xl font-bold text-blue-deep">{String(index + 1).padStart(2, '0')}</span>
-            <h3 class="mt-3 font-head text-2xl font-bold leading-tight">{step.title}</h3>
-            <p class="mt-2 text-lg leading-relaxed text-mute">{step.text}</p>
-          </li>
+            <h3 class="font-head bento-title mt-auto pt-8">{step.title}</h3>
+            <p class="bento-text">{step.text}</p>
+          </article>
         ))
       }
-    </ol>
+
+      {
+        voice && (
+          <figure class="bento bg-blue-deep p-6 text-white md:col-span-4 md:p-10">
+            <blockquote lang="en" class="font-head text-[22px] font-bold leading-[1.25] tracking-[-0.01em] md:text-[30px]">“{voice.quote}”</blockquote>
+            <figcaption class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-3 pt-8">
+              {voice.photo && <img src={voice.photo} alt="" width="56" height="56" loading="lazy" decoding="async" class="size-14 rounded-full object-cover" />}
+              <span class="mr-auto text-[15px] leading-snug">
+                <span class="block font-semibold">{voice.name}</span>
+                <span class="block text-white/80">
+                  {voice.role}, {voice.project}
+                </span>
+              </span>
+              {voice.caseSlug && (
+                <a href={localizePath(locale, `/projects/${voice.caseSlug}`)} class="inline-flex items-center gap-2 text-[15px] font-semibold text-white hover:underline">
+                  {t.servicePage.viewCase}
+                  <Icon name="arrow" size={16} />
+                </a>
+              )}
+            </figcaption>
+          </figure>
+        )
+      }
+
+      <article class="bento relative overflow-hidden p-6 md:col-span-2 md:p-8">
+        <Icon3D name="layers" sizes="110px" class="bento-icon absolute -right-2 -top-2 w-[110px]" />
+        <h3 class="font-head bento-title mt-auto pt-20">{copy.elsewhereTitle}</h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {
+            PROFILES.map((profile) => (
+              <li>
+                <a href={profile.href} target="_blank" rel="noopener noreferrer me" class="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-4 py-2.5 text-[15px] font-medium transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white">
+                  {profile.name}
+                  <Icon name="arrow-up-right" size={15} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </article>
+    </div>
   </section>
 
   <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="background-title">
@@ -179,26 +338,6 @@ const structuredData = {
         ))
       }
     </ul>
-  </section>
-
-  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="place-title">
-    <figure class="overflow-hidden rounded-[28px] bg-[#5d6b4f]">
-      <picture>
-        <source media="(min-width: 768px)" srcset="/source/places/burg-bentheim-1200.webp 1200w, /source/places/burg-bentheim-2400.webp 2400w" sizes="(min-width: 1440px) 1360px, 95vw" width="2400" height="845" />
-        <img src="/source/places/burg-bentheim-m900.webp" width="900" height="675" alt={copy.place.alt} loading="lazy" decoding="async" class="block aspect-[4/3] w-full object-cover md:aspect-[2400/845]" />
-      </picture>
-    </figure>
-    <div class="mt-6 grid gap-4 md:mt-8 md:grid-cols-12 md:gap-8">
-      <h2 id="place-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:col-span-5 md:text-[56px] md:leading-[1.02]">{copy.place.title}</h2>
-      <div class="md:col-span-6 md:col-start-7">
-        <p class="text-lg leading-relaxed md:text-xl">{copy.place.text}</p>
-        <p class="mt-4 text-[13px] text-mute">
-          <a href="https://commons.wikimedia.org/wiki/File:Bad_Bentheim,_Burg_Bentheim_--_2014_--_9519_--_Ausschnitt.jpg" target="_blank" rel="noopener noreferrer" class="hover:underline">{copy.place.credit}</a>
-          {' · '}
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license" class="hover:underline">CC BY-SA 4.0</a>
-        </p>
-      </div>
-    </div>
   </section>
 
   {
@@ -237,35 +376,6 @@ const structuredData = {
     )
   }
 
-  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="app-title">
-    <div class="grid gap-6 md:grid-cols-12 md:gap-8">
-      <h2 id="app-title" class="font-head text-[34px] font-bold tracking-[-0.02em] md:col-span-5 md:text-[48px] md:leading-[1.05]">{copy.appTitle}</h2>
-      <div class="md:col-span-6 md:col-start-7">
-        <p class="text-lg leading-relaxed md:text-xl">{copy.appText}</p>
-        <a href="https://apps.shopify.com/reviews-core" target="_blank" rel="noopener noreferrer" class="svc-link mt-6">
-          {copy.appLink}
-          <Icon name="arrow-up-right" size={18} />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto mt-20 max-w-[1440px] px-5 md:mt-32 md:px-10" aria-labelledby="elsewhere-title">
-    <h2 id="elsewhere-title" class="font-head text-[28px] font-bold tracking-[-0.02em] md:text-[40px]">{copy.elsewhereTitle}</h2>
-    <ul class="mt-6 flex flex-wrap gap-3">
-      {
-        PROFILES.map((profile) => (
-          <li>
-            <a href={profile.href} target="_blank" rel="noopener noreferrer me" class="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-[13px] font-medium transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white">
-              {profile.name}
-              <Icon name="arrow-up-right" size={16} />
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
   <section class="mx-auto mt-16 max-w-[1440px] px-5 md:mt-24 md:px-10">
     <div class="rounded-3xl bg-ink px-6 py-10 text-white md:flex md:items-center md:justify-between md:gap-10 md:px-12 md:py-14">
       <div class="max-w-2xl">
@@ -281,3 +391,56 @@ const structuredData = {
 
   <Contact locale={locale} />
 </BaseLayout>
+
+<style is:global>
+  /* A card of the grid: a column, so the last line of text can sit at the bottom (mt-auto). */
+  .bento {
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
+    background: #fff;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bento.bg-ink {
+    background: #0e1018;
+  }
+  .bento.bg-blue-deep {
+    background: #3072d8;
+  }
+  .bento.bento-tint {
+    background: #d5e2fa;
+  }
+  .bento-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+  .bento-text {
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #5a5f73;
+  }
+  .bento-icon {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @media (hover: hover) {
+    .bento:hover {
+      transform: translateY(-4px);
+    }
+    .bento:hover .bento-icon {
+      transform: rotate(-8deg) scale(1.06);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bento,
+    .bento-icon {
+      transition: none;
+    }
+    .bento:hover,
+    .bento:hover .bento-icon {
+      transform: none;
+    }
+  }
+</style>

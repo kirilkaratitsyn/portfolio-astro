@@ -951,7 +951,7 @@
       }
     ],
     "whatTitle": "Was ich mache",
-    "whatText": "Ich mache langsame Shops schneller, finde heraus, wo Besucher vor dem Kauf abspringen, und automatisiere, was das Team noch von Hand erledigt. Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein und ziehe Shops von WooCommerce und anderen Systemen zu Shopify um. Ich verantworte die ganze Aufgabe, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch. Außerdem veranstalte ich die E-Commerce Coffee Meetings, kleine Treffen für Leute, die online verkaufen.",
+    "whatText": "Ich mache langsame Shops schneller, finde heraus, wo Besucher vor dem Kauf abspringen, und automatisiere, was das Team noch von Hand erledigt. Ich baue individuelle Shopify-Themes, richte Markets für neue Länder ein und ziehe Shops von WooCommerce und anderen Systemen zu Shopify um. Ich verantworte die ganze Aufgabe, vom ersten Blick auf den Shop bis zu den Fixes nach dem Launch.",
     "whatLink": "Alle Leistungen",
     "whatLink2": "Als Shopify-Freelancer arbeiten: so läuft es ab",
     "howTitle": "So arbeite ich",
@@ -1017,6 +1017,17 @@
     "cta": {
       "title": "Passen wir zusammen?",
       "text": "Schicken Sie mir die Adresse Ihres Shops. Der kostenlose Shop-Check zeigt, was ich zuerst angehen würde."
+    },
+    "cards": {
+      "languagesTitle": "Drei Sprachen",
+      "languagesText": "Ich arbeite auf Deutsch, Englisch und Ukrainisch.",
+      "storesText": "Unter anderem für diese Marken:",
+      "coffeeTitle": "E-Commerce Coffee Meetings",
+      "coffeeText": "Ich veranstalte kleine Treffen für Leute, die online verkaufen.",
+      "startWhen": "Oktober 2022",
+      "startText": "Angefangen habe ich mit meinem eigenen Shopify-Shop.",
+      "globeLink": "Globus ansehen",
+      "gridTitle": "Kurz über mich"
     },
     "place": {
       "title": "Bad Bentheim",

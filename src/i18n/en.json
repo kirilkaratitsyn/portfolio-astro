@@ -951,7 +951,7 @@
       }
     ],
     "whatTitle": "What I do",
-    "whatText": "I make slow stores faster, find where visitors drop off before they buy, and automate what the team still does by hand. I build custom Shopify themes, set up Markets for new countries and move stores to Shopify from WooCommerce and other systems. I own the whole task, from the first look at the store to the fixes after launch. I also host E-commerce Coffee Meetings, small meetups for people who sell online.",
+    "whatText": "I make slow stores faster, find where visitors drop off before they buy, and automate what the team still does by hand. I build custom Shopify themes, set up Markets for new countries and move stores to Shopify from WooCommerce and other systems. I own the whole task, from the first look at the store to the fixes after launch.",
     "whatLink": "All services",
     "whatLink2": "Working with a Shopify freelancer: how it goes",
     "howTitle": "How I work",
@@ -1017,6 +1017,17 @@
     "cta": {
       "title": "Want to know if we fit?",
       "text": "Send me your store address. The free store check shows what I would do first."
+    },
+    "cards": {
+      "languagesTitle": "Three languages",
+      "languagesText": "I work in English, German and Ukrainian.",
+      "storesText": "For these brands, among others:",
+      "coffeeTitle": "E-commerce Coffee Meetings",
+      "coffeeText": "I host small meetups for people who sell online.",
+      "startWhen": "October 2022",
+      "startText": "I started with my own Shopify store.",
+      "globeLink": "See the globe",
+      "gridTitle": "About me in short"
     },
     "place": {
       "title": "Bad Bentheim",
