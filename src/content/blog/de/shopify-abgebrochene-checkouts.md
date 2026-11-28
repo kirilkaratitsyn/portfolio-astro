@@ -98,6 +98,6 @@ Einen Fall mit dokumentierten Zahlen zu zurückgeholten Checkouts habe ich nicht
 
 Schicken Sie mir die Adresse Ihres Shops für den [kostenlosen Shop-Check](#contact): Ich gehe den Weg bis zum Checkout wie ein Kunde durch und sage Ihnen, wo es hakt. Einrichtung und laufende Pflege passen zur [Shopify Betreuung](/de/services/shopify-betreuung).
 
-**Weiterlesen:** [Shopify Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Versand einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Retouren einrichten](/de/blog/shopify-retouren-ruecksendungen) · [Shopify Newsletter und Double-Opt-in](/de/blog/shopify-newsletter-double-opt-in)
+**Weiterlesen:** [Shopify Shop optimieren lassen](/de/blog/shopify-shop-optimieren-lassen) · [Shopify Versand einrichten](/de/blog/shopify-versand-einrichten) · [Shopify Retouren einrichten](/de/blog/shopify-retouren-ruecksendungen) · [Shopify Newsletter und Double-Opt-in](/de/blog/shopify-newsletter-double-opt-in) · [Shopify Kundenkonten einrichten](/de/blog/shopify-kundenkonten-einrichten)
 
 *[Kiril Karatitsyn](/de/about), Shopify-Entwickler in Deutschland*

@@ -22,7 +22,7 @@ Laut Shopify-Hilfe gibt es drei Wege in Ihre Liste:
 
 - **Newsletter-Formular im Onlineshop.** Die meisten Themes haben dafür eine eigene Section oder einen Block. Alternativ baut die Shopify-App **Shopify Forms** Formulare im Seiteninhalt oder als Pop-up.
 - **Checkbox im Checkout.** Kunden haken beim Bezahlen an, dass sie Marketing-E-Mails möchten.
-- **Anmeldung beim Kundenkonto.** Auch beim Einloggen kann eine Einwilligungs-Checkbox erscheinen.
+- **Anmeldung beim Kundenkonto.** Auch beim Einloggen kann eine Einwilligungs-Checkbox erscheinen. Mehr zum Login in [Shopify Kundenkonten einrichten](/de/blog/shopify-kundenkonten-einrichten).
 
 Alle Adressen landen im Admin unter **Customers**, im fertigen Segment **Email subscribers**. Über eigene Segmente schreiben Sie später gezielt einzelne Gruppen an.
 

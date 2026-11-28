@@ -22,7 +22,7 @@ According to the Shopify Help Center there are three ways onto your list:
 
 - **A newsletter form in the online store.** Most themes have a section or block for it. Alternatively, the **Shopify Forms** app builds inline or pop-up forms.
 - **A checkbox at checkout.** Customers tick that they want marketing emails while they pay.
-- **Sign-in to a customer account.** A consent checkbox can also appear when customers sign in.
+- **Sign-in to a customer account.** A consent checkbox can also appear when customers sign in. More on sign-in in [setting up Shopify customer accounts](/blog/shopify-kundenkonten-einrichten).
 
 All addresses end up in the admin under **Customers**, in the default segment **Email subscribers**. With your own segments you can later write to specific groups.
 

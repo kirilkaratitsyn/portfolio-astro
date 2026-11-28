@@ -98,6 +98,6 @@ I don't have a case with documented numbers on recovered checkouts in my portfol
 
 Send me your store's address for the [free shop check](#contact): I walk the path to checkout like a customer and tell you where it gets stuck. Setup and ongoing care fit [Shopify support and maintenance](/services/shopify-betreuung).
 
-**Read next:** [Shopify store optimisation](/blog/shopify-shop-optimieren-lassen) · [Shopify shipping setup](/blog/shopify-versand-einrichten) · [Shopify returns setup](/blog/shopify-retouren-ruecksendungen) · [Shopify newsletter and double opt-in](/blog/shopify-newsletter-double-opt-in)
+**Read next:** [Shopify store optimisation](/blog/shopify-shop-optimieren-lassen) · [Shopify shipping setup](/blog/shopify-versand-einrichten) · [Shopify returns setup](/blog/shopify-retouren-ruecksendungen) · [Shopify newsletter and double opt-in](/blog/shopify-newsletter-double-opt-in) · [Shopify customer accounts](/blog/shopify-kundenkonten-einrichten)
 
 *[Kiril Karatitsyn](/about), Shopify developer in Germany*
